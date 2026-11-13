@@ -80,8 +80,8 @@ details[open] summary{margin-bottom:10px}
   <header style="display:grid;gap:12px">
     <span class="eyebrow">Ledenclub · stap van pand naar plan</span>
     <h1>Panden in 3D</h1>
-    <p style="font-size:15px;border-left:3px solid var(--warn);padding-left:12px">Statuscheck 13 november 2026: de zes panden uit ronde 1 en 2 zijn verkocht of alleen te huur. Ze blijven staan als voorbeeld. Ronde 3 (bovenaan: Rotterdam en Tilburg) bevat alleen aanbod dat op twee sites als beschikbaar staat. Die advertenties zijn wel ongedateerd, dus bel eerst de makelaar.</p>
-    <p class="muted" style="font-size:17px">Achttien panden gescreend in Noord- en Zuid-Holland, Utrecht en Brabant, opgebouwd uit open data: het echte gebouw en de buren uit 3D BAG, het perceel uit het kadaster en de luchtfoto van PDOK. Voor de zes interessantste staat een ontwerp en een begroting die uit de plattegrond volgt: hallen, een kerkcomplex, een kantoorvilla en een kerk.</p>
+    <p style="font-size:15px;border-left:3px solid var(--warn);padding-left:12px">Alleen panden die op dit moment als te koop staan. Panden uit eerdere rondes die verkocht of alleen te huur zijn, zijn verwijderd. De advertenties zijn niet gedateerd: bel de makelaar voordat je verder gaat.</p>
+    <p class="muted" style="font-size:17px">Gebouwd uit open data: het echte gebouw en de buren uit 3D BAG, het perceel uit het kadaster en de luchtfoto van PDOK. Per pand staan een ontwerp en een begroting die uit de plattegrond volgen.</p>
   </header>
 
   <section style="display:grid;gap:12px">
@@ -117,8 +117,8 @@ details[open] summary{margin-bottom:10px}
     </div>
     <div class="plan" id="plan"></div>
     <div id="detail" style="display:grid;gap:14px"></div>
-    <h2 style="margin-top:12px">Gescreend en afgevallen</h2>
-    <p class="muted">Dezelfde dossierstap, zonder ontwerp: deze panden zijn te klein, hebben te weinig buitenruimte of te veel lagen voor een gym en café.</p>
+    <h2 style="margin-top:12px">Te koop, maar afgevallen</h2>
+    <p class="muted">Staan als beschikbaar, maar rekenen niet rond: te duur voor het aantal leden dat erin past.</p>
     <div class="tbl"><table id="afgevallen"></table></div>
   </section>
 
@@ -129,7 +129,7 @@ details[open] summary{margin-bottom:10px}
       <li>Luchtfoto: Beeldmateriaal Nederland via PDOK, CC BY 4.0.</li>
       <li>Street View en Google Earth heb ik niet gebruikt. Die beelden mogen volgens de voorwaarden van Google niet worden overgenomen of omgezet in modellen. Wil je gevelbeelden in de viewer, maak dan eigen foto's bij een bezichtiging.</li>
       <li>Interieurfoto's en brochureplattegronden ontbreken nog. Een verdiepingsvloer of tussenwanden die niet in BAG staan, zie je hier niet.</li>
-      <li>Vraagprijzen uit zoekresultaten: Birkt 21 (€ 1.250.000) en de Thamerkerk (€ 1.295.000, bieding). Voor het kerkcomplex in Utrecht, Uitgeest, Houten en De Run 5 is de prijs een schatting; vraag de brochure op.</li><li>Bij het kerkcomplex in Utrecht is uit open data niet op te maken of het L-vormige gebouw bij de verkoop van de kerk hoort. Dat is het eerste wat je navraagt.</li>
+      <li>Rotterdam: vraagprijs € 950.000 k.k. bij Heritage Europe en Reliplan, aangeboden sinds 2024. Tilburg: prijs op aanvraag, gerekend met € 1,8 mln. Bel voor de actuele status.</li>
     </ul>
   </section>
 </div>
@@ -370,5 +370,6 @@ $("b-huidig").addEventListener("click",()=>{mode="huidig";$("b-huidig").setAttri
 $("b-nieuw").addEventListener("click",()=>{mode="nieuw";$("b-nieuw").setAttribute("aria-pressed","true");$("b-huidig").setAttribute("aria-pressed","false");apply();plan(DATA[cur]);legend(DATA[cur]);});
 ["t-foto","t-ctx"].forEach(id=>$(id).addEventListener("change",apply));
 size(); mode="nieuw"; show(0); loop();
+window.__v={get camera(){return camera},get controls(){return controls},show,setMode:m=>{$(m==="nieuw"?"b-nieuw":"b-huidig").click();}};
 })();
 </script>

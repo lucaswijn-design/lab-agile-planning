@@ -20,7 +20,8 @@ from geo import frame, to_local  # noqa: E402
 from layout import AFGEVALLEN, LAYOUTS, STATUS, build  # noqa: E402
 import pand_case  # noqa: E402
 
-VOLGORDE = ["rotterdam-hillevliet-139", "tilburg-bredaseweg-443", "amersfoort-birkt-21", "utrecht-gertrudiskerk", "uitgeest-molenwerf-15", "houten-heemsteedseweg-24", "best-de-run-5", "uithoorn-thamerkerk"]
+VOLGORDE = ["rotterdam-hillevliet-139", "tilburg-bredaseweg-443"]  # alleen aanbod dat als te koop staat
+AFGEVALLEN_TONEN = ["boxtel-bosscheweg-85", "amersfoort-stadsring-103", "den-haag-pomonaplein-49"]
 
 
 def img_uri(path, size=768):
@@ -54,7 +55,7 @@ def basic(slug):
 def main():
     panden = []
     afgevallen = []
-    for slug, reden in AFGEVALLEN.items():
+    for slug, reden in [(k, AFGEVALLEN[k]) for k in AFGEVALLEN_TONEN]:
         d = json.load(open(os.path.join(HERE, "dossiers", slug + ".json")))
         afgevallen.append(dict(adres=d["adres"], regio=d.get("regio"), bouwjaar=d["bouwjaar"], footprint_m2=d["footprint_m2"],
                                vbo_m2=d["vbo_m2_totaal"], perceel_m2=(d["perceel"] or {}).get("m2"), reden=reden))
