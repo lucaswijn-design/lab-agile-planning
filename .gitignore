@@ -1,0 +1,5 @@
+
+# foto's van makelaars en borden met die foto's: alleen lokaal, niet publiceren
+business-case/panden/dossiers/*-fotos/
+business-case/panden/renders/*-renderbord.png
+__pycache__/

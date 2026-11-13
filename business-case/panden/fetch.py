@@ -77,6 +77,23 @@ PANDEN = [
          aanbod="bedrijfscomplex 1976 (kantoor, werkplaats, woning), 529 m², perceel circa 2.000 m²; € 1.495.000 k.k. (oude advertentie)"),
     dict(slug="rotterdam-hillevliet-139", adres="Hillevliet 139 Rotterdam", regio="Rotterdam",
          aanbod="Leger des Heils-kerk 1929 (J.J.P. Oud, rijksmonument), circa 713 m² bvo + woning; € 950.000 k.k. (sinds 2024)"),
+    # ronde 4: geopende advertenties op bedrijfspand.com / oozo, november 2026
+    dict(slug="den-bosch-eendenkooi-1a", adres="De Eendenkooi 1A 's-Hertogenbosch", regio="Den Bosch",
+         aanbod="sport- en fitnessgebouw 1977 + bovenwoning, circa 994 m², € 1.400.000 k.k.; te koop sinds 14-15 oktober 2026 (bedrijfspand.com, oozo)"),
+    dict(slug="utrecht-van-heutszstraat-4", adres="Van Heutszstraat 4 Utrecht", regio="Utrecht stad",
+         aanbod="bedrijfsgebouw circa 1960 aan binnenterrein in Lombok, 665 m² gelijkvloers, erfpacht afgekocht, € 670.000 k.k.; online sinds 12 maart 2026 (bedrijfspand.com)"),
+    dict(slug="helmond-mierloseweg-130", adres="Mierloseweg 130 Helmond", regio="Helmond/Eindhoven",
+         aanbod="Villa de Raymaert, monument, 1.032 m², tuin en terras, € 1.450.000 k.k.; online sinds 27 november 2025 (bedrijfspand.com)"),
+    dict(slug="amersfoort-computerweg-37", adres="Computerweg 37 Amersfoort", regio="Amersfoort",
+         aanbod="kantoor/bedrijfsgebouw 1987, 811 m² (hal 206 m²), label A++, perceel 950 m², € 1.325.000; online sinds 7 juli 2026 (bedrijfspand.com)"),
+    dict(slug="capelle-lentedans-50a", adres="Lentedans 50A Capelle aan den IJssel", regio="Rotterdam-oost",
+         aanbod="kantoorvilla 1984 in groen kantorenpark, circa 550 m², € 1.075.000 k.k.; online sinds 16 september 2026 (bedrijfspand.com)"),
+    dict(slug="den-bosch-rietveldenweg-13", adres="Rietveldenweg 13 's-Hertogenbosch", regio="Den Bosch",
+         aanbod="showroom/bedrijfsruimte 1966, 890 m² gelijkvloers + woning, perceel 1.156 m², € 975.000 k.k.; online sinds 5 november 2026 (bedrijfspand.com)"),
+    dict(slug="bergen-op-zoom-bosstraat-38", adres="Bosstraat 38 Bergen op Zoom", regio="West-Brabant",
+         aanbod="pandcomplex circa 1750 in het centrum, circa 1.000 m² over twee lagen, € 625.000 k.k.; online sinds 4 januari 2026 (bedrijfspand.com)"),
+    dict(slug="dordrecht-houttuinen-32a", adres="Houttuinen 32A Dordrecht", regio="Dordrecht",
+         aanbod="voormalig Arsenaal, rijksmonument, 838 m² over drie lagen, € 1.550.000 k.k.; online sinds 26 november 2025 (bedrijfspand.com)"),
 ]
 
 

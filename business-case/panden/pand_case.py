@@ -78,6 +78,8 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None):
               "Refurbished Steelcase": q["desks"], "Monitor 27 inch met": q["desks"], "Tweede monitor": q["desks"],
               "Dubbele monitorarm": q["desks"], "Bureaulampen": q["desks"]}
     for r in base:
+        if r["groep"] == "Sanitair" and L.get("sanitair_bestaand") and not r["post"].startswith("Keuken"):
+            continue  # kleedkamers en douches zijn er al
         if r["groep"] in ("Sanitair", "Verlichting", "Werken", "Gym", "Café & bieb"):
             rr = dict(r)
             for key, h in schaal.items():

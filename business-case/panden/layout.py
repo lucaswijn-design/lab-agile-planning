@@ -22,6 +22,71 @@ ZONEKLEUR = {"café": "#e0a458", "werken": "#7fb3d5", "gym": "#e07a5f", "sanitai
 STD_LEDEN = dict(n_vol=30, n_deel=30, n_club=60)
 
 LAYOUTS = {
+    "utrecht-van-heutszstraat-4": dict(
+        titel="Van Heutszstraat 4, Utrecht",
+        oordeel="kandidaat, te koop 13-11-2026",
+        samenvatting="Verscholen buurthuis uit 1959 midden in een bouwblok in Lombok, 630 m² op één laag, met een verwilderde binnentuin. "
+                     "Bereikbaar via een poort en steeg, op een paar minuten fietsen van Utrecht Centraal. Erfpacht is eeuwigdurend afgekocht. "
+                     "Moet helemaal opgeknapt worden. Plafond circa 3,5 m. De verkoper kiest zelf de koper, dus een goed plan telt.",
+        koop=dict(totaal=670_000, label="vraagprijs bedrijfspand.com, te koop op 13-11-2026"),
+        verhuur=[], leden=dict(n_vol=30, n_deel=30, n_club=90), bouwjaar_risico=True, isoleren=True, pv_kwp=25,
+        zones=[
+            dict(type="café", naam="Boekencafé aan de tuin", r=(0.3, 0.3, 13.4, 8)),
+            dict(type="bieb", naam="Stille leesbibliotheek", r=(0.3, 8.2, 5.2, 12.2)),
+            dict(type="werken", naam="Werkzone", r=(13.6, 0.3, 26, 9.8)),
+            dict(type="vergader", naam="Belcellen", r=(14.5, 10.2, 22, 12.5)),
+            dict(type="studio", naam="Studio", r=(26.2, 0.3, 35.8, 4.5)),
+            dict(type="sanitair", naam="Kleedruimte, douches, toiletten", r=(26.2, 4.5, 35.8, 10)),
+            dict(type="gym", naam="Gym", r=(26.2, 10.2, 35.8, 25)),
+        ],
+        pui=dict(kant="v1", u0=6, u1=13.4, v=8.2),
+        buiten=[dict(type="terras", naam="Terras in de binnentuin", r=(5.6, 8.6, 13.4, 15)),
+                dict(type="tuin", naam="Binnentuin", r=(1, 15.5, 26, 21))],
+        bomen_buiten=[(3, 19), (10, 20), (20, 19.5), (24, 18), (16, 17)],
+    ),
+    "den-bosch-rietveldenweg-13": dict(
+        titel="Rietveldenweg 13, Den Bosch",
+        oordeel="kandidaat, te koop 13-11-2026",
+        samenvatting="Showroom uit 1966 met bedrijfswoning, 890 m² op één laag plus woning, aan de rand van de Rietvelden "
+                     "met busverbinding naar Den Bosch Centraal. Binnen al strak afgewerkt (houten vloer, zwarte plafonds): weinig verbouw. "
+                     "Buiten alleen het voorterrein aan de weg. De woning wordt verhuurd.",
+        koop=dict(totaal=975_000, label="vraagprijs bedrijfspand.com, te koop op 13-11-2026"),
+        verhuur=[dict(naam="Bedrijfswoning", m2=127, huur_jaar=15_600)],
+        leden=STD_LEDEN, bouwjaar_risico=True, isoleren=False, pv_kwp=30,
+        zones=[
+            dict(type="café", naam="Boekencafé achter de showroomramen", r=(7.3, 0.3, 22, 12.5)),
+            dict(type="werken", naam="Werkzone", r=(7.3, 12.8, 22, 25.4)),
+            dict(type="gym", naam="Gym", r=(22, 0.3, 36, 13)),
+            dict(type="sanitair", naam="Kleedruimte, douches, toiletten", r=(22, 13, 29, 19)),
+            dict(type="studio", naam="Studio", r=(22, 19, 29, 25.8)),
+            dict(type="bieb", naam="Stille leesbibliotheek", r=(29, 13, 34, 25.8)),
+            dict(type="techniek", naam="Techniek en opslag", r=(36, 0.3, 40.5, 12)),
+            dict(type="verhuur", naam="Bedrijfswoning (verhuur)", r=(0.3, 13.6, 7, 25.8), verhuur=True),
+        ],
+        pui=dict(kant="u0", v0=1, v1=12.5, u=7),
+        buiten=[dict(type="terras", naam="Terras met plantenbakken op het voorterrein", r=(1, 1, 6.6, 12.5))],
+        bomen_buiten=[(-2, 3), (-2, 8), (-2, 12)],
+    ),
+    "den-bosch-eendenkooi-1a": dict(
+        titel="De Eendenkooi 1A, Den Bosch",
+        oordeel="kandidaat, te koop 13-11-2026",
+        samenvatting="Sportgebouw uit 1977, nu in gebruik als Snap Fitness: gymzaal, dansstudio, kleedkamers en douches zijn er al. "
+                     "Verdieping met bovenwoning en dakterras. Groene omgeving aan het water naast sporthal De Schutskamp. "
+                     "Vraag na of de huidige huurder blijft of vertrekt. Eigen grond is alleen het gebouw zelf.",
+        koop=dict(totaal=1_400_000, label="vraagprijs bedrijfspand.com en oozo, te koop sinds oktober 2026"),
+        verhuur=[dict(naam="Bovenwoning", m2=110, huur_jaar=14_400)],
+        leden=STD_LEDEN, bouwjaar_risico=True, isoleren=False, pv_kwp=30, verdieping_m2=278, sanitair_bestaand=True,
+        zones=[
+            dict(type="gym", naam="Gym (bestaande sportzaal)", r=(0.3, 0.3, 17.5, 18)),
+            dict(type="café", naam="Boekencafé en bieb bij de entree", r=(17.7, 0.3, 30.4, 10)),
+            dict(type="studio", naam="Studio (bestaande dansstudio)", r=(17.7, 10, 30.4, 16.8)),
+            dict(type="sanitair", naam="Kleedkamers en douches (bestaand)", r=(30.6, 0.3, 37.2, 14.6)),
+            dict(type="werken", naam="Verdieping: werkzone en vergaderruimte", r=(17.7, 0.3, 37.2, 14.6), niveau=1),
+        ],
+        pui=dict(kant="v0", u0=19, u1=29, v=0),
+        buiten=[],
+        bomen_buiten=[(5, -5), (14, -6), (25, -5), (34, -6)],
+    ),
     "rotterdam-hillevliet-139": dict(
         titel="Hillevliet 139, Rotterdam",
         oordeel="kandidaat, status bellen",
@@ -232,6 +297,11 @@ AFGEVALLEN = {
     "ter-aar-woudsedijk-11": "Hal uit 1993 van 1.336 m² in een dorp zonder trein. Te ver van de doelgroep.",
     "boxtel-bosscheweg-85": "Villa Catharina, 723 m² + koetshuis op 9.866 m² tuin met zwembad. Prachtig, maar € 2.950.000: een vol lid zou circa € 695 per maand nodig hebben.",
     "amersfoort-stadsring-103": "Monumentale kantoorvilla, 474 m² voor € 2.200.000. Te klein en te duur: circa € 539 per maand om te draaien.",
+    "helmond-mierloseweg-130": "Villa de Raymaert, monument, 773 m², € 1.450.000, te koop sinds november 2025. Circa € 383 per maand om te draaien, lening 68%: net te duur.",
+    "amersfoort-computerweg-37": "Kantoor met hal, 832 m², € 1.325.000, te koop sinds juli 2026. Circa € 357 per maand om te draaien, lening 66%.",
+    "capelle-lentedans-50a": "Kantoorvilla in groen park, circa 550 m² over twee lagen, € 1.075.000. Circa € 305 per maand, maar weinig ruimte voor een gym.",
+    "bergen-op-zoom-bosstraat-38": "Pandcomplex in het centrum, circa 1.000 m² over twee lagen, € 625.000. Rekent goed (circa € 211), maar ver van de Randstad en geen buitenruimte.",
+    "dordrecht-houttuinen-32a": "Voormalig Arsenaal, rijksmonument, 838 m² over drie lagen zonder buitenruimte, € 1.550.000. Circa € 404 per maand, lening 70%.",
     "den-haag-pomonaplein-49": "Voormalige kerk met woning, loft en B&B, 1.732 m² voor € 4.250.000. Ook met verhuur van woning en B&B circa € 890 per maand nodig.",
 }
 
@@ -340,7 +410,7 @@ if __name__ == "__main__":
 STATUS = {
     "rotterdam-hillevliet-139": ("verkocht", "Verkocht (gecontroleerd door Lucas, 13 november 2026). Eerdere vermelding: " "Vraagprijs € 950.000 k.k. bij Heritage Europe en Reliplan, aangeboden sinds 2024. "
                                  "Geen verkoopbericht gevonden, maar ook niets recents: eerst bellen."),
-    "tilburg-bredaseweg-443": ("kandidaat, prijs opvragen", "Prijs op aanvraag bij Raimond Weenink en op funda in business als beschikbaar; "
+    "tilburg-bredaseweg-443": ("niet bevestigd", "Alleen Oozo meldt 'beschikbaar' (sinds 2 december 2024); de site van de makelaar was niet te openen. " "Prijs op aanvraag bij Raimond Weenink en op funda in business als beschikbaar; "
                                "advertentie is circa 589 dagen oud."),
     "amersfoort-birkt-21": ("verkocht", "Verkocht aan Automotive Soest (Comma Vastgoed). Stond te koop voor € 650.000 met 563 m²; "
                             "de eerder gebruikte € 1.250.000 en 785 m² hoorden bij een ander object."),

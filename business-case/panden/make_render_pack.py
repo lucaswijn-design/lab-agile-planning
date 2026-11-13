@@ -27,18 +27,26 @@ OUT = os.path.join(HERE, "renders")
 SCRATCH = os.environ.get("SCRATCH", "/tmp")
 
 PANDEN = {
-    "rotterdam-hillevliet-139-VERKOCHT": dict(
-        idx=-1, kop="Clubhuis in een kerk van J.J.P. Oud",
-        gebouw="Voormalige Leger des Heils-kerk, Hillevliet 139 Rotterdam, 1929, architect J.J.P. Oud, rijksmonument. "
-               "Rechthoekige kerkzaal circa 27 x 19 m, 9 m hoog; strook tuin op het zuiden.",
-        behoud="Gevel, ramen en daklijn blijven zoals ze zijn (monument). Nieuw: houten tussenvloer met stalen balustrade "
-               "achterin de zaal, glazen pui naar het terras.",
+    "utrecht-van-heutszstraat-4": dict(
+        idx=0, kop="Clubhuis in een verscholen buurthuis in Utrecht",
+        gebouw="Van Heutszstraat 4 Utrecht (Lombok): laag gebouw uit 1959 midden in een bouwblok, 630 m² op één laag, plafond circa 3,5 m, "
+               "lange glasgevels naar een verwilderde binnentuin. Toegang via een poort en een steeg tussen de huizen.",
+        behoud="Het lage paviljoen met de glasgevels blijft; nieuw zijn triple glas in de bestaande ritmiek, lichtstraten, een houten terras "
+               "en een opgeknapte binnentuin met bomen. Gevel en daklijn zoals op de foto's.",
     ),
-    "tilburg-bredaseweg-443": dict(
-        idx=0, kop="Clubhuis in een villa op een landgoed",
-        gebouw="Kantoorvilla Bredaseweg 443 Tilburg: villa uit 1941 met een vleugel uit 2000, verbonden door een gang. "
-               "Op een bosrijk landgoed van circa 8.000 m² aan de rand van de Warande.",
-        behoud="Villa en vleugel blijven; nieuw is een glazen pui en een terras aan de bosrand. Verdieping en souterrain van de villa worden verhuurd.",
+    "den-bosch-rietveldenweg-13": dict(
+        idx=1, kop="Clubhuis in een showroom in Den Bosch",
+        gebouw="Rietveldenweg 13 's-Hertogenbosch: showroom uit 1966 met een donker bakstenen voorhuis aan de straat, 890 m² op één laag. "
+               "Binnen al afgewerkt met houten vloer, zwarte plafonds en stenen wanden. Voorterrein met klinkers.",
+        behoud="Voorhuis, showroomramen en de grote ruimte blijven; nieuw zijn het boekencafé achter de showroomramen, een terras met "
+               "plantenbakken op het voorterrein en veel groen binnen.",
+    ),
+    "den-bosch-eendenkooi-1a": dict(
+        idx=2, kop="Clubhuis in een sportgebouw aan het water",
+        gebouw="De Eendenkooi 1A 's-Hertogenbosch: sportgebouw uit 1977 met donkere gevelplaten en een verdieping, nu een sportschool. "
+               "Grote gymzaal, dansstudio met houten vloer, kleedkamers. Groene omgeving met bomen en water.",
+        behoud="Gevel, gymzaal, studio en kleedkamers blijven; nieuw zijn het boekencafé bij de entree in plaats van de balie, "
+               "werkplekken op de verdieping en veel planten. De rode huisstijl van de huidige sportschool verdwijnt.",
     ),
 }
 
@@ -114,7 +122,9 @@ def fotos(slug):
     if len(fs) < 3:
         raise SystemExit(f"{slug}: minimaal 3 echte foto's nodig in {map_} (nu {len(fs)}). Geen renderbord gemaakt.")
     out = []
-    for f in fs[:6]:
+    n = min(8, len(fs))
+    keuze = [fs[round(i * (len(fs) - 1) / (n - 1))] for i in range(n)] if n > 1 else fs
+    for f in keuze:
         im = Image.open(os.path.join(map_, f)).convert("RGB")
         im.thumbnail((1200, 900))
         buf = io.BytesIO()
@@ -145,13 +155,13 @@ td.r{{text-align:right;font-family:'DejaVu Sans Mono',monospace}} i{{display:inl
 </style></head><body><div class="w">
 <div><div style="font-size:20px;letter-spacing:.12em;text-transform:uppercase;color:#7a5a2a">Referentiebord voor renders · ledenclub</div>
 <h1>{cfg['kop']}</h1><p style="margin:8px 0 0;max-width:1900px">{cfg['gebouw']}</p></div>
-<div><h2>Huidige situatie: echte foto's</h2><div style="display:grid;grid-template-columns:repeat({min(3, len(foto_lijst))},1fr);gap:16px">{"".join(f'<div><img src="{u}"><div class="cap">{c}</div></div>' for u, c in foto_lijst)}</div></div>
+<div><h2>Huidige situatie: echte foto's</h2><div style="display:grid;grid-template-columns:repeat({min(4, len(foto_lijst))},1fr);gap:16px">{"".join(f'<div><img src="{u}"><div class="cap">{c}</div></div>' for u, c in foto_lijst)}</div></div>
 <div class="g2">
  <div><img src="{img('3d-nieuw')}"><div class="cap">Nieuwe situatie, vogelvlucht. Blokmodel: kleuren = zones, glas = pui, oranje lijnen = bestaande gevels. Buren in cyaan.</div></div>
  <div><img src="{img('3d-nieuw-laag')}"><div class="cap">Nieuwe situatie, laag gezichtspunt vanaf het terras.</div></div>
 </div>
 <div class="g3">
- <div><img src="{img('plattegrond')}"><div class="cap">Plattegrond nieuw (boven = binnen de kleurvlakken). Schaalbalk 10 m, noordpijl rechtsboven.</div></div>
+ <div><img src="{img('plattegrond')}"><div class="cap">Plattegrond nieuw: kleurvlakken zijn de zones. Schaalbalk 10 m, noordpijl rechtsboven.</div></div>
  <div style="display:grid;gap:20px;align-content:start">
   <div class="box"><h2>Zones</h2><table>{zones}</table>
    <p class="cap">Gebouw {F['L']:.0f} × {F['W']:.0f} m, hoogte circa {d['hoogte']:.0f} m, bouwjaar {d['bouwjaar']}. Gym: {q['gym_cap']} mensen tegelijk. Werken: {q['werk_cap']} plekken.</p></div>

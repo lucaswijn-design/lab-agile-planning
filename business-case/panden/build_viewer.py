@@ -20,8 +20,8 @@ from geo import frame, to_local  # noqa: E402
 from layout import AFGEVALLEN, LAYOUTS, STATUS, build  # noqa: E402
 import pand_case  # noqa: E402
 
-VOLGORDE = ["tilburg-bredaseweg-443"]  # alleen aanbod dat als te koop staat
-AFGEVALLEN_TONEN = ["boxtel-bosscheweg-85", "amersfoort-stadsring-103", "den-haag-pomonaplein-49"]
+VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a"]  # alleen aanbod dat op 13-11-2026 als te koop staat
+AFGEVALLEN_TONEN = ["bergen-op-zoom-bosstraat-38", "capelle-lentedans-50a", "amersfoort-computerweg-37", "helmond-mierloseweg-130", "dordrecht-houttuinen-32a", "amersfoort-stadsring-103", "boxtel-bosscheweg-85", "den-haag-pomonaplein-49"]
 
 
 def img_uri(path, size=768):
