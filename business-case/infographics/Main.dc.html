@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Wat is het Clubhuis</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Work+Sans:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#13261d}a:hover{color:#00703c}
+</style>
+</helmet>
+<div style="width: 1200px; height: 1600px; box-sizing: border-box; position: relative; overflow: hidden; background: #e7e9e1; color: #13261d; font-family: 'Work Sans', system-ui, sans-serif; padding: 72px 80px; display: flex; flex-direction: column; gap: 44px">
+  <div aria-hidden="true" style="position: absolute; right: -140px; top: -120px; width: 560px; height: 560px; border-radius: 50%; background: {{fluor}}; mix-blend-mode: multiply; opacity: 0.9"></div>
+  <div aria-hidden="true" style="position: absolute; right: 60px; top: 140px; width: 420px; height: 420px; border-radius: 50%; background: {{green}}; mix-blend-mode: multiply; opacity: 0.85"></div>
+  <div aria-hidden="true" style="position: absolute; right: -40px; top: 40px; width: 640px; height: 640px; background-image: radial-gradient(#13261d 1.4px, transparent 1.6px); background-size: 14px 14px; opacity: 0.18"></div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 18px; max-width: 700px">
+    <div style="font-family: 'Space Mono', monospace; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase">Werktitel · ledenclub</div>
+    <h1 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 104px; line-height: 0.92; letter-spacing: -0.02em">Het Club&#173;huis</h1>
+    <p style="margin: 0; font-size: 30px; line-height: 1.3; font-weight: 500">Alles wat je eigenlijk elke dag zou willen doen, op één plek. Werken, trainen, lezen en goede koffie. En je bent mede-eigenaar.</p>
+  </div>
+
+  <div style="position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; margin-top: 12px">
+    <div style="background: #13261d; color: #e7e9e1; padding: 26px 22px; display: flex; flex-direction: column; gap: 14px; min-height: 250px">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e7e9e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"></path><path d="M4 19a2 2 0 0 0 2 2h13"></path><path d="M9 7h6"></path></svg>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Boeken&#173;café</div>
+      <div style="font-size: 19px; line-height: 1.4">1.500 boeken, leesfauteuils, sfeerhaard. Espresso uit een 3-groeps machine, op streepjes tegen inkoopprijs.</div>
+    </div>
+    <div style="background: #13261d; color: #e7e9e1; padding: 26px 22px; display: flex; flex-direction: column; gap: 14px">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e7e9e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="11" rx="1"></rect><path d="M8 20h8"></path><path d="M12 15v5"></path></svg>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Werk&#173;plekken</div>
+      <div style="font-size: 19px; line-height: 1.4">Zit-sta bureaus met twee schermen, in losse eilandjes. Een lange werktafel, een raambar en belcellen.</div>
+    </div>
+    <div style="background: #13261d; color: #e7e9e1; padding: 26px 22px; display: flex; flex-direction: column; gap: 14px">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e7e9e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9v6"></path><path d="M6 7v10"></path><path d="M6 12h12"></path><path d="M18 7v10"></path><path d="M21 9v6"></path></svg>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Gym</div>
+      <div style="font-size: 19px; line-height: 1.4">Racks, halters, roeiers en kettlebells. Geen overvolle zaal en geen apparaten die je toch niet gebruikt.</div>
+    </div>
+    <div style="background: #13261d; color: #e7e9e1; padding: 26px 22px; display: flex; flex-direction: column; gap: 14px">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#e7e9e1" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 19c0-8 6-14 15-14-1 9-6 15-14 15"></path><path d="M5 19l7-7"></path></svg>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 30px; line-height: 1">Groen</div>
+      <div style="font-size: 19px; line-height: 1.4">Planten en bomen binnen, daglicht, een terras of tuin om buiten te werken. Rust in plaats van stadsdrukte.</div>
+    </div>
+  </div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 20px">
+    <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 46px">Hoe het werkt</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 3px solid #13261d">
+      <div style="padding: 22px 22px 0 0; display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 44px; color: #13261d"><span style="background: {{fluor}}; padding: 0 8px">1</span></div>
+        <div style="font-size: 21px; line-height: 1.4"><strong>Leden leggen in</strong> en betalen een vast bedrag per maand.</div>
+      </div>
+      <div style="padding: 22px 22px 0 0; display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 44px"><span style="background: {{fluor}}; padding: 0 8px">2</span></div>
+        <div style="font-size: 21px; line-height: 1.4"><strong>De coöperatie koopt</strong> een bestaand pand van circa 600 m² en verbouwt het zelf.</div>
+      </div>
+      <div style="padding: 22px 22px 0 0; display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 44px"><span style="background: {{fluor}}; padding: 0 8px">3</span></div>
+        <div style="font-size: 21px; line-height: 1.4"><strong>De bijdragen lossen af.</strong> Elk jaar groeit het aandeel van ieder lid.</div>
+      </div>
+      <div style="padding: 22px 0 0 0; display: flex; flex-direction: column; gap: 10px">
+        <div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 44px"><span style="background: {{fluor}}; padding: 0 8px">4</span></div>
+        <div style="font-size: 21px; line-height: 1.4"><strong>Na 4 tot 7 jaar schuldvrij.</strong> Daarna betaal je alleen nog de vaste lasten.</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px">
+    <div style="border: 3px solid #13261d; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase">Wie</div>
+      <div style="font-size: 23px; line-height: 1.45"><strong>60 eigenaren</strong>, vol of deeltijd, die samen het pand bezitten. Daarnaast <strong>60 tot 90 clubleden</strong> zonder aandeel voor gym, café en bieb. Toelating via een motivatiebrief en kennismaking.</div>
+    </div>
+    <div style="border: 3px solid #13261d; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase">Waar</div>
+      <div style="font-size: 23px; line-height: 1.45">Een bestaand pand met karakter in de Randstad, Utrecht of Brabant: een oud buurthuis, showroom of hal. Industrieel gelaten, groen ingericht. Nu in beeld: een verscholen buurthuis met binnentuin in Utrecht-Lombok.</div>
+    </div>
+  </div>
+
+  <div style="position: relative; margin-top: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); background: {{green}}; color: #13261d">
+    <div style="padding: 22px 24px; border-right: 2px solid #13261d"><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 46px">600 m²</div><div style="font-size: 18px">club in een bestaand pand</div></div>
+    <div style="padding: 22px 24px; border-right: 2px solid #13261d"><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 46px">€ 1,4 mln</div><div style="font-size: 18px">alles in, rekenmodel Utrecht</div></div>
+    <div style="padding: 22px 24px; border-right: 2px solid #13261d"><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 46px">60</div><div style="font-size: 18px">eigenaren, samen eigenaar</div></div>
+    <div style="padding: 22px 24px"><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 46px">4 à 7 jr</div><div style="font-size: 18px">tot het pand schuldvrij is</div></div>
+  </div>
+  <div style="position: relative; font-family: 'Space Mono', monospace; font-size: 14px; margin-top: -24px">Rekenmodel november 2026. Bedragen zijn indicatief en geen aanbod.</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"green":{"editor":"color","default":"#00a95c","options":["#00a95c","#2f8f6a","#7cc576"]},"fluor":{"editor":"color","default":"#ff6c2f","options":["#ff6c2f","#ff48b0","#ffe800"]},"$preview":{"width":1200,"height":1600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { green: this.props.green ?? '#00a95c', fluor: this.props.fluor ?? '#ff6c2f' };
+  }
+}
+</script>
+</body>
+</html>

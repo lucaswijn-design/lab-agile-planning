@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Bouwplan Clubhuis</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Work+Sans:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#13261d}a:hover{color:#00703c}
+</style>
+</helmet>
+<div style="width: 1200px; height: 1600px; box-sizing: border-box; position: relative; overflow: hidden; background: #e7e9e1; color: #13261d; font-family: 'Work Sans', system-ui, sans-serif; padding: 60px 70px; display: flex; flex-direction: column; gap: 30px">
+  <div aria-hidden="true" style="position: absolute; left: -160px; bottom: -180px; width: 520px; height: 520px; border-radius: 50%; background: {{green}}; mix-blend-mode: multiply; opacity: 0.35"></div>
+
+  <div style="position: relative; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <div style="display: flex; flex-direction: column; gap: 10px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 16px; letter-spacing: 0.14em; text-transform: uppercase">Voor jezelf · werkblad</div>
+      <h1 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 76px; line-height: 0.95">Bouwplan Clubhuis</h1>
+    </div>
+    <div style="font-size: 18px; line-height: 1.4; max-width: 360px; text-align: right">Rekenvoorbeeld: Van Heutszstraat 4, Utrecht. 60 eigenaren, 90 clubleden, verbouw in eigen beheer.</div>
+  </div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 12px">
+    <div style="display: flex; justify-content: space-between; align-items: baseline">
+      <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px">Wat erin zit</h2>
+      <div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 30px">€ 1.349.622</div>
+    </div>
+    <div style="display: flex; height: 64px; border: 3px solid #13261d">
+      <div style="width: 55.5%; background: #13261d; color: #e7e9e1; display: flex; align-items: center; padding: 0 14px; font-weight: 600; font-size: 18px">Pand + overdrachtsbelasting</div>
+      <div style="width: 19.7%; background: {{fluor}}; display: flex; align-items: center; padding: 0 10px; font-weight: 600; font-size: 17px; border-left: 3px solid #13261d">Verbouw</div>
+      <div style="width: 8.5%; background: {{green}}; border-left: 3px solid #13261d"></div>
+      <div style="width: 3.9%; background: #b9c4b3; border-left: 3px solid #13261d"></div>
+      <div style="width: 12.4%; background: #e7e9e1; border-left: 3px solid #13261d; background-image: repeating-linear-gradient(45deg, #13261d 0 2px, transparent 2px 9px)"></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; font-size: 16px; line-height: 1.35">
+      <div><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 20px">€ 749.680</div>Pand € 670.000 + 10,4% overdrachtsbelasting + notaris</div>
+      <div><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 20px">€ 265.413</div>Isolatie, glas, sanitair, installaties, licht</div>
+      <div><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 20px">€ 115.368</div>Werkplekken, gym, boekencafé en bieb</div>
+      <div><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 20px">€ 52.200</div>Zonnepanelen, batterij, terras en tuin</div>
+      <div><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 20px">€ 166.961</div>Tekeningen, vergunning, afbouwmanager, onvoorzien</div>
+    </div>
+    <div style="font-size: 17px; line-height: 1.4; margin-top: 4px">Lopende kosten <strong>€ 121.362 per jaar</strong>, waarvan schoonmaak € 31.200 en jouw management € 18.000. Jij verdient daarnaast 3% projectleiding over de verbouw.</div>
+  </div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px">Wat er geregeld moet worden</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px">
+      <div style="background: #13261d; color: #e7e9e1; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Pand</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px; opacity: 0.8">jij + makelaar</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ Status en bestemming navragen<br>☐ Bezichtigen met afbouwmanager<br>☐ Bouwkundige keuring + asbest<br>☐ Bod onder voorbehoud</div>
+      </div>
+      <div style="background: #13261d; color: #e7e9e1; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Leden</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px; opacity: 0.8">jij</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ Landingspagina + 30 gesprekken<br>☐ 50 intentieverklaringen<br>☐ Ballotage founding members<br>☐ 120 harde toezeggingen</div>
+      </div>
+      <div style="background: #13261d; color: #e7e9e1; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Gemeente</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px; opacity: 0.8">jij + architect</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ Principeverzoek club<br>☐ Omgevingsvergunning verbouw<br>☐ Melding brandveilig gebruik<br>☐ Afspraken parkeren en fietsen</div>
+      </div>
+      <div style="background: #13261d; color: #e7e9e1; padding: 18px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Juridisch</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px; opacity: 0.8">notaris + fiscalist</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ Coöperatie U.A. + statuten<br>☐ Uittreding en overdrachtsprijs<br>☐ Btw-verdeling bevestigen<br>☐ AFM-check inleg</div>
+      </div>
+      <div style="border: 3px solid #13261d; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Financiering</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px">bank</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ Plan naar Triodos en Rabobank<br>☐ Lening onder 60%<br>☐ Inleg op derdengeldenrekening<br>☐ CAR-verzekering</div>
+      </div>
+      <div style="border: 3px solid #13261d; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Ontwerp en bouw</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px">interieurarchitect + afbouwmanager</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ Tekeningen en interieurplan<br>☐ Zzp'ers per vak inplannen<br>☐ Inkoop zelf doen<br>☐ 5 maanden verbouw</div>
+      </div>
+      <div style="border: 3px solid #13261d; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Inrichting</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px">jij + leden</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ 1.500 boeken verzamelen<br>☐ Espressomachine + molens<br>☐ Racks, roeiers, sportvloer<br>☐ Planten en bomen</div>
+      </div>
+      <div style="border: 3px solid #13261d; padding: 16px; display: flex; flex-direction: column; gap: 8px">
+        <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px">Draaien</div>
+        <div style="font-family: 'Space Mono', monospace; font-size: 13px">jij</div>
+        <div style="font-size: 16px; line-height: 1.5">☐ Toegangsapp en huisregels<br>☐ Schoonmaak 5 dagen<br>☐ Koffie op streepjes<br>☐ Events en community</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 12px">
+    <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px">Volgorde en beslismomenten</h2>
+    <div style="display: grid; grid-template-columns: 3fr 3fr 5fr 1.4fr; border: 3px solid #13261d">
+      <div style="padding: 14px 16px; background: {{green}}; border-right: 3px solid #13261d"><div style="font-family: 'Space Mono', monospace; font-size: 14px">maand 0 tot 3</div><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px">Valideren</div></div>
+      <div style="padding: 14px 16px; background: #b9c4b3; border-right: 3px solid #13261d"><div style="font-family: 'Space Mono', monospace; font-size: 14px">maand 3 tot 6</div><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px">Kopen en regelen</div></div>
+      <div style="padding: 14px 16px; background: {{fluor}}; border-right: 3px solid #13261d"><div style="font-family: 'Space Mono', monospace; font-size: 14px">maand 6 tot 11</div><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px">Verbouwen</div></div>
+      <div style="padding: 14px 16px; background: #13261d; color: #e7e9e1"><div style="font-family: 'Space Mono', monospace; font-size: 14px">maand 12</div><div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 24px">Open</div></div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; font-size: 17px; line-height: 1.4">
+      <div><strong style="font-family: 'Space Mono', monospace">STOP/DOOR 1</strong><br>Pand echt te koop, keuring en asbest in orde</div>
+      <div><strong style="font-family: 'Space Mono', monospace">STOP/DOOR 2</strong><br>120 harde toezeggingen met inleg geparkeerd</div>
+      <div><strong style="font-family: 'Space Mono', monospace">STOP/DOOR 3</strong><br>Gemeente akkoord met club in dit pand</div>
+      <div><strong style="font-family: 'Space Mono', monospace">STOP/DOOR 4</strong><br>Bank akkoord, lening onder 60%</div>
+    </div>
+  </div>
+
+  <div style="position: relative; margin-top: auto; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 3px solid #13261d; padding-top: 14px; font-size: 16px; line-height: 1.4">
+    <div><strong>Grootste risico's</strong></div>
+    <div>Pand al verkocht of bestemming past niet</div>
+    <div>Te weinig leden vooraf</div>
+    <div>Verbouw duurder door asbest of installaties</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"green":{"editor":"color","default":"#00a95c","options":["#00a95c","#2f8f6a","#7cc576"]},"fluor":{"editor":"color","default":"#ff6c2f","options":["#ff6c2f","#ff48b0","#ffe800"]},"$preview":{"width":1200,"height":1600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { green: this.props.green ?? '#00a95c', fluor: this.props.fluor ?? '#ff6c2f' };
+  }
+}
+</script>
+</body>
+</html>

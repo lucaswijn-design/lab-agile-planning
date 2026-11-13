@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>Word lid van het Clubhuis</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&amp;family=Work+Sans:wght@400;500;600&amp;family=Space+Mono:wght@400;700&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#13261d}a:hover{color:#00703c}
+</style>
+</helmet>
+<div style="width: 1200px; height: 1600px; box-sizing: border-box; position: relative; overflow: hidden; background: #13261d; color: #e7e9e1; font-family: 'Work Sans', system-ui, sans-serif; padding: 70px 80px; display: flex; flex-direction: column; gap: 40px">
+  <div aria-hidden="true" style="position: absolute; left: 520px; top: -200px; width: 760px; height: 760px; border-radius: 50%; background: {{fluor}}; opacity: 0.95"></div>
+  <div aria-hidden="true" style="position: absolute; left: 760px; top: 160px; width: 520px; height: 520px; border-radius: 50%; background: {{green}}; mix-blend-mode: multiply; opacity: 0.9"></div>
+  <div aria-hidden="true" style="position: absolute; left: 600px; top: -60px; width: 640px; height: 640px; background-image: radial-gradient(#13261d 1.6px, transparent 1.8px); background-size: 15px 15px; opacity: 0.35"></div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 20px; max-width: 640px">
+    <div style="font-family: 'Space Mono', monospace; font-size: 18px; letter-spacing: 0.14em; text-transform: uppercase">Het Clubhuis · 60 founding plekken</div>
+    <h1 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 96px; line-height: 0.92; letter-spacing: -0.02em">Je dag, op je eigen plek.</h1>
+    <p style="margin: 0; font-size: 28px; line-height: 1.35">Werk aan je eigen bureau, train zonder te wachten op een rek, lees een uur bij de haard met een goede cappuccino. In een huis dat je samen met 59 anderen bezit.</p>
+  </div>
+
+  <div style="position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 16px">
+    <div style="background: #e7e9e1; color: #13261d; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">Eigenaar</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 54px; line-height: 1">€ 450<span style="font-size: 22px; font-weight: 700"> /mnd</span></div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 17px; font-weight: 700">+ € 15.000 inleg · 1 aandeel</div>
+      <div style="font-size: 19px; line-height: 1.5">Werkplek 5 dagen per week<br>Gym, café, bieb, tuin<br>Stem in de ledenvergadering<br>Sauna? Nee. Wel een haard.</div>
+    </div>
+    <div style="background: #e7e9e1; color: #13261d; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px; outline: 6px solid {{fluor}}; outline-offset: -6px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">Deeltijd-eigenaar</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 54px; line-height: 1">€ 320<span style="font-size: 22px; font-weight: 700"> /mnd</span></div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 17px; font-weight: 700">+ € 9.000 inleg · 0,6 aandeel</div>
+      <div style="font-size: 19px; line-height: 1.5">Werkplek 3 dagen naar keuze<br>Gym, café, bieb, tuin<br>Stem in de ledenvergadering<br>Altijd overal toegang</div>
+    </div>
+    <div style="background: #e7e9e1; color: #13261d; padding: 28px 24px; display: flex; flex-direction: column; gap: 14px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">Clublid</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 54px; line-height: 1">€ 119<span style="font-size: 22px; font-weight: 700"> /mnd</span></div>
+      <div style="font-family: 'Space Mono', monospace; font-size: 17px; font-weight: 700">geen inleg · geen aandeel</div>
+      <div style="font-size: 19px; line-height: 1.5">Gym zonder drukte<br>Boekencafé en stille bieb<br>Koffie tegen inkoopprijs<br>Studio en events</div>
+    </div>
+  </div>
+
+  <div style="position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px">
+    <div style="border: 3px solid #e7e9e1; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">Los zou je betalen</div>
+      <div style="display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; font-size: 21px">
+        <div>Flexplek in de stad</div><div style="font-family: 'Space Mono', monospace">€ 150 tot 200</div>
+        <div>Sportschool</div><div style="font-family: 'Space Mono', monospace">€ 50 tot 80</div>
+        <div>15 cappuccino's bij de barista</div><div style="font-family: 'Space Mono', monospace">€ 68</div>
+        <div style="font-weight: 600; border-top: 2px solid #e7e9e1; padding-top: 8px">Samen</div><div style="font-family: 'Space Mono', monospace; font-weight: 700; border-top: 2px solid #e7e9e1; padding-top: 8px">€ 268 tot 348</div>
+      </div>
+      <div style="font-size: 18px; line-height: 1.4">En dan heb je nog geen bibliotheek, tuin, studio of mensen om je heen die je kent.</div>
+    </div>
+    <div style="background: {{green}}; color: #13261d; padding: 26px 28px; display: flex; flex-direction: column; gap: 12px">
+      <div style="font-family: 'Space Mono', monospace; font-size: 15px; letter-spacing: 0.1em; text-transform: uppercase">Je bouwt eigendom op</div>
+      <div style="font-family: 'Syne', sans-serif; font-weight: 800; font-size: 50px; line-height: 1">± € 17.000</div>
+      <div style="font-size: 20px; line-height: 1.45">aan eigen vermogen per vol aandeel na 5 jaar, in het rekenvoorbeeld. Als het pand is afgelost, betaal je alleen nog de vaste lasten: rond € 100 per maand.</div>
+      <div style="font-size: 16px; line-height: 1.4">Wie stopt, verkoopt zijn aandeel tegen een vaste formule aan iemand van de wachtlijst.</div>
+    </div>
+  </div>
+
+  <div style="position: relative; display: flex; flex-direction: column; gap: 16px">
+    <h2 style="margin: 0; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 40px">Zo word je founding member</h2>
+    <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 3px solid #e7e9e1">
+      <div style="padding: 18px 20px 0 0; font-size: 20px; line-height: 1.4"><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 34px; color: {{fluor}}">1</div>Schrijf een korte motivatiebrief</div>
+      <div style="padding: 18px 20px 0 0; font-size: 20px; line-height: 1.4"><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 34px; color: {{fluor}}">2</div>Kennismaken bij een kop koffie</div>
+      <div style="padding: 18px 20px 0 0; font-size: 20px; line-height: 1.4"><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 34px; color: {{fluor}}">3</div>Inleg veilig bij de notaris tot de club doorgaat</div>
+      <div style="padding: 18px 0 0 0; font-size: 20px; line-height: 1.4"><div style="font-family: 'Space Mono', monospace; font-weight: 700; font-size: 34px; color: {{fluor}}">4</div>Bij 120 toezeggingen gaan we kopen</div>
+    </div>
+  </div>
+
+  <div style="position: relative; margin-top: auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 24px">
+    <div style="background: {{fluor}}; color: #13261d; padding: 22px 30px; font-family: 'Syne', sans-serif; font-weight: 800; font-size: 34px">Interesse? [JOUW E-MAIL]</div>
+    <div style="font-family: 'Space Mono', monospace; font-size: 13px; line-height: 1.5; max-width: 420px; text-align: right">Rekenvoorbeeld november 2026, geen aanbod van effecten. Bedragen zijn indicatief en definitief bij oprichting van de coöperatie.</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"green":{"editor":"color","default":"#00a95c","options":["#00a95c","#2f8f6a","#7cc576"]},"fluor":{"editor":"color","default":"#ff6c2f","options":["#ff6c2f","#ff48b0","#ffe800"]},"$preview":{"width":1200,"height":1600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return { green: this.props.green ?? '#00a95c', fluor: this.props.fluor ?? '#ff6c2f' };
+  }
+}
+</script>
+</body>
+</html>
