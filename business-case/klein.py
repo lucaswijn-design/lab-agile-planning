@@ -47,6 +47,7 @@ class K:
     management: float = 18_000  # initiatiefnemer, ~0,2 fte
     dev_fee: float = 0.03
     woning: float = -1  # netto opbrengst woning; -1 = standaard van de locatie
+    gym_containers: bool = False  # gym in 2 gekoppelde containerunits van 3 x 12 m in plaats van in de schuur
 
 
 def programma(k: K) -> dict:
@@ -56,7 +57,7 @@ def programma(k: K) -> dict:
     m2 = dict(
         werkplekken=desks * 5.5,
         vergaderruimte=25,
-        gym=max(80, 0.6 * tot),  # ~6% tegelijk x 10 m2
+        gym=0 if k.gym_containers else max(80, 0.6 * tot),  # ~6% tegelijk x 10 m2
         kleedruimte_douches=30 + 0.15 * tot,
         koffie_lounge_bieb=60 + 0.4 * eig + 0.2 * k.n_club,
         toiletten=15,
@@ -88,10 +89,13 @@ def capex(k: K):
     add("Buiten", "Natuur: bomen, maaipaden, poel (extensief)", 1 + k.extra_ha - 0.4, "ha", 15_000, "schatting")
     add("Buiten", "Overdekte veranda met buitenwerkplekken", 1, "post", 18_000, "schatting")
     add("Buiten", "Buitengym (rig, kettlebells)", 1, "post", 8_000, "schatting")
+    add("Buiten", "Parkeerplaatsen halfverharding (25 m2 x EUR 40)", math.ceil(0.27 * p["leden_totaal"]), "plek", 1_000, "schatting")
     add("Wellness", "Houtgestookte saunahut 10 pers.", p["saunas"], "st", 30_000, "schatting")
     add("Wellness", "Dompelbad zonder koeling", 1, "st", 3_000, "schatting")
     add("Wellness", "Houtgestookte hot tub", 1, "st", 7_000, "schatting")
     add("Wellness", "Buitendouche en vlonders", 1, "post", 8_000, "schatting")
+    if k.gym_containers:
+        add("Gym", "Containerunit 3 x 12 m, ombouw (isolatie, glazen pui, elektra, airco)", 2, "st", 30_000, "schatting")
     add("Gym", "Racks met halters en schijven (refurbished)", 2, "st", 4_000, "schatting")
     add("Gym", "Dumbbells, bankjes, kabelstation", 1, "post", 10_000, "schatting")
     add("Gym", "Cardio (2 roeiers, airbike, skierg)", 1, "post", 7_000, "schatting")
@@ -200,6 +204,33 @@ def run(k: K):
                 capex_rows=cx, opex_rows=ox)
 
 
+def exit_na_5(k: K, huur_kantoor=110, bar_kantoor=0.085, huur_slb=120_000, bar_slb=0.075, multiple=6):
+    """Waarde bij verkoop na 5 jaar en wat er per vol aandeel naar leden gaat."""
+    r = run(k)
+    over = r["omzet_eig"] + r["omzet_club"] - r["opex"]
+    s_ann = s_vers = r["lening"]
+    for _ in range(5):
+        s_ann = s_ann * (1 + k.rente) - r["jaarlast"]
+        s_vers = max(0.0, s_vers * (1 + k.rente) - over)
+    groei = 1.03 ** 5  # grondwaarde +3% per jaar [schatting]
+    ha = 1 + k.extra_ha
+    w = {
+        "Verkoop als kantoor of bedrijfsruimte": r["prog"]["m2"] * huur_kantoor / bar_kantoor + ha * LOC[k.loc]["ha"] * groei,
+        "Lopende club verkopen aan een exploitant": multiple * over,
+        "Sale-and-leaseback: belegger koopt, club huurt": huur_slb / bar_slb,
+        "Noodverkoop: grond plus schuur als opslag": ha * LOC[k.loc]["ha"] * groei + r["prog"]["m2"] * 400,
+    }
+    aandelen = k.n_vol + 0.6 * k.n_deel
+    rows = []
+    for naam, waarde in w.items():
+        netto = waarde * 0.975  # makelaar en notaris 2,5%
+        rows.append(dict(exit=naam, waarde=round(waarde),
+                         per_vol_annuitair=round((netto - s_ann) / aandelen),
+                         per_vol_versneld=round((netto - s_vers) / aandelen)))
+    return dict(capex=r["capex"], restschuld_annuitair=round(s_ann), restschuld_versneld=round(s_vers),
+                ebitda=round(over), rows=rows)
+
+
 if __name__ == "__main__":
     out = {}
     base = run(K())
@@ -226,6 +257,7 @@ if __name__ == "__main__":
         "Advies 495/350": K(fee_vol=495, fee_deel=350),
         "Tegenvaller: 495/350, 30 club, bouw 1.600, woning 400k": K(fee_vol=495, fee_deel=350, n_club=30, bouw_m2=1_600, woning=400_000),
         "Geen inleg, 595/425": K(inleg_vol=0, inleg_deel=0),
+        "Advies + gym in 2 containers": K(fee_vol=495, fee_deel=350, gym_containers=True),
     }
     for naam, kk in cases.items():
         r = run(kk)
@@ -233,5 +265,10 @@ if __name__ == "__main__":
                                          "fee_vol_nodig", "fee_deel_nodig", "fee_vol_na_aflossing", "ev_vol_5j")}
         print(naam, var[naam])
     out["varianten"] = var
+    ex = exit_na_5(K(fee_vol=495, fee_deel=350))
+    out["exit"] = ex
+    print("\n=== Exit na 5 jaar (advies 495/350) ===", {k_: v for k_, v in ex.items() if k_ != "rows"})
+    for row in ex["rows"]:
+        print(row)
     with open("business-case/resultaten_klein.json", "w") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)

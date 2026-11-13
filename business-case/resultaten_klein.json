@@ -19,7 +19,8 @@
    "schoonmaak_dagen": 4,
    "management": 18000,
    "dev_fee": 0.03,
-   "woning": -1
+   "woning": -1,
+   "gym_containers": false
   },
   "prog": {
    "desks": 30,
@@ -40,22 +41,22 @@
    "bat": 48,
    "saunas": 1
   },
-  "capex": 2224401,
-  "opex": 134636,
+  "capex": 2267800,
+  "opex": 135327,
   "inleg": 960000,
-  "lening": 1264401,
-  "ltv": 0.57,
-  "jaarlast": 105804,
+  "lening": 1307800,
+  "ltv": 0.58,
+  "jaarlast": 109436,
   "omzet_eig": 295627,
   "omzet_club": 82675,
-  "resultaat": 137862,
-  "dscr": 2.3,
+  "resultaat": 133539,
+  "dscr": 2.22,
   "jaren_schuldvrij": 7,
-  "fee_vol_nodig": 318,
-  "fee_deel_nodig": 227,
-  "ev_vol_5j": 24216,
-  "ev_deel_5j": 14530,
-  "fee_vol_na_aflossing": 105,
+  "fee_vol_nodig": 326,
+  "fee_deel_nodig": 233,
+  "ev_vol_5j": 24361,
+  "ev_deel_5j": 14617,
+  "fee_vol_na_aflossing": 106,
   "capex_rows": [
    {
     "groep": "Grond",
@@ -145,6 +146,15 @@
     "e": "post",
     "prijs": 8000,
     "totaal": 8000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Parkeerplaatsen halfverharding (25 m2 x EUR 40)",
+    "h": 33,
+    "e": "plek",
+    "prijs": 1000,
+    "totaal": 33000,
     "label": "schatting"
    },
    {
@@ -321,10 +331,10 @@
    {
     "groep": "Bijkomend",
     "post": "Architect, constructeur, installatieadvies (8%)",
-    "h": 977830,
+    "h": 1010830,
     "e": "EUR",
     "prijs": 0.08,
-    "totaal": 78226,
+    "totaal": 80866,
     "label": "schatting"
    },
    {
@@ -339,10 +349,10 @@
    {
     "groep": "Bijkomend",
     "post": "Leges omgevingsvergunning (~3%)",
-    "h": 977830,
+    "h": 1010830,
     "e": "EUR",
     "prijs": 0.03,
-    "totaal": 29335,
+    "totaal": 30325,
     "label": "schatting"
    },
    {
@@ -357,28 +367,28 @@
    {
     "groep": "Bijkomend",
     "post": "Ontwikkelvergoeding initiatiefnemer",
-    "h": 977830,
+    "h": 1010830,
     "e": "EUR",
     "prijs": 0.03,
-    "totaal": 29335,
+    "totaal": 30325,
     "label": "aanname"
    },
    {
     "groep": "Bijkomend",
     "post": "Onvoorzien (12% excl. grond)",
-    "h": 1199726,
+    "h": 1237346,
     "e": "EUR",
     "prijs": 0.12,
-    "totaal": 143967,
+    "totaal": 148482,
     "label": "schatting"
    },
    {
     "groep": "Bijkomend",
     "post": "Bouwrente en afsluitkosten (3%)",
-    "h": 2159613,
+    "h": 2201748,
     "e": "EUR",
     "prijs": 0.03,
-    "totaal": 64788,
+    "totaal": 66052,
     "label": "schatting"
    }
   ],
@@ -421,7 +431,7 @@
    },
    {
     "post": "Onderhoud gebouw en terrein (1,5%)",
-    "bedrag": 11617,
+    "bedrag": 12112,
     "label": "schatting",
     "t": ""
    },
@@ -433,13 +443,13 @@
    },
    {
     "post": "Verzekeringen",
-    "bedrag": 2445,
+    "bedrag": 2527,
     "label": "schatting",
     "t": ""
    },
    {
     "post": "OZB, waterschap, riool",
-    "bedrag": 3896,
+    "bedrag": 3977,
     "label": "schatting",
     "t": ""
    },
@@ -469,7 +479,7 @@
    },
    {
     "post": "Onvoorzien exploitatie (5%)",
-    "bedrag": 6411,
+    "bedrag": 6444,
     "label": "schatting",
     "t": ""
    }
@@ -477,148 +487,192 @@
  },
  "varianten": {
   "B koop, 30 vol + 30 deel + 60 club": {
-   "capex": 2224401,
-   "lening": 1264401,
-   "ltv": 0.57,
-   "dscr": 2.3,
-   "resultaat": 137862,
+   "capex": 2267800,
+   "lening": 1307800,
+   "ltv": 0.58,
+   "dscr": 2.22,
+   "resultaat": 133539,
    "jaren_schuldvrij": 7,
-   "fee_vol_nodig": 318,
-   "fee_deel_nodig": 227,
-   "fee_vol_na_aflossing": 105,
-   "ev_vol_5j": 24216
+   "fee_vol_nodig": 326,
+   "fee_deel_nodig": 233,
+   "fee_vol_na_aflossing": 106,
+   "ev_vol_5j": 24361
   },
   "B koop, 50 vol, geen clubleden": {
-   "capex": 2157521,
-   "lening": 1157521,
+   "capex": 2175933,
+   "lening": 1175933,
    "ltv": 0.54,
-   "dscr": 1.58,
-   "resultaat": 56360,
+   "dscr": 1.55,
+   "resultaat": 54526,
    "jaren_schuldvrij": 11,
-   "fee_vol_nodig": 478,
-   "fee_deel_nodig": 342,
+   "fee_vol_nodig": 482,
+   "fee_deel_nodig": 344,
    "fee_vol_na_aflossing": 278,
-   "ev_vol_5j": 23706
+   "ev_vol_5j": 23764
   },
   "B koop, 25 vol + 25 deel + 0 club": {
-   "capex": 2093937,
-   "lening": 1293937,
+   "capex": 2112349,
+   "lening": 1312349,
    "ltv": 0.62,
-   "dscr": 1.06,
-   "resultaat": 6096,
+   "dscr": 1.04,
+   "resultaat": 4261,
    "jaren_schuldvrij": 19,
-   "fee_vol_nodig": 580,
-   "fee_deel_nodig": 414,
+   "fee_vol_nodig": 585,
+   "fee_deel_nodig": 418,
    "fee_vol_na_aflossing": 319,
-   "ev_vol_5j": 25178
+   "ev_vol_5j": 25251
   },
   "B koop, 30+30 + 90 club": {
-   "capex": 2305006,
-   "lening": 1345006,
-   "ltv": 0.58,
-   "dscr": 2.49,
-   "resultaat": 168051,
-   "jaren_schuldvrij": 6,
-   "fee_vol_nodig": 257,
-   "fee_deel_nodig": 183,
-   "fee_vol_na_aflossing": 30,
-   "ev_vol_5j": 24485
+   "capex": 2358926,
+   "lening": 1398926,
+   "ltv": 0.59,
+   "dscr": 2.39,
+   "resultaat": 162681,
+   "jaren_schuldvrij": 7,
+   "fee_vol_nodig": 268,
+   "fee_deel_nodig": 191,
+   "fee_vol_na_aflossing": 32,
+   "ev_vol_5j": 24665
   },
   "C koop, 30+30 + 60 club": {
-   "capex": 1978067,
-   "lening": 1018067,
-   "ltv": 0.51,
-   "dscr": 2.87,
-   "resultaat": 159090,
-   "jaren_schuldvrij": 5,
-   "fee_vol_nodig": 275,
-   "fee_deel_nodig": 196,
-   "fee_vol_na_aflossing": 103,
-   "ev_vol_5j": 23395
+   "capex": 2021466,
+   "lening": 1061466,
+   "ltv": 0.53,
+   "dscr": 2.74,
+   "resultaat": 154767,
+   "jaren_schuldvrij": 6,
+   "fee_vol_nodig": 284,
+   "fee_deel_nodig": 203,
+   "fee_vol_na_aflossing": 105,
+   "ev_vol_5j": 23540
   },
   "A koop, 30+30 + 60 club": {
-   "capex": 2774257,
-   "lening": 1814257,
-   "ltv": 0.65,
-   "dscr": 1.6,
-   "resultaat": 90476,
-   "jaren_schuldvrij": 10,
-   "fee_vol_nodig": 413,
-   "fee_deel_nodig": 295,
-   "fee_vol_na_aflossing": 107,
-   "ev_vol_5j": 26050
+   "capex": 2817656,
+   "lening": 1857656,
+   "ltv": 0.66,
+   "dscr": 1.55,
+   "resultaat": 86153,
+   "jaren_schuldvrij": 11,
+   "fee_vol_nodig": 422,
+   "fee_deel_nodig": 301,
+   "fee_vol_na_aflossing": 109,
+   "ev_vol_5j": 26195
   },
   "B huur, 30+30 + 60 club": {
-   "capex": 1384004,
-   "lening": 424004,
-   "ltv": 0.31,
-   "dscr": 5.15,
-   "resultaat": 147285,
+   "capex": 1427403,
+   "lening": 467403,
+   "ltv": 0.33,
+   "dscr": 4.66,
+   "resultaat": 142962,
    "jaren_schuldvrij": 3,
-   "fee_vol_nodig": 299,
-   "fee_deel_nodig": 213,
-   "fee_vol_na_aflossing": 227,
-   "ev_vol_5j": 21414
+   "fee_vol_nodig": 307,
+   "fee_deel_nodig": 219,
+   "fee_vol_na_aflossing": 229,
+   "ev_vol_5j": 21559
   },
   "B koop, bouw 1.600/m2": {
-   "capex": 2484266,
-   "lening": 1524266,
-   "ltv": 0.61,
-   "dscr": 1.88,
-   "resultaat": 111976,
+   "capex": 2527664,
+   "lening": 1567664,
+   "ltv": 0.62,
+   "dscr": 1.82,
+   "resultaat": 107655,
    "jaren_schuldvrij": 9,
-   "fee_vol_nodig": 370,
-   "fee_deel_nodig": 264,
-   "fee_vol_na_aflossing": 113,
-   "ev_vol_5j": 25083
+   "fee_vol_nodig": 378,
+   "fee_deel_nodig": 270,
+   "fee_vol_na_aflossing": 114,
+   "ev_vol_5j": 25228
   },
   "B koop, woning niet verkocht": {
-   "capex": 2945401,
-   "lening": 1985401,
-   "ltv": 0.67,
-   "dscr": 1.46,
-   "resultaat": 75728,
+   "capex": 2988800,
+   "lening": 2028800,
+   "ltv": 0.68,
+   "dscr": 1.42,
+   "resultaat": 71405,
    "jaren_schuldvrij": 12,
-   "fee_vol_nodig": 443,
-   "fee_deel_nodig": 316,
-   "fee_vol_na_aflossing": 108,
-   "ev_vol_5j": 26621
+   "fee_vol_nodig": 451,
+   "fee_deel_nodig": 322,
+   "fee_vol_na_aflossing": 110,
+   "ev_vol_5j": 26765
   },
   "Advies 495/350": {
-   "capex": 2224401,
-   "lening": 1264401,
-   "ltv": 0.57,
-   "dscr": 1.82,
-   "resultaat": 87141,
+   "capex": 2267800,
+   "lening": 1307800,
+   "ltv": 0.58,
+   "dscr": 1.76,
+   "resultaat": 82819,
    "jaren_schuldvrij": 9,
-   "fee_vol_nodig": 319,
-   "fee_deel_nodig": 225,
-   "fee_vol_na_aflossing": 105,
-   "ev_vol_5j": 24216
+   "fee_vol_nodig": 328,
+   "fee_deel_nodig": 232,
+   "fee_vol_na_aflossing": 106,
+   "ev_vol_5j": 24361
   },
   "Tegenvaller: 495/350, 30 club, bouw 1.600, woning 400k": {
-   "capex": 2764939,
-   "lening": 1804939,
-   "ltv": 0.65,
-   "dscr": 0.98,
-   "resultaat": -3634,
-   "jaren_schuldvrij": 21,
-   "fee_vol_nodig": 502,
-   "fee_deel_nodig": 355,
-   "fee_vol_na_aflossing": 197,
-   "ev_vol_5j": 26019
+   "capex": 2797817,
+   "lening": 1837817,
+   "ltv": 0.66,
+   "dscr": 0.96,
+   "resultaat": -6907,
+   "jaren_schuldvrij": 22,
+   "fee_vol_nodig": 509,
+   "fee_deel_nodig": 360,
+   "fee_vol_na_aflossing": 198,
+   "ev_vol_5j": 26128
   },
   "Geen inleg, 595/425": {
-   "capex": 2224401,
-   "lening": 2224401,
+   "capex": 2267800,
+   "lening": 2267800,
    "ltv": 1.0,
-   "dscr": 1.31,
-   "resultaat": 57530,
+   "dscr": 1.28,
+   "resultaat": 53207,
    "jaren_schuldvrij": 14,
-   "fee_vol_nodig": 479,
-   "fee_deel_nodig": 342,
-   "fee_vol_na_aflossing": 105,
-   "ev_vol_5j": 7418
+   "fee_vol_nodig": 488,
+   "fee_deel_nodig": 349,
+   "fee_vol_na_aflossing": 106,
+   "ev_vol_5j": 7562
+  },
+  "Advies + gym in 2 containers": {
+   "capex": 2185264,
+   "lening": 1225264,
+   "ltv": 0.56,
+   "dscr": 1.86,
+   "resultaat": 87703,
+   "jaren_schuldvrij": 9,
+   "fee_vol_nodig": 318,
+   "fee_deel_nodig": 225,
+   "fee_vol_na_aflossing": 111,
+   "ev_vol_5j": 24086
   }
+ },
+ "exit": {
+  "capex": 2267800,
+  "restschuld_annuitair": 1098470,
+  "restschuld_versneld": 636250,
+  "ebitda": 192255,
+  "rows": [
+   {
+    "exit": "Verkoop als kantoor of bedrijfsruimte",
+    "waarde": 830574,
+    "per_vol_annuitair": -6014,
+    "per_vol_versneld": 3616
+   },
+   {
+    "exit": "Lopende club verkopen aan een exploitant",
+    "waarde": 1153530,
+    "per_vol_annuitair": 546,
+    "per_vol_versneld": 10176
+   },
+   {
+    "exit": "Sale-and-leaseback: belegger koopt, club huurt",
+    "waarde": 1600000,
+    "per_vol_annuitair": 9615,
+    "per_vol_versneld": 19245
+   },
+   {
+    "exit": "Noodverkoop: grond plus schuur als opslag",
+    "waarde": 388880,
+    "per_vol_annuitair": -14986,
+    "per_vol_versneld": -5356
+   }
+  ]
  }
 }
