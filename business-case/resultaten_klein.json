@@ -1,0 +1,624 @@
+{
+ "basis": {
+  "inputs": {
+   "loc": "B",
+   "n_vol": 30,
+   "n_deel": 30,
+   "n_club": 60,
+   "fee_vol": 595,
+   "fee_deel": 425,
+   "fee_club": 139,
+   "inleg_vol": 20000,
+   "inleg_deel": 12000,
+   "bouw_m2": 1200,
+   "rente": 0.055,
+   "looptijd": 20,
+   "huren": false,
+   "extra_ha": 0.5,
+   "bezetting": 0.95,
+   "schoonmaak_dagen": 4,
+   "management": 18000,
+   "dev_fee": 0.03,
+   "woning": -1
+  },
+  "prog": {
+   "desks": 30,
+   "leden_totaal": 120,
+   "eigenaren": 60,
+   "m2_detail": {
+    "werkplekken": 165,
+    "vergaderruimte": 25,
+    "gym": 80,
+    "kleedruimte_douches": 48,
+    "koffie_lounge_bieb": 96,
+    "toiletten": 15,
+    "techniek": 20
+   },
+   "m2": 494,
+   "ha": 1.5,
+   "pv": 48,
+   "bat": 48,
+   "saunas": 1
+  },
+  "capex": 2224401,
+  "opex": 134636,
+  "inleg": 960000,
+  "lening": 1264401,
+  "ltv": 0.57,
+  "jaarlast": 105804,
+  "omzet_eig": 295627,
+  "omzet_club": 82675,
+  "resultaat": 137862,
+  "dscr": 2.3,
+  "jaren_schuldvrij": 7,
+  "fee_vol_nodig": 318,
+  "fee_deel_nodig": 227,
+  "ev_vol_5j": 24216,
+  "ev_deel_5j": 14530,
+  "fee_vol_na_aflossing": 105,
+  "capex_rows": [
+   {
+    "groep": "Grond",
+    "post": "Erf met woning en stallen (~1 ha)",
+    "h": 1,
+    "e": "erf",
+    "prijs": 1300000,
+    "totaal": 1300000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Grond",
+    "post": "Aanvullende grond",
+    "h": 0.5,
+    "e": "ha",
+    "prijs": 110000,
+    "totaal": 55000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Grond",
+    "post": "Overdrachtsbelasting 10,4%",
+    "h": 1355000.0,
+    "e": "EUR",
+    "prijs": 0.104,
+    "totaal": 140920,
+    "label": "bron"
+   },
+   {
+    "groep": "Grond",
+    "post": "Notaris, taxatie, splitsing",
+    "h": 1,
+    "e": "post",
+    "prijs": 20000,
+    "totaal": 20000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Grond",
+    "post": "Woning afsplitsen en verkopen (netto)",
+    "h": 1,
+    "e": "post",
+    "prijs": -700000,
+    "totaal": -700000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gebouw",
+    "post": "Sloop overtollige stallen en asbest",
+    "h": 494,
+    "e": "m2",
+    "prijs": 50,
+    "totaal": 24700,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gebouw",
+    "post": "Verbouw stal tot clubgebouw",
+    "h": 494,
+    "e": "m2",
+    "prijs": 1200,
+    "totaal": 592800,
+    "label": "schatting"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Natuur: bomen, maaipaden, poel (extensief)",
+    "h": 1.1,
+    "e": "ha",
+    "prijs": 15000,
+    "totaal": 16500,
+    "label": "schatting"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Overdekte veranda met buitenwerkplekken",
+    "h": 1,
+    "e": "post",
+    "prijs": 18000,
+    "totaal": 18000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Buitengym (rig, kettlebells)",
+    "h": 1,
+    "e": "post",
+    "prijs": 8000,
+    "totaal": 8000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Houtgestookte saunahut 10 pers.",
+    "h": 1,
+    "e": "st",
+    "prijs": 30000,
+    "totaal": 30000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Dompelbad zonder koeling",
+    "h": 1,
+    "e": "st",
+    "prijs": 3000,
+    "totaal": 3000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Houtgestookte hot tub",
+    "h": 1,
+    "e": "st",
+    "prijs": 7000,
+    "totaal": 7000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Buitendouche en vlonders",
+    "h": 1,
+    "e": "post",
+    "prijs": 8000,
+    "totaal": 8000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Racks met halters en schijven (refurbished)",
+    "h": 2,
+    "e": "st",
+    "prijs": 4000,
+    "totaal": 8000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Dumbbells, bankjes, kabelstation",
+    "h": 1,
+    "e": "post",
+    "prijs": 10000,
+    "totaal": 10000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Cardio (2 roeiers, airbike, skierg)",
+    "h": 1,
+    "e": "post",
+    "prijs": 7000,
+    "totaal": 7000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Sportvloer",
+    "h": 80,
+    "e": "m2",
+    "prijs": 60,
+    "totaal": 4800,
+    "label": "schatting"
+   },
+   {
+    "groep": "Werken",
+    "post": "Werkplek: zit-sta bureau, refurbished stoel, 2 schermen",
+    "h": 30,
+    "e": "plek",
+    "prijs": 1300,
+    "totaal": 39000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Werken",
+    "post": "Belcellen (refurbished)",
+    "h": 2,
+    "e": "st",
+    "prijs": 4500,
+    "totaal": 9000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Werken",
+    "post": "Vergaderruimte, scherm en audio",
+    "h": 1,
+    "e": "st",
+    "prijs": 3000,
+    "totaal": 3000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Tweedehands 3-groeps espressomachine + 2 molens",
+    "h": 1,
+    "e": "set",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Keuken en bar (tweedehands)",
+    "h": 1,
+    "e": "post",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Tweedehands meubilair, planten, boeken",
+    "h": 494,
+    "e": "m2",
+    "prijs": 70,
+    "totaal": 34580,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Toegangssysteem met app, lockers",
+    "h": 1,
+    "e": "post",
+    "prijs": 10000,
+    "totaal": 10000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Zonnepanelen",
+    "h": 48,
+    "e": "kWp",
+    "prijs": 850,
+    "totaal": 40800,
+    "label": "schatting"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Batterij",
+    "h": 48,
+    "e": "kWh",
+    "prijs": 450,
+    "totaal": 21600,
+    "label": "bron"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Warmtepomp lucht-water en afgifte",
+    "h": 494,
+    "e": "m2",
+    "prijs": 75,
+    "totaal": 37050,
+    "label": "schatting"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Glasvezel, wifi, Starlink backup",
+    "h": 1,
+    "e": "post",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Architect, constructeur, installatieadvies (8%)",
+    "h": 977830,
+    "e": "EUR",
+    "prijs": 0.08,
+    "totaal": 78226,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Planologisch traject",
+    "h": 1,
+    "e": "post",
+    "prijs": 60000,
+    "totaal": 60000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Leges omgevingsvergunning (~3%)",
+    "h": 977830,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 29335,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Juridisch: statuten, fiscaal",
+    "h": 1,
+    "e": "post",
+    "prijs": 25000,
+    "totaal": 25000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Ontwikkelvergoeding initiatiefnemer",
+    "h": 977830,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 29335,
+    "label": "aanname"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Onvoorzien (12% excl. grond)",
+    "h": 1199726,
+    "e": "EUR",
+    "prijs": 0.12,
+    "totaal": 143967,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwrente en afsluitkosten (3%)",
+    "h": 2159613,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 64788,
+    "label": "schatting"
+   }
+  ],
+  "opex_rows": [
+   {
+    "post": "Schoonmaak",
+    "bedrag": 24960,
+    "label": "schatting",
+    "t": "4 dagen x 4 uur x EUR 30"
+   },
+   {
+    "post": "Management initiatiefnemer",
+    "bedrag": 18000,
+    "label": "aanname",
+    "t": ""
+   },
+   {
+    "post": "Klusjes en storingen (oproepbasis)",
+    "bedrag": 6000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Groenbeheer (deels met leden)",
+    "bedrag": 4500,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Energie netto",
+    "bedrag": 4469,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Brandhout sauna en hot tub",
+    "bedrag": 5000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Onderhoud gebouw en terrein (1,5%)",
+    "bedrag": 11617,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Vervangingsreserve inventaris (10%)",
+    "bedrag": 20338,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Verzekeringen",
+    "bedrag": 2445,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "OZB, waterschap, riool",
+    "bedrag": 3896,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Internet, software, toegangsapp",
+    "bedrag": 6000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Accountant en administratie",
+    "bedrag": 12000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Verbruik (eigen handdoek mee)",
+    "bedrag": 4000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Community en events",
+    "bedrag": 5000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Onvoorzien exploitatie (5%)",
+    "bedrag": 6411,
+    "label": "schatting",
+    "t": ""
+   }
+  ]
+ },
+ "varianten": {
+  "B koop, 30 vol + 30 deel + 60 club": {
+   "capex": 2224401,
+   "lening": 1264401,
+   "ltv": 0.57,
+   "dscr": 2.3,
+   "resultaat": 137862,
+   "jaren_schuldvrij": 7,
+   "fee_vol_nodig": 318,
+   "fee_deel_nodig": 227,
+   "fee_vol_na_aflossing": 105,
+   "ev_vol_5j": 24216
+  },
+  "B koop, 50 vol, geen clubleden": {
+   "capex": 2157521,
+   "lening": 1157521,
+   "ltv": 0.54,
+   "dscr": 1.58,
+   "resultaat": 56360,
+   "jaren_schuldvrij": 11,
+   "fee_vol_nodig": 478,
+   "fee_deel_nodig": 342,
+   "fee_vol_na_aflossing": 278,
+   "ev_vol_5j": 23706
+  },
+  "B koop, 25 vol + 25 deel + 0 club": {
+   "capex": 2093937,
+   "lening": 1293937,
+   "ltv": 0.62,
+   "dscr": 1.06,
+   "resultaat": 6096,
+   "jaren_schuldvrij": 19,
+   "fee_vol_nodig": 580,
+   "fee_deel_nodig": 414,
+   "fee_vol_na_aflossing": 319,
+   "ev_vol_5j": 25178
+  },
+  "B koop, 30+30 + 90 club": {
+   "capex": 2305006,
+   "lening": 1345006,
+   "ltv": 0.58,
+   "dscr": 2.49,
+   "resultaat": 168051,
+   "jaren_schuldvrij": 6,
+   "fee_vol_nodig": 257,
+   "fee_deel_nodig": 183,
+   "fee_vol_na_aflossing": 30,
+   "ev_vol_5j": 24485
+  },
+  "C koop, 30+30 + 60 club": {
+   "capex": 1978067,
+   "lening": 1018067,
+   "ltv": 0.51,
+   "dscr": 2.87,
+   "resultaat": 159090,
+   "jaren_schuldvrij": 5,
+   "fee_vol_nodig": 275,
+   "fee_deel_nodig": 196,
+   "fee_vol_na_aflossing": 103,
+   "ev_vol_5j": 23395
+  },
+  "A koop, 30+30 + 60 club": {
+   "capex": 2774257,
+   "lening": 1814257,
+   "ltv": 0.65,
+   "dscr": 1.6,
+   "resultaat": 90476,
+   "jaren_schuldvrij": 10,
+   "fee_vol_nodig": 413,
+   "fee_deel_nodig": 295,
+   "fee_vol_na_aflossing": 107,
+   "ev_vol_5j": 26050
+  },
+  "B huur, 30+30 + 60 club": {
+   "capex": 1384004,
+   "lening": 424004,
+   "ltv": 0.31,
+   "dscr": 5.15,
+   "resultaat": 147285,
+   "jaren_schuldvrij": 3,
+   "fee_vol_nodig": 299,
+   "fee_deel_nodig": 213,
+   "fee_vol_na_aflossing": 227,
+   "ev_vol_5j": 21414
+  },
+  "B koop, bouw 1.600/m2": {
+   "capex": 2484266,
+   "lening": 1524266,
+   "ltv": 0.61,
+   "dscr": 1.88,
+   "resultaat": 111976,
+   "jaren_schuldvrij": 9,
+   "fee_vol_nodig": 370,
+   "fee_deel_nodig": 264,
+   "fee_vol_na_aflossing": 113,
+   "ev_vol_5j": 25083
+  },
+  "B koop, woning niet verkocht": {
+   "capex": 2945401,
+   "lening": 1985401,
+   "ltv": 0.67,
+   "dscr": 1.46,
+   "resultaat": 75728,
+   "jaren_schuldvrij": 12,
+   "fee_vol_nodig": 443,
+   "fee_deel_nodig": 316,
+   "fee_vol_na_aflossing": 108,
+   "ev_vol_5j": 26621
+  },
+  "Advies 495/350": {
+   "capex": 2224401,
+   "lening": 1264401,
+   "ltv": 0.57,
+   "dscr": 1.82,
+   "resultaat": 87141,
+   "jaren_schuldvrij": 9,
+   "fee_vol_nodig": 319,
+   "fee_deel_nodig": 225,
+   "fee_vol_na_aflossing": 105,
+   "ev_vol_5j": 24216
+  },
+  "Tegenvaller: 495/350, 30 club, bouw 1.600, woning 400k": {
+   "capex": 2764939,
+   "lening": 1804939,
+   "ltv": 0.65,
+   "dscr": 0.98,
+   "resultaat": -3634,
+   "jaren_schuldvrij": 21,
+   "fee_vol_nodig": 502,
+   "fee_deel_nodig": 355,
+   "fee_vol_na_aflossing": 197,
+   "ev_vol_5j": 26019
+  },
+  "Geen inleg, 595/425": {
+   "capex": 2224401,
+   "lening": 2224401,
+   "ltv": 1.0,
+   "dscr": 1.31,
+   "resultaat": 57530,
+   "jaren_schuldvrij": 14,
+   "fee_vol_nodig": 479,
+   "fee_deel_nodig": 342,
+   "fee_vol_na_aflossing": 105,
+   "ev_vol_5j": 7418
+  }
+ }
+}

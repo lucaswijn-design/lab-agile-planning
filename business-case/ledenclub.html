@@ -115,9 +115,121 @@ ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
 <div class="wrap">
 
 <header style="display:grid;gap:14px">
-  <span class="eyebrow">Business case · versie november 2026</span>
+  <span class="eyebrow">Business case · versie 2 · november 2026</span>
   <h1>Ledenclub op het Erf</h1>
-  <p class="lede">Een voormalig boerenerf aan de rand van een stad, omgebouwd tot club met natuur, werkplekken, gym, sauna, zwemvijver en een goede espressobar. Leden betalen maandelijks, zijn mede-eigenaar en kopen het terrein samen af.</p>
+  <p class="lede">Een voormalig boerenerf aan de rand van een stad, omgebouwd tot club met natuur, werkplekken, gym, sauna, zwemvijver en een goede espressobar. Eigenaren betalen maandelijks en kopen het terrein samen af; clubleden zonder aandeel betalen mee aan de exploitatie. Eerst de kleine variant met maximaal 60 eigenaren, daaronder de grote ter vergelijking.</p>
+</header>
+
+<section class="verdict" id="klein">
+  <span class="eyebrow">Kleine variant · maximaal 60 eigenaren</span>
+  <p class="big">Uitkomst: met 30 volle en 30 deeltijd-eigenaren en 60 clubleden zonder aandeel is <span class="num">€ 319</span> per maand voor een vol lidmaatschap genoeg (laag <span class="num">€ 275</span>, hoog <span class="num">€ 502</span>). Bij <span class="num">€ 495</span> is het terrein in 9 jaar schuldvrij.</p>
+  <ul class="points">
+    <li><span>De investering daalt naar <span class="num">€ 2,2 mln</span> (locatie B). Dat komt door een kleiner gebouw (circa 500 m²), geen zwemvijver, kas of elektrische sauna, en doordat de boerderijwoning wordt afgesplitst en verkocht.</span></li>
+    <li><span>Clubleden maken het rond. Zestig mensen die € 139 betalen voor gym, sauna, koffie en bibliotheek leveren € 83.000 per jaar op. Zonder clubleden heb je bij 50 eigenaren € 580 per maand nodig.</span></li>
+    <li><span>De inleg blijft nodig: € 20.000 voor vol en € 12.000 voor deeltijd. Zonder inleg moet de bank alles financieren, en dat doet geen bank.</span></li>
+    <li><span>De grootste gok is de woning. Levert die niets op, dan stijgt de benodigde fee van € 319 naar € 443. Dat blijft onder de € 600.</span></li>
+    <li><span>Na aflossing betaalt een vol lid ongeveer € 105 per maand, omdat de clubleden dan het grootste deel van de vaste lasten dragen.</span></li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Lidmaatschappen</span>
+  <h2>Drie soorten, één toegang</h2>
+  <p>Iedereen mag altijd overal in. Het verschil zit alleen in de werkplek, het aandeel en hoe ver vooruit je de sauna kunt boeken. Zo hoef je verder niets te controleren.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Lidmaatschap</th><th class="r">Per maand</th><th class="r">Inleg</th><th class="r">Aandeel</th><th>Werkplek</th><th>Gym, sauna, koffie, bieb, natuur</th><th>Sauna boeken</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Eigenaar vol</strong> (30)</td><td class="r">€ 495</td><td class="r">€ 20.000</td><td class="r">1,0</td><td>5 dagen</td><td>altijd</td><td>7 dagen vooruit</td></tr>
+      <tr><td><strong>Eigenaar deeltijd</strong> (30)</td><td class="r">€ 350</td><td class="r">€ 12.000</td><td class="r">0,6</td><td>3 dagen naar keuze</td><td>altijd</td><td>7 dagen vooruit</td></tr>
+      <tr><td><strong>Clublid</strong> (max. 60)</td><td class="r">€ 139</td><td class="r">geen</td><td class="r">geen</td><td>nee, café en bieb wel</td><td>altijd</td><td>2 dagen vooruit</td></tr>
+      <tr><td>Gast van een lid</td><td class="r">€ 25 per dag</td><td class="r"></td><td class="r"></td><td>ja</td><td>ja</td><td>via lid</td></tr>
+    </tbody>
+  </table></div>
+  <p>Het deeltijdlidmaatschap is 60% van het volle: fee, inleg en aandeel schalen gelijk mee. De drie werkdagen tellen vanzelf via het inchecken met de app, dus niemand hoeft vooraf dagen te plannen. Het plafond van 60 clubleden staat in de statuten, zodat eigenaren beschermd zijn tegen drukte.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Reserveren</span>
+  <h2>Zo min mogelijk plannen</h2>
+  <div class="two">
+    <div style="display:grid;gap:10px">
+      <h3>Advies: alleen de sauna op piekmomenten</h3>
+      <p>Op vrijdagavond, zaterdag en zondag werkt de sauna met blokken van 90 minuten voor maximaal 10 mensen. Eigenaren kunnen 7 dagen vooruit boeken, clubleden 2 dagen. Dat geeft eigenaren voorrang zonder groepen of roosters. Op andere momenten loop je gewoon binnen.</p>
+      <p>Gym en werkplekken hebben geen reservering. De app laat live zien hoeveel mensen er zijn, zodat je zelf een rustig moment kiest. Wordt het structureel te vol, zet dan voor die ene voorziening reserveren aan.</p>
+    </div>
+    <div style="display:grid;gap:10px">
+      <h3>Waarom geen wisselende voorrangsgroepen</h3>
+      <p>Groepen die per week wisselen wie eerst mag kiezen zijn eerlijk, maar iedereen moet dan een rooster bijhouden. Bij 120 leden en één sauna is het verschil in boekingstermijn genoeg. Houtgestookt betekent wel dat iemand de kachel aanmaakt: anderhalf uur van tevoren. Maak daar een stookrooster onder leden voor, of kies voor een elektrische kachel als de netaansluiting dat toelaat.</p>
+    </div>
+  </div>
+</section>
+
+<section id="kleintool">
+  <span class="eyebrow">Rekentool kleine variant</span>
+  <h2>Schuif met leden, fees en de woning</h2>
+  <div class="bench">
+    <form class="controls" id="kf" onsubmit="return false">
+      <div class="presets" aria-label="Startpunten kleine variant">
+        <button type="button" data-k="advies">Advies € 495/350</button>
+        <button type="button" data-k="max">Max € 595/425</button>
+        <button type="button" data-k="geenclub">Zonder clubleden</button>
+        <button type="button" data-k="tegen">Tegenvaller</button>
+      </div>
+      <div class="ctl"><label for="k-loc">Locatie</label>
+        <select id="k-loc">
+          <option value="A">A · Groene Hart / Utrecht West</option>
+          <option value="B" selected>B · Rand Amersfoort / Leusden</option>
+          <option value="C">C · Brabant, Den Bosch/Eindhoven</option>
+        </select></div>
+      <div class="ctl"><label for="k-vol">Eigenaren vol <output id="ko-vol"></output></label><input type="range" id="k-vol" min="0" max="60" step="1" value="30"></div>
+      <div class="ctl"><label for="k-deel">Eigenaren deeltijd <output id="ko-deel"></output></label><input type="range" id="k-deel" min="0" max="60" step="1" value="30"></div>
+      <div class="ctl"><label for="k-club">Clubleden <output id="ko-club"></output></label><input type="range" id="k-club" min="0" max="120" step="5" value="60"></div>
+      <div class="ctl"><label for="k-fvol">Fee vol <output id="ko-fvol"></output></label><input type="range" id="k-fvol" min="200" max="600" step="5" value="495"></div>
+      <div class="ctl"><label for="k-fdeel">Fee deeltijd <output id="ko-fdeel"></output></label><input type="range" id="k-fdeel" min="150" max="600" step="5" value="350"></div>
+      <div class="ctl"><label for="k-fclub">Fee clublid <output id="ko-fclub"></output></label><input type="range" id="k-fclub" min="49" max="249" step="5" value="139"></div>
+      <div class="ctl"><label for="k-ivol">Inleg vol <output id="ko-ivol"></output></label><input type="range" id="k-ivol" min="0" max="40000" step="1000" value="20000"></div>
+      <div class="ctl"><label for="k-ideel">Inleg deeltijd <output id="ko-ideel"></output></label><input type="range" id="k-ideel" min="0" max="30000" step="1000" value="12000"></div>
+      <div class="ctl"><label for="k-woning">Netto opbrengst woning <output id="ko-woning"></output></label><input type="range" id="k-woning" min="0" max="1000000" step="25000" value="700000"></div>
+      <div class="ctl"><label for="k-bouw">Verbouw per m² <output id="ko-bouw"></output></label><input type="range" id="k-bouw" min="800" max="2000" step="50" value="1200"></div>
+      <div class="ctl"><label for="k-schoon">Schoonmaak (dagen × 4 uur) <output id="ko-schoon"></output></label><input type="range" id="k-schoon" min="2" max="7" step="1" value="4"></div>
+      <div class="ctl"><label for="k-looptijd">Looptijd lening <output id="ko-looptijd"></output></label><input type="range" id="k-looptijd" min="5" max="30" step="1" value="20"></div>
+      <div class="checks">
+        <label for="k-huur"><input type="checkbox" id="k-huur"> Erf huren in plaats van kopen (lange huur)</label>
+      </div>
+    </form>
+    <div class="out" aria-live="polite">
+      <div class="kpis" id="k-kpis"></div>
+      <div class="bars" id="k-bars"></div>
+      <p class="note" id="k-prog"></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Varianten klein</span>
+  <h2>Wat gebeurt er als het tegenzit?</h2>
+  <p>Locatie B, eigenaren 30 vol en 30 deeltijd met € 20.000 en € 12.000 inleg, lening 20 jaar, tenzij anders vermeld. Benodigde fee is wat een vol lid minimaal moet betalen; deeltijd is daarvan 71%.</p>
+  <div class="tbl"><table id="k-var"></table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Investering klein</span>
+  <h2>Wat kost de kleine club?</h2>
+  <p>Volgt de rekentool hierboven. Werkplekken = 60% van de volle plus 40% van de deeltijdeigenaren op de drukste dag; gym 0,6 m² per lid; terrein 1,5 ha.</p>
+  <div class="tbl"><table id="k-capex"></table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Exploitatie klein</span>
+  <h2>Zonder personeel, met een schoonmaker</h2>
+  <div class="tbl"><table id="k-opex"></table></div>
+  <p>Geen host of beheerder: toegang met de app, een klusjesman op afroep en jij als manager voor ongeveer een dag per week. Vier ochtenden schoonmaak is krap met douches en sauna voor 120 leden. Reken op een korte dagelijkse ronde door leden zelf (huisregels) of ga naar zes dagen; dat kost € 12.500 per jaar extra. Een particuliere schoonmaker is goedkoper per uur, maar de coöperatie is dan werkgever. Via een zzp'er of schoonmaakbedrijf (€ 28 tot 35 per uur) heb je daar geen omkijken naar.</p>
+</section>
+
+<header style="display:grid;gap:10px;border-top:1px solid var(--line);padding-top:40px">
+  <span class="eyebrow">Ter vergelijking</span>
+  <h2>Grote variant: 150 tot 200 leden</h2>
+  <p>De eerste uitwerking, met zwemvijver, kas, host en meer voorzieningen.</p>
 </header>
 
 <section class="verdict">
@@ -556,6 +668,143 @@ ids.forEach(id=>$(id).addEventListener("input",render));
     f+=`<tr><td>${nm}</td><td class="r">${mln(c.lening)}</td><td class="r">${rnd(c.ltv*100)}%</td><td class="r">${eur(c.feeNodig)}</td><td class="r ${dc}">${d.toLocaleString("nl-NL",{maximumFractionDigits:2})}</td><td class="r">${eur(c.ev5)}</td></tr>`;});
   $("fin").innerHTML=f+"</tbody>";
 })();
+render();
+})();
+</script>
+<script>
+(function(){
+const KLOC={A:{naam:"Groene Hart / Utrecht West",erf:2000000,ha:130000,woning:950000,huur:90000},
+  B:{naam:"Rand Amersfoort / Leusden",erf:1300000,ha:110000,woning:700000,huur:60000},
+  C:{naam:"Brabant, Den Bosch/Eindhoven",erf:950000,ha:105000,woning:550000,huur:45000}};
+const rnd=Math.round, ceil=Math.ceil;
+function prog(k){const eig=k.vol+k.deel, tot=eig+k.club, desks=ceil(0.6*k.vol+0.4*k.deel);
+  const m2=[desks*5.5,25,Math.max(80,0.6*tot),30+0.15*tot,60+0.4*eig+0.2*k.club,15,20].reduce((a,b)=>a+b,0);
+  return {desks,tot,eig,m2:rnd(m2*1.1),ha:1+k.extraHa,pv:rnd(0.8*eig),bat:rnd(0.8*eig),saunas:tot<=130?1:2};}
+function capex(k){const p=prog(k),L=KLOC[k.loc],rows=[];
+  const add=(g,post,h,e,prijs,label)=>rows.push({groep:g,post,h,e,prijs,totaal:rnd(h*prijs),label});
+  if(!k.huren){add("Grond","Erf met woning en stallen (~1 ha)",1,"erf",L.erf,"schatting");
+    add("Grond","Aanvullende grond",k.extraHa,"ha",L.ha,"schatting");
+    add("Grond","Overdrachtsbelasting 10,4%",L.erf+k.extraHa*L.ha,"€",0.104,"bron");
+    add("Grond","Notaris, taxatie, splitsing",1,"post",20000,"schatting");
+    if(k.woning) add("Grond","Woning afsplitsen en verkopen (netto)",1,"post",-k.woning,"schatting");}
+  add("Gebouw","Sloop overtollige stallen en asbest",p.m2,"m²",50,"schatting");
+  add("Gebouw","Verbouw stal tot clubgebouw",p.m2,"m²",k.bouw,"schatting");
+  add("Buiten","Natuur: bomen, maaipaden, poel (extensief)",1+k.extraHa-0.4,"ha",15000,"schatting");
+  add("Buiten","Overdekte veranda met buitenwerkplekken",1,"post",18000,"schatting");
+  add("Buiten","Buitengym (rig, kettlebells)",1,"post",8000,"schatting");
+  add("Wellness","Houtgestookte saunahut 10 pers.",p.saunas,"st",30000,"schatting");
+  add("Wellness","Dompelbad zonder koeling",1,"st",3000,"schatting");
+  add("Wellness","Houtgestookte hot tub",1,"st",7000,"schatting");
+  add("Wellness","Buitendouche en vlonders",1,"post",8000,"schatting");
+  add("Gym","Racks met halters en schijven (refurbished)",2,"st",4000,"schatting");
+  add("Gym","Dumbbells, bankjes, kabelstation",1,"post",10000,"schatting");
+  add("Gym","Cardio (2 roeiers, airbike, skierg)",1,"post",7000,"schatting");
+  add("Gym","Sportvloer",Math.max(80,rnd(0.6*p.tot)),"m²",60,"schatting");
+  add("Werken","Werkplek: zit-sta bureau, refurbished stoel, 2 schermen",p.desks,"plek",1300,"schatting");
+  add("Werken","Belcellen (refurbished)",2,"st",4500,"schatting");
+  add("Werken","Vergaderruimte, scherm en audio",1,"st",3000,"schatting");
+  add("Koffie & interieur","Tweedehands 3-groeps espressomachine en 2 molens",1,"set",15000,"schatting");
+  add("Koffie & interieur","Keuken en bar (tweedehands)",1,"post",15000,"schatting");
+  add("Koffie & interieur","Tweedehands meubilair, planten, boeken",p.m2,"m²",70,"schatting");
+  add("Koffie & interieur","Toegangssysteem met app, lockers",1,"post",10000,"schatting");
+  add("Energie & tech","Zonnepanelen",p.pv,"kWp",850,"schatting");
+  add("Energie & tech","Batterij",p.bat,"kWh",450,"bron");
+  add("Energie & tech","Warmtepomp lucht-water en afgifte",p.m2,"m²",75,"schatting");
+  add("Energie & tech","Glasvezel, wifi, Starlink als backup",1,"post",15000,"schatting");
+  const bi=rows.filter(r=>r.groep!=="Grond").reduce((a,r)=>a+r.totaal,0);
+  add("Bijkomend","Architect, constructeur, installatieadvies (8%)",bi,"€",0.08,"schatting");
+  add("Bijkomend","Planologisch traject",1,"post",60000,"schatting");
+  add("Bijkomend","Leges omgevingsvergunning (~3%)",bi,"€",0.03,"schatting");
+  add("Bijkomend","Juridisch: statuten, fiscaal",1,"post",25000,"schatting");
+  add("Bijkomend","Ontwikkelvergoeding initiatiefnemer",bi,"€",0.03,"aanname");
+  const zg=rows.filter(r=>r.groep!=="Grond").reduce((a,r)=>a+r.totaal,0);
+  add("Bijkomend","Onvoorzien (12% excl. grond)",zg,"€",0.12,"schatting");
+  add("Bijkomend","Bouwrente en afsluitkosten (3%)",rows.reduce((a,r)=>a+r.totaal,0),"€",0.03,"schatting");
+  return rows;}
+function opex(k,cx){const p=prog(k),L=KLOC[k.loc],rows=[];
+  const tot=g=>cx.filter(r=>r.groep===g).reduce((a,r)=>a+r.totaal,0);
+  const gebouw=tot("Gebouw")+tot("Buiten")+tot("Energie & tech"), equip=tot("Gym")+tot("Werken")+tot("Wellness")+tot("Koffie & interieur");
+  const add=(post,b,label,t)=>rows.push({post,bedrag:rnd(b),label,t:t||""});
+  if(k.huren) add("Huur erf en grond",L.huur,"schatting","lange huur, 15 jaar of meer");
+  add("Schoonmaak",k.schoon*4*52*30,"schatting",`${k.schoon} dagen × 4 uur × € 30`);
+  add("Management initiatiefnemer",18000,"aanname","circa een dag per week");
+  add("Klusjes en storingen (op afroep)",6000,"schatting");
+  add("Groenbeheer (deels met leden)",p.ha*3000,"schatting");
+  const vraag=p.m2*60+6000, pv=p.pv*900, eigen=Math.min(pv*0.6,vraag);
+  add("Energie netto",(vraag-eigen)*0.24-(pv-eigen)*0.05+3000,"schatting",`vraag ${rnd(vraag/1000)} MWh, zon ${rnd(pv/1000)} MWh`);
+  add("Brandhout sauna en hot tub",5000,"schatting");
+  add("Onderhoud gebouw en terrein (1,5%)",gebouw*0.015,"schatting");
+  add("Vervangingsreserve inventaris (10%)",equip*0.10,"schatting");
+  add("Verzekeringen",(gebouw+equip)*0.0025,"schatting");
+  add("OZB, waterschap, riool",((k.huren?0:tot("Grond"))+gebouw)*0.7*0.0035,"schatting");
+  add("Internet, software, toegangsapp",6000,"schatting");
+  add("Accountant en administratie",12000,"schatting");
+  add("Verbruik (eigen handdoek mee)",4000,"schatting");
+  add("Community en events",5000,"schatting");
+  add("Onvoorzien exploitatie (5%)",rows.reduce((a,r)=>a+r.bedrag,0)*0.05,"schatting");
+  return rows;}
+function run(k){const cx=capex(k),ox=opex(k,cx);
+  const C=cx.reduce((a,r)=>a+r.totaal,0),O=ox.reduce((a,r)=>a+r.bedrag,0);
+  const inleg=k.vol*k.ivol+k.deel*k.ideel, lening=Math.max(0,C-inleg), r=0.055;
+  const last=lening>0?lening*r/(1-Math.pow(1+r,-k.looptijd)):0, b=0.95;
+  const oEig=(k.vol*k.fvol+k.deel*k.fdeel)*b/1.18*12, oClub=k.club*k.fclub*b/1.15*12, omzet=oEig+oClub, over=omzet-O;
+  let jaren=null; if(lening===0) jaren=0; else if(over>lening*r){let s=lening;jaren=0;while(s>0&&jaren<60){s=s*(1+r)-over;jaren++;}}
+  const ratio=k.fvol?k.fdeel/k.fvol:0.7, noemer=12*b/1.18*(k.vol+k.deel*ratio);
+  const feeNodig=noemer?(O+last-oClub)/noemer:NaN, feeNa=noemer?(O-oClub)/noemer:NaN;
+  const aand=k.vol+0.6*k.deel; let s=lening,a5=0; for(let y=0;y<5;y++){const a=last-s*r;s-=a;a5+=a;}
+  return {cx,ox,C,O,inleg,lening,ltv:C?lening/C:0,last,oEig,oClub,res:over-last,dscr:last?over/last:null,jaren,
+    feeNodig,feeDeelNodig:feeNodig*ratio,feeNa:Math.max(0,feeNa),ev5:aand?k.ivol+a5/aand:0,p:prog(k)};}
+window.kleinModel={run};
+const eur=x=>(x<0?"− ":"")+"€ "+Math.abs(rnd(x)).toLocaleString("nl-NL");
+const mln=x=>"€ "+(x/1e6).toLocaleString("nl-NL",{minimumFractionDigits:2,maximumFractionDigits:2})+" mln";
+const $=id=>document.getElementById(id);
+const BASE={loc:"B",vol:30,deel:30,club:60,fvol:495,fdeel:350,fclub:139,ivol:20000,ideel:12000,woning:700000,bouw:1200,schoon:4,looptijd:20,huren:false,extraHa:0.5};
+const MAP={loc:"k-loc",vol:"k-vol",deel:"k-deel",club:"k-club",fvol:"k-fvol",fdeel:"k-fdeel",fclub:"k-fclub",ivol:"k-ivol",ideel:"k-ideel",woning:"k-woning",bouw:"k-bouw",schoon:"k-schoon",looptijd:"k-looptijd",huren:"k-huur"};
+function read(){const k={extraHa:0.5};for(const f in MAP){const el=$(MAP[f]);k[f]=el.type==="checkbox"?el.checked:(f==="loc"?el.value:+el.value);}return k;}
+const PRE={advies:{},max:{fvol:595,fdeel:425},geenclub:{vol:50,deel:0,club:0,fvol:595,fdeel:425},tegen:{club:30,bouw:1600,woning:400000}};
+function apply(p){const k={...BASE,...p};for(const f in MAP){const el=$(MAP[f]);if(el.type==="checkbox")el.checked=k[f];else el.value=k[f];}render();}
+document.querySelectorAll("[data-k]").forEach(b=>b.addEventListener("click",()=>apply(PRE[b.dataset.k])));
+const kpi=(k,v,s,st)=>`<div class="kpi ${st?"state-"+st:""}"><span class="k">${k}</span><span class="v">${v}</span><span class="s">${s}</span></div>`;
+function render(){const k=read(),R=run(k);
+  $("ko-vol").textContent=k.vol;$("ko-deel").textContent=k.deel;$("ko-club").textContent=k.club;
+  $("ko-fvol").textContent=eur(k.fvol);$("ko-fdeel").textContent=eur(k.fdeel);$("ko-fclub").textContent=eur(k.fclub);
+  $("ko-ivol").textContent=eur(k.ivol);$("ko-ideel").textContent=eur(k.ideel);$("ko-woning").textContent=k.huren?"n.v.t.":eur(k.woning);
+  $("ko-bouw").textContent=eur(k.bouw);$("ko-schoon").textContent=k.schoon+" dagen";$("ko-looptijd").textContent=k.looptijd+" jaar";
+  const fs=!isFinite(R.feeNodig)?"bad":(R.feeNodig<=k.fvol?"ok":(R.feeNodig<=600?"warn":"bad"));
+  const d=R.dscr;
+  $("k-kpis").innerHTML=[
+    kpi("Benodigde fee vol",isFinite(R.feeNodig)?eur(R.feeNodig):"geen eigenaren",`deeltijd ${isFinite(R.feeDeelNodig)?eur(R.feeDeelNodig):"n.v.t."}; jij rekent ${eur(k.fvol)}`,fs),
+    kpi("Resultaat per jaar",eur(R.res),R.res>=0?"overschot naar extra aflossing":"tekort",R.res>=0?"ok":"bad"),
+    kpi("Investering",mln(R.C),`inleg ${mln(R.inleg)}`),
+    kpi("Banklening",mln(R.lening),`${rnd(R.ltv*100)}% van kostprijs`,R.ltv<=0.6?"ok":(R.ltv<=0.75?"warn":"bad")),
+    kpi("DSCR",d===null?"geen lening":d.toLocaleString("nl-NL",{maximumFractionDigits:2}),"bank wil ≥ 1,2",d===null||d>=1.2?"ok":(d>=1?"warn":"bad")),
+    kpi("Schuldvrij na",R.jaren===null?"nooit":R.jaren+" jaar","als het hele overschot aflost",R.jaren===null?"bad":(R.jaren<=10?"ok":"warn")),
+    kpi("Clubleden leveren",eur(R.oClub),"per jaar excl. btw"),
+    kpi("Fee vol na aflossing",isFinite(R.feeNa)?eur(R.feeNa):"n.v.t.","incl. btw"),
+    kpi("Vermogen vol lid",eur(R.ev5),"na 5 jaar; deeltijd 60%")].join("");
+  const G={};R.cx.forEach(r=>G[r.groep]=(G[r.groep]||0)+r.totaal);const mx=Math.max(...Object.values(G).map(Math.abs));
+  $("k-bars").innerHTML=Object.entries(G).map(([g,v])=>`<div class="bar"><span>${g}</span><span class="track"><span class="fill ${g==="Grond"?"land":""}" style="display:block;width:${Math.max(0,v/mx*100)}%"></span></span><span class="num" style="text-align:right">${eur(v/1000)}k</span></div>`).join("");
+  const p=R.p;
+  $("k-prog").textContent=`Programma: ${p.m2} m² binnen, ${p.desks} werkplekken, gym ${Math.max(80,rnd(0.6*p.tot))} m², ${p.saunas} houtgestookte saunahut, ${p.tot} leden in totaal, terrein ${p.ha.toLocaleString("nl-NL")} ha, ${p.pv} kWp zon. Locatie: ${KLOC[k.loc].naam}${k.huren?", gehuurd":""}.`;
+  let h=`<thead><tr><th>Post</th><th class="r">Hoeveelheid</th><th>Eenheid</th><th class="r">Prijs</th><th class="r">Totaal</th><th>Label</th></tr></thead><tbody>`,cur="";
+  R.cx.forEach(r=>{if(r.groep!==cur){cur=r.groep;h+=`<tr class="grp"><td colspan="4">${cur}</td><td class="r">${eur(G[cur])}</td><td></td></tr>`;}
+    const pc=r.e==="€";h+=`<tr><td>${r.post}</td><td class="r">${pc?eur(r.h):r.h.toLocaleString("nl-NL",{maximumFractionDigits:1})}</td><td>${pc?"":r.e}</td><td class="r">${pc?(r.prijs*100).toLocaleString("nl-NL",{maximumFractionDigits:1})+"%":eur(r.prijs)}</td><td class="r">${eur(r.totaal)}</td><td><span class="lbl ${r.label}">${r.label}</span></td></tr>`;});
+  $("k-capex").innerHTML=h+`<tr class="tot"><td colspan="4">Totaal investering excl. btw</td><td class="r">${eur(R.C)}</td><td><span class="lbl">berekend</span></td></tr></tbody>`;
+  let o=`<thead><tr><th>Post</th><th class="r">Per jaar</th><th>Toelichting</th><th>Label</th></tr></thead><tbody>`;
+  R.ox.forEach(r=>o+=`<tr><td>${r.post}</td><td class="r">${eur(r.bedrag)}</td><td class="note">${r.t}</td><td><span class="lbl ${r.label}">${r.label}</span></td></tr>`);
+  o+=`<tr class="tot"><td>Totaal exploitatie</td><td class="r">${eur(R.O)}</td><td></td><td><span class="lbl">berekend</span></td></tr>`;
+  o+=`<tr><td>Rente en aflossing</td><td class="r">${eur(R.last)}</td><td class="note">${mln(R.lening)} over ${k.looptijd} jaar à 5,5%</td><td><span class="lbl">berekend</span></td></tr>`;
+  o+=`<tr><td>Omzet eigenaren excl. btw</td><td class="r">${eur(R.oEig)}</td><td class="note">95% bezetting, btw-mix 18%</td><td><span class="lbl">berekend</span></td></tr>`;
+  o+=`<tr><td>Omzet clubleden excl. btw</td><td class="r">${eur(R.oClub)}</td><td class="note">95% bezetting, btw-mix 15%</td><td><span class="lbl">berekend</span></td></tr>`;
+  $("k-opex").innerHTML=o+`<tr class="tot"><td>Resultaat</td><td class="r">${eur(R.res)}</td><td></td><td></td></tr></tbody>`;}
+Object.values(MAP).forEach(id=>$(id).addEventListener("input",render));
+const V=[["Basis: 30 + 30 + 60 clubleden, € 495/350",{}],["Locatie C (Brabant)",{loc:"C"}],["Locatie A (Groene Hart)",{loc:"A"}],["90 clubleden",{club:90}],["30 clubleden",{club:30}],
+ ["Geen clubleden, 50 vol",{vol:50,deel:0,club:0}],["Woning niet verkocht",{woning:0}],["Verbouw € 1.600 per m²",{bouw:1600}],["Erf huren (€ 60.000 per jaar)",{huren:true}],
+ ["Geen inleg",{ivol:0,ideel:0}],["Tegenvaller: 30 clubleden, € 1.600/m², woning € 400k",{club:30,bouw:1600,woning:400000}]];
+let t=`<thead><tr><th>Variant</th><th class="r">Investering</th><th class="r">Lening</th><th class="r">Benodigde fee vol</th><th class="r">DSCR bij € 495</th><th class="r">Schuldvrij</th></tr></thead><tbody>`;
+V.forEach(([n,p])=>{const R=run({...BASE,...p});const f=R.feeNodig,c=f<=495?"cell-ok":(f<=600?"cell-mid":"cell-bad");const d=R.dscr,dc=d===null||d>=1.2?"cell-ok":(d>=1?"cell-mid":"cell-bad");
+  t+=`<tr><td>${n}</td><td class="r">${mln(R.C)}</td><td class="r">${mln(R.lening)} (${rnd(R.ltv*100)}%)</td><td class="r ${c}">${eur(f)}</td><td class="r ${dc}">${d===null?"n.v.t.":d.toLocaleString("nl-NL",{maximumFractionDigits:2})}</td><td class="r">${R.jaren===null?"nooit":R.jaren+" jaar"}</td></tr>`;});
+$("k-var").innerHTML=t+"</tbody>";
 render();
 })();
 </script>
