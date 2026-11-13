@@ -1,0 +1,757 @@
+{
+ "basis": {
+  "inputs": {
+   "loc": "B",
+   "n_vol": 30,
+   "n_deel": 30,
+   "n_club": 60,
+   "fee_vol": 495,
+   "fee_deel": 350,
+   "fee_club": 139,
+   "inleg_vol": 20000,
+   "inleg_deel": 12000,
+   "huren": false,
+   "hal_factor": 1.0,
+   "inbouw_m2": 550,
+   "rente": 0.055,
+   "looptijd": 20,
+   "schoonmaak_dagen": 4,
+   "waardegroei": 0.02,
+   "bezetting": 0.95
+  },
+  "prog": {
+   "desks": 30,
+   "tot": 120,
+   "eig": 60,
+   "club_m2": 494,
+   "hal_m2": 550,
+   "buiten_m2": 1375,
+   "extra_grond_m2": 825,
+   "parkeer": 33,
+   "pv": 66,
+   "bat": 48
+  },
+  "capex": 2387653,
+  "opex": 140999,
+  "inleg": 960000,
+  "lening": 1427653,
+  "ltv": 0.6,
+  "jaarlast": 119465,
+  "omzet_eig": 244907,
+  "omzet_club": 82675,
+  "resultaat": 67118,
+  "dscr": 1.56,
+  "fee_vol_nodig": 359,
+  "fee_deel_nodig": 254,
+  "fee_vol_na_aflossing": 118,
+  "exitwaarde": 1377354,
+  "restschuld_5": 1199140,
+  "restschuld_5_versneld": 824551,
+  "exit_dekking": 0.15,
+  "exit_dekking_versneld": 0.54,
+  "exit_per_vol": 2995,
+  "exit_per_vol_versneld": 10799,
+  "capex_rows": [
+   {
+    "groep": "Pand",
+    "post": "Bestaande bedrijfshal incl. perceel (~2x pand)",
+    "h": 550,
+    "e": "m2",
+    "prijs": 1450.0,
+    "totaal": 797500,
+    "label": "schatting",
+    "generiek": 1.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Extra buitenterrein (1,5x pand)",
+    "h": 825,
+    "e": "m2",
+    "prijs": 250.0,
+    "totaal": 206250,
+    "label": "schatting",
+    "generiek": 1.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Overdrachtsbelasting 10,4%",
+    "h": 1003750.0,
+    "e": "EUR",
+    "prijs": 0.104,
+    "totaal": 104390,
+    "label": "bron",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Notaris, taxatie, bouwkundige keuring",
+    "h": 1,
+    "e": "post",
+    "prijs": 12000,
+    "totaal": 12000,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Verbouw",
+    "post": "Asbestinventarisatie en sanering dak (risicopost)",
+    "h": 550,
+    "e": "m2",
+    "prijs": 25,
+    "totaal": 13750,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Verbouw",
+    "post": "Na-isolatie dak en gevel",
+    "h": 550,
+    "e": "m2",
+    "prijs": 120,
+    "totaal": 66000,
+    "label": "schatting",
+    "generiek": 0.6
+   },
+   {
+    "groep": "Verbouw",
+    "post": "Lichtstraten en glazen pui naar de tuin",
+    "h": 1,
+    "e": "post",
+    "prijs": 45000,
+    "totaal": 45000,
+    "label": "schatting",
+    "generiek": 0.6
+   },
+   {
+    "groep": "Verbouw",
+    "post": "Installaties: warmtepomp, ventilatie met WTW, elektra",
+    "h": 550,
+    "e": "m2",
+    "prijs": 200,
+    "totaal": 110000,
+    "label": "schatting",
+    "generiek": 0.6
+   },
+   {
+    "groep": "Verbouw",
+    "post": "Inbouw: wanden, sanitair, douches, vloer, akoestiek",
+    "h": 494,
+    "e": "m2",
+    "prijs": 550,
+    "totaal": 271700,
+    "label": "schatting",
+    "generiek": 0.1
+   },
+   {
+    "groep": "Verbouw",
+    "post": "Biophilic: plantenwanden, bomen in bakken, hout",
+    "h": 494,
+    "e": "m2",
+    "prijs": 80,
+    "totaal": 39520,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Buiten",
+    "post": "Onttegelen en groen aanleggen",
+    "h": 550,
+    "e": "m2",
+    "prijs": 45,
+    "totaal": 24750,
+    "label": "schatting",
+    "generiek": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Parkeren op bestaande verharding (belijning, groen)",
+    "h": 33,
+    "e": "plek",
+    "prijs": 300,
+    "totaal": 9900,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Buiten",
+    "post": "Overdekte veranda met buitenwerkplekken",
+    "h": 1,
+    "e": "post",
+    "prijs": 18000,
+    "totaal": 18000,
+    "label": "schatting",
+    "generiek": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Buitengym (rig, kettlebells)",
+    "h": 1,
+    "e": "post",
+    "prijs": 8000,
+    "totaal": 8000,
+    "label": "schatting",
+    "generiek": 0.3
+   },
+   {
+    "groep": "Wellness",
+    "post": "Houtgestookte saunahut 10 pers. (verplaatsbaar)",
+    "h": 1,
+    "e": "st",
+    "prijs": 30000,
+    "totaal": 30000,
+    "label": "schatting",
+    "generiek": 0.4
+   },
+   {
+    "groep": "Wellness",
+    "post": "Dompelbad, houtgestookte hot tub, buitendouche",
+    "h": 1,
+    "e": "post",
+    "prijs": 18000,
+    "totaal": 18000,
+    "label": "schatting",
+    "generiek": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Apparatuur (racks, dumbbells, kabel, cardio)",
+    "h": 1,
+    "e": "post",
+    "prijs": 25000,
+    "totaal": 25000,
+    "label": "schatting",
+    "generiek": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Sportvloer",
+    "h": 80,
+    "e": "m2",
+    "prijs": 60,
+    "totaal": 4800,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Werkplek: zit-sta bureau, refurbished stoel, 2 schermen",
+    "h": 30,
+    "e": "plek",
+    "prijs": 1300,
+    "totaal": 39000,
+    "label": "schatting",
+    "generiek": 0.3
+   },
+   {
+    "groep": "Werken",
+    "post": "Belcellen en vergaderruimte",
+    "h": 1,
+    "e": "post",
+    "prijs": 12000,
+    "totaal": 12000,
+    "label": "schatting",
+    "generiek": 0.3
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Tweedehands 3-groeps espressomachine + 2 molens",
+    "h": 1,
+    "e": "set",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting",
+    "generiek": 0.4
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Keuken en bar (tweedehands)",
+    "h": 1,
+    "e": "post",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Tweedehands meubilair, boeken, verlichting",
+    "h": 494,
+    "e": "m2",
+    "prijs": 70,
+    "totaal": 34580,
+    "label": "schatting",
+    "generiek": 0.1
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Toegangssysteem met app, lockers",
+    "h": 1,
+    "e": "post",
+    "prijs": 10000,
+    "totaal": 10000,
+    "label": "schatting",
+    "generiek": 0.2
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Zonnepanelen op het haldak",
+    "h": 66,
+    "e": "kWp",
+    "prijs": 800,
+    "totaal": 52800,
+    "label": "schatting",
+    "generiek": 0.6
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Batterij",
+    "h": 48,
+    "e": "kWh",
+    "prijs": 450,
+    "totaal": 21600,
+    "label": "bron",
+    "generiek": 0.5
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Glasvezel, wifi, Starlink backup",
+    "h": 1,
+    "e": "post",
+    "prijs": 10000,
+    "totaal": 10000,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Architect en installatieadvies (8%)",
+    "h": 894400,
+    "e": "EUR",
+    "prijs": 0.08,
+    "totaal": 71552,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Afwijking omgevingsplan (sport/horeca op bedrijventerrein)",
+    "h": 1,
+    "e": "post",
+    "prijs": 25000,
+    "totaal": 25000,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Leges omgevingsvergunning (~3%)",
+    "h": 894400,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 26832,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Juridisch: statuten, fiscaal",
+    "h": 1,
+    "e": "post",
+    "prijs": 25000,
+    "totaal": 25000,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Ontwikkelvergoeding initiatiefnemer (3%)",
+    "h": 894400,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 26832,
+    "label": "aanname",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Onvoorzien (12% excl. pand)",
+    "h": 1069616,
+    "e": "EUR",
+    "prijs": 0.12,
+    "totaal": 128354,
+    "label": "schatting",
+    "generiek": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwrente en afsluitkosten (3%)",
+    "h": 2318110,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 69543,
+    "label": "schatting",
+    "generiek": 0.0
+   }
+  ],
+  "opex_rows": [
+   {
+    "post": "Schoonmaak",
+    "bedrag": 24960,
+    "label": "schatting",
+    "t": "4 dagen x 4 uur x EUR 30"
+   },
+   {
+    "post": "Management initiatiefnemer",
+    "bedrag": 18000,
+    "label": "aanname",
+    "t": ""
+   },
+   {
+    "post": "Klusjes en storingen (op afroep)",
+    "bedrag": 6000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Groenbeheer (deels met leden)",
+    "bedrag": 2750,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Energie netto",
+    "bedrag": 5258,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Brandhout sauna en hot tub",
+    "bedrag": 5000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Onderhoud pand en terrein (1,5%)",
+    "bedrag": 15406,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Vervangingsreserve inventaris (10%)",
+    "bedrag": 20338,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Verzekeringen",
+    "bedrag": 3636,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "OZB, waterschap, riool",
+    "bedrag": 4437,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Parkmanagement bedrijventerrein",
+    "bedrag": 1500,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Internet, software, toegangsapp",
+    "bedrag": 6000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Accountant en administratie",
+    "bedrag": 12000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Verbruik (eigen handdoek mee)",
+    "bedrag": 4000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Community en events",
+    "bedrag": 5000,
+    "label": "schatting",
+    "t": ""
+   },
+   {
+    "post": "Onvoorzien exploitatie (5%)",
+    "bedrag": 6714,
+    "label": "schatting",
+    "t": ""
+   }
+  ]
+ },
+ "varianten": {
+  "Loods B koop (30+30+60, 495/350)": {
+   "capex": 2387653,
+   "lening": 1427653,
+   "ltv": 0.6,
+   "dscr": 1.56,
+   "resultaat": 67118,
+   "fee_vol_nodig": 359,
+   "fee_deel_nodig": 254,
+   "exitwaarde": 1377354,
+   "restschuld_5": 1199140,
+   "exit_dekking": 0.15,
+   "exit_dekking_versneld": 0.54,
+   "exit_per_vol": 2995,
+   "exit_per_vol_versneld": 10799,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Loods C koop": {
+   "capex": 2129669,
+   "lening": 1169669,
+   "ltv": 0.55,
+   "dscr": 1.93,
+   "resultaat": 90860,
+   "fee_vol_nodig": 311,
+   "fee_deel_nodig": 220,
+   "exitwaarde": 1126866,
+   "restschuld_5": 982449,
+   "exit_dekking": 0.12,
+   "exit_dekking_versneld": 0.65,
+   "exit_per_vol": 2422,
+   "exit_per_vol_versneld": 12986,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Stad S koop": {
+   "capex": 2919257,
+   "lening": 1959257,
+   "ltv": 0.67,
+   "dscr": 1.11,
+   "resultaat": 18189,
+   "fee_vol_nodig": 458,
+   "fee_deel_nodig": 324,
+   "exitwaarde": 1893512,
+   "restschuld_5": 1645655,
+   "exit_dekking": 0.21,
+   "exit_dekking_versneld": 0.31,
+   "exit_per_vol": 4177,
+   "exit_per_vol_versneld": 6292,
+   "toets": {
+    "exploitatie": true,
+    "bank": false,
+    "exit": false
+   }
+  },
+  "Stad S koop, 90 clubleden": {
+   "capex": 3045131,
+   "lening": 2085131,
+   "ltv": 0.68,
+   "dscr": 1.27,
+   "resultaat": 47351,
+   "fee_vol_nodig": 399,
+   "fee_deel_nodig": 282,
+   "exitwaarde": 1989471,
+   "restschuld_5": 1751381,
+   "exit_dekking": 0.2,
+   "exit_dekking_versneld": 0.47,
+   "exit_per_vol": 3924,
+   "exit_per_vol_versneld": 9430,
+   "toets": {
+    "exploitatie": true,
+    "bank": false,
+    "exit": false
+   }
+  },
+  "Loods B huur": {
+   "capex": 1233909,
+   "lening": 273909,
+   "ltv": 0.22,
+   "dscr": 5.49,
+   "resultaat": 102896,
+   "fee_vol_nodig": 287,
+   "fee_deel_nodig": 203,
+   "exitwaarde": 269133,
+   "restschuld_5": 230067,
+   "exit_dekking": 0.03,
+   "exit_dekking_versneld": 0.27,
+   "exit_per_vol": 674,
+   "exit_per_vol_versneld": 5467,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Loods C huur": {
+   "capex": 1233909,
+   "lening": 273909,
+   "ltv": 0.22,
+   "dscr": 5.99,
+   "resultaat": 114446,
+   "fee_vol_nodig": 264,
+   "fee_deel_nodig": 186,
+   "exitwaarde": 269133,
+   "restschuld_5": 230067,
+   "exit_dekking": 0.03,
+   "exit_dekking_versneld": 0.27,
+   "exit_per_vol": 674,
+   "exit_per_vol_versneld": 5467,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Loods B koop, 25+25+50": {
+   "capex": 2231720,
+   "lening": 1431720,
+   "ltv": 0.64,
+   "dscr": 1.13,
+   "resultaat": 15082,
+   "fee_vol_nodig": 458,
+   "fee_deel_nodig": 324,
+   "exitwaarde": 1281121,
+   "restschuld_5": 1202556,
+   "exit_dekking": 0.06,
+   "exit_dekking_versneld": 0.16,
+   "exit_per_vol": 1163,
+   "exit_per_vol_versneld": 3268,
+   "toets": {
+    "exploitatie": true,
+    "bank": false,
+    "exit": false
+   }
+  },
+  "Loods B koop, geen clubleden, 50 vol, 595": {
+   "capex": 2292323,
+   "lening": 1292323,
+   "ltv": 0.56,
+   "dscr": 1.37,
+   "resultaat": 39640,
+   "fee_vol_nodig": 513,
+   "fee_deel_nodig": 366,
+   "exitwaarde": 1311028,
+   "restschuld_5": 1085471,
+   "exit_dekking": 0.19,
+   "exit_dekking_versneld": 0.41,
+   "exit_per_vol": 3856,
+   "exit_per_vol_versneld": 8280,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Loods B koop, hal 20% duurder": {
+   "capex": 2615930,
+   "lening": 1655930,
+   "ltv": 0.63,
+   "dscr": 1.33,
+   "resultaat": 46107,
+   "fee_vol_nodig": 402,
+   "fee_deel_nodig": 284,
+   "exitwaarde": 1598998,
+   "restschuld_5": 1390879,
+   "exit_dekking": 0.18,
+   "exit_dekking_versneld": 0.44,
+   "exit_per_vol": 3503,
+   "exit_per_vol_versneld": 8864,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Loods B koop, inbouw 800/m2": {
+   "capex": 2550069,
+   "lening": 1590069,
+   "ltv": 0.62,
+   "dscr": 1.38,
+   "resultaat": 50940,
+   "fee_vol_nodig": 392,
+   "fee_deel_nodig": 277,
+   "exitwaarde": 1389704,
+   "restschuld_5": 1335559,
+   "exit_dekking": 0.02,
+   "exit_dekking_versneld": 0.32,
+   "exit_per_vol": 404,
+   "exit_per_vol_versneld": 6327,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Loods B koop, waarde hal daalt 1%/jr": {
+   "capex": 2387653,
+   "lening": 1427653,
+   "ltv": 0.6,
+   "dscr": 1.56,
+   "resultaat": 67118,
+   "fee_vol_nodig": 359,
+   "fee_deel_nodig": 254,
+   "exitwaarde": 1223689,
+   "restschuld_5": 1199140,
+   "exit_dekking": -0.01,
+   "exit_dekking_versneld": 0.38,
+   "exit_per_vol": -126,
+   "exit_per_vol_versneld": 7678,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  },
+  "Loods B koop, tegenvaller (30 club, inbouw 800, hal +20%)": {
+   "capex": 2740062,
+   "lening": 1780062,
+   "ltv": 0.65,
+   "dscr": 0.95,
+   "resultaat": -7612,
+   "fee_vol_nodig": 510,
+   "fee_deel_nodig": 361,
+   "exitwaarde": 1586087,
+   "restschuld_5": 1495142,
+   "exit_dekking": 0.05,
+   "exit_dekking_versneld": 0.01,
+   "exit_per_vol": 1069,
+   "exit_per_vol_versneld": 184,
+   "toets": {
+    "exploitatie": false,
+    "bank": false,
+    "exit": false
+   }
+  },
+  "Loods B koop, 595/425": {
+   "capex": 2387653,
+   "lening": 1427653,
+   "ltv": 0.6,
+   "dscr": 1.99,
+   "resultaat": 117838,
+   "fee_vol_nodig": 358,
+   "fee_deel_nodig": 256,
+   "exitwaarde": 1377354,
+   "restschuld_5": 1199140,
+   "exit_dekking": 0.15,
+   "exit_dekking_versneld": 0.83,
+   "exit_per_vol": 2995,
+   "exit_per_vol_versneld": 16697,
+   "toets": {
+    "exploitatie": true,
+    "bank": true,
+    "exit": false
+   }
+  }
+ }
+}
