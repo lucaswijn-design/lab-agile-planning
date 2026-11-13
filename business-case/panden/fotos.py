@@ -17,6 +17,7 @@ ADVERTENTIES = {
     "utrecht-van-heutszstraat-4": "https://www.bedrijfspand.com/bedrijfspanden/bedrijfsruimte/van-heutszstraat-4-utrecht/116706/",
     "den-bosch-rietveldenweg-13": "https://www.bedrijfspand.com/bedrijfspanden/bedrijfsruimte/rietveldenweg-13-den-bosch/126268/",
     "den-bosch-eendenkooi-1a": "https://www.bedrijfspand.com/bedrijfspanden/bedrijfsruimte/de-eendenkooi-1-a-den-bosch/125406/",
+    "voorhout-dinsdagse-wetering-56a": "https://www.bedrijfspand.com/bedrijfspanden/bedrijfsruimte/dinsdagse-wetering-56-a-voorhout/125825/",
 }
 
 

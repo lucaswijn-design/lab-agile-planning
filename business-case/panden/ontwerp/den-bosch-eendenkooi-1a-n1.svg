@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.00 -23.92 43.51 28.42" width="1400" height="914" font-family="Work Sans, Helvetica, Arial, sans-serif" role="img" aria-label="Plattegrond De Eendenkooi 1A, Den Bosch">
+<rect x="-3.00" y="-23.92" width="43.51" height="28.42" fill="#fbf9f4"/>
+<g transform="scale(1,-1)">
+<polygon points="30.60,14.94 30.62,17.07 26.27,16.94 26.17,17.04 17.68,17.09 17.68,18.42 0.00,18.41 0.01,5.07 0.01,3.27 0.01,0.00 37.51,0.00 37.50,5.20 37.49,14.53 37.49,14.93 30.60,14.94" fill="#ffffff"/>
+<polygon points="17.70,0.30 37.20,0.30 37.20,14.60 17.70,14.60" fill="#e3e6e2" fill-opacity="0.42"/>
+<defs><pattern id="arc" width="0.6" height="0.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.6" stroke="#b9b3a6" stroke-width="0.06"/></pattern></defs>
+<polygon points="0.30,0.30 17.50,0.30 17.50,18.10 0.30,18.10" fill="url(#arc)"/>
+<rect x="18.20" y="11.90" width="1.20" height="3.40" transform="rotate(0.0 18.80 13.60)" fill="#cfc8ba" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="18.95" y="2.72" width="1.60" height="0.80" transform="rotate(-8.0 19.75 3.12)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="19.66" cy="2.51" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="20.54" y="2.49" width="1.60" height="0.80" transform="rotate(-8.0 21.34 2.89)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="21.25" cy="2.28" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="19.06" y="3.51" width="1.60" height="0.80" transform="rotate(172.0 19.86 3.91)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="19.95" cy="4.52" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="20.65" y="3.28" width="1.60" height="0.80" transform="rotate(172.0 21.45 3.68)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="21.54" cy="4.29" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="23.25" y="2.32" width="1.60" height="0.80" transform="rotate(6.0 24.05 2.72)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="24.11" cy="2.10" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="24.84" y="2.49" width="1.60" height="0.80" transform="rotate(6.0 25.64 2.89)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="25.70" cy="2.27" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="23.16" y="3.11" width="1.60" height="0.80" transform="rotate(186.0 23.96 3.51)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="23.90" cy="4.13" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="24.75" y="3.28" width="1.60" height="0.80" transform="rotate(186.0 25.55 3.68)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="25.49" cy="4.30" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="27.37" y="3.07" width="1.60" height="0.80" transform="rotate(-5.0 28.17 3.47)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="28.12" cy="2.85" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="28.96" y="2.93" width="1.60" height="0.80" transform="rotate(-5.0 29.76 3.33)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="29.71" cy="2.71" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="27.44" y="3.87" width="1.60" height="0.80" transform="rotate(175.0 28.24 4.27)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="28.29" cy="4.89" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="29.03" y="3.73" width="1.60" height="0.80" transform="rotate(175.0 29.83 4.13)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="29.88" cy="4.75" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="20.27" y="7.08" width="1.60" height="0.80" transform="rotate(9.0 21.07 7.48)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="21.17" cy="6.87" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="21.85" y="7.33" width="1.60" height="0.80" transform="rotate(9.0 22.65 7.73)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="22.75" cy="7.12" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="20.15" y="7.87" width="1.60" height="0.80" transform="rotate(189.0 20.95 8.27)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="20.85" cy="8.88" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="21.73" y="8.12" width="1.60" height="0.80" transform="rotate(189.0 22.53 8.52)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="22.43" cy="9.13" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="24.76" y="7.49" width="1.60" height="0.80" transform="rotate(-6.0 25.56 7.89)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="25.50" cy="7.27" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="26.35" y="7.32" width="1.60" height="0.80" transform="rotate(-6.0 27.15 7.72)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="27.09" cy="7.10" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="24.85" y="8.28" width="1.60" height="0.80" transform="rotate(174.0 25.65 8.68)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="25.71" cy="9.30" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="26.44" y="8.11" width="1.60" height="0.80" transform="rotate(174.0 27.24 8.51)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="27.30" cy="9.13" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="31.20" y="7.10" width="6.00" height="7.40" transform="rotate(0.0 34.20 10.80)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="32.40" y="10.20" width="3.60" height="1.20" transform="rotate(0.0 34.20 10.80)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="19.00" y="0.45" width="10.00" height="0.50" transform="rotate(0.0 24.00 0.70)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<circle cx="33.00" cy="2.40" r="0.75" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="35.40" cy="2.40" r="0.75" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="33.00" cy="4.80" r="0.75" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="31.20" cy="7.20" r="0.5" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="18.40" cy="13.60" r="0.5" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="30.00" cy="13.40" r="0.5" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<polygon points="30.60,14.94 30.62,17.07 26.27,16.94 26.17,17.04 17.68,17.09 17.68,18.42 0.00,18.41 0.01,5.07 0.01,3.27 0.01,0.00 37.51,0.00 37.50,5.20 37.49,14.53 37.49,14.93 30.60,14.94" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
+</g>
+<text x="8.90" y="-9.20" font-size="0.62" text-anchor="middle" fill="#55514a" font-style="italic">Vide boven de sportzaal</text>
+<text x="25.00" y="-5.90" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">werkzone</text><text x="25.00" y="-5.15" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">279 m² · rotskust</text>
+<rect x="-1.80" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-0.80" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="0.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.20" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<text x="-1.80" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b">0</text><text x="3.20" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b" text-anchor="middle">5 m</text>
+<polygon points="39.49,-22.55 38.65,-21.52 38.17,-21.48 38.31,-21.94" fill="#1d1d1b"/><text x="39.87" y="-22.67" font-size="0.55" font-weight="600" text-anchor="middle">N</text>
+<text x="-1.80" y="-22.32" font-size="0.9" font-weight="600" fill="#1d1d1b">De Eendenkooi 1A, Den Bosch</text><text x="-1.80" y="-21.52" font-size="0.5" font-family="Space Mono, ui-monospace, monospace" fill="#55514a">VERDIEPING · ONTWERP NOVEMBER 2026 · INDICATIEF</text>
+</svg>

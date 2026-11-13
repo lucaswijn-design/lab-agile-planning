@@ -1,0 +1,458 @@
+<title>Clubhuis ontwerpen</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap">
+<style>
+/* Maquettestudio: lichte architectuurpresentatie. Tekening en maquette staan centraal, tekst is ondersteunend. */
+:root{
+  --paper:#efe8dc; --card:#fbf8f2; --ink:#2b2a26; --muted:#6c665b; --line:#d8cfbf; --accent:#6f7d3a; --accent-ink:#fbf8f2;
+  --good:#4d6a3a; --warn:#a8332e;
+  --f-display:"Cormorant Garamond",Georgia,serif; --f-body:"Work Sans",system-ui,sans-serif; --f-mono:"Space Mono",ui-monospace,monospace;
+  color-scheme:light;
+}
+/* bewust één licht thema: maquette op papier, in elk thema dezelfde kleuren */
+*{box-sizing:border-box}
+.wrap>*,.wrap>*>*{min-width:0}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1240px;margin:0 auto;padding-block:36px 80px;display:grid;gap:32px}
+h1,h2,h3{font-family:var(--f-display);font-weight:500;margin:0;line-height:1.05;text-wrap:balance}
+h1{font-size:clamp(40px,7vw,76px)} h2{font-size:clamp(28px,4vw,40px)} h3{font-size:24px}
+p{margin:0;max-width:74ch}
+.eyebrow{font:400 12px/1.2 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.lead{font-size:17px;max-width:70ch}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.picker{display:flex;flex-wrap:wrap;gap:8px}
+.picker button,.seg button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink)}
+.picker button{font-size:15px;padding:10px 16px;border-radius:999px}
+.picker button[aria-pressed="true"]{background:var(--ink);color:var(--card);border-color:var(--ink)}
+button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.head{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:end}
+@media (max-width:860px){.head{grid-template-columns:1fr}}
+.kpis{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.kpi{background:var(--card);border:1px solid var(--line);padding:12px 14px;display:grid;gap:2px}
+.kpi .k{font:400 11px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.kpi .v{font:700 20px/1.2 var(--f-mono)}
+.stage{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:16px;align-items:start}
+@media (max-width:960px){.stage{grid-template-columns:1fr}}
+.view{position:relative;background:#e9e3d6;border:1px solid var(--line);aspect-ratio:4/3;overflow:hidden}
+.view canvas{display:block;width:100%;height:100%;touch-action:none}
+.hud{position:absolute;left:10px;right:10px;top:10px;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;pointer-events:none}
+.hud>*{pointer-events:auto}
+.seg{display:inline-flex;background:var(--card);border:1px solid var(--line);padding:3px;gap:2px;flex-wrap:wrap}
+.seg button{border:0;background:none;font-size:13px;padding:7px 11px}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--card)}
+.cams{position:absolute;left:10px;bottom:10px;right:10px;display:flex;flex-wrap:wrap;gap:6px}
+.cams button{font:400 12px/1 var(--f-mono);background:#fbf8f2e6;border:1px solid var(--line);padding:7px 9px;cursor:pointer;color:var(--ink)}
+.cams button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.side{background:var(--card);border:1px solid var(--line);padding:18px;display:grid;gap:14px;min-width:0}
+.side p{font-size:14.5px}
+.plan{background:var(--card);border:1px solid var(--line);padding:10px;overflow-x:auto}
+.plan svg{display:block;width:100%;height:auto;min-width:640px}
+.tabs{display:flex;gap:6px;margin-bottom:8px}
+.rooms{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px}
+.room{background:var(--card);border:1px solid var(--line);padding:18px;display:grid;gap:10px;align-content:start}
+.room h3{font-size:26px}
+.sw{display:flex;gap:4px}.sw i{flex:1;height:22px;border:1px solid #0000001a}
+.room ul{margin:0;padding-left:18px;font-size:14px;display:grid;gap:4px}
+.room details{font-size:13px}
+.room summary{cursor:pointer;font:400 12px/1.4 var(--f-mono);text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}
+.prompt{font:400 12.5px/1.5 var(--f-mono);background:#f2ece1;border:1px solid var(--line);padding:10px;margin-top:8px;white-space:pre-wrap}
+.copy{font:400 12px/1 var(--f-mono);border:1px solid var(--ink);background:none;padding:6px 10px;cursor:pointer;margin-top:6px}
+.note{font-size:13px;color:var(--muted)}
+.roof{background:var(--card);border:1px solid var(--line);padding:18px;display:grid;gap:10px}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+td,th{padding:6px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+td.r,th.r{text-align:right;font-family:var(--f-mono)}
+.tbl{overflow-x:auto}
+</style>
+<main class="wrap">
+  <header style="display:grid;gap:14px">
+    <div class="eyebrow">Het Clubhuis · ontwerp per locatie · november 2026</div>
+    <h1>Ontwerpen per locatie</h1>
+    <p class="lead">Per pand een uitgewerkte indeling met ronde elementen, inrichting per ruimte in kleuren uit de natuur, een maquette met het dak eraf en een dakaanzicht. Alle drie de panden stonden op 13 november 2026 nog te koop op de advertentiesite. Indicatief: maten en constructie nog controleren bij bezichtiging.</p>
+    <nav class="picker" id="picker" aria-label="Kies een pand"></nav>
+  </header>
+
+  <section class="head">
+    <div style="display:grid;gap:10px">
+      <div class="eyebrow" id="p-sub"></div>
+      <h2 id="p-titel"></h2>
+      <p id="p-concept"></p>
+    </div>
+    <div class="kpis" id="p-kpis"></div>
+  </section>
+
+  <section class="stage">
+    <div class="view" id="view">
+      <div class="hud">
+        <div class="seg" role="group" aria-label="Weergave">
+          <button data-mode="huidig">Huidig</button>
+          <button data-mode="open" aria-pressed="true">Dak eraf</button>
+          <button data-mode="dak">Dak dicht</button>
+        </div>
+        <div class="seg" role="group" aria-label="Verdieping" id="lvl" hidden>
+          <button data-l="1" aria-pressed="true">Met verdieping</button>
+          <button data-l="0">Begane grond</button>
+        </div>
+      </div>
+      <div class="cams" id="cams"></div>
+    </div>
+    <aside class="side">
+      <div class="eyebrow">Dak</div>
+      <p id="p-dak"></p>
+      <div class="eyebrow">Lezen</div>
+      <p class="note">Sleep om te draaien, scroll of knijp om te zoomen. De knoppen onderin springen naar een ruimte. Kleuren op de vloer volgen het kleurenplan: pistache voor het café, avocado voor de bieb, rotskust voor de werkzone, granaatappel voor de gym, vijg voor de studio, kokos voor entree en terras.</p>
+    </aside>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Plattegrond</h2>
+    <div class="plan"><div class="tabs seg" id="plantabs"></div><div id="plan"></div></div>
+  </section>
+
+  <section style="display:grid;gap:12px">
+    <h2>Ruimte voor ruimte</h2>
+    <p class="note">Per ruimte de inrichting en een prompt voor ChatGPT. Geef de prompt met de genoemde advertentiefoto (of het maquettebeeld van die ruimte) uit het renderpakket.</p>
+    <div class="rooms" id="rooms"></div>
+  </section>
+
+  <section class="roof" id="roofsec">
+    <h2>Dakterras als optie</h2>
+    <div id="roof"></div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+const DATA = /*__DATA__*/null;
+const euro = n => '€ ' + Math.round(n).toLocaleString('nl-NL');
+let cur = 0, mode = 'open', showL1 = true;
+const view = document.getElementById('view');
+let renderer, scene, camera, controls, groups = {};
+
+function initThree(){
+  renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.outputEncoding = THREE.sRGBEncoding;
+  view.prepend(renderer.domElement);
+  camera = new THREE.PerspectiveCamera(38, 4/3, 0.3, 900);
+  controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true; controls.maxPolarAngle = Math.PI * 0.49;
+  const ro = new ResizeObserver(resize); ro.observe(view); resize();
+  (function loop(){ requestAnimationFrame(loop); if (!scene) return; controls.update(); renderer.render(scene, camera); })();
+}
+function resize(){
+  const w = view.clientWidth, h = view.clientHeight;
+  renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix();
+}
+
+// ---------- geometrie-hulpjes: x = u, z = v, y omhoog
+const M = {};
+function mat(c, o = {}){
+  const k = c + JSON.stringify(o);
+  if (!M[k]) M[k] = new THREE.MeshStandardMaterial(Object.assign({color:c, roughness:.85, metalness:0}, o));
+  return M[k];
+}
+const EDGE = new THREE.LineBasicMaterial({color:0x3a3833, transparent:true, opacity:.35});
+function edges(mesh, g){ const e = new THREE.LineSegments(new THREE.EdgesGeometry(mesh.geometry, 30), EDGE); mesh.add(e); }
+function add(g, geo, m, opt = {}){
+  const mesh = new THREE.Mesh(geo, m); mesh.castShadow = opt.cast !== false; mesh.receiveShadow = true;
+  if (opt.edges) edges(mesh); g.add(mesh); return mesh;
+}
+function shapeOf(poly){ const s = new THREE.Shape(); poly.forEach((p,i) => i ? s.lineTo(p[0], p[1]) : s.moveTo(p[0], p[1])); return s; }
+function extrude(shape, depth, y0){
+  const g = new THREE.ExtrudeGeometry(shape, {depth, bevelEnabled:false, curveSegments:48});
+  g.rotateX(Math.PI/2); g.translate(0, y0 + depth, 0); return g;
+}
+function sector(c, rIn, rOut, a0, a1){
+  const s = new THREE.Shape(), r = Math.PI/180;
+  s.absarc(c[0], c[1], rOut, a0*r, a1*r, false);
+  s.absarc(c[0], c[1], rIn, a1*r, a0*r, true);
+  return s;
+}
+function box(g, c, w, d, h, a, color, y0 = 0, opt = {}){
+  const m = add(g, new THREE.BoxGeometry(w, h, d), opt.mat || mat(color), opt);
+  m.position.set(c[0], y0 + h/2, c[1]); m.rotation.y = -a * Math.PI/180; return m;
+}
+function cyl(g, c, r, h, color, y0 = 0, opt = {}){
+  const m = add(g, new THREE.CylinderGeometry(opt.rt ?? r, r, h, opt.seg || 28), opt.mat || mat(color), opt);
+  m.position.set(c[0], y0 + h/2, c[1]); return m;
+}
+function sphere(g, c, r, y, color){ const m = add(g, new THREE.SphereGeometry(r, 16, 12), mat(color)); m.position.set(c[0], y, c[1]); return m; }
+const GROEN = ['#5f7a3a','#6f8a44','#4d6a3a','#7d9a52'];
+
+// ---------- elementen
+function element(g, e, y0){
+  const k = e.kleur || '#cfc8ba';
+  switch (e.t){
+    case 'bureau': {
+      const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
+      box(g, e.c, e.w, e.d, .04, e.a, '#c9a77c', y0 + .7);
+      box(g, e.c, .08, .6, .7, e.a, '#2f3032', y0);
+      const mc = [e.c[0] - .18*(-sa), e.c[1] - .18*ca];
+      box(g, [e.c[0] + .2*sa, e.c[1] - .2*ca], 1.1, .04, .34, e.a, '#1f2022', y0 + .9);
+      cyl(g, [e.c[0] + .65*sa, e.c[1] - .65*ca], .26, .5, '#3a3b3d', y0);
+      break; }
+    case 'box': {
+      const s = e.soort;
+      if (e.glas){ const m = box(g, e.c, e.w, e.d, e.h, e.a, k, y0, {mat: mat('#bcd3dc', {transparent:true, opacity:.28, roughness:.1}), cast:false}); edges(m); break; }
+      if (s === 'rack'){
+        const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
+        for (const [du,dv] of [[-.6,-.6],[.6,-.6],[-.6,.6],[.6,.6]]) box(g, [e.c[0]+du*ca-dv*sa, e.c[1]+du*sa+dv*ca], .08, .08, e.h, 0, '#1f2022', y0);
+        box(g, e.c, 1.3, .08, .08, e.a, '#1f2022', y0 + e.h - .1); box(g, e.c, .08, 1.3, .08, e.a, '#1f2022', y0 + e.h - .1);
+        box(g, e.c, 1.9, .05, .05, e.a, '#9a9890', y0 + 1.3);
+        break; }
+      if (s === 'trap'){ for (let i = 0; i < 12; i++) box(g, [e.c[0], e.c[1] - e.d/2 + i*e.d/12 + e.d/24], e.w, e.d/12, .3 + i*.3, 0, '#d8d2c6', y0); break; }
+      const m = box(g, e.c, e.w, e.d, e.h, e.a, k, y0, {edges: e.h > .3});
+      if (s === 'bank' && e.h > .4) box(g, [e.c[0], e.c[1]], e.w, .2, .45, e.a, k, y0 + e.h);
+      break; }
+    case 'cil': {
+      const s = e.soort, zz = e.z || 0;
+      if (s === 'ronde tafel'){ cyl(g, e.c, e.r, .04, k, y0 + .72); cyl(g, e.c, .05, .72, '#2f3032', y0); break; }
+      if (s === 'lamp'){ cyl(g, e.c, .02, e.h, '#2f3032', y0); cyl(g, e.c, .22, .2, k, y0 + e.h - .1, {rt:.08}); break; }
+      if (s === 'haard'){ cyl(g, e.c, e.r, e.h, '#2f3032', y0); cyl(g, e.c, e.r*.6, .12, '#e98a3c', y0 + e.h, {mat: mat('#f09a4a', {emissive:'#c4561c', emissiveIntensity:.8})}); cyl(g, e.c, .08, 2.6, '#2f3032', y0 + e.h); break; }
+      if (s === 'belcel'){ const m = cyl(g, e.c, e.r, e.h, k, y0, {seg:40}); edges(m); cyl(g, e.c, e.r + .02, .06, '#1f3441', y0 + e.h); break; }
+      cyl(g, e.c, e.r, e.h, k, y0 + zz);
+      break; }
+    case 'kleed':
+      if (e.r) cyl(g, e.c, e.r, .02, k, y0 + .16, {cast:false, seg:48});
+      else box(g, e.c, e.w, e.d, .02, e.a || 0, k, y0 + .16, {cast:false});
+      break;
+    case 'boog': {
+      const m = add(g, extrude(sector(e.c, e.r - e.d, e.r, e.a0, e.a1), e.h, y0 + .16), mat(k), {edges: e.soort !== 'gordijn'});
+      if (e.soort === 'bar') add(g, extrude(sector(e.c, e.r - e.d - .05, e.r + .05, e.a0, e.a1), .04, y0 + .16 + e.h), mat('#e6dcc6'));
+      if (e.soort === 'bank') add(g, extrude(sector(e.c, e.r - .2, e.r, e.a0, e.a1), .4, y0 + .16 + e.h), mat(k));
+      break; }
+    case 'ring': {
+      if (e.dun){
+        const n = 10; for (let i = 0; i < n; i++){ const a = i*2*Math.PI/n; cyl(g, [e.c[0]+e.r*Math.cos(a), e.c[1]+e.r*Math.sin(a)], .06, e.h, '#2f3032', y0); }
+        const t = add(g, new THREE.TorusGeometry(e.r, .06, 8, 64), mat('#2f3032')); t.rotation.x = Math.PI/2; t.position.set(e.c[0], y0 + e.h, e.c[1]);
+        for (let i = 0; i < 14; i++){ const a = i*2*Math.PI/14 + .2; sphere(g, [e.c[0]+e.r*Math.cos(a), e.c[1]+e.r*Math.sin(a)], .35, y0 + e.h, GROEN[i%4]); }
+        break; }
+      const gat = e.gat/2;
+      add(g, extrude(sector(e.c, e.r - .14, e.r + .08, e.open + gat, e.open + 360 - gat), e.h, y0 + .16), mat(k), {edges:true});
+      break; }
+    case 'toren': toren(g, e, y0); break;
+    case 'plant': {
+      cyl(g, e.c, e.r*.55, .45, '#b8633f', y0 + .16, {rt: e.r*.65});
+      sphere(g, e.c, e.r, y0 + .45 + e.r*.9, GROEN[Math.round(e.c[0]*7) % 4]);
+      if (e.h > 1.3) sphere(g, [e.c[0] + .1, e.c[1] - .1], e.r*.75, y0 + e.h, GROEN[(Math.round(e.c[1]*5)+1) % 4]);
+      break; }
+    case 'boom': {
+      cyl(g, e.c, .12, e.h*.6, '#6b4428', y0);
+      const n = 3; for (let i = 0; i < n; i++){ const a = i*2.1 + e.c[0]; sphere(g, [e.c[0] + .35*e.r*Math.cos(a), e.c[1] + .35*e.r*Math.sin(a)], e.r*(.75 + .1*i), y0 + e.h*.62 + e.r*.45 + i*.15, GROEN[i % 4]); }
+      break; }
+    case 'v': {
+      for (const s of [-1, 1]){
+        const a = (e.open + 180 + s*e.hoek) * Math.PI/180, L = e.arm;
+        const mid = [e.c[0] + L/2*Math.cos(a), e.c[1] + L/2*Math.sin(a)];
+        box(g, mid, L, .5, .85, (e.open + 180 + s*e.hoek), '#b9b1a2', y0 + .16, {edges:true});
+        box(g, mid, L*.9, .25, .02, (e.open + 180 + s*e.hoek), '#7f9aa8', y0 + 1.02);
+      }
+      break; }
+  }
+}
+
+function toren(G, e, y0){
+  const g = new THREE.Group(); g.position.set(e.c[0], y0 + .16, e.c[1]); g.rotation.y = -(e.open - 180) * Math.PI/180; G.add(g);
+  const was = e.soort === 'was', r = e.r, h = e.h;
+  const opening = was ? 1.2 : 1.0, apex = was ? -.7 : -.5, endx = was ? .75 : .5, frontx = was ? .9 : .7;
+  const ys = was ? [-1.65,-.55,.55,1.65] : [-1.35,-.45,.45,1.35];
+  const d = Math.asin(opening/2/r) * 180/Math.PI;
+  const wand = add(g, extrude(sector([0,0], r - .15, r, 180 + d, 540 - d), h, 0), mat('#bdb7aa', {roughness:.95}), {edges:true});
+  // plantenrand
+  const tor = add(g, new THREE.TorusGeometry(r - .07, .16, 8, 72, (360 - 2*d) * Math.PI/180), mat('#4d6a3a')); tor.rotation.x = Math.PI/2; tor.rotation.z = -(180 + d) * Math.PI/180; tor.position.y = h + .05;
+  const n = Math.floor(2*Math.PI*r/.5);
+  for (let i = 0; i < n; i++){
+    const a = i*2*Math.PI/n; if (Math.abs(Math.atan2(Math.sin(a - Math.PI), Math.cos(a - Math.PI))) < d*Math.PI/180 + .1) continue;
+    sphere(g, [(r - .07)*Math.cos(a), (r - .07)*Math.sin(a)], .2 + .07*(i % 3), h + .15, GROEN[i % 4]);
+    if (i % 2 === 0){ const hang = add(g, new THREE.CylinderGeometry(.05, .12, .9 + .5*(i % 3), 6), mat(GROEN[(i+1) % 4])); hang.position.set((r + .04)*Math.cos(a), h - .45 - .2*(i % 3), (r + .04)*Math.sin(a)); }
+  }
+  // V-wand en cabines
+  const t = Math.tan(40*Math.PI/180);
+  for (const s of [-1, 1]){
+    const ex = endx, ey = s*(endx - apex)*t, L = Math.hypot(ex - apex, ey), a = Math.atan2(ey, ex - apex)*180/Math.PI;
+    box(g, [(apex + ex)/2, ey/2], L, .24, 2.4, a, '#8f8a80', 0, {edges:true});
+    if (was){
+      const nx = -Math.sin(a*Math.PI/180), nz = Math.cos(a*Math.PI/180), sg = nx > 0 ? -1 : 1;
+      box(g, [(apex + ex)/2 + sg*nx*.36, ey/2 + sg*nz*.36], L*.8, .45, .85, a, '#b9b1a2', 0, {edges:true});
+    }
+  }
+  for (const y of ys){ const xw = Math.sqrt(r*r - y*y); box(g, [(frontx + xw)/2, y], xw - frontx, .07, 2.2, 0, '#cfc8ba', 0); }
+  for (let i = 0; i < ys.length - 1; i++){
+    const ym = (ys[i] + ys[i+1])/2, xw = Math.sqrt(r*r - ym*ym);
+    if (was){ box(g, [xw - .42, ym], .55, .38, .42, 0, '#ffffff', 0); box(g, [frontx, ym], .06, ys[i+1] - ys[i] - .25, 2.0, 0, '#a07a52', 0); }
+    else cyl(g, [xw - .5, ym], .12, .05, '#9a9890', 2.1);
+  }
+  if (!was) for (const s of [-1, 1]){
+    const a0 = 180 - s*22, a1 = 180 - s*95;
+    add(g, extrude(sector([0,0], r - .5, r - .12, Math.min(a0, a1), Math.max(a0, a1)), .45, 0), mat('#a07a52'), {edges:true});
+  }
+}
+
+// ---------- gevels met pui
+function gevels(g, P, h, cut){
+  const fp = P.footprint, pui = P.ontwerp.pui || [];
+  const wandMat = mat('#f3efe7'), glas = mat('#c7dbe3', {transparent:true, opacity:.35, roughness:.05});
+  for (let i = 0; i < fp.length - 1; i++){
+    const A = fp[i], B = fp[i+1], L = Math.hypot(B[0] - A[0], B[1] - A[1]); if (L < .05) continue;
+    const ux = (B[0] - A[0])/L, uz = (B[1] - A[1])/L;
+    let open = [];
+    for (const [p, q] of pui){
+      const dp = Math.abs((p[0] - A[0])*uz - (p[1] - A[1])*ux), dq = Math.abs((q[0] - A[0])*uz - (q[1] - A[1])*ux);
+      if (dp < .5 && dq < .5){
+        let tp = (p[0] - A[0])*ux + (p[1] - A[1])*uz, tq = (q[0] - A[0])*ux + (q[1] - A[1])*uz;
+        if (tp > tq) [tp, tq] = [tq, tp]; tp = Math.max(0, tp); tq = Math.min(L, tq); if (tq - tp > .2) open.push([tp, tq]);
+      }
+    }
+    open.sort((a, b) => a[0] - b[0]);
+    const dichte = []; let t0 = 0; for (const [a, b] of open){ if (a > t0) dichte.push([t0, a]); t0 = Math.max(t0, b); } if (t0 < L) dichte.push([t0, L]);
+    const ang = Math.atan2(uz, ux)*180/Math.PI;
+    const seg = (a, b, y0, hh, m, opt = {}) => { const c = [A[0] + ux*(a + b)/2, A[1] + uz*(a + b)/2]; const ms = box(g, c, b - a, .3, hh, ang, '#f3efe7', y0, Object.assign({mat:m, edges:true}, opt)); return ms; };
+    for (const [a, b] of dichte) seg(a, b, 0, h, wandMat);
+    for (const [a, b] of open){
+      const top = Math.min(3.1, h - .5);
+      seg(a, b, 0, .45, wandMat); seg(a, b, .45, top - .45, glas, {cast:false}); seg(a, b, top, h - top, wandMat);
+      const n = Math.max(1, Math.round((b - a)/1.6)); for (let k = 0; k <= n; k++){ const tt = a + (b - a)*k/n; box(g, [A[0] + ux*tt, A[1] + uz*tt], .07, .34, top, ang, '#1f2022', 0); }
+    }
+  }
+}
+
+// ---------- scène per pand
+function bouw(P){
+  scene = new THREE.Scene(); scene.background = new THREE.Color('#e9e3d6');
+  scene.add(new THREE.HemisphereLight('#fffaf0', '#b9b09c', .75));
+  const sun = new THREE.DirectionalLight('#fff4e0', .95); sun.position.set(-40, 70, -25); sun.castShadow = true;
+  const S = 60; Object.assign(sun.shadow.camera, {left:-S, right:S, top:S, bottom:-S, near:1, far:220}); sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0005;
+  const cx = P.cx, cz = P.cz; sun.position.x += cx; sun.position.z -= cz; sun.target.position.set(cx, 0, -cz); scene.add(sun, sun.target);
+  const O = P.ontwerp, h = O.hoogte, L1 = (O.niveaus || {})['1'];
+  const gr = add(scene, new THREE.PlaneGeometry(400, 400), mat('#e4ddcf'), {cast:false}); gr.rotation.x = -Math.PI/2; gr.position.set(cx, -.02, -cz);
+  groups = {ctx:new THREE.Group(), buiten:new THREE.Group(), schil:new THREE.Group(), vloer:new THREE.Group(), in0:new THREE.Group(), in1:new THREE.Group(), dak:new THREE.Group(), dakplus:new THREE.Group(), l1:new THREE.Group()};
+  // (u, v) is rechtshandig zoals (oost, noord); three.js (x, z) van boven gezien niet: spiegel z
+  const root = new THREE.Group(); root.scale.set(1, 1, -1); scene.add(root);
+  Object.values(groups).forEach(x => root.add(x));
+  for (const c of P.context){ const m = add(groups.ctx, extrude(shapeOf(c.ring), Math.max(2.5, c.h), 0), mat('#f2eee6'), {edges:true}); }
+  for (const b of O.buiten) add(groups.buiten, extrude(shapeOf(b.poly), .06, 0), mat(b.kleur), {cast:false});
+  add(groups.vloer, extrude(shapeOf(P.footprint), .15, 0), mat('#f7f4ee'), {cast:false});
+  for (const z of O.zones) if (!z.n) add(groups.vloer, extrude(shapeOf(z.poly), .01, .15), mat(z.kleur, {roughness:.95}), {cast:false});
+  gevels(groups.schil, P, h);
+  // verdieping
+  if (L1){
+    for (const z of O.zones) if (z.n === 1){ add(groups.l1, extrude(shapeOf(z.poly), .25, L1 - .25), mat('#f7f4ee'), {edges:true}); add(groups.l1, extrude(shapeOf(z.poly), .01, L1), mat(z.kleur), {cast:false}); }
+  }
+  for (const e of O.elementen){ const n = e.n || 0; element(n ? groups.in1 : groups.in0, e, n ? L1 : 0); }
+  // dak
+  add(groups.dak, extrude(shapeOf(P.footprint), .35, h), mat('#dcd7cc'), {edges:true});
+  const D = O.dak;
+  for (const p of D.groen || []) add(groups.dakplus, extrude(shapeOf(p), .08, h + .35), mat('#8ea36a', {roughness:1}), {cast:false});
+  for (const p of D.pv || []){
+    const xs = p.map(q => q[0]), zs = p.map(q => q[1]); const x0 = Math.min(...xs), x1 = Math.max(...xs), z0 = Math.min(...zs), z1 = Math.max(...zs);
+    for (let z = z0 + .6; z + 1 < z1; z += 2.2) for (let x = x0 + .4; x + 1.7 < x1; x += 1.8){ const m = box(groups.dakplus, [x + .85, z + .5], 1.7, 1.0, .06, 0, '#22324a', h + .55, {mat: mat('#253650', {roughness:.3, metalness:.4})}); m.rotation.x = -.18; }
+  }
+  for (const [u, v, r] of D.koepels || []) if (r > 0){ const k = add(groups.dakplus, new THREE.SphereGeometry(r, 24, 12, 0, Math.PI*2, 0, Math.PI/2), mat('#e9f1f3', {transparent:true, opacity:.75, roughness:.1})); k.position.set(u, h + .35, v); k.scale.y = .45; }
+  if (D.terras){
+    add(groups.dakplus, extrude(shapeOf(D.terras), .12, h + .35), mat('#b08a5e'), {edges:true});
+    const t = D.terras, xs = t.map(q => q[0]), zs = t.map(q => q[1]); const x0 = Math.min(...xs), x1 = Math.max(...xs), z0 = Math.min(...zs), z1 = Math.max(...zs), y = h + .47;
+    for (const [a, b] of [[[x0,z0],[x1,z0]],[[x1,z0],[x1,z1]],[[x1,z1],[x0,z1]],[[x0,z1],[x0,z0]]]){
+      const L = Math.hypot(b[0]-a[0], b[1]-a[1]); box(groups.dakplus, [(a[0]+b[0])/2, (a[1]+b[1])/2], L, .05, 1.1, Math.atan2(b[1]-a[1], b[0]-a[0])*180/Math.PI, '#2f3032', y, {mat: mat('#2f3032', {transparent:true, opacity:.55})});
+    }
+    for (let x = x0 + 1; x < x1 - .5; x += 2.6){ box(groups.dakplus, [x, z0 + .5], 1.8, .5, .6, 0, '#5a3a22', y); sphere(groups.dakplus, [x, z0 + .5], .55, y + .9, GROEN[Math.round(x) % 4]); }
+    const px0 = x0 + (x1 - x0)*.45, px1 = x1 - .8, pz0 = z0 + 2.2, pz1 = z1 - 1;
+    for (const [px, pz] of [[px0,pz0],[px1,pz0],[px0,pz1],[px1,pz1]]) box(groups.dakplus, [px, pz], .1, .1, 2.5, 0, '#2f3032', y);
+    for (let z = pz0; z <= pz1 + .01; z += (pz1 - pz0)/5) box(groups.dakplus, [(px0 + px1)/2, z], px1 - px0 + .4, .08, .1, 0, '#2f3032', y + 2.5);
+    for (let i = 0; i < 6; i++) sphere(groups.dakplus, [px0 + (px1 - px0)*i/5, pz0 + (i % 2)*(pz1 - pz0)], .45, y + 2.6, GROEN[i % 4]);
+    for (const [x, z] of [[x0 + 2, z1 - 2], [x0 + 4.5, z1 - 2.5], [x0 + 2.5, z0 + 3]]){ cyl(groups.dakplus, [x, z], .4, .04, '#b08a5e', y + .72); cyl(groups.dakplus, [x, z], .05, .72, '#2f3032', y); }
+    if (D.trap_buiten){ const [u, v] = D.trap_buiten; for (let i = 0; i < 16; i++) box(groups.dakplus, [u, v - i*.27], 1.1, .3, .06, 0, '#2f3032', (i + 1)*(h + .4)/16); box(groups.dakplus, [u - .55, v - 2.1], .05, 4.4, .05, 0, '#2f3032', h*.5); }
+  }
+}
+
+function setMode(m){
+  mode = m;
+  document.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === m));
+  const nieuw = m !== 'huidig', dak = m !== 'open';
+  groups.in0.visible = nieuw; groups.in1.visible = nieuw && showL1; groups.l1.visible = (m === 'open' ? showL1 : true);
+  groups.vloer.visible = true; groups.dak.visible = dak; groups.dakplus.visible = m === 'dak';
+  groups.buiten.visible = nieuw;
+  groups.ctx.scale.y = m === 'open' ? .3 : 1;
+  if (m === 'huidig') groups.vloer.children.slice(1).forEach(c => c.visible = false); else groups.vloer.children.forEach(c => c.visible = true);
+}
+function setL1(v){ showL1 = v; document.querySelectorAll('[data-l]').forEach(b => b.setAttribute('aria-pressed', (b.dataset.l === '1') === v)); setMode(mode); }
+
+function camTo(t, dist, hoek, elev){
+  const a = hoek*Math.PI/180, e = elev*Math.PI/180;
+  camera.position.set(t[0] + dist*Math.cos(e)*Math.cos(a), (t[2] || 0) + dist*Math.sin(e), -(t[1] + dist*Math.cos(e)*Math.sin(a)));
+  if (elev > 85) camera.up.set(0, 0, -1); else camera.up.set(0, 1, 0);
+  controls.target.set(t[0], t[2] || 0, -t[1]); controls.update();
+}
+function view_(k){
+  const P = DATA[cur];
+  document.querySelectorAll('#cams button').forEach(b => b.setAttribute('aria-pressed', b.dataset.k === String(k)));
+  const h = P.ontwerp.hoogte, L1 = (P.ontwerp.niveaus || {})['1'] || 0;
+  groups.schil.scale.y = 1;
+  if (typeof k === 'number'){ const zn = P.ontwerp.zones[k]; groups.schil.scale.y = Math.min(1, ((zn.n ? L1 : 0) + 1.4)/h); }
+  if (k === 'axo') return camTo([P.cx, P.cz, 0], P.size*1.55, 225, 42);
+  if (k === 'axo2') return camTo([P.cx, P.cz, 0], P.size*1.55, 45, 42);
+  if (k === 'boven'){ camTo([P.cx, P.cz, 0], P.size*1.6, 270, 89); return; }
+  const z = P.ontwerp.zones[k]; const c = z.cam || {t: z.label || [P.cx, P.cz], afstand: 10, hoek: 210};
+  const y = z.n ? (P.ontwerp.niveaus || {})['1'] : 0;
+  camTo([c.t[0], c.t[1], y], c.afstand*1.5, c.hoek, 50);
+}
+
+function kies(i){
+  cur = i; const P = DATA[i], O = P.ontwerp;
+  document.querySelectorAll('#picker button').forEach((b, j) => b.setAttribute('aria-pressed', j === i));
+  document.getElementById('p-titel').textContent = O.titel;
+  document.getElementById('p-sub').textContent = O.sub;
+  document.getElementById('p-concept').textContent = O.concept;
+  document.getElementById('p-dak').textContent = O.dak.tekst;
+  const k = P.kpi;
+  document.getElementById('p-kpis').innerHTML = [
+    ['Vraagprijs', euro(k.koop)], ['Alles in', euro(k.capex)], ['Om te draaien, vol lid', euro(k.fee) + ' /mnd'], ['Inleg terug na 5 jaar', euro(k.inleg) + ' /mnd'],
+    ['Lening', Math.round(k.ltv*100) + '%'], ['Werkplekken', k.werkplekken]
+  ].map(([a, b]) => `<div class="kpi"><span class="k">${a}</span><span class="v">${b}</span></div>`).join('');
+  const lv = !!(O.niveaus && O.niveaus['1']); document.getElementById('lvl').hidden = !lv; showL1 = true;
+  bouw(P); setL1(true); setMode('open');
+  const cams = document.getElementById('cams');
+  cams.innerHTML = `<button data-k="axo">Overzicht</button><button data-k="axo2">Andere kant</button><button data-k="boven">Bovenaanzicht</button>` +
+    O.zones.map((z, j) => `<button data-k="${j}">${z.naam.replace('Verdieping: ', '')}</button>`).join('');
+  cams.querySelectorAll('button').forEach(b => b.onclick = () => view_(isNaN(+b.dataset.k) ? b.dataset.k : +b.dataset.k));
+  view_('axo');
+  // plattegrond
+  const tabs = document.getElementById('plantabs');
+  tabs.innerHTML = P.plans.map((p, j) => `<button data-j="${j}" aria-pressed="${j === 0}">${p.naam}</button>`).join('');
+  const toon = j => { document.getElementById('plan').innerHTML = P.plans[j].svg; tabs.querySelectorAll('button').forEach((b, x) => b.setAttribute('aria-pressed', x === j)); };
+  tabs.querySelectorAll('button').forEach(b => b.onclick = () => toon(+b.dataset.j)); toon(0);
+  // ruimtes
+  document.getElementById('rooms').innerHTML = O.zones.filter(z => z.beschrijving).map(z => {
+    const p = O.palet[z.palet];
+    return `<article class="room"><div class="eyebrow">${p.naam} · ${z.m2} m²${z.n ? ' · verdieping' : ''}</div><h3>${z.naam.replace('Verdieping: ', '')}</h3>
+      <div class="sw"><i style="background:${p.hoofd}"></i><i style="background:${p.tweede}"></i><i style="background:${p.accent}"></i><i style="background:${p.vloer}"></i></div>
+      <p style="font-size:14.5px">${z.beschrijving}</p>${z.details.length ? '<ul>' + z.details.map(d => `<li>${d}</li>`).join('') + '</ul>' : ''}
+      ${z.prompt_vol ? `<details><summary>Prompt voor ChatGPT${z.foto ? ' · advertentiefoto ' + String(z.foto).padStart(2, '0') : ' · maquettebeeld'}</summary><div class="prompt">${z.prompt_vol}</div><button class="copy">Kopieer prompt</button></details>` : ''}</article>`;
+  }).join('');
+  document.querySelectorAll('.copy').forEach(b => b.onclick = () => { navigator.clipboard?.writeText(b.previousElementSibling.textContent); b.textContent = 'Gekopieerd'; });
+  // dakterras
+  const T = P.terras;
+  document.getElementById('roofsec').hidden = !T;
+  if (T) document.getElementById('roof').innerHTML = `<p>${O.dak.tekst}</p><div class="tbl"><table><thead><tr><th>Post</th><th class="r">Hoeveelheid</th><th class="r">Prijs</th><th class="r">Totaal</th><th>Label</th></tr></thead><tbody>` +
+    T.rows.map(r => `<tr><td>${r.post.replace('Dakterras: ', '')}</td><td class="r">${String(r.h).replace('.', ',')} ${r.e.replace('m2', 'm²')}</td><td class="r">${euro(r.prijs)}</td><td class="r">${euro(r.totaal)}</td><td>${r.label}</td></tr>`).join('') +
+    `<tr><th>Totaal excl. btw</th><th></th><th></th><th class="r">${euro(T.totaal)}</th><th></th></tr></tbody></table></div>
+    <p>Met dakterras: om te draaien ${euro(k.fee)} → <b>${euro(T.fee)}</b> per vol lid per maand, inleg terug ${euro(k.inleg)} → <b>${euro(T.inleg)}</b>. Grootste onzekerheid: of het dak zonder zware versterking een terras draagt. Eerst een constructeur.</p>`;
+}
+
+function start(){
+  const pk = document.getElementById('picker');
+  pk.innerHTML = DATA.map((P, i) => `<button>${P.ontwerp.titel}</button>`).join('');
+  pk.querySelectorAll('button').forEach((b, i) => b.onclick = () => kies(i));
+  document.querySelectorAll('[data-mode]').forEach(b => b.onclick = () => setMode(b.dataset.mode));
+  document.querySelectorAll('[data-l]').forEach(b => b.onclick = () => setL1(b.dataset.l === '1'));
+  initThree();
+  const q = new URLSearchParams(location.search); kies(+(q.get('p') || 0));
+  window.__m = {kies, setMode, setL1, view: view_, ready: true, camTo};
+}
+if (window.THREE) start(); else addEventListener('load', start);
+</script>

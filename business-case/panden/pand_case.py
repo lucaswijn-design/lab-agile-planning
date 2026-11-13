@@ -20,7 +20,7 @@ from layout import LAYOUTS, build  # noqa: E402
 ZZP = budget.ZZP
 
 
-def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False):
+def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False, extra=None):
     L = LAYOUTS[slug]
     _, q = build(slug)
     n_vol = L["leden"]["n_vol"] if n_vol is None else n_vol
@@ -98,6 +98,8 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False):
     if torens and not L.get("sanitair_bestaand"):
         import sanitairtorens
         R.extend(sanitairtorens.rows()[0])
+    for r in extra or []:
+        R.append(dict(r))
     # sauna geschrapt in versie 8; Wellness-rijen alleen als budget.B(sauna=True)
     for r in base:
         if r["groep"] == "Wellness":
@@ -135,12 +137,12 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False):
 
 
 def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, fee_club=119,
-        inleg_vol=15_000, inleg_deel=9_000, rente=0.055, looptijd=20, groei=0.02, torens=False):
+        inleg_vol=15_000, inleg_deel=9_000, rente=0.055, looptijd=20, groei=0.02, torens=False, extra=None):
     L = LAYOUTS[slug]
     n_vol = L["leden"]["n_vol"] if n_vol is None else n_vol
     n_deel = L["leden"]["n_deel"] if n_deel is None else n_deel
     n_club = L["leden"]["n_club"] if n_club is None else n_club
-    R, q = rows_for(slug, n_vol, n_deel, n_club, torens)
+    R, q = rows_for(slug, n_vol, n_deel, n_club, torens, extra)
     tot = lambda g: sum(r["totaal"] for r in R if r["groep"] == g)
     C = sum(r["totaal"] for r in R)
     pand = tot("Pand")
