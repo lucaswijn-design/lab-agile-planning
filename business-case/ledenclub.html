@@ -1,0 +1,561 @@
+<title>Ledenclub op het Erf</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: één leeskolom met brede tabelblokken; rekentool als werkbank met invoer links, uitkomst rechts */
+:root{
+  --bg:#f2f3ee; --surface:#fbfbf8; --ink:#1d221f; --muted:#5c665f; --line:#d7dbd2;
+  --moss:#3d6a4b; --moss-soft:#e1ebe2; --wood:#9a6a2f; --wood-soft:#f1e6d6;
+  --good:#2f7a4a; --warn:#a86a12; --bad:#b23a2e;
+  --f-display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141815; --surface:#1b201c; --ink:#e7ebe5; --muted:#9aa59c; --line:#2f3731;
+  --moss:#7fb38e; --moss-soft:#223026; --wood:#d6a35f; --wood-soft:#2e261b;
+  --good:#6cc28b; --warn:#e0a443; --bad:#ec7a6c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141815; --surface:#1b201c; --ink:#e7ebe5; --muted:#9aa59c; --line:#2f3731;
+  --moss:#7fb38e; --moss-soft:#223026; --wood:#d6a35f; --wood-soft:#2e261b;
+  --good:#6cc28b; --warn:#e0a443; --bad:#ec7a6c; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 var(--f-body);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1040px;margin:0 auto;padding-block:40px 80px;display:grid;gap:56px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(34px,6vw,56px);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(24px,3.4vw,32px);font-weight:700}
+h3{font-size:18px;font-weight:700}
+p{margin:0;max-width:68ch}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--moss)}
+.verdict .num{font-family:inherit}
+.lede{font-size:18px;color:var(--muted);max-width:62ch}
+section{display:grid;gap:18px;min-width:0}
+.num{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+a{color:var(--moss)}
+small,.note{color:var(--muted);font-size:13px}
+
+/* kernuitkomst */
+.verdict{display:grid;gap:14px;border-left:4px solid var(--moss);padding:4px 0 4px 20px}
+.verdict .big{font:700 clamp(22px,3vw,28px)/1.25 var(--f-display)}
+.points{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.points li{display:grid;grid-template-columns:22px 1fr;gap:8px;max-width:78ch}
+.points li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--wood);margin-top:8px}
+
+/* tabellen */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th,td{padding:8px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font:500 12px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface);white-space:nowrap}
+td.r,th.r{text-align:right;font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.grp td{font-weight:600;background:var(--moss-soft)}
+tr.tot td{font-weight:700;border-top:2px solid var(--ink)}
+tbody tr:last-child td{border-bottom:0}
+.lbl{display:inline-block;font:500 11px/1 var(--f-mono);padding:3px 6px;border-radius:4px;border:1px solid var(--line);color:var(--muted)}
+.lbl.bron{color:var(--moss);border-color:var(--moss)}
+.lbl.aanname{color:var(--wood);border-color:var(--wood)}
+.cell-ok{color:var(--good);font-weight:600}
+.cell-mid{color:var(--warn);font-weight:600}
+.cell-bad{color:var(--bad)}
+
+/* rekentool */
+.bench{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:20px;align-items:start}
+@media (max-width:820px){.bench{grid-template-columns:1fr}}
+.controls{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px}
+.ctl{display:grid;gap:6px}
+.ctl label{display:flex;justify-content:space-between;gap:8px;font-size:13px;font-weight:600}
+.ctl label output{font-family:var(--f-mono);font-weight:500;color:var(--moss)}
+input[type=range]{width:100%;accent-color:var(--moss)}
+select{font:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.checks{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:12px}
+.checks label{display:flex;gap:8px;align-items:flex-start;font-size:13px;font-weight:400}
+.checks input{accent-color:var(--moss);margin-top:3px}
+.presets{display:flex;flex-wrap:wrap;gap:6px}
+.presets button{font:500 12px/1 var(--f-body);padding:8px 10px;border-radius:999px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.presets button:hover,.presets button:focus-visible{border-color:var(--moss);outline:none;color:var(--moss)}
+.out{display:grid;gap:16px;min-width:0}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.kpi{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:4px;align-content:start}
+.kpi .k{font:500 11px/1.3 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.kpi .v{font:600 22px/1.2 var(--f-mono);font-variant-numeric:tabular-nums}
+.kpi .s{font-size:12px;color:var(--muted)}
+.kpi.state-ok{border-color:var(--good)} .kpi.state-ok .v{color:var(--good)}
+.kpi.state-warn{border-color:var(--warn)} .kpi.state-warn .v{color:var(--warn)}
+.kpi.state-bad{border-color:var(--bad)} .kpi.state-bad .v{color:var(--bad)}
+.bars{display:grid;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px}
+.bar{display:grid;grid-template-columns:130px 1fr 92px;gap:10px;align-items:center;font-size:13px}
+.bar .track{height:12px;background:var(--bg);border-radius:3px;overflow:hidden}
+.bar .fill{height:100%;background:var(--moss);border-radius:3px}
+.bar .fill.land{background:var(--wood)}
+@media (max-width:480px){.bar{grid-template-columns:96px 1fr 80px}}
+
+/* locaties en risico's */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;display:grid;gap:10px;align-content:start}
+.card .tag{font:500 12px/1 var(--f-mono);color:var(--wood)}
+.card dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:14px}
+.card dt{color:var(--muted)} .card dd{margin:0}
+.card ul{margin:0;padding-left:18px;display:grid;gap:4px;font-size:14px}
+.risk{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;padding:14px 0;border-bottom:1px solid var(--line)}
+.risk:last-child{border-bottom:0}
+.sev{font:600 11px/1 var(--f-mono);text-transform:uppercase;letter-spacing:.06em;padding:6px 8px;border-radius:5px;text-align:center;align-self:start}
+.sev.hoog{background:var(--bad);color:var(--surface)}
+.sev.midden{background:var(--wood-soft);color:var(--warn);border:1px solid var(--warn)}
+.sev.laag{border:1px solid var(--line);color:var(--muted)}
+.risk p{font-size:14px}
+.risk .mit{color:var(--muted)}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
+ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
+.sources{font-size:13px;color:var(--muted);display:grid;gap:4px;padding-left:18px;margin:0}
+@media (prefers-reduced-motion:no-preference){.fill{transition:width .25s ease}}
+</style>
+
+<div class="wrap">
+
+<header style="display:grid;gap:14px">
+  <span class="eyebrow">Business case · versie november 2026</span>
+  <h1>Ledenclub op het Erf</h1>
+  <p class="lede">Een voormalig boerenerf aan de rand van een stad, omgebouwd tot club met natuur, werkplekken, gym, sauna, zwemvijver en een goede espressobar. Leden betalen maandelijks, zijn mede-eigenaar en kopen het terrein samen af.</p>
+</header>
+
+<section class="verdict">
+  <p class="big">Uitkomst: bij alleen een maandfee is <span class="num">€ 539</span> per maand nodig (laag <span class="num">€ 495</span>, hoog <span class="num">€ 613</span>). Met 200 leden, <span class="num">€ 450</span> per maand en <span class="num">€ 15.000</span> inleg is het terrein in 8 jaar schuldvrij.</p>
+  <ul class="points">
+    <li><span>De som 50 × € 400 × 60 maanden = € 1,2 mln is geen investeringsruimte. Na btw blijft € 1,02 mln over, en alleen het draaiende houden van de club kost bij 50 leden al € 1,55 mln in vijf jaar. Onder ongeveer 150 leden draagt een club met deze voorzieningen zichzelf niet.</span></li>
+    <li><span>Het complete complex kost € 3,7 tot 7,1 mln, afhankelijk van locatie en omvang. Basis (150 leden, rand Amersfoort/Leusden): <span class="num">€ 4,96 mln</span>, ofwel <span class="num">€ 33.000</span> per lid. Grond en erf zijn ongeveer 40% daarvan.</span></li>
+    <li><span>Alles in vijf jaar afbetalen kost <span class="num">€ 1.054</span> per maand per lid. Vijf jaar vast werkt wel als minimale lidmaatschapsduur, maar niet als aflostermijn.</span></li>
+    <li><span>Wat werkt: een eenmalige inleg (dat is het aandeel), aangevuld met een bankfinanciering van onder de 50% en een maandfee rond € 450. Na aflossing valt de fee terug naar ongeveer <span class="num">€ 215</span> per maand voor alles.</span></li>
+    <li><span>De drie risico's die het project kunnen stoppen: de bestemming van het erf, het vooraf vinden van 150 tot 200 leden, en de juridische houdbaarheid van een vaste looptijd van vijf jaar.</span></li>
+  </ul>
+  <p class="note">Drempel: er is geen rendementseis vastgelegd. Ik toets op wat een bank vraagt: schulddekking (DSCR) van minimaal 1,2 en een lening van maximaal ongeveer 60% van de kostprijs [schatting op basis van banknormen].</p>
+</section>
+
+<section id="rekentool">
+  <span class="eyebrow">Rekentool</span>
+  <h2>Reken zelf scenario's door</h2>
+  <p>Zelfde model als het Python-script in de repository. Kies een startpunt of schuif zelf. Alle investeringen zijn exclusief btw (de coöperatie trekt btw af), de maandfee is inclusief btw.</p>
+  <div class="bench">
+    <form class="controls" id="f" onsubmit="return false">
+      <div class="presets" aria-label="Startpunten">
+        <button type="button" data-p="idee">Jouw idee: 50 × € 400, 5 jr</button>
+        <button type="button" data-p="basis">Basis 150 leden</button>
+        <button type="button" data-p="advies">Advies 200 + inleg</button>
+        <button type="button" data-p="slim">Advies, slimme variant</button>
+      </div>
+      <div class="ctl"><label for="loc">Locatie</label>
+        <select id="loc">
+          <option value="A">A · Groene Hart / Utrecht West</option>
+          <option value="B" selected>B · Rand Amersfoort / Leusden</option>
+          <option value="C">C · Brabant, Den Bosch/Eindhoven</option>
+        </select></div>
+      <div class="ctl"><label for="leden">Leden <output id="o-leden"></output></label><input type="range" id="leden" min="50" max="300" step="10" value="150"></div>
+      <div class="ctl"><label for="fee">Maandfee incl. btw <output id="o-fee"></output></label><input type="range" id="fee" min="250" max="900" step="10" value="450"></div>
+      <div class="ctl"><label for="inleg">Inleg per lid <output id="o-inleg"></output></label><input type="range" id="inleg" min="0" max="30000" step="1000" value="0"></div>
+      <div class="ctl"><label for="looptijd">Looptijd lening <output id="o-looptijd"></output></label><input type="range" id="looptijd" min="5" max="30" step="1" value="20"></div>
+      <div class="ctl"><label for="rente">Rente <output id="o-rente"></output></label><input type="range" id="rente" min="3" max="8" step="0.1" value="5.5"></div>
+      <div class="ctl"><label for="bouw">Verbouw per m² <output id="o-bouw"></output></label><input type="range" id="bouw" min="800" max="2400" step="50" value="1300"></div>
+      <div class="ctl"><label for="grond">Grondprijs t.o.v. basis <output id="o-grond"></output></label><input type="range" id="grond" min="0.7" max="1.5" step="0.05" value="1"></div>
+      <div class="ctl"><label for="dev">Ontwikkelvergoeding initiatiefnemer <output id="o-dev"></output></label><input type="range" id="dev" min="0" max="8" step="0.5" value="3"></div>
+      <div class="checks">
+        <label for="woning"><input type="checkbox" id="woning"> Boerderijwoning afsplitsen en verkopen</label>
+        <label for="lean"><input type="checkbox" id="lean"> Self-service met app-toegang (host 0,6 fte)</label>
+        <label for="extra"><input type="checkbox" id="extra"> 10% extra omzet uit gastenpassen en zaalverhuur</label>
+      </div>
+    </form>
+    <div class="out" aria-live="polite">
+      <div class="kpis" id="kpis"></div>
+      <div class="bars" id="bars"></div>
+      <p class="note" id="prog"></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Ledenaantal × aflostermijn</span>
+  <h2>Welke maandfee is nodig?</h2>
+  <p>Maandfee inclusief btw waarbij de club precies quitte draait, zonder inleg, per locatie. Groen: binnen jouw bandbreedte van € 400 tot 500. De laatste kolom is wat leden betalen als de schuld weg is.</p>
+  <div class="tbl"><table id="matrix"></table></div>
+</section>
+
+<section>
+  <span class="eyebrow">Investering bottom-up</span>
+  <h2>Wat kost het complex?</h2>
+  <p>Volgt de instellingen van de rekentool. Hoeveelheden zijn afgeleid van het ledenaantal: werkplekken = 30% van de leden (piekbezetting), gym 1 m² per lid (8% tegelijk × 12 m²), zwemvijver 200 m² + 0,5 m² per lid, terrein 2 ha + 1 ha per 100 leden.</p>
+  <div class="tbl"><table id="capex"></table></div>
+  <p class="note">Labels: <span class="lbl bron">bron</span> actuele prijs gevonden, <span class="lbl">schatting</span> eigen inschatting, <span class="lbl aanname">aanname</span> keuze die jij maakt. Btw 21% op investeringen is buiten beschouwing gelaten omdat de coöperatie die als ondernemer terugvraagt. Valt de club onder de sportvrijstelling, dan komt er ongeveer 21% bij op alles behalve grond.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Exploitatie per jaar</span>
+  <h2>Wat kost het draaien?</h2>
+  <div class="tbl"><table id="opex"></table></div>
+  <p class="note">Koffie staat er niet in: bonen en melk gaan op streepjes tegen inkoopprijs en zijn kostenneutraal. Bij een goede boon (circa € 30 per kg, 16 g per shot) kost een cappuccino de club ongeveer € 0,65 [schatting].</p>
+</section>
+
+<section>
+  <span class="eyebrow">Financiering</span>
+  <h2>Vijf manieren om het te betalen</h2>
+  <p>150 leden, locatie B. De DSCR zegt hoe vaak de lening uit de kasstroom betaald kan worden bij een fee van € 450. Een bank wil minimaal 1,2.</p>
+  <div class="tbl"><table id="fin"></table></div>
+  <p>Een bank financiert geen 100% van een clubgebouw met natuurgrond. Die grond is als zekerheid minder waard dan landbouwgrond, en een maandcontract is geen onderpand. De inleg van leden is dus het eigen vermogen dat de bank wil zien. Wil je de drempel lager houden, dan kan een deel van de inleg als achtergestelde ledenlening, of kan een lid zijn inleg zelf financieren. Ga hiervoor eerst praten met banken die coöperaties financieren, zoals Triodos en Rabobank, en vraag naar de BMKB-borgstelling.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Zoekgebieden</span>
+  <h2>Drie locaties vergeleken</h2>
+  <p>Zoek geen kale grond. Nieuwbouw voor sport en werken in het buitengebied krijgt bijna nooit een vergunning. Zoek een erf met oude stallen waar de boer stopt (vrijkomende agrarische bebouwing, VAB) of een terrein dat al een recreatiebestemming heeft, zoals een camping, theetuin of manege. Kijk op funda in business, bedrijventekoop.nl en bij recreatiemakelaars.</p>
+  <div class="cards">
+    <article class="card">
+      <span class="tag">A · grootste markt, duurste grond</span>
+      <h3>Groene Hart / Utrecht West</h3>
+      <dl>
+        <dt>Rond</dt><dd>Woerden, Harmelen, Vleuten, Bodegraven</dd>
+        <dt>OV</dt><dd>Station Woerden: Utrecht circa 10 min, Den Haag en Leiden circa 25 min</dd>
+        <dt>Erf ~1 ha</dt><dd class="num">€ 2,2 mln [schatting]</dd>
+        <dt>Grond</dt><dd class="num">€ 130.000/ha [schatting]</dd>
+        <dt>Basis 150</dt><dd class="num">€ 5,82 mln</dd>
+      </dl>
+      <ul>
+        <li>Referentie: boerderij Nieuwersluis met ruim 4 ha, vraagprijs € 3.325.000; boerderij 2e Polderweg Utrecht, 0,47 ha, € 2.450.000.</li>
+        <li>Provincie Utrecht: bij een niet-agrarische functie moet 50% van de bestaande stallen worden gesloopt. Je hebt dus een erf nodig met minstens twee keer de vloer die je wilt houden.</li>
+        <li>Groene Hart is beschermd landschap: langste vergunningstraject.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="tag">B · balans, aanbevolen</span>
+      <h3>Rand Amersfoort / Leusden</h3>
+      <dl>
+        <dt>Rond</dt><dd>Leusden, Hoogland, Stoutenburg, Achterveld</dd>
+        <dt>OV</dt><dd>Amersfoort Centraal: Utrecht circa 15 min, Amsterdam circa 35 min</dd>
+        <dt>Erf ~1 ha</dt><dd class="num">€ 1,5 mln [schatting]</dd>
+        <dt>Grond</dt><dd class="num">€ 110.000/ha [schatting]</dd>
+        <dt>Basis 150</dt><dd class="num">€ 4,96 mln</dd>
+      </dl>
+      <ul>
+        <li>Leusden heeft in 2026 een eigen omgevingsprogramma voor vrijkomende agrarische bebouwing. Een gemeente die hier beleid op maakt, praat makkelijker mee.</li>
+        <li>Gelderse Vallei: veel stoppende veehouders, dus aanbod van erven.</li>
+        <li>Zelfde 50%-sloopregel van provincie Utrecht; Gelderse kant (Barneveld) heeft eigen regels.</li>
+      </ul>
+    </article>
+    <article class="card">
+      <span class="tag">C · goedkoopst, kleinere markt</span>
+      <h3>Brabant, Den Bosch/Eindhoven</h3>
+      <dl>
+        <dt>Rond</dt><dd>Boxtel, Liempde, Vught, Schijndel</dd>
+        <dt>OV</dt><dd>Station Boxtel: Den Bosch circa 10 min, Eindhoven circa 15 min</dd>
+        <dt>Erf ~1 ha</dt><dd class="num">€ 1,1 mln [schatting]</dd>
+        <dt>Grond</dt><dd class="num">€ 105.000/ha [schatting]</dd>
+        <dt>Basis 150</dt><dd class="num">€ 4,49 mln</dd>
+      </dl>
+      <ul>
+        <li>Referentie: compleet voormalig agrarisch erf met loods en 2,2 ha in Ysselsteyn, € 950.000 k.k.</li>
+        <li>Brainport Eindhoven levert veel hoogopgeleide techwerkers, maar minder mensen die € 450 per maand voor een club betalen dan in de Randstad.</li>
+        <li>Veel veehouderij-erven komen vrij door uitkoopregelingen.</li>
+      </ul>
+    </article>
+  </div>
+  <p class="note">Landelijk gemiddelde landbouwgrond Q2 2026: € 108.500 per ha (akkerbouw circa € 123.000, grasland circa € 94.500). Als je de grond omvormt tot natuur, daalt de taxatiewaarde. Dat is goed voor de sfeer en slecht voor het onderpand.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Eigendom en spelregels</span>
+  <h2>Hoe leden eigenaar worden</h2>
+  <div class="two">
+    <div style="display:grid;gap:12px">
+      <h3>Coöperatie U.A.</h3>
+      <p>Leden zijn samen eigenaar van terrein en gebouw en niet persoonlijk aansprakelijk. Lidmaatschap bestaat uit twee delen: een eenmalige inleg (ledenkapitaal) en een maandbijdrage. Elk jaar groeit het aandeel van een lid mee met de aflossing. In het advies (200 leden, € 15.000 inleg) staat er na vijf jaar ongeveer <span class="num">€ 17.000</span> eigen vermogen per lid.</p>
+      <h3>Vijf jaar vast</h3>
+      <p>In een coöperatie mag uittreden niet onmogelijk worden gemaakt (art. 2:60 BW). De statuten mogen wel voorwaarden en een uittredingsvergoeding vastleggen, mits die vooraf kenbaar en bepaalbaar zijn (Hoge Raad, DOC Kaas, 2024). Werkbare constructie: opzegtermijn twaalf maanden. Wie binnen vijf jaar weg wil, draagt het lidmaatschap over aan iemand van de wachtlijst of betaalt een vergoeding gelijk aan zijn resterende deel van de schuld. Laat dit door een notaris opstellen.</p>
+      <h3>Ballotage</h3>
+      <p>Motivatiebrief, kennismaking en een beslissing van een ballotagecommissie uit de leden. Dit is ook je marketing: schaarste en een wachtlijst maken de overdraagbaarheid van lidmaatschappen geloofwaardig voor de bank.</p>
+    </div>
+    <div style="display:grid;gap:12px">
+      <h3>Verkoopprijs van een aandeel</h3>
+      <p>Advies: een vaste formule en geen vrije prijs. Overdrachtsprijs = inleg + eigen deel van de sinds toetreding afgeloste schuld, geïndexeerd met de inflatie. Eventueel plus de helft van een taxatiestijging. Zo maakt niemand speculatiewinst, blijft de club betaalbaar voor nieuwe leden, en weet iedereen vooraf waar hij aan toe is. De koper wordt eerst geballoteerd en neemt de lopende verplichtingen over. Woningcoöperaties en Koopgarant werken met vergelijkbare formules.</p>
+      <h3>Wat jij eraan verdient</h3>
+      <p>Drie lagen. Ten eerste een ontwikkelvergoeding over bouw en inrichting: 3% is in de basis circa <span class="num">€ 63.000</span> voor twee tot drie jaar werk. Ten tweede een managementvergoeding van € 30.000 per jaar in de exploitatie. Ten derde een founders-lidmaatschap waarbij je inleg met uren wordt verrekend (bijvoorbeeld 300 uur × € 50 = € 15.000). Elke extra procent ontwikkelvergoeding kost een lid ongeveer € 1,30 per maand. Het grootste verdienpotentieel zit in herhaling: een bewezen concept op een tweede en derde locatie, elke keer met een ontwikkelvergoeding.</p>
+      <h3>AFM</h3>
+      <p>Lidmaatschapsrechten in een coöperatie zijn meestal geen effecten. Geef je ledenobligaties uit, dan geldt tot € 5 mln een vrijstelling met een informatiedocument en melding bij de AFM. Een verhoging van die grens naar € 12 mln is in voorbereiding; controleer de stand van zaken.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Wat krijgt een lid</span>
+  <h2>Is € 450 per maand te verkopen?</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Onderdeel los gekocht</th><th class="r">Per maand</th><th>Label</th></tr></thead>
+    <tbody>
+      <tr><td>Flexplek coworking Utrecht (€ 89 tot 150 excl. btw), incl. btw en beter ingericht</td><td class="r">€ 150 tot 200</td><td><span class="lbl bron">bron</span></td></tr>
+      <tr><td>Gym zonder drukte, goede racks</td><td class="r">€ 50 tot 80</td><td><span class="lbl">schatting</span></td></tr>
+      <tr><td>Sauna vier keer per maand à € 30</td><td class="r">€ 120</td><td><span class="lbl">schatting</span></td></tr>
+      <tr><td>Koffie: 15 cappuccino's, besparing € 4,50 → € 0,65</td><td class="r">€ 58</td><td><span class="lbl">berekend</span></td></tr>
+      <tr><td>Natuur, zwemvijver, events, community</td><td class="r">niet los te koop</td><td></td></tr>
+      <tr class="tot"><td>Totaal</td><td class="r">€ 378 tot 458</td><td><span class="lbl">berekend</span></td></tr>
+    </tbody>
+  </table></div>
+  <p>Ter vergelijking: Soho House Amsterdam kost vanaf € 208 per maand, zonder werkplek-garantie, gym of eigendom. Wie de club drie dagen per week gebruikt, betaalt € 450 voor iets dat los ongeveer hetzelfde kost en bouwt er vermogen mee op. De doelgroep is smal: thuiswerkers en zzp'ers met een hoger inkomen binnen 20 minuten fietsen of reizen.</p>
+</section>
+
+<section>
+  <span class="eyebrow">Kansen</span>
+  <h2>Wat het beter maakt</h2>
+  <ul class="points">
+    <li><span>Na aflossing kost alles samen ongeveer € 215 per maand (bij 200 leden). Dat is een sterk verkoopargument voor een lidmaatschap van twintig jaar.</span></li>
+    <li><span>De boerderijwoning: verkoop hem los (in locatie B scheelt dat circa € 650.000 [schatting]) of laat de host er wonen tegen een lagere huur. Dat geeft toezicht en een lagere personeelspost.</span></li>
+    <li><span>Gastenpassen, zaalverhuur aan bedrijven, retreats en workshops op doordeweekse ochtenden. Met 10% extra omzet daalt de benodigde fee met circa € 40 tot 50.</span></li>
+    <li><span>Een tweedehands tuinbouwkas als seizoenspaviljoen: goedkoop, licht en precies de biofiele sfeer die je zoekt. Voor de verbouw van de stallen: hergebruikte materialen voor afwerking, maar nieuwe isolatie, ventilatie en installaties.</span></li>
+    <li><span>Energie-investeringsaftrek (EIA) van 40% op batterij en warmtepompen, en ISDE-subsidie voor warmtepompen.</span></li>
+    <li><span>Houtgestookte sauna en hot tubs: goedkoper in gebruik, geen zware netaansluiting nodig en het past bij de sfeer.</span></li>
+  </ul>
+</section>
+
+<section>
+  <span class="eyebrow">Risico's</span>
+  <h2>Wat het kan laten mislukken</h2>
+  <div>
+    <div class="risk"><span class="sev hoog">Hoog</span><div><p><strong>Bestemming en vergunning.</strong> Werken, sport en horeca zijn in het buitengebied niet vanzelf toegestaan. Reken op één tot drie jaar procedure met onderzoek naar ecologie, stikstof, bodem en verkeer.</p><p class="mit">Koop onder ontbindende voorwaarde van vergunning. Dien eerst een principeverzoek in bij de gemeente. Kies gemeenten met actief VAB-beleid of een terrein dat al een recreatiebestemming heeft.</p></div></div>
+    <div class="risk"><span class="sev hoog">Hoog</span><div><p><strong>Voorverkoop.</strong> Zonder 150 tot 200 toezeggingen geen bank. € 15.000 inleg plus € 450 per maand is een grote stap voor iets dat nog niet bestaat.</p><p class="mit">Campagne voor founding members met inleg op een derdengeldenrekening bij de notaris. Go of no-go bij 120 harde toezeggingen. Bied founders een korting of extra rechten.</p></div></div>
+    <div class="risk"><span class="sev midden">Midden</span><div><p><strong>Vaste looptijd van vijf jaar.</strong> Een consument aan een abonnement van vijf jaar binden houdt juridisch slecht stand. In een coöperatie kan het wel via statuten, maar uittreden moet mogelijk blijven.</p><p class="mit">Constructie met overdracht en uittredingsvergoeding (zie Eigendom). Wachtlijst als buffer.</p></div></div>
+    <div class="risk"><span class="sev midden">Midden</span><div><p><strong>Bouwkosten.</strong> Oude stallen hebben vaak asbest, slechte funderingen en geen isolatie. Tweedehands materiaal is goedkoper, maar het verwerken ervan kost meer uren.</p><p class="mit">Bouwkundige quickscan vóór het bod. 12% onvoorzien is al meegenomen. Bij € 1.900 per m² stijgt de benodigde fee van € 539 naar € 613.</p></div></div>
+    <div class="risk"><span class="sev midden">Midden</span><div><p><strong>Netcongestie.</strong> In Utrecht, Gelderland en Brabant zijn er wachtlijsten voor zwaardere aansluitingen. Elektrische sauna's vragen 15 tot 20 kW per stuk.</p><p class="mit">Blijf binnen een kleinverbruikaansluiting (3 × 80 A), stook de sauna's op hout en gebruik de batterij om pieken af te vlakken. Vraag de netbeheerder vóór aankoop wat er op dat adres beschikbaar is.</p></div></div>
+    <div class="risk"><span class="sev midden">Midden</span><div><p><strong>Piekdrukte.</strong> Iedereen wil op zaterdagochtend in de sauna en op dinsdag werken. Dan voelt de club net zo vol als de sportschool waar je vanaf wilde.</p><p class="mit">Maximaal 30% tegelijk op werkplekken, een reserveringssysteem voor sauna en vergaderruimtes, en een ledenplafond dat in de statuten staat.</p></div></div>
+    <div class="risk"><span class="sev midden">Midden</span><div><p><strong>Bestuur.</strong> Tweehonderd eigenaren hebben tweehonderd meningen over de kleur van de bank.</p><p class="mit">Professioneel bestuur met een duidelijk mandaat, een ledenraad voor de grote besluiten en een vaste huisstijlgids.</p></div></div>
+    <div class="risk"><span class="sev laag">Laag</span><div><p><strong>Btw.</strong> Gym valt onder 9%, coworking en sauna onder 21%. Gerekend is met een mengtarief van 18%. Valt de club onder de sportvrijstelling, dan is de btw op de investering niet terug te vragen.</p><p class="mit">Fiscalist laat de verdeling vooraf bevestigen door de Belastingdienst.</p></div></div>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Volgende stappen</span>
+  <h2>Wat het getal het meest verandert</h2>
+  <p>De grootste onzekerheden zijn de prijs van het erf en de verbouwkosten per m². Samen bepalen ze ruim de helft van de investering. Je krijgt die het snelst zo:</p>
+  <ol class="steps">
+    <li>Bezichtig drie erven in zoekgebied B en één in A en C, met een bouwkundige erbij voor een quickscan (circa € 750 per erf [schatting]).</li>
+    <li>Dien een principeverzoek in bij de gemeente Leusden en vraag hoe zij tegen dit gebruik aankijken.</li>
+    <li>Test de vraag: een simpele landingspagina en dertig gesprekken met mensen uit je doelgroep. Doel: vijftig intentieverklaringen met een bedrag erbij.</li>
+    <li>Leg de financieringsstructuur (45% ledeninleg, 55% bank) voor aan Triodos en Rabobank.</li>
+    <li>Laat een notaris de statuten van de coöperatie opstellen met de uittredings- en overdrachtsregels.</li>
+  </ol>
+</section>
+
+<section>
+  <span class="eyebrow">Bronnen</span>
+  <ol class="sources">
+    <li><a href="https://www.akkerwijzer.nl/artikel/1263579-gemiddelde-prijs-bouwland-daalt-naar-100.600-euro-per-hectare" target="_blank" rel="noopener">Akkerwijzer: grondprijzen 2026</a> en <a href="https://www.welingelichtekringen.nl/economie/prijs-agrarische-grond-gestegen-in-tweede-kwartaal" target="_blank" rel="noopener">ANP: grondprijs Q2 2026 € 108.500/ha</a></li>
+    <li><a href="https://www.belastingdienst.nl/wps/wcm/connect/bldcontentnl/belastingdienst/prive/woning/overdrachtsbelasting/tarieven_overdrachtsbelasting" target="_blank" rel="noopener">Belastingdienst: overdrachtsbelasting niet-woning 10,4%</a></li>
+    <li><a href="https://www.werkspot.nl/tuinieren-buiten/prijzen-kosten/kosten-zwemvijver-aanleggen" target="_blank" rel="noopener">Werkspot: zwemvijver € 100 tot 650 per m²</a></li>
+    <li><a href="https://www.azalp.nl/azalp-barrel-ovaal-402x240-cm.htm" target="_blank" rel="noopener">Azalp: barrelsauna tot 10 personen</a></li>
+    <li><a href="https://monathemachine.com/en/blogs/blog/gewerbespeicher-preise-2026-was-kostet-ein-batteriespeicher" target="_blank" rel="noopener">Batterijopslag bedrijven 2026: € 410 tot 450 per kWh</a></li>
+    <li><a href="https://www.actuelerentestanden.nl/rente-commercieel-vastgoed-actuele-tarieven-en-financieringsgids" target="_blank" rel="noopener">Rente commercieel vastgoed 2026: 4,2 tot 7%</a></li>
+    <li><a href="https://www.sra.nl/nieuws/000000/2025/06/definitief-geen-verhoging-btw-op-sport-media-en-cultuur" target="_blank" rel="noopener">SRA: btw op sport blijft 9%</a></li>
+    <li><a href="https://www.stibbe.com/nl/publications-and-insights/noot-bij-de-uitspraak-van-de-hoge-raad-van-16-februari-2024" target="_blank" rel="noopener">Stibbe: HR DOC Kaas over art. 2:60 BW</a></li>
+    <li><a href="https://www.stateninformatie.provincie-utrecht.nl/Documenten/1-Handreiking-functiewijziging-agrarische-erven.pdf" target="_blank" rel="noopener">Provincie Utrecht: handreiking functiewijziging agrarische erven</a></li>
+    <li><a href="https://www.raadvanstate.nl/@156426/w06-26-00032-iii/" target="_blank" rel="noopener">Raad van State: prospectusvrijstelling naar € 12 mln</a></li>
+    <li><a href="https://workin.space/nl/coworking/nederland/utrecht" target="_blank" rel="noopener">Workin.space: flexplekken Utrecht</a> en <a href="https://www.sohohouse.com/houses/soho-house-amsterdam" target="_blank" rel="noopener">Soho House Amsterdam</a></li>
+    <li><a href="https://bedrijventekoop.nl/en/for-sale/107511/toeristische-camping-gelegen-in-het-groene-hart-van-nederland" target="_blank" rel="noopener">Bedrijventekoop: camping Groene Hart</a>, <a href="https://www.fundainbusiness.nl/agrarisch-bedrijf/ysselsteyn/object-89683023-timmermannsweg-119/brochure/download" target="_blank" rel="noopener">erf Ysselsteyn</a></li>
+  </ol>
+</section>
+
+</div>
+
+<script>
+(function(){
+const LOC={
+  A:{naam:"Groene Hart / Utrecht West",erf:2200000,ha:130000,woning:900000},
+  B:{naam:"Rand Amersfoort / Leusden",erf:1500000,ha:110000,woning:650000},
+  C:{naam:"Brabant, Den Bosch/Eindhoven",erf:1100000,ha:105000,woning:500000}};
+const OVB=0.104, NOTARIS=15000;
+const ceil=Math.ceil, rnd=Math.round;
+
+function program(n){
+  const desks=ceil(0.30*n);
+  const m2={werk:desks*5.5,verg:40+6*ceil(n/50),gym:Math.max(120,n),kleed:40+0.2*n,lounge:80+0.4*n,toilet:25,tech:40};
+  const netto=Object.values(m2).reduce((a,b)=>a+b,0);
+  return {desks,belcellen:ceil(n/50),m2_binnen:rnd(netto*1.1),m2_kas:rnd(150+0.5*n),m2_vijver:rnd(200+0.5*n),
+    ha:Math.round((2+n/100)*10)/10,pv:rnd(0.6*n),bat:rnd(1.2*n),sauna:1+Math.max(0,ceil((n-150)/100))};
+}
+
+function capex(i){
+  const p=program(i.leden), L=LOC[i.loc], g=i.grond, extra=Math.max(0,p.ha-1);
+  const rows=[];
+  const add=(groep,post,h,e,prijs,label)=>rows.push({groep,post,h,e,prijs,totaal:rnd(h*prijs),label});
+  add("Grond","Erf met opstallen (~1 ha)",1,"erf",L.erf*g,"schatting");
+  add("Grond","Aanvullende grond",extra,"ha",L.ha*g,"schatting");
+  const grond=L.erf*g+extra*L.ha*g;
+  add("Grond","Overdrachtsbelasting 10,4%",grond,"€",OVB,"bron");
+  add("Grond","Notaris, taxatie, kadaster",1,"post",NOTARIS,"schatting");
+  if(i.woning) add("Grond","Woning afsplitsen en verkopen (netto)",1,"post",-L.woning,"schatting");
+  add("Gebouw","Sloop overtollige stallen en asbestsanering",p.m2_binnen,"m²",50,"schatting");
+  add("Gebouw","Verbouw schuur tot clubgebouw",p.m2_binnen,"m²",i.bouw,"schatting");
+  add("Gebouw","Tweedehands tuinbouwkas als seizoenspaviljoen",p.m2_kas,"m²",450,"schatting");
+  add("Buiten","Natuurzwemvijver (zwem- en plantenzone)",p.m2_vijver,"m²",280,"bron");
+  add("Buiten","Natuurontwikkeling, paden, bomen, poelen",p.ha-0.5,"ha",35000,"schatting");
+  add("Buiten","Buitenwerkplekken (overdekt, met stroom)",4,"st",9000,"schatting");
+  add("Buiten","Buitengym (rig, kettlebells, sprintstrook)",1,"post",18000,"schatting");
+  add("Wellness","Grote sauna 12 pers. (cabine, kachel, ventilatie)",p.sauna,"st",55000,"schatting");
+  add("Wellness","Barrelsauna 8 tot 10 pers., houtgestookt",1,"st",13000,"bron");
+  add("Wellness","Koudwaterbad met koeling",1,"st",9000,"schatting");
+  add("Wellness","Houtgestookte hot tub",2,"st",7000,"schatting");
+  add("Wellness","Buitendouches, rustplekken, vlonders",1,"post",20000,"schatting");
+  add("Gym","Racks met halters en schijven (refurbished)",Math.max(3,ceil(i.leden/50)),"st",4000,"schatting");
+  add("Gym","Dumbbells, bankjes, kabelstation",1,"post",16000,"schatting");
+  add("Gym","Cardio (roeiers, skierg, airbike, loopband)",1,"post",14000,"schatting");
+  add("Gym","Sportvloer",Math.max(120,i.leden),"m²",60,"schatting");
+  add("Werken","Werkplek: zit-sta bureau, refurbished stoel, 2 schermen, dock",p.desks,"plek",1600,"schatting");
+  add("Werken","Belcellen (refurbished)",p.belcellen,"st",4500,"schatting");
+  add("Werken","Vergaderruimtes, scherm en audio",2,"st",3000,"schatting");
+  add("Koffie & interieur","3-groeps espressomachine, 2 molens, waterfilter",1,"set",25000,"schatting");
+  add("Koffie & interieur","Keuken en bar",1,"post",30000,"schatting");
+  add("Koffie & interieur","Tweedehands meubilair, planten, bibliotheek",p.m2_binnen,"m²",90,"schatting");
+  add("Koffie & interieur","Lockers, toegangssysteem, beveiliging",i.leden,"lid",120,"schatting");
+  add("Energie & tech","Zonnepanelen",p.pv,"kWp",850,"schatting");
+  add("Energie & tech","Batterij",p.bat,"kWh",450,"bron");
+  add("Energie & tech","Warmtepompen lucht-water en afgifte",p.m2_binnen,"m²",75,"schatting");
+  add("Energie & tech","Netaansluiting verzwaren",1,"post",25000,"schatting");
+  add("Energie & tech","Glasvezel, wifi mesh, Starlink als backup",1,"post",30000,"schatting");
+  const bi=rows.filter(r=>r.groep!=="Grond").reduce((a,r)=>a+r.totaal,0);
+  add("Bijkomend","Architect, constructeur, installatieadvies (10%)",bi,"€",0.10,"schatting");
+  add("Bijkomend","Planologisch traject (ecologie, stikstof, bodem, onderbouwing)",1,"post",75000,"schatting");
+  add("Bijkomend","Leges omgevingsvergunning (~3%)",bi,"€",0.03,"schatting");
+  add("Bijkomend","Juridisch: statuten, AFM, fiscaal advies",1,"post",35000,"schatting");
+  add("Bijkomend","Ontwikkelvergoeding initiatiefnemer",bi,"€",i.dev/100,"aanname");
+  const zg=rows.filter(r=>r.groep!=="Grond").reduce((a,r)=>a+r.totaal,0);
+  add("Bijkomend","Onvoorzien (12% excl. grond)",zg,"€",0.12,"schatting");
+  const sub=rows.reduce((a,r)=>a+r.totaal,0);
+  add("Bijkomend","Bouwrente en afsluitkosten (3%)",sub,"€",0.03,"schatting");
+  return rows;
+}
+
+function opex(i,cx){
+  const p=program(i.leden), n=i.leden;
+  const tot=g=>cx.filter(r=>r.groep===g).reduce((a,r)=>a+r.totaal,0);
+  const gebouw=tot("Gebouw")+tot("Buiten")+tot("Energie & tech");
+  const equip=tot("Gym")+tot("Werken")+tot("Wellness")+tot("Koffie & interieur");
+  const grond=tot("Grond");
+  const rows=[]; const add=(post,b,label,t)=>rows.push({post,bedrag:rnd(b),label,t:t||""});
+  const host=i.lean?0.6:1.0;
+  add(`Host / community lead (${host.toLocaleString("nl-NL")} fte)`,62000*host,"schatting");
+  add("Beheer en techniek (0,5 fte)",30000,"schatting");
+  const uren=2+0.02*n;
+  add("Schoonmaak",uren*365*32,"schatting",`${uren.toLocaleString("nl-NL",{maximumFractionDigits:1})} uur per dag × € 32`);
+  add("Management initiatiefnemer",30000,"aanname");
+  add("Groenbeheer",p.ha*5000,"schatting","€ 5.000 per ha, extensief");
+  const vraag=p.m2_binnen*60+20*6*365*p.sauna+10000, pv=p.pv*900, eigen=Math.min(pv*0.65,vraag), imp=vraag-eigen, exp=pv-eigen;
+  add("Energie netto",imp*0.24-exp*0.05+4000,"schatting",`vraag ${rnd(vraag/1000)} MWh, zon ${rnd(pv/1000)} MWh, inkoop ${rnd(imp/1000)} MWh × € 0,24`);
+  add("Brandhout sauna en hot tubs",4000,"schatting");
+  add("Onderhoud gebouw en terrein (1,5%)",gebouw*0.015,"schatting");
+  add("Vervangingsreserve inventaris (10%)",equip*0.10,"schatting");
+  add("Verzekeringen",(gebouw+equip)*0.0025,"schatting");
+  add("OZB, waterschap, riool",(grond+gebouw)*0.7*0.0035,"schatting","WOZ ≈ 70% van kostprijs × 0,35%");
+  add("Internet, Starlink, software, toegang",9000,"schatting");
+  add("Accountant, juridisch, administratie",18000,"schatting");
+  add("Handdoeken en verbruik",n*1.5*52*0.9,"schatting","1,5 bezoek per lid per week × € 0,90");
+  add("Community, events, ballotage",15000,"schatting");
+  const sub=rows.reduce((a,r)=>a+r.bedrag,0);
+  add("Onvoorzien exploitatie (5%)",sub*0.05,"schatting");
+  return rows;
+}
+
+function annuity(P,r,y){ if(P<=0) return 0; return r===0?P/y:P*r/(1-Math.pow(1+r,-y)); }
+
+function run(i){
+  const cx=capex(i), ox=opex(i,cx);
+  const capexTot=cx.reduce((a,r)=>a+r.totaal,0), opexTot=ox.reduce((a,r)=>a+r.bedrag,0);
+  const inlegTot=i.inleg*i.leden, lening=Math.max(0,capexTot-inlegTot), r=i.rente/100;
+  const jaarlast=annuity(lening,r,i.looptijd);
+  const lb=i.leden*0.95, extra=i.extra?0.10:0, btw=0.18;
+  const omzet=lb*i.fee/(1+btw)*12*(1+extra);
+  const k=12*lb*(1+extra)/(1+btw);
+  let saldo=lening, afl5=0;
+  for(let y=0;y<5;y++){const a=jaarlast-saldo*r; saldo-=a; afl5+=a;}
+  const over=omzet-opexTot; let jaren=null;
+  if(lening===0) jaren=0; else if(over>lening*r){let s=lening; jaren=0; while(s>0&&jaren<60){s=s*(1+r)-over; jaren++;}}
+  return {cx,ox,capexTot,opexTot,lening,ltv:lening/capexTot,jaarlast,omzet,resultaat:omzet-opexTot-jaarlast,
+    dscr:jaarlast?(omzet-opexTot)/jaarlast:null,feeNodig:(opexTot+jaarlast)/k,feeExpl:opexTot/k,
+    ev5:(inlegTot+afl5)/i.leden,jaren,prog:program(i.leden)};
+}
+window.clubModel={run,program};
+
+const eur=(x,d=0)=>(x<0?"− ":"")+"€ "+Math.abs(x).toLocaleString("nl-NL",{maximumFractionDigits:d,minimumFractionDigits:d});
+const mln=x=>"€ "+(x/1e6).toLocaleString("nl-NL",{minimumFractionDigits:2,maximumFractionDigits:2})+" mln";
+const $=id=>document.getElementById(id);
+const ids=["loc","leden","fee","inleg","looptijd","rente","bouw","grond","dev","woning","lean","extra"];
+function read(){return {loc:$("loc").value,leden:+$("leden").value,fee:+$("fee").value,inleg:+$("inleg").value,looptijd:+$("looptijd").value,
+  rente:+$("rente").value,bouw:+$("bouw").value,grond:+$("grond").value,dev:+$("dev").value,woning:$("woning").checked,lean:$("lean").checked,extra:$("extra").checked};}
+
+const PRESETS={
+  idee:{loc:"B",leden:50,fee:400,inleg:0,looptijd:5,rente:5.5,bouw:1300,grond:1,dev:3,woning:false,lean:false,extra:false},
+  basis:{loc:"B",leden:150,fee:450,inleg:0,looptijd:20,rente:5.5,bouw:1300,grond:1,dev:3,woning:false,lean:false,extra:false},
+  advies:{loc:"B",leden:200,fee:450,inleg:15000,looptijd:20,rente:5.5,bouw:1300,grond:1,dev:3,woning:false,lean:false,extra:false},
+  slim:{loc:"B",leden:200,fee:450,inleg:15000,looptijd:20,rente:5.5,bouw:1300,grond:1,dev:3,woning:true,lean:true,extra:true}};
+function apply(p){for(const k in p){const el=$(k); if(el.type==="checkbox") el.checked=p[k]; else el.value=p[k];} render();}
+document.querySelectorAll(".presets button").forEach(b=>b.addEventListener("click",()=>apply(PRESETS[b.dataset.p])));
+
+function kpi(k,v,s,state){return `<div class="kpi ${state?"state-"+state:""}"><span class="k">${k}</span><span class="v">${v}</span><span class="s">${s}</span></div>`;}
+
+function render(){
+  const i=read(), R=run(i);
+  $("o-leden").textContent=i.leden; $("o-fee").textContent=eur(i.fee); $("o-inleg").textContent=eur(i.inleg);
+  $("o-looptijd").textContent=i.looptijd+" jaar"; $("o-rente").textContent=i.rente.toLocaleString("nl-NL")+"%";
+  $("o-bouw").textContent=eur(i.bouw); $("o-grond").textContent="× "+i.grond.toLocaleString("nl-NL"); $("o-dev").textContent=i.dev.toLocaleString("nl-NL")+"%";
+  const res=R.resultaat, dscr=R.dscr;
+  const feeState=R.feeNodig<=i.fee?"ok":(R.feeNodig<=i.fee*1.1?"warn":"bad");
+  const ltvState=R.ltv<=0.6?"ok":(R.ltv<=0.75?"warn":"bad");
+  const dscrState=dscr===null?"ok":(dscr>=1.2?"ok":(dscr>=1?"warn":"bad"));
+  $("kpis").innerHTML=[
+    kpi("Benodigde fee",eur(R.feeNodig),`incl. btw, jij rekent ${eur(i.fee)}`,feeState),
+    kpi("Resultaat per jaar",eur(res),res>=0?"overschot naar extra aflossing":"tekort",res>=0?"ok":"bad"),
+    kpi("Investering",mln(R.capexTot),`${eur(R.capexTot/i.leden)} per lid`),
+    kpi("Banklening",mln(R.lening),`${rnd(R.ltv*100)}% van kostprijs`,ltvState),
+    kpi("DSCR",dscr===null?"geen lening":dscr.toLocaleString("nl-NL",{maximumFractionDigits:2}),"bank wil ≥ 1,2",dscrState),
+    kpi("Schuldvrij na",R.jaren===null?"nooit":R.jaren+" jaar","als het hele overschot aflost",R.jaren===null?"bad":(R.jaren<=10?"ok":"warn")),
+    kpi("Exploitatie per lid",eur(R.opexTot/i.leden/12),"per maand excl. btw"),
+    kpi("Fee na aflossing",eur(R.feeExpl),"incl. btw, alleen exploitatie"),
+    kpi("Eigen vermogen per lid",eur(R.ev5),"na 5 jaar (inleg + aflossing)")
+  ].join("");
+  const groups={}; R.cx.forEach(r=>groups[r.groep]=(groups[r.groep]||0)+r.totaal);
+  const max=Math.max(...Object.values(groups));
+  $("bars").innerHTML=Object.entries(groups).map(([g,v])=>`<div class="bar"><span>${g}</span><span class="track"><span class="fill ${g==="Grond"?"land":""}" style="display:block;width:${Math.max(0,v/max*100)}%"></span></span><span class="num" style="text-align:right">${eur(v/1000)}k</span></div>`).join("");
+  const p=R.prog;
+  $("prog").textContent=`Programma: ${p.m2_binnen} m² binnen, ${p.desks} werkplekken, ${p.belcellen} belcellen, gym ${Math.max(120,i.leden)} m², ${p.sauna} grote sauna + barrelsauna, kas ${p.m2_kas} m², zwemvijver ${p.m2_vijver} m², terrein ${p.ha.toLocaleString("nl-NL")} ha, ${p.pv} kWp zon, ${p.bat} kWh batterij. Locatie: ${LOC[i.loc].naam}.`;
+  // capex table
+  let h=`<thead><tr><th>Post</th><th class="r">Hoeveelheid</th><th>Eenheid</th><th class="r">Prijs</th><th class="r">Totaal</th><th>Label</th></tr></thead><tbody>`;
+  let cur="";
+  R.cx.forEach(r=>{ if(r.groep!==cur){cur=r.groep; h+=`<tr class="grp"><td colspan="4">${cur}</td><td class="r">${eur(groups[cur])}</td><td></td></tr>`;}
+    const pct=r.e==="€";
+    h+=`<tr><td>${r.post}</td><td class="r">${pct?eur(r.h):r.h.toLocaleString("nl-NL",{maximumFractionDigits:1})}</td><td>${pct?"":r.e}</td><td class="r">${pct?(r.prijs*100).toLocaleString("nl-NL",{maximumFractionDigits:1})+"%":eur(r.prijs)}</td><td class="r">${eur(r.totaal)}</td><td><span class="lbl ${r.label}">${r.label}</span></td></tr>`;});
+  h+=`<tr class="tot"><td colspan="4">Totaal investering excl. btw</td><td class="r">${eur(R.capexTot)}</td><td><span class="lbl">berekend</span></td></tr></tbody>`;
+  $("capex").innerHTML=h;
+  let o=`<thead><tr><th>Post</th><th class="r">Per jaar</th><th>Toelichting</th><th>Label</th></tr></thead><tbody>`;
+  R.ox.forEach(r=>o+=`<tr><td>${r.post}</td><td class="r">${eur(r.bedrag)}</td><td class="note">${r.t}</td><td><span class="lbl ${r.label}">${r.label}</span></td></tr>`);
+  o+=`<tr class="tot"><td>Totaal exploitatie</td><td class="r">${eur(R.opexTot)}</td><td class="note">${eur(R.opexTot/i.leden/12)} per lid per maand</td><td><span class="lbl">berekend</span></td></tr>`;
+  o+=`<tr><td>Rente en aflossing (annuïteit)</td><td class="r">${eur(R.jaarlast)}</td><td class="note">${mln(R.lening)} over ${i.looptijd} jaar à ${i.rente.toLocaleString("nl-NL")}%</td><td><span class="lbl">berekend</span></td></tr>`;
+  o+=`<tr><td>Ledenomzet excl. btw</td><td class="r">${eur(R.omzet)}</td><td class="note">${i.leden} leden × 95% bezetting × ${eur(i.fee)} / 1,18${i.extra?" + 10% extra":""}</td><td><span class="lbl">berekend</span></td></tr>`;
+  o+=`<tr class="tot"><td>Resultaat</td><td class="r">${eur(R.resultaat)}</td><td></td><td></td></tr></tbody>`;
+  $("opex").innerHTML=o;
+}
+ids.forEach(id=>$(id).addEventListener("input",render));
+
+// matrix (vaste basisaannames)
+(function(){
+  const N=[100,150,200,250], T=[5,10,20,25];
+  let h=`<thead><tr><th>Locatie</th><th class="r">Leden</th><th class="r">Investering</th>${T.map(t=>`<th class="r">Lening ${t} jr</th>`).join("")}<th class="r">Na aflossing</th></tr></thead><tbody>`;
+  ["A","B","C"].forEach(l=>N.forEach((n,ix)=>{
+    const base={loc:l,leden:n,fee:450,inleg:0,rente:5.5,bouw:1300,grond:1,dev:3,woning:false,lean:false,extra:false};
+    const cells=T.map(t=>run({...base,looptijd:t}));
+    h+=`<tr><td>${ix===0?l+" · "+LOC[l].naam:""}</td><td class="r">${n}</td><td class="r">${mln(cells[0].capexTot)}</td>`+
+      cells.map(c=>{const f=c.feeNodig; const cl=f<=500?"cell-ok":(f<=600?"cell-mid":"cell-bad"); return `<td class="r ${cl}">${eur(f)}</td>`;}).join("")+
+      `<td class="r">${eur(cells[0].feeExpl)}</td></tr>`;}));
+  $("matrix").innerHTML=h+"</tbody>";
+  const F=[["Alles in 5 jaar afbetalen",0,5],["Alleen maandfee, lening 20 jaar",0,20],["€ 10.000 inleg, lening 20 jaar",10000,20],["€ 15.000 inleg, lening 20 jaar",15000,20],["€ 15.000 inleg, lening 25 jaar",15000,25]];
+  let f=`<thead><tr><th>Vorm</th><th class="r">Lening</th><th class="r">Van kostprijs</th><th class="r">Benodigde fee</th><th class="r">DSCR bij € 450</th><th class="r">Vermogen lid na 5 jr</th></tr></thead><tbody>`;
+  F.forEach(([nm,inl,t])=>{const c=run({loc:"B",leden:150,fee:450,inleg:inl,looptijd:t,rente:5.5,bouw:1300,grond:1,dev:3,woning:false,lean:false,extra:false});
+    const d=c.dscr; const dc=d>=1.2?"cell-ok":(d>=1?"cell-mid":"cell-bad");
+    f+=`<tr><td>${nm}</td><td class="r">${mln(c.lening)}</td><td class="r">${rnd(c.ltv*100)}%</td><td class="r">${eur(c.feeNodig)}</td><td class="r ${dc}">${d.toLocaleString("nl-NL",{maximumFractionDigits:2})}</td><td class="r">${eur(c.ev5)}</td></tr>`;});
+  $("fin").innerHTML=f+"</tbody>";
+})();
+render();
+})();
+</script>

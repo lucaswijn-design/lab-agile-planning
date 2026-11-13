@@ -1,0 +1,1307 @@
+{
+ "basis": {
+  "inputs": {
+   "leden": 150,
+   "fee_incl_btw": 450.0,
+   "locatie": "B",
+   "bouw_per_m2": 1300.0,
+   "looptijd_lening": 20,
+   "rente": 0.055,
+   "inleg_per_lid": 0.0,
+   "bezetting": 0.95,
+   "btw_mix": 0.18,
+   "dev_fee_pct": 0.03,
+   "management_fee": 30000,
+   "grond_prijs_factor": 1.0,
+   "woning_afsplitsen": 0.0,
+   "host_fte": 1.0,
+   "extra_omzet_pct": 0.0
+  },
+  "programma": {
+   "desks": 45,
+   "belcellen": 3,
+   "m2_detail": {
+    "werkplekken": 248,
+    "vergader_en_belruimtes": 58,
+    "gym": 150,
+    "kleedkamers_douches": 70,
+    "koffiebar_keuken_lounge_bieb": 140,
+    "toiletten": 25,
+    "techniek_opslag": 40
+   },
+   "m2_binnen": 804,
+   "m2_kas": 225,
+   "m2_zwemvijver": 275,
+   "ha_terrein": 3.5,
+   "pv_kwp": 90,
+   "batterij_kwh": 180,
+   "sauna_cabines": 1
+  },
+  "capex_totaal": 4963289,
+  "capex_per_lid": 33089,
+  "capex_groepen": {
+   "Grond": 1974600,
+   "Gebouw": 1186650,
+   "Buiten": 236000,
+   "Wellness": 111000,
+   "Gym": 51000,
+   "Werken": 91500,
+   "Koffie & interieur": 145360,
+   "Energie & tech": 272800,
+   "Bijkomend": 894379
+  },
+  "opex_totaal": 365833,
+  "opex_per_lid_pm": 203,
+  "lening": 4963289,
+  "ltv": 1.0,
+  "jaarlast": 415325,
+  "omzet_netto": 652119,
+  "resultaat": -129039,
+  "dscr": 0.69,
+  "fee_nodig_incl_btw": 539,
+  "fee_alleen_exploitatie_incl_btw": 252,
+  "aflossing_5j": 794434,
+  "eigen_vermogen_per_lid_5j": 5296,
+  "jaren_schuldvrij_bij_fee": 58,
+  "capex_rows": [
+   {
+    "groep": "Grond",
+    "post": "Erf met opstallen (~1 ha)",
+    "hoeveelheid": 1,
+    "eenheid": "erf",
+    "prijs": 1500000.0,
+    "totaal": 1500000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Grond",
+    "post": "Aanvullende grond",
+    "hoeveelheid": 2.5,
+    "eenheid": "ha",
+    "prijs": 110000.0,
+    "totaal": 275000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Grond",
+    "post": "Overdrachtsbelasting 10,4%",
+    "hoeveelheid": 1775000.0,
+    "eenheid": "EUR",
+    "prijs": 0.104,
+    "totaal": 184600,
+    "label": "bron"
+   },
+   {
+    "groep": "Grond",
+    "post": "Notaris, taxatie, kadaster",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gebouw",
+    "post": "Sloop overtollige stallen + asbestsanering",
+    "hoeveelheid": 804,
+    "eenheid": "m2",
+    "prijs": 50,
+    "totaal": 40200,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gebouw",
+    "post": "Transformatie schuur naar clubgebouw",
+    "hoeveelheid": 804,
+    "eenheid": "m2",
+    "prijs": 1300.0,
+    "totaal": 1045200,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gebouw",
+    "post": "Tweedehands tuinbouwkas als seizoenspaviljoen",
+    "hoeveelheid": 225,
+    "eenheid": "m2",
+    "prijs": 450,
+    "totaal": 101250,
+    "label": "schatting"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Natuurzwemvijver (zwem + plantenzone)",
+    "hoeveelheid": 275,
+    "eenheid": "m2",
+    "prijs": 280,
+    "totaal": 77000,
+    "label": "bron"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Natuurontwikkeling, paden, bomen, poelen",
+    "hoeveelheid": 3.0,
+    "eenheid": "ha",
+    "prijs": 35000,
+    "totaal": 105000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Buitenwerkplekken (overdekte pods met stroom)",
+    "hoeveelheid": 4,
+    "eenheid": "stuks",
+    "prijs": 9000,
+    "totaal": 36000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Buiten",
+    "post": "Buitengym (rig, kettlebells, sprintstrook)",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 18000,
+    "totaal": 18000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Grote sauna 12 pers. (cabine, kachel, ventilatie)",
+    "hoeveelheid": 1,
+    "eenheid": "stuks",
+    "prijs": 55000,
+    "totaal": 55000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Barrelsauna 8 tot 10 pers. (houtgestookt)",
+    "hoeveelheid": 1,
+    "eenheid": "stuks",
+    "prijs": 13000,
+    "totaal": 13000,
+    "label": "bron"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Koudwaterbad met koeling",
+    "hoeveelheid": 1,
+    "eenheid": "stuks",
+    "prijs": 9000,
+    "totaal": 9000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Houtgestookte hot tub",
+    "hoeveelheid": 2,
+    "eenheid": "stuks",
+    "prijs": 7000,
+    "totaal": 14000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Wellness",
+    "post": "Buitendouches, rustplekken, vlonders",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 20000,
+    "totaal": 20000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Racks + halters + schijven (refurbished)",
+    "hoeveelheid": 3,
+    "eenheid": "stuks",
+    "prijs": 4000,
+    "totaal": 12000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Dumbbells, bankjes, kabelstation",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 16000,
+    "totaal": 16000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Cardio (roeiers, skierg, airbike, loopband)",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 14000,
+    "totaal": 14000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Gym",
+    "post": "Sportvloer",
+    "hoeveelheid": 150,
+    "eenheid": "m2",
+    "prijs": 60,
+    "totaal": 9000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Werken",
+    "post": "Werkplek: zit-sta bureau, refurb. ergonomische stoel, 2 schermen, dock",
+    "hoeveelheid": 45,
+    "eenheid": "plekken",
+    "prijs": 1600,
+    "totaal": 72000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Werken",
+    "post": "Belcellen (refurbished)",
+    "hoeveelheid": 3,
+    "eenheid": "stuks",
+    "prijs": 4500,
+    "totaal": 13500,
+    "label": "schatting"
+   },
+   {
+    "groep": "Werken",
+    "post": "Vergaderruimtes AV",
+    "hoeveelheid": 2,
+    "eenheid": "stuks",
+    "prijs": 3000,
+    "totaal": 6000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "3-groeps espressomachine + 2 molens + waterfilter",
+    "hoeveelheid": 1,
+    "eenheid": "set",
+    "prijs": 25000,
+    "totaal": 25000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Keuken + bar",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 30000,
+    "totaal": 30000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Tweedehands meubilair, planten, bibliotheek (biophilic)",
+    "hoeveelheid": 804,
+    "eenheid": "m2",
+    "prijs": 90,
+    "totaal": 72360,
+    "label": "schatting"
+   },
+   {
+    "groep": "Koffie & interieur",
+    "post": "Lockers, toegang, beveiliging",
+    "hoeveelheid": 150,
+    "eenheid": "leden",
+    "prijs": 120,
+    "totaal": 18000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Zonnepanelen",
+    "hoeveelheid": 90,
+    "eenheid": "kWp",
+    "prijs": 850,
+    "totaal": 76500,
+    "label": "schatting"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Batterij",
+    "hoeveelheid": 180,
+    "eenheid": "kWh",
+    "prijs": 450,
+    "totaal": 81000,
+    "label": "bron"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Warmtepompen lucht-water + afgifte",
+    "hoeveelheid": 804,
+    "eenheid": "m2",
+    "prijs": 75,
+    "totaal": 60300,
+    "label": "schatting"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Netaansluiting verzwaren",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 25000,
+    "totaal": 25000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Energie & tech",
+    "post": "Glasvezel aanleg + wifi mesh + Starlink backup",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 30000,
+    "totaal": 30000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Architect, constructeur, installatieadvies (10%)",
+    "hoeveelheid": 2094310,
+    "eenheid": "EUR",
+    "prijs": 0.1,
+    "totaal": 209431,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Planologisch traject (ruimtelijke onderbouwing, ecologie, stikstof, bodem)",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 75000,
+    "totaal": 75000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Leges omgevingsvergunning (~3% bouwsom)",
+    "hoeveelheid": 2094310,
+    "eenheid": "EUR",
+    "prijs": 0.03,
+    "totaal": 62829,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Juridisch: statuten coöperatie, AFM informatiedocument, fiscaal",
+    "hoeveelheid": 1,
+    "eenheid": "post",
+    "prijs": 35000,
+    "totaal": 35000,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Ontwikkelvergoeding initiatiefnemer",
+    "hoeveelheid": 2094310,
+    "eenheid": "EUR",
+    "prijs": 0.03,
+    "totaal": 62829,
+    "label": "aanname"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Onvoorzien (12% excl. grond)",
+    "hoeveelheid": 2539399,
+    "eenheid": "EUR",
+    "prijs": 0.12,
+    "totaal": 304728,
+    "label": "schatting"
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwrente + afsluitkosten (3%)",
+    "hoeveelheid": 4818727,
+    "eenheid": "EUR",
+    "prijs": 0.03,
+    "totaal": 144562,
+    "label": "schatting"
+   }
+  ],
+  "opex_rows": [
+   {
+    "post": "Host / community lead (1.0 fte, loonkosten)",
+    "bedrag": 62000,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Beheer en techniek (0,5 fte)",
+    "bedrag": 30000,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Schoonmaak",
+    "bedrag": 58400,
+    "label": "schatting",
+    "toelichting": "5.0 uur per dag x EUR 32"
+   },
+   {
+    "post": "Management initiatiefnemer",
+    "bedrag": 30000,
+    "label": "aanname",
+    "toelichting": ""
+   },
+   {
+    "post": "Groenbeheer",
+    "bedrag": 17500,
+    "label": "schatting",
+    "toelichting": "EUR 5.000 per ha extensief"
+   },
+   {
+    "post": "Energie (netto)",
+    "bedrag": 14436,
+    "label": "schatting",
+    "toelichting": "vraag 102 MWh, PV 81 MWh, import 49 MWh x 0,24"
+   },
+   {
+    "post": "Brandhout sauna en hot tubs",
+    "bedrag": 4000,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Onderhoud gebouw en terrein (1,5%)",
+    "bedrag": 25432,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Vervangingsreserve inventaris (10%)",
+    "bedrag": 39886,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Verzekeringen",
+    "bedrag": 5236,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "OZB, waterschap, riool",
+    "bedrag": 8992,
+    "label": "schatting",
+    "toelichting": "WOZ ~70% van kostprijs x 0,35%"
+   },
+   {
+    "post": "Internet, Starlink, software, toegang",
+    "bedrag": 9000,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Accountant, juridisch, administratie",
+    "bedrag": 18000,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Handdoeken, verbruik, schoonmaakmiddelen",
+    "bedrag": 10530,
+    "label": "schatting",
+    "toelichting": "1,5 bezoek per lid per week x EUR 0,90"
+   },
+   {
+    "post": "Community, events, ballotage",
+    "bedrag": 15000,
+    "label": "schatting",
+    "toelichting": ""
+   },
+   {
+    "post": "Onvoorzien exploitatie (5%)",
+    "bedrag": 17421,
+    "label": "schatting",
+    "toelichting": ""
+   }
+  ]
+ },
+ "matrix": [
+  {
+   "locatie": "A",
+   "leden": 75,
+   "looptijd": 5,
+   "capex": 5018666,
+   "capex_per_lid": 66916,
+   "opex_pm": 363,
+   "fee": 2073,
+   "fee_expl": 451
+  },
+  {
+   "locatie": "A",
+   "leden": 75,
+   "looptijd": 10,
+   "capex": 5018666,
+   "capex_per_lid": 66916,
+   "opex_pm": 363,
+   "fee": 1370,
+   "fee_expl": 451
+  },
+  {
+   "locatie": "A",
+   "leden": 75,
+   "looptijd": 20,
+   "capex": 5018666,
+   "capex_per_lid": 66916,
+   "opex_pm": 363,
+   "fee": 1031,
+   "fee_expl": 451
+  },
+  {
+   "locatie": "A",
+   "leden": 75,
+   "looptijd": 25,
+   "capex": 5018666,
+   "capex_per_lid": 66916,
+   "opex_pm": 363,
+   "fee": 968,
+   "fee_expl": 451
+  },
+  {
+   "locatie": "A",
+   "leden": 100,
+   "looptijd": 5,
+   "capex": 5243064,
+   "capex_per_lid": 52431,
+   "opex_pm": 283,
+   "fee": 1622,
+   "fee_expl": 351
+  },
+  {
+   "locatie": "A",
+   "leden": 100,
+   "looptijd": 10,
+   "capex": 5243064,
+   "capex_per_lid": 52431,
+   "opex_pm": 283,
+   "fee": 1071,
+   "fee_expl": 351
+  },
+  {
+   "locatie": "A",
+   "leden": 100,
+   "looptijd": 20,
+   "capex": 5243064,
+   "capex_per_lid": 52431,
+   "opex_pm": 283,
+   "fee": 805,
+   "fee_expl": 351
+  },
+  {
+   "locatie": "A",
+   "leden": 100,
+   "looptijd": 25,
+   "capex": 5243064,
+   "capex_per_lid": 52431,
+   "opex_pm": 283,
+   "fee": 756,
+   "fee_expl": 351
+  },
+  {
+   "locatie": "A",
+   "leden": 150,
+   "looptijd": 5,
+   "capex": 5816129,
+   "capex_per_lid": 38774,
+   "opex_pm": 204,
+   "fee": 1194,
+   "fee_expl": 254
+  },
+  {
+   "locatie": "A",
+   "leden": 150,
+   "looptijd": 10,
+   "capex": 5816129,
+   "capex_per_lid": 38774,
+   "opex_pm": 204,
+   "fee": 786,
+   "fee_expl": 254
+  },
+  {
+   "locatie": "A",
+   "leden": 150,
+   "looptijd": 20,
+   "capex": 5816129,
+   "capex_per_lid": 38774,
+   "opex_pm": 204,
+   "fee": 590,
+   "fee_expl": 254
+  },
+  {
+   "locatie": "A",
+   "leden": 150,
+   "looptijd": 25,
+   "capex": 5816129,
+   "capex_per_lid": 38774,
+   "opex_pm": 204,
+   "fee": 553,
+   "fee_expl": 254
+  },
+  {
+   "locatie": "A",
+   "leden": 200,
+   "looptijd": 5,
+   "capex": 6512327,
+   "capex_per_lid": 32562,
+   "opex_pm": 173,
+   "fee": 1004,
+   "fee_expl": 215
+  },
+  {
+   "locatie": "A",
+   "leden": 200,
+   "looptijd": 10,
+   "capex": 6512327,
+   "capex_per_lid": 32562,
+   "opex_pm": 173,
+   "fee": 662,
+   "fee_expl": 215
+  },
+  {
+   "locatie": "A",
+   "leden": 200,
+   "looptijd": 20,
+   "capex": 6512327,
+   "capex_per_lid": 32562,
+   "opex_pm": 173,
+   "fee": 497,
+   "fee_expl": 215
+  },
+  {
+   "locatie": "A",
+   "leden": 200,
+   "looptijd": 25,
+   "capex": 6512327,
+   "capex_per_lid": 32562,
+   "opex_pm": 173,
+   "fee": 466,
+   "fee_expl": 215
+  },
+  {
+   "locatie": "A",
+   "leden": 250,
+   "looptijd": 5,
+   "capex": 7134926,
+   "capex_per_lid": 28540,
+   "opex_pm": 148,
+   "fee": 876,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "A",
+   "leden": 250,
+   "looptijd": 10,
+   "capex": 7134926,
+   "capex_per_lid": 28540,
+   "opex_pm": 148,
+   "fee": 576,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "A",
+   "leden": 250,
+   "looptijd": 20,
+   "capex": 7134926,
+   "capex_per_lid": 28540,
+   "opex_pm": 148,
+   "fee": 432,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "A",
+   "leden": 250,
+   "looptijd": 25,
+   "capex": 7134926,
+   "capex_per_lid": 28540,
+   "opex_pm": 148,
+   "fee": 405,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "B",
+   "leden": 75,
+   "looptijd": 5,
+   "capex": 4181745,
+   "capex_per_lid": 55757,
+   "opex_pm": 361,
+   "fee": 1800,
+   "fee_expl": 449
+  },
+  {
+   "locatie": "B",
+   "leden": 75,
+   "looptijd": 10,
+   "capex": 4181745,
+   "capex_per_lid": 55757,
+   "opex_pm": 361,
+   "fee": 1214,
+   "fee_expl": 449
+  },
+  {
+   "locatie": "B",
+   "leden": 75,
+   "looptijd": 20,
+   "capex": 4181745,
+   "capex_per_lid": 55757,
+   "opex_pm": 361,
+   "fee": 932,
+   "fee_expl": 449
+  },
+  {
+   "locatie": "B",
+   "leden": 75,
+   "looptijd": 25,
+   "capex": 4181745,
+   "capex_per_lid": 55757,
+   "opex_pm": 361,
+   "fee": 879,
+   "fee_expl": 449
+  },
+  {
+   "locatie": "B",
+   "leden": 100,
+   "looptijd": 5,
+   "capex": 4401595,
+   "capex_per_lid": 44016,
+   "opex_pm": 281,
+   "fee": 1416,
+   "fee_expl": 349
+  },
+  {
+   "locatie": "B",
+   "leden": 100,
+   "looptijd": 10,
+   "capex": 4401595,
+   "capex_per_lid": 44016,
+   "opex_pm": 281,
+   "fee": 954,
+   "fee_expl": 349
+  },
+  {
+   "locatie": "B",
+   "leden": 100,
+   "looptijd": 20,
+   "capex": 4401595,
+   "capex_per_lid": 44016,
+   "opex_pm": 281,
+   "fee": 730,
+   "fee_expl": 349
+  },
+  {
+   "locatie": "B",
+   "leden": 100,
+   "looptijd": 25,
+   "capex": 4401595,
+   "capex_per_lid": 44016,
+   "opex_pm": 281,
+   "fee": 689,
+   "fee_expl": 349
+  },
+  {
+   "locatie": "B",
+   "leden": 150,
+   "looptijd": 5,
+   "capex": 4963289,
+   "capex_per_lid": 33089,
+   "opex_pm": 203,
+   "fee": 1054,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "B",
+   "leden": 150,
+   "looptijd": 10,
+   "capex": 4963289,
+   "capex_per_lid": 33089,
+   "opex_pm": 203,
+   "fee": 707,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "B",
+   "leden": 150,
+   "looptijd": 20,
+   "capex": 4963289,
+   "capex_per_lid": 33089,
+   "opex_pm": 203,
+   "fee": 539,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "B",
+   "leden": 150,
+   "looptijd": 25,
+   "capex": 4963289,
+   "capex_per_lid": 33089,
+   "opex_pm": 203,
+   "fee": 508,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "B",
+   "leden": 200,
+   "looptijd": 5,
+   "capex": 5648116,
+   "capex_per_lid": 28241,
+   "opex_pm": 172,
+   "fee": 898,
+   "fee_expl": 214
+  },
+  {
+   "locatie": "B",
+   "leden": 200,
+   "looptijd": 10,
+   "capex": 5648116,
+   "capex_per_lid": 28241,
+   "opex_pm": 172,
+   "fee": 602,
+   "fee_expl": 214
+  },
+  {
+   "locatie": "B",
+   "leden": 200,
+   "looptijd": 20,
+   "capex": 5648116,
+   "capex_per_lid": 28241,
+   "opex_pm": 172,
+   "fee": 458,
+   "fee_expl": 214
+  },
+  {
+   "locatie": "B",
+   "leden": 200,
+   "looptijd": 25,
+   "capex": 5648116,
+   "capex_per_lid": 28241,
+   "opex_pm": 172,
+   "fee": 432,
+   "fee_expl": 214
+  },
+  {
+   "locatie": "B",
+   "leden": 250,
+   "looptijd": 5,
+   "capex": 6259344,
+   "capex_per_lid": 25037,
+   "opex_pm": 148,
+   "fee": 790,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "B",
+   "leden": 250,
+   "looptijd": 10,
+   "capex": 6259344,
+   "capex_per_lid": 25037,
+   "opex_pm": 148,
+   "fee": 527,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "B",
+   "leden": 250,
+   "looptijd": 20,
+   "capex": 6259344,
+   "capex_per_lid": 25037,
+   "opex_pm": 148,
+   "fee": 400,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "B",
+   "leden": 250,
+   "looptijd": 25,
+   "capex": 6259344,
+   "capex_per_lid": 25037,
+   "opex_pm": 148,
+   "fee": 377,
+   "fee_expl": 184
+  },
+  {
+   "locatie": "C",
+   "leden": 75,
+   "looptijd": 5,
+   "capex": 3716663,
+   "capex_per_lid": 49556,
+   "opex_pm": 360,
+   "fee": 1648,
+   "fee_expl": 447
+  },
+  {
+   "locatie": "C",
+   "leden": 75,
+   "looptijd": 10,
+   "capex": 3716663,
+   "capex_per_lid": 49556,
+   "opex_pm": 360,
+   "fee": 1127,
+   "fee_expl": 447
+  },
+  {
+   "locatie": "C",
+   "leden": 75,
+   "looptijd": 20,
+   "capex": 3716663,
+   "capex_per_lid": 49556,
+   "opex_pm": 360,
+   "fee": 876,
+   "fee_expl": 447
+  },
+  {
+   "locatie": "C",
+   "leden": 75,
+   "looptijd": 25,
+   "capex": 3716663,
+   "capex_per_lid": 49556,
+   "opex_pm": 360,
+   "fee": 829,
+   "fee_expl": 447
+  },
+  {
+   "locatie": "C",
+   "leden": 100,
+   "looptijd": 5,
+   "capex": 3935376,
+   "capex_per_lid": 39354,
+   "opex_pm": 280,
+   "fee": 1302,
+   "fee_expl": 348
+  },
+  {
+   "locatie": "C",
+   "leden": 100,
+   "looptijd": 10,
+   "capex": 3935376,
+   "capex_per_lid": 39354,
+   "opex_pm": 280,
+   "fee": 888,
+   "fee_expl": 348
+  },
+  {
+   "locatie": "C",
+   "leden": 100,
+   "looptijd": 20,
+   "capex": 3935376,
+   "capex_per_lid": 39354,
+   "opex_pm": 280,
+   "fee": 689,
+   "fee_expl": 348
+  },
+  {
+   "locatie": "C",
+   "leden": 100,
+   "looptijd": 25,
+   "capex": 3935376,
+   "capex_per_lid": 39354,
+   "opex_pm": 280,
+   "fee": 652,
+   "fee_expl": 348
+  },
+  {
+   "locatie": "C",
+   "leden": 150,
+   "looptijd": 5,
+   "capex": 4494227,
+   "capex_per_lid": 29962,
+   "opex_pm": 203,
+   "fee": 978,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "C",
+   "leden": 150,
+   "looptijd": 10,
+   "capex": 4494227,
+   "capex_per_lid": 29962,
+   "opex_pm": 203,
+   "fee": 663,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "C",
+   "leden": 150,
+   "looptijd": 20,
+   "capex": 4494227,
+   "capex_per_lid": 29962,
+   "opex_pm": 203,
+   "fee": 511,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "C",
+   "leden": 150,
+   "looptijd": 25,
+   "capex": 4494227,
+   "capex_per_lid": 29962,
+   "opex_pm": 203,
+   "fee": 483,
+   "fee_expl": 252
+  },
+  {
+   "locatie": "C",
+   "leden": 200,
+   "looptijd": 5,
+   "capex": 5176211,
+   "capex_per_lid": 25881,
+   "opex_pm": 172,
+   "fee": 840,
+   "fee_expl": 213
+  },
+  {
+   "locatie": "C",
+   "leden": 200,
+   "looptijd": 10,
+   "capex": 5176211,
+   "capex_per_lid": 25881,
+   "opex_pm": 172,
+   "fee": 569,
+   "fee_expl": 213
+  },
+  {
+   "locatie": "C",
+   "leden": 200,
+   "looptijd": 20,
+   "capex": 5176211,
+   "capex_per_lid": 25881,
+   "opex_pm": 172,
+   "fee": 437,
+   "fee_expl": 213
+  },
+  {
+   "locatie": "C",
+   "leden": 200,
+   "looptijd": 25,
+   "capex": 5176211,
+   "capex_per_lid": 25881,
+   "opex_pm": 172,
+   "fee": 413,
+   "fee_expl": 213
+  },
+  {
+   "locatie": "C",
+   "leden": 250,
+   "looptijd": 5,
+   "capex": 5784596,
+   "capex_per_lid": 23138,
+   "opex_pm": 147,
+   "fee": 744,
+   "fee_expl": 183
+  },
+  {
+   "locatie": "C",
+   "leden": 250,
+   "looptijd": 10,
+   "capex": 5784596,
+   "capex_per_lid": 23138,
+   "opex_pm": 147,
+   "fee": 501,
+   "fee_expl": 183
+  },
+  {
+   "locatie": "C",
+   "leden": 250,
+   "looptijd": 20,
+   "capex": 5784596,
+   "capex_per_lid": 23138,
+   "opex_pm": 147,
+   "fee": 383,
+   "fee_expl": 183
+  },
+  {
+   "locatie": "C",
+   "leden": 250,
+   "looptijd": 25,
+   "capex": 5784596,
+   "capex_per_lid": 23138,
+   "opex_pm": 147,
+   "fee": 362,
+   "fee_expl": 183
+  }
+ ],
+ "scenarios": {
+  "laag": {
+   "bouw_per_m2": 950,
+   "grond_factor": 0.85,
+   "capex": 4283968,
+   "fee": 495,
+   "resultaat_bij_450": -65542
+  },
+  "basis": {
+   "bouw_per_m2": 1300,
+   "grond_factor": 1.0,
+   "capex": 4963289,
+   "fee": 539,
+   "resultaat_bij_450": -129039
+  },
+  "hoog": {
+   "bouw_per_m2": 1900,
+   "grond_factor": 1.25,
+   "capex": 6113422,
+   "fee": 613,
+   "resultaat_bij_450": -236646
+  }
+ },
+ "financiering": {
+  "alles in 5 jaar afbetalen": {
+   "inleg": 0,
+   "looptijd": 5,
+   "lening": 4963289,
+   "ltv": 1.0,
+   "fee": 1054,
+   "ev_lid_5j": 33089,
+   "dscr_bij_450": 0.25
+  },
+  "alleen maandfee, 20 jr lening": {
+   "inleg": 0,
+   "looptijd": 20,
+   "lening": 4963289,
+   "ltv": 1.0,
+   "fee": 539,
+   "ev_lid_5j": 5296,
+   "dscr_bij_450": 0.69
+  },
+  "inleg 10k + 20 jr": {
+   "inleg": 10000,
+   "looptijd": 20,
+   "lening": 3463289,
+   "ltv": 0.7,
+   "fee": 452,
+   "ev_lid_5j": 13696,
+   "dscr_bij_450": 0.99
+  },
+  "inleg 15k + 20 jr": {
+   "inleg": 15000,
+   "looptijd": 20,
+   "lening": 2713289,
+   "ltv": 0.55,
+   "fee": 409,
+   "ev_lid_5j": 17895,
+   "dscr_bij_450": 1.26
+  },
+  "inleg 15k + 25 jr": {
+   "inleg": 15000,
+   "looptijd": 25,
+   "lening": 2713289,
+   "ltv": 0.55,
+   "fee": 392,
+   "ev_lid_5j": 16974,
+   "dscr_bij_450": 1.42
+  }
+ },
+ "slim": {
+  "A-150-0": {
+   "capex": 4889129,
+   "fee": 470,
+   "opex_pm": 189,
+   "ev_lid_5j": 5217,
+   "ltv": 1.0
+  },
+  "A-150-15000": {
+   "capex": 4889129,
+   "fee": 352,
+   "opex_pm": 189,
+   "ev_lid_5j": 17816,
+   "ltv": 0.54
+  },
+  "A-200-0": {
+   "capex": 5585327,
+   "fee": 402,
+   "opex_pm": 161,
+   "ev_lid_5j": 4470,
+   "ltv": 1.0
+  },
+  "A-200-15000": {
+   "capex": 5585327,
+   "fee": 284,
+   "opex_pm": 161,
+   "ev_lid_5j": 17069,
+   "ltv": 0.46
+  },
+  "B-150-0": {
+   "capex": 4293789,
+   "fee": 438,
+   "opex_pm": 188,
+   "ev_lid_5j": 4582,
+   "ltv": 1.0
+  },
+  "B-150-15000": {
+   "capex": 4293789,
+   "fee": 319,
+   "opex_pm": 188,
+   "ev_lid_5j": 17181,
+   "ltv": 0.48
+  },
+  "B-200-0": {
+   "capex": 4978616,
+   "fee": 377,
+   "opex_pm": 161,
+   "ev_lid_5j": 3984,
+   "ltv": 1.0
+  },
+  "B-200-15000": {
+   "capex": 4978616,
+   "fee": 259,
+   "opex_pm": 161,
+   "ev_lid_5j": 16584,
+   "ltv": 0.4
+  },
+  "C-150-0": {
+   "capex": 3979227,
+   "fee": 421,
+   "opex_pm": 187,
+   "ev_lid_5j": 4246,
+   "ltv": 1.0
+  },
+  "C-150-15000": {
+   "capex": 3979227,
+   "fee": 302,
+   "opex_pm": 187,
+   "ev_lid_5j": 16845,
+   "ltv": 0.43
+  },
+  "C-200-0": {
+   "capex": 4661211,
+   "fee": 364,
+   "opex_pm": 160,
+   "ev_lid_5j": 3730,
+   "ltv": 1.0
+  },
+  "C-200-15000": {
+   "capex": 4661211,
+   "fee": 246,
+   "opex_pm": 160,
+   "ev_lid_5j": 16329,
+   "ltv": 0.36
+  }
+ },
+ "aanbevolen": {
+  "basis": {
+   "capex_totaal": 5648116,
+   "lening": 2648116,
+   "ltv": 0.47,
+   "dscr": 2.06,
+   "fee_nodig_incl_btw": 328,
+   "fee_alleen_exploitatie_incl_btw": 214,
+   "jaren_schuldvrij_bij_fee": 8,
+   "eigen_vermogen_per_lid_5j": 17119,
+   "opex_per_lid_pm": 172
+  },
+  "slim": {
+   "capex_totaal": 4978616,
+   "lening": 1978616,
+   "ltv": 0.4,
+   "dscr": 3.45,
+   "fee_nodig_incl_btw": 259,
+   "fee_alleen_exploitatie_incl_btw": 181,
+   "jaren_schuldvrij_bij_fee": 4,
+   "eigen_vermogen_per_lid_5j": 16584,
+   "opex_per_lid_pm": 161
+  }
+ },
+ "naief": {
+  "bruto": 1200000,
+  "netto_na_btw": 1016949,
+  "opex_5j_50_leden": 1554110,
+  "vrij_voor_investering": -537161,
+  "capex_50_leden_B": 3911239
+ }
+}
