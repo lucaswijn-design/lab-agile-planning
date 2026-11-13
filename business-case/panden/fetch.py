@@ -62,6 +62,21 @@ PANDEN = [
          aanbod="circa 600 m² bedrijfsruimte (funda in business), status onbekend"),
     dict(slug="ter-aar-woudsedijk-11", adres="Woudsedijk 11 Ter Aar", regio="Groene Hart",
          aanbod="bedrijfshal (funda in business), status onbekend"),
+    # ronde 3: aanbod dat op twee sites als beschikbaar staat (ongedateerd, medium zekerheid)
+    dict(slug="boxtel-bosscheweg-85", adres="Bosscheweg 85 Boxtel", regio="Brabantse stedenrij",
+         aanbod="Villa Catharina, kantoorvilla 1899, 709 m², tuin 9.866 m² met zwembad; € 2.950.000 k.k."),
+    dict(slug="hilversum-heuvellaan-50", adres="Heuvellaan 50 Hilversum", regio="Gooi",
+         aanbod="nieuwe kantoorvilla 2026, 637 m² over drie lagen; € 2.700.000 v.o.n."),
+    dict(slug="tilburg-bredaseweg-443", adres="Bredaseweg 443 Tilburg", regio="Tilburg",
+         aanbod="kantoorvilla 1942 + uitbreiding 2000, circa 1.241 m², terrein circa 8.000 m² bij de Warande; prijs op aanvraag"),
+    dict(slug="den-haag-pomonaplein-49", adres="Pomonaplein 49 Den Haag", regio="Den Haag",
+         aanbod="voormalige kerk 1936, 961 m² (woning + loft + B&B); € 4.250.000 k.k."),
+    dict(slug="amersfoort-stadsring-103", adres="Stadsring 103 Amersfoort", regio="Amersfoort",
+         aanbod="kantoorvilla 1887, monument, 431 m²; € 2.200.000 k.k."),
+    dict(slug="woerden-wagenmakersweg-2", adres="Wagenmakersweg 2 Woerden", regio="Woerden",
+         aanbod="bedrijfscomplex 1976 (kantoor, werkplaats, woning), 529 m², perceel circa 2.000 m²; € 1.495.000 k.k. (oude advertentie)"),
+    dict(slug="rotterdam-hillevliet-139", adres="Hillevliet 139 Rotterdam", regio="Rotterdam",
+         aanbod="Leger des Heils-kerk 1929 (J.J.P. Oud, rijksmonument), circa 713 m² bvo + woning; € 950.000 k.k. (sinds 2024)"),
 ]
 
 
