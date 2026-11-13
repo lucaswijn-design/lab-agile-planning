@@ -17,7 +17,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
 from geo import frame, to_local  # noqa: E402
-from layout import AFGEVALLEN, LAYOUTS, build  # noqa: E402
+from layout import AFGEVALLEN, LAYOUTS, STATUS, build  # noqa: E402
 import pand_case  # noqa: E402
 
 VOLGORDE = ["amersfoort-birkt-21", "utrecht-gertrudiskerk", "uitgeest-molenwerf-15", "houten-heemsteedseweg-24", "best-de-run-5", "uithoorn-thamerkerk"]
@@ -79,6 +79,8 @@ def main():
                      buiten=v["buiten"], bomen=v["bomen_buiten"], pui=v["pui"], meubels=v["meubels"], leden=v["leden"],
                      werkniveau=v["werkniveau"], pv=v["pv_kwp"], q=q, fin=fin, verhuur=LAYOUTS[slug]["verhuur"],
                      koop=LAYOUTS[slug]["koop"])
+            if slug in STATUS:
+                b.update(oordeel=STATUS[slug][0], aanbod=STATUS[slug][1])
         else:
             b.update(titel=d["adres"].split(",")[0], oordeel="valt af", samenvatting=AFGEVALLEN[slug])
         panden.append(b)

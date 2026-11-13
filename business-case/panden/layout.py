@@ -285,3 +285,16 @@ if __name__ == "__main__":
     for s in LAYOUTS:
         v, q = build(s)
         print(s, {k: q[k] for k in ("club_m2", "verhuur_m2", "gym_m2", "gym_cap", "gym_piek", "desks", "werk_cap", "werk_piek", "tuin_m2", "terras_m2", "pui_m2")})
+
+
+# Statuscheck 13 november 2026 (zoekmachines; funda in business blokkeert automatische controle)
+STATUS = {
+    "amersfoort-birkt-21": ("verkocht", "Verkocht aan Automotive Soest (Comma Vastgoed). Stond te koop voor € 650.000 met 563 m²; "
+                            "de eerder gebruikte € 1.250.000 en 785 m² hoorden bij een ander object."),
+    "utrecht-gertrudiskerk": ("verkocht", "Kerk verkocht en verbouwd tot Commit Health Club, een sportschool met sauna. "
+                              "Bewijs dat het concept in een kerk werkt, maar niet meer beschikbaar."),
+    "uitgeest-molenwerf-15": ("niet te koop", "Alleen te huur aangeboden en inmiddels als verhuurd vermeld."),
+    "houten-heemsteedseweg-24": ("niet te koop", "Kantoor was te huur en staat als verhuurd vermeld."),
+    "best-de-run-5": ("alleen huur", "Te huur sinds maart 2025 voor € 7.500 per maand (circa 1.600 m²). De Run 3 is apart verkocht."),
+    "uithoorn-thamerkerk": ("status onbekend", "In 2019 verkocht aan Heem Locaties, in 2021 weer te koop gezet; actuele status niet bevestigd."),
+}
