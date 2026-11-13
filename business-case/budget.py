@@ -5,9 +5,9 @@ de familie), zzp'ers per vak, geen aannemersmarge. Alles per product of per m2,
 arbeid en materiaal apart waar dat relevant is.
 
 Capaciteit (60 eigenaren + 60 clubleden):
-  werken   24 zit-sta plekken + 12 aan een lange werktafel + café als overloop
+  werken   16 zit-sta plekken in eilandjes + 12 aan een lange werktafel + 8 aan de raambar
   gym      20 mensen tegelijk, 150 m2 (7,5 m2 p.p.)
-  sauna    zelfgebouwde saunahut 12 pers. + hot tub + koudwaterbad
+  sauna    zelfgebouwde saunahut 12 pers. + koudwaterbad (geen hot tub: waterbeheer)
   café     espressobar, 1.000 boeken, lounge
 Draaien: python3 business-case/budget.py
 """
@@ -102,7 +102,7 @@ def items(k: B):
     # --- Verlichting
     add("Verlichting", "Industriële LED-hanglampen (1 per 15 m2)", 40, "st", 90, "schatting")
     add("Verlichting", "Sfeerverlichting en spots op rails", 30, "st", 40, "schatting")
-    add("Verlichting", "Bureaulampen", 24, "st", 45, "schatting")
+    add("Verlichting", "Bureaulampen", 16, "st", 45, "schatting")
     add("Verlichting", "Buitenverlichting", 10, "st", 60, "schatting")
     add("Verlichting", "Groeilampen voor planten", 12, "st", 80, "schatting")
 
@@ -111,15 +111,16 @@ def items(k: B):
     add("Energie", "Batterij", 30, "kWh", 450, "bron", 0.5)
 
     # --- Werken
-    add("Werken", "Zit-sta onderstel elektrisch (IKEA MITTZON)", 24, "st", 340, "bron", 0.3)
-    add("Werken", "Bureaublad 160 x 80 eiken multiplex", 24, "st", 120, "schatting", 0.2)
-    add("Werken", "Refurbished Steelcase Leap V2 (excl. btw)", 24, "st", 500, "bron", 0.4)
-    add("Werken", "Monitor 27 inch met USB-C hub (Dell P2725HE, excl. btw)", 24, "st", 219, "bron", 0.3)
-    add("Werken", "Tweede monitor 27 inch Full HD", 24, "st", 150, "schatting", 0.3)
-    add("Werken", "Dubbele monitorarm", 24, "st", 60, "schatting", 0.2)
+    add("Werken", "Zit-sta onderstel elektrisch (IKEA MITTZON)", 16, "st", 340, "bron", 0.3)
+    add("Werken", "Bureaublad 160 x 80 eiken multiplex", 16, "st", 120, "schatting", 0.2)
+    add("Werken", "Refurbished Steelcase Leap V2 (excl. btw)", 16, "st", 500, "bron", 0.4)
+    add("Werken", "Monitor 27 inch met USB-C hub (Dell P2725HE, excl. btw)", 16, "st", 219, "bron", 0.3)
+    add("Werken", "Tweede monitor 27 inch Full HD", 16, "st", 150, "schatting", 0.3)
+    add("Werken", "Dubbele monitorarm", 16, "st", 60, "schatting", 0.2)
+    add("Werken", "Raambar met stopcontacten, 8 krukken", 1, "post", 1_900, "schatting")
     add("Werken", "Lange werktafel staal + hout, 12 plekken", 2, "st", 800, "schatting")
     add("Werken", "Stoelen werktafel (tweedehands design)", 12, "st", 120, "schatting")
-    add("Werken", "Vergaderruimte: tafel, 8 stoelen, 55 inch scherm, camera + speaker", 1, "post", 4_500, "schatting")
+    add("Werken", "Vergaderruimte: tafel, 8 stoelen, 55 inch scherm", 1, "post", 3_000, "schatting")
     add("Werken", "Belcellen zelfgebouwd (frame, akoestiek, deur, ventilator)", 2, "st", 2_500, "schatting")
     add("Werken", "Lockers", 60, "st", 60, "schatting")
 
@@ -133,7 +134,6 @@ def items(k: B):
     add("Gym", "Verstelbare bankjes", 6, "st", 250, "schatting", 0.3)
     add("Gym", "Concept2 RowErg", 2, "st", 1_195, "bron", 0.5)
     add("Gym", "Concept2 SkiErg + BikeErg + airbike", 1, "set", 3_250, "schatting", 0.5)
-    add("Gym", "Loopband (tweedehands, commercieel)", 1, "st", 2_500, "schatting", 0.3)
     add("Gym", "Boxen, banden, medicijnballen, ringen, matten, landmine", 1, "post", 2_500, "schatting")
     add("Gym", "Rubber sportvloer 30 mm", 150, "m2", 35, "schatting", 0.2)
     add("Gym", "Spiegels en speaker", 1, "post", 1_000, "schatting")
@@ -144,7 +144,6 @@ def items(k: B):
     add("Wellness", "Harvia Legend 240 houtkachel + stenen + rookkanaal", 1, "post", 2_700, "bron", 0.4)
     add("Wellness", "Bouw saunahut, timmerman", 120, "uur", ZZP["timmerman"], "bron", 0.4)
     add("Wellness", "Koudwaterbad 1.000 l met eenvoudige koeling", 1, "st", 2_500, "schatting", 0.3)
-    add("Wellness", "Houtgestookte hot tub 6 pers.", 1, "st", 4_500, "schatting", 0.4)
     add("Wellness", "Buitendouches, ligbedden, haken, vlonder rond sauna", 1, "post", 4_000, "schatting")
 
     # --- Café, lounge en bibliotheek
@@ -158,8 +157,10 @@ def items(k: B):
     add("Café & bieb", "Lounge: 4 banken, 10 fauteuils, bijzettafels, kleden (tweedehands)", 1, "post", 4_200, "schatting")
     add("Café & bieb", "Cafétafels en 24 stoelen (tweedehands)", 1, "post", 2_100, "schatting")
     add("Café & bieb", "Bomen binnen 2 tot 2,5 m (ficus, strelitzia, olijf)", 10, "st", 250, "bron")
-    add("Café & bieb", "Middelgrote planten + hangplanten + potten en bakken", 1, "post", 5_000, "schatting")
-    add("Café & bieb", "Groene wand (mos of levende wand)", 10, "m2", 250, "schatting")
+    add("Café & bieb", "Middelgrote planten + hangplanten + potten en bakken", 1, "post", 6_000, "schatting")
+    add("Café & bieb", "Stilteleeshoek: akoestisch gordijn, leesstoelen, lampen", 1, "post", 1_500, "schatting")
+    add("Café & bieb", "Studio voor yoga en workshops: matten, blokken, spiegelwand, speaker", 1, "post", 2_500, "schatting")
+    add("Café & bieb", "AED en EHBO-kast", 1, "post", 1_800, "schatting")
     add("Café & bieb", "Vintage decoratie en kunst", 1, "post", 3_000, "schatting")
 
     # --- Buiten (perceel 3x pand: ~1.200 m2 buiten)

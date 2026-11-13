@@ -80,7 +80,7 @@ details[open] summary{margin-bottom:10px}
   <header style="display:grid;gap:12px">
     <span class="eyebrow">Ledenclub · stap van pand naar plan</span>
     <h1>Panden in 3D</h1>
-    <p class="muted" style="font-size:17px">Vijf panden uit de zoektocht, opgebouwd uit open data: het echte gebouw en de buren uit 3D BAG, het perceel uit het kadaster en de luchtfoto van PDOK. Voor de twee panden die geschikt zijn staat het nieuwe ontwerp ernaast, met een begroting die uit de plattegrond volgt.</p>
+    <p class="muted" style="font-size:17px">Achttien panden gescreend in Noord- en Zuid-Holland, Utrecht en Brabant, opgebouwd uit open data: het echte gebouw en de buren uit 3D BAG, het perceel uit het kadaster en de luchtfoto van PDOK. Voor de zes interessantste staat een ontwerp en een begroting die uit de plattegrond volgt: hallen, een kerkcomplex, een kantoorvilla en een kerk.</p>
   </header>
 
   <section style="display:grid;gap:12px">
@@ -116,6 +116,9 @@ details[open] summary{margin-bottom:10px}
     </div>
     <div class="plan" id="plan"></div>
     <div id="detail" style="display:grid;gap:14px"></div>
+    <h2 style="margin-top:12px">Gescreend en afgevallen</h2>
+    <p class="muted">Dezelfde dossierstap, zonder ontwerp: deze panden zijn te klein, hebben te weinig buitenruimte of te veel lagen voor een gym en café.</p>
+    <div class="tbl"><table id="afgevallen"></table></div>
   </section>
 
   <section style="display:grid;gap:10px">
@@ -125,7 +128,7 @@ details[open] summary{margin-bottom:10px}
       <li>Luchtfoto: Beeldmateriaal Nederland via PDOK, CC BY 4.0.</li>
       <li>Street View en Google Earth heb ik niet gebruikt. Die beelden mogen volgens de voorwaarden van Google niet worden overgenomen of omgezet in modellen. Wil je gevelbeelden in de viewer, maak dan eigen foto's bij een bezichtiging.</li>
       <li>Interieurfoto's en brochureplattegronden ontbreken nog. Een verdiepingsvloer of tussenwanden die niet in BAG staan, zie je hier niet.</li>
-      <li>Prijzen voor De Run 5 zijn een schatting (vraagprijs op aanvraag). Voor Birkt 21 geldt de vraagprijs uit het zoekresultaat.</li>
+      <li>Vraagprijzen uit zoekresultaten: Birkt 21 (€ 1.250.000) en de Thamerkerk (€ 1.295.000, bieding). Voor het kerkcomplex in Utrecht, Uitgeest, Houten en De Run 5 is de prijs een schatting; vraag de brochure op.</li><li>Bij het kerkcomplex in Utrecht is uit open data niet op te maken of het L-vormige gebouw bij de verkoop van de kerk hoort. Dat is het eerste wat je navraagt.</li>
     </ul>
   </section>
 </div>
@@ -135,8 +138,8 @@ details[open] summary{margin-bottom:10px}
 <script>
 (function(){
 const DATA=/*__DATA__*/null;
-const ZK={"café":"#e0a458","werken":"#7fb3d5","gym":"#e07a5f","sanitair":"#b8c4bb","vergader":"#9b8ec4","techniek":"#8d8d8d","sauna":"#c96f3b","verhuur":"#5c6670"};
-const KORT={"café":"Café & bieb","werken":"Werken","gym":"Gym","sanitair":"Sanitair","vergader":"Vergader","techniek":"Techniek","sauna":"Sauna","verhuur":"Verhuur"};
+const ZK={"café":"#e0a458","werken":"#7fb3d5","gym":"#e07a5f","sanitair":"#b8c4bb","vergader":"#9b8ec4","techniek":"#8d8d8d","sauna":"#c96f3b","studio":"#d68fb0","verhuur":"#5c6670"};
+const KORT={"café":"Café & bieb","werken":"Werken","gym":"Gym","sanitair":"Sanitair","vergader":"Vergader","techniek":"Techniek","sauna":"Sauna","studio":"Studio","verhuur":"Verhuur"};
 const $=id=>document.getElementById(id);
 const eur=x=>(x<0?"− ":"")+"€ "+Math.abs(Math.round(x)).toLocaleString("nl-NL");
 const mln=x=>"€ "+(x/1e6).toLocaleString("nl-NL",{minimumFractionDigits:2,maximumFractionDigits:2})+" mln";
@@ -222,20 +225,22 @@ function buildNew(g,d){
     if(z.type==="gym") gym(g,z.r,y);
     if(z.type==="café") cafe(g,z.r,y,d);
   });
-  // bureaus
+  // werkplekken: eilandjes, werktafel, raambar
   const wy=d.werkniveau?3.6:0;
-  d.desks.forEach(([u,v,w,dd])=>{ g.add(box(u,v,u+w,v+dd,wy+.72,.05,std(0xd8c3a0)));
-    g.add(box(u+.35,v+.05,u+1.25,v+.12,wy+.85,.5,std(0x1c2328))); });
-  const wz=d.zones.find(z=>z.type==="werken").r;
-  g.add(box(wz[0]+1,wz[3]-2.4,wz[2]-1,wz[3]-1.4,wy+.74,.06,std(0x8b6b4a)));
+  d.meubels.forEach(m=>{ const [cu,cv]=m.c; const a=(m.a||0)*Math.PI/180;
+    const h=m.type==="raambar"?.05:.05, y=m.type==="raambar"?1.05:(m.type==="tafel"?.74:.72);
+    const col=m.type==="desk"?0xd8c3a0:(m.type==="tafel"?0x8b6b4a:0x6b5a48);
+    const b=new THREE.Mesh(new THREE.BoxGeometry(m.w,h,m.d),std(col)); b.position.copy(P(cu,cv,wy+y)); b.rotation.y=a; g.add(b);
+    if(m.type==="desk"){ const s=new THREE.Mesh(new THREE.BoxGeometry(.9,.45,.06),std(0x1c2328)); s.position.copy(P(cu,cv,wy+1.0)); s.rotation.y=a; g.add(s); } });
   // glazen pui
-  const p=d.pui;
-  if(p.kant==="v0"){ const vv=Math.min(...d.zones.filter(z=>!z.verhuur&&!z.niveau).map(z=>z.r[1]));
-    const m=box(p.u0,vv-.1,p.u1,vv+.05,0,3,new THREE.MeshStandardMaterial({color:0x9fe7ff,transparent:true,opacity:.45})); g.add(m); g.add(edges(m,0xcff6ff,.9)); }
-  else { const m=box(-.1,p.v0,.05,p.v1,0,3,new THREE.MeshStandardMaterial({color:0x9fe7ff,transparent:true,opacity:.45})); g.add(m); g.add(edges(m,0xcff6ff,.9)); }
+  const p=d.pui, glas=()=>new THREE.MeshStandardMaterial({color:0x9fe7ff,transparent:true,opacity:.45});
+  let pm;
+  if(p.kant==="v0"||p.kant==="v1") pm=box(p.u0,p.v-.08,p.u1,p.v+.08,0,3,glas()); else pm=box(p.u-.08,p.v0,p.u+.08,p.v1,0,3,glas());
+  g.add(pm); g.add(edges(pm,0xcff6ff,.9));
   // zonnepanelen
-  if(d.pv){ const cz=d.zones.filter(z=>!z.verhuur&&!z.niveau); const u0=Math.min(...cz.map(z=>z.r[0])),u1=Math.max(...cz.map(z=>z.r[2])),v0=Math.min(...cz.map(z=>z.r[1])),v1=Math.max(...cz.map(z=>z.r[3]));
-    for(let u=u0+1;u+1.7<u1;u+=2.0) for(let v=v0+1;v+1.1<v1;v+=1.6) g.add(box(u,v,u+1.7,v+1.05,H+.15,.06,std(0x1d2f5a))); }
+  if(d.pv){ let n=0; const max=Math.round(d.pv/0.45);
+    d.zones.filter(z=>!z.verhuur&&!z.niveau).forEach(z=>{ const [u0,v0,u1,v1]=z.r;
+      for(let u=u0+.6;u+1.7<u1;u+=2.0) for(let v=v0+.6;v+1.1<v1;v+=1.6){ if(n++<max) g.add(box(u,v,u+1.7,v+1.05,H+.15,.06,std(0x1d2f5a))); } }); }
   // buiten
   d.buiten.forEach(b=>{
     if(b.type==="terras"){ const [u0,v0,u1,v1]=b.r; g.add(box(u0,v0,u1,v1,0,.15,std(0x9a6a3f)));
@@ -302,7 +307,8 @@ function plan(d){
     d.zones.filter(z=>!z.niveau).forEach(z=>{ s+=rect(z.r,ZK[z.type],"#0b1014",.25,.85);
       const c=T((z.r[0]+z.r[2])/2,(z.r[1]+z.r[3])/2);
       s+=`<text x="${c[0]}" y="${c[1]}" font-size="${fs}" fill="#0b1014" text-anchor="middle" font-weight="600" font-family="IBM Plex Sans,sans-serif">${KORT[z.type]}</text><text x="${c[0]}" y="${(+c[1]+fs*1.1).toFixed(2)}" font-size="${fs*.8}" fill="#0b1014" text-anchor="middle" font-family="IBM Plex Mono,monospace">${z.m2} m²</text>`; });
-    if(!d.werkniveau) d.desks.forEach(([u,v,w,dd])=>{ s+=rect([u,v,u+w,v+dd],"#f5ead6","#0b1014",.05,1); });
+    if(!d.werkniveau) d.meubels.forEach(m=>{ const c=T(m.c[0],m.c[1]); const col=m.type==="desk"?"#f5ead6":(m.type==="tafel"?"#8b6b4a":"#6b5a48");
+      s+=`<rect x="${(-m.w/2).toFixed(2)}" y="${(-m.d/2).toFixed(2)}" width="${m.w}" height="${m.d}" fill="${col}" stroke="#0b1014" stroke-width=".05" transform="translate(${c[0]},${c[1]}) rotate(${(-(m.a||0)).toFixed(1)})"/>`; });
     const up=d.zones.find(z=>z.niveau);
     if(up){ s+=rect(up.r,"none","#7fb3d5",.35); const c=T(up.r[0]+.6,up.r[3]-1.2); s+=`<text x="${c[0]}" y="${c[1]}" font-size="${fs*.8}" fill="#7fb3d5" font-family="IBM Plex Sans,sans-serif">verdieping: werken (${up.m2} m²)</text>`; }
   }
@@ -315,13 +321,13 @@ function plan(d){
 }
 
 // ---------- panelen ----------
-const pillCls=o=>o.startsWith("kandidaat")?(o.includes("krap")?"mid":"ok"):"no";
+const pillCls=o=>o.startsWith("kandidaat")?(o.includes(",")?"mid":"ok"):"no";
 function side(d){
   let h=`<div style="display:grid;gap:6px"><span class="pill ${pillCls(d.oordeel)}" style="justify-self:start">${d.oordeel}</span><h2>${d.titel}</h2><p class="muted" style="font-size:14px">${d.samenvatting}</p></div>`;
-  h+=`<dl class="facts"><dt>Adres</dt><dd>${d.adres}</dd><dt>Bouwjaar</dt><dd class="num">${d.bouwjaar}</dd><dt>Footprint</dt><dd class="num">${d.footprint_m2} m²</dd><dt>Hoogte</dt><dd class="num">${d.hoogte.toLocaleString("nl-NL")} m <span class="note">(${d.hoogte_bron})</span></dd><dt>Verblijfsobj.</dt><dd class="num">${d.vbos.length} · ${d.vbo_m2.toLocaleString("nl-NL")} m²</dd><dt>Perceel</dt><dd>${d.perceel_m2?'<span class="num">'+d.perceel_m2.toLocaleString("nl-NL")+" m²</span>":(d.perceel_opm||"onbekend")}</dd><dt>Aanbod</dt><dd class="note">${d.aanbod}</dd>${d.q?`<dt>Capaciteit</dt><dd>gym <span class="num">${d.q.gym_cap}</span> tegelijk (${d.q.gym_m2} m²)${d.q.gym_cap<d.q.gym_piek?' <span class="pill no">krap</span>':""}, werken <span class="num">${d.q.werk_cap}</span> plekken (${d.q.desks} bureaus + werktafel)${d.q.werk_cap<d.q.werk_piek?' <span class="pill no">krap</span>':""}</dd>`:""}</dl>`;
+  h+=`<dl class="facts"><dt>Adres</dt><dd>${d.adres}</dd><dt>Bouwjaar</dt><dd class="num">${d.bouwjaar}</dd><dt>Footprint</dt><dd class="num">${d.footprint_m2} m²</dd><dt>Hoogte</dt><dd class="num">${d.hoogte.toLocaleString("nl-NL")} m <span class="note">(${d.hoogte_bron})</span></dd><dt>Verblijfsobj.</dt><dd class="num">${d.vbos.length} · ${d.vbo_m2.toLocaleString("nl-NL")} m²</dd><dt>Perceel</dt><dd>${d.perceel_m2?'<span class="num">'+d.perceel_m2.toLocaleString("nl-NL")+" m²</span>":(d.perceel_opm||"onbekend")}</dd><dt>Aanbod</dt><dd class="note">${d.aanbod}</dd>${d.q?`<dt>Capaciteit</dt><dd>gym <span class="num">${d.q.gym_cap}</span> tegelijk (${d.q.gym_m2} m²)${d.q.gym_cap<d.q.gym_piek?' <span class="pill no">krap</span>':""}, werken <span class="num">${d.q.werk_cap}</span> plekken (${d.q.desks} zit-sta bureaus in eilandjes, werktafel 12, raambar 8)${d.q.werk_cap<d.q.werk_piek?' <span class="pill no">krap</span>':""}</dd>`:""}</dl>`;
   if(d.fin){ const f=d.fin, k=(t,v,cls)=>`<div class="kpi ${cls||""}"><span class="k">${t}</span><span class="v">${v}</span></div>`;
     h+=`<div class="kpis">${k("Investering",mln(f.capex))}${k("Verbouw + inrichting",eur(f.verbouw_inrichting))}${k("Fee om te draaien",eur(f.fee_vol_nodig),f.fee_vol_nodig<=450?"ok":"mid")}${k("Fee inleg terug",eur(f.fee_inleg_terug),f.fee_inleg_terug<=450?"ok":(f.fee_inleg_terug<=600?"mid":"no"))}${k("Lening",Math.round(f.ltv*100)+"%",f.ltv<=.65?"ok":"no")}${k("DSCR bij € 450",f.dscr.toLocaleString("nl-NL"),f.dscr>=1.2?"ok":"no")}${k("Schuldvrij",f.jaren_schuldvrij+" jaar")}${k("Huurinkomsten",f.huur?eur(f.huur)+"/jr":"geen")}</div>`;
-    h+=`<p class="note">30 volle en 30 deeltijd-eigenaren (€ 450 / € 320, inleg € 15.000 / € 9.000) en 60 clubleden van € 119. Met 90 clubleden: draaien ${eur(f.fee_vol_nodig_90)}, inleg terug ${eur(f.fee_inleg_terug_90)}.</p>`; }
+    h+=`<p class="note">${d.leden.n_vol} volle en ${d.leden.n_deel} deeltijd-eigenaren (€ 450 / € 320, inleg € 15.000 / € 9.000) en ${d.leden.n_club} clubleden van € 119. Met ${f.extra_club} clubleden: draaien ${eur(f.fee_vol_nodig_90)}, inleg terug ${eur(f.fee_inleg_terug_90)}.</p>`; }
   $("side").innerHTML=h;
 }
 function detail(d){
@@ -354,7 +360,9 @@ function show(i){
   $("b-huidig").setAttribute("aria-pressed",mode==="huidig"); $("b-nieuw").setAttribute("aria-pressed",mode==="nieuw");
   side(d); detail(d); plan(d); legend(d); build3d(d);
 }
-$("picker").innerHTML=DATA.map((d,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${d.titel}<span class="pill ${pillCls(d.oordeel)}">${d.oordeel.startsWith("kandidaat")?"kandidaat":"valt af"}</span></button>`).join("");
+$("picker").innerHTML=DATA.map((d,i)=>`<button type="button" data-i="${i}" aria-pressed="false">${d.titel}<span class="pill ${pillCls(d.oordeel)}">${d.oordeel.split(",")[0]}</span></button>`).join("");
+const AF=/*__AF__*/null;
+$("afgevallen").innerHTML=`<thead><tr><th>Adres</th><th>Regio</th><th class="r">Bouwjaar</th><th class="r">Footprint</th><th class="r">Vloer</th><th class="r">Perceel</th><th>Waarom niet</th></tr></thead><tbody>`+AF.map(a=>`<tr><td>${a.adres}</td><td>${a.regio||""}</td><td class="r">${a.bouwjaar}</td><td class="r">${a.footprint_m2} m²</td><td class="r">${a.vbo_m2} m²</td><td class="r">${a.perceel_m2?a.perceel_m2+" m²":"–"}</td><td>${a.reden}</td></tr>`).join("")+"</tbody>";
 document.querySelectorAll("#picker button").forEach(b=>b.addEventListener("click",()=>show(+b.dataset.i)));
 $("b-huidig").addEventListener("click",()=>{mode="huidig";$("b-huidig").setAttribute("aria-pressed","true");$("b-nieuw").setAttribute("aria-pressed","false");apply();plan(DATA[cur]);legend(DATA[cur]);});
 $("b-nieuw").addEventListener("click",()=>{mode="nieuw";$("b-nieuw").setAttribute("aria-pressed","true");$("b-huidig").setAttribute("aria-pressed","false");apply();plan(DATA[cur]);legend(DATA[cur]);});

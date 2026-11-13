@@ -20,7 +20,7 @@ from geo import frame, to_local  # noqa: E402
 from layout import AFGEVALLEN, LAYOUTS, build  # noqa: E402
 import pand_case  # noqa: E402
 
-VOLGORDE = ["best-de-run-5", "amersfoort-birkt-21", "best-de-waal-13", "woerden-marconiweg-5", "best-sonseweg-15"]
+VOLGORDE = ["amersfoort-birkt-21", "utrecht-gertrudiskerk", "uitgeest-molenwerf-15", "houten-heemsteedseweg-24", "best-de-run-5", "uithoorn-thamerkerk"]
 
 
 def img_uri(path, size=768):
@@ -53,30 +53,38 @@ def basic(slug):
 
 def main():
     panden = []
+    afgevallen = []
+    for slug, reden in AFGEVALLEN.items():
+        d = json.load(open(os.path.join(HERE, "dossiers", slug + ".json")))
+        afgevallen.append(dict(adres=d["adres"], regio=d.get("regio"), bouwjaar=d["bouwjaar"], footprint_m2=d["footprint_m2"],
+                               vbo_m2=d["vbo_m2_totaal"], perceel_m2=(d["perceel"] or {}).get("m2"), reden=reden))
     for slug in VOLGORDE:
         d, b = basic(slug)
         if slug in LAYOUTS:
             v, q = build(slug)
             r = pand_case.run(slug)
-            r90 = pand_case.run(slug, n_club=90)
+            r90 = pand_case.run(slug, n_club=LAYOUTS[slug]["leden"]["n_club"] + 30)
             fin = {k: r[k] for k in ("capex", "verbouw_inrichting", "huur", "opex", "lening", "ltv", "dscr", "resultaat",
                                      "fee_vol_nodig", "fee_deel_nodig", "jaren_schuldvrij", "exitwaarde",
                                      "exit_per_vol_versneld", "groepen")}
             fin["fee_inleg_terug"] = pand_case.fee_inleg_terug(slug)
-            fin["fee_inleg_terug_90"] = pand_case.fee_inleg_terug(slug, n_club=90)
+            extra = LAYOUTS[slug]["leden"]["n_club"] + 30
+            fin["fee_inleg_terug_90"] = pand_case.fee_inleg_terug(slug, n_club=extra)
             fin["fee_vol_nodig_90"] = r90["fee_vol_nodig"]
+            fin["extra_club"] = extra
             fin["opex_rows"] = r["opex_rows"]
             fin["rows"] = [dict(groep=x["groep"], post=x["post"].replace("m2", "m²"), h=x["h"], e=x["e"].replace("m2", "m²"),
                                 prijs=x["prijs"], totaal=x["totaal"], label=x["label"]) for x in r["rows"]]
             b.update(titel=v["titel"], oordeel=v["oordeel"], samenvatting=v["samenvatting"], zones=v["zones"],
-                     buiten=v["buiten"], bomen=v["bomen_buiten"], pui=v["pui"], desks=v["desks"],
+                     buiten=v["buiten"], bomen=v["bomen_buiten"], pui=v["pui"], meubels=v["meubels"], leden=v["leden"],
                      werkniveau=v["werkniveau"], pv=v["pv_kwp"], q=q, fin=fin, verhuur=LAYOUTS[slug]["verhuur"],
                      koop=LAYOUTS[slug]["koop"])
         else:
             b.update(titel=d["adres"].split(",")[0], oordeel="valt af", samenvatting=AFGEVALLEN[slug])
         panden.append(b)
     tpl = open(os.path.join(HERE, "viewer_template.html"), encoding="utf-8").read()
-    html = tpl.replace("/*__DATA__*/null", json.dumps(panden, ensure_ascii=False, separators=(",", ":")))
+    html = tpl.replace("/*__DATA__*/null", json.dumps(panden, ensure_ascii=False, separators=(",", ":"))) \
+              .replace("/*__AF__*/null", json.dumps(afgevallen, ensure_ascii=False, separators=(",", ":")))
     out = os.path.join(HERE, "panden3d.html")
     open(out, "w", encoding="utf-8").write(html)
     print("geschreven", out, round(len(html) / 1e6, 2), "MB")

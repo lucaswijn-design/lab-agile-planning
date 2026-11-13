@@ -15,6 +15,7 @@ from __future__ import annotations
 import json
 import os
 import subprocess
+import sys
 import urllib.parse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -34,6 +35,33 @@ PANDEN = [
          aanbod="vier nieuwe bedrijfsunits te koop op Honthorst (zoekresultaat)"),
     dict(slug="best-sonseweg-15", adres="Sonseweg 15 Best", regio="Brabantse stedenrij",
          aanbod="bedrijfshal, brochure gevonden; status en prijs onbekend"),
+    # ronde 2: ook ander vastgoed dan hallen, alleen Randstad, Utrecht en Brabant
+    dict(slug="utrecht-gertrudiskerk", adres="Amaliadwarsstraat 1 Utrecht", regio="Utrecht stad", pand_id="0344100000055175",
+         aanbod="Sint-Gertrudiskerk, te koop voor herbestemming (DUIC); prijs onbekend"),
+    dict(slug="uithoorn-thamerkerk", adres="Amsteldijk Noord 3 Uithoorn", regio="Amsterdam-rand",
+         aanbod="Thamerkerk, bieding, vraagprijs € 1.295.000 (funda in business)"),
+    dict(slug="zeist-arendsburg", adres="Utrechtseweg 139 Zeist", regio="Utrecht-oost",
+         aanbod="gemeentelijk monument Arendsburg, 672 m², te koop of te huur (funda in business)"),
+    dict(slug="zeist-utrechtseweg-131", adres="Utrechtseweg 131 Zeist", regio="Utrecht-oost",
+         aanbod="monumentale kantoorvilla, 494 m² over vier lagen (funda in business)"),
+    dict(slug="haarlem-kampersingel-42", adres="Kampersingel 42 Haarlem", regio="Haarlem",
+         aanbod="wonen en werken: voormalige garage + werkplaats met mezzanine, terras 200 m² (funda)"),
+    dict(slug="bunnik-regulierenring-29", adres="Regulierenring 29 Bunnik", regio="Utrecht-oost",
+         aanbod="bedrijfshal te koop (funda in business), prijs onbekend"),
+    dict(slug="bunnik-provincialeweg-1", adres="Provincialeweg 1 Bunnik", regio="Utrecht-oost",
+         aanbod="kantoor te koop (funda in business), prijs onbekend"),
+    dict(slug="houten-heemsteedseweg-24", adres="Heemsteedseweg 24 Houten", regio="Utrecht-zuid",
+         aanbod="kantoor te koop (funda in business), prijs onbekend"),
+    dict(slug="zoeterwoude-industrieweg-36", adres="Industrieweg 36 Zoeterwoude", regio="Leiden-rand",
+         aanbod="bedrijfshal 36-B te koop (funda in business), prijs onbekend"),
+    dict(slug="haarlem-kuipersweg-4", adres="Kuipersweg 4 Haarlem", regio="Haarlem",
+         aanbod="bedrijfshal 4-C1 (funda in business), status onbekend"),
+    dict(slug="den-bosch-bloemendaal-10", adres="De Bloemendaal 10 Den Bosch", regio="Den Bosch",
+         aanbod="vrijstaand bedrijfsgebouw te koop (funda in business), prijs onbekend"),
+    dict(slug="uitgeest-molenwerf-15", adres="Molenwerf 15 Uitgeest", regio="Noord-Holland",
+         aanbod="circa 600 m² bedrijfsruimte (funda in business), status onbekend"),
+    dict(slug="ter-aar-woudsedijk-11", adres="Woudsedijk 11 Ter Aar", regio="Groene Hart",
+         aanbod="bedrijfshal (funda in business), status onbekend"),
 ]
 
 
@@ -78,9 +106,12 @@ def dossier(p):
     loc = get("https://api.pdok.nl/bzk/locatieserver/search/v3_1/free",
               {"q": p["adres"], "fq": "type:adres", "rows": 1,
                "fl": "weergavenaam,adresseerbaarobject_id,centroide_rd"})["response"]["docs"][0]
-    vbo = get(f"{BAG}/verblijfsobject/items", {"f": "json", "identificatie": loc["adresseerbaarobject_id"]})["features"][0]
-    pand_href = vbo["properties"]["pand.href"][0]
-    pand = get(pand_href, {"f": "json", "crs": RD})
+    if p.get("pand_id"):  # adres wijst naar een buurpand: kies het pand direct
+        pand = get(f"{BAG}/pand/items", {"f": "json", "crs": RD, "identificatie": p["pand_id"]})["features"][0]
+    else:
+        vbo = get(f"{BAG}/verblijfsobject/items", {"f": "json", "identificatie": loc["adresseerbaarobject_id"]})["features"][0]
+        pand_href = vbo["properties"]["pand.href"][0]
+        pand = get(pand_href, {"f": "json", "crs": RD})
     pp = pand["properties"]
     ring = outer(pand["geometry"])
     # alle verblijfsobjecten in het pand
@@ -165,6 +196,8 @@ def dossier(p):
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     for p in PANDEN:
+        if os.path.exists(os.path.join(OUT, p["slug"] + ".json")) and "--force" not in sys.argv:
+            continue
         try:
             d = dossier(p)
         except Exception as e:  # noqa: BLE001

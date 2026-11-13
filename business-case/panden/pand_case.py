@@ -20,9 +20,12 @@ from layout import LAYOUTS, build  # noqa: E402
 ZZP = budget.ZZP
 
 
-def rows_for(slug, n_vol=30, n_deel=30, n_club=60):
+def rows_for(slug, n_vol=None, n_deel=None, n_club=None):
     L = LAYOUTS[slug]
     _, q = build(slug)
+    n_vol = L["leden"]["n_vol"] if n_vol is None else n_vol
+    n_deel = L["leden"]["n_deel"] if n_deel is None else n_deel
+    n_club = L["leden"]["n_club"] if n_club is None else n_club
     base, _ = budget.items(budget.B(n_vol=n_vol, n_deel=n_deel, n_club=n_club))
     R = []
 
@@ -32,7 +35,7 @@ def rows_for(slug, n_vol=30, n_deel=30, n_club=60):
     k = L["koop"]
     # --- Pand
     if "totaal" in k:
-        add("Pand", "Koopsom", 1, "post", k["totaal"], "bron", 1.0)
+        add("Pand", "Koopsom (" + k["label"] + ")", 1, "post", k["totaal"], "bron" if "vraagprijs" in k["label"] else "schatting", 1.0)
         koop = k["totaal"]
         add("Pand", "Overdrachtsbelasting 10,4%", koop, "EUR", 0.104, "bron")
     else:
@@ -56,6 +59,11 @@ def rows_for(slug, n_vol=30, n_deel=30, n_club=60):
     if q["brandwand_m2"]:
         add("Bouwkundig", "Brandscheidende wand club / verhuurdeel (EI60)", q["brandwand_m2"], "m2", 90, "schatting", 0.6)
     add("Bouwkundig", "Glazen pui, aluminium HR+++ triple glas", q["pui_m2"], "m2", 1_000, "bron", 0.6)
+    if q["nieuwe_vloer_m2"]:
+        add("Bouwkundig", "Nieuwe tussenvloer staal + hout, incl. trap en balustrade", q["nieuwe_vloer_m2"], "m2", 650, "schatting", 0.5)
+        add("Bouwkundig", "Monumentenadvies, restauratieve aanpassingen, extra vergunning", 1, "post", 40_000, "schatting")
+    if q["geluidswal"]:
+        add("Buiten", "Groene geluidswal richting A9 (grondwal + beplanting)", 1, "post", 15_000, "schatting", 0.3)
     add("Bouwkundig", "Betonvloer schuren en coaten", q["dak_club_m2"] - q["gym_m2"], "m2", 22, "schatting", 0.3)
     add("Bouwkundig", "Binnenwanden metal stud + OSB", 150, "m2", 60, "schatting", 0.2)
     add("Bouwkundig", "Glazen scheidingswand gym en vergaderruimte", 25, "m2", 320, "schatting", 0.2)
@@ -89,6 +97,8 @@ def rows_for(slug, n_vol=30, n_deel=30, n_club=60):
         for r in base:
             if r["groep"] == "Wellness":
                 R.append(dict(r))
+        if n_vol + n_deel + n_club > 150:
+            add("Wellness", "Tweede sauna: houtgestookte barrelsauna 8 pers.", 1, "st", 13_000, "bron", 0.4)
     else:
         add("Wellness", "Binnensauna 10 pers. zelfgebouwd (hout, isolatie, glazen deur)", 1, "post", 7_000, "schatting", 0.3)
         add("Wellness", "Elektrische saunakachel 15 kW + besturing", 1, "st", 1_800, "schatting", 0.4)
@@ -126,9 +136,12 @@ def rows_for(slug, n_vol=30, n_deel=30, n_club=60):
     return R, q
 
 
-def run(slug, n_vol=30, n_deel=30, n_club=60, fee_vol=450, fee_deel=320, fee_club=119,
+def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, fee_club=119,
         inleg_vol=15_000, inleg_deel=9_000, rente=0.055, looptijd=20, groei=0.02):
     L = LAYOUTS[slug]
+    n_vol = L["leden"]["n_vol"] if n_vol is None else n_vol
+    n_deel = L["leden"]["n_deel"] if n_deel is None else n_deel
+    n_club = L["leden"]["n_club"] if n_club is None else n_club
     R, q = rows_for(slug, n_vol, n_deel, n_club)
     tot = lambda g: sum(r["totaal"] for r in R if r["groep"] == g)
     C = sum(r["totaal"] for r in R)
@@ -206,8 +219,9 @@ if __name__ == "__main__":
     for s in LAYOUTS:
         r = run(s)
         r["fee_inleg_terug"] = fee_inleg_terug(s)
-        r["fee_inleg_terug_90"] = fee_inleg_terug(s, n_club=90)
-        r90 = run(s, n_club=90)
+        extra = LAYOUTS[s]["leden"]["n_club"] + 30
+        r["fee_inleg_terug_90"] = fee_inleg_terug(s, n_club=extra)
+        r90 = run(s, n_club=extra)
         r["fee_vol_nodig_90"] = r90["fee_vol_nodig"]
         out[s] = r
         print(s, {k: r[k] for k in ("capex", "verbouw_inrichting", "huur", "opex", "lening", "ltv", "dscr", "resultaat",
