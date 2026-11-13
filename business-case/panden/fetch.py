@@ -77,6 +77,19 @@ PANDEN = [
          aanbod="bedrijfscomplex 1976 (kantoor, werkplaats, woning), 529 m², perceel circa 2.000 m²; € 1.495.000 k.k. (oude advertentie)"),
     dict(slug="rotterdam-hillevliet-139", adres="Hillevliet 139 Rotterdam", regio="Rotterdam",
          aanbod="Leger des Heils-kerk 1929 (J.J.P. Oud, rijksmonument), circa 713 m² bvo + woning; € 950.000 k.k. (sinds 2024)"),
+    # ronde 5: advertenties met datum vanaf september 2026
+    dict(slug="voorhout-dinsdagse-wetering-56a", adres="Dinsdagse Wetering 56A Voorhout", regio="Leiden/Haarlem",
+         aanbod="twee werkplaatsen (deels 1933) op 824 m² grond met erf, circa 570 m² vrijwel gelijkvloers, € 699.500 k.k.; online 27-10-2026 (bedrijfspand.com, oozo)"),
+    dict(slug="maarssen-herenweg-15", adres="Herenweg 15 Maarssen", regio="Utrecht-noord", vbo_id="0333010000005723",
+         aanbod="bedrijfsgebouw 1970 met woning, hal 760 m² + kantoor 80 m², perceel 1.405 m², € 1.085.000 k.k.; online 28-10-2026 (oozo, fundainbusiness)"),
+    dict(slug="maassluis-govert-van-wijnkade-18", adres="Govert van Wijnkade 18 Maassluis", regio="Rotterdam-west",
+         aanbod="hal + kantoor, 529 m² gelijkvloers, € 850.000 k.k.; aangeboden sinds 15-09-2026 (oozo, Dolphijn)"),
+    dict(slug="voorschoten-starrenburglaan-19", adres="Starrenburglaan 19 Voorschoten", regio="Leiden/Den Haag",
+         aanbod="bedrijfsunit 2004, 465 m² over twee lagen, € 995.000 k.k.; online 30-10-2026 (bedrijfspand.com)"),
+    dict(slug="castricum-bakkummerstraat-56b", adres="Bakkummerstraat 56B Castricum", regio="Noord-Holland",
+         aanbod="kantoor/bedrijfsgebouw 1990, 598 m² over twee lagen, perceel 1.099 m², € 850.000 k.k.; aangeboden sinds 26-10-2026 (oozo)"),
+    dict(slug="weesp-flevolaan-19b", adres="Flevolaan 19B Weesp", regio="Amsterdam-oost",
+         aanbod="bedrijfsunit met showroom 1978, 615 m², € 799.950 k.k., verhuurd tot 1-11-2027; online 14-10-2026 (bedrijfspand.com)"),
     # ronde 4: geopende advertenties op bedrijfspand.com / oozo, november 2026
     dict(slug="den-bosch-eendenkooi-1a", adres="De Eendenkooi 1A 's-Hertogenbosch", regio="Den Bosch",
          aanbod="sport- en fitnessgebouw 1977 + bovenwoning, circa 994 m², € 1.400.000 k.k.; te koop sinds 14-15 oktober 2026 (bedrijfspand.com, oozo)"),
@@ -141,7 +154,7 @@ def dossier(p):
     if p.get("pand_id"):  # adres wijst naar een buurpand: kies het pand direct
         pand = get(f"{BAG}/pand/items", {"f": "json", "crs": RD, "identificatie": p["pand_id"]})["features"][0]
     else:
-        vbo = get(f"{BAG}/verblijfsobject/items", {"f": "json", "identificatie": loc["adresseerbaarobject_id"]})["features"][0]
+        vbo = get(f"{BAG}/verblijfsobject/items", {"f": "json", "identificatie": p.get("vbo_id") or loc["adresseerbaarobject_id"]})["features"][0]
         pand_href = vbo["properties"]["pand.href"][0]
         pand = get(pand_href, {"f": "json", "crs": RD})
     pp = pand["properties"]
