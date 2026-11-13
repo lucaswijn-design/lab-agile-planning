@@ -3,6 +3,9 @@ Renderpakket per pand: één referentiebord (PNG) om aan een beeldmodel te geven
 Gebruikt de 3D-viewer (panden3d.html) via Playwright voor de beelden.
 Draaien: python3 business-case/panden/make_render_pack.py
 Vereist: node + playwright, three.js lokaal in <scratch>/three/package (alleen voor headless renderen).
+Vereist ook: minimaal 3 echte foto's van het pand in dossiers/<slug>-fotos/ (gevel, interieur, buiten),
+bijvoorbeeld uit de advertentie of eigen foto's van een bezichtiging. Zonder foto's wordt er geen bord gemaakt.
+Foto's uit advertenties zijn van de makelaar: alleen als referentie gebruiken, niet publiceren.
 """
 from __future__ import annotations
 
@@ -24,15 +27,15 @@ OUT = os.path.join(HERE, "renders")
 SCRATCH = os.environ.get("SCRATCH", "/tmp")
 
 PANDEN = {
-    "rotterdam-hillevliet-139": dict(
-        idx=0, kop="Clubhuis in een kerk van J.J.P. Oud",
+    "rotterdam-hillevliet-139-VERKOCHT": dict(
+        idx=-1, kop="Clubhuis in een kerk van J.J.P. Oud",
         gebouw="Voormalige Leger des Heils-kerk, Hillevliet 139 Rotterdam, 1929, architect J.J.P. Oud, rijksmonument. "
                "Rechthoekige kerkzaal circa 27 x 19 m, 9 m hoog; strook tuin op het zuiden.",
         behoud="Gevel, ramen en daklijn blijven zoals ze zijn (monument). Nieuw: houten tussenvloer met stalen balustrade "
                "achterin de zaal, glazen pui naar het terras.",
     ),
     "tilburg-bredaseweg-443": dict(
-        idx=1, kop="Clubhuis in een villa op een landgoed",
+        idx=0, kop="Clubhuis in een villa op een landgoed",
         gebouw="Kantoorvilla Bredaseweg 443 Tilburg: villa uit 1941 met een vleugel uit 2000, verbonden door een gang. "
                "Op een bosrijk landgoed van circa 8.000 m² aan de rand van de Warande.",
         behoud="Villa en vleugel blijven; nieuw is een glazen pui en een terras aan de bosrand. Verdieping en souterrain van de villa worden verhuurd.",
@@ -100,12 +103,28 @@ await b.close();})();
 """
     jsf = os.path.join(SCRATCH, "render_shots.js")
     open(jsf, "w").write(js)
-    items = [dict(slug=s, idx=c["idx"], laag=[-6, 7, 34]) for s, c in PANDEN.items()]
+    items = [dict(slug=s, idx=c["idx"], laag=[-6, 7, 34]) for s, c in PANDEN.items() if c["idx"] >= 0]
     subprocess.run(["node", jsf, page, os.path.join(SCRATCH, "three", "package"), OUT, json.dumps(items)],
                    check=True, cwd=SCRATCH)
 
 
+def fotos(slug):
+    map_ = os.path.join(HERE, "dossiers", slug + "-fotos")
+    fs = sorted(f for f in os.listdir(map_) if f.lower().endswith((".jpg", ".jpeg", ".png", ".webp"))) if os.path.isdir(map_) else []
+    if len(fs) < 3:
+        raise SystemExit(f"{slug}: minimaal 3 echte foto's nodig in {map_} (nu {len(fs)}). Geen renderbord gemaakt.")
+    out = []
+    for f in fs[:6]:
+        im = Image.open(os.path.join(map_, f)).convert("RGB")
+        im.thumbnail((1200, 900))
+        buf = io.BytesIO()
+        im.save(buf, "JPEG", quality=85)
+        out.append((uri(buf.getvalue(), "jpeg"), os.path.splitext(f)[0].replace("-", " ")))
+    return out
+
+
 def board(slug, cfg):
+    foto_lijst = fotos(slug)
     v, q = build(slug)
     foto, d = luchtfoto(slug)
     F = frame(d["footprint"])
@@ -126,6 +145,7 @@ td.r{{text-align:right;font-family:'DejaVu Sans Mono',monospace}} i{{display:inl
 </style></head><body><div class="w">
 <div><div style="font-size:20px;letter-spacing:.12em;text-transform:uppercase;color:#7a5a2a">Referentiebord voor renders · ledenclub</div>
 <h1>{cfg['kop']}</h1><p style="margin:8px 0 0;max-width:1900px">{cfg['gebouw']}</p></div>
+<div><h2>Huidige situatie: echte foto's</h2><div style="display:grid;grid-template-columns:repeat({min(3, len(foto_lijst))},1fr);gap:16px">{"".join(f'<div><img src="{u}"><div class="cap">{c}</div></div>' for u, c in foto_lijst)}</div></div>
 <div class="g2">
  <div><img src="{img('3d-nieuw')}"><div class="cap">Nieuwe situatie, vogelvlucht. Blokmodel: kleuren = zones, glas = pui, oranje lijnen = bestaande gevels. Buren in cyaan.</div></div>
  <div><img src="{img('3d-nieuw-laag')}"><div class="cap">Nieuwe situatie, laag gezichtspunt vanaf het terras.</div></div>
@@ -159,4 +179,9 @@ if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     shots()
     for s, c in PANDEN.items():
-        print(board(s, c))
+        if c["idx"] < 0:
+            continue
+        try:
+            print(board(s, c))
+        except SystemExit as e:
+            print(e)
