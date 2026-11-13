@@ -90,8 +90,8 @@ def rect_area(r):
     return (r[2]-r[0]) * (r[3]-r[1])
 
 
-def desks(r, n=24):
-    """Bureaus in rijen binnen een werkzone: 1,6 x 0,8 m, rijafstand 2,4 m."""
+def desks(r, n=60):
+    """Zoveel bureaus als er in de werkzone passen: 1,6 x 0,8 m, rijafstand 2,4 m."""
     u0, v0, u1, v1 = r
     out = []
     v = v0 + 1.6
@@ -128,8 +128,13 @@ def build(slug):
         bomen_buiten=len(L["bomen_buiten"]),
         buiten_sauna=any(b["type"] == "sauna" for b in L["buiten"]),
         gym_m2=round(sum(rect_area(z["r"]) for z in club if z["type"] == "gym")),
+        desks=len(desks(werk["r"])),
         hoogte=d["hoogte"], perceel_m2=(d["perceel"] or {}).get("m2"),
     )
+    # capaciteit volgt uit de ruimte; alleen waarschuwen onder de piekvraag (60 eigenaren + 60 clubleden)
+    q["gym_cap"] = int(q["gym_m2"] / 7.5)
+    q["werk_cap"] = q["desks"] + 12  # + lange werktafel
+    q["gym_piek"], q["werk_piek"] = 10, 35
     viewer = dict(
         slug=slug, titel=L["titel"], adres=d["adres"], regio=d.get("regio"), oordeel=L["oordeel"],
         samenvatting=L["samenvatting"], bouwjaar=d["bouwjaar"], hoogte=d["hoogte"], hoogte_bron=d.get("hoogte_bron", "3D BAG"),

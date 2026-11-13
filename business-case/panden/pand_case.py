@@ -62,10 +62,24 @@ def rows_for(slug, n_vol=30, n_deel=30, n_club=60):
     add("Bouwkundig", "Akoestische plafondeilanden en wandpanelen", 200, "m2", 40, "bron")
     add("Bouwkundig", "Sauswerk wanden en staal", q["club_m2"] * 1.1, "m2", 9, "schatting")
 
-    # --- Inventaris uit budget.py
+    # --- Inventaris uit budget.py, geschaald naar de capaciteit die in het pand past
+    racks = max(2, round(4 * q["gym_cap"] / 20))
+    schaal = {"ATX power rack": racks, "Olympische halterstangen": racks + 1, "Bumper plates": 150 * racks,
+              "Verstelbare bankjes": max(3, round(6 * q["gym_cap"] / 20)), "Concept2 RowErg": max(1, round(2 * q["gym_cap"] / 20)),
+              "Rubber sportvloer": q["gym_m2"], "Zit-sta onderstel": q["desks"], "Bureaublad": q["desks"],
+              "Refurbished Steelcase": q["desks"], "Monitor 27 inch met": q["desks"], "Tweede monitor": q["desks"],
+              "Dubbele monitorarm": q["desks"], "Bureaulampen": q["desks"]}
     for r in base:
         if r["groep"] in ("Sanitair", "Verlichting", "Werken", "Gym", "Café & bieb"):
-            R.append(dict(r))
+            rr = dict(r)
+            for key, h in schaal.items():
+                if r["post"].startswith(key):
+                    rr.update(h=h, totaal=round(h * r["prijs"]))
+                    if key == "ATX power rack":
+                        rr["post"] = f"ATX power rack PRX-710 ({q['gym_cap']} mensen tegelijk)"
+                    if key == "Bumper plates":
+                        rr["post"] = f"Bumper plates ({racks} sets van 150 kg)"
+            R.append(rr)
         if r["groep"] == "Installaties":
             rr = dict(r)
             if not L["isoleren"] and "Lucht-lucht" in r["post"]:  # energieneutrale hal: verwarming aanwezig

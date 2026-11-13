@@ -1,7 +1,7 @@
 {
  "best-de-run-5": {
   "slug": "best-de-run-5",
-  "capex": 2918180,
+  "capex": 2921250,
   "groepen": {
    "Pand": 2176619,
    "Bouwkundig": 184834,
@@ -9,15 +9,15 @@
    "Installaties": 80320,
    "Verlichting": 7440,
    "Werken": 49476,
-   "Gym": 34046,
+   "Gym": 36715,
    "Café & bieb": 44100,
    "Wellness": 28580,
    "Energie": 43500,
    "Buiten": 31465,
-   "Bijkomend": 204045
+   "Bijkomend": 204446
   },
-  "verbouw_inrichting": 741561,
-  "opex": 154881,
+  "verbouw_inrichting": 744631,
+  "opex": 155167,
   "opex_rows": [
    [
     "Schoonmaak (5 dagen x 4 uur x € 30)",
@@ -49,11 +49,11 @@
    ],
    [
     "Vervangingsreserve inventaris (10%)",
-    16364
+    16631
    ],
    [
     "Verzekeringen",
-    4065
+    4071
    ],
    [
     "OZB, waterschap, riool",
@@ -81,21 +81,21 @@
    ],
    [
     "Onvoorzien exploitatie (5%)",
-    7038
+    7051
    ]
   ],
   "huur": 88620,
   "inleg": 720000,
-  "lening": 2198180,
+  "lening": 2201250,
   "ltv": 0.75,
-  "dscr": 1.24,
-  "resultaat": 43745,
-  "fee_vol_nodig": 362,
-  "fee_deel_nodig": 257,
+  "dscr": 1.23,
+  "resultaat": 43202,
+  "fee_vol_nodig": 363,
+  "fee_deel_nodig": 258,
   "jaren_schuldvrij": 15,
-  "exitwaarde": 2374176,
-  "exit_per_vol_versneld": 14847,
-  "exit_dekking": 0.99,
+  "exitwaarde": 2374953,
+  "exit_per_vol_versneld": 14745,
+  "exit_dekking": 0.98,
   "q": {
    "club_m2": 620,
    "verhuur_m2": 706,
@@ -108,8 +108,13 @@
    "bomen_buiten": 8,
    "buiten_sauna": true,
    "gym_m2": 173,
+   "desks": 24,
    "hoogte": 7.0,
-   "perceel_m2": 3074
+   "perceel_m2": 3074,
+   "gym_cap": 23,
+   "werk_cap": 36,
+   "gym_piek": 10,
+   "werk_piek": 35
   },
   "rows": [
    {
@@ -614,11 +619,11 @@
    },
    {
     "groep": "Gym",
-    "post": "ATX power rack PRX-710",
-    "h": 4,
+    "post": "ATX power rack PRX-710 (23 mensen tegelijk)",
+    "h": 5,
     "e": "st",
     "prijs": 800,
-    "totaal": 3200,
+    "totaal": 4000,
     "label": "bron",
     "gen": 0.3
    },
@@ -635,20 +640,20 @@
    {
     "groep": "Gym",
     "post": "Olympische halterstangen + 1 trapbar",
-    "h": 5,
+    "h": 6,
     "e": "st",
     "prijs": 240,
-    "totaal": 1200,
+    "totaal": 1440,
     "label": "schatting",
     "gen": 0.3
    },
    {
     "groep": "Gym",
-    "post": "Bumper plates (4 sets van 150 kg)",
-    "h": 600,
+    "post": "Bumper plates (5 sets van 150 kg)",
+    "h": 750,
     "e": "kg",
     "prijs": 3.83,
-    "totaal": 2298,
+    "totaal": 2872,
     "label": "bron",
     "gen": 0.4
    },
@@ -675,10 +680,10 @@
    {
     "groep": "Gym",
     "post": "Verstelbare bankjes",
-    "h": 6,
+    "h": 7,
     "e": "st",
     "prijs": 250,
-    "totaal": 1500,
+    "totaal": 1750,
     "label": "schatting",
     "gen": 0.3
    },
@@ -725,10 +730,10 @@
    {
     "groep": "Gym",
     "post": "Rubber sportvloer 30 mm",
-    "h": 150,
+    "h": 173,
     "e": "m2",
     "prijs": 35,
-    "totaal": 5250,
+    "totaal": 6055,
     "label": "schatting",
     "gen": 0.2
    },
@@ -1085,57 +1090,57 @@
    {
     "groep": "Bijkomend",
     "post": "Projectleiding initiatiefnemer (3%)",
-    "h": 537516,
+    "h": 540185,
     "e": "EUR",
     "prijs": 0.03,
-    "totaal": 16125,
+    "totaal": 16206,
     "label": "aanname",
     "gen": 0.0
    },
    {
     "groep": "Bijkomend",
     "post": "Onvoorzien (10% excl. pand)",
-    "h": 634941,
+    "h": 637691,
     "e": "EUR",
     "prijs": 0.1,
-    "totaal": 63494,
+    "totaal": 63769,
     "label": "schatting",
     "gen": 0.0
    },
    {
     "groep": "Bijkomend",
     "post": "Bouwrente en afsluitkosten (1,5%)",
-    "h": 2875054,
+    "h": 2878079,
     "e": "EUR",
     "prijs": 0.015,
-    "totaal": 43126,
+    "totaal": 43171,
     "label": "schatting",
     "gen": 0.0
    }
   ],
-  "fee_inleg_terug": 451,
-  "fee_inleg_terug_90": 380,
-  "fee_vol_nodig_90": 290
+  "fee_inleg_terug": 453,
+  "fee_inleg_terug_90": 382,
+  "fee_vol_nodig_90": 292
  },
  "amersfoort-birkt-21": {
   "slug": "amersfoort-birkt-21",
-  "capex": 1911920,
+  "capex": 1935676,
   "groepen": {
    "Pand": 1390000,
    "Bouwkundig": 77896,
    "Sanitair": 33755,
    "Installaties": 63820,
-   "Verlichting": 7440,
-   "Werken": 49476,
-   "Gym": 34046,
+   "Verlichting": 7935,
+   "Werken": 64755,
+   "Gym": 38930,
    "Café & bieb": 44100,
    "Wellness": 14730,
    "Energie": 13500,
    "Buiten": 18020,
-   "Bijkomend": 165137
+   "Bijkomend": 168235
   },
-  "verbouw_inrichting": 521920,
-  "opex": 130334,
+  "verbouw_inrichting": 545676,
+  "opex": 132558,
   "opex_rows": [
    [
     "Schoonmaak (5 dagen x 4 uur x € 30)",
@@ -1167,11 +1172,11 @@
    ],
    [
     "Vervangingsreserve inventaris (10%)",
-    14979
+    17045
    ],
    [
     "Verzekeringen",
-    2629
+    2681
    ],
    [
     "OZB, waterschap, riool",
@@ -1195,21 +1200,21 @@
    ],
    [
     "Onvoorzien exploitatie (5%)",
-    6206
+    6312
    ]
   ],
   "huur": 0,
   "inleg": 720000,
-  "lening": 1191920,
-  "ltv": 0.62,
-  "dscr": 1.64,
-  "resultaat": 63876,
-  "fee_vol_nodig": 321,
-  "fee_deel_nodig": 228,
+  "lening": 1215676,
+  "ltv": 0.63,
+  "dscr": 1.59,
+  "resultaat": 59664,
+  "fee_vol_nodig": 330,
+  "fee_deel_nodig": 234,
   "jaren_schuldvrij": 10,
-  "exitwaarde": 1492554,
-  "exit_per_vol_versneld": 16887,
-  "exit_dekking": 1.13,
+  "exitwaarde": 1499094,
+  "exit_per_vol_versneld": 16115,
+  "exit_dekking": 1.07,
   "q": {
    "club_m2": 784,
    "verhuur_m2": 0,
@@ -1222,8 +1227,13 @@
    "bomen_buiten": 3,
    "buiten_sauna": false,
    "gym_m2": 195,
+   "desks": 35,
    "hoogte": 8.0,
-   "perceel_m2": null
+   "perceel_m2": null,
+   "gym_cap": 26,
+   "werk_cap": 47,
+   "gym_piek": 10,
+   "werk_piek": 35
   },
   "rows": [
    {
@@ -1499,10 +1509,10 @@
    {
     "groep": "Verlichting",
     "post": "Bureaulampen",
-    "h": 24,
+    "h": 35,
     "e": "st",
     "prijs": 45,
-    "totaal": 1080,
+    "totaal": 1575,
     "label": "schatting",
     "gen": 0.0
    },
@@ -1529,60 +1539,60 @@
    {
     "groep": "Werken",
     "post": "Zit-sta onderstel elektrisch (IKEA MITTZON)",
-    "h": 24,
+    "h": 35,
     "e": "st",
     "prijs": 340,
-    "totaal": 8160,
+    "totaal": 11900,
     "label": "bron",
     "gen": 0.3
    },
    {
     "groep": "Werken",
     "post": "Bureaublad 160 x 80 eiken multiplex",
-    "h": 24,
+    "h": 35,
     "e": "st",
     "prijs": 120,
-    "totaal": 2880,
+    "totaal": 4200,
     "label": "schatting",
     "gen": 0.2
    },
    {
     "groep": "Werken",
     "post": "Refurbished Steelcase Leap V2 (excl. btw)",
-    "h": 24,
+    "h": 35,
     "e": "st",
     "prijs": 500,
-    "totaal": 12000,
+    "totaal": 17500,
     "label": "bron",
     "gen": 0.4
    },
    {
     "groep": "Werken",
     "post": "Monitor 27 inch met USB-C hub (Dell P2725HE, excl. btw)",
-    "h": 24,
+    "h": 35,
     "e": "st",
     "prijs": 219,
-    "totaal": 5256,
+    "totaal": 7665,
     "label": "bron",
     "gen": 0.3
    },
    {
     "groep": "Werken",
     "post": "Tweede monitor 27 inch Full HD",
-    "h": 24,
+    "h": 35,
     "e": "st",
     "prijs": 150,
-    "totaal": 3600,
+    "totaal": 5250,
     "label": "schatting",
     "gen": 0.3
    },
    {
     "groep": "Werken",
     "post": "Dubbele monitorarm",
-    "h": 24,
+    "h": 35,
     "e": "st",
     "prijs": 60,
-    "totaal": 1440,
+    "totaal": 2100,
     "label": "schatting",
     "gen": 0.2
    },
@@ -1638,11 +1648,11 @@
    },
    {
     "groep": "Gym",
-    "post": "ATX power rack PRX-710",
-    "h": 4,
+    "post": "ATX power rack PRX-710 (26 mensen tegelijk)",
+    "h": 5,
     "e": "st",
     "prijs": 800,
-    "totaal": 3200,
+    "totaal": 4000,
     "label": "bron",
     "gen": 0.3
    },
@@ -1659,20 +1669,20 @@
    {
     "groep": "Gym",
     "post": "Olympische halterstangen + 1 trapbar",
-    "h": 5,
+    "h": 6,
     "e": "st",
     "prijs": 240,
-    "totaal": 1200,
+    "totaal": 1440,
     "label": "schatting",
     "gen": 0.3
    },
    {
     "groep": "Gym",
-    "post": "Bumper plates (4 sets van 150 kg)",
-    "h": 600,
+    "post": "Bumper plates (5 sets van 150 kg)",
+    "h": 750,
     "e": "kg",
     "prijs": 3.83,
-    "totaal": 2298,
+    "totaal": 2872,
     "label": "bron",
     "gen": 0.4
    },
@@ -1699,20 +1709,20 @@
    {
     "groep": "Gym",
     "post": "Verstelbare bankjes",
-    "h": 6,
+    "h": 8,
     "e": "st",
     "prijs": 250,
-    "totaal": 1500,
+    "totaal": 2000,
     "label": "schatting",
     "gen": 0.3
    },
    {
     "groep": "Gym",
     "post": "Concept2 RowErg",
-    "h": 2,
+    "h": 3,
     "e": "st",
     "prijs": 1195,
-    "totaal": 2390,
+    "totaal": 3585,
     "label": "bron",
     "gen": 0.5
    },
@@ -1749,10 +1759,10 @@
    {
     "groep": "Gym",
     "post": "Rubber sportvloer 30 mm",
-    "h": 150,
+    "h": 195,
     "e": "m2",
     "prijs": 35,
-    "totaal": 5250,
+    "totaal": 6825,
     "label": "schatting",
     "gen": 0.2
    },
@@ -2069,36 +2079,36 @@
    {
     "groep": "Bijkomend",
     "post": "Projectleiding initiatiefnemer (3%)",
-    "h": 356783,
+    "h": 377441,
     "e": "EUR",
     "prijs": 0.03,
-    "totaal": 10703,
+    "totaal": 11323,
     "label": "aanname",
     "gen": 0.0
    },
    {
     "groep": "Bijkomend",
     "post": "Onvoorzien (10% excl. pand)",
-    "h": 448786,
+    "h": 470064,
     "e": "EUR",
     "prijs": 0.1,
-    "totaal": 44879,
+    "totaal": 47006,
     "label": "schatting",
     "gen": 0.0
    },
    {
     "groep": "Bijkomend",
     "post": "Bouwrente en afsluitkosten (1,5%)",
-    "h": 1883665,
+    "h": 1907070,
     "e": "EUR",
     "prijs": 0.015,
-    "totaal": 28255,
+    "totaal": 28606,
     "label": "schatting",
     "gen": 0.0
    }
   ],
-  "fee_inleg_terug": 416,
-  "fee_inleg_terug_90": 345,
-  "fee_vol_nodig_90": 250
+  "fee_inleg_terug": 429,
+  "fee_inleg_terug_90": 358,
+  "fee_vol_nodig_90": 258
  }
 }
