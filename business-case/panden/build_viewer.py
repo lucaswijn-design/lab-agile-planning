@@ -20,7 +20,7 @@ from geo import frame, to_local  # noqa: E402
 from layout import AFGEVALLEN, LAYOUTS, STATUS, build  # noqa: E402
 import pand_case  # noqa: E402
 
-VOLGORDE = ["amersfoort-birkt-21", "utrecht-gertrudiskerk", "uitgeest-molenwerf-15", "houten-heemsteedseweg-24", "best-de-run-5", "uithoorn-thamerkerk"]
+VOLGORDE = ["rotterdam-hillevliet-139", "tilburg-bredaseweg-443", "amersfoort-birkt-21", "utrecht-gertrudiskerk", "uitgeest-molenwerf-15", "houten-heemsteedseweg-24", "best-de-run-5", "uithoorn-thamerkerk"]
 
 
 def img_uri(path, size=768):

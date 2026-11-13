@@ -22,6 +22,52 @@ ZONEKLEUR = {"café": "#e0a458", "werken": "#7fb3d5", "gym": "#e07a5f", "sanitai
 STD_LEDEN = dict(n_vol=30, n_deel=30, n_club=60)
 
 LAYOUTS = {
+    "rotterdam-hillevliet-139": dict(
+        titel="Hillevliet 139, Rotterdam",
+        oordeel="kandidaat, status bellen",
+        samenvatting="Voormalige Leger des Heils-kerk uit 1929 van J.J.P. Oud, rijksmonument, in Rotterdam-Zuid. Kerkzaal van 530 m² "
+                     "en 9 m hoog, met een strook tuin op het zuiden. Vraagprijs € 950.000: de goedkoopste kandidaat tot nu toe. "
+                     "Een nieuwe tussenvloer geeft extra werkplekken. Rotterdam is groot genoeg voor 90 clubleden.",
+        koop=dict(totaal=950_000, label="vraagprijs Heritage Europe en Reliplan, sinds 2024"),
+        verhuur=[], leden=dict(n_vol=30, n_deel=30, n_club=90), bouwjaar_risico=True, isoleren=True, pv_kwp=0,
+        verdieping_m2=128, nieuwe_vloer_m2=128, extra_werkplekken=16,
+        zones=[
+            dict(type="café", naam="Boekencafé onder de kerkramen", r=(0.5, 0.5, 12, 9)),
+            dict(type="werken", naam="Werkzone met raambar", r=(12, 0.5, 26, 9)),
+            dict(type="bieb", naam="Stille leesbibliotheek", r=(0.5, 9.5, 6, 18.8)),
+            dict(type="studio", naam="Studio", r=(6, 9.5, 14, 18.8)),
+            dict(type="gym", naam="Gym", r=(14, 9.5, 26, 18.6)),
+            dict(type="sanitair", naam="Kleedruimte, douches, toiletten", r=(26.2, 12.5, 30.5, 18)),
+            dict(type="vergader", naam="Tussenvloer: vergaderruimte + 16 werkplekken aan tafels", r=(0.5, 9.5, 14, 18.8), niveau=1),
+        ],
+        pui=dict(kant="v0", u0=2, u1=11, v=0.3),
+        buiten=[dict(type="terras", naam="Terras op het zuiden", r=(2, -4.5, 20, -0.4)),
+                dict(type="tuin", naam="Tuin", r=(28, -4, 34, 10))],
+        bomen_buiten=[(31, 6), (31, -1), (22, -3)],
+    ),
+    "tilburg-bredaseweg-443": dict(
+        titel="Bredaseweg 443, Tilburg",
+        oordeel="kandidaat, prijs opvragen",
+        samenvatting="Kantoorvilla uit 1941 met een vleugel uit 2000, 1.385 m² over drie lagen, op een landgoed van circa 8.000 m² "
+                     "aan de rand van de Warande. De club neemt de begane grond en de verdieping van de nieuwe vleugel. De rest "
+                     "(circa 600 m²) wordt verhuurd als kantoor. Prijs op aanvraag: hier gerekend met € 1,8 mln.",
+        koop=dict(totaal=1_800_000, label="schatting: prijs op aanvraag"),
+        verhuur=[dict(naam="Kantoorruimte villa verdieping + souterrain", m2=600, huur_m2=110)],
+        leden=STD_LEDEN, bouwjaar_risico=True, isoleren=False, pv_kwp=20, verdieping_m2=220,
+        zones=[
+            dict(type="café", naam="Boekencafé in de villa", r=(0.5, 0.5, 12.5, 11)),
+            dict(type="bieb", naam="Stille leesbibliotheek", r=(0.5, 11, 6.5, 19.3)),
+            dict(type="studio", naam="Studio", r=(6.5, 11, 12.5, 19.3)),
+            dict(type="gym", naam="Gym", r=(21.5, 0.5, 33, 11.5)),
+            dict(type="sanitair", naam="Kleedruimte, douches, toiletten", r=(33, 0.5, 41.4, 6)),
+            dict(type="vergader", naam="Vergaderruimte en belcellen", r=(33, 6, 41.4, 11.5)),
+            dict(type="werken", naam="Verdieping nieuwe vleugel: werkzone", r=(21.5, 0.5, 41.4, 11.5), niveau=1),
+        ],
+        pui=dict(kant="v0", u0=1, u1=12, v=0),
+        buiten=[dict(type="terras", naam="Terras aan de bosrand", r=(0, -6, 14, -0.4)),
+                dict(type="tuin", naam="Landgoedtuin met buitenwerkplekken", r=(15, -16, 40, -1))],
+        bomen_buiten=[(5, -10), (12, -14), (20, -18), (30, -19), (38, -17), (44, -6), (-4, 4), (-4, 14)],
+    ),
     "utrecht-gertrudiskerk": dict(
         titel="Kerkcomplex Amaliadwarsstraat, Utrecht",
         oordeel="kandidaat",
@@ -184,6 +230,9 @@ AFGEVALLEN = {
     "haarlem-kuipersweg-4": "Nieuw bedrijfsverzamelgebouw met 122 units. Geen los pand.",
     "den-bosch-bloemendaal-10": "Pand uit 1978 van 1.066 m² over twee lagen op 800 m² grond. Buitenruimte is alleen parkeerterrein.",
     "ter-aar-woudsedijk-11": "Hal uit 1993 van 1.336 m² in een dorp zonder trein. Te ver van de doelgroep.",
+    "boxtel-bosscheweg-85": "Villa Catharina, 723 m² + koetshuis op 9.866 m² tuin met zwembad. Prachtig, maar € 2.950.000: een vol lid zou circa € 695 per maand nodig hebben.",
+    "amersfoort-stadsring-103": "Monumentale kantoorvilla, 474 m² voor € 2.200.000. Te klein en te duur: circa € 539 per maand om te draaien.",
+    "den-haag-pomonaplein-49": "Voormalige kerk met woning, loft en B&B, 1.732 m² voor € 4.250.000. Ook met verhuur van woning en B&B circa € 890 per maand nodig.",
 }
 
 
@@ -268,7 +317,7 @@ def build(slug):
     )
     leden = L["leden"]
     q["gym_cap"] = int(gym_m2 / 7.5)
-    q["werk_cap"] = n_desks + 12 + 8  # eilandjes + werktafel + raambar
+    q["werk_cap"] = n_desks + 12 + 8 + L.get("extra_werkplekken", 0)  # eilandjes + werktafel + raambar (+ tussenvloer)
     tot = leden["n_vol"] + leden["n_deel"] + leden["n_club"]
     q["gym_piek"] = math.ceil(((leden["n_vol"] + leden["n_deel"]) * 2.5 + leden["n_club"] * 3) * 1.25 / 105 * 2.5)
     q["werk_piek"] = math.ceil(0.96 * (0.7 * leden["n_vol"] + 0.5 * leden["n_deel"]))
@@ -289,6 +338,10 @@ if __name__ == "__main__":
 
 # Statuscheck 13 november 2026 (zoekmachines; funda in business blokkeert automatische controle)
 STATUS = {
+    "rotterdam-hillevliet-139": ("kandidaat, status bellen", "Vraagprijs € 950.000 k.k. bij Heritage Europe en Reliplan, aangeboden sinds 2024. "
+                                 "Geen verkoopbericht gevonden, maar ook niets recents: eerst bellen."),
+    "tilburg-bredaseweg-443": ("kandidaat, prijs opvragen", "Prijs op aanvraag bij Raimond Weenink en op funda in business als beschikbaar; "
+                               "advertentie is circa 589 dagen oud."),
     "amersfoort-birkt-21": ("verkocht", "Verkocht aan Automotive Soest (Comma Vastgoed). Stond te koop voor € 650.000 met 563 m²; "
                             "de eerder gebruikte € 1.250.000 en 785 m² hoorden bij een ander object."),
     "utrecht-gertrudiskerk": ("verkocht", "Kerk verkocht en verbouwd tot Commit Health Club, een sportschool met sauna. "
