@@ -71,7 +71,7 @@ td.r,th.r{text-align:right;font-family:var(--f-mono)}
   <header style="display:grid;gap:14px">
     <div class="eyebrow">Het Clubhuis · ontwerp per locatie · november 2026</div>
     <h1>Ontwerpen per locatie</h1>
-    <p class="lead">Per pand een uitgewerkte indeling met ronde elementen, inrichting per ruimte in kleuren uit de natuur, een maquette met het dak eraf en een dakaanzicht. Alle drie de panden stonden op 13 november 2026 nog te koop op de advertentiesite. Indicatief: maten en constructie nog controleren bij bezichtiging.</p>
+    <p class="lead">Per pand een uitgewerkte indeling met ronde elementen, inrichting per ruimte in kleuren uit de natuur, een maquette met het dak eraf en een dakaanzicht. Alle vijf de panden stonden op 13 november 2026 nog als te koop of beschikbaar op de advertentiesite. Indicatief: maten en constructie nog controleren bij bezichtiging.</p>
     <nav class="picker" id="picker" aria-label="Kies een pand"></nav>
   </header>
 
@@ -295,8 +295,8 @@ function toren(G, e, y0){
 }
 
 // ---------- gevels met pui
-function gevels(g, P, h, cut){
-  const fp = P.footprint, pui = P.ontwerp.pui || [];
+function gevels(g, P, fp, h){
+  const pui = P.ontwerp.pui || [];
   const wandMat = mat('#f3efe7'), glas = mat('#c7dbe3', {transparent:true, opacity:.35, roughness:.05});
   for (let i = 0; i < fp.length - 1; i++){
     const A = fp[i], B = fp[i+1], L = Math.hypot(B[0] - A[0], B[1] - A[1]); if (L < .05) continue;
@@ -337,23 +337,28 @@ function bouw(P){
   Object.values(groups).forEach(x => root.add(x));
   for (const c of P.context){ const m = add(groups.ctx, extrude(shapeOf(c.ring), Math.max(2.5, c.h), 0), mat('#f2eee6'), {edges:true}); }
   for (const b of O.buiten) add(groups.buiten, extrude(shapeOf(b.poly), .06, 0), mat(b.kleur), {cast:false});
-  add(groups.vloer, extrude(shapeOf(P.footprint), .15, 0), mat('#f7f4ee'), {cast:false});
-  for (const z of O.zones) if (!z.n) add(groups.vloer, extrude(shapeOf(z.poly), .01, .15), mat(z.kleur, {roughness:.95}), {cast:false});
-  gevels(groups.schil, P, h);
+  const GB = P.gebouwen || [{ring: P.footprint, h}];
+  for (const b of GB) add(groups.vloer, extrude(shapeOf(b.ring), .15, 0), mat('#f7f4ee'), {cast:false});
+  for (const z of O.zones) if (!z.n){ const f = add(groups.vloer, extrude(shapeOf(z.poly), .01, .15), mat(z.kleur, {roughness:.95}), {cast:false}); f.userData.zone = true; }
+  for (const b of GB) gevels(groups.schil, P, b.ring, b.h);
+  const binnen = (q, r) => { let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++){ const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > q[1]) !== (yj > q[1]) && q[0] < (xj - xi)*(q[1] - yi)/(yj - yi) + xi) c = !c; } return c; };
+  const hAt = (u, v) => { for (const b of GB) if (binnen([u, v], b.ring)) return b.h; return h; };
+  const midden = p => [p.reduce((a, q) => a + q[0], 0)/p.length, p.reduce((a, q) => a + q[1], 0)/p.length];
   // verdieping
   if (L1){
     for (const z of O.zones) if (z.n === 1){ add(groups.l1, extrude(shapeOf(z.poly), .25, L1 - .25), mat('#f7f4ee'), {edges:true}); add(groups.l1, extrude(shapeOf(z.poly), .01, L1), mat(z.kleur), {cast:false}); }
   }
   for (const e of O.elementen){ const n = e.n || 0; element(n ? groups.in1 : groups.in0, e, n ? L1 : 0); }
   // dak
-  add(groups.dak, extrude(shapeOf(P.footprint), .35, h), mat('#dcd7cc'), {edges:true});
+  for (const b of GB) add(groups.dak, extrude(shapeOf(b.ring), .35, b.h), mat('#dcd7cc'), {edges:true});
   const D = O.dak;
-  for (const p of D.groen || []) add(groups.dakplus, extrude(shapeOf(p), .08, h + .35), mat('#8ea36a', {roughness:1}), {cast:false});
+  for (const p of D.groen || []){ const hh = hAt(...midden(p)); add(groups.dakplus, extrude(shapeOf(p), .08, hh + .35), mat('#8ea36a', {roughness:1}), {cast:false}); }
   for (const p of D.pv || []){
     const xs = p.map(q => q[0]), zs = p.map(q => q[1]); const x0 = Math.min(...xs), x1 = Math.max(...xs), z0 = Math.min(...zs), z1 = Math.max(...zs);
-    for (let z = z0 + .6; z + 1 < z1; z += 2.2) for (let x = x0 + .4; x + 1.7 < x1; x += 1.8){ const m = box(groups.dakplus, [x + .85, z + .5], 1.7, 1.0, .06, 0, '#22324a', h + .55, {mat: mat('#253650', {roughness:.3, metalness:.4})}); m.rotation.x = -.18; }
+    const hp = hAt(...midden(p));
+    for (let z = z0 + .6; z + 1 < z1; z += 2.2) for (let x = x0 + .4; x + 1.7 < x1; x += 1.8){ const m = box(groups.dakplus, [x + .85, z + .5], 1.7, 1.0, .06, 0, '#22324a', hp + .55, {mat: mat('#253650', {roughness:.3, metalness:.4})}); m.rotation.x = -.18; }
   }
-  for (const [u, v, r] of D.koepels || []) if (r > 0){ const k = add(groups.dakplus, new THREE.SphereGeometry(r, 24, 12, 0, Math.PI*2, 0, Math.PI/2), mat('#e9f1f3', {transparent:true, opacity:.75, roughness:.1})); k.position.set(u, h + .35, v); k.scale.y = .45; }
+  for (const [u, v, r] of D.koepels || []) if (r > 0){ const k = add(groups.dakplus, new THREE.SphereGeometry(r, 24, 12, 0, Math.PI*2, 0, Math.PI/2), mat('#e9f1f3', {transparent:true, opacity:.75, roughness:.1})); k.position.set(u, hAt(u, v) + .35, v); k.scale.y = .45; }
   if (D.terras){
     add(groups.dakplus, extrude(shapeOf(D.terras), .12, h + .35), mat('#b08a5e'), {edges:true});
     const t = D.terras, xs = t.map(q => q[0]), zs = t.map(q => q[1]); const x0 = Math.min(...xs), x1 = Math.max(...xs), z0 = Math.min(...zs), z1 = Math.max(...zs), y = h + .47;
@@ -378,7 +383,7 @@ function setMode(m){
   groups.vloer.visible = true; groups.dak.visible = dak; groups.dakplus.visible = m === 'dak';
   groups.buiten.visible = nieuw;
   groups.ctx.scale.y = m === 'open' ? .3 : 1;
-  if (m === 'huidig') groups.vloer.children.slice(1).forEach(c => c.visible = false); else groups.vloer.children.forEach(c => c.visible = true);
+  groups.vloer.children.forEach(c => c.visible = !(m === 'huidig' && c.userData.zone));
 }
 function setL1(v){ showL1 = v; document.querySelectorAll('[data-l]').forEach(b => b.setAttribute('aria-pressed', (b.dataset.l === '1') === v)); setMode(mode); }
 

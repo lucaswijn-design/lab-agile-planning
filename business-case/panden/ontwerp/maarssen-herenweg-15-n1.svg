@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-18.03 -41.74 35.78 46.24" width="1400" height="1809" font-family="Work Sans, Helvetica, Arial, sans-serif" role="img" aria-label="Plattegrond Herenweg 15, Maarssen">
+<rect x="-18.03" y="-41.74" width="35.78" height="46.24" fill="#fbf9f4"/>
+<g transform="scale(1,-1)">
+<polygon points="0.00,0.00 11.81,0.00 11.82,2.65 12.49,2.66 12.48,3.46 13.20,3.74 13.82,4.19 14.30,4.78 14.62,5.48 14.75,6.23 14.69,7.00 14.43,7.72 14.00,8.35 13.42,8.86 12.74,9.20 11.99,9.36 5.13,9.40 5.08,11.98 2.59,11.93 2.66,7.93 0.00,7.90 0.00,0.00" fill="#ffffff"/>
+<polygon points="-14.87,15.90 -4.91,15.97 5.11,16.05 4.99,32.17 12.94,32.23 12.92,36.24 -5.11,36.11 -14.37,36.04 -15.03,36.04 -14.87,16.27 -14.87,15.90" fill="#ffffff"/>
+<polygon points="0.60,0.60 11.40,0.60 11.40,7.40 0.60,7.40" fill="#e5d48c" fill-opacity="0.42"/>
+<defs><pattern id="arc" width="0.6" height="0.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.6" stroke="#b9b3a6" stroke-width="0.06"/></pattern></defs>
+<rect x="1.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 1.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 2.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="3.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 3.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="4.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 4.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="5.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 5.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="6.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 6.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="7.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 7.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="8.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 8.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="9.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 9.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 1.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 2.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="3.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 3.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="4.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 4.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="5.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 5.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="6.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 6.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="7.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 7.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="8.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 8.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="9.01" y="6.60" width="0.98" height="0.40" transform="rotate(0.0 9.50 6.80)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.58" y="3.58" width="0.85" height="0.85" transform="rotate(0.0 3.00 4.00)" fill="#47522a" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="5.58" y="3.58" width="0.85" height="0.85" transform="rotate(0.0 6.00 4.00)" fill="#47522a" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="8.57" y="3.58" width="0.85" height="0.85" transform="rotate(0.0 9.00 4.00)" fill="#47522a" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<polygon points="0.00,0.00 11.81,0.00 11.82,2.65 12.49,2.66 12.48,3.46 13.20,3.74 13.82,4.19 14.30,4.78 14.62,5.48 14.75,6.23 14.69,7.00 14.43,7.72 14.00,8.35 13.42,8.86 12.74,9.20 11.99,9.36 5.13,9.40 5.08,11.98 2.59,11.93 2.66,7.93 0.00,7.90 0.00,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
+<polygon points="-14.87,15.90 -4.91,15.97 5.11,16.05 4.99,32.17 12.94,32.23 12.92,36.24 -5.11,36.11 -14.37,36.04 -15.03,36.04 -14.87,16.27 -14.87,15.90" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
+</g>
+<text x="6.00" y="-4.00" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Stille bieb op zolder</text><text x="6.00" y="-3.25" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">73 m² · avocado</text>
+<rect x="-16.83" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-15.83" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-14.83" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-13.83" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-12.83" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<text x="-16.83" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b">0</text><text x="-11.83" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b" text-anchor="middle">5 m</text>
+<polygon points="15.28,-40.48 16.35,-39.70 16.42,-39.22 15.95,-39.34" fill="#1d1d1b"/><text x="14.95" y="-40.65" font-size="0.55" font-weight="600" text-anchor="middle">N</text>
+<text x="-16.83" y="-40.14" font-size="0.9" font-weight="600" fill="#1d1d1b">Herenweg 15, Maarssen</text><text x="-16.83" y="-39.34" font-size="0.5" font-family="Space Mono, ui-monospace, monospace" fill="#55514a">VERDIEPING · ONTWERP NOVEMBER 2026 · INDICATIEF</text>
+</svg>

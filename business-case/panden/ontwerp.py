@@ -227,6 +227,7 @@ UTRECHT = dict(
     dak=dict(soort="groen", terras=None,
              groen=[R(0.3, 0.3, 13.6, 12.4), R(26, 10, 36, 25)], pv=[R(13.8, 0.6, 25.8, 8.0), R(26.4, 0.6, 35.6, 4.4)],
              koepels=[[29.2, 7.3, 0.9], [33.4, 12.7, 0.8], [2.8, 10.3, 0.7], [5.6, 4.2, 0.9]],
+             tekst_en="Green sedum roof on both wings, solar panels on the middle part, four round skylights above the two bathroom towers, the round reading room and the fireplace seating. No roof terrace.",
              tekst="Licht dak uit 1959 en woningen rondom: geen dakterras (constructie en inkijk). Wel een groen dak met sedum op de vleugels, zonnepanelen op de middenstrook en ronde lichtkoepels boven de twee torens, de boekentoren en de zitkuil."),
     renders=dict(buiten=[(9, "Binnentuin en terras", "Turn this overgrown courtyard into a lush members-club garden: a wooden terrace with round tables along the glass facade, wild planting, existing trees kept, a round black steel pergola with a curved wooden bench, gravel paths, warm evening light. Repaint the blue panels in deep olive green and the frames in black."),
                          (6, "Poort en steeg", "Make this gate and alley the subtle entrance of a members club: black steel gate with a small brass sign, climbing plants on both walls, warm wall lights, clean gravel path leading into a green courtyard. Keep the surrounding houses unchanged."),
@@ -315,6 +316,7 @@ RIETVELDEN = dict(
     ],
     dak=dict(soort="terras", terras=R(8.0, 1.0, 20.0, 11.6), trap_buiten=[6.0, 12.4],
              groen=[R(22.5, 13.5, 35, 26)], pv=[R(22.5, 0.8, 38, 12.4)], koepels=[[25.6, 16.0, 0.9], [34.2, 10.0, 0.8], [32.2, 16.6, 0.8]],
+             tekst_en="A roof terrace of about 125 m2 above the book café: wooden decking, a black steel pergola with climbing plants, planters with grasses and small trees, a black steel railing and an outdoor steel stair from the forecourt. Solar panels on the gym roof, sedum at the back, round skylights.",
              tekst="Het platte dak boven het café (circa 125 m²) kan een dakterras worden met pergola, plantenbakken en een buitentrap vanaf het voorterrein. "
                    "Eerst een constructeur: een showroomdak uit 1966 is meestal licht. Zonnepanelen op het dak boven de gym, sedum achter."),
     renders=dict(buiten=[(1, "Gevel aan de straat", "Turn this grey 1960s showroom with house into the street front of a members club: keep the building shape, paint the brick in warm sand lime-wash, black steel window frames, the showroom windows showing a warm book café with plants inside, a wooden terrace with planters and small trees on the forecourt, a subtle brass sign, a roof terrace with pergola and greenery visible on the flat roof part."),
@@ -399,6 +401,7 @@ EENDENKOOI = dict(
     ],
     dak=dict(soort="terras", terras=R(18.4, 1.0, 29.6, 9.4),
              groen=[], pv=[R(0.8, 0.8, 17.2, 17.6)], koepels=[[24.0, 5.0, 0.0]],
+             tekst_en="A club roof terrace of about 95 m2 above the café corner with wooden decking, a black steel pergola, planters and a railing. Light-weight solar panels across the sports hall roof.",
              tekst="De verdieping heeft al een bovenwoning met dakterras (wordt verhuurd). Optie: een clubdakterras van circa 95 m² op het dak boven het café, met trap vanaf de verdieping. "
                    "Zonnepanelen in lichte uitvoering op het dak van de sportzaal (staaldak, ballast beperken)."),
     renders=dict(buiten=[(2, "Gevel en entree", "Keep this two-storey sports building and the big trees, make it a members club: grey steel cladding repainted deep olive green, the red accents replaced by warm wood, a wooden entrance canopy with plants, the parking turned into a planted forecourt with a terrace and benches, a roof terrace with pergola and greenery visible at the top.")]),
@@ -451,6 +454,187 @@ def export(slug):
     out["vides"] = VIDES.get(slug, [])
     out["palet"] = PALET
     return out
+
+
+
+# ---------------------------------------------------------------- Voorhout
+VOORHOUT = dict(
+    titel="Dinsdagse Wetering 56A, Voorhout",
+    sub="Twee werkplaatsen van een oud bouwbedrijf (deels 1933) met een verharde tuinstraat ertussen, station op loopafstand",
+    hoogte=3.9, niveaus={"1": 3.0},
+    extra=[dict(ctx=156, naam="Gebouw A, hoge deel"), dict(ctx=143, naam="Gebouw B")],
+    concept="Vanaf de straat loop je de tuinstraat in tussen de twee werkplaatsen: grind wordt groen, met bomen, bankjes en een lange tafel buiten. "
+            "Gebouw A (de lange werkplaats uit 1933 met de blauwe glazen gevel) wordt boekencafé en werkzone, met een boekenwand als scheiding. "
+            "In het hoge deel aan het eind komt de entree met de boekentoren, en op de bestaande entresol een werkzolder. "
+            "Gebouw B wordt de gym, met de wastoren in het lage deel en de douchetoren in de werkplaats. Boven in B komt een kleine studio.",
+    pui=[[[1, 0], [22, 0]], [[0, 0.6], [0, 7]], [[21, -4.6], [33, -4.6]]],
+    zones=[
+        zone("Boekencafé in de werkplaats van 1933", "café", R(0.3, 0.3, 11.4, 7.3),
+             "De oudste werkplaats wordt het café: lang, laag en licht door de blauwe glasgevel aan de tuinstraat. Een ronde bank rond de haard, een lange espressobar tegen de achterwand en een dubbele boekenkast die het café van de werkzone scheidt.",
+             ["Ronde bank van 3,8 m doorsnee in olijfgroen fluweel, open naar het glas en de tuinstraat",
+              "Espressobar van 3,5 m langs de achterwand, steigerhout met travertin blad",
+              "Dubbelzijdige boekenkast van 6 m als scheiding met de werkzone: 1.500 boeken",
+              "Blauwe kozijnen blijven, alleen opnieuw in diep olijf gelakt; houten spanten zichtbaar",
+              "Pruimkleurige fauteuils en kleine ronde tafels bij het glas"],
+             foto=6, cam=dict(t=[5.8, 3.8], afstand=9, hoek=210),
+             prompt="Transform this long low workshop with blue glazed facade into the book café of a members club: keep the long glass facade and the low roof, repaint the blue frames deep olive green. Inside: a round olive-green velvet sofa around a black freestanding fireplace, a long espresso bar of reclaimed wood with travertine top against the back wall, a double-sided walnut bookcase full of books dividing the space, plum armchairs by the glass, plants and small trees."),
+        zone("Werkzone achter de boekenwand", "werken", R(11.6, 0.3, 22.6, 7.3),
+             "Zestien zit-sta bureaus in vier eilanden achter de boekenwand, met daglicht van de glasgevel en een ronde belcel aan het eind.",
+             ["Vier eilanden van vier bureaus, licht gedraaid", "Eén ronde belcel in leisteenblauw vilt",
+              "Akoestische panelen in blauwgrijs tussen de spanten", "Planten in de vensterbank langs het glas"],
+             foto=7, cam=dict(t=[17, 3.8], afstand=9, hoek=210),
+             prompt="Turn this long workshop with a glass facade into a calm coworking room: islands of four sit-stand desks with oak tops, each slightly rotated, dual monitors, a round slate-blue felt phone booth at the end, slate-blue acoustic panels between the timber trusses, plants along the glass."),
+        zone("Entree en boekentoren", "entree", [[22.8, 0.0], [22.8, 7.6], [24.7, 7.6], [24.7, 8.6], [30.1, 8.6], [30.2, 0.0]],
+             "Het hoge deel van gebouw A wordt de voordeur aan de tuinstraat. Je komt binnen bij de ronde boekentoren; de trap gaat naar de werkzolder op de bestaande entresol.",
+             ["Ronde boekentoren van 3,8 m doorsnee met walnoten kasten rondom", "Kokospalet: jute kleed, rotan lamp, leren bank",
+              "Ledenbord en streepjeslijst bij de deur", "Stalen trap naar de entresol"],
+             foto=5, cam=dict(t=[26.4, 4.2], afstand=7, hoek=220),
+             prompt="Turn this high workshop part with glazed doors into the entrance of a members club: black steel and glass doors, a round reading room with walnut bookshelves all around standing in the space, jute rug, rattan pendant, a leather bench, a black steel stair to a mezzanine, olive trees in clay pots."),
+        zone("Wastoren", "sanitair", [[11.8, -4.8], [20.6, -4.8], [20.6, -10.4], [14.8, -10.4], [12.6, -10.4], [12.6, -7.6], [11.8, -7.6]],
+             "In het lage deel van gebouw B staat de wastoren, met de opening naar de tuinstraat.",
+             ["Wastoren van 5,5 m doorsnee, wastrog langs de V, drie toiletten erachter", "Lichtstraat erboven, planten op de rand"],
+             cam=dict(t=[17, -7.6], afstand=7, hoek=210),
+             prompt="A round concrete-look bathroom tower, 5.5 m diameter and 3 m high, inside an old brick workshop, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the rim, a skylight above."),
+        zone("Gym in gebouw B", "gym", R(20.9, -15.2, 33.4, -4.8),
+             "De machinale werkplaats van gebouw B wordt de gym: vier racks, roeiers, een vrije vloer en de douchetoren in de hoek. De glazen gevel kijkt uit op de tuinstraat.",
+             ["Vier racks op eiken platforms", "Drie roeiers bij het glas", "Douchetoren van 4,5 m doorsnee",
+              "Ossenbloed accentwand, rubber vloer"], foto=10, cam=dict(t=[27, -10], afstand=10, hoek=210),
+             prompt="Turn this brick workshop with large blue-framed windows into a functional gym: four black power racks on oak platforms, rowing machines facing the windows, anthracite rubber floor, one wall in oxblood red, a round concrete-look shower tower with plants on its rim in the corner, big plants. Repaint the blue frames black."),
+        zone("Techniek en fietsen", "techniek", R(15, -16.5, 20.6, -10.6), "Warmtepomp, batterij, fietsen en opslag.", []),
+        zone("Werkzolder op de entresol", "werken", [[22.9, 0.2], [30.1, 0.2], [30.1, 8.5], [24.8, 8.5], [24.8, 7.5], [22.9, 7.5]],
+             "Op de bestaande entresol: zes werkplekken aan een lange tafel en twee belcellen, met uitzicht in de hoge ruimte.",
+             ["Lange werktafel voor zes", "Twee ronde belcellen", "Stalen balustrade met plantenbak"], n=1, cam=dict(t=[26.4, 4.2], afstand=7, hoek=220),
+             prompt="A mezzanine work loft in a high old workshop: a long oak table for six with lamps, two round slate-blue felt phone booths, a black steel balustrade with planters, view down into the entrance with a round bookshelf room."),
+        zone("Studio boven in gebouw B", "studio", R(15, -16.5, 20.6, -10.6),
+             "Op de verdieping van gebouw B (nu kantoor en kantine) komt een kleine studio voor yoga en mobiliteit.",
+             ["Vijgenpaarse gordijnen, terracotta kleed", "Ruimte voor zes tot acht matten"], n=1, cam=dict(t=[17.8, -13.5], afstand=6, hoek=210),
+             prompt="A small attic studio for yoga with fig-purple curtains, a terracotta rug, wooden floor, mats on an open shelf, warm light."),
+    ],
+    buiten=[dict(naam="Tuinstraat", poly=R(-3, -4.4, 33.6, -0.4), kleur="#cdbf9f"),
+            dict(naam="Erf", poly=R(30.6, -4.6, 38.5, 0), kleur="#cdbf9f")],
+    elementen=[
+        *zitkuil([4.4, 3.8], 1.9, 270, "#6f7d3a", "#d9ccb0"),
+        dict(t="box", soort="bar", c=[8.4, 6.9], w=3.6, d=0.7, h=1.1, a=0, kleur=HOUT),
+        *kasten(0.8, 6.8, 11.5, a=90, d=0.5, h=2.2),
+        *tafeltje([8.6, 1.5]), *tafeltje([9.2, 4.0]), boom([1.0, 6.6], 0.8, 2.6), plant([7.0, 0.8]), plant([10.8, 0.8]),
+        dict(t="box", soort="fauteuil", c=[1.2, 1.2], w=0.85, d=0.85, h=0.8, a=30, kleur="#5a2741"),
+        *eiland([14.2, 2.1], -5), *eiland([18.8, 2.0], 6), *eiland([15.2, 5.4], 8), *eiland([19.7, 5.3], -4),
+        pod([22.0, 3.7]), plant([12.2, 0.8]), plant([21.6, 0.8]),
+        *boekentoren([26.4, 4.4], 1.9, 270), dict(t="kleed", c=[26.4, 1.4], w=3, d=1.6, a=0, kleur="#d5bd96"),
+        dict(t="box", soort="trap", c=[29.4, 4.6], w=1.0, d=3.4, h=0.3, a=0, kleur="#cfc8ba"),
+        boom([23.6, 1.2], 0.6, 2.4),
+        *toren([17.0, -7.6], 2.75, 90, "was"),
+        *rack([32.4, -13.6], 90), *rack([32.4, -11.0], 90), *rack([25.0, -14.2], 0), *rack([27.8, -14.2], 0),
+        roeier([23.0, -6.0], 0), roeier([25.6, -6.0], 0), roeier([28.2, -6.0], 0),
+        dict(t="kleed", c=[25.6, -10.0], w=5, d=3.2, a=0, kleur="#c7928a"),
+        *toren([31.2, -7.0], 2.15, 180, "douche"),
+        dict(t="box", soort="techniek", c=[17.8, -13.6], w=4.4, d=4.6, h=2.4, a=0, kleur="#8f8a80"),
+        # werkzolder (n=1)
+        dict(t="box", soort="werktafel", c=[26.4, 2.2], w=3.6, d=1.0, h=0.75, a=0, kleur=HOUT, n=1),
+        pod([24.2, 6.2], 1), pod([28.4, 6.8], 1), plant([29.5, 1.0], 0.4, 1.2, 1),
+        # studio (n=1)
+        dict(t="kleed", c=[17.8, -13.6], w=4.4, d=4.4, a=0, kleur="#b8633f", n=1),
+        dict(t="boog", soort="gordijn", c=[17.8, -6.0], r=5.0, a0=245, a1=295, d=0.08, h=2.4, kleur="#4b2339", n=1),
+        # tuinstraat
+        *[boom([u, -2.4], 0.9, 3.0) for u in (3.5, 12.5, 21.5, 30.0)],
+        dict(t="box", soort="buitentafel", c=[8.0, -2.4], w=4.0, d=0.9, h=0.75, a=0, kleur=HOUT),
+        *[dict(t="box", soort="bank", c=[x, -3.6], w=2.0, d=0.5, h=0.45, a=0, kleur=HOUT) for x in (16.6, 26.0)],
+        *[dict(t="box", soort="plantenbak", c=[x, -0.9], w=2.4, d=0.5, h=0.6, a=0, kleur="#5a3a22") for x in (6, 10, 15, 19)],
+        dict(t="box", soort="fietsenrek", c=[35.0, -2.4], w=4, d=0.6, h=0.9, a=90, kleur=STAAL),
+    ],
+    dak=dict(soort="pv", terras=None, groen=[], pv=[R(0.8, 0.6, 22.2, 3.6), R(21.4, -15.0, 33.0, -10.6)],
+             koepels=[[17.0, -7.6, 0.9], [15.4, 3.8, 0.7], [20.0, 3.8, 0.7]],
+             tekst_en="The pitched roofs stay; solar panels on the south-facing slopes of both workshops and skylights above the bathroom tower and the workspace. The gravel strip between the buildings becomes a green garden street with small trees, a long outdoor table and benches.",
+             tekst="De daken zijn schuin (3D BAG): geen dakterras. Zonnepanelen op de zuidkanten van A en B, lichtstraten boven de wastoren en de werkzone. "
+                   "De buitenruimte is de tuinstraat tussen de gebouwen, met bomen, een lange tafel en bankjes."),
+    renders=dict(buiten=[(6, "Gevel aan de tuinstraat", "Keep this long single-storey workshop with its glass facade and the gravel yard, turn it into a members club: frames repainted deep olive green, the gravel yard becomes a green garden street with four small trees, planters, a long wooden outdoor table and benches, warm string lights. Keep the neighbouring houses unchanged."),
+                         (8, "Tuinstraat tussen A en B", "Turn this gravel strip between two workshops into a green garden street of a members club: small trees, climbing plants on the brick walls, planters, wooden benches, bike racks at the end, frames repainted olive green and black, warm evening light."),
+                         (1, "Vanaf de straat", "Keep this street view and the houses exactly; make the old workshop gate the subtle entrance of a members club: black steel gate with a small brass sign, climbing plants and a small tree, a glimpse of a green garden street behind it.")]),
+)
+
+# ---------------------------------------------------------------- Maarssen
+MAARSSEN = dict(
+    titel="Herenweg 15, Maarssen",
+    sub="Woonhuis uit 1931 met een bedrijfshal uit 1970 erachter, aan de rand van de polder",
+    hoogte=5.8, niveaus={"1": 3.0},
+    extra=[dict(ctx=4, naam="Bedrijfshal 1970", h=7.0)],
+    concept="Het voorhuis uit 1931 wordt het boekencafé, met een ronde bank in de ronde erker en de bieb op zolder. Via een kleine binnenplaats "
+            "loop je naar de hal uit 1970: gym aan de westkant, werkzone en wastoren in het midden. De hal krijgt grote glazen deuren naar het erf "
+            "en de tuin met uitzicht over de weilanden. Op het dak van de hal komen zonnepanelen.",
+    pui=[[[5.1, 9.4], [12.0, 9.4]], [[-13, 16.0], [4.6, 16.0]], [[5.05, 17], [5.05, 31.5]]],
+    zones=[
+        zone("Boekencafé in het voorhuis", "café", [[0.3, 0.3], [11.6, 0.3], [11.6, 2.9], [12.4, 2.9], [14.4, 5.0], [14.5, 7.0], [12.0, 9.1], [5.1, 9.1], [5.1, 11.7], [2.8, 11.7], [2.8, 7.7], [0.3, 7.7]],
+             "Het woonhuis uit 1931 wordt het café. In de ronde erker komt een ronde bank rond de haard, de oude keuken wordt de espressobar en tegen de zijmuur staat de boekenwand. Nieuwe tuindeuren aan de achterkant.",
+             ["Ronde bank in olijfgroen fluweel die de ronde erker volgt", "Espressobar in de oude keuken, travertin blad",
+              "Boekenwand van vloer tot plafond tegen de zijmuur", "Originele details uit 1931 blijven: deuren, lijsten, vloer waar het kan",
+              "Glazen tuindeuren naar de binnenplaats"], cam=dict(t=[7, 4.8], afstand=9, hoek=210),
+             prompt="A 1930s Dutch brick house turned into the book café of a members club: a curved olive-green velvet sofa following a round bay window around a black freestanding fireplace, an espresso bar with travertine top in the old kitchen, a floor-to-ceiling walnut bookcase, plum armchairs, original 1930s doors and mouldings, glass garden doors at the back, plants."),
+        zone("Stille bieb op zolder", "bieb", R(0.6, 0.6, 11.4, 7.4),
+             "Onder de kap van het voorhuis: de stille bieb met lage kasten, fauteuils en dakramen.",
+             ["Lage boekenkasten onder de schuine kap", "Fauteuils in olijf, botergele lampen", "Dakramen voor daglicht"], n=1,
+             cam=dict(t=[6, 4], afstand=8, hoek=210),
+             prompt="A quiet attic library under a pitched roof with exposed timber rafters: low walnut bookcases under the slopes, deep olive walls, olive velvet armchairs, butter-yellow lamps, roof windows with daylight."),
+        zone("Gym in de hal", "gym", R(-14.6, 16.4, -4.6, 35.7),
+             "De westkant van de hal van 7 m hoog: vier racks langs de lange wand, roeiers, een vrije vloer voor groepslessen en de douchetoren in de hoek.",
+             ["Vier racks op eiken platforms langs de westwand", "Groepslesvloer met een gebogen gordijn voor yoga",
+              "Douchetoren van 4,5 m doorsnee", "Ossenbloed accentwand, hoge ramen"], cam=dict(t=[-9.6, 26], afstand=12, hoek=210),
+             prompt="A functional gym inside a 7 m high 1970s steel hall: four black power racks on oak platforms along the long wall, rowing machines, an open floor for classes with a curved fig-purple curtain, anthracite rubber floor, one wall oxblood red, a round concrete-look shower tower with plants on its rim, big plants, daylight from high windows and big glass doors."),
+        zone("Werkzone in de hal", "werken", R(-4.4, 16.4, 4.8, 27.8),
+             "Zestien bureaus in vier eilanden achter de nieuwe glazen deuren, met uitzicht over het erf en de weilanden. Twee ronde belcellen.",
+             ["Vier eilanden van vier bureaus", "Twee ronde belcellen", "Glazen hefdeuren naar het oosten, uitzicht op de polder"],
+             cam=dict(t=[0.2, 22], afstand=10, hoek=210),
+             prompt="A coworking area inside a high 1970s hall: islands of four sit-stand desks with oak tops slightly rotated, two round slate-blue felt phone booths, big glass doors opening to a green yard and meadows, slate-blue acoustic baffles hanging high, plants."),
+        zone("Wastoren", "sanitair", R(-4.4, 27.8, 4.8, 35.7), "De wastoren in het midden van de hal, open naar de werkzone.",
+             ["Wastoren van 5,5 m doorsnee", "Lichtstraat erboven"], cam=dict(t=[0.2, 32], afstand=8, hoek=210),
+             prompt="A round concrete-look bathroom tower, 5.5 m diameter and 3 m high, standing free in a high steel hall, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the rim, daylight from a skylight above."),
+        zone("Fietsen en techniek", "techniek", R(5.1, 32.4, 12.6, 35.9), "Fietsen, warmtepomp, batterij en opslag.", []),
+    ],
+    buiten=[dict(naam="Binnenplaats", poly=R(-4.6, 12.3, 5.0, 15.8), kleur="#b08a5e"),
+            dict(naam="Tuin naar de weilanden", poly=[[14.8, -6.0], [21.4, -6.0], [21.6, 36.5], [7.2, 36.2], [7.2, 31.8], [13.0, 31.8], [13.0, 9.6], [14.8, 9.6]], kleur="#9bb07a"),
+            dict(naam="Parkeren", poly=R(-4.6, -9.8, 14.6, -0.6), kleur="#c9c3b6")],
+    elementen=[
+        *zitkuil([11.6, 6.0], 1.9, 180, "#6f7d3a", "#d9ccb0"),
+        dict(t="box", soort="bar", c=[3.9, 9.6], w=2.0, d=0.7, h=1.1, a=90, kleur=HOUT),
+        *kasten(0.8, 7.0, 0.5, a=90, d=0.4, h=2.6),
+        *tafeltje([4.0, 2.2]), *tafeltje([7.2, 2.2]), *tafeltje([4.6, 5.4]),
+        dict(t="box", soort="fauteuil", c=[8.6, 1.4], w=0.85, d=0.85, h=0.8, a=-20, kleur="#5a2741"), plant([10.8, 1.0]), plant([6.2, 8.4]),
+        # zolder
+        *kasten(1.0, 10.0, 1.0, d=0.4, h=1.1, n=1), *kasten(1.0, 10.0, 6.8, d=0.4, h=1.1, n=1),
+        *[dict(t="box", soort="fauteuil", c=[u, 4.0], w=0.85, d=0.85, h=0.8, a=0, kleur="#47522a", n=1) for u in (3.0, 6.0, 9.0)],
+        # gym
+        *rack([-13.8, 19.4], 90), *rack([-13.8, 22.4], 90), *rack([-13.8, 25.4], 90), *rack([-13.8, 28.4], 90),
+        roeier([-8.0, 17.4], 0), roeier([-8.0, 19.0], 0),
+        dict(t="kleed", c=[-9.0, 24.6], w=5, d=6, a=0, kleur="#c7928a"),
+        dict(t="boog", soort="gordijn", c=[-9.0, 21.0], r=4.6, a0=60, a1=120, d=0.08, h=3.0, kleur="#4b2339"),
+        *toren([-7.0, 33.2], 2.25, 270, "douche"), boom([-13.6, 34.4], 0.9, 3.4),
+        # werkzone
+        *eiland([-1.8, 19.2], -6), *eiland([2.4, 19.4], 7), *eiland([-1.6, 23.8], 9), *eiland([2.6, 24.0], -5),
+        pod([3.9, 27.0]), pod([-3.4, 27.0]), plant([4.2, 17.0], 0.5, 1.6),
+        *toren([0.2, 31.8], 2.75, 270, "was"),
+        dict(t="box", soort="fietsenrek", c=[9.0, 34.2], w=5, d=0.6, h=0.9, a=0, kleur=STAAL),
+        # buiten
+        *tafeltje([-1.6, 14.0], stoelen=3), *tafeltje([2.2, 14.0], stoelen=3), boom([-3.6, 14.4], 0.8, 2.8),
+        dict(t="ring", soort="pergola", c=[17.6, 20.0], r=2.6, open=90, gat=0, h=2.6, kleur="#2f3032", dun=True),
+        dict(t="boog", soort="bank", c=[17.6, 20.0], r=2.2, a0=200, a1=340, d=0.5, h=0.45, kleur=HOUT),
+        *tafeltje([17.0, 5.0], stoelen=3), *tafeltje([18.6, 9.0], stoelen=3),
+        boom([19.8, 0.0]), boom([20.2, 14.0]), boom([19.6, 28.0]), boom([16.0, 33.6], 0.9, 3.0), boom([-3.6, -2.6]), boom([13.0, -2.6]),
+    ],
+    dak=dict(soort="pv", terras=None, groen=[], pv=[R(-14.4, 16.6, 4.6, 27.4), R(-14.4, 29.0, -9.6, 35.6)],
+             koepels=[[0.2, 31.8, 0.9], [-7.0, 33.2, 0.8]],
+             tekst_en="The 1931 house keeps its red clay tiles. The flat roof of the 1970 hall gets light-weight solar panels and two round skylights above the towers. The yard and garden towards the meadows get trees, a round black steel pergola with a curved bench and a terrace.",
+             tekst="Het voorhuis houdt zijn rode pannen. Op het platte dak van de hal komen lichtgewicht zonnepanelen en twee ronde lichtkoepels boven de torens. "
+                   "Geen dakterras: de tuin naar de weilanden is groot genoeg en een staaldak uit 1970 draagt meestal weinig."),
+    renders=dict(buiten=[]),
+)
+
+ONTWERPEN.update({"voorhout-dinsdagse-wetering-56a": VOORHOUT, "maarssen-herenweg-15": MAARSSEN})
+LABELS.update({
+    "voorhout-dinsdagse-wetering-56a": {"Boekencafé in de werkplaats van 1933": [5.8, 6.6], "Werkzone achter de boekenwand": [17.0, 3.8],
+                                        "Entree en boekentoren": [26.4, 1.0], "Wastoren": [17.0, -5.4], "Gym in gebouw B": [27.0, -9.6],
+                                        "Techniek en fietsen": [17.8, -13.6], "Werkzolder op de entresol": [26.4, 4.4], "Studio boven in gebouw B": [17.8, -13.6]},
+    "maarssen-herenweg-15": {"Boekencafé in het voorhuis": [5.6, 4.0], "Gym in de hal": [-9.6, 27.0], "Werkzone in de hal": [0.2, 21.6],
+                             "Wastoren": [0.2, 29.0], "Fietsen en techniek": [8.8, 33.2], "Stille bieb op zolder": [6.0, 4.0]},
+})
 
 
 if __name__ == "__main__":

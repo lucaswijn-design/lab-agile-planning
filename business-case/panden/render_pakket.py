@@ -34,11 +34,29 @@ def slugify(t):
     return re.sub(r"[^a-z0-9]+", "-", t.lower().replace("é", "e")).strip("-")[:40]
 
 
-def main():
+def luchtfoto(slug, O, uit):
+    """PDOK-luchtfoto (open data, CC BY 4.0) met de clubgebouwen rood omlijnd."""
+    from PIL import Image, ImageDraw
+    from geo import frame, to_world
+    d = json.load(open(os.path.join(HERE, "dossiers", slug + ".json")))
+    F = frame(d["footprint"])
+    im = Image.open(os.path.join(HERE, "dossiers", d["luchtfoto"]["file"])).convert("RGB")
+    W, H = im.size; bb = d["luchtfoto"]["bbox"]
+    P = lambda p: ((p[0] - bb[0]) / (bb[2] - bb[0]) * W, (bb[3] - p[1]) / (bb[3] - bb[1]) * H)
+    dr = ImageDraw.Draw(im)
+    rings = [d["footprint"]] + [d["context"][e["ctx"]]["ring"] for e in O.get("extra", [])]
+    for ring in rings:
+        dr.polygon([P(p) for p in ring], outline=(230, 40, 40), width=3)
+    im.save(uit, quality=90)
+
+
+def main(alleen=None):
     os.makedirs(UIT, exist_ok=True)
     html = os.path.join(HERE, "ontwerpen.html")
     three = os.path.join(SCRATCH, "three", "package")
     for p, slug in enumerate(VOLGORDE):
+        if alleen and slug not in alleen:
+            continue
         O = json.load(open(os.path.join(HERE, "ontwerp", slug + ".json")))
         d = os.path.join(UIT, slug)
         shutil.rmtree(d, ignore_errors=True)
@@ -67,10 +85,13 @@ def main():
             if os.path.exists(f):
                 shutil.copy(f, os.path.join(d, "06-" + os.path.basename(f).lower()))
         fotomap = os.path.join(HERE, "dossiers", slug + "-fotos")
-        bron = json.load(open(os.path.join(fotomap, "bron.json")))
+        bp = os.path.join(fotomap, "bron.json")
+        bron = json.load(open(bp)) if os.path.exists(bp) else {}
+        luchtfoto(slug, O, os.path.join(d, "08-luchtfoto-pdok.jpg"))
         # LEESMIJ
         L = [f"# Renderpakket {O['titel']}", "",
-             f"Status advertentie bij het maken van dit pakket: {'te koop' if bron.get('te_koop') else 'ONBEKEND'}, vraagprijs {bron.get('prijs')}, bron {bron.get('url')}.",
+             (f"Status advertentie bij het maken van dit pakket: {'te koop' if bron.get('te_koop') else 'ONBEKEND'}, vraagprijs {bron.get('prijs')}, bron {bron.get('url')}."
+              if bron else "Geen advertentiefoto's beschikbaar (funda in business blokkeert automatische toegang). Download de foto's zelf van de advertentie en geef ze bij de prompts mee; tot die tijd werk je vanuit de maquette en de luchtfoto."),
              "Foto's met 'foto' in de naam zijn van de makelaar: alleen voor eigen gebruik, niet publiceren.", "",
              "## Zo gebruik je dit in ChatGPT",
              "1. Start een nieuw gesprek. Upload eerst 06-kleur.png en 05-plattegrond: schrijf 'Dit is het kleurenplan en de plattegrond, onthoud ze voor alle beelden.'",
@@ -88,13 +109,16 @@ def main():
              "### B. Hele gebouw met het dak dicht",
              "Bestand: 03-maquette-dak-dicht.png", "", "```",
              "Turn this simple white model into a photorealistic aerial render from exactly the same angle. Keep the building shape and the surroundings. "
-             f"Roof: {O['dak']['tekst']} " + MAQ_STIJL.split(" Materials")[0], "```", ""]
+             f"Roof: {O['dak']['tekst_en']} " + MAQ_STIJL.split(" Materials")[0], "```", ""]
         for nr, naam, prompt in O.get("renders", {}).get("buiten", []):
             src = os.path.join(fotomap, f"foto-{nr:02d}.jpg")
             fn = f"07-buiten-{slugify(naam)}-foto-{nr:02d}.jpg"
             if os.path.exists(src):
                 shutil.copy(src, os.path.join(d, fn))
             L += [f"### Buiten: {naam}", f"Bestand: {fn}", "", "```", prompt + " Photorealistic, natural light, no text.", "```", ""]
+        L += ["### Luchtfoto met nieuw dak", "Bestand: 08-luchtfoto-pdok.jpg (open data PDOK, de clubgebouwen zijn rood omlijnd)", "", "```",
+              "This is a top-down aerial photo. Keep everything exactly as it is, except the buildings outlined in red: remove the red outline and show them renovated as a members club. "
+              f"Roof: {O['dak']['tekst_en']} Add greenery and trees on the outdoor space of the plot. Photorealistic aerial photo, same lighting and season.", "```", ""]
         L += ["## Ruimte voor ruimte", ""]
         for k, z in kamers:
             L += [f"### {z['naam']} ({z['m2']} m², {z['palet_naam'].lower()})", z["beschrijving"], ""]
@@ -119,4 +143,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:] or None)

@@ -150,6 +150,17 @@ def basis(slug):
     return d, loc(d["footprint"]), noord, ctx
 
 
+def gebouwen(O, fp, ctx):
+    """Hoofdgebouw plus extra gebouwen op het terrein (uit de context, op index). Geeft (gebouwen, context zonder die gebouwen)."""
+    G = [dict(naam="Hoofdgebouw", ring=fp, h=O["hoogte"])]
+    weg = set()
+    for e in O.get("extra", []):
+        c = ctx[e["ctx"]]
+        G.append(dict(naam=e["naam"], ring=c["ring"], h=e.get("h", c["h"])))
+        weg.add(e["ctx"])
+    return G, [c for i, c in enumerate(ctx) if i not in weg]
+
+
 def centroid(p):
     a = cx = cy = 0
     for i in range(len(p)):
@@ -163,7 +174,8 @@ def centroid(p):
 def tekening(slug, niveau=0, breedte=1400):
     O = json.load(open(os.path.join(HERE, "ontwerp", slug + ".json")))
     d, fp, noord, ctx = basis(slug)
-    xs = [p[0] for p in fp]; ys = [p[1] for p in fp]
+    G, ctx = gebouwen(O, fp, ctx)
+    xs = [p[0] for g in G for p in g["ring"]]; ys = [p[1] for g in G for p in g["ring"]]
     if niveau == 0:
         for b in O["buiten"]:
             if b["naam"] != "Straat":
@@ -183,7 +195,8 @@ def tekening(slug, niveau=0, breedte=1400):
             s.append(f'<polygon points="{pts(c["ring"])}" fill="#e7e3da" stroke="#cfc9bd" stroke-width="0.05"/>')
         for b in O["buiten"]:
             s.append(f'<polygon points="{pts(b["poly"])}" fill="{b["kleur"]}" fill-opacity="0.35"/>')
-    s.append(f'<polygon points="{pts(fp)}" fill="#ffffff"/>')
+    for g in G:
+        s.append(f'<polygon points="{pts(g["ring"])}" fill="#ffffff"/>')
     for z in O["zones"]:
         if z.get("n", 0) == niveau:
             s.append(f'<polygon points="{pts(z["poly"])}" fill="{z["kleur"]}" fill-opacity="0.42"/>')
@@ -199,12 +212,12 @@ def tekening(slug, niveau=0, breedte=1400):
     orde = {"kleed": 0, "box": 2, "bureau": 2, "cil": 3, "boog": 3, "plant": 4, "boom": 5, "ring": 4, "toren": 6, "v": 3}
     els = [e for e in O["elementen"] if e.get("n", 0) == niveau]
     for e in sorted(els, key=lambda e: orde.get(e["t"], 3)):
-        if e["t"] == "boom" and niveau == 0 and not inside(e["c"], fp):
-            s.append(element_svg(e))
-        elif e["t"] != "boom" or inside(e["c"], fp):
+        binnen = any(inside(e["c"], g["ring"]) for g in G)
+        if e["t"] != "boom" or niveau == 0 or binnen:
             s.append(element_svg(e))
     # gevel en pui
-    s.append(f'<polygon points="{pts(fp)}" fill="none" stroke="{INK}" stroke-width="0.32" stroke-linejoin="miter"/>')
+    for g in G:
+        s.append(f'<polygon points="{pts(g["ring"])}" fill="none" stroke="{INK}" stroke-width="0.32" stroke-linejoin="miter"/>')
     if niveau == 0:
         for (a, b) in O["pui"]:
             s.append(f'<line x1="{f(a[0])}" y1="{f(a[1])}" x2="{f(b[0])}" y2="{f(b[1])}" stroke="#fbf9f4" stroke-width="0.24"/>'

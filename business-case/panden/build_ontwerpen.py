@@ -13,11 +13,12 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import ontwerp  # noqa: E402
 import pand_case  # noqa: E402
-from tekening import basis, tekening  # noqa: E402
+from tekening import basis, gebouwen, tekening  # noqa: E402
 from layout import LAYOUTS  # noqa: E402
 
-VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a"]
-TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True, "den-bosch-eendenkooi-1a": False}
+VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "voorhout-dinsdagse-wetering-56a", "maarssen-herenweg-15"]
+TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True, "den-bosch-eendenkooi-1a": False,
+          "voorhout-dinsdagse-wetering-56a": True, "maarssen-herenweg-15": True}
 
 
 def werkplekken(O):
@@ -33,7 +34,8 @@ def werkplekken(O):
 def pand(slug):
     O = json.load(open(os.path.join(HERE, "ontwerp", slug + ".json")))
     d, fp, noord, ctx = basis(slug)
-    xs = [p[0] for p in fp]; ys = [p[1] for p in fp]
+    G, ctx = gebouwen(O, fp, ctx)
+    xs = [p[0] for g in G for p in g["ring"]]; ys = [p[1] for g in G for p in g["ring"]]
     cx, cz = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
     size = max(max(xs) - min(xs), max(ys) - min(ys))
     ctx = [c for c in ctx if math.dist(ontwerp_c(c["ring"]), (cx, cz)) < 75]
@@ -49,7 +51,7 @@ def pand(slug):
     plans = [dict(naam="Begane grond", svg=tekening(slug, 0))]
     if O.get("niveaus"):
         plans.append(dict(naam="Verdieping", svg=tekening(slug, 1)))
-    return dict(slug=slug, footprint=fp, context=ctx, ontwerp=O, cx=cx, cz=cz, size=size, noord=noord, kpi=kpi, terras=terras, plans=plans)
+    return dict(slug=slug, footprint=fp, gebouwen=G, context=ctx, ontwerp=O, cx=cx, cz=cz, size=size, noord=noord, kpi=kpi, terras=terras, plans=plans)
 
 
 def ontwerp_c(ring):
