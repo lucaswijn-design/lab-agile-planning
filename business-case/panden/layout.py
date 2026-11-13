@@ -338,7 +338,7 @@ if __name__ == "__main__":
 
 # Statuscheck 13 november 2026 (zoekmachines; funda in business blokkeert automatische controle)
 STATUS = {
-    "rotterdam-hillevliet-139": ("kandidaat, status bellen", "Vraagprijs € 950.000 k.k. bij Heritage Europe en Reliplan, aangeboden sinds 2024. "
+    "rotterdam-hillevliet-139": ("verkocht", "Verkocht (gecontroleerd door Lucas, 13 november 2026). Eerdere vermelding: " "Vraagprijs € 950.000 k.k. bij Heritage Europe en Reliplan, aangeboden sinds 2024. "
                                  "Geen verkoopbericht gevonden, maar ook niets recents: eerst bellen."),
     "tilburg-bredaseweg-443": ("kandidaat, prijs opvragen", "Prijs op aanvraag bij Raimond Weenink en op funda in business als beschikbaar; "
                                "advertentie is circa 589 dagen oud."),

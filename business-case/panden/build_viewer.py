@@ -20,7 +20,7 @@ from geo import frame, to_local  # noqa: E402
 from layout import AFGEVALLEN, LAYOUTS, STATUS, build  # noqa: E402
 import pand_case  # noqa: E402
 
-VOLGORDE = ["rotterdam-hillevliet-139", "tilburg-bredaseweg-443"]  # alleen aanbod dat als te koop staat
+VOLGORDE = ["tilburg-bredaseweg-443"]  # alleen aanbod dat als te koop staat
 AFGEVALLEN_TONEN = ["boxtel-bosscheweg-85", "amersfoort-stadsring-103", "den-haag-pomonaplein-49"]
 
 
