@@ -71,7 +71,7 @@ td.r,th.r{text-align:right;font-family:var(--f-mono)}
   <header style="display:grid;gap:14px">
     <div class="eyebrow">Het Clubhuis · ontwerp per locatie · november 2026</div>
     <h1>Ontwerpen per locatie</h1>
-    <p class="lead">Per pand een uitgewerkte indeling met ronde elementen, inrichting per ruimte in kleuren uit de natuur, een maquette met het dak eraf en een dakaanzicht. Alle vijf de panden stonden op 13 november 2026 nog als te koop of beschikbaar op de advertentiesite. Indicatief: maten en constructie nog controleren bij bezichtiging.</p>
+    <p class="lead">Per pand een uitgewerkte indeling voor 36 tot 40 werkplekken, met keuken, vergaderkamers, een afsluitbare gym uit de buurt van de werkplekken, ronde elementen, inrichting per ruimte in kleuren uit de natuur, een maquette met het dak eraf en een dakaanzicht. Alle vijf de panden stonden op 13 november 2026 nog als te koop of beschikbaar op de advertentiesite. Indicatief: maten en constructie nog controleren bij bezichtiging.</p>
     <nav class="picker" id="picker" aria-label="Kies een pand"></nav>
   </header>
 
@@ -100,6 +100,8 @@ td.r,th.r{text-align:right;font-family:var(--f-mono)}
       <div class="cams" id="cams"></div>
     </div>
     <aside class="side">
+      <div class="eyebrow">Gym en geluid</div>
+      <p id="p-geluid"></p>
       <div class="eyebrow">Dak</div>
       <p id="p-dak"></p>
       <div class="eyebrow">Lezen</div>
@@ -195,7 +197,7 @@ function element(g, e, y0){
       box(g, e.c, .08, .6, .7, e.a, '#2f3032', y0);
       const mc = [e.c[0] - .18*(-sa), e.c[1] - .18*ca];
       box(g, [e.c[0] + .2*sa, e.c[1] - .2*ca], 1.1, .04, .34, e.a, '#1f2022', y0 + .9);
-      cyl(g, [e.c[0] + .65*sa, e.c[1] - .65*ca], .26, .5, '#3a3b3d', y0);
+      const o = e.d/2 + .3; cyl(g, [e.c[0] + o*sa, e.c[1] - o*ca], .24, .5, '#3a3b3d', y0);
       break; }
     case 'box': {
       const s = e.soort;
@@ -237,6 +239,16 @@ function element(g, e, y0){
       add(g, extrude(sector(e.c, e.r - .14, e.r + .08, e.open + gat, e.open + 360 - gat), e.h, y0 + .16), mat(k), {edges:true});
       break; }
     case 'toren': toren(g, e, y0); break;
+    case 'wand': {
+      for (let i = 0; i < e.pts.length - 1; i++){
+        const A = e.pts[i], B = e.pts[i+1], L = Math.hypot(B[0] - A[0], B[1] - A[1]);
+        const opt = e.glas ? {mat: mat('#bcd3dc', {transparent:true, opacity:.3, roughness:.1}), cast:false} : {edges:true};
+        const m = box(g, [(A[0] + B[0])/2, (A[1] + B[1])/2], L, e.glas ? .06 : (e.dikte || .2), e.h, Math.atan2(B[1] - A[1], B[0] - A[0])*180/Math.PI, e.bestaand ? '#e4e0d8' : '#efebe3', y0 + .15, opt);
+        if (e.glas) edges(m);
+      }
+      break; }
+    case 'deur': if (e.toegang){ const a = e.a*Math.PI/180; box(g, [e.c[0] + Math.cos(a)*(e.w/2 + .15), e.c[1] + Math.sin(a)*(e.w/2 + .15)], .12, .3, .16, e.a, '#a8332e', y0 + 1.2); } break;
+    case 'label': break;
     case 'plant': {
       cyl(g, e.c, e.r*.55, .45, '#b8633f', y0 + .16, {rt: e.r*.65});
       sphere(g, e.c, e.r, y0 + .45 + e.r*.9, GROEN[Math.round(e.c[0]*7) % 4]);
@@ -414,10 +426,12 @@ function kies(i){
   document.getElementById('p-sub').textContent = O.sub;
   document.getElementById('p-concept').textContent = O.concept;
   document.getElementById('p-dak').textContent = O.dak.tekst;
+  document.getElementById('p-geluid').textContent = O.geluid || '';
   const k = P.kpi;
   document.getElementById('p-kpis').innerHTML = [
     ['Vraagprijs', euro(k.koop)], ['Alles in', euro(k.capex)], ['Om te draaien, vol lid', euro(k.fee) + ' /mnd'], ['Inleg terug na 5 jaar', euro(k.inleg) + ' /mnd'],
-    ['Lening', Math.round(k.ltv*100) + '%'], ['Werkplekken', k.werkplekken]
+    ['Lening', Math.round(k.ltv*100) + '%'], ['Werkplekken', k.werkplekken + ' (' + k.bureaus + ' zit-sta)'],
+    ['Vergaderkamers', (k.vergaderkamers || []).map(p => 'voor ' + p).join(', ') || 'geen'], ['Belcellen', k.belcellen]
   ].map(([a, b]) => `<div class="kpi"><span class="k">${a}</span><span class="v">${b}</span></div>`).join('');
   const lv = !!(O.niveaus && O.niveaus['1']); document.getElementById('lvl').hidden = !lv; showL1 = true;
   bouw(P); setL1(true); setMode('open');

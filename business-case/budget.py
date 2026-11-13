@@ -88,7 +88,7 @@ def items(k: B):
     add("Sanitair", "Warmtepompboiler 300 liter", 1, "st", 3_500, "schatting", 0.5)
     add("Sanitair", "Leidingwerk en riolering, materiaal", 1, "post", 4_000, "schatting", 0.5)
     add("Sanitair", "Loodgieter", 140, "uur", ZZP["loodgieter"], "bron", 0.5)
-    add("Sanitair", "Keuken 4 m (IKEA), koelkasten, vaatwasser, inductie, montage", 1, "post", 8_500, "schatting")
+    add("Sanitair", "Keuken 6 m + kookeiland (IKEA METOD, composiet blad), 2 vaatwassers, combi-stoomoven, inductie, 2 koelkasten, afzuiging, montage", 1, "post", 16_000, "schatting")
 
     # --- Installaties
     add("Installaties", "Groepenkast, bekabeling, wandcontacten, data: materiaal", 1, "post", 9_000, "schatting", 0.6)
@@ -113,7 +113,7 @@ def items(k: B):
 
     # --- Werken
     add("Werken", "Zit-sta onderstel elektrisch (IKEA MITTZON)", 16, "st", 340, "bron", 0.3)
-    add("Werken", "Bureaublad 160 x 80 eiken multiplex", 16, "st", 120, "schatting", 0.2)
+    add("Werken", "Bureaublad 140 x 70 eiken multiplex", 16, "st", 100, "schatting", 0.2)
     add("Werken", "Refurbished Steelcase Leap V2 (excl. btw)", 16, "st", 500, "bron", 0.4)
     add("Werken", "Monitor 27 inch met USB-C hub (Dell P2725HE, excl. btw)", 16, "st", 219, "bron", 0.3)
     add("Werken", "Tweede monitor 27 inch Full HD", 16, "st", 150, "schatting", 0.3)

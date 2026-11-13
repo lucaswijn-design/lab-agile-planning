@@ -22,13 +22,22 @@ TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True
 
 
 def werkplekken(O):
+    """Zit-sta bureaus + plekken aan de grote tafel + krukken aan de raambar (60 cm per kruk)."""
     n = sum(1 for e in O["elementen"] if e["t"] == "bureau")
     for e in O["elementen"]:
-        if e["t"] == "box" and e.get("soort") == "werktafel":
-            n += 2 * int(e["w"] / 1.0)
+        if e["t"] == "box" and e.get("soort") in ("grote tafel", "werktafel"):
+            n += e.get("pers") or 2 * int(e["w"] / 0.7)
         if e["t"] == "box" and e.get("soort") == "raambar":
-            n += int(e["w"] / 0.8)
+            n += int(e["w"] / 0.6)
     return n
+
+
+def telling(O):
+    E = O["elementen"]
+    return dict(bureaus=sum(1 for e in E if e["t"] == "bureau"),
+                vergaderkamers=[e.get("pers", 8) for e in E if e.get("soort") == "vergaderkamer"],
+                belcellen=sum(1 for e in E if e.get("soort") == "belcel"),
+                werkplekken=werkplekken(O))
 
 
 def pand(slug):
@@ -42,7 +51,7 @@ def pand(slug):
     t = TORENS[slug]
     r = pand_case.run(slug, torens=t)
     kpi = dict(koop=LAYOUTS[slug]["koop"]["totaal"], capex=r["capex"], fee=r["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t),
-               ltv=r["ltv"], werkplekken=werkplekken(O))
+               ltv=r["ltv"], werkplekken=werkplekken(O), **{k: v for k, v in telling(O).items() if k != 'werkplekken'})
     rows = ontwerp.dakterras_rows(slug)
     terras = None
     if rows:

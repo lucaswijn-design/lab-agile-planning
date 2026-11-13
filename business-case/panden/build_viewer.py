@@ -19,6 +19,7 @@ sys.path.insert(0, HERE)
 from geo import frame, to_local  # noqa: E402
 from layout import AFGEVALLEN, LAYOUTS, STATUS, build  # noqa: E402
 import pand_case  # noqa: E402
+from build_ontwerpen import TORENS  # noqa: E402
 
 VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a"]  # alleen aanbod dat op 13-11-2026 als te koop staat
 AFGEVALLEN_TONEN = ["bergen-op-zoom-bosstraat-38", "capelle-lentedans-50a", "amersfoort-computerweg-37", "helmond-mierloseweg-130", "dordrecht-houttuinen-32a", "amersfoort-stadsring-103", "boxtel-bosscheweg-85", "den-haag-pomonaplein-49"]
@@ -63,14 +64,14 @@ def main():
         d, b = basic(slug)
         if slug in LAYOUTS:
             v, q = build(slug)
-            r = pand_case.run(slug)
-            r90 = pand_case.run(slug, n_club=LAYOUTS[slug]["leden"]["n_club"] + 30)
+            r = pand_case.run(slug, torens=TORENS.get(slug, False))
+            r90 = pand_case.run(slug, n_club=LAYOUTS[slug]["leden"]["n_club"] + 30, torens=TORENS.get(slug, False))
             fin = {k: r[k] for k in ("capex", "verbouw_inrichting", "huur", "opex", "lening", "ltv", "dscr", "resultaat",
                                      "fee_vol_nodig", "fee_deel_nodig", "jaren_schuldvrij", "exitwaarde",
                                      "exit_per_vol_versneld", "groepen")}
-            fin["fee_inleg_terug"] = pand_case.fee_inleg_terug(slug)
+            fin["fee_inleg_terug"] = pand_case.fee_inleg_terug(slug, torens=TORENS.get(slug, False))
             extra = LAYOUTS[slug]["leden"]["n_club"] + 30
-            fin["fee_inleg_terug_90"] = pand_case.fee_inleg_terug(slug, n_club=extra)
+            fin["fee_inleg_terug_90"] = pand_case.fee_inleg_terug(slug, n_club=extra, torens=TORENS.get(slug, False))
             fin["fee_vol_nodig_90"] = r90["fee_vol_nodig"]
             fin["extra_club"] = extra
             fin["opex_rows"] = r["opex_rows"]

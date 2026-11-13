@@ -94,10 +94,30 @@ def element_svg(e):
     if t == "bureau":
         c, a = e["c"], e["a"]
         ca, sa = math.cos(math.radians(a)), math.sin(math.radians(a))
-        ch = (c[0] - 0.62 * sa * -1 * 0 + 0.62 * -sa * -1, c[1] + 0.62 * ca * -1 * -1)
-        ch = (c[0] + 0.62 * sa, c[1] - 0.62 * ca)
+        o = e["d"] / 2 + 0.28
+        ch = (c[0] + o * sa, c[1] - o * ca)
         return (f'<rect {rect(c, e["w"], e["d"], a)} fill="#efe7d6" stroke="{INK}" stroke-width="0.03"/>'
                 f'<circle cx="{f(ch[0])}" cy="{f(ch[1])}" r="0.24" fill="#fff" stroke="{INK}" stroke-width="0.025"/>')
+    if t == "wand":
+        p = e["pts"]
+        if e.get("glas"):
+            return (f'<polyline points="{pts(p)}" fill="none" stroke="#5c7a88" stroke-width="0.14"/>'
+                    f'<polyline points="{pts(p)}" fill="none" stroke="#fbf9f4" stroke-width="0.05"/>')
+        kl = "#55514a" if e.get("bestaand") else INK
+        return f'<polyline points="{pts(p)}" fill="none" stroke="{kl}" stroke-width="{max(0.2, e.get("dikte", 0.2))}" stroke-linecap="butt"/>'
+    if t == "deur":
+        c, a, w = e["c"], math.radians(e["a"]), e.get("w", 1.0)
+        ux, uy = math.cos(a), math.sin(a)
+        h0 = (c[0] - ux * w / 2, c[1] - uy * w / 2); h1 = (c[0] + ux * w / 2, c[1] + uy * w / 2)
+        nx, ny = -uy, ux
+        tip = (h0[0] + nx * w, h0[1] + ny * w)
+        s = (f'<line x1="{f(h0[0])}" y1="{f(h0[1])}" x2="{f(tip[0])}" y2="{f(tip[1])}" stroke="{INK}" stroke-width="0.04"/>'
+             f'<path d="M{f(tip[0])} {f(tip[1])} A {w} {w} 0 0 0 {f(h1[0])} {f(h1[1])}" fill="none" stroke="{INK}" stroke-width="0.025" stroke-dasharray="0.08 0.06"/>')
+        if e.get("toegang"):
+            s += f'<rect x="{f(h1[0]+nx*0.15-0.09)}" y="{f(h1[1]+ny*0.15-0.09)}" width="0.18" height="0.18" fill="#a8332e"/>'
+        return s
+    if t == "label":
+        return ""
     if t == "box":
         if e.get("glas"):
             return f'<rect {rect(e["c"], e["w"], e["d"], e["a"])} fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>'
@@ -209,10 +229,10 @@ def tekening(slug, niveau=0, breedte=1400):
             c = centroid(vd["poly"])
             ann.append(f'<text x="{f(c[0])}" y="{f(-c[1])}" font-size="0.62" text-anchor="middle" fill="#55514a" font-style="italic">{esc(vd["naam"])}</text>')
     # elementen: eerst vloerachtige, dan meubels, dan torens
-    orde = {"kleed": 0, "box": 2, "bureau": 2, "cil": 3, "boog": 3, "plant": 4, "boom": 5, "ring": 4, "toren": 6, "v": 3}
+    orde = {"kleed": 0, "wand": 5, "deur": 5, "label": 9, "box": 2, "bureau": 2, "cil": 3, "boog": 3, "plant": 4, "boom": 5, "ring": 4, "toren": 6, "v": 3}
     els = [e for e in O["elementen"] if e.get("n", 0) == niveau]
     for e in sorted(els, key=lambda e: orde.get(e["t"], 3)):
-        binnen = any(inside(e["c"], g["ring"]) for g in G)
+        binnen = "c" not in e or any(inside(e["c"], g["ring"]) for g in G)
         if e["t"] != "boom" or niveau == 0 or binnen:
             s.append(element_svg(e))
     # gevel en pui
@@ -222,6 +242,10 @@ def tekening(slug, niveau=0, breedte=1400):
         for (a, b) in O["pui"]:
             s.append(f'<line x1="{f(a[0])}" y1="{f(a[1])}" x2="{f(b[0])}" y2="{f(b[1])}" stroke="#fbf9f4" stroke-width="0.24"/>'
                      f'<line x1="{f(a[0])}" y1="{f(a[1])}" x2="{f(b[0])}" y2="{f(b[1])}" stroke="{INK}" stroke-width="0.04"/>')
+    for e in els:
+        if e["t"] == "label":
+            ann.append(f'<text x="{f(e["c"][0])}" y="{f(-e["c"][1] + 0.18)}" font-size="0.42" font-family="{MONO}" text-anchor="middle" fill="#55514a" '
+                       f'paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">{esc(e["tekst"])}</text>')
     s = head + s + ["</g>"] + ann
     # labels
     for z in O["zones"]:

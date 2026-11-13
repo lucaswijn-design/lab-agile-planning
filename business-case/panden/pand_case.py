@@ -27,6 +27,9 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False, extra=Non
     n_deel = L["leden"]["n_deel"] if n_deel is None else n_deel
     n_club = L["leden"]["n_club"] if n_club is None else n_club
     base, _ = budget.items(budget.B(n_vol=n_vol, n_deel=n_deel, n_club=n_club))
+    import ontwerp
+    if slug in ontwerp.ONTWERPEN:  # bureaus tellen uit de uitgewerkte indeling
+        q = dict(q, desks=sum(1 for e in ontwerp.ONTWERPEN[slug]["elementen"] if e["t"] == "bureau"))
     R = []
 
     def add(g, post, h, e, p, label, gen=0.0):
@@ -98,6 +101,8 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False, extra=Non
     if torens and not L.get("sanitair_bestaand"):
         import sanitairtorens
         R.extend(sanitairtorens.rows()[0])
+    if slug in ontwerp.ONTWERPEN:
+        R.extend(ontwerp.inbouw_rows(slug, q["gym_m2"]))
     for r in extra or []:
         R.append(dict(r))
     # sauna geschrapt in versie 8; Wellness-rijen alleen als budget.B(sauna=True)
