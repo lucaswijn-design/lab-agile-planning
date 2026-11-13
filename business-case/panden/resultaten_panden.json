@@ -1,0 +1,2104 @@
+{
+ "best-de-run-5": {
+  "slug": "best-de-run-5",
+  "capex": 2918180,
+  "groepen": {
+   "Pand": 2176619,
+   "Bouwkundig": 184834,
+   "Sanitair": 33755,
+   "Installaties": 80320,
+   "Verlichting": 7440,
+   "Werken": 49476,
+   "Gym": 34046,
+   "Café & bieb": 44100,
+   "Wellness": 28580,
+   "Energie": 43500,
+   "Buiten": 31465,
+   "Bijkomend": 204045
+  },
+  "verbouw_inrichting": 741561,
+  "opex": 154881,
+  "opex_rows": [
+   [
+    "Schoonmaak (5 dagen x 4 uur x € 30)",
+    31200
+   ],
+   [
+    "Management initiatiefnemer",
+    18000
+   ],
+   [
+    "Klusjes en storingen",
+    6000
+   ],
+   [
+    "Groenbeheer en planten",
+    4000
+   ],
+   [
+    "Energie netto",
+    8472
+   ],
+   [
+    "Brandhout",
+    5000
+   ],
+   [
+    "Onderhoud pand en terrein",
+    15403
+   ],
+   [
+    "Vervangingsreserve inventaris (10%)",
+    16364
+   ],
+   [
+    "Verzekeringen",
+    4065
+   ],
+   [
+    "OZB, waterschap, riool",
+    6249
+   ],
+   [
+    "Internet, software, toegangsapp",
+    5000
+   ],
+   [
+    "Accountant en administratie",
+    12000
+   ],
+   [
+    "Koffie-apparatuur, verbruik",
+    4000
+   ],
+   [
+    "Community en events",
+    5000
+   ],
+   [
+    "Verhuurbeheer en leegstandsrisico (8% van de huur)",
+    7090
+   ],
+   [
+    "Onvoorzien exploitatie (5%)",
+    7038
+   ]
+  ],
+  "huur": 88620,
+  "inleg": 720000,
+  "lening": 2198180,
+  "ltv": 0.75,
+  "dscr": 1.24,
+  "resultaat": 43745,
+  "fee_vol_nodig": 362,
+  "fee_deel_nodig": 257,
+  "jaren_schuldvrij": 15,
+  "exitwaarde": 2374176,
+  "exit_per_vol_versneld": 14847,
+  "exit_dekking": 0.99,
+  "q": {
+   "club_m2": 620,
+   "verhuur_m2": 706,
+   "dak_club_m2": 620,
+   "gevel_isolatie_m2": 316,
+   "pui_m2": 42,
+   "brandwand_m2": 223,
+   "terras_m2": 69,
+   "tuin_m2": 479,
+   "bomen_buiten": 8,
+   "buiten_sauna": true,
+   "gym_m2": 173,
+   "hoogte": 7.0,
+   "perceel_m2": 3074
+  },
+  "rows": [
+   {
+    "groep": "Pand",
+    "post": "Hal 1606 m2",
+    "h": 1606,
+    "e": "m2",
+    "prijs": 850,
+    "totaal": 1365100,
+    "label": "schatting",
+    "gen": 1.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Kantoor 131 m2",
+    "h": 131,
+    "e": "m2",
+    "prijs": 1200,
+    "totaal": 157200,
+    "label": "schatting",
+    "gen": 1.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Bedrijfswoning",
+    "h": 1,
+    "e": "post",
+    "prijs": 450000,
+    "totaal": 450000,
+    "label": "schatting",
+    "gen": 1.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Overdrachtsbelasting 10,4% (bedrijfsdeel)",
+    "h": 1522300,
+    "e": "EUR",
+    "prijs": 0.104,
+    "totaal": 158319,
+    "label": "bron",
+    "gen": 0.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Overdrachtsbelasting 8% (woning, geen hoofdverblijf)",
+    "h": 450000,
+    "e": "EUR",
+    "prijs": 0.08,
+    "totaal": 36000,
+    "label": "bron",
+    "gen": 0.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Notaris, taxatie, bouwkundige keuring",
+    "h": 1,
+    "e": "post",
+    "prijs": 10000,
+    "totaal": 10000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Asbestinventarisatie",
+    "h": 1,
+    "e": "post",
+    "prijs": 1500,
+    "totaal": 1500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Reserve asbestsanering dak (bouwjaar voor 1994)",
+    "h": 1,
+    "e": "post",
+    "prijs": 25000,
+    "totaal": 25000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Dakisolatie club PIR 100 mm, materiaal",
+    "h": 620,
+    "e": "m2",
+    "prijs": 25,
+    "totaal": 15500,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Dakisolatie, timmerman 0,4 u/m2",
+    "h": 248.0,
+    "e": "uur",
+    "prijs": 49,
+    "totaal": 12152,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Gevelisolatie binnenzijde tot 4,5 m",
+    "h": 316,
+    "e": "m2",
+    "prijs": 40,
+    "totaal": 12640,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Lichtstraten",
+    "h": 6,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 15000,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Brandscheidende wand club / verhuurdeel (EI60)",
+    "h": 223,
+    "e": "m2",
+    "prijs": 90,
+    "totaal": 20070,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Glazen pui, aluminium HR+++ triple glas",
+    "h": 42,
+    "e": "m2",
+    "prijs": 1000,
+    "totaal": 42000,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Betonvloer schuren en coaten",
+    "h": 447,
+    "e": "m2",
+    "prijs": 22,
+    "totaal": 9834,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Binnenwanden metal stud + OSB",
+    "h": 150,
+    "e": "m2",
+    "prijs": 60,
+    "totaal": 9000,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Glazen scheidingswand gym en vergaderruimte",
+    "h": 25,
+    "e": "m2",
+    "prijs": 320,
+    "totaal": 8000,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Akoestische plafondeilanden en wandpanelen",
+    "h": 200,
+    "e": "m2",
+    "prijs": 40,
+    "totaal": 8000,
+    "label": "bron",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Sauswerk wanden en staal",
+    "h": 682.0,
+    "e": "m2",
+    "prijs": 9,
+    "totaal": 6138,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Toiletten incl. 1 invalidentoilet (pot, fontein, scheidingswand)",
+    "h": 4,
+    "e": "st",
+    "prijs": 900,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Douches (thermostaatkraan, regendouche, afvoergoot)",
+    "h": 4,
+    "e": "st",
+    "prijs": 700,
+    "totaal": 2800,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Tegelwerk douches en kleedruimte (materiaal + zetten)",
+    "h": 45,
+    "e": "m2",
+    "prijs": 75,
+    "totaal": 3375,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Warmtepompboiler 300 liter",
+    "h": 1,
+    "e": "st",
+    "prijs": 3500,
+    "totaal": 3500,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Leidingwerk en riolering, materiaal",
+    "h": 1,
+    "e": "post",
+    "prijs": 4000,
+    "totaal": 4000,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Loodgieter",
+    "h": 140,
+    "e": "uur",
+    "prijs": 57,
+    "totaal": 7980,
+    "label": "bron",
+    "gen": 0.5
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Keuken 4 m (IKEA), koelkasten, vaatwasser, inductie, montage",
+    "h": 1,
+    "e": "post",
+    "prijs": 8500,
+    "totaal": 8500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Installaties",
+    "post": "Groepenkast, bekabeling, wandcontacten, data: materiaal",
+    "h": 1,
+    "e": "post",
+    "prijs": 9000,
+    "totaal": 9000,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Elektricien",
+    "h": 220,
+    "e": "uur",
+    "prijs": 56,
+    "totaal": 12320,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Lucht-lucht warmtepompen, 4 buitenunits met 12 binnenunits",
+    "h": 4,
+    "e": "systeem",
+    "prijs": 5500,
+    "totaal": 22000,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Industriële plafondventilatoren (luchtmenging)",
+    "h": 2,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 5000,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Installaties",
+    "post": "WTW-ventilatie, 2 units + kanalen + afzuiging sanitair",
+    "h": 1,
+    "e": "post",
+    "prijs": 17500,
+    "totaal": 17500,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Brandmelders, noodverlichting, blusmiddelen",
+    "h": 1,
+    "e": "post",
+    "prijs": 6000,
+    "totaal": 6000,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Installaties",
+    "post": "Toegangssysteem met app, 6 deuren + 4 camera's",
+    "h": 1,
+    "e": "post",
+    "prijs": 4500,
+    "totaal": 4500,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Installaties",
+    "post": "Wifi: 6 access points, switch, router, Starlink backup",
+    "h": 1,
+    "e": "post",
+    "prijs": 4000,
+    "totaal": 4000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Industriële LED-hanglampen (1 per 15 m2)",
+    "h": 40,
+    "e": "st",
+    "prijs": 90,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Sfeerverlichting en spots op rails",
+    "h": 30,
+    "e": "st",
+    "prijs": 40,
+    "totaal": 1200,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Bureaulampen",
+    "h": 24,
+    "e": "st",
+    "prijs": 45,
+    "totaal": 1080,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Buitenverlichting",
+    "h": 10,
+    "e": "st",
+    "prijs": 60,
+    "totaal": 600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Groeilampen voor planten",
+    "h": 12,
+    "e": "st",
+    "prijs": 80,
+    "totaal": 960,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Zit-sta onderstel elektrisch (IKEA MITTZON)",
+    "h": 24,
+    "e": "st",
+    "prijs": 340,
+    "totaal": 8160,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Werken",
+    "post": "Bureaublad 160 x 80 eiken multiplex",
+    "h": 24,
+    "e": "st",
+    "prijs": 120,
+    "totaal": 2880,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Werken",
+    "post": "Refurbished Steelcase Leap V2 (excl. btw)",
+    "h": 24,
+    "e": "st",
+    "prijs": 500,
+    "totaal": 12000,
+    "label": "bron",
+    "gen": 0.4
+   },
+   {
+    "groep": "Werken",
+    "post": "Monitor 27 inch met USB-C hub (Dell P2725HE, excl. btw)",
+    "h": 24,
+    "e": "st",
+    "prijs": 219,
+    "totaal": 5256,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Werken",
+    "post": "Tweede monitor 27 inch Full HD",
+    "h": 24,
+    "e": "st",
+    "prijs": 150,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Werken",
+    "post": "Dubbele monitorarm",
+    "h": 24,
+    "e": "st",
+    "prijs": 60,
+    "totaal": 1440,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Werken",
+    "post": "Lange werktafel staal + hout, 12 plekken",
+    "h": 2,
+    "e": "st",
+    "prijs": 800,
+    "totaal": 1600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Stoelen werktafel (tweedehands design)",
+    "h": 12,
+    "e": "st",
+    "prijs": 120,
+    "totaal": 1440,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Vergaderruimte: tafel, 8 stoelen, 55 inch scherm, camera + speaker",
+    "h": 1,
+    "e": "post",
+    "prijs": 4500,
+    "totaal": 4500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Belcellen zelfgebouwd (frame, akoestiek, deur, ventilator)",
+    "h": 2,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 5000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Lockers",
+    "h": 60,
+    "e": "st",
+    "prijs": 60,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Gym",
+    "post": "ATX power rack PRX-710",
+    "h": 4,
+    "e": "st",
+    "prijs": 800,
+    "totaal": 3200,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "ATX cable half rack met 2 x 90 kg",
+    "h": 1,
+    "e": "st",
+    "prijs": 2950,
+    "totaal": 2950,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Olympische halterstangen + 1 trapbar",
+    "h": 5,
+    "e": "st",
+    "prijs": 240,
+    "totaal": 1200,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Bumper plates (4 sets van 150 kg)",
+    "h": 600,
+    "e": "kg",
+    "prijs": 3.83,
+    "totaal": 2298,
+    "label": "bron",
+    "gen": 0.4
+   },
+   {
+    "groep": "Gym",
+    "post": "Dumbbells hex 2,5 tot 40 kg (16 paar, 680 kg) + rek",
+    "h": 680,
+    "e": "kg",
+    "prijs": 4.1,
+    "totaal": 2788,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Gym",
+    "post": "Kettlebells 8 tot 32 kg (2 sets)",
+    "h": 240,
+    "e": "kg",
+    "prijs": 3,
+    "totaal": 720,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Gym",
+    "post": "Verstelbare bankjes",
+    "h": 6,
+    "e": "st",
+    "prijs": 250,
+    "totaal": 1500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Concept2 RowErg",
+    "h": 2,
+    "e": "st",
+    "prijs": 1195,
+    "totaal": 2390,
+    "label": "bron",
+    "gen": 0.5
+   },
+   {
+    "groep": "Gym",
+    "post": "Concept2 SkiErg + BikeErg + airbike",
+    "h": 1,
+    "e": "set",
+    "prijs": 3250,
+    "totaal": 3250,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Gym",
+    "post": "Loopband (tweedehands, commercieel)",
+    "h": 1,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Boxen, banden, medicijnballen, ringen, matten, landmine",
+    "h": 1,
+    "e": "post",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Gym",
+    "post": "Rubber sportvloer 30 mm",
+    "h": 150,
+    "e": "m2",
+    "prijs": 35,
+    "totaal": 5250,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Gym",
+    "post": "Spiegels en speaker",
+    "h": 1,
+    "e": "post",
+    "prijs": 1000,
+    "totaal": 1000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Gym",
+    "post": "Buitenrig en sprintstrook",
+    "h": 1,
+    "e": "post",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Tweedehands La Marzocco Linea 3-groeps, gereviseerd",
+    "h": 1,
+    "e": "st",
+    "prijs": 7500,
+    "totaal": 7500,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "2 tweedehands molens (Mazzer of Mahlkönig)",
+    "h": 2,
+    "e": "st",
+    "prijs": 1200,
+    "totaal": 2400,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Waterfilter, knockbox, pitchers, kopjes",
+    "h": 1,
+    "e": "post",
+    "prijs": 1500,
+    "totaal": 1500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Bar zelfgebouwd (staal + hout)",
+    "h": 1,
+    "e": "post",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Boeken tweedehands: self-help, psychologie, geld, biografie",
+    "h": 1000,
+    "e": "st",
+    "prijs": 6,
+    "totaal": 6000,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Nieuwe titels die tweedehands lastig zijn",
+    "h": 100,
+    "e": "st",
+    "prijs": 20,
+    "totaal": 2000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Boekenwand staal + steigerhout 8 m x 2,4 m + rolladder",
+    "h": 1,
+    "e": "post",
+    "prijs": 2900,
+    "totaal": 2900,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Lounge: 4 banken, 10 fauteuils, bijzettafels, kleden (tweedehands)",
+    "h": 1,
+    "e": "post",
+    "prijs": 4200,
+    "totaal": 4200,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Cafétafels en 24 stoelen (tweedehands)",
+    "h": 1,
+    "e": "post",
+    "prijs": 2100,
+    "totaal": 2100,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Bomen binnen 2 tot 2,5 m (ficus, strelitzia, olijf)",
+    "h": 10,
+    "e": "st",
+    "prijs": 250,
+    "totaal": 2500,
+    "label": "bron",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Middelgrote planten + hangplanten + potten en bakken",
+    "h": 1,
+    "e": "post",
+    "prijs": 5000,
+    "totaal": 5000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Groene wand (mos of levende wand)",
+    "h": 10,
+    "e": "m2",
+    "prijs": 250,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Vintage decoratie en kunst",
+    "h": 1,
+    "e": "post",
+    "prijs": 3000,
+    "totaal": 3000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Wellness",
+    "post": "Saunahut 3 x 4 m, 12 pers., thermowood + isolatie + glazen deur",
+    "h": 1,
+    "e": "post",
+    "prijs": 9000,
+    "totaal": 9000,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Wellness",
+    "post": "Harvia Legend 240 houtkachel + stenen + rookkanaal",
+    "h": 1,
+    "e": "post",
+    "prijs": 2700,
+    "totaal": 2700,
+    "label": "bron",
+    "gen": 0.4
+   },
+   {
+    "groep": "Wellness",
+    "post": "Bouw saunahut, timmerman",
+    "h": 120,
+    "e": "uur",
+    "prijs": 49,
+    "totaal": 5880,
+    "label": "bron",
+    "gen": 0.4
+   },
+   {
+    "groep": "Wellness",
+    "post": "Koudwaterbad 1.000 l met eenvoudige koeling",
+    "h": 1,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Wellness",
+    "post": "Houtgestookte hot tub 6 pers.",
+    "h": 1,
+    "e": "st",
+    "prijs": 4500,
+    "totaal": 4500,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Wellness",
+    "post": "Buitendouches, ligbedden, haken, vlonder rond sauna",
+    "h": 1,
+    "e": "post",
+    "prijs": 4000,
+    "totaal": 4000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Energie",
+    "post": "Zonnepanelen op het haldak",
+    "h": 40,
+    "e": "kWp",
+    "prijs": 750,
+    "totaal": 30000,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Energie",
+    "post": "Batterij",
+    "h": 30,
+    "e": "kWh",
+    "prijs": 450,
+    "totaal": 13500,
+    "label": "bron",
+    "gen": 0.5
+   },
+   {
+    "groep": "Buiten",
+    "post": "Onttegelen en groen aanleggen",
+    "h": 479,
+    "e": "m2",
+    "prijs": 25,
+    "totaal": 11975,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Buitenwerkplekken: 4 tafels met stroom + buitenrig",
+    "h": 1,
+    "e": "post",
+    "prijs": 5500,
+    "totaal": 5500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Buiten",
+    "post": "Terras: houten vlonder met overkapping",
+    "h": 69,
+    "e": "m2",
+    "prijs": 110,
+    "totaal": 7590,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Bomen buiten",
+    "h": 8,
+    "e": "st",
+    "prijs": 300,
+    "totaal": 2400,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Fietsenstalling 40 plekken",
+    "h": 1,
+    "e": "post",
+    "prijs": 3000,
+    "totaal": 3000,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Parkeerplaatsen belijnen",
+    "h": 1,
+    "e": "post",
+    "prijs": 1000,
+    "totaal": 1000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwtekeningen en interieurontwerp (familie)",
+    "h": 1,
+    "e": "post",
+    "prijs": 8000,
+    "totaal": 8000,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Constructeur en brandveiligheidsadvies",
+    "h": 1,
+    "e": "post",
+    "prijs": 6500,
+    "totaal": 6500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Afwijking omgevingsplan: onderbouwing + leges",
+    "h": 1,
+    "e": "post",
+    "prijs": 15500,
+    "totaal": 15500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Afbouwmanager (vriend), 6 maanden halftime",
+    "h": 600,
+    "e": "uur",
+    "prijs": 50,
+    "totaal": 30000,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwplaats: hoogwerker, afvalcontainers",
+    "h": 1,
+    "e": "post",
+    "prijs": 6300,
+    "totaal": 6300,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Notaris en statuten coöperatie",
+    "h": 1,
+    "e": "post",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Projectleiding initiatiefnemer (3%)",
+    "h": 537516,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 16125,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Onvoorzien (10% excl. pand)",
+    "h": 634941,
+    "e": "EUR",
+    "prijs": 0.1,
+    "totaal": 63494,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwrente en afsluitkosten (1,5%)",
+    "h": 2875054,
+    "e": "EUR",
+    "prijs": 0.015,
+    "totaal": 43126,
+    "label": "schatting",
+    "gen": 0.0
+   }
+  ],
+  "fee_inleg_terug": 451,
+  "fee_inleg_terug_90": 380,
+  "fee_vol_nodig_90": 290
+ },
+ "amersfoort-birkt-21": {
+  "slug": "amersfoort-birkt-21",
+  "capex": 1911920,
+  "groepen": {
+   "Pand": 1390000,
+   "Bouwkundig": 77896,
+   "Sanitair": 33755,
+   "Installaties": 63820,
+   "Verlichting": 7440,
+   "Werken": 49476,
+   "Gym": 34046,
+   "Café & bieb": 44100,
+   "Wellness": 14730,
+   "Energie": 13500,
+   "Buiten": 18020,
+   "Bijkomend": 165137
+  },
+  "verbouw_inrichting": 521920,
+  "opex": 130334,
+  "opex_rows": [
+   [
+    "Schoonmaak (5 dagen x 4 uur x € 30)",
+    31200
+   ],
+   [
+    "Management initiatiefnemer",
+    18000
+   ],
+   [
+    "Klusjes en storingen",
+    5000
+   ],
+   [
+    "Groenbeheer en planten",
+    2500
+   ],
+   [
+    "Energie netto",
+    12547
+   ],
+   [
+    "Brandhout",
+    0
+   ],
+   [
+    "Onderhoud pand en terrein",
+    9360
+   ],
+   [
+    "Vervangingsreserve inventaris (10%)",
+    14979
+   ],
+   [
+    "Verzekeringen",
+    2629
+   ],
+   [
+    "OZB, waterschap, riool",
+    3913
+   ],
+   [
+    "Internet, software, toegangsapp",
+    5000
+   ],
+   [
+    "Accountant en administratie",
+    10000
+   ],
+   [
+    "Koffie-apparatuur, verbruik",
+    4000
+   ],
+   [
+    "Community en events",
+    5000
+   ],
+   [
+    "Onvoorzien exploitatie (5%)",
+    6206
+   ]
+  ],
+  "huur": 0,
+  "inleg": 720000,
+  "lening": 1191920,
+  "ltv": 0.62,
+  "dscr": 1.64,
+  "resultaat": 63876,
+  "fee_vol_nodig": 321,
+  "fee_deel_nodig": 228,
+  "jaren_schuldvrij": 10,
+  "exitwaarde": 1492554,
+  "exit_per_vol_versneld": 16887,
+  "exit_dekking": 1.13,
+  "q": {
+   "club_m2": 784,
+   "verhuur_m2": 0,
+   "dak_club_m2": 542,
+   "gevel_isolatie_m2": 0,
+   "pui_m2": 36,
+   "brandwand_m2": 0,
+   "terras_m2": 92,
+   "tuin_m2": 0,
+   "bomen_buiten": 3,
+   "buiten_sauna": false,
+   "gym_m2": 195,
+   "hoogte": 8.0,
+   "perceel_m2": null
+  },
+  "rows": [
+   {
+    "groep": "Pand",
+    "post": "Koopsom",
+    "h": 1,
+    "e": "post",
+    "prijs": 1250000,
+    "totaal": 1250000,
+    "label": "bron",
+    "gen": 1.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Overdrachtsbelasting 10,4%",
+    "h": 1250000,
+    "e": "EUR",
+    "prijs": 0.104,
+    "totaal": 130000,
+    "label": "bron",
+    "gen": 0.0
+   },
+   {
+    "groep": "Pand",
+    "post": "Notaris, taxatie, bouwkundige keuring",
+    "h": 1,
+    "e": "post",
+    "prijs": 10000,
+    "totaal": 10000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Asbestinventarisatie",
+    "h": 1,
+    "e": "post",
+    "prijs": 1500,
+    "totaal": 1500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Glazen pui, aluminium HR+++ triple glas",
+    "h": 36,
+    "e": "m2",
+    "prijs": 1000,
+    "totaal": 36000,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Betonvloer schuren en coaten",
+    "h": 347,
+    "e": "m2",
+    "prijs": 22,
+    "totaal": 7634,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Binnenwanden metal stud + OSB",
+    "h": 150,
+    "e": "m2",
+    "prijs": 60,
+    "totaal": 9000,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Glazen scheidingswand gym en vergaderruimte",
+    "h": 25,
+    "e": "m2",
+    "prijs": 320,
+    "totaal": 8000,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Akoestische plafondeilanden en wandpanelen",
+    "h": 200,
+    "e": "m2",
+    "prijs": 40,
+    "totaal": 8000,
+    "label": "bron",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bouwkundig",
+    "post": "Sauswerk wanden en staal",
+    "h": 862.4000000000001,
+    "e": "m2",
+    "prijs": 9,
+    "totaal": 7762,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Toiletten incl. 1 invalidentoilet (pot, fontein, scheidingswand)",
+    "h": 4,
+    "e": "st",
+    "prijs": 900,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Douches (thermostaatkraan, regendouche, afvoergoot)",
+    "h": 4,
+    "e": "st",
+    "prijs": 700,
+    "totaal": 2800,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Tegelwerk douches en kleedruimte (materiaal + zetten)",
+    "h": 45,
+    "e": "m2",
+    "prijs": 75,
+    "totaal": 3375,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Warmtepompboiler 300 liter",
+    "h": 1,
+    "e": "st",
+    "prijs": 3500,
+    "totaal": 3500,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Leidingwerk en riolering, materiaal",
+    "h": 1,
+    "e": "post",
+    "prijs": 4000,
+    "totaal": 4000,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Loodgieter",
+    "h": 140,
+    "e": "uur",
+    "prijs": 57,
+    "totaal": 7980,
+    "label": "bron",
+    "gen": 0.5
+   },
+   {
+    "groep": "Sanitair",
+    "post": "Keuken 4 m (IKEA), koelkasten, vaatwasser, inductie, montage",
+    "h": 1,
+    "e": "post",
+    "prijs": 8500,
+    "totaal": 8500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Installaties",
+    "post": "Groepenkast, bekabeling, wandcontacten, data: materiaal",
+    "h": 1,
+    "e": "post",
+    "prijs": 9000,
+    "totaal": 9000,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Elektricien",
+    "h": 220,
+    "e": "uur",
+    "prijs": 56,
+    "totaal": 12320,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Lucht-lucht warmtepompen, 4 buitenunits met 12 binnenunits (alleen koeling werkzone)",
+    "h": 1,
+    "e": "systeem",
+    "prijs": 5500,
+    "totaal": 5500,
+    "label": "bron",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Industriële plafondventilatoren (luchtmenging)",
+    "h": 2,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 5000,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Installaties",
+    "post": "WTW-ventilatie, 2 units + kanalen + afzuiging sanitair",
+    "h": 1,
+    "e": "post",
+    "prijs": 17500,
+    "totaal": 17500,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Installaties",
+    "post": "Brandmelders, noodverlichting, blusmiddelen",
+    "h": 1,
+    "e": "post",
+    "prijs": 6000,
+    "totaal": 6000,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Installaties",
+    "post": "Toegangssysteem met app, 6 deuren + 4 camera's",
+    "h": 1,
+    "e": "post",
+    "prijs": 4500,
+    "totaal": 4500,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Installaties",
+    "post": "Wifi: 6 access points, switch, router, Starlink backup",
+    "h": 1,
+    "e": "post",
+    "prijs": 4000,
+    "totaal": 4000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Industriële LED-hanglampen (1 per 15 m2)",
+    "h": 40,
+    "e": "st",
+    "prijs": 90,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Sfeerverlichting en spots op rails",
+    "h": 30,
+    "e": "st",
+    "prijs": 40,
+    "totaal": 1200,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Bureaulampen",
+    "h": 24,
+    "e": "st",
+    "prijs": 45,
+    "totaal": 1080,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Buitenverlichting",
+    "h": 10,
+    "e": "st",
+    "prijs": 60,
+    "totaal": 600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Verlichting",
+    "post": "Groeilampen voor planten",
+    "h": 12,
+    "e": "st",
+    "prijs": 80,
+    "totaal": 960,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Zit-sta onderstel elektrisch (IKEA MITTZON)",
+    "h": 24,
+    "e": "st",
+    "prijs": 340,
+    "totaal": 8160,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Werken",
+    "post": "Bureaublad 160 x 80 eiken multiplex",
+    "h": 24,
+    "e": "st",
+    "prijs": 120,
+    "totaal": 2880,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Werken",
+    "post": "Refurbished Steelcase Leap V2 (excl. btw)",
+    "h": 24,
+    "e": "st",
+    "prijs": 500,
+    "totaal": 12000,
+    "label": "bron",
+    "gen": 0.4
+   },
+   {
+    "groep": "Werken",
+    "post": "Monitor 27 inch met USB-C hub (Dell P2725HE, excl. btw)",
+    "h": 24,
+    "e": "st",
+    "prijs": 219,
+    "totaal": 5256,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Werken",
+    "post": "Tweede monitor 27 inch Full HD",
+    "h": 24,
+    "e": "st",
+    "prijs": 150,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Werken",
+    "post": "Dubbele monitorarm",
+    "h": 24,
+    "e": "st",
+    "prijs": 60,
+    "totaal": 1440,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Werken",
+    "post": "Lange werktafel staal + hout, 12 plekken",
+    "h": 2,
+    "e": "st",
+    "prijs": 800,
+    "totaal": 1600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Stoelen werktafel (tweedehands design)",
+    "h": 12,
+    "e": "st",
+    "prijs": 120,
+    "totaal": 1440,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Vergaderruimte: tafel, 8 stoelen, 55 inch scherm, camera + speaker",
+    "h": 1,
+    "e": "post",
+    "prijs": 4500,
+    "totaal": 4500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Belcellen zelfgebouwd (frame, akoestiek, deur, ventilator)",
+    "h": 2,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 5000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Werken",
+    "post": "Lockers",
+    "h": 60,
+    "e": "st",
+    "prijs": 60,
+    "totaal": 3600,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Gym",
+    "post": "ATX power rack PRX-710",
+    "h": 4,
+    "e": "st",
+    "prijs": 800,
+    "totaal": 3200,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "ATX cable half rack met 2 x 90 kg",
+    "h": 1,
+    "e": "st",
+    "prijs": 2950,
+    "totaal": 2950,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Olympische halterstangen + 1 trapbar",
+    "h": 5,
+    "e": "st",
+    "prijs": 240,
+    "totaal": 1200,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Bumper plates (4 sets van 150 kg)",
+    "h": 600,
+    "e": "kg",
+    "prijs": 3.83,
+    "totaal": 2298,
+    "label": "bron",
+    "gen": 0.4
+   },
+   {
+    "groep": "Gym",
+    "post": "Dumbbells hex 2,5 tot 40 kg (16 paar, 680 kg) + rek",
+    "h": 680,
+    "e": "kg",
+    "prijs": 4.1,
+    "totaal": 2788,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Gym",
+    "post": "Kettlebells 8 tot 32 kg (2 sets)",
+    "h": 240,
+    "e": "kg",
+    "prijs": 3,
+    "totaal": 720,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Gym",
+    "post": "Verstelbare bankjes",
+    "h": 6,
+    "e": "st",
+    "prijs": 250,
+    "totaal": 1500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Concept2 RowErg",
+    "h": 2,
+    "e": "st",
+    "prijs": 1195,
+    "totaal": 2390,
+    "label": "bron",
+    "gen": 0.5
+   },
+   {
+    "groep": "Gym",
+    "post": "Concept2 SkiErg + BikeErg + airbike",
+    "h": 1,
+    "e": "set",
+    "prijs": 3250,
+    "totaal": 3250,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Gym",
+    "post": "Loopband (tweedehands, commercieel)",
+    "h": 1,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Gym",
+    "post": "Boxen, banden, medicijnballen, ringen, matten, landmine",
+    "h": 1,
+    "e": "post",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Gym",
+    "post": "Rubber sportvloer 30 mm",
+    "h": 150,
+    "e": "m2",
+    "prijs": 35,
+    "totaal": 5250,
+    "label": "schatting",
+    "gen": 0.2
+   },
+   {
+    "groep": "Gym",
+    "post": "Spiegels en speaker",
+    "h": 1,
+    "e": "post",
+    "prijs": 1000,
+    "totaal": 1000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Gym",
+    "post": "Buitenrig en sprintstrook",
+    "h": 1,
+    "e": "post",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Tweedehands La Marzocco Linea 3-groeps, gereviseerd",
+    "h": 1,
+    "e": "st",
+    "prijs": 7500,
+    "totaal": 7500,
+    "label": "schatting",
+    "gen": 0.6
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "2 tweedehands molens (Mazzer of Mahlkönig)",
+    "h": 2,
+    "e": "st",
+    "prijs": 1200,
+    "totaal": 2400,
+    "label": "schatting",
+    "gen": 0.5
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Waterfilter, knockbox, pitchers, kopjes",
+    "h": 1,
+    "e": "post",
+    "prijs": 1500,
+    "totaal": 1500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Bar zelfgebouwd (staal + hout)",
+    "h": 1,
+    "e": "post",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Boeken tweedehands: self-help, psychologie, geld, biografie",
+    "h": 1000,
+    "e": "st",
+    "prijs": 6,
+    "totaal": 6000,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Nieuwe titels die tweedehands lastig zijn",
+    "h": 100,
+    "e": "st",
+    "prijs": 20,
+    "totaal": 2000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Boekenwand staal + steigerhout 8 m x 2,4 m + rolladder",
+    "h": 1,
+    "e": "post",
+    "prijs": 2900,
+    "totaal": 2900,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Lounge: 4 banken, 10 fauteuils, bijzettafels, kleden (tweedehands)",
+    "h": 1,
+    "e": "post",
+    "prijs": 4200,
+    "totaal": 4200,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Cafétafels en 24 stoelen (tweedehands)",
+    "h": 1,
+    "e": "post",
+    "prijs": 2100,
+    "totaal": 2100,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Bomen binnen 2 tot 2,5 m (ficus, strelitzia, olijf)",
+    "h": 10,
+    "e": "st",
+    "prijs": 250,
+    "totaal": 2500,
+    "label": "bron",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Middelgrote planten + hangplanten + potten en bakken",
+    "h": 1,
+    "e": "post",
+    "prijs": 5000,
+    "totaal": 5000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Groene wand (mos of levende wand)",
+    "h": 10,
+    "e": "m2",
+    "prijs": 250,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Café & bieb",
+    "post": "Vintage decoratie en kunst",
+    "h": 1,
+    "e": "post",
+    "prijs": 3000,
+    "totaal": 3000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Wellness",
+    "post": "Binnensauna 10 pers. zelfgebouwd (hout, isolatie, glazen deur)",
+    "h": 1,
+    "e": "post",
+    "prijs": 7000,
+    "totaal": 7000,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Wellness",
+    "post": "Elektrische saunakachel 15 kW + besturing",
+    "h": 1,
+    "e": "st",
+    "prijs": 1800,
+    "totaal": 1800,
+    "label": "schatting",
+    "gen": 0.4
+   },
+   {
+    "groep": "Wellness",
+    "post": "Bouw binnensauna, timmerman",
+    "h": 70,
+    "e": "uur",
+    "prijs": 49,
+    "totaal": 3430,
+    "label": "bron",
+    "gen": 0.3
+   },
+   {
+    "groep": "Wellness",
+    "post": "Koudwaterbad 1.000 l met koeling",
+    "h": 1,
+    "e": "st",
+    "prijs": 2500,
+    "totaal": 2500,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Energie",
+    "post": "Batterij",
+    "h": 30,
+    "e": "kWh",
+    "prijs": 450,
+    "totaal": 13500,
+    "label": "bron",
+    "gen": 0.5
+   },
+   {
+    "groep": "Buiten",
+    "post": "Terras: houten vlonder met overkapping",
+    "h": 92,
+    "e": "m2",
+    "prijs": 110,
+    "totaal": 10120,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Bomen buiten",
+    "h": 3,
+    "e": "st",
+    "prijs": 300,
+    "totaal": 900,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Grote plantenbakken langs het terras",
+    "h": 1,
+    "e": "post",
+    "prijs": 3000,
+    "totaal": 3000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Buiten",
+    "post": "Fietsenstalling 40 plekken",
+    "h": 1,
+    "e": "post",
+    "prijs": 3000,
+    "totaal": 3000,
+    "label": "schatting",
+    "gen": 0.3
+   },
+   {
+    "groep": "Buiten",
+    "post": "Parkeerplaatsen belijnen",
+    "h": 1,
+    "e": "post",
+    "prijs": 1000,
+    "totaal": 1000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwtekeningen en interieurontwerp (familie)",
+    "h": 1,
+    "e": "post",
+    "prijs": 8000,
+    "totaal": 8000,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Constructeur en brandveiligheidsadvies",
+    "h": 1,
+    "e": "post",
+    "prijs": 6500,
+    "totaal": 6500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Afwijking omgevingsplan: onderbouwing + leges",
+    "h": 1,
+    "e": "post",
+    "prijs": 15500,
+    "totaal": 15500,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Afbouwmanager (vriend), 6 maanden halftime",
+    "h": 600,
+    "e": "uur",
+    "prijs": 50,
+    "totaal": 30000,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwplaats: hoogwerker, afvalcontainers",
+    "h": 1,
+    "e": "post",
+    "prijs": 6300,
+    "totaal": 6300,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Notaris en statuten coöperatie",
+    "h": 1,
+    "e": "post",
+    "prijs": 15000,
+    "totaal": 15000,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Projectleiding initiatiefnemer (3%)",
+    "h": 356783,
+    "e": "EUR",
+    "prijs": 0.03,
+    "totaal": 10703,
+    "label": "aanname",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Onvoorzien (10% excl. pand)",
+    "h": 448786,
+    "e": "EUR",
+    "prijs": 0.1,
+    "totaal": 44879,
+    "label": "schatting",
+    "gen": 0.0
+   },
+   {
+    "groep": "Bijkomend",
+    "post": "Bouwrente en afsluitkosten (1,5%)",
+    "h": 1883665,
+    "e": "EUR",
+    "prijs": 0.015,
+    "totaal": 28255,
+    "label": "schatting",
+    "gen": 0.0
+   }
+  ],
+  "fee_inleg_terug": 416,
+  "fee_inleg_terug_90": 345,
+  "fee_vol_nodig_90": 250
+ }
+}
