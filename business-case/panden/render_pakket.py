@@ -135,12 +135,42 @@ def main(alleen=None):
             L += ["```", "This is a simple 3D model of one room, seen from above. Create a photorealistic eye-level interior photo of this room with exactly this layout and furniture. "
                   + z["prompt"] + " " + BASIS_PROMPT.format(kleuren=kleuren_tekst(z["palet"])).replace("Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. ", ""), "```", ""]
         open(os.path.join(d, "00-LEESMIJ.md"), "w").write("\n".join(L))
-        zp = os.path.join(UIT, f"renderpakket-{slug}.zip")
-        with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
-            for f in sorted(os.listdir(d)):
-                z.write(os.path.join(d, f), f"renderpakket-{slug}/{f}")
-        print(zp, round(os.path.getsize(zp) / 1e6, 1), "MB", len(os.listdir(d)), "bestanden")
+        inpakken(slug, O)
+
+
+PROMPT = """I attached a zip with a complete render package for one location of a members club I am planning: {titel} (the Netherlands). You are my architectural visualiser.
+
+Step 1. Unzip it and read 00-LEESMIJ.md completely (it is in Dutch; the image prompts in it are in English). Then look at 05-plattegrond (floor plan), 06-kleur.png (colour plan per zone) and 06-sanitair.png (the round bathroom tower with the V-shaped wall). Keep these three in mind for every image.
+
+Step 2. Make the images described in 00-LEESMIJ.md, in this order: A (whole building with the roof removed), B (roof on), the outside images, the aerial photo, then room by room. For each image use the file named in 00-LEESMIJ.md as the visual reference and the prompt in the code block below it. Where a room has both a listing photo and a model view, make the version from the listing photo.
+
+Rules for every image:
+1. Follow the floor plan and the models exactly: same positions, same round elements (round sofa around the fireplace, round bookshelf room, round bathroom towers with plants on the rim, round phone booths), same zones. Do not invent rooms.
+2. Colours per zone from the colour plan: book café olive green, plum and travertine; library deep olive and butter yellow; workplaces slate blue and cognac; gym oxblood and blush; studio fig purple and terracotta; entrance sand and palm green. About 60% of each room stays raw (concrete, old brick, black steel), 30% zone colour, 10% accent.
+3. With a listing photo: keep the existing architecture, windows, columns, ceiling height and camera angle exactly; change only the interior and finishes.
+4. Style: Berlin warehouse meets Taghazout calm, second hand with a little organized chaos, lots of plants and small trees, warm daylight, photorealistic like a professional architecture photo. No text, labels or watermarks, no people in focus.
+5. One image per reply, landscape 3:2. Under each image write one line: which step and which file you used. Then wait until I write "volgende".
+6. If you cannot use a file from the zip directly as the reference image, tell me the file name and I will upload it separately.
+
+Start with step 1, give me a three-line summary of the concept, and then make image A."""
+
+
+def inpakken(slug, O=None):
+    """Schrijft PROMPT.txt in de map van het pakket en maakt de zip opnieuw (zonder opnieuw te renderen)."""
+    O = O or json.load(open(os.path.join(HERE, "ontwerp", slug + ".json")))
+    d = os.path.join(UIT, slug)
+    open(os.path.join(d, "PROMPT.txt"), "w").write(PROMPT.format(titel=O["titel"]))
+    zp = os.path.join(UIT, f"renderpakket-{slug}.zip")
+    with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as z:
+        for f in sorted(os.listdir(d)):
+            z.write(os.path.join(d, f), f"renderpakket-{slug}/{f}")
+    print(zp, round(os.path.getsize(zp) / 1e6, 1), "MB", len(os.listdir(d)), "bestanden")
 
 
 if __name__ == "__main__":
-    main(sys.argv[1:] or None)
+    args = sys.argv[1:]
+    if args[:1] == ["--zip"]:  # alleen PROMPT.txt bijwerken en opnieuw inpakken
+        for s in (args[1:] or VOLGORDE):
+            inpakken(s)
+    else:
+        main(args or None)
