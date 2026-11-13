@@ -87,7 +87,7 @@ details[open] summary{margin-bottom:10px}
     <h2>Workflow</h2>
     <ol class="steps">
       <li><b>Dossier</b><span>Adres → BAG-pand, bouwjaar en m², 3D BAG-hoogte, kadastraal perceel, buren en luchtfoto. Valt een pand hier af, dan kost het verder niets.</span></li>
-      <li><b>Plattegrond</b><span>Werken, gym, café, sanitair en sauna in de echte footprint leggen. De capaciteit volgt uit de ruimte: gym circa 7,5 m² per persoon, zoveel bureaus als er passen. Wat over is gaat naar verhuur.</span></li>
+      <li><b>Plattegrond</b><span>Werken, gym, boekencafé, leesbibliotheek en sanitair in de echte footprint leggen. De capaciteit volgt uit de ruimte: gym circa 7,5 m² per persoon, zoveel bureaus als er passen. Wat over is gaat naar verhuur.</span></li>
       <li><b>Begroting</b><span>Uit de plattegrond volgen de m² gevel, glas, dak, brandwand, tuin en terras. Die gaan in de productbegroting en het financieringsmodel.</span></li>
       <li><b>Beeld</b><span>3D van de huidige en de nieuwe situatie, plattegrond en kerncijfers per pand. Eerst de geometrie en dan pas het geld, omdat de hoeveelheden uit de plattegrond komen.</span></li>
     </ol>
@@ -138,8 +138,8 @@ details[open] summary{margin-bottom:10px}
 <script>
 (function(){
 const DATA=/*__DATA__*/null;
-const ZK={"café":"#e0a458","werken":"#7fb3d5","gym":"#e07a5f","sanitair":"#b8c4bb","vergader":"#9b8ec4","techniek":"#8d8d8d","sauna":"#c96f3b","studio":"#d68fb0","verhuur":"#5c6670"};
-const KORT={"café":"Café & bieb","werken":"Werken","gym":"Gym","sanitair":"Sanitair","vergader":"Vergader","techniek":"Techniek","sauna":"Sauna","studio":"Studio","verhuur":"Verhuur"};
+const ZK={"café":"#e0a458","werken":"#7fb3d5","gym":"#e07a5f","sanitair":"#b8c4bb","vergader":"#9b8ec4","techniek":"#8d8d8d","bieb":"#c9a26b","studio":"#d68fb0","verhuur":"#5c6670"};
+const KORT={"café":"Café & bieb","werken":"Werken","gym":"Gym","sanitair":"Sanitair","vergader":"Vergader","techniek":"Techniek","bieb":"Leesbieb","studio":"Studio","verhuur":"Verhuur"};
 const $=id=>document.getElementById(id);
 const eur=x=>(x<0?"− ":"")+"€ "+Math.abs(Math.round(x)).toLocaleString("nl-NL");
 const mln=x=>"€ "+(x/1e6).toLocaleString("nl-NL",{minimumFractionDigits:2,maximumFractionDigits:2})+" mln";
@@ -219,11 +219,12 @@ function buildNew(g,d){
     if(z.verhuur){ const m=box(u0,v0,u1,v1,0,H,std(0x59636b)); g.add(m); g.add(edges(m,0x8fa3ab,.8)); return; }
     if(z.niveau){ const sl=box(u0,v0,u1,v1,3.35,.25,std(0x6f7a80)); g.add(sl); }
     g.add(box(u0+.05,v0+.05,u1-.05,v1-.05,y+.01,.06,std(col.getHex(),.95)));
-    if(["sanitair","vergader","techniek","sauna"].includes(z.type)){
+    if(["sanitair","vergader","techniek","bieb"].includes(z.type)){
       const w=box(u0+.1,v0+.1,u1-.1,v1-.1,y,2.8,new THREE.MeshStandardMaterial({color:col,transparent:true,opacity:.35,depthWrite:false}));
       g.add(w); g.add(edges(w,0xffffff,.5)); }
     if(z.type==="gym") gym(g,z.r,y);
     if(z.type==="café") cafe(g,z.r,y,d);
+    if(z.type==="bieb"){ g.add(box(z.r[0]+.3,z.r[1]+.3,z.r[0]+.7,z.r[3]-.3,y,2.4,std(0x8a6a4a))); [[.55,.3],[.55,.7]].forEach(([a,b])=>g.add(box(z.r[0]+a*(z.r[2]-z.r[0])-.45,z.r[1]+b*(z.r[3]-z.r[1])-.45,z.r[0]+a*(z.r[2]-z.r[0])+.45,z.r[1]+b*(z.r[3]-z.r[1])+.45,y,.8,std(0x7b5a44)))); }
   });
   // werkplekken: eilandjes, werktafel, raambar
   const wy=d.werkniveau?3.6:0;
@@ -338,7 +339,7 @@ function detail(d){
   rows+=`<tr class="tot"><td colspan="4">Totaal investering excl. btw</td><td class="r">${eur(f.capex)}</td><td></td></tr>`;
   let ox=f.opex_rows.map(([n,b])=>`<tr><td>${n}</td><td class="r">${eur(b)}</td></tr>`).join("")+`<tr class="tot"><td>Totaal exploitatie</td><td class="r">${eur(f.opex)}</td></tr>`;
   const qrow=(n,v)=>`<tr><td>${n}</td><td class="r">${v}</td></tr>`;
-  const qt=qrow("Club, vloer totaal",q.club_m2+" m²")+qrow("Verhuurbaar deel",q.verhuur_m2+" m²")+qrow("Dak boven club (isolatie)",q.dak_club_m2+" m²")+qrow("Gevel te isoleren tot 4,5 m",q.gevel_isolatie_m2+" m²")+qrow("Brandscheidende wand",q.brandwand_m2+" m²")+qrow("Glazen pui (lengte × 3 m)",q.pui_m2+" m²")+qrow("Terras",q.terras_m2+" m²")+qrow("Tuin (onttegelen)",q.tuin_m2+" m²")+qrow("Gym",q.gym_m2+" m²")+qrow("Sauna",q.buiten_sauna?"buiten, hout":"binnen, elektrisch");
+  const qt=qrow("Club, vloer totaal",q.club_m2+" m²")+qrow("Verhuurbaar deel",q.verhuur_m2+" m²")+qrow("Dak boven club (isolatie)",q.dak_club_m2+" m²")+qrow("Gevel te isoleren tot 4,5 m",q.gevel_isolatie_m2+" m²")+qrow("Brandscheidende wand",q.brandwand_m2+" m²")+qrow("Glazen pui (lengte × 3 m)",q.pui_m2+" m²")+qrow("Terras",q.terras_m2+" m²")+qrow("Tuin (onttegelen)",q.tuin_m2+" m²")+qrow("Gym",q.gym_m2+" m²");
   const vh=(d.verhuur||[]).map(v=>`<tr><td>${v.naam}</td><td class="r">${v.m2} m²</td><td class="r">${v.huur_jaar?eur(v.huur_jaar):eur(v.m2*v.huur_m2)}</td></tr>`).join("");
   $("detail").innerHTML=`<div class="cols"><div class="tbl"><table><thead><tr><th>Uit de plattegrond</th><th class="r">Hoeveelheid</th></tr></thead><tbody>${qt}</tbody></table></div>
    <div style="display:grid;gap:14px;align-content:start">${vh?`<div class="tbl"><table><thead><tr><th>Verhuur</th><th class="r">m²</th><th class="r">Per jaar</th></tr></thead><tbody>${vh}</tbody></table></div>`:""}

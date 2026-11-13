@@ -93,17 +93,10 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None):
             if not L["isoleren"] and "Lucht-lucht" in r["post"]:  # energieneutrale hal: verwarming aanwezig
                 rr.update(h=1, totaal=round(rr["prijs"]), post=r["post"] + " (alleen koeling werkzone)")
             R.append(rr)
-    if q["buiten_sauna"]:
-        for r in base:
-            if r["groep"] == "Wellness":
-                R.append(dict(r))
-        if n_vol + n_deel + n_club > 150:
-            add("Wellness", "Tweede sauna: houtgestookte barrelsauna 8 pers.", 1, "st", 13_000, "bron", 0.4)
-    else:
-        add("Wellness", "Binnensauna 10 pers. zelfgebouwd (hout, isolatie, glazen deur)", 1, "post", 7_000, "schatting", 0.3)
-        add("Wellness", "Elektrische saunakachel 15 kW + besturing", 1, "st", 1_800, "schatting", 0.4)
-        add("Wellness", "Bouw binnensauna, timmerman", 70, "uur", ZZP["timmerman"], "bron", 0.3)
-        add("Wellness", "Koudwaterbad 1.000 l met koeling", 1, "st", 2_500, "schatting", 0.3)
+    # sauna geschrapt in versie 8; Wellness-rijen alleen als budget.B(sauna=True)
+    for r in base:
+        if r["groep"] == "Wellness":
+            R.append(dict(r))
 
     # --- Energie
     if L["pv_kwp"]:
@@ -151,10 +144,10 @@ def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, f
     O = [("Schoonmaak (5 dagen x 4 uur x € 30)", 31_200), ("Management initiatiefnemer", 18_000),
          ("Klusjes en storingen", 6_000 if L["verhuur"] else 5_000), ("Groenbeheer en planten", 4_000 if q["tuin_m2"] else 2_500)]
     pv = L["pv_kwp"] * 900 if L["pv_kwp"] else 60_000  # Birkt: bestaande panelen (energieneutraal) [aanname]
-    vraag = q["club_m2"] * 70 + 4_000 + (0 if q["buiten_sauna"] else 15 * 4 * 365)
+    vraag = q["club_m2"] * 70 + 4_000
     eigen = min(pv * 0.6, vraag)
     O += [("Energie netto", round((vraag - eigen) * 0.24 - (pv - eigen) * 0.05 + 3_000)),
-          ("Brandhout", 5_000 if q["buiten_sauna"] else 0),
+
           ("Onderhoud pand en terrein", round((gebouw + pand * 0.3) * 0.015)),
           ("Vervangingsreserve inventaris (10%)", round(inv * 0.10)),
           ("Verzekeringen", round((gebouw + inv + pand * 0.5) * 0.0025)),

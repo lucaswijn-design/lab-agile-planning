@@ -98,7 +98,7 @@ def run(k: N):
     gebouw = tot("Casco") + tot("Sanitair") + tot("Installaties") + tot("Energie") + tot("Buiten")
     inv = tot("Werken") + tot("Gym") + tot("Wellness") + tot("Café & bieb") + tot("Verlichting")
     O = [("Schoonmaak", 31_200), ("Management initiatiefnemer", 18_000), ("Klusjes en storingen", 4_000),
-         ("Groenbeheer en planten", 4_500), ("Energie netto (nieuwbouw, 40 kWp)", 6_000), ("Brandhout", 5_000),
+         ("Groenbeheer en planten", 4_500), ("Energie netto (nieuwbouw, 40 kWp)", 6_000),
          ("Onderhoud (1%, nieuw)", round(gebouw * 0.01)), ("Vervangingsreserve inventaris (10%)", round(inv * 0.10)),
          ("Verzekeringen", round((gebouw + inv) * 0.0025)), ("OZB, waterschap, riool", round((grond + gebouw) * 0.7 * 0.0035)),
          ("Internet, software, toegang", 5_000), ("Accountant en administratie", 10_000),

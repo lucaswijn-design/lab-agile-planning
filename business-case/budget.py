@@ -39,6 +39,7 @@ class B:
     inleg_vol: float = 15_000
     inleg_deel: float = 9_000
     eigen_beheer: bool = True  # False = aannemer: +15% AK/W&R en uitvoering
+    sauna: bool = False  # sauna geschrapt in versie 8: het boekencafé is het hart van de club
     rente: float = 0.055
     looptijd: int = 20
     waardegroei: float = 0.02
@@ -139,21 +140,24 @@ def items(k: B):
     add("Gym", "Spiegels en speaker", 1, "post", 1_000, "schatting")
     add("Gym", "Buitenrig en sprintstrook", 1, "post", 2_500, "schatting", 0.3)
 
-    # --- Wellness
-    add("Wellness", "Saunahut 3 x 4 m, 12 pers., thermowood + isolatie + glazen deur", 1, "post", 9_000, "schatting", 0.4)
-    add("Wellness", "Harvia Legend 240 houtkachel + stenen + rookkanaal", 1, "post", 2_700, "bron", 0.4)
-    add("Wellness", "Bouw saunahut, timmerman", 120, "uur", ZZP["timmerman"], "bron", 0.4)
-    add("Wellness", "Koudwaterbad 1.000 l met eenvoudige koeling", 1, "st", 2_500, "schatting", 0.3)
-    add("Wellness", "Buitendouches, ligbedden, haken, vlonder rond sauna", 1, "post", 4_000, "schatting")
+    # --- Wellness (optioneel)
+    if k.sauna:
+      add("Wellness", "Saunahut 3 x 4 m, 12 pers., thermowood + isolatie + glazen deur", 1, "post", 9_000, "schatting", 0.4)
+      add("Wellness", "Harvia Legend 240 houtkachel + stenen + rookkanaal", 1, "post", 2_700, "bron", 0.4)
+      add("Wellness", "Bouw saunahut, timmerman", 120, "uur", ZZP["timmerman"], "bron", 0.4)
+      add("Wellness", "Koudwaterbad 1.000 l met eenvoudige koeling", 1, "st", 2_500, "schatting", 0.3)
+      add("Wellness", "Buitendouches, ligbedden, haken, vlonder rond sauna", 1, "post", 4_000, "schatting")
 
     # --- Café, lounge en bibliotheek
     add("Café & bieb", "Tweedehands La Marzocco Linea 3-groeps, gereviseerd", 1, "st", 7_500, "schatting", 0.6)
     add("Café & bieb", "2 tweedehands molens (Mazzer of Mahlkönig)", 2, "st", 1_200, "schatting", 0.5)
     add("Café & bieb", "Waterfilter, knockbox, pitchers, kopjes", 1, "post", 1_500, "schatting")
     add("Café & bieb", "Bar zelfgebouwd (staal + hout)", 1, "post", 2_500, "schatting")
-    add("Café & bieb", "Boeken tweedehands: self-help, psychologie, geld, biografie", 1_000, "st", 6, "aanname")
+    add("Café & bieb", "Boeken tweedehands: self-help, psychologie, geld, biografie, filosofie, romans", 1_500, "st", 6, "aanname")
+    add("Café & bieb", "Leesbibliotheek: 8 leesfauteuils, leeslampen, kleden (tweedehands)", 1, "post", 2_400, "schatting")
+    add("Café & bieb", "Elektrische sfeerhaard, platenspeler + speakers", 1, "post", 1_800, "schatting")
     add("Café & bieb", "Nieuwe titels die tweedehands lastig zijn", 100, "st", 20, "schatting")
-    add("Café & bieb", "Boekenwand staal + steigerhout 8 m x 2,4 m + rolladder", 1, "post", 2_900, "schatting")
+    add("Café & bieb", "Boekenwand staal + steigerhout 12 m x 2,4 m + rolladder", 1, "post", 4_000, "schatting")
     add("Café & bieb", "Lounge: 4 banken, 10 fauteuils, bijzettafels, kleden (tweedehands)", 1, "post", 4_200, "schatting")
     add("Café & bieb", "Cafétafels en 24 stoelen (tweedehands)", 1, "post", 2_100, "schatting")
     add("Café & bieb", "Bomen binnen 2 tot 2,5 m (ficus, strelitzia, olijf)", 10, "st", 250, "bron")
@@ -207,7 +211,8 @@ def opex(k: B, R, hal):
     eigen = min(pv * 0.6, vraag)
     add("Energie netto", (vraag - eigen) * 0.24 - (pv - eigen) * 0.05 + 3_000, "schatting",
         f"vraag {vraag/1000:.0f} MWh, zon {pv/1000:.0f} MWh")
-    add("Brandhout sauna en hot tub", 5_000, "schatting")
+    if k.sauna:
+        add("Brandhout sauna", 5_000, "schatting")
     add("Onderhoud pand en terrein", (gebouw + pand * 0.3) * 0.015, "schatting")
     add("Vervangingsreserve inventaris (10%)", inv * 0.10, "schatting")
     add("Verzekeringen", (gebouw + inv + pand * 0.5) * 0.0025, "schatting")

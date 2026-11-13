@@ -17,7 +17,7 @@ from geo import frame, to_local
 HERE = os.path.dirname(os.path.abspath(__file__))
 
 ZONEKLEUR = {"café": "#e0a458", "werken": "#7fb3d5", "gym": "#e07a5f", "sanitair": "#b8c4bb", "vergader": "#9b8ec4",
-             "techniek": "#8d8d8d", "sauna": "#c96f3b", "studio": "#d68fb0", "verhuur": "#5c6670"}
+             "techniek": "#8d8d8d", "bieb": "#c9a26b", "studio": "#d68fb0", "verhuur": "#5c6670"}
 
 STD_LEDEN = dict(n_vol=30, n_deel=30, n_club=60)
 
@@ -45,8 +45,6 @@ LAYOUTS = {
             dict(type="terras", naam="Terras op de binnenplaats", r=(18, 13, 32, 19.5)),
             dict(type="tuin", naam="Binnentuin", r=(18, 20, 23.5, 50)),
             dict(type="tuin", naam="Noordtuin met ligbedden", r=(0, 52, 22, 70)),
-            dict(type="sauna", naam="Saunahut 12 pers.", r=(4, 58, 8, 62)),
-            dict(type="plunge", naam="Koudwaterbad", r=(9.5, 58, 11.5, 60)),
         ],
         bomen_buiten=[(20.5, 25), (20.5, 33), (20.5, 41), (3, 66), (15, 66), (18, 55)],
         afmeting_buiten_opm="binnenplaats en noordtuin, ongeveer 1.000 m²",
@@ -56,7 +54,7 @@ LAYOUTS = {
         oordeel="kandidaat, let op A9",
         samenvatting="Hal uit 1991 van 914 m² met verdieping op 4.821 m² grond: veel buitenruimte. Tussen Haarlem, Zaanstad en "
                      "Alkmaar, station Uitgeest op loopafstand. De A9 ligt direct naast het perceel: een groene geluidswal is nodig "
-                     "voor tuin en sauna.",
+                     "voor tuin en terras.",
         koop=dict(totaal=1_400_000, label="schatting: 1.120 m² × € 1.250, prijs onbekend"),
         verhuur=[dict(naam="Oostelijk halgedeelte + verdieping", m2=400, huur_m2=100)],
         leden=STD_LEDEN, bouwjaar_risico=True, isoleren=True, pv_kwp=40, geluidswal=True,
@@ -73,8 +71,6 @@ LAYOUTS = {
         buiten=[
             dict(type="terras", naam="Terras", r=(2, 23, 18, 28)),
             dict(type="tuin", naam="Tuin met ligbedden", r=(0, 29, 30, 42)),
-            dict(type="sauna", naam="Saunahut 12 pers.", r=(32, 27, 36, 31)),
-            dict(type="plunge", naam="Koudwaterbad", r=(37, 27, 39, 29)),
             dict(type="tuin", naam="Groene geluidswal richting A9", r=(42, 2, 56, 40)),
             dict(type="parkeren", naam="Parkeren", r=(-4, -5.5, 30, -0.5)),
         ],
@@ -84,13 +80,12 @@ LAYOUTS = {
         titel="Heemsteedseweg 24, Houten",
         oordeel="kandidaat, tuin niet eigen",
         samenvatting="Kantoorvilla uit 2006 van 683 m² over twee lagen, midden in de tuinen van kasteel Heemstede. Biofiel van "
-                     "zichzelf, maar de tuin hoort bij het landgoed: alleen het terras is eigen. Sauna binnen, werken boven.",
+                     "zichzelf, maar de tuin hoort bij het landgoed: alleen het terras is eigen. Werken boven, café en bieb beneden.",
         koop=dict(totaal=1_570_000, label="schatting: 683 m² × € 2.300, prijs onbekend"),
         verhuur=[], leden=STD_LEDEN, bouwjaar_risico=False, isoleren=False, pv_kwp=25, verdieping_m2=353,
         zones=[
             dict(type="café", naam="Café, lounge en bibliotheek", r=(0.3, 0.3, 14, 9.1)),
             dict(type="sanitair", naam="Kleedruimte, douches", r=(14, 0.3, 19, 9.1)),
-            dict(type="sauna", naam="Binnensauna + koudwaterbad", r=(19, 0.3, 23, 9.1)),
             dict(type="gym", naam="Gym", r=(23, 0.3, 37.2, 9.1)),
             dict(type="werken", naam="Verdieping: werkzone", r=(0.3, 0.3, 25, 9.1), niveau=1),
             dict(type="vergader", naam="Verdieping: vergaderen en studio", r=(25, 0.3, 37.2, 9.1), niveau=1),
@@ -104,7 +99,7 @@ LAYOUTS = {
         oordeel="te duur per lid",
         samenvatting="Kerk uit 1834 aan de Amstel, 287 m² en 12 m hoog, met tuin aan het water. Vraagprijs € 1.295.000. Met een "
                      "nieuwe tussenvloer past een kleinere club: 40 eigenaren en 40 clubleden. Mooiste plek, maar te weinig "
-                     "leden voor deze investering: een vol lid zou € 691 per maand moeten betalen.",
+                     "leden voor deze investering: een vol lid zou € 665 per maand moeten betalen.",
         koop=dict(totaal=1_295_000, label="vraagprijs funda in business (bieding)"),
         verhuur=[], leden=dict(n_vol=20, n_deel=20, n_club=40), bouwjaar_risico=True, isoleren=True, pv_kwp=0,
         verdieping_m2=190, nieuwe_vloer_m2=190,
@@ -119,7 +114,6 @@ LAYOUTS = {
         pui=dict(kant="v0", u0=6, u1=20, v=0),
         buiten=[
             dict(type="terras", naam="Terras aan de Amstel", r=(3, -5.5, 21, -0.5)),
-            dict(type="sauna", naam="Saunahut aan het water", r=(30, -5, 34, -1)),
             dict(type="tuin", naam="Tuin", r=(24, -8, 46, 2)),
         ],
         bomen_buiten=[(26, 0), (40, -2), (44, 1)],
@@ -147,8 +141,6 @@ LAYOUTS = {
         pui=dict(kant="v0", u0=4, u1=18, v=6.2),
         buiten=[
             dict(type="terras", naam="Houten terras met overkapping", r=(7, 0.3, 21, 5.2)),
-            dict(type="sauna", naam="Saunahut 12 pers.", r=(23, -7, 27, -3)),
-            dict(type="plunge", naam="Koudwaterbad", r=(32.5, -7, 34.5, -5)),
             dict(type="tuin", naam="Tuin met ligbedden", r=(21, -22, 35, -9)),
             dict(type="tuin", naam="Groene strook met buitenwerkplekken en buitenrig", r=(39, 8, 50, 35)),
             dict(type="parkeren", naam="Parkeren op bestaande verharding", r=(36, -12, 48, 6)),
@@ -159,13 +151,12 @@ LAYOUTS = {
         titel="Birkt 21, Amersfoort",
         oordeel="kandidaat, krap buiten",
         samenvatting="Nieuwe energieneutrale hal uit 2023, 785 m² inclusief verdieping, vraagprijs € 1.250.000. "
-                     "Weinig eigen buitenruimte: alleen de strook aan de voorkant, dus de sauna komt binnen.",
+                     "Weinig eigen buitenruimte: alleen de strook aan de voorkant voor een terras.",
         koop=dict(totaal=1_250_000, label="vraagprijs funda in business"),
         verhuur=[], leden=STD_LEDEN, bouwjaar_risico=False, isoleren=False, pv_kwp=0, verdieping_m2=242,
         zones=[
             dict(type="café", naam="Café, lounge en bibliotheek (vide)", r=(0, 0, 10, 21.7)),
             dict(type="sanitair", naam="Kleedruimte, douches, toiletten", r=(10, 0, 16, 9)),
-            dict(type="sauna", naam="Binnensauna 10 pers. + koudwaterbad", r=(10, 9, 16, 15)),
             dict(type="studio", naam="Studio", r=(10, 15, 16, 21.7)),
             dict(type="gym", naam="Gym", r=(16, 0, 25, 21.7)),
             dict(type="werken", naam="Verdieping: werkzone, vergaderen, belcellen", r=(0, 0, 11, 21.7), niveau=1),
