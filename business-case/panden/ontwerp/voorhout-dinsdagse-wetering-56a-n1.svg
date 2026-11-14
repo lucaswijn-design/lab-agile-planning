@@ -19,25 +19,32 @@
 <rect x="24.18" y="5.95" width="1.40" height="0.70" transform="rotate(184.0 24.88 6.30)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="24.84" cy="6.93" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
 <rect x="25.62" y="5.35" width="1.40" height="0.70" transform="rotate(4.0 26.32 5.70)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="26.36" cy="5.07" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
 <rect x="25.57" y="6.05" width="1.40" height="0.70" transform="rotate(184.0 26.27 6.40)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="26.23" cy="7.03" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
-<rect x="13.70" y="-9.80" width="4.60" height="4.40" transform="rotate(0.0 16.00 -7.60)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
-<rect x="14.80" y="-8.10" width="2.40" height="1.00" transform="rotate(0.0 16.00 -7.60)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
-<rect x="18.11" y="-8.30" width="0.08" height="1.40" transform="rotate(0.0 18.15 -7.60)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
-<circle cx="15.10" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="15.10" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="15.70" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="15.70" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="16.30" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="16.30" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="16.90" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="16.90" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="19.60" cy="-6.20" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<rect x="13.30" y="-9.80" width="4.60" height="4.40" transform="rotate(0.0 15.60 -7.60)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="14.40" y="-8.10" width="2.40" height="1.00" transform="rotate(0.0 15.60 -7.60)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="17.71" y="-8.30" width="0.08" height="1.40" transform="rotate(0.0 17.75 -7.60)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="17.60" y="-8.90" width="3.40" height="2.60" transform="rotate(90.0 19.30 -7.60)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="18.60" y="-8.10" width="1.40" height="1.00" transform="rotate(90.0 19.30 -7.60)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="19.26" y="-6.75" width="0.08" height="1.40" transform="rotate(90.0 19.30 -6.05)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<circle cx="14.70" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="14.70" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="15.30" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="15.30" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="15.90" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="15.90" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="16.50" cy="-8.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="16.50" cy="-6.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="20.05" cy="-8.00" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="18.55" cy="-8.00" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="20.05" cy="-7.20" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="18.55" cy="-7.20" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="12.80" cy="-5.60" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
 <circle cx="29.60" cy="7.80" r="0.4" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
 <polygon points="0.00,0.00 22.79,0.00 22.79,7.64 0.00,7.64 0.00,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 <polygon points="30.37,-0.22 30.27,8.84 24.71,8.89 24.71,7.64 22.79,7.64 22.79,0.00 22.10,-0.00 22.10,-0.21 30.37,-0.22" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 <polygon points="33.65,-15.43 33.61,-6.30 33.61,-4.56 31.56,-4.57 11.59,-4.64 11.62,-7.63 12.60,-7.62 12.61,-10.52 14.76,-10.51 14.92,-16.76 20.83,-16.84 20.83,-15.48 33.65,-15.43" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 </g>
 <text x="26.40" y="-4.20" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Werkzolder op de entresol</text><text x="26.40" y="-3.45" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">59 m² · rotskust</text>
-<text x="16.00" y="10.00" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Vergaderkamer boven in B</text><text x="16.00" y="10.75" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">48 m² · rotskust</text>
+<text x="16.00" y="10.00" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Vergaderkamers boven in B</text><text x="16.00" y="10.75" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">48 m² · rotskust</text>
 <rect x="-1.80" y="20.34" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
 <rect x="-0.80" y="20.34" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
 <rect x="0.20" y="20.34" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>

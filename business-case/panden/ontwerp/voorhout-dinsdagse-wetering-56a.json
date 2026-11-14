@@ -395,7 +395,7 @@
    ]
   },
   {
-   "naam": "Vergaderkamer boven in B",
+   "naam": "Vergaderkamers boven in B",
    "type": "vergader",
    "poly": [
     [
@@ -428,9 +428,9 @@
     ]
    ],
    "palet": "rots",
-   "beschrijving": "Op de verdieping van B (nu kantoor en kantine): een vergaderkamer voor acht en een belcel.",
+   "beschrijving": "Op de verdieping van B (nu kantoor en kantine): een vergaderkamer voor acht, een voor vier en een belcel.",
    "details": [
-    "Vergaderkamer voor 8",
+    "Vergaderkamer voor 8 en voor 4",
     "Eén belcel"
    ],
    "foto": null,
@@ -1553,7 +1553,7 @@
    "t": "box",
    "soort": "vergaderkamer",
    "c": [
-    16.0,
+    15.6,
     -7.6
    ],
    "w": 4.6,
@@ -1569,7 +1569,7 @@
    "t": "box",
    "soort": "vergadertafel",
    "c": [
-    16.0,
+    15.6,
     -7.6
    ],
    "w": 2.4,
@@ -1583,7 +1583,7 @@
    "t": "box",
    "soort": "scherm",
    "c": [
-    18.15,
+    17.75,
     -7.6
    ],
    "w": 0.08,
@@ -1597,7 +1597,7 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    15.1,
+    14.7,
     -8.35
    ],
    "r": 0.24,
@@ -1609,7 +1609,7 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    15.1,
+    14.7,
     -6.85
    ],
    "r": 0.24,
@@ -1621,7 +1621,7 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    15.7,
+    15.3,
     -8.35
    ],
    "r": 0.24,
@@ -1633,7 +1633,7 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    15.7,
+    15.3,
     -6.85
    ],
    "r": 0.24,
@@ -1645,7 +1645,7 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.3,
+    15.9,
     -8.35
    ],
    "r": 0.24,
@@ -1657,7 +1657,7 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.3,
+    15.9,
     -6.85
    ],
    "r": 0.24,
@@ -1669,7 +1669,7 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.9,
+    16.5,
     -8.35
    ],
    "r": 0.24,
@@ -1681,8 +1681,100 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.9,
+    16.5,
     -6.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "vergaderkamer",
+   "c": [
+    19.3,
+    -7.6
+   ],
+   "w": 3.4,
+   "d": 2.6,
+   "h": 2.6,
+   "a": 90,
+   "kleur": "#9fb3bd",
+   "glas": true,
+   "pers": 4,
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "vergadertafel",
+   "c": [
+    19.3,
+    -7.6
+   ],
+   "w": 1.4,
+   "d": 1.0,
+   "h": 0.75,
+   "a": 90,
+   "kleur": "#b08a5e",
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "scherm",
+   "c": [
+    19.3,
+    -6.05
+   ],
+   "w": 0.08,
+   "d": 1.4,
+   "h": 1.6,
+   "a": 90,
+   "kleur": "#1f2022",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    20.05,
+    -8.0
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    18.55,
+    -8.0
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    20.05,
+    -7.2
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    18.55,
+    -7.2
    ],
    "r": 0.24,
    "h": 0.45,
@@ -1693,8 +1785,8 @@
    "t": "cil",
    "soort": "belcel",
    "c": [
-    19.6,
-    -6.2
+    12.8,
+    -5.6
    ],
    "r": 0.7,
    "h": 2.3,

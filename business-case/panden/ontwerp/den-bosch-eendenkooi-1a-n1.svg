@@ -62,9 +62,10 @@
 <circle cx="34.80" cy="10.15" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
 <circle cx="32.20" cy="13.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
 <circle cx="34.40" cy="13.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="36.40" cy="13.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="30.20" cy="1.40" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
 <circle cx="30.40" cy="6.10" r="0.4" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
 <circle cx="21.00" cy="12.60" r="0.4" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
-<circle cx="36.40" cy="13.40" r="0.4" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
 <polygon points="30.60,14.94 30.62,17.07 26.27,16.94 26.17,17.04 17.68,17.09 17.68,18.42 0.00,18.41 0.01,5.07 0.01,3.27 0.01,0.00 37.51,0.00 37.50,5.20 37.49,14.53 37.49,14.93 30.60,14.94" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 </g>
 <text x="8.90" y="-9.20" font-size="0.62" text-anchor="middle" fill="#55514a" font-style="italic">Vide boven de sportzaal</text>

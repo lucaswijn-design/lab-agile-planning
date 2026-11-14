@@ -4,6 +4,7 @@
 <polygon points="0.00,0.00 11.81,0.00 11.82,2.65 12.49,2.66 12.48,3.46 13.20,3.74 13.82,4.19 14.30,4.78 14.62,5.48 14.75,6.23 14.69,7.00 14.43,7.72 14.00,8.35 13.42,8.86 12.74,9.20 11.99,9.36 5.13,9.40 5.08,11.98 2.59,11.93 2.66,7.93 0.00,7.90 0.00,0.00" fill="#ffffff"/>
 <polygon points="-14.87,15.90 -4.91,15.97 5.11,16.05 4.99,32.17 12.94,32.23 12.92,36.24 -5.11,36.11 -14.37,36.04 -15.03,36.04 -14.87,16.27 -14.87,15.90" fill="#ffffff"/>
 <polygon points="0.60,0.60 11.40,0.60 11.40,7.40 0.60,7.40" fill="#e5d48c" fill-opacity="0.42"/>
+<polygon points="-6.60,16.40 -1.00,16.40 -1.00,23.20 -6.60,23.20" fill="#e3e6e2" fill-opacity="0.42"/>
 <defs><pattern id="arc" width="0.6" height="0.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.6" stroke="#b9b3a6" stroke-width="0.06"/></pattern></defs>
 <rect x="1.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 1.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
 <rect x="2.01" y="0.80" width="0.98" height="0.40" transform="rotate(0.0 2.50 1.00)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
@@ -26,10 +27,23 @@
 <rect x="2.58" y="3.58" width="0.85" height="0.85" transform="rotate(0.0 3.00 4.00)" fill="#47522a" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
 <rect x="5.58" y="3.58" width="0.85" height="0.85" transform="rotate(0.0 6.00 4.00)" fill="#47522a" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
 <rect x="8.57" y="3.58" width="0.85" height="0.85" transform="rotate(0.0 9.00 4.00)" fill="#47522a" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-6.50" y="16.60" width="5.40" height="4.20" transform="rotate(0.0 -3.80 18.70)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="-4.80" y="18.20" width="2.00" height="1.00" transform="rotate(0.0 -3.80 18.70)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-1.29" y="18.00" width="0.08" height="1.40" transform="rotate(0.0 -1.25 18.70)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<circle cx="-4.50" cy="17.95" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="-4.50" cy="19.45" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="-3.80" cy="17.95" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="-3.80" cy="19.45" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="-3.10" cy="17.95" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="-3.10" cy="19.45" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="-3.90" cy="22.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="-2.10" cy="22.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<polyline points="-1.00,16.40 -1.00,23.20" fill="none" stroke="#5c7a88" stroke-width="0.14"/><polyline points="-1.00,16.40 -1.00,23.20" fill="none" stroke="#fbf9f4" stroke-width="0.05"/>
 <polygon points="0.00,0.00 11.81,0.00 11.82,2.65 12.49,2.66 12.48,3.46 13.20,3.74 13.82,4.19 14.30,4.78 14.62,5.48 14.75,6.23 14.69,7.00 14.43,7.72 14.00,8.35 13.42,8.86 12.74,9.20 11.99,9.36 5.13,9.40 5.08,11.98 2.59,11.93 2.66,7.93 0.00,7.90 0.00,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 <polygon points="-14.87,15.90 -4.91,15.97 5.11,16.05 4.99,32.17 12.94,32.23 12.92,36.24 -5.11,36.11 -14.37,36.04 -15.03,36.04 -14.87,16.27 -14.87,15.90" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 </g>
 <text x="6.00" y="-4.00" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Stille bieb op zolder</text><text x="6.00" y="-3.25" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">73 m² · avocado</text>
+<text x="-3.80" y="-21.20" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Vergaderbalkon op de tussenvloer</text><text x="-3.80" y="-20.45" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">38 m² · rotskust</text>
 <rect x="-16.83" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
 <rect x="-15.83" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
 <rect x="-14.83" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>

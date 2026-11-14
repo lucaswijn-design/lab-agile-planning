@@ -96,6 +96,7 @@
     "Gebogen balie als espressobar",
     "Keuken van 5,6 m met kookeiland",
     "Ronde bank rond een sfeerhaard",
+    "Raambar van 4,8 m met acht krukken voor lunch",
     "Boekenwand van 6 m"
    ],
    "foto": 5,
@@ -278,10 +279,10 @@
     ]
    ],
    "palet": "rots",
-   "beschrijving": "Een vergaderkamer voor acht, een voor zes en twee belcellen.",
+   "beschrijving": "Een vergaderkamer voor acht, een voor zes en vier belcellen.",
    "details": [
     "Vergaderkamer voor 8 en voor 6",
-    "Twee ronde belcellen"
+    "Vier ronde belcellen"
    ],
    "foto": null,
    "prompt": "Two meeting rooms behind black steel and glass on an upper floor: an oak table for eight and one for six, slate-blue acoustic panels, a screen with camera, plants, daylight from the windows.",
@@ -1036,6 +1037,19 @@
    "r": 0.6,
    "h": 2.4,
    "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "raambar",
+   "c": [
+    25.2,
+    0.6
+   ],
+   "w": 4.8,
+   "d": 0.5,
+   "h": 1.05,
+   "a": 0,
+   "kleur": "#b08a5e"
   },
   {
    "t": "kleed",
@@ -1897,13 +1911,27 @@
    "n": 1
   },
   {
-   "t": "plant",
+   "t": "cil",
+   "soort": "belcel",
    "c": [
     36.4,
-    13.4
+    13.3
    ],
-   "r": 0.4,
-   "h": 1.4,
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "belcel",
+   "c": [
+    30.2,
+    1.4
+   ],
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
    "n": 1
   },
   {

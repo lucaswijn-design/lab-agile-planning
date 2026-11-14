@@ -79,7 +79,7 @@
    "beschrijving": "De driehoekige punt die de binnentuin in steekt wordt de voordeur, met kluisjes en twee belcellen langs de rand.",
    "details": [
     "Rond jute kleed, kapstokwand en kluisjes voor 60 leden",
-    "Twee ronde belcellen in leisteenblauw vilt",
+    "Drie ronde belcellen in leisteenblauw vilt (een vierde naast de wastoren)",
     "Ledenbord en streepjeslijst",
     "Twee olijfbomen markeren de deur"
    ],
@@ -496,6 +496,18 @@
    "t": "cil",
    "soort": "belcel",
    "c": [
+    19.8,
+    9.1
+   ],
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "belcel",
+   "c": [
     21.6,
     9.1
    ],
@@ -510,6 +522,18 @@
    "c": [
     23.4,
     9.1
+   ],
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "belcel",
+   "c": [
+    32.9,
+    5.6
    ],
    "r": 0.7,
    "h": 2.3,
