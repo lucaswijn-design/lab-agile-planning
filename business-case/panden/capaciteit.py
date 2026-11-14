@@ -59,7 +59,7 @@ def vraag(V, D, C=0):
 
 
 # ---------------------------------------------------------------- aanbod per uitgewerkt pand
-TOILETTEN = {"den-bosch-eendenkooi-1a": (4, 6)}  # [aanname] bestaande kleedkamers: 4 toiletten, 6 douches
+TOILETTEN = {"den-bosch-eendenkooi-1a": (4, 6), "uden-nijverheidsstraat-4c": (7, 4)}  # [aanname] bestaande kleedkamers: 4 toiletten, 6 douches
 
 
 def aanbod(slug):

@@ -1101,6 +1101,143 @@ LABELS.update({
 })
 
 
+# ---------------------------------------------------------------- Ronde 6: Pernis (circa 60) en Uden (circa 100)
+PERNIS = dict(
+    titel="Ring 15, Pernis (Rotterdam)",
+    sub="Dorpspand uit circa 1900 met bijeenkomstfunctie, 445 m² grondvlak en 6,7 m hoog, met een tuin op het zuiden",
+    hoogte=6.7, niveaus={"1": 3.2},
+    concept="Een lang, hoog dorpsgebouw aan de Ring van Pernis. Aan de westkant het boekencafé met keuken, grote tafel en zitkuil. In het midden de werkzone "
+            "met 24 bureaus; boven de noordhelft van de werkzone een vergaderbalkon op een nieuwe tussenvloer, zodat de zuidhelft hoog en licht blijft. "
+            "Dan de wastoren als buffer en aan de oostkant de gym achter een dichte wand. Buiten een terras en tuin over de hele lengte.",
+    geluid="Gym aan de oostkant, achter de wastoren: 7 m buffer en een dichte wand tot het dak met deur op toegangspas. Vergaderkamers zitten boven de werkzone, "
+           "ver van de gym. 40 mm rubber op akoestische ondervloer en platforms onder de racks.",
+    pui=[[[1, 0], [24, 0]], [[33, 0], [41.5, 0]]],
+    zones=[
+        zone("Boekencafé en keuken", "café", R(0.3, 0.3, 11, 10.3),
+             "Aan de westkant het café: keuken langs de noordwand, kookeiland met de espressomachine, een grote tafel voor twaalf en een ronde bank rond de haard aan de tuinramen.",
+             ["Keuken van 5,4 m met kookeiland", "Grote tafel van 4,2 m voor twaalf", "Ronde bank rond een sfeerhaard", "Boekenwand langs de westgevel"],
+             cam=dict(t=[5.6, 5.2], afstand=9, hoek=230),
+             prompt="An old Dutch village meeting hall, about 6.7 m high with exposed roof trusses, turned into a members-club book café: an olive green kitchen with a reclaimed wood island and a three-group espresso machine, a long oak table for twelve, a round olive velvet sofa around a black freestanding fireplace by the garden windows, a walnut bookcase wall, plants."),
+        zone("Werkzone", "werken", R(11, 0.3, 25, 10.3),
+             "Vierentwintig compacte zit-sta bureaus in twee rijen eilanden. De zuidrij werkt onder de volle hoogte aan de tuinramen, de noordrij onder het vergaderbalkon.",
+             ["Zes eilanden van vier bureaus 140 x 70", "Looppad van 2,3 m tussen de rijen", "Stalen trap naar het balkon"],
+             cam=dict(t=[18, 5.2], afstand=10, hoek=230),
+             prompt="A coworking hall in an old high village building: two rows of islands of four compact sit-stand desks with oak tops, the south row under the full 6.7 m height by tall garden windows, the north row under a steel and timber mezzanine with glass balustrade, slate-blue felt panels, plants."),
+        dict(zone("Vergaderbalkon", "vergader", R(11, 5.9, 25, 10.3),
+                  "Een tussenvloer van 62 m² boven de noordhelft van de werkzone: vergaderkamers voor acht en zes en twee belcellen, achter een glazen balustrade.",
+                  ["Tussenvloer staal en hout op 3,2 m", "Vergaderkamers voor 8 en 6, twee belcellen", "Glazen balustrade naar de werkzone"], n=1,
+                  cam=dict(t=[18, 8.1], afstand=8, hoek=250),
+                  prompt="A steel and timber mezzanine along one side of a high old hall, with two glass meeting rooms for eight and six and two round felt phone booths behind a glass balustrade, overlooking a coworking floor below, timber trusses above."), tussenvloer=True),
+        zone("Wastoren", "sanitair", R(25, 0.3, 32.2, 10.3), "De wastoren als buffer tussen werken en sporten, met twee belcellen ernaast.", ["Wastoren van 5,5 m doorsnee, open naar de werkzone", "Twee ronde belcellen"],
+             cam=dict(t=[28.5, 5.3], afstand=8, hoek=230),
+             prompt="A round concrete-look bathroom tower, 5.5 m diameter and 3 m high, inside an old high hall with timber trusses, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the rim."),
+        zone("Gym (afsluitbaar)", "gym", [[32.2, 0.3], [42.3, 0.3], [42.4, 8.3], [37.1, 8.3], [37.1, 11.6], [32.4, 11.6], [32.4, 10.4], [32.2, 10.4]],
+             "De oostkant wordt de gym: racks, roeiers aan de tuinramen, een vloer voor groepslessen en de douchetoren. Techniek in de aanbouw.",
+             ["Twee racks op platforms en een kabelrek", "Twee roeiers aan de ramen", "Douchetoren van 4,3 m", "Deur op toegangspas"],
+             cam=dict(t=[37.5, 5], afstand=9, hoek=230),
+             prompt="A small functional gym in the end of an old high village hall: black power racks on oak platforms, rowing machines by tall windows onto a garden, anthracite rubber floor, one wall oxblood red, a round concrete-look shower tower with plants on its rim."),
+    ],
+    buiten=[dict(naam="Terras", poly=R(0.5, -6, 24, -0.4), kleur="#b08a5e"), dict(naam="Tuin", poly=R(24, -8, 42, -0.4), kleur="#9bb07a")],
+    elementen=[
+        *keuken([3.8, 9.97], 5.4), *kookeiland([4.0, 7.8]), *grote_tafel([3.0, 4.0], 4.2, 90), *zitkuil([7.8, 4.2], 1.9, 270, "#6f7d3a", "#d9ccb0"),
+        *kasten(1.0, 7.0, 0.55, a=90, d=0.4, h=2.4), *tafeltje([8.8, 8.6]), boom([10.2, 1.2], 0.6, 2.6), plant([10.4, 9.6]),
+        *eiland2([13.5, 2.6], -3), *eiland2([17.6, 2.6], 3), *eiland2([21.7, 2.6], -3),
+        *eiland2([13.5, 7.9], 3), *eiland2([17.6, 7.9], -3), *eiland2([21.7, 7.9], 3), plant([24.3, 5.1], 0.4, 1.4),
+        dict(t="box", soort="trap", c=[11.6, 4.4], w=1.0, d=3.0, h=0.3, a=0, kleur="#2f3032"),
+        *vergaderkamer([14.2, 8.1], 4.6, 4.0, 0, 8, 1), *vergaderkamer([18.8, 8.1], 4.2, 4.0, 0, 6, 1), pod2([22.4, 8.1], 1), pod2([24.0, 8.1], 1),
+        wand([[11, 5.9], [25, 5.9]], 1.1, glas=True, n=1),
+        *toren([28.5, 5.3], 2.75, 180, "was"), pod2([26.0, 9.4]), pod2([26.0, 1.2]),
+        wand([[32.2, 2.0], [32.2, 10.4]], 6.7, gym=True), deur([32.2, 1.2], 90, toegang=True),
+        *toren([35.0, 5.4], 2.15, 180, "douche"), *rack([40.8, 1.8], 0), *rack([40.8, 4.9], 0),
+        roeier([34.6, 1.1], 0), roeier([37.6, 1.1], 0), dict(t="kleed", c=[38.6, 6.2], w=2.0, d=3.0, a=0, kleur="#c7928a"),
+        dict(t="box", soort="techniek", c=[35.9, 10.5], w=2.0, d=1.8, h=2.4, a=0, kleur="#8f8a80"),
+        *tafeltje([4, -3], stoelen=3), *tafeltje([9, -3], stoelen=3), *tafeltje([14, -3], stoelen=3), *tafeltje([19, -3], stoelen=3),
+        boom([27, -4.5]), boom([33, -5.5]), boom([39, -4.5]), boom([1.5, -5.0], 0.9, 3.0),
+        dict(t="ring", soort="pergola", c=[30.0, -4.4], r=2.4, open=90, gat=0, h=2.6, kleur="#2f3032", dun=True),
+    ],
+    dak=dict(soort="pv", terras=None, groen=[], pv=[R(1, 0.6, 31, 4.6)], koepels=[[28.5, 5.3, 0.9], [35.0, 5.4, 0.8]],
+             tekst="Het oude dak blijft. Zonnepanelen op het zuidvlak als de constructie dat toelaat, lichtkoepels boven de twee torens. De buitenruimte is de tuin aan de zuidkant.",
+             tekst_en="The old roof stays; solar panels on the south slope if the structure allows, skylights above the two round towers. A long garden terrace along the south facade with trees and a round pergola."),
+    renders=dict(buiten=[]),
+)
+
+UDEN = dict(
+    titel="Nijverheidsstraat 4C, Uden",
+    sub="Nieuwbouwunit van circa 660 m² grondvlak en 8 m hoog met glazen voorgevel, de meerlaagse variant voor circa 100 eigenaren",
+    hoogte=8.0, niveaus={"1": 3.6},
+    concept="Een hoge, lichte nieuwbouwhal waarin de club in lagen wordt opgebouwd. Achter de glazen voorgevel het café met keuken en een brede zittrap "
+            "die naar de galerij leidt. Langs de tussenwand met de buren loopt een werkgalerij met daaronder drie vergaderkamers en belcellen. Langs de "
+            "gevel met nieuwe ramen de werkzone op de begane grond, onder de volle hoogte. Achterin de torens als buffer en de gym achter een dichte wand. "
+            "Boven het café een leesgalerij. Zo passen circa 60 werkplekken en 100 eigenaren in een pand dat licht en hoog blijft.",
+    geluid="Gym achterin de unit, achter de wastoren en de douchetoren (6 m buffer) en een dichte wand tot het dak met deur op toegangspas. "
+           "De werkgalerij ligt aan de andere kant van de hal. 40 mm rubber op akoestische ondervloer en platforms. Let op: in een open hal van 8 m draagt geluid; "
+           "akoestische baffles onder het dak zijn nodig.",
+    pui=[[[38.5, 7.2], [38.5, 20.2]], [[12, 2.15], [24.0, 4.27]], [[1, 0.18], [5.5, 0.98]]],
+    zones=[
+        zone("Café, keuken en zittrap", "café", [[27, 4.9], [32.7, 5.8], [38.4, 6.9], [38.4, 20.3], [27, 20.3]],
+             "Achter de glazen voorgevel: keuken onder de galerij, kookeiland, een grote tafel voor twaalf, een ronde bank en een brede zittrap van 3 m die naar de galerij omhoog loopt.",
+             ["Keuken van 6,4 m onder de galerij, kookeiland met 3-groeps machine", "Grote tafel van 4,2 m voor twaalf", "Zittrap van 3 m breed als tribune en trap",
+              "Ronde bank rond een sfeerhaard"], foto=8, cam=dict(t=[32.5, 12], afstand=11, hoek=330),
+             prompt="Turn this new industrial unit with a two-storey glass facade into the entrance and café of a members club: a wide wooden seating stair leading up to a gallery, an olive green kitchen under the gallery with a reclaimed wood island and a three-group espresso machine, a long oak table for twelve, a round olive velvet sofa around a black fireplace, big trees in pots, warm light against the dark steel cladding."),
+        zone("Werkzone begane grond", "werken", [[12, 2.15], [24.2, 4.3], [24.8, 4.3], [27, 4.7], [27, 12.5], [12, 12.5]],
+             "Vierentwintig zit-sta bureaus in zes eilanden langs de gevel met nieuwe ramen, onder de volle hoogte van 8 m.",
+             ["Zes eilanden van vier bureaus", "Nieuwe ramen in de zijgevel", "Akoestische baffles onder het dak"],
+             cam=dict(t=[19.5, 8.4], afstand=11, hoek=250),
+             prompt="A coworking floor inside an 8 m high new steel hall: six islands of four compact sit-stand desks with oak tops, new tall windows in the side wall, a timber and steel work gallery on the other side, large slate-blue acoustic baffles hanging under the roof, trees in pots."),
+        zone("Vergaderkamers onder de galerij", "vergader", R(12, 12.5, 27, 20.3),
+             "Onder de werkgalerij langs de tussenwand: twee vergaderkamers voor acht, een voor zes en vier belcellen.",
+             ["Vergaderkamers voor 8, 8 en 6", "Vier ronde belcellen"], cam=dict(t=[19.5, 16.4], afstand=9, hoek=250),
+             prompt="Three glass meeting rooms in a row under a steel and timber gallery inside a high hall: oak tables, slate-blue acoustic panels, screens with cameras, round felt phone booths, plants."),
+        dict(zone("Werkgalerij", "werken", [[12, 12.5], [27, 12.5], [27, 14], [38.4, 14], [38.4, 20.3], [12, 20.3]],
+                  "Een tussenvloer van 190 m² op 3,6 m: zestien bureaus en een werkbank langs de wand boven de vergaderkamers, en boven het café een leesgalerij met boeken en twee belcellen.",
+                  ["Vier eilanden van vier bureaus", "Werkbank van 6 m langs de wand", "Leesgalerij boven het café", "Glazen balustrade naar de vide"], n=1,
+                  cam=dict(t=[24, 16.4], afstand=10, hoek=250),
+                  prompt="A long steel and timber work gallery 3.6 m above the floor of a high new hall: islands of compact sit-stand desks, a long workbench along the wall, a reading gallery with bookshelves and armchairs at the far end, glass balustrade overlooking the coworking floor and café below, skylights."), tussenvloer=True),
+        zone("Wastoren en douchetoren", "sanitair", [[6, 1.2], [12, 2.15], [12, 20.3], [6, 20.3]],
+             "De twee torens als buffer tussen werken en de gym.", ["Wastoren 5,5 m, douchetoren 4,5 m (alleen vanuit de gym)", "Extra toiletgroep met twee toiletten en een toegankelijk toilet"],
+             cam=dict(t=[9, 10.5], afstand=9, hoek=250),
+             prompt="Two round concrete-look bathroom towers, 3 m high, standing in an 8 m high steel hall, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the rims, skylights above."),
+        zone("Gym (afsluitbaar)", "gym", [[0.2, 0.3], [6, 1.2], [6, 20.3], [0.2, 20.3]],
+             "Achterin de unit: vier racks langs de achterwand, een vloer voor groepslessen, roeiers. Dichte wand tot het dak, deur op toegangspas.",
+             ["Vier racks op platforms", "Groepslesvloer van 3 x 6 m", "Douchetoren vanuit de gym"], cam=dict(t=[3, 10], afstand=10, hoek=0),
+             prompt="A functional gym at the back of a high new steel hall, closed off by a solid wall: four black power racks on oak platforms along the back wall, a mat area, rowing machines, anthracite rubber floor, one wall oxblood red, plants."),
+    ],
+    buiten=[dict(naam="Voorterrein", poly=R(39, 4, 46, 21), kleur="#c9c3b6")],
+    elementen=[
+        *keuken([31.2, 19.97], 6.4), *kookeiland([31.2, 17.4]), *grote_tafel([31.8, 12.3], 4.2), *zitkuil([29.6, 8.4], 1.8, 270, "#6f7d3a", "#d9ccb0"),
+        dict(t="box", soort="trap", c=[36.4, 11.6], w=3.0, d=4.0, h=0.3, a=0, kleur="#b08a5e"), dict(t="kleed", c=[36.8, 8.2], w=2.4, d=1.6, a=0, kleur="#d5bd96"),
+        boom([37.6, 18.6], 0.9, 3.4), boom([27.8, 15.8], 0.8, 3.0), plant([34.6, 7.6]),
+        *eiland2([14.0, 6.6], -3), *eiland2([18.0, 6.6], 3), *eiland2([22.0, 6.6], -3),
+        *eiland2([14.0, 10.9], 3), *eiland2([18.0, 10.9], -3), *eiland2([22.0, 10.9], 3), plant([25.6, 8.6], 0.4, 1.4),
+        *vergaderkamer([15.0, 16.4], 5.0, 4.6, 0, 8), *vergaderkamer([20.4, 16.4], 5.0, 4.6, 0, 8), *vergaderkamer([25.0, 16.4], 3.6, 4.6, 0, 6),
+        pod2([14.0, 19.6]), pod2([16.0, 19.6]), pod2([18.0, 19.6]), pod2([20.0, 19.6]),
+        *eiland2([14.6, 15.4], 0, 1), *eiland2([18.6, 15.4], 0, 1), *eiland2([22.6, 15.4], 0, 1), *eiland2([26.4, 15.6], 0, 1),
+        dict(t="box", soort="raambar", c=[18.0, 19.9], w=6.0, d=0.5, h=1.05, a=0, kleur=HOUT, n=1),
+        *kasten(29.0, 37.0, 19.9, n=1, h=2.2), *[dict(t="box", soort="fauteuil", c=[u, 17.4], w=0.85, d=0.85, h=0.8, a=0, kleur="#47522a", n=1) for u in (30.0, 32.4, 34.8)],
+        pod2([37.4, 15.2], 1), pod2([37.4, 17.6], 1), wand([[12, 12.5], [27, 12.5], [27, 14], [34.8, 14]], 1.1, glas=True, n=1),
+        *toren([9.0, 6.4], 2.75, 0, "was"), *toren([9.0, 14.6], 2.25, 180, "douche"),
+        wand([[6, 1.2], [6, 14.0]], 8.0, gym=True), wand([[6, 15.2], [6, 16.0]], 8.0, gym=True), wand([[6, 17.0], [6, 20.3]], 8.0, gym=True), deur([6, 16.5], 90, toegang=True),
+        dict(t="box", soort="toiletgroep", c=[9.4, 18.7], w=5.0, d=3.0, h=2.6, a=0, kleur="#bdb7aa"), label([9.4, 18.7], "extra toiletten"),
+        *rack([1.6, 4.6], 90), *rack([1.6, 7.7], 90), *rack([1.6, 10.8], 90), *rack([1.6, 13.9], 90),
+        roeier([4.4, 3.4], 90), dict(t="kleed", c=[4.2, 9.2], w=2.6, d=6.0, a=0, kleur="#c7928a"),
+        dict(t="box", soort="kettlebells", c=[3.6, 18.9], w=2.0, d=0.5, h=0.9, a=0, kleur=STAAL),
+        boom([41, 6], 0.9, 3.0), boom([41, 19], 0.9, 3.0),
+    ],
+    dak=dict(soort="pv", terras=None, groen=[], pv=[R(13, 5.5, 37.8, 19.6), R(0.8, 1.5, 5.6, 19.6)],
+             koepels=[[15.0, 8.6, 0.9], [19.0, 8.6, 0.9], [23.0, 8.6, 0.9], [9.0, 6.4, 0.9], [9.0, 14.6, 0.8]],
+             tekst="Nieuw plat dak: zonnepanelen over bijna het hele dak en vijf lichtkoepels boven de werkzone en de torens. Geen dakterras: het is een unit in een complex.",
+             tekst_en="New flat roof: solar panels across almost the whole roof and five round skylights above the coworking floor and the two towers. Neighbouring units stay simple grey massing."),
+    renders=dict(buiten=[(7, "Gevel en entree (impressie ontwikkelaar)", "Keep this new industrial building and its glass facade, make the end unit the entrance of a members club: warm wood around the entrance, large planters and two trees, a bench, a subtle brass sign instead of LOGO, warm interior light visible through the glass showing a wooden seating stair and plants.")]),
+)
+
+ONTWERPEN.update({"pernis-ring-15": PERNIS, "uden-nijverheidsstraat-4c": UDEN})
+LABELS.update({
+    "pernis-ring-15": {"Boekencafé en keuken": [5.6, 6.6], "Werkzone": [17.6, 5.2], "Vergaderbalkon": [18.0, 6.4], "Wastoren": [28.5, 9.4], "Gym (afsluitbaar)": [38.4, 3.4]},
+    "uden-nijverheidsstraat-4c": {"Café, keuken en zittrap": [33.0, 15.0], "Werkzone begane grond": [19.5, 8.75], "Vergaderkamers onder de galerij": [20.0, 13.4],
+                                  "Werkgalerij": [20.0, 13.4], "Wastoren en douchetoren": [9.0, 10.5], "Gym (afsluitbaar)": [3.2, 16.0]},
+})
+
+
 # ---------------------------------------------------------------- inbouw uit het ontwerp, bottom-up (bovenop budget.py)
 def inbouw_rows(slug, gym_m2):
     """Kosten die uit de v2-indeling volgen en niet al in budget.py zitten (excl. btw).
@@ -1128,6 +1265,7 @@ def inbouw_rows(slug, gym_m2):
     add("Deur met elektronisch slot en toegangslezer (koppeling met leden-app)", sum(1 for e in E if e["t"] == "deur" and e.get("toegang")), "st", 1_800, "schatting")
     add("Akoestische ondervloer onder het gymrubber", gym_m2, "m2", 18, "schatting", groep="Gym")
     add("Zwevend platform onder elk rack (hout op rubberdempers)", sum(1 for e in E if e.get("soort") == "rack"), "st", 450, "schatting", groep="Gym")
+    add("Extra toiletgroep (2 toiletten + toegankelijk toilet, leidingwerk)", sum(1 for e in E if e.get("soort") == "toiletgroep"), "st", 14_000, "schatting", groep="Sanitair")
     tv = sum(poly_area(z["poly"]) for z in ONTWERPEN[slug]["zones"] if z.get("tussenvloer"))
     add("Nieuwe tussenvloer staal + hout, incl. trap en glazen balustrade", tv, "m2", 650, "schatting")
     gw_glas = sum(math.dist(w["pts"][i], w["pts"][i + 1]) * w["h"] for w in E if w["t"] == "wand" and w.get("glas") for i in range(len(w["pts"]) - 1))

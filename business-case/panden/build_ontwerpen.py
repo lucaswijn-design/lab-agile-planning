@@ -16,9 +16,11 @@ import pand_case  # noqa: E402
 from tekening import basis, gebouwen, tekening  # noqa: E402
 from layout import LAYOUTS  # noqa: E402
 
-VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "voorhout-dinsdagse-wetering-56a", "maarssen-herenweg-15"]
+VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "voorhout-dinsdagse-wetering-56a", "maarssen-herenweg-15",
+            "pernis-ring-15", "uden-nijverheidsstraat-4c"]
 TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True, "den-bosch-eendenkooi-1a": False,
-          "voorhout-dinsdagse-wetering-56a": True, "maarssen-herenweg-15": True}
+          "voorhout-dinsdagse-wetering-56a": True, "maarssen-herenweg-15": True,
+          "pernis-ring-15": True, "uden-nijverheidsstraat-4c": True}
 
 
 def werkplekken(O):

@@ -1,0 +1,1882 @@
+{
+ "titel": "Ring 15, Pernis (Rotterdam)",
+ "sub": "Dorpspand uit circa 1900 met bijeenkomstfunctie, 445 m² grondvlak en 6,7 m hoog, met een tuin op het zuiden",
+ "hoogte": 6.7,
+ "niveaus": {
+  "1": 3.2
+ },
+ "concept": "Een lang, hoog dorpsgebouw aan de Ring van Pernis. Aan de westkant het boekencafé met keuken, grote tafel en zitkuil. In het midden de werkzone met 24 bureaus; boven de noordhelft van de werkzone een vergaderbalkon op een nieuwe tussenvloer, zodat de zuidhelft hoog en licht blijft. Dan de wastoren als buffer en aan de oostkant de gym achter een dichte wand. Buiten een terras en tuin over de hele lengte.",
+ "geluid": "Gym aan de oostkant, achter de wastoren: 7 m buffer en een dichte wand tot het dak met deur op toegangspas. Vergaderkamers zitten boven de werkzone, ver van de gym. 40 mm rubber op akoestische ondervloer en platforms onder de racks.",
+ "pui": [
+  [
+   [
+    1,
+    0
+   ],
+   [
+    24,
+    0
+   ]
+  ],
+  [
+   [
+    33,
+    0
+   ],
+   [
+    41.5,
+    0
+   ]
+  ]
+ ],
+ "zones": [
+  {
+   "naam": "Boekencafé en keuken",
+   "type": "café",
+   "poly": [
+    [
+     0.3,
+     0.3
+    ],
+    [
+     11,
+     0.3
+    ],
+    [
+     11,
+     10.3
+    ],
+    [
+     0.3,
+     10.3
+    ]
+   ],
+   "palet": "pistache",
+   "beschrijving": "Aan de westkant het café: keuken langs de noordwand, kookeiland met de espressomachine, een grote tafel voor twaalf en een ronde bank rond de haard aan de tuinramen.",
+   "details": [
+    "Keuken van 5,4 m met kookeiland",
+    "Grote tafel van 4,2 m voor twaalf",
+    "Ronde bank rond een sfeerhaard",
+    "Boekenwand langs de westgevel"
+   ],
+   "foto": null,
+   "prompt": "An old Dutch village meeting hall, about 6.7 m high with exposed roof trusses, turned into a members-club book café: an olive green kitchen with a reclaimed wood island and a three-group espresso machine, a long oak table for twelve, a round olive velvet sofa around a black freestanding fireplace by the garden windows, a walnut bookcase wall, plants.",
+   "n": 0,
+   "cam": {
+    "t": [
+     5.6,
+     5.2
+    ],
+    "afstand": 9,
+    "hoek": 230
+   },
+   "m2": 107,
+   "kleur": "#d9ccb0",
+   "palet_naam": "Pistache",
+   "label": [
+    5.6,
+    6.6
+   ],
+   "prompt_vol": "An old Dutch village meeting hall, about 6.7 m high with exposed roof trusses, turned into a members-club book café: an olive green kitchen with a reclaimed wood island and a three-group espresso machine, a long oak table for twelve, a round olive velvet sofa around a black freestanding fireplace by the garden windows, a walnut bookcase wall, plants. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Colours from nature: olive green velvet, pistachio, plum and travertine. Photorealistic, natural light, no people in focus, no text."
+  },
+  {
+   "naam": "Werkzone",
+   "type": "werken",
+   "poly": [
+    [
+     11,
+     0.3
+    ],
+    [
+     25,
+     0.3
+    ],
+    [
+     25,
+     10.3
+    ],
+    [
+     11,
+     10.3
+    ]
+   ],
+   "palet": "rots",
+   "beschrijving": "Vierentwintig compacte zit-sta bureaus in twee rijen eilanden. De zuidrij werkt onder de volle hoogte aan de tuinramen, de noordrij onder het vergaderbalkon.",
+   "details": [
+    "Zes eilanden van vier bureaus 140 x 70",
+    "Looppad van 2,3 m tussen de rijen",
+    "Stalen trap naar het balkon"
+   ],
+   "foto": null,
+   "prompt": "A coworking hall in an old high village building: two rows of islands of four compact sit-stand desks with oak tops, the south row under the full 6.7 m height by tall garden windows, the north row under a steel and timber mezzanine with glass balustrade, slate-blue felt panels, plants.",
+   "n": 0,
+   "cam": {
+    "t": [
+     18,
+     5.2
+    ],
+    "afstand": 10,
+    "hoek": 230
+   },
+   "m2": 140,
+   "kleur": "#e3e6e2",
+   "palet_naam": "Rotskust",
+   "label": [
+    17.6,
+    5.2
+   ],
+   "prompt_vol": "A coworking hall in an old high village building: two rows of islands of four compact sit-stand desks with oak tops, the south row under the full 6.7 m height by tall garden windows, the north row under a steel and timber mezzanine with glass balustrade, slate-blue felt panels, plants. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
+  },
+  {
+   "naam": "Vergaderbalkon",
+   "type": "vergader",
+   "poly": [
+    [
+     11,
+     5.9
+    ],
+    [
+     25,
+     5.9
+    ],
+    [
+     25,
+     10.3
+    ],
+    [
+     11,
+     10.3
+    ]
+   ],
+   "palet": "rots",
+   "beschrijving": "Een tussenvloer van 62 m² boven de noordhelft van de werkzone: vergaderkamers voor acht en zes en twee belcellen, achter een glazen balustrade.",
+   "details": [
+    "Tussenvloer staal en hout op 3,2 m",
+    "Vergaderkamers voor 8 en 6, twee belcellen",
+    "Glazen balustrade naar de werkzone"
+   ],
+   "foto": null,
+   "prompt": "A steel and timber mezzanine along one side of a high old hall, with two glass meeting rooms for eight and six and two round felt phone booths behind a glass balustrade, overlooking a coworking floor below, timber trusses above.",
+   "n": 1,
+   "cam": {
+    "t": [
+     18,
+     8.1
+    ],
+    "afstand": 8,
+    "hoek": 250
+   },
+   "tussenvloer": true,
+   "m2": 62,
+   "kleur": "#e3e6e2",
+   "palet_naam": "Rotskust",
+   "label": [
+    18.0,
+    6.4
+   ],
+   "prompt_vol": "A steel and timber mezzanine along one side of a high old hall, with two glass meeting rooms for eight and six and two round felt phone booths behind a glass balustrade, overlooking a coworking floor below, timber trusses above. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
+  },
+  {
+   "naam": "Wastoren",
+   "type": "sanitair",
+   "poly": [
+    [
+     25,
+     0.3
+    ],
+    [
+     32.2,
+     0.3
+    ],
+    [
+     32.2,
+     10.3
+    ],
+    [
+     25,
+     10.3
+    ]
+   ],
+   "palet": "beton",
+   "beschrijving": "De wastoren als buffer tussen werken en sporten, met twee belcellen ernaast.",
+   "details": [
+    "Wastoren van 5,5 m doorsnee, open naar de werkzone",
+    "Twee ronde belcellen"
+   ],
+   "foto": null,
+   "prompt": "A round concrete-look bathroom tower, 5.5 m diameter and 3 m high, inside an old high hall with timber trusses, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the rim.",
+   "n": 0,
+   "cam": {
+    "t": [
+     28.5,
+     5.3
+    ],
+    "afstand": 8,
+    "hoek": 230
+   },
+   "m2": 72,
+   "kleur": "#c9c3b6",
+   "palet_naam": "Beton en mos",
+   "label": [
+    28.5,
+    9.4
+   ],
+   "prompt_vol": "A round concrete-look bathroom tower, 5.5 m diameter and 3 m high, inside an old high hall with timber trusses, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the rim. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
+  },
+  {
+   "naam": "Gym (afsluitbaar)",
+   "type": "gym",
+   "poly": [
+    [
+     32.2,
+     0.3
+    ],
+    [
+     42.3,
+     0.3
+    ],
+    [
+     42.4,
+     8.3
+    ],
+    [
+     37.1,
+     8.3
+    ],
+    [
+     37.1,
+     11.6
+    ],
+    [
+     32.4,
+     11.6
+    ],
+    [
+     32.4,
+     10.4
+    ],
+    [
+     32.2,
+     10.4
+    ]
+   ],
+   "palet": "granaat",
+   "beschrijving": "De oostkant wordt de gym: racks, roeiers aan de tuinramen, een vloer voor groepslessen en de douchetoren. Techniek in de aanbouw.",
+   "details": [
+    "Twee racks op platforms en een kabelrek",
+    "Twee roeiers aan de ramen",
+    "Douchetoren van 4,3 m",
+    "Deur op toegangspas"
+   ],
+   "foto": null,
+   "prompt": "A small functional gym in the end of an old high village hall: black power racks on oak platforms, rowing machines by tall windows onto a garden, anthracite rubber floor, one wall oxblood red, a round concrete-look shower tower with plants on its rim.",
+   "n": 0,
+   "cam": {
+    "t": [
+     37.5,
+     5
+    ],
+    "afstand": 9,
+    "hoek": 230
+   },
+   "m2": 97,
+   "kleur": "#8d8380",
+   "palet_naam": "Granaatappel",
+   "label": [
+    38.4,
+    3.4
+   ],
+   "prompt_vol": "A small functional gym in the end of an old high village hall: black power racks on oak platforms, rowing machines by tall windows onto a garden, anthracite rubber floor, one wall oxblood red, a round concrete-look shower tower with plants on its rim. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Colours from nature: oxblood red, pomegranate red, blush pink and cream. Photorealistic, natural light, no people in focus, no text."
+  }
+ ],
+ "buiten": [
+  {
+   "naam": "Terras",
+   "poly": [
+    [
+     0.5,
+     -6
+    ],
+    [
+     24,
+     -6
+    ],
+    [
+     24,
+     -0.4
+    ],
+    [
+     0.5,
+     -0.4
+    ]
+   ],
+   "kleur": "#b08a5e"
+  },
+  {
+   "naam": "Tuin",
+   "poly": [
+    [
+     24,
+     -8
+    ],
+    [
+     42,
+     -8
+    ],
+    [
+     42,
+     -0.4
+    ],
+    [
+     24,
+     -0.4
+    ]
+   ],
+   "kleur": "#9bb07a"
+  }
+ ],
+ "elementen": [
+  {
+   "t": "box",
+   "soort": "keuken",
+   "c": [
+    3.8,
+    9.97
+   ],
+   "w": 5.4,
+   "d": 0.65,
+   "h": 0.92,
+   "a": 0,
+   "kleur": "#47522a",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "hoge kast",
+   "c": [
+    5.85,
+    9.97
+   ],
+   "w": 1.2,
+   "d": 0.66,
+   "h": 2.2,
+   "a": 0,
+   "kleur": "#3a4423",
+   "n": 0
+  },
+  {
+   "t": "label",
+   "c": [
+    3.8,
+    9.97
+   ],
+   "tekst": "keuken",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kookeiland",
+   "c": [
+    4.0,
+    7.8
+   ],
+   "w": 2.6,
+   "d": 1.0,
+   "h": 0.92,
+   "a": 0,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "espressomachine",
+   "c": [
+    4.0,
+    7.8
+   ],
+   "r": 0.25,
+   "h": 1.4,
+   "kleur": "#c9c3b6",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "grote tafel",
+   "c": [
+    3.0,
+    4.0
+   ],
+   "w": 4.2,
+   "d": 1.0,
+   "h": 0.75,
+   "a": 90,
+   "kleur": "#b08a5e",
+   "pers": 12,
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    3.72,
+    2.25
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    2.28,
+    2.25
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    3.72,
+    2.95
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    2.28,
+    2.95
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    3.72,
+    3.65
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    2.28,
+    3.65
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    3.72,
+    4.35
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    2.28,
+    4.35
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    3.72,
+    5.05
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    2.28,
+    5.05
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    3.72,
+    5.75
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    2.28,
+    5.75
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "kleed",
+   "c": [
+    7.8,
+    4.2
+   ],
+   "r": 2.1,
+   "kleur": "#d9ccb0",
+   "n": 0
+  },
+  {
+   "t": "boog",
+   "soort": "bank",
+   "c": [
+    7.8,
+    4.2
+   ],
+   "r": 1.9,
+   "a0": 310,
+   "a1": 590,
+   "d": 0.85,
+   "h": 0.75,
+   "kleur": "#6f7d3a",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "haard",
+   "c": [
+    7.8,
+    4.2
+   ],
+   "r": 0.45,
+   "h": 0.5,
+   "kleur": "#3a3b3d",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "poef",
+   "c": [
+    8.579422863405995,
+    3.75
+   ],
+   "r": 0.3,
+   "h": 0.42,
+   "kleur": "#5a2741",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "poef",
+   "c": [
+    7.020577136594005,
+    3.75
+   ],
+   "r": 0.3,
+   "h": 0.42,
+   "kleur": "#5a2741",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    0.55,
+    1.5
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 90,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    0.55,
+    2.5
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 90,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    0.55,
+    3.5
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 90,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    0.55,
+    4.5
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 90,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    0.55,
+    5.5
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 90,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    0.55,
+    6.5
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 90,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "ronde tafel",
+   "c": [
+    8.8,
+    8.6
+   ],
+   "r": 0.4,
+   "h": 0.74,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    8.8,
+    9.25
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    8.8,
+    7.949999999999999
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "boom",
+   "c": [
+    10.2,
+    1.2
+   ],
+   "r": 0.6,
+   "h": 2.6,
+   "n": 0
+  },
+  {
+   "t": "plant",
+   "c": [
+    10.4,
+    9.6
+   ],
+   "r": 0.45,
+   "h": 1.2,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    12.78,
+    2.29
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": -3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    12.82,
+    2.99
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 177,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    14.18,
+    2.21
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": -3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    14.22,
+    2.91
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 177,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    16.92,
+    2.21
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    16.88,
+    2.91
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 183,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    18.32,
+    2.29
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    18.28,
+    2.99
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 183,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    20.98,
+    2.29
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": -3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    21.02,
+    2.99
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 177,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    22.38,
+    2.21
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": -3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    22.42,
+    2.91
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 177,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    12.82,
+    7.51
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    12.78,
+    8.21
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 183,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    14.22,
+    7.59
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    14.18,
+    8.29
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 183,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    16.88,
+    7.59
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": -3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    16.92,
+    8.29
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 177,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    18.28,
+    7.51
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": -3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    18.32,
+    8.21
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 177,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    21.02,
+    7.51
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    20.98,
+    8.21
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 183,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    22.42,
+    7.59
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 3,
+   "n": 0
+  },
+  {
+   "t": "bureau",
+   "c": [
+    22.38,
+    8.29
+   ],
+   "w": 1.4,
+   "d": 0.7,
+   "a": 183,
+   "n": 0
+  },
+  {
+   "t": "plant",
+   "c": [
+    24.3,
+    5.1
+   ],
+   "r": 0.4,
+   "h": 1.4,
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "trap",
+   "c": [
+    11.6,
+    4.4
+   ],
+   "w": 1.0,
+   "d": 3.0,
+   "h": 0.3,
+   "a": 0,
+   "kleur": "#2f3032"
+  },
+  {
+   "t": "box",
+   "soort": "vergaderkamer",
+   "c": [
+    14.2,
+    8.1
+   ],
+   "w": 4.6,
+   "d": 4.0,
+   "h": 2.6,
+   "a": 0,
+   "kleur": "#9fb3bd",
+   "glas": true,
+   "pers": 8,
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "vergadertafel",
+   "c": [
+    14.2,
+    8.1
+   ],
+   "w": 2.4,
+   "d": 1.0,
+   "h": 0.75,
+   "a": 0,
+   "kleur": "#b08a5e",
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "scherm",
+   "c": [
+    16.349999999999998,
+    8.1
+   ],
+   "w": 0.08,
+   "d": 1.4,
+   "h": 1.6,
+   "a": 0,
+   "kleur": "#1f2022",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    13.3,
+    7.35
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    13.3,
+    8.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    13.9,
+    7.35
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    13.9,
+    8.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    14.5,
+    7.35
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    14.5,
+    8.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    15.1,
+    7.35
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    15.1,
+    8.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "vergaderkamer",
+   "c": [
+    18.8,
+    8.1
+   ],
+   "w": 4.2,
+   "d": 4.0,
+   "h": 2.6,
+   "a": 0,
+   "kleur": "#9fb3bd",
+   "glas": true,
+   "pers": 6,
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "vergadertafel",
+   "c": [
+    18.8,
+    8.1
+   ],
+   "w": 2.0,
+   "d": 1.0,
+   "h": 0.75,
+   "a": 0,
+   "kleur": "#b08a5e",
+   "n": 1
+  },
+  {
+   "t": "box",
+   "soort": "scherm",
+   "c": [
+    20.75,
+    8.1
+   ],
+   "w": 0.08,
+   "d": 1.4,
+   "h": 1.6,
+   "a": 0,
+   "kleur": "#1f2022",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    18.1,
+    7.35
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    18.1,
+    8.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    18.8,
+    7.35
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    18.8,
+    8.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    19.5,
+    7.35
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    19.5,
+    8.85
+   ],
+   "r": 0.24,
+   "h": 0.45,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "belcel",
+   "c": [
+    22.4,
+    8.1
+   ],
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "cil",
+   "soort": "belcel",
+   "c": [
+    24.0,
+    8.1
+   ],
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
+   "n": 1
+  },
+  {
+   "t": "wand",
+   "pts": [
+    [
+     11,
+     5.9
+    ],
+    [
+     25,
+     5.9
+    ]
+   ],
+   "h": 1.1,
+   "glas": true,
+   "gym": false,
+   "bestaand": false,
+   "n": 1,
+   "dikte": 0.2
+  },
+  {
+   "t": "toren",
+   "c": [
+    28.5,
+    5.3
+   ],
+   "r": 2.75,
+   "open": 180,
+   "soort": "was",
+   "h": 3.0,
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "belcel",
+   "c": [
+    26.0,
+    9.4
+   ],
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "belcel",
+   "c": [
+    26.0,
+    1.2
+   ],
+   "r": 0.7,
+   "h": 2.3,
+   "kleur": "#44606f",
+   "n": 0
+  },
+  {
+   "t": "wand",
+   "pts": [
+    [
+     32.2,
+     2.0
+    ],
+    [
+     32.2,
+     10.4
+    ]
+   ],
+   "h": 6.7,
+   "glas": false,
+   "gym": true,
+   "bestaand": false,
+   "n": 0,
+   "dikte": 0.2
+  },
+  {
+   "t": "deur",
+   "c": [
+    32.2,
+    1.2
+   ],
+   "a": 90,
+   "w": 1.0,
+   "toegang": true,
+   "n": 0
+  },
+  {
+   "t": "toren",
+   "c": [
+    35.0,
+    5.4
+   ],
+   "r": 2.15,
+   "open": 180,
+   "soort": "douche",
+   "h": 3.0,
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "rack",
+   "c": [
+    40.8,
+    1.8
+   ],
+   "w": 1.4,
+   "d": 1.4,
+   "h": 2.3,
+   "a": 0,
+   "kleur": "#2f3032",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "platform",
+   "c": [
+    40.8,
+    1.8
+   ],
+   "w": 2.4,
+   "d": 2.4,
+   "h": 0.05,
+   "a": 0,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "rack",
+   "c": [
+    40.8,
+    4.9
+   ],
+   "w": 1.4,
+   "d": 1.4,
+   "h": 2.3,
+   "a": 0,
+   "kleur": "#2f3032",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "platform",
+   "c": [
+    40.8,
+    4.9
+   ],
+   "w": 2.4,
+   "d": 2.4,
+   "h": 0.05,
+   "a": 0,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "roeier",
+   "c": [
+    34.6,
+    1.1
+   ],
+   "w": 2.4,
+   "d": 0.6,
+   "h": 0.5,
+   "a": 0,
+   "kleur": "#2f3032",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "roeier",
+   "c": [
+    37.6,
+    1.1
+   ],
+   "w": 2.4,
+   "d": 0.6,
+   "h": 0.5,
+   "a": 0,
+   "kleur": "#2f3032",
+   "n": 0
+  },
+  {
+   "t": "kleed",
+   "c": [
+    38.6,
+    6.2
+   ],
+   "w": 2.0,
+   "d": 3.0,
+   "a": 0,
+   "kleur": "#c7928a"
+  },
+  {
+   "t": "box",
+   "soort": "techniek",
+   "c": [
+    35.9,
+    10.5
+   ],
+   "w": 2.0,
+   "d": 1.8,
+   "h": 2.4,
+   "a": 0,
+   "kleur": "#8f8a80"
+  },
+  {
+   "t": "cil",
+   "soort": "ronde tafel",
+   "c": [
+    4,
+    -3
+   ],
+   "r": 0.4,
+   "h": 0.74,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    4.0,
+    -2.35
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    3.437083487540115,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    4.562916512459885,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "ronde tafel",
+   "c": [
+    9,
+    -3
+   ],
+   "r": 0.4,
+   "h": 0.74,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    9.0,
+    -2.35
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    8.437083487540114,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    9.562916512459886,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "ronde tafel",
+   "c": [
+    14,
+    -3
+   ],
+   "r": 0.4,
+   "h": 0.74,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    14.0,
+    -2.35
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    13.437083487540114,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    14.562916512459886,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "ronde tafel",
+   "c": [
+    19,
+    -3
+   ],
+   "r": 0.4,
+   "h": 0.74,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    19.0,
+    -2.35
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    18.437083487540114,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    19.562916512459886,
+    -3.325
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "boom",
+   "c": [
+    27,
+    -4.5
+   ],
+   "r": 1.1,
+   "h": 3.2,
+   "n": 0
+  },
+  {
+   "t": "boom",
+   "c": [
+    33,
+    -5.5
+   ],
+   "r": 1.1,
+   "h": 3.2,
+   "n": 0
+  },
+  {
+   "t": "boom",
+   "c": [
+    39,
+    -4.5
+   ],
+   "r": 1.1,
+   "h": 3.2,
+   "n": 0
+  },
+  {
+   "t": "boom",
+   "c": [
+    1.5,
+    -5.0
+   ],
+   "r": 0.9,
+   "h": 3.0,
+   "n": 0
+  },
+  {
+   "t": "ring",
+   "soort": "pergola",
+   "c": [
+    30.0,
+    -4.4
+   ],
+   "r": 2.4,
+   "open": 90,
+   "gat": 0,
+   "h": 2.6,
+   "kleur": "#2f3032",
+   "dun": true
+  }
+ ],
+ "dak": {
+  "soort": "pv",
+  "terras": null,
+  "groen": [],
+  "pv": [
+   [
+    [
+     1,
+     0.6
+    ],
+    [
+     31,
+     0.6
+    ],
+    [
+     31,
+     4.6
+    ],
+    [
+     1,
+     4.6
+    ]
+   ]
+  ],
+  "koepels": [
+   [
+    28.5,
+    5.3,
+    0.9
+   ],
+   [
+    35.0,
+    5.4,
+    0.8
+   ]
+  ],
+  "tekst": "Het oude dak blijft. Zonnepanelen op het zuidvlak als de constructie dat toelaat, lichtkoepels boven de twee torens. De buitenruimte is de tuin aan de zuidkant.",
+  "tekst_en": "The old roof stays; solar panels on the south slope if the structure allows, skylights above the two round towers. A long garden terrace along the south facade with trees and a round pergola."
+ },
+ "renders": {
+  "buiten": []
+ },
+ "vides": [],
+ "palet": {
+  "pistache": {
+   "naam": "Pistache",
+   "vloer": "#d9ccb0",
+   "hoofd": "#6f7d3a",
+   "tweede": "#b3bb6c",
+   "accent": "#5a2741"
+  },
+  "avocado": {
+   "naam": "Avocado",
+   "vloer": "#e5d48c",
+   "hoofd": "#47522a",
+   "tweede": "#6b4428",
+   "accent": "#e5d48c"
+  },
+  "rots": {
+   "naam": "Rotskust",
+   "vloer": "#e3e6e2",
+   "hoofd": "#44606f",
+   "tweede": "#6e4f38",
+   "accent": "#1f3441"
+  },
+  "granaat": {
+   "naam": "Granaatappel",
+   "vloer": "#8d8380",
+   "hoofd": "#6c1d22",
+   "tweede": "#a8332e",
+   "accent": "#e2b6a2"
+  },
+  "vijg": {
+   "naam": "Vijg",
+   "vloer": "#b8633f",
+   "hoofd": "#4b2339",
+   "tweede": "#b5525e",
+   "accent": "#b8633f"
+  },
+  "kokos": {
+   "naam": "Kokos",
+   "vloer": "#d5bd96",
+   "hoofd": "#5a3a22",
+   "tweede": "#f2ece1",
+   "accent": "#4d6a3a"
+  },
+  "beton": {
+   "naam": "Beton en mos",
+   "vloer": "#c9c3b6",
+   "hoofd": "#a7a296",
+   "tweede": "#5f7a3a",
+   "accent": "#8f8a80"
+  },
+  "verhuur": {
+   "naam": "Verhuur",
+   "vloer": "#d0ccc4",
+   "hoofd": "#9a958c",
+   "tweede": "#9a958c",
+   "accent": "#9a958c"
+  }
+ }
+}

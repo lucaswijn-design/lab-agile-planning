@@ -40,7 +40,8 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False, extra=Non
     if "totaal" in k:
         add("Pand", "Koopsom (" + k["label"] + ")", 1, "post", k["totaal"], "bron" if "vraagprijs" in k["label"] else "schatting", 1.0)
         koop = k["totaal"]
-        add("Pand", "Overdrachtsbelasting 10,4%", koop, "EUR", 0.104, "bron")
+        if not k.get("von"):  # nieuwbouw v.o.n.: btw zit in de prijs, geen overdrachtsbelasting
+            add("Pand", "Overdrachtsbelasting 10,4%", koop, "EUR", 0.104, "bron")
     else:
         add("Pand", f'Hal {k["hal_m2"]} m2', k["hal_m2"], "m2", k["hal_prijs_m2"], "schatting", 1.0)
         add("Pand", f'Kantoor {k["kantoor_m2"]} m2', k["kantoor_m2"], "m2", k["kantoor_prijs_m2"], "schatting", 1.0)

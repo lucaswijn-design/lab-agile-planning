@@ -77,6 +77,13 @@ PANDEN = [
          aanbod="bedrijfscomplex 1976 (kantoor, werkplaats, woning), 529 m², perceel circa 2.000 m²; € 1.495.000 k.k. (oude advertentie)"),
     dict(slug="rotterdam-hillevliet-139", adres="Hillevliet 139 Rotterdam", regio="Rotterdam",
          aanbod="Leger des Heils-kerk 1929 (J.J.P. Oud, rijksmonument), circa 713 m² bvo + woning; € 950.000 k.k. (sinds 2024)"),
+    # ronde 6: grootteklassen, gecontroleerd 14-11-2026
+    dict(slug="tilburg-ledeboerstraat-29e", adres="Ledeboerstraat 29E Tilburg", regio="Tilburg",
+         aanbod="bedrijfshal 2020, 456 m², vrije hoogte 8 m, 2 eenheden beschikbaar, € 575.000 k.k.; te koop op 14-11-2026 (bedrijfspand.com)"),
+    dict(slug="pernis-ring-15", adres="Ring 15 Rotterdam", regio="Rotterdam-Pernis",
+         aanbod="dorpspand 1852, maatschappelijk vastgoed, 551 m², perceel 935 m², € 590.000 k.k.; beschikbaar sinds 15-07-2026 (oozo)"),
+    dict(slug="uden-nijverheidsstraat-4c", adres="Nijverheidsstraat 4C Uden", regio="Uden/Den Bosch",
+         aanbod="nieuwbouw bedrijfshal, 846 m², vrije hoogte 9,5 m, € 949.000 v.o.n.; te koop op 14-11-2026 (bedrijfspand.com)"),
     # ronde 5: advertenties met datum vanaf september 2026
     dict(slug="voorhout-dinsdagse-wetering-56a", adres="Dinsdagse Wetering 56A Voorhout", regio="Leiden/Haarlem",
          aanbod="twee werkplaatsen (deels 1933) op 824 m² grond met erf, circa 570 m² vrijwel gelijkvloers, € 699.500 k.k.; online 27-10-2026 (bedrijfspand.com, oozo)"),
