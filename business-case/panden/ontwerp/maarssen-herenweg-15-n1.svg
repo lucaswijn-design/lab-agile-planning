@@ -36,8 +36,15 @@
 <circle cx="-3.80" cy="19.45" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
 <circle cx="-3.10" cy="17.95" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
 <circle cx="-3.10" cy="19.45" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="-3.90" cy="22.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
-<circle cx="-2.10" cy="22.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="-4.95" cy="22.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="-3.45" cy="22.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="-1.85" cy="22.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="10.80" cy="2.20" r="0.27999999999999997" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="1.20" cy="4.00" r="0.24" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="10.80" cy="5.80" r="0.27999999999999997" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="-0.85" cy="17.40" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="-0.85" cy="19.60" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="-0.85" cy="21.80" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
 <polyline points="-1.00,16.40 -1.00,23.20" fill="none" stroke="#5c7a88" stroke-width="0.14"/><polyline points="-1.00,16.40 -1.00,23.20" fill="none" stroke="#fbf9f4" stroke-width="0.05"/>
 <polygon points="0.00,0.00 11.81,0.00 11.82,2.65 12.49,2.66 12.48,3.46 13.20,3.74 13.82,4.19 14.30,4.78 14.62,5.48 14.75,6.23 14.69,7.00 14.43,7.72 14.00,8.35 13.42,8.86 12.74,9.20 11.99,9.36 5.13,9.40 5.08,11.98 2.59,11.93 2.66,7.93 0.00,7.90 0.00,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 <polygon points="-14.87,15.90 -4.91,15.97 5.11,16.05 4.99,32.17 12.94,32.23 12.92,36.24 -5.11,36.11 -14.37,36.04 -15.03,36.04 -14.87,16.27 -14.87,15.90" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>

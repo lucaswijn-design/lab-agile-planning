@@ -5,7 +5,7 @@
  "niveaus": {
   "1": 3.9
  },
- "concept": "De gym hoeft niet gebouwd te worden: de sportzaal is er al, met eigen wanden en een deur op toegangspas. Bij de entree het boekencafé met de gebogen balie als espressobar, een keuken met kookeiland, de zitkuil en de boekentoren. Boven de hele verdieping als werkzone: 32 bureaus en een raambar met uitzicht over het groen, plus twee vergaderkamers. De verdieping ligt boven café en kleedkamers, niet boven de gym.",
+ "concept": "De gym hoeft niet gebouwd te worden: de sportzaal is er al, met eigen wanden en een deur op toegangspas. Bij de entree het boekencafé met de gebogen balie als espressobar, een keuken met kookeiland, een zeshoekige bank rond de haard en de boekentoren. In de kleedkamers een lockerwand voor alle leden. Boven de hele verdieping als werkzone: 32 bureaus en een raambar met uitzicht over het groen, twee vergaderkamers voor zes, een sta-kamer, twee focuskamers en vijf belcellen. De verdieping ligt boven café en kleedkamers, niet boven de gym.",
  "pui": [
   [
    [
@@ -41,16 +41,17 @@
     ]
    ],
    "palet": "granaat",
-   "beschrijving": "De bestaande sportzaal: zes racks langs de achterwand, een sledebaan van 15 m, een vloer voor groepslessen. Eigen deur op toegangspas.",
+   "beschrijving": "De bestaande sportzaal: zes racks langs de achterwand, een sledebaan van 15 m, een vloer voor groepslessen. Langs de blinde kopse wand achter de roeiers en naast de deur klimwanden van 4,5 m hoog. Eigen deur op toegangspas.",
    "details": [
     "Zes racks op zwevende platforms",
     "Sledebaan van 15 m",
     "Groepslesvloer van 9 x 6 m",
     "Bokszakken blijven",
+    "Klimwanden van staalkabel met pothos (11 m en 5 m), kentia in de hoeken",
     "Deur met toegangslezer"
    ],
    "foto": 4,
-   "prompt": "Transform this dark sports hall into a beautiful functional gym: six black power racks on oak platforms along the back wall, a 15 m artificial turf sled track, a mat area for classes, keep the punching bags, anthracite rubber floor, one wall in oxblood red, the rest warm white, large trees in big pots, warm industrial pendant lights.",
+   "prompt": "Transform this dark sports hall into a beautiful functional gym: six black power racks on oak platforms along the back wall, a 15 m artificial turf sled track, a mat area for classes, keep the punching bags, anthracite rubber floor, one wall in oxblood red, the rest warm white, a tall green wall of steel cables with pothos behind the rowing machines, kentia palms in big pots in the corners, warm industrial pendant lights.",
    "n": 0,
    "cam": {
     "t": [
@@ -67,7 +68,7 @@
     9.0,
     4.4
    ],
-   "prompt_vol": "Transform this dark sports hall into a beautiful functional gym: six black power racks on oak platforms along the back wall, a 15 m artificial turf sled track, a mat area for classes, keep the punching bags, anthracite rubber floor, one wall in oxblood red, the rest warm white, large trees in big pots, warm industrial pendant lights. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: oxblood red, pomegranate red, blush pink and cream. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Transform this dark sports hall into a beautiful functional gym: six black power racks on oak platforms along the back wall, a 15 m artificial turf sled track, a mat area for classes, keep the punching bags, anthracite rubber floor, one wall in oxblood red, the rest warm white, a tall green wall of steel cables with pothos behind the rowing machines, kentia palms in big pots in the corners, warm industrial pendant lights. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: oxblood red, pomegranate red, blush pink and cream. Photorealistic, natural light, no people in focus, no text."
   },
   {
    "naam": "Boekencafé en keuken",
@@ -91,16 +92,17 @@
     ]
    ],
    "palet": "pistache",
-   "beschrijving": "Bij binnenkomst de gebogen espressobar, daarachter een keuken van 5,6 m met kookeiland, de zitkuil voor de ramen, de boekentoren en een boekenwand naar de studio.",
+   "beschrijving": "Bij binnenkomst de gebogen espressobar, daarachter een keuken van 5,6 m met kookeiland, een zeshoekige bank voor de ramen, de boekentoren en een boekenwand naar de studio. Een strelitzia staat aan het glas, pothos hangt boven de raambar.",
    "details": [
     "Gebogen balie als espressobar",
     "Keuken van 5,6 m met kookeiland",
-    "Ronde bank rond een sfeerhaard",
+    "Zeshoekige bank rond een sfeerhaard, open naar de ramen",
     "Raambar van 4,8 m met acht krukken voor lunch",
-    "Boekenwand van 6 m"
+    "Boekenwand van 6 m",
+    "Strelitzia, monstera en kentia, pothos aan de balken"
    ],
    "foto": 5,
-   "prompt": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a round olive velvet sofa around a black freestanding fireplace in front of the windows, a walnut bookcase wall, plants.",
+   "prompt": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, a walnut bookcase wall, a bird-of-paradise plant at the glass, pothos hanging above the window bar.",
    "n": 0,
    "cam": {
     "t": [
@@ -117,7 +119,7 @@
     24.6,
     9.0
    ],
-   "prompt_vol": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a round olive velvet sofa around a black freestanding fireplace in front of the windows, a walnut bookcase wall, plants. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: olive green velvet, pistachio, plum and travertine. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, a walnut bookcase wall, a bird-of-paradise plant at the glass, pothos hanging above the window bar. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: olive green velvet, pistachio, plum and travertine. Photorealistic, natural light, no people in focus, no text."
   },
   {
    "naam": "Studio (bestaande dansstudio)",
@@ -141,10 +143,11 @@
     ]
    ],
    "palet": "vijg",
-   "beschrijving": "De dansstudio blijft, voor yoga en events.",
+   "beschrijving": "De dansstudio blijft, voor yoga en events, met planten in de hoeken.",
    "details": [
     "Houten vloer blijft",
-    "Vijgenpaarse gordijnen"
+    "Vijgenpaarse gordijnen",
+    "Kentia, monstera en philodendron"
    ],
    "foto": 10,
    "prompt": "Keep this wooden-floor dance studio and make it warmer: fig-purple curtains, terracotta rug corner with cushions, plants on the window sills, warm dimmable light.",
@@ -184,13 +187,15 @@
     ]
    ],
    "palet": "beton",
-   "beschrijving": "De kleedkamers blijven, met microcement en een V-vormige wastrog in het midden.",
+   "beschrijving": "De kleedkamers blijven, met microcement en een V-vormige wastrog in het midden. Tegen de lange blinde wand een lockerwand van 5,6 m tussen de banken: de vaste locker van elke eigenaar en dagkluisjes voor sporters.",
    "details": [
     "Microcement in plaats van tegels",
-    "V-wastrog met messing kranen"
+    "V-wastrog met messing kranen",
+    "Lockerwand van 5,6 m: 89 lockers met pothos erbovenop",
+    "Aspidistra in de hoeken (verdraagt weinig licht en vocht)"
    ],
    "foto": 11,
-   "prompt": "Renovate this tiled changing room: replace all tiles with warm grey microcement and board-marked plaster, a V-shaped concrete wash trough with brass taps in the middle, oak benches and black hooks, ivy and ferns.",
+   "prompt": "Renovate this tiled changing room: replace all tiles with warm grey microcement and board-marked plaster, a V-shaped concrete wash trough with brass taps in the middle, oak benches and black hooks, a wall of dark green lockers with trailing pothos on top, ferns.",
    "n": 0,
    "cam": {
     "t": [
@@ -207,7 +212,7 @@
     33.9,
     11.4
    ],
-   "prompt_vol": "Renovate this tiled changing room: replace all tiles with warm grey microcement and board-marked plaster, a V-shaped concrete wash trough with brass taps in the middle, oak benches and black hooks, ivy and ferns. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Renovate this tiled changing room: replace all tiles with warm grey microcement and board-marked plaster, a V-shaped concrete wash trough with brass taps in the middle, oak benches and black hooks, a wall of dark green lockers with trailing pothos on top, ferns. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
   },
   {
    "naam": "Verdieping: werkzone",
@@ -231,14 +236,16 @@
     ]
    ],
    "palet": "rots",
-   "beschrijving": "Acht eilanden van vier compacte zit-sta bureaus en een raambar langs de ramen: 39 werkplekken met uitzicht over het water en het groen.",
+   "beschrijving": "Acht eilanden van vier compacte zit-sta bureaus en een raambar langs de ramen: 39 werkplekken met uitzicht over het water en het groen. Bij de trap twee belcellen, pothos hangt boven elk eiland.",
    "details": [
     "Acht eilanden van vier bureaus 140 x 70",
     "Raambar van 4,2 m met krukken",
-    "Looppaden van 1,2 tot 1,6 m"
+    "Looppaden van 1,2 tot 1,6 m",
+    "Twee belcellen bij de trap, een bij de raambar",
+    "Ficus aan het raam, kentia en dracaena verderop"
    ],
    "foto": 8,
-   "prompt": "Turn this white space with columns and windows into a calm coworking floor: eight islands of four compact sit-stand desks with oak tops slightly rotated, dual monitors, a window bar with stools facing the green view, slate-blue acoustic baffles, plants everywhere.",
+   "prompt": "Turn this white space with columns and windows into a calm coworking floor: eight islands of four compact sit-stand desks with oak tops slightly rotated, dual monitors, a window bar with stools facing the green view, slate-blue acoustic baffles, round felt phone booths, pothos hanging above every island, a rubber fig at the window.",
    "n": 1,
    "cam": {
     "t": [
@@ -255,7 +262,7 @@
     24.0,
     6.1
    ],
-   "prompt_vol": "Turn this white space with columns and windows into a calm coworking floor: eight islands of four compact sit-stand desks with oak tops slightly rotated, dual monitors, a window bar with stools facing the green view, slate-blue acoustic baffles, plants everywhere. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Turn this white space with columns and windows into a calm coworking floor: eight islands of four compact sit-stand desks with oak tops slightly rotated, dual monitors, a window bar with stools facing the green view, slate-blue acoustic baffles, round felt phone booths, pothos hanging above every island, a rubber fig at the window. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
   },
   {
    "naam": "Verdieping: vergaderkamers",
@@ -279,13 +286,15 @@
     ]
    ],
    "palet": "rots",
-   "beschrijving": "Een vergaderkamer voor acht, een voor zes en vier belcellen.",
+   "beschrijving": "Twee vergaderkamers voor zes aan de ramen, een sta-kamer, en achter een gangetje twee focuskamers en twee belcellen. Een kamer voor acht is niet nodig.",
    "details": [
-    "Vergaderkamer voor 8 en voor 6",
-    "Vier ronde belcellen"
+    "Twee vergaderkamers voor 6 (22 en 21 m²)",
+    "Sta-vergaderkamer voor 5 met statafel en whiteboardwand",
+    "Twee focuskamers van oude ramen, 2,2 x 1,9 m",
+    "Twee ronde belcellen"
    ],
    "foto": null,
-   "prompt": "Two meeting rooms behind black steel and glass on an upper floor: an oak table for eight and one for six, slate-blue acoustic panels, a screen with camera, plants, daylight from the windows.",
+   "prompt": "Two meeting rooms behind black steel and glass on an upper floor, each with an oak table for six, a standing meeting room with a round high table and a whiteboard wall, two small glass focus rooms made from reclaimed windows, slate-blue acoustic panels, a screen with camera, plants, daylight from the windows.",
    "n": 1,
    "cam": {
     "t": [
@@ -299,10 +308,10 @@
    "kleur": "#e3e6e2",
    "palet_naam": "Rotskust",
    "label": [
-    34.1,
-    6.7
+    33.6,
+    12.0
    ],
-   "prompt_vol": "Two meeting rooms behind black steel and glass on an upper floor: an oak table for eight and one for six, slate-blue acoustic panels, a screen with camera, plants, daylight from the windows. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Two meeting rooms behind black steel and glass on an upper floor, each with an oak table for six, a standing meeting room with a round high table and a whiteboard wall, two small glass focus rooms made from reclaimed windows, slate-blue acoustic panels, a screen with camera, plants, daylight from the windows. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
   }
  ],
  "buiten": [
@@ -1475,6 +1484,19 @@
    "c": [
     19.0,
     3.4
+   ],
+   "r": 0.35,
+   "h": 0.4,
+   "n": 0,
+   "z": 3.0,
+   "naam": "pothos",
+   "hang": true
+  },
+  {
+   "t": "plant",
+   "c": [
+    27.9,
+    3.6
    ],
    "r": 0.35,
    "h": 0.4,
