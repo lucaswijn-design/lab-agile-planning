@@ -120,6 +120,50 @@ ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
   <p class="lede">Een oude loods of een boerenerf aan de rand van een stad, omgebouwd tot club met groen, werkplekken, gym, sauna, zwemvijver en een goede espressobar. Eigenaren betalen maandelijks en kopen het terrein samen af; clubleden zonder aandeel betalen mee aan de exploitatie. Bovenaan de hal in eigen beheer, per product begroot. Daaronder de eerdere versies.</p>
 </header>
 
+<section class="verdict" id="soorten-eigenaren">
+  <span class="eyebrow">Soorten eigenaren en plekken · 16 november 2026</span>
+  <p class="big">Vier soorten eigenaar: <b>vast</b> (eigen bureau), <b>flex</b> (onbeperkt flexplek op werkdagen), <b>flex 3</b> en <b>flex 2</b> dagen per week. Avonden en weekenden zijn voor iedereen vrij. Met 15 vaste plekken en 75 flexleden heb je op de drukste dag 59 plekken nodig. Dat is minder dan nu, en iedereen betaalt naar wat hij gebruikt.</p>
+  <div class="tbl"><table><thead><tr><th>Soort</th><th>Wat je krijgt</th><th class="r">Inleg</th><th class="r">Per maand (Galvanistraat, 90 eigenaren)</th></tr></thead><tbody>
+    <tr><td><b>Vast</b></td><td>Eigen zit-sta bureau met naam, eigen locker en scherm, 7 dagen</td><td class="r">€ 18.000</td><td class="r">€ 274</td></tr>
+    <tr><td><b>Flex</b></td><td>Elke werkdag een flexplek, vaste locker</td><td class="r">€ 15.000</td><td class="r">€ 219</td></tr>
+    <tr><td><b>Flex 3</b></td><td>3 werkdagen per week (13 per maand), vaste locker</td><td class="r">€ 11.000</td><td class="r">€ 175</td></tr>
+    <tr><td><b>Flex 2</b></td><td>2 werkdagen per week (9 per maand), vaste locker</td><td class="r">€ 8.000</td><td class="r">€ 132</td></tr>
+    <tr><td>Clublid (abonnee, geen eigenaar)</td><td>Gym, café en bieb, geen werkplek, geen stem</td><td class="r">geen</td><td class="r">€ 119</td></tr>
+  </tbody></table></div>
+  <p class="note">Bedragen per maand. De totale opbrengst blijft gelijk aan het huidige model (€ 227 per vol lid, deeltijd 71% daarvan), verdeeld naar gewicht: vast 1,25, flex 1,0, flex 3 0,8, flex 2 0,6 <span class="lbl">aanname</span>. Samen is de inleg € 1.135.000, iets meer dan de € 1.080.000 van nu. Elk lid heeft één stem in de algemene vergadering, welke soort ook (artikel 2:38 BW, tenzij de statuten anders bepalen). Rekenregels in <code>panden/inrichting/lidmaatschap.py</code>.</p>
+
+  <h3>Hoeveel plekken je nodig hebt</h3>
+  <p>De kans dat iemand op een werkdag komt:</p>
+  <ul>
+    <li>Vast en flex zonder dagenlimiet: 70% van de werkdagen.</li>
+    <li>Flex 3 en flex 2: het aantal dagen gedeeld door 5, maal 85%.</li>
+    <li>Per dag: dinsdag en donderdag 15% drukker, vrijdag 30% rustiger.</li>
+    <li>Op het drukste uur zit 85% van wie die dag komt er tegelijk.</li>
+  </ul>
+  <p>Flexplekken zijn zo gedimensioneerd dat er op 19 van de 20 dagen een bureau vrij is. Vaste bureaus die om 10:00 leeg zijn, gaan die dag naar de flexpool.</p>
+  <div class="tbl"><table><thead><tr><th>Gekozen mix, plekken nodig per dag</th><th class="r">ma</th><th class="r">di</th><th class="r">wo</th><th class="r">do</th><th class="r">vr</th></tr></thead><tbody><tr><td>15 vast, 25 flex, 30 flex 3, 20 flex 2</td><td class="r">49</td><td class="r">59</td><td class="r">56</td><td class="r">59</td><td class="r">41</td></tr></tbody></table></div>
+  <div class="tbl"><table><thead><tr><th>Mix (90 eigenaren)</th><th class="r">Vaste bureaus</th><th class="r">Flexplekken (95%)</th><th class="r">Plekken op dinsdag</th><th class="r">Vast / flex / flex 3 / flex 2 per maand</th></tr></thead><tbody><tr><td>Meer vaste plekken (20 vast, 30 flex, 25 flex 3, 15 flex 2)</td><td class="r">20</td><td class="r">45</td><td class="r">62</td><td class="r">€ 260 / € 208 / € 166 / € 125</td></tr><tr><td>Gekozen mix (15 vast, 25 flex, 30 flex 3, 20 flex 2)</td><td class="r">15</td><td class="r">46</td><td class="r">59</td><td class="r">€ 274 / € 219 / € 175 / € 132</td></tr><tr><td>Meer kleine pakketten (10 vast, 20 flex, 35 flex 3, 25 flex 2)</td><td class="r">10</td><td class="r">47</td><td class="r">56</td><td class="r">€ 289 / € 232 / € 185 / € 139</td></tr><tr><td>Zonder soorten (45 vol, 45 deeltijd 3 dagen)</td><td class="r">0</td><td class="r">61</td><td class="r">61</td><td class="r">€ 216 / € 173</td></tr></tbody></table></div>
+  <p><b>Wat dit laat zien.</b> Een vaste plek is een dure plek: gemiddeld staat hij bijna een derde van de tijd leeg. Flex 3 en flex 2 zijn juist zuinig. Met de mix stuur je de bezetting: komt de dinsdag te vol, verkoop dan meer flex 2 of beperk het aantal vaste plekken. Galvanistraat heeft 63 werkplekken, dus ruimte voor de gekozen mix met 4 plekken over, plus het café als overloop.</p>
+
+  <h3>Het systeem: niemand zonder plek, geen strijd om bureaus</h3>
+  <ul>
+    <li><b>Gewoon komen.</b> Voor een flexplek op een normale werkdag reserveer je niets. De capaciteit is zo gekozen dat er op 19 van de 20 drukste dagen een bureau vrij is. Op die ene dag is er altijd een plek aan de grote tafel, de raambar, in de bieb of het café: geen zit-sta bureau, wel een plek.</li>
+    <li><b>Live drukte en voorspelling.</b> Je checkt in met je ledenpas. In de app en op een scherm bij de deur zie je "nu 41 van 63 plekken bezet" en een voorspelling per dag voor de komende week, gebaseerd op gewoontes en wie zich heeft aangemeld. Zo kies je zelf je rustige dag.</li>
+    <li><b>Lege vaste bureaus delen.</b> Een vast lid dat er om 10:00 niet is, of zich afwezig meldt, stelt zijn bureau die dag beschikbaar. Spullen gaan in de eigen locker, het bureau blijft leeg. Wie dat toestaat krijgt € 10 per maand korting <span class="lbl">aanname</span>.</li>
+    <li><b>Zekerheid alleen op drukke dagen.</b> Is een dag voorspeld boven 85%, dan kan elk lid voor die dag een plek vastzetten. Hooguit een week vooruit en twee keer per week. De claim vervalt om 10:30 als je niet hebt ingecheckt. Op gewone dagen is reserveren niet nodig en niet mogelijk.</li>
+    <li><b>Dagtegoed met een zachte grens.</b>
+      <ul>
+        <li>Flex 3 heeft 13 dagen per maand en flex 2 heeft 9. Je mag er 3 meenemen naar de volgende maand.</li>
+        <li>Extra dagen kosten € 12 en kunnen alleen op dagen die niet vol voorspeld zijn, zoals maandag en vrijdag.</li>
+        <li>Op volle dagen blokkeert de app een extra dag. Zo ontstaat er geen strijd.</li>
+      </ul></li>
+    <li><b>Vergader- en focuskamers wel boeken</b>, per half uur. Focuskamers hooguit 2 uur per dag per lid. Wie niet binnen 15 minuten komt, verliest de boeking.</li>
+    <li><b>Rustige dagen aantrekkelijk maken.</b> Een flex 2 voor maandag en vrijdag kan 10% goedkoper. De gezamenlijke lunch en events zijn op maandag en vrijdag.</li>
+    <li><b>Elk kwartaal evalueren.</b> Was er op meer dan 1 op de 20 dagen geen bureau vrij, dan gaat er een wachtlijst op de soorten die het drukst maken. De ledenraad beslist.</li>
+  </ul>
+  <p class="note">Ledenpas, check-in, dagtegoed, drukteweergave en boeken van kamers zitten in gangbare coworkingsoftware, zoals Nexudus, OfficeRnD of Cobot. Reken op circa € 100 tot € 300 per maand <span class="lbl">schatting</span>, dat past binnen de post internet, software en toegangsapp. Een eenvoudiger begin kan ook: alleen check-in en de drukteweergave, en het dagtegoed pas invoeren als het echt druk wordt.</p>
+</section>
+
 <section class="verdict" id="inrichting">
   <span class="eyebrow">Inrichting verdiept · torens, meubels, planten, spel en certificering · 16 november 2026</span>
   <p class="big">Alle ontwerpen zijn opnieuw getoetst aan strengere normen. De grootste gaten waren lockers, focuskamers en planten. Utrecht, Galvanistraat en Linschotenstraat zijn nu stuk voor stuk dieper uitgewerkt. De sanitairtorens worden achthoekig, of D-vormig waar ze tegen een muur kunnen staan. Galvanistraat komt daarmee op <span class="num">€ 227</span> om te draaien en <span class="num">€ 323</span> voor de inleg terug, voor 90 eigenaren.</p>
