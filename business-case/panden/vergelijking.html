@@ -1,0 +1,174 @@
+<title>Panden vergelijken</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: kop met kerncijfers, filterbalk, brede sorteerbare tabel, detailkaart van het gekozen pand. Kleuren uit het kleurenplan van de club. */
+:root {
+  --bg: #eef0ec; --surface: #f8f9f6; --fg: #1d2421; --muted: #5a645f; --line: #cfd5cf;
+  --accent: #2f5566; --accent-soft: #d8e3e6; --bar: #9fb6bf;
+  --ok: #3f6b3a; --ok-soft: #dfe9d6; --mid: #9a6b14; --mid-soft: #f1e5c8; --bad: #9a2e2a; --bad-soft: #f2dcd8;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a; --bar: #4f6d78;
+  --ok: #8cc583; --ok-soft: #233423; --mid: #e0b45a; --mid-soft: #3a311b; --bad: #e88a80; --bad-soft: #3d2422; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a; --bar: #4f6d78;
+  --ok: #8cc583; --ok-soft: #233423; --mid: #e0b45a; --mid-soft: #3a311b; --bad: #e88a80; --bad-soft: #3d2422; color-scheme: dark }
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--body) }
+.wrap { max-width: 1240px; margin: 0 auto; padding-block: 36px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 28px }
+.wrap > * { min-width: 0 }
+h1, h2, h3 { font-family: var(--display); line-height: 1.15; margin: 0; text-wrap: balance }
+h1 { font-size: clamp(30px, 5vw, 46px) } h2 { font-size: 24px } h3 { font-size: 18px }
+p { margin: 0; max-width: 72ch }
+a { color: var(--accent) }
+.eyebrow { font: 500 12px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.note { font-size: 13px; color: var(--muted) }
+.stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px }
+.stats div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; gap: 2px }
+.stats b { font: 700 24px/1.1 var(--display); font-variant-numeric: tabular-nums }
+.stats span { font-size: 13px; color: var(--muted) }
+.bar { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: center }
+.seg { display: flex; flex-wrap: wrap; gap: 4px }
+.seg button, select { font: 500 13.5px var(--body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; cursor: pointer }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent) }
+select { border-radius: 6px }
+button:focus-visible, select:focus-visible, tr:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface) }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; min-width: 1100px }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: middle; white-space: nowrap }
+th { font: 600 11.5px var(--mono); letter-spacing: .03em; color: var(--muted); background: var(--bg); position: sticky; top: 0; cursor: pointer }
+th.r, td.r { text-align: right; font-variant-numeric: tabular-nums }
+tbody tr { cursor: pointer }
+tbody tr:hover { background: var(--accent-soft) }
+tbody tr[aria-selected="true"] { background: var(--accent-soft); box-shadow: inset 3px 0 0 var(--accent) }
+td.naam { white-space: normal; min-width: 220px }
+td.naam b { display: block } td.naam span { color: var(--muted); font-size: 12px }
+.pill { display: inline-block; font: 600 11px var(--mono); letter-spacing: .03em; padding: 2px 7px; border-radius: 4px; text-transform: uppercase }
+.p-ok { background: var(--ok-soft); color: var(--ok) } .p-mid { background: var(--mid-soft); color: var(--mid) } .p-bad { background: var(--bad-soft); color: var(--bad) } .p-n { background: var(--accent-soft); color: var(--muted) }
+.feebar { display: flex; align-items: center; gap: 6px; justify-content: flex-end }
+.feebar i { display: block; height: 8px; border-radius: 2px; background: var(--bar) }
+.detail { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 16px }
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px }
+.kv div { display: grid; gap: 2px } .kv span { font-size: 12px; color: var(--muted) } .kv b { font: 600 17px var(--body); font-variant-numeric: tabular-nums }
+.cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px }
+.cols > * { min-width: 0 }
+ul { margin: 0; padding-left: 18px; display: grid; gap: 4px }
+</style>
+
+<div class="wrap">
+  <header style="display:grid;gap:14px">
+    <span class="eyebrow">Clubcoöperatie · panden · 17 november 2026</span>
+    <h1>Panden naast elkaar</h1>
+    <p>Alle uitgewerkte panden in één overzicht, sober doorgerekend. Bedragen zijn per vol lid per maand: wat de club nodig heeft om te draaien, en wat nodig is om na 5 jaar bij verkoop ieders inleg terug te betalen. Klik op een pand voor de details. Sorteer door op een kolomkop te klikken.</p>
+    <div class="stats" id="stats"></div>
+  </header>
+
+  <div class="bar">
+    <div class="seg" role="group" aria-label="Grootteklasse" id="klasse"></div>
+    <label class="note" for="sort">Sorteer op</label>
+    <select id="sort">
+      <option value="fee">Om te draaien</option><option value="inleg">Inleg terug</option><option value="breed">Wijk (breed)</option>
+      <option value="op">Kans omgevingsplan</option><option value="eigenaren">Eigenaren</option><option value="prijs">Vraagprijs</option>
+    </select>
+  </div>
+
+  <div class="tbl"><table>
+    <thead><tr>
+      <th data-k="titel">Pand</th><th data-k="klasse">Klasse</th><th class="r" data-k="prijs">Prijs</th><th class="r" data-k="m2">m²</th>
+      <th class="r" data-k="eigenaren">Eigenaren (max)</th><th class="r" data-k="werkplekken">Werkplekken</th>
+      <th class="r" data-k="fee">Om te draaien</th><th class="r" data-k="inleg">Inleg terug</th><th class="r" data-k="ltv">Lening</th>
+      <th class="r" data-k="breed">Wijk kern / breed</th><th data-k="op">Omgevingsplan</th><th data-k="normen_ok">Normen</th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+
+  <article class="detail" id="detail" aria-live="polite"></article>
+
+  <p class="note">Wijk: geschatte haalbare eigenaren binnen 4,5 km of één halte (kern) en tot 8 km of twee haltes (breed), CBS 2024 via PDOK. Omgevingsplan: kans dat club met café, coworking en gym er mag, op basis van bestemming en gemeentelijk beleid. Normen: belcellen, focuskamers, lounge en lockers volgens de nieuwe normen. Soorten: zelfde totale opbrengst, verdeeld als vast 1,25, flex 1,0, flex 3 0,8, flex 2 0,6. Bron per pand: business case, Ontwerpen per locatie en de bestanden in panden/.</p>
+</div>
+
+<script>
+const D = [{"slug": "utrecht-van-heutszstraat-4", "titel": "Van Heutszstraat 4, Utrecht", "sub": "Verscholen buurthuis uit 1959 in Lombok, 630 m² op één laag rond een verwilderde binnentuin", "klasse": "middel", "prijs": 670000, "prijs_label": "Vraagprijs", "m2": 502, "hoogte": 3.5, "eigenaren": 60, "vol": 30, "deel": 30, "club": 90, "max_eigenaren": 61, "werkplekken": 36, "vergaderkamers": ["6", "sta 6"], "belcellen": 5, "capex": 1425730, "fee": 162, "inleg": 316, "ltv": 0.49, "soorten": {"vast": 196, "flex": 156, "flex 3": 125, "flex 2": 94}, "kern": 150, "breed": 216, "auto": 234, "status": "te koop: bedrijfspand.com advertentie 116706 (online 12-03-2026, bijgewerkt 13-11-2026, 1 eenheid beschikbaar) en oozo 72387 Beschikbaar; € 670.000 k.k., circa ", "zekerheid": null, "parkeren": "geen eigen terrein genoemd; betaald parkeren voor de deur (advertentie)", "station_km": 0.76, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [5, 5], "focuskamers": [2, 2], "lounge": [26, 13], "lockers": [148, 94]}, "normen_ok": 4, "oordeel": "kandidaat, te koop 13-11-2026", "samenvatting": "Verscholen buurthuis uit 1959 midden in een bouwblok in Lombok, 630 m² op één laag, met een verwilderde binnentuin. Bereikbaar via een poort en steeg, op een paar minuten fietsen van Utrecht Centraal. Erfpacht is eeuwigdurend afgekocht. Moet helemaal opgeknapt worden. Plafond circa 3,5 m. De verkoper kiest zelf de koper, dus een goed plan telt.", "nieuwbouw": false, "concept": "Je komt binnen via de poort, de steeg en de binnentuin, door de punt van het gebouw. Links het boekencafé met de keuken, een kookeiland met de espressomachine, een grote tafel voor twaalf en een ronde zitkuil rond de haard; daarachter de boekentoren. Rechts de werkzone met zes eilanden van vier compacte zit-sta bureaus. Achterin twee vergaderkamers waar eerst de studio was. De gym zit in de achtervleugel, achter de wastoren en de techniek: twee wanden en zes meter tussen sporten en werken, en een deur met toegangspas."}, {"slug": "den-bosch-rietveldenweg-13", "titel": "Rietveldenweg 13, Den Bosch", "sub": "Showroom uit 1966 met bedrijfswoning, 890 m² op één laag aan de rand van de Rietvelden", "klasse": "middel", "prijs": 975000, "prijs_label": "Vraagprijs", "m2": 890, "hoogte": 4.6, "eigenaren": 60, "vol": 30, "deel": 30, "club": 60, "max_eigenaren": 67, "werkplekken": 40, "vergaderkamers": ["6", "sta 5", "4"], "belcellen": 5, "capex": 1740984, "fee": 276, "inleg": 416, "ltv": 0.59, "soorten": {"vast": 333, "flex": 266, "flex 3": 213, "flex 2": 160}, "kern": 59, "breed": 84, "auto": 97, "status": "te koop: bedrijfspand.com 126268 (online 05-11-2026, bijgewerkt 14-11-2026, 2 eenheden beschikbaar); € 975.000 k.k., 890 m2 + woning, 1966", "zekerheid": null, "parkeren": "circa 8 auto's op eigen terrein plus openbaar aan voor- en zijkant (advertentie)", "station_km": 0.92, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [5, 5], "focuskamers": [2, 2], "lounge": [39, 13], "lockers": [128, 88]}, "normen_ok": 4, "oordeel": "kandidaat, te koop 13-11-2026", "samenvatting": "Showroom uit 1966 met bedrijfswoning, 890 m² op één laag plus woning, aan de rand van de Rietvelden met busverbinding naar Den Bosch Centraal. Binnen al strak afgewerkt (houten vloer, zwarte plafonds): weinig verbouw. Buiten alleen het voorterrein aan de weg. De woning wordt verhuurd.", "nieuwbouw": false, "concept": "Achter de showroomramen het boekencafé met een grote tafel, de zitkuil in een halfronde boekenwand en een open keuken met kookeiland. Achter het café, rustig en weg van de straat, de werkzone met 24 bureaus, met daarnaast een stille werkkamer met belcellen. De gym zit in het oostelijke deel, achter een dichte wand met keuken en techniek als buffer naar het café, en een kleedruimte met 128 lockers als buffer naar de vergaderkamers. Achterin, waar het het stilst is, de bieb met twee focuskamers. Het platte dak boven het café kan een dakterras worden."}, {"slug": "den-bosch-eendenkooi-1a", "titel": "De Eendenkooi 1A, Den Bosch", "sub": "Sportgebouw uit 1977 aan het water, gymzaal, studio en kleedkamers zijn er al", "klasse": "middel", "prijs": 1400000, "prijs_label": "Vraagprijs", "m2": 890, "hoogte": 7.8, "eigenaren": 60, "vol": 30, "deel": 30, "club": 60, "max_eigenaren": 79, "werkplekken": 47, "vergaderkamers": ["8", "6"], "belcellen": 4, "capex": 2100984, "fee": 345, "inleg": 441, "ltv": 0.66, "soorten": {"vast": 416, "flex": 333, "flex 3": 266, "flex 2": 200}, "kern": 56, "breed": 82, "auto": 96, "status": "te koop: bedrijfspand.com 125406 (online 15-10-2026, bijgewerkt 13-11-2026, 1 eenheid beschikbaar); € 1.400.000 k.k., circa 994 m2, 1977", "zekerheid": null, "parkeren": "geen eigen terrein genoemd; openbaar en gratis bij sporthal De Schutskamp (adver", "station_km": 1.63, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [4, 5], "focuskamers": [0, 2], "lounge": [20, 13], "lockers": [0, 88]}, "normen_ok": 1, "oordeel": "kandidaat, te koop 13-11-2026", "samenvatting": "Sportgebouw uit 1977, nu in gebruik als Snap Fitness: gymzaal, dansstudio, kleedkamers en douches zijn er al. Verdieping met bovenwoning en dakterras. Groene omgeving aan het water naast sporthal De Schutskamp. Vraag na of de huidige huurder blijft of vertrekt. Eigen grond is alleen het gebouw zelf.", "nieuwbouw": false, "concept": "De gym hoeft niet gebouwd te worden: de sportzaal is er al, met eigen wanden en een deur op toegangspas. Bij de entree het boekencafé met de gebogen balie als espressobar, een keuken met kookeiland, de zitkuil en de boekentoren. Boven de hele verdieping als werkzone: 32 bureaus en een raambar met uitzicht over het groen, plus twee vergaderkamers. De verdieping ligt boven café en kleedkamers, niet boven de gym."}, {"slug": "maarssen-herenweg-15", "titel": "Herenweg 15, Maarssen", "sub": "Woonhuis uit 1931 met een bedrijfshal uit 1970 erachter, aan de rand van de polder", "klasse": "middel", "prijs": 1085000, "prijs_label": "Vraagprijs", "m2": 623, "hoogte": 5.8, "eigenaren": 60, "vol": 30, "deel": 30, "club": 60, "max_eigenaren": 67, "werkplekken": 40, "vergaderkamers": ["8", "6"], "belcellen": 4, "capex": 1935555, "fee": 321, "inleg": 462, "ltv": 0.63, "soorten": {"vast": 387, "flex": 310, "flex 3": 248, "flex 2": 186}, "kern": 60, "breed": 101, "auto": 123, "status": "te koop: oozo 80890 Beschikbaar, aangeboden sinds 28-10-2026; € 1.085.000 k.k., 840 m2, 1970, label C", "zekerheid": null, "parkeren": "niet vermeld; perceel 1.405 m2 met circa 840 m2 bebouwing laat ruimte voor eigen", "station_km": 2.44, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [4, 5], "focuskamers": [0, 2], "lounge": [30, 13], "lockers": [0, 88]}, "normen_ok": 1, "oordeel": "kandidaat, beschikbaar volgens Oozo 13-11-2026", "samenvatting": "Woonhuis uit 1931 met bedrijfshal uit 1970 (advertentie: hal 760 m² en kantoor 80 m², BAG-grondvlak hal 434 m²), perceel 1.405 m² aan de rand van de polder van Maarsseveen. Station Maarssen 4,8 km, snelweg 1 km.", "nieuwbouw": false, "concept": "Het voorhuis uit 1931 wordt boekencafé met de keuken: een kookeiland, een grote tafel voor tien en een ronde bank in de ronde erker. De bieb komt op zolder. In de hal uit 1970 zit de gym aan de westkant achter een dichte wand tot het dak. Daarnaast een bufferstrook met de vergaderkamer, de belcellen en de twee torens, met daarboven een vergaderbalkon op een tussenvloer, en aan de oostkant, bij de glazen deuren naar de weilanden, de werkzone met twintig bureaus en een raambar."}, {"slug": "pernis-ring-15", "titel": "Ring 15, Pernis (Rotterdam)", "sub": "Dorpspand uit circa 1900 met bijeenkomstfunctie, 445 m² grondvlak en 6,7 m hoog, met een tuin op het zuiden", "klasse": "middel", "prijs": 590000, "prijs_label": "Vraagprijs", "m2": 478, "hoogte": 6.7, "eigenaren": 60, "vol": 30, "deel": 30, "club": 60, "max_eigenaren": 45, "werkplekken": 36, "vergaderkamers": ["8", "6"], "belcellen": 4, "capex": 1370239, "fee": 219, "inleg": 384, "ltv": 0.47, "soorten": {"vast": 264, "flex": 211, "flex 3": 169, "flex 2": 127}, "kern": 57, "breed": 126, "auto": 178, "status": "te koop: oozo 77099 Beschikbaar, aangeboden sinds 15-07-2026; € 590.000 k.k., 551 m2, 1852, label G, maatschappelijk", "zekerheid": null, "parkeren": "niet vermeld; perceel 935 m2 [onbekend of er eigen parkeerplaatsen zijn]", "station_km": 3.99, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [4, 5], "focuskamers": [0, 2], "lounge": [19, 13], "lockers": [0, 88]}, "normen_ok": 1, "oordeel": "kandidaat, beschikbaar volgens Oozo 14-11-2026", "samenvatting": "Dorpspand met bijeenkomstfunctie (BAG 1900, advertentie 1852), 520 m², 6,7 m hoog, perceel 935 m² met tuin. Pernis, Rotterdam.", "nieuwbouw": false, "concept": "Een lang, hoog dorpsgebouw aan de Ring van Pernis. Aan de westkant het boekencafé met keuken, grote tafel en zitkuil. In het midden de werkzone met 24 bureaus; boven de noordhelft van de werkzone een vergaderbalkon op een nieuwe tussenvloer, zodat de zuidhelft hoog en licht blijft. Dan de wastoren als buffer en aan de oostkant de gym achter een dichte wand. Buiten een terras en tuin over de hele lengte."}, {"slug": "rotterdam-galvanistraat-122", "titel": "Galvanistraat 122-126, Rotterdam West", "sub": "Drie bedrijfsunits uit 2000 met lichtstraten en een entresol, aan een parkeerhof op de grens van Rotterdam West en Schiedam", "klasse": "groot", "prijs": 1125000, "prijs_label": "Vraagprijs", "m2": 608, "hoogte": 6.8, "eigenaren": 90, "vol": 45, "deel": 45, "club": 30, "max_eigenaren": 106, "werkplekken": 63, "vergaderkamers": ["6", "sta 5", "6"], "belcellen": 6, "capex": 1893565, "fee": 228, "inleg": 326, "ltv": 0.43, "soorten": {"vast": 275, "flex": 220, "flex 3": 176, "flex 2": 132}, "kern": 174, "breed": 254, "auto": 299, "status": "oozo: Beschikbaar", "zekerheid": null, "parkeren": "niet vermeld", "station_km": 1.8, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [6, 7], "focuskamers": [2, 3], "lounge": [25, 18], "lockers": [131, 117]}, "normen_ok": 2, "oordeel": "kandidaat, beschikbaar volgens oozo op 15-11-2026", "samenvatting": "Drie units (2000) in een bedrijfsverzamelgebouw aan een parkeerhof, hal 425 + kantoor 271 m², vrije hoogte 5,9 m, lichtstraten. Nieuw Mathenesse, grens Rotterdam West en Schiedam.", "nieuwbouw": false, "concept": "Drie units worden één club. Je komt binnen door het noordelijke portaal, direct in het café met keuken, een lange tafel en een zittrap naar de entresol. In het midden de werkzone onder de lichtstraten, met onder de entresol een vergaderkamer en belcellen. Daarachter de twee ronde torens als buffer, en aan de zuidkant de gym met een eigen ingang door het zuidelijke portaal, zodat sporters om 6:00 naar binnen kunnen. Boven, op de entresol, een stille werkgalerij en een tweede vergaderkamer. Tussen de twee portalen komt een terras met plantenbakken aan het parkeerhof. Alles sober: de scheidingswa"}, {"slug": "schiedam-calandstraat-92", "titel": "Calandstraat 92, Schiedam", "sub": "Vrijstaande hal uit 1973 van 1.000 m² op de hoek van twee straten. LET OP: de makelaar biedt het nu ook te huur aan (€ 6.900 per maand); bel of het nog te koop is.", "klasse": "groot", "prijs": 825000, "prijs_label": "Vraagprijs", "m2": 1021, "hoogte": 5.4, "eigenaren": 100, "vol": 50, "deel": 50, "club": 30, "max_eigenaren": 121, "werkplekken": 72, "vergaderkamers": ["8", "6", "4", "4"], "belcellen": 6, "capex": 1746638, "fee": 188, "inleg": null, "ltv": 0.31, "soorten": {"vast": 227, "flex": 182, "flex 3": 145, "flex 2": 109}, "kern": 159, "breed": 232, "auto": 285, "status": "oozo: Beschikbaar (lang in aanbod)", "zekerheid": null, "parkeren": "niet vermeld; perceel 1.019 m2 bijna volledig bebouwd", "station_km": 1.33, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [6, 8], "focuskamers": [0, 3], "lounge": [19, 19], "lockers": [0, 129]}, "normen_ok": 1, "oordeel": "kandidaat, beschikbaar volgens oozo (ronde 7, 15-11-2026)", "samenvatting": "Vrijstaande hal uit 1973 van 42 x 24 m (BAG 1.174 m²), hal 800 + kantoor 200 m², circa 5,4 m tot het dak, op de hoek van twee straten. Erfpacht.", "nieuwbouw": false, "concept": "Een grote, eenvoudige hal waarin de club voor circa 100 eigenaren ruim op één laag past. Aan de straatkant met bomen komen nieuwe ramen van hergebruikte kozijnen: daarachter het café met keuken, lange tafel en een raambar van 10 m. De werkzone ligt in het midden van de hal, met zes eilanden van zes bureaus. Langs de oostgevel drie vergaderkamers en belcellen. In de zuidwesthoek, tegen de buren, de gym achter een dichte wand met de torens als buffer. Het kantoordeel op de hoek wordt entree en bieb, met boven een stille verdieping."}, {"slug": "rotterdam-metaalhof-40", "titel": "Metaalhof 40, Rotterdam Het Lage Land", "sub": "Hal uit 1986 met kantoor in twee lagen en eigen buitenruimte. LET OP: volgens de brochure is de hoge ruimte maar circa 110 m² (dit ontwerp gaat uit van 340 m²); erfpacht afgekocht tot 2035.", "klasse": "groot", "prijs": 1150000, "prijs_label": "Vraagprijs", "m2": 812, "hoogte": 6.5, "eigenaren": 80, "vol": 40, "deel": 40, "club": 30, "max_eigenaren": 89, "werkplekken": 53, "vergaderkamers": ["8", "6", "4"], "belcellen": 5, "capex": 1983771, "fee": 280, "inleg": 391, "ltv": 0.52, "soorten": {"vast": 338, "flex": 270, "flex 3": 216, "flex 2": 162}, "kern": 162, "breed": 230, "auto": 273, "status": "oozo: Beschikbaar", "zekerheid": null, "parkeren": "3 eigen parkeerplaatsen (niet overdekt)", "station_km": 0.81, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [5, 6], "focuskamers": [0, 2], "lounge": [16, 16], "lockers": [0, 106]}, "normen_ok": 1, "oordeel": "kandidaat, beschikbaar volgens oozo (ronde 7, 15-11-2026)", "samenvatting": "Hal uit 1986 (340 m², vrije hoogte 6 m) met kantoor in twee lagen (582 m²), perceel 849 m² met eigen strook voor terras en 3 parkeerplaatsen. 800 m van station Rotterdam Alexander.", "nieuwbouw": false, "concept": "Het kantoordeel wordt de werkplaats: beneden zes eilanden, boven vergaderkamers en een stille werkvloer. De hal van 6 m hoog wordt het hart: café met keuken, lange tafel en ronde bank achter een nieuwe glazen pui naar het eigen terras, daarachter de torens als buffer en aan het eind de gym. De open strook voor de hal wordt terras met drie parkeerplaatsen en fietsen."}, {"slug": "rotterdam-linschotenstraat-20a", "titel": "Linschotenstraat 20A, Rotterdam Spaanse Polder", "sub": "Bedrijfsunit uit 2010 van 16 x 31 m en 9 m vrije hoogte, met lichtstraat en 5 eigen parkeerplaatsen, op 1,3 km van station Schiedam Centrum. Status eerst nabellen (online sinds 2022).", "klasse": "groot", "prijs": 899000, "prijs_label": "Vraagprijs", "m2": 632, "hoogte": 10.0, "eigenaren": 80, "vol": 40, "deel": 40, "club": 30, "max_eigenaren": 87, "werkplekken": 52, "vergaderkamers": ["6", "sta 5", "6"], "belcellen": 6, "capex": 1762756, "fee": 257, "inleg": 388, "ltv": 0.46, "soorten": {"vast": 310, "flex": 248, "flex 3": 199, "flex 2": 149}, "kern": 165, "breed": 243, "auto": 293, "status": "oozo: Beschikbaar (geopend 15-11-2026); funda in business (alleen zoekmachineresultaat, pagina niet zelf geopend): vermeld voor EUR 899.000, status in zoekresul", "zekerheid": "B: aanbod zichtbaar, status onzeker", "parkeren": "5 niet-overdekte parkeerplaatsen [oozo]", "station_km": 1.31, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [6, 6], "focuskamers": [2, 2], "lounge": [18, 16], "lockers": [130, 106]}, "normen_ok": 4, "oordeel": "kandidaat, status onzeker (online sinds 2022): eerst nabellen", "samenvatting": "Bedrijfsunit uit 2010 in een complex met bouwstroken van 16 m, hal 452 + kantoor 117 m², vrije hoogte 9 m, lichtstraat, perceel 506 m², 5 parkeerplaatsen.", "nieuwbouw": false, "concept": "Een lange, hoge strook die je van voor naar achter doorloopt, van druk naar stil naar zweet. Achter een nieuwe glazen straatgevel van 5 m hoog het café met keuken, lange tafel en ronde bank. Daarna de werkzone onder de lichtstraat, met een vergaderkamer en de trap naar de werkgalerij. Dan de twee ronde torens als buffer, met daarboven op 3,6 m de werkgalerij, en helemaal achterin de gym onder de volle hoogte. Sober: de bestaande hal blijft zichtbaar, de vloer wordt strak, de wanden van de vergaderkamers komen van oude ramen."}, {"slug": "nieuwbouw-atriumhal", "titel": "Eigen nieuwbouwhal met atrium (concept)", "sub": "Zelf bouwen op een bedrijfskavel: een hal van 28 x 20 m en 10 m hoog met glasgevels op het zuiden en oosten, en drie lagen rond een open atrium", "klasse": "groot", "prijs": 334000, "prijs_label": "Grond (kavel 1.400 m²)", "m2": 738, "hoogte": 10.0, "eigenaren": 80, "vol": 40, "deel": 40, "club": 30, "max_eigenaren": null, "werkplekken": 61, "vergaderkamers": ["8", "6", "6"], "belcellen": 5, "capex": 2184709, "fee": 298, "inleg": 503, "ltv": 0.56, "soorten": {"vast": 360, "flex": 288, "flex 3": 230, "flex 2": 173}, "kern": null, "breed": null, "auto": null, "status": "concept: zelf bouwen op een bedrijfskavel", "zekerheid": null, "parkeren": "", "station_km": null, "op_kans": null, "op_route": null, "op_onderbouwing": "", "op_tip": "", "op_bestemming": null, "normen": {"belcellen": [5, 6], "focuskamers": [0, 2], "lounge": [37, 16], "lockers": [80, 106]}, "normen_ok": 1, "oordeel": "concept: zelf bouwen op een bedrijfskavel", "samenvatting": "", "nieuwbouw": true, "concept": "Geen bestaand pand verbouwen, maar vanaf nul een hal neerzetten die precies past. Een eenvoudige staalhal met een glasgevel van 6 m hoog op het zuiden en oosten. Je komt binnen in de entree tussen de gym en het atrium. Het hart is een open atrium van 10 m hoog met een grote boom, het café, de keuken onder de galerij en een brede zittrap die naar de galerij op 3,6 m leidt. De galerij loopt als een L langs de noordwand (vergaderkamers) en langs de oostgevel (werkplekken met uitzicht door het glas). Bovenin, op 7 m, hangt de kroonkamer: een stille vergader- en leeskamer onder een lichtstraat. De "}];
+const euro = n => n == null ? '' : '€ ' + Math.round(n).toLocaleString('nl-NL');
+const OPR = {hoog: 3, middel: 2, laag: 1};
+let klasse = 'alle', sortK = 'fee', asc = true, sel = null;
+try { sel = localStorage.getItem('verg-sel'); } catch (e) {}
+
+function pill(k){ if (!k) return '<span class="pill p-n">onbekend</span>'; const c = k === 'hoog' ? 'p-ok' : k === 'middel' ? 'p-mid' : 'p-bad'; return `<span class="pill ${c}">${k}</span>`; }
+function waarde(r, k){ if (k === 'op') return -(OPR[r.op_kans] || 0); if (k === 'breed') return -(r.breed || 0); if (k === 'inleg') return r.inleg == null ? 9999 : r.inleg; return r[k]; }
+
+function stats(){
+  const v = D.filter(r => !r.nieuwbouw), best = [...v].sort((a, b) => a.fee - b.fee)[0], bestI = [...v].filter(r => r.inleg).sort((a, b) => a.inleg - b.inleg)[0];
+  const hoog = v.filter(r => r.op_kans === 'hoog').length;
+  document.getElementById('stats').innerHTML = [
+    [v.length + (D.length > v.length ? ' + 1' : ''), 'panden uitgewerkt' + (D.length > v.length ? ', plus zelf bouwen' : '')],
+    [euro(best.fee), 'laagste om te draaien: ' + best.titel.split(',')[0]],
+    [bestI ? euro(bestI.inleg) : '', 'laagste inleg terug: ' + (bestI ? bestI.titel.split(',')[0] : '')],
+    [hoog + ' van ' + v.length, 'met grote kans in het omgevingsplan'],
+  ].map(([a, b]) => `<div><b>${a}</b><span>${b}</span></div>`).join('');
+}
+
+function tabel(){
+  const maxFee = Math.max(...D.map(r => r.fee));
+  let R = D.filter(r => klasse === 'alle' || r.klasse === klasse);
+  R.sort((a, b) => { const x = waarde(a, sortK), y = waarde(b, sortK); return (typeof x === 'string' ? x.localeCompare(y) : x - y) * (asc ? 1 : -1); });
+  document.getElementById('rows').innerHTML = R.map(r => `<tr tabindex="0" data-s="${r.slug}" aria-selected="${r.slug === sel}">
+    <td class="naam"><b>${r.titel}</b><span>${r.nieuwbouw ? 'zelf bouwen op een kavel' : (r.zekerheid ? 'status ' + r.zekerheid + ' · ' : '') + (r.oordeel || '').slice(0, 70)}</span></td>
+    <td>${r.klasse}</td><td class="r">${euro(r.prijs)}</td><td class="r">${r.m2}</td>
+    <td class="r">${r.eigenaren} <span class="note">(${r.max_eigenaren ?? '?'})</span></td><td class="r">${r.werkplekken}</td>
+    <td class="r"><div class="feebar"><i style="width:${Math.round(60*r.fee/maxFee)}px"></i>${euro(r.fee)}</div></td>
+    <td class="r">${r.inleg ? euro(r.inleg) : '<span class="note">inleg kan lager</span>'}</td><td class="r">${Math.round(r.ltv*100)}%</td>
+    <td class="r">${r.kern ?? '?'} / ${r.breed ?? '?'}</td><td>${pill(r.op_kans)}</td>
+    <td><span class="pill ${r.normen_ok === 4 ? 'p-ok' : r.normen_ok >= 2 ? 'p-mid' : 'p-bad'}">${r.normen_ok}/4</span></td></tr>`).join('');
+  document.querySelectorAll('#rows tr').forEach(tr => { tr.onclick = () => kies(tr.dataset.s); tr.onkeydown = e => { if (e.key === 'Enter') kies(tr.dataset.s); }; });
+}
+
+function kies(s){
+  sel = s; try { localStorage.setItem('verg-sel', s); } catch (e) {}
+  document.querySelectorAll('#rows tr').forEach(tr => tr.setAttribute('aria-selected', tr.dataset.s === s));
+  const r = D.find(x => x.slug === s) || D[0];
+  const N = r.normen || {};
+  document.getElementById('detail').innerHTML = `
+    <div style="display:grid;gap:6px"><span class="eyebrow">${r.klasse} · ${r.eigenaren} eigenaren (${r.vol} vol, ${r.deel} deeltijd) + ${r.club} clubleden</span><h2>${r.titel}</h2><p class="note">${r.sub}</p></div>
+    <div class="kv">
+      <div><span>${r.prijs_label}</span><b>${euro(r.prijs)}</b></div><div><span>Alles in</span><b>${euro(r.capex)}</b></div>
+      <div><span>Om te draaien</span><b>${euro(r.fee)}</b></div><div><span>Inleg terug</span><b>${r.inleg ? euro(r.inleg) : 'inleg kan lager'}</b></div>
+      <div><span>Lening</span><b>${Math.round(r.ltv*100)}%</b></div><div><span>Werkplekken</span><b>${r.werkplekken}</b></div>
+      <div><span>Vergaderkamers</span><b>${(r.vergaderkamers || []).join(', ')}</b></div><div><span>Past maximaal</span><b>${r.max_eigenaren ?? '?'} eigenaren</b></div>
+    </div>
+    <div class="cols">
+      <div style="display:grid;gap:8px"><h3>Per soort eigenaar</h3><ul>
+        <li>Vast (eigen bureau): <b>${euro(r.soorten.vast)}</b></li><li>Flex: <b>${euro(r.soorten.flex)}</b></li>
+        <li>Flex 3 dagen: <b>${euro(r.soorten['flex 3'])}</b></li><li>Flex 2 dagen: <b>${euro(r.soorten['flex 2'])}</b></li></ul>
+        <h3>Normen</h3><ul>${Object.entries(N).map(([k, [a, b]]) => `<li>${k}: ${a} van ${b} ${a >= b ? '✓' : '<span style="color:var(--bad)">tekort</span>'}</li>`).join('')}</ul></div>
+      <div style="display:grid;gap:8px"><h3>Wijk en bereikbaarheid</h3><ul>
+        <li>Haalbare eigenaren: kern ${r.kern ?? '?'}, breed ${r.breed ?? '?'}${r.auto ? ', met auto ' + r.auto : ''}</li>
+        ${r.station_km ? `<li>Station op ${String(r.station_km).replace('.', ',')} km</li>` : ''}${r.parkeren ? `<li>Parkeren: ${r.parkeren}</li>` : ''}
+        <li>Status: ${r.status || 'onbekend'}</li></ul>
+        <h3>Omgevingsplan ${pill(r.op_kans)}</h3><ul>
+        ${r.op_bestemming ? `<li>Bestemming: ${r.op_bestemming}</li>` : ''}${r.op_route ? `<li>Route: ${r.op_route}</li>` : ''}
+        ${r.op_onderbouwing ? `<li>${r.op_onderbouwing}</li>` : ''}${r.op_tip ? `<li>Tip: ${r.op_tip}</li>` : ''}</ul></div>
+      <div style="display:grid;gap:8px"><h3>Concept</h3><p style="font-size:14px">${r.concept}</p>
+        <p class="note">Plattegronden, 3D en inrichting: Ontwerpen per locatie.</p></div>
+    </div>`;
+}
+
+function init(){
+  const K = ['alle', 'klein', 'middel', 'groot'];
+  const kd = document.getElementById('klasse');
+  kd.innerHTML = K.map(k => `<button type="button" data-k="${k}" aria-pressed="${k === klasse}">${k === 'alle' ? 'Alle' : k[0].toUpperCase() + k.slice(1)}</button>`).join('');
+  kd.querySelectorAll('button').forEach(bt => bt.onclick = () => { klasse = bt.dataset.k; kd.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x === bt)); tabel(); });
+  const so = document.getElementById('sort'); so.onchange = () => { sortK = so.value; asc = true; tabel(); };
+  document.querySelectorAll('th[data-k]').forEach(th => th.onclick = () => { const k = th.dataset.k; asc = sortK === k ? !asc : true; sortK = k; tabel(); });
+  stats(); tabel(); kies(sel && D.some(r => r.slug === sel) ? sel : [...D].sort((a, b) => a.fee - b.fee)[0].slug);
+}
+init();
+</script>
