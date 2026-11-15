@@ -525,3 +525,19 @@ LAYOUTS.update({
         buiten=[dict(type="terras", naam="Terras", r=(9, 16, 20, 22))], bomen_buiten=[(10.5, 25.5)],
     ),
 })
+
+# Ronde 8 (15 november 2026)
+LAYOUTS.update({
+    "rotterdam-linschotenstraat-20a": dict(
+        titel="Linschotenstraat 20A, Rotterdam Spaanse Polder", oordeel="kandidaat, status onzeker (online sinds 2022): eerst nabellen",
+        samenvatting="Bedrijfsunit uit 2010 in een complex met bouwstroken van 16 m, hal 452 + kantoor 117 m², vrije hoogte 9 m, lichtstraat, perceel 506 m², 5 parkeerplaatsen.",
+        koop=dict(totaal=899_000, label="vraagprijs oozo en funda in business (zoekresultaat), status onzeker"),
+        verhuur=[], leden=dict(n_vol=40, n_deel=40, n_club=30), bouwjaar_risico=False, isoleren=False, pv_kwp=25, verdieping_m2=120,
+        zones=[dict(type="café", naam="Café", r=(0.2, 0.2, 9, 15.8)), dict(type="werken", naam="Werkzone", r=(9, 0.2, 17, 15.8)),
+               dict(type="sanitair", naam="Torens", r=(17, 0.2, 23, 15.8)), dict(type="gym", naam="Gym", r=(23, 0.2, 31, 15.8))],
+        pui=dict(kant="u0", v0=0.5, v1=15.5, u=0),
+        buiten=[dict(type="terras", naam="Terras", r=(-4, 0.5, -0.2, 8))], bomen_buiten=[],
+        extra_rows=[dict(groep="Bouwkundig", post="Glazen pui, aluminium HR+++ triple glas (bovenlicht straatgevel tot 5 m)", h=30, e="m2", prijs=1_000, label="bron", gen=0.6)],
+        opex_extra=[("VvE-bijdrage bedrijvencomplex (aanname, navragen)", 5_000)],
+    ),
+})

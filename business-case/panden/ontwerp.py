@@ -1561,6 +1561,69 @@ LABELS.update({
 VIDES.update({"rotterdam-galvanistraat-122": [dict(naam="Vide boven werkzone en café", poly=R(13.6, 0.2, 29.1, 10.5), n=1)]})
 
 
+# ---------------------------------------------------------------- Ronde 8 (15 november 2026): Linschotenstraat 20A, Rotterdam Spaanse Polder
+# Unit 20A: de straatkant van een bouwstrook van 16 m breed in een complex met lichtstraten. u 0 = straatgevel (noordwest), u 31,2 = grens met de unit erachter,
+# v 0 en v 16 zijn scheidingswanden met de buren (bedrijfsunits). Vrije hoogte 9 m. Werkgalerij op 3,6 m boven de torens.
+LINSCHOTEN = dict(
+    titel="Linschotenstraat 20A, Rotterdam Spaanse Polder",
+    sub="Bedrijfsunit uit 2010 van 16 x 31 m en 9 m vrije hoogte, met lichtstraat en 5 eigen parkeerplaatsen, op 1,3 km van station Schiedam Centrum. Status eerst nabellen (online sinds 2022).",
+    hoogte=10.0, niveaus={"1": 3.6}, pui_h=5.0,
+    concept="Een lange, hoge strook die je van voor naar achter doorloopt, van druk naar stil naar zweet. Achter een nieuwe glazen straatgevel van 5 m hoog het café met keuken, "
+            "lange tafel en ronde bank. Daarna de werkzone onder de lichtstraat, met een vergaderkamer en de trap naar de werkgalerij. Dan de twee ronde torens als buffer, "
+            "met daarboven op 3,6 m de werkgalerij, en helemaal achterin de gym onder de volle hoogte. Sober: de bestaande hal blijft zichtbaar, de vloer wordt strak, de wanden "
+            "van de vergaderkamers komen van oude ramen.",
+    geluid="Gym helemaal achterin, tegen de bedrijfsunit erachter en 23 m van de straat. Tussen werken en gym de wastoren en de douchetoren (6 m buffer) en een dichte wand "
+           "tot het dak. Naast en achter de unit zitten bedrijven, geen woningen. In een strook van 9 m hoog draagt geluid: houtwolplaten tegen de wanden en baffles onder het dak.",
+    pui=[[[0.0, 0.5], [0.0, 15.5]]],
+    zones=[
+        zone("Café achter de glazen gevel", "café", R(0.2, 0.2, 9.0, 15.8),
+             "Achter een nieuwe glazen straatgevel van 5 m hoog: keuken langs de wand, kookeiland, lange tafel voor twaalf, ronde bank en twee belcellen bij de werkzone.",
+             ["Glazen straatgevel van hergebruikte stalen kozijnen", "Keuken van 6,4 m en kookeiland", "Lange tafel voor twaalf", "Ronde bank rond een sfeerhaard"],
+             cam=dict(t=[4.6, 8.0], afstand=10, hoek=180),
+             prompt="The café of a members club at the street end of a long, 9 m high industrial unit, behind a new 5 m high glass front made from reclaimed steel windows: an olive green kitchen from second-hand stainless steel worktables along the side wall, a reclaimed wood island, a long oak table for twelve, a round olive velvet sofa around a black fireplace, a tall tree, a long roof light above."),
+        zone("Werkzone onder de lichtstraat", "werken", R(9.0, 0.2, 17.0, 15.8),
+             "Zes eilanden van vier zit-sta bureaus onder de lichtstraat, een vergaderkamer voor acht van oude ramen en de stalen trap naar de werkgalerij.",
+             ["Zes eilanden van vier bureaus 140 x 70", "Vergaderkamer voor acht", "Stalen trap naar de werkgalerij"],
+             cam=dict(t=[13.0, 8.0], afstand=9, hoek=180),
+             prompt="A coworking floor in a long, 9 m high industrial unit under a roof light: six islands of four compact sit-stand desks with oak tops, slate blue chairs, a meeting room with walls of reclaimed windows, a black steel stair to a gallery, wood wool acoustic panels on the walls."),
+        zone("Torens en toiletten", "sanitair", R(17.0, 0.2, 23.0, 15.8), "De wastoren en de douchetoren, met daartussen de toiletgroep en daarboven de werkgalerij.",
+             ["Wastoren 5,5 m, douchetoren 4,5 m (alleen vanuit de gym)", "Toiletgroep tussen de torens"], cam=dict(t=[20.0, 8.0], afstand=8, hoek=180),
+             prompt="Two round concrete-look bathroom towers, 3 m high, standing under a timber gallery in a long industrial unit, board-marked plaster, a V-shaped wash trough with brass taps, ivy over the rims."),
+        zone("Gym (afsluitbaar)", "gym", R(23.0, 0.2, 31.0, 15.8), "Achterin onder de volle hoogte: drie racks, een groepslesvloer en roeiers, dichte wand en deur op toegangspas.",
+             ["Drie racks op zwevende platforms", "Groepslesvloer", "Douchetoren vanuit de gym"], cam=dict(t=[27.0, 8.0], afstand=9, hoek=180),
+             prompt="A functional gym at the back of a long, 9 m high industrial unit, closed off by a solid wall: three black power racks on oak platforms, a mat area, rowing machines, anthracite rubber floor, one wall oxblood red, a roof light above."),
+        dict(zone("Werkgalerij", "werken", R(15.5, 0.2, 23.0, 15.8),
+                  "Een nieuwe tussenvloer van 120 m² op 3,6 m boven de torens: vier eilanden van vier bureaus, een vergaderkamer voor zes en drie belcellen, met een glazen balustrade naar de werkzone.",
+                  ["Vier eilanden van vier bureaus", "Vergaderkamer voor zes", "Drie belcellen"], n=1, cam=dict(t=[19.2, 8.0], afstand=8, hoek=180),
+                  prompt="A steel and timber work gallery 3.6 m up in a 9 m high industrial unit: islands of compact sit-stand desks, a meeting room with reclaimed windows, round felt phone booths, a glass balustrade looking down on a coworking floor and café, a roof light above."), tussenvloer=True),
+    ],
+    buiten=[dict(naam="Parkeren en terras", poly=R(-6.0, 0.0, -0.2, 16.0), kleur="#c9c3b6"), dict(naam="Straat", poly=R(-14.0, -10, -6.0, 30), kleur="#9a958c")],
+    elementen=[
+        *keuken([4.7, 15.47], 6.4, 0), *kookeiland([4.7, 12.9], 0), *grote_tafel([4.6, 7.6], 4.2), *zitkuil([4.0, 3.0], 1.6, 180, "#6f7d3a", "#d9ccb0"),
+        boom([1.4, 10.6], 1.0, 4.5), plant([8.2, 5.2]), pod2([8.3, 1.1]), pod2([8.3, 2.8]), deur([0.0, 11.4], 90, w=1.6),
+        *eiland2([10.8, 1.8], 0), *eiland2([15.0, 1.8], 0), *eiland2([10.8, 5.4], 0), *eiland2([15.0, 5.4], 0), *eiland2([10.8, 9.0], 0), *eiland2([15.0, 9.0], 0),
+        *vergaderkamer([12.0, 13.2], 5.4, 4.6, 0, 8), dict(t="box", soort="trap", c=[16.2, 13.4], w=1.1, d=4.4, h=0.3, a=0, kleur=STAAL), label([16.2, 10.9], "trap"),
+        *toren([19.8, 4.0], 2.75, 180, "was"), *toren([20.2, 11.6], 2.25, 0, "douche"),
+        dict(t="box", soort="toiletgroep", c=[20.0, 8.05], w=4.0, d=2.4, h=2.6, a=0, kleur="#bdb7aa"), label([20.0, 8.05], "toiletten"),
+        wand([[23.0, 0.2], [23.0, 11.0]], 10.0, gym=True), wand([[23.0, 12.2], [23.0, 14.0]], 10.0, gym=True), deur([23.0, 14.7], 90, toegang=True), wand([[23.0, 15.4], [23.0, 15.8]], 10.0, gym=True),
+        *rack([29.8, 3.0], 0), *rack([29.8, 6.6], 0), *rack([29.8, 10.2], 0), dict(t="kleed", c=[26.0, 7.0], w=2.6, d=6.5, a=0, kleur="#c7928a"),
+        roeier([25.2, 14.4], 0), roeier([28.0, 14.4], 0), dict(t="box", soort="kettlebells", c=[30.4, 14.6], w=0.5, d=2.0, h=0.9, a=0, kleur=STAAL),
+        wand([[15.5, 0.2], [15.5, 13.6]], 1.1, glas=True, n=1),
+        *eiland2([17.4, 2.0], 90, 1), *eiland2([21.0, 2.0], 90, 1), *eiland2([17.4, 6.0], 90, 1), *eiland2([21.0, 6.0], 90, 1),
+        *vergaderkamer([18.6, 11.6], 4.4, 4.2, 0, 6, 1), pod2([22.3, 10.0], 1), pod2([22.3, 11.8], 1), pod2([22.3, 13.6], 1), plant([17.0, 15.0], 0.4, 1.2, 1),
+        *tafeltje([-2.5, 3.0], 0, 4), *tafeltje([-2.5, 7.0], 0, 2), label([-3.0, 12.5], "5 parkeerplaatsen"),
+    ],
+    dak=dict(soort="pv", terras=None, groen=[], pv=[R(0.8, 0.8, 30.4, 5.6), R(0.8, 10.4, 30.4, 15.2)],
+             koepels=[[8.0, 8.0, 1.0], [13.0, 8.0, 1.0], [18.0, 8.0, 1.0], [27.0, 8.0, 1.0]],
+             tekst="Bestaand zadeldak met een lange lichtstraat in het midden; zonnepanelen op de twee dakvlakken. Geen dakterras: het is een unit in een complex.",
+             tekst_en="Existing long industrial roof of one bay in a row of identical bays, a long roof light along the ridge, solar panels on both sides; neighbouring bays stay plain grey, the street and a parking strip in front."),
+    renders=dict(buiten=[]),
+)
+ONTWERPEN.update({"rotterdam-linschotenstraat-20a": LINSCHOTEN})
+LABELS.update({"rotterdam-linschotenstraat-20a": {"Café achter de glazen gevel": [4.6, 10.4], "Werkzone onder de lichtstraat": [13.0, 10.9], "Torens en toiletten": [20.0, 6.6],
+                                                  "Gym (afsluitbaar)": [26.5, 11.2], "Werkgalerij": [19.2, 8.4]}})
+
+
 # ---------------------------------------------------------------- inbouw uit het ontwerp, bottom-up (bovenop budget.py)
 def inbouw_rows(slug, gym_m2):
     """Kosten die uit de v2-indeling volgen en niet al in budget.py zitten (excl. btw).

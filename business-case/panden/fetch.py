@@ -94,6 +94,11 @@ PANDEN = [
          aanbod="bedrijfshal 1986, hal 340 + kantoor 582 m², vrije hoogte 6 m, 3 parkeerplaatsen, € 1.150.000 k.k. (oozo, ronde 7)"),
     dict(slug="den-haag-zilverstraat-56", adres="Zilverstraat 56 Den Haag", regio="Den Haag Zuidwest",
          aanbod="hal met entresol 1993, BVO 872 m², 6,1 m onder spant, 6 parkeerplaatsen, € 1.299.500 k.k. (bedrijfspand.com, ronde 7)"),
+    # ronde 8
+    dict(slug="rotterdam-linschotenstraat-20a", adres="Linschotenstraat 20A Rotterdam", regio="Rotterdam Spaanse Polder / Schiedam",
+         aanbod="bedrijfshal 2010, hal 452 + kantoor 117 m², vrije hoogte 9 m, overspanning 17 m, lichtstraten, 5 parkeerplaatsen, perceel 506 m², € 899.000 k.k.; online sinds 29-10-2022 (oozo; funda in business status onduidelijk)"),
+    dict(slug="rotterdam-koepelstraat-30", adres="Koepelstraat 30 Rotterdam", regio="Rotterdam Noord / Rubroek",
+         aanbod="beleggingsobject 1955, 586 m², woonwijk Rubroek, € 655.000 k.k.; online sinds 22-06-2026 (oozo; makelaar Spring Real Estate)"),
     # ronde 6: grootteklassen, gecontroleerd 14-11-2026
     dict(slug="tilburg-ledeboerstraat-29e", adres="Ledeboerstraat 29E Tilburg", regio="Tilburg",
          aanbod="bedrijfshal 2020, 456 m², vrije hoogte 8 m, 2 eenheden beschikbaar, € 575.000 k.k.; te koop op 14-11-2026 (bedrijfspand.com)"),

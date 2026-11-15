@@ -1,0 +1,542 @@
+{
+ "slug": "rotterdam-linschotenstraat-20a",
+ "adres": "Linschotenstraat 20A, 3044AW Rotterdam",
+ "regio": "Rotterdam Spaanse Polder / Schiedam",
+ "aanbod": "bedrijfshal 2010, hal 452 + kantoor 117 m\u00b2, vrije hoogte 9 m, overspanning 17 m, lichtstraten, 5 parkeerplaatsen, perceel 506 m\u00b2, \u20ac 899.000 k.k.; online sinds 29-10-2022 (oozo; funda in business status onduidelijk)",
+ "pand_id": "0599100000647761",
+ "bouwjaar": 2010,
+ "aantal_vbo": 21,
+ "vbos": [
+  {
+   "adres": "Linschotenstraat 4A",
+   "oppervlakte": 562,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 14A",
+   "oppervlakte": 509,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 14B",
+   "oppervlakte": 494,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 10A",
+   "oppervlakte": 561,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 8A",
+   "oppervlakte": 613,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 10B",
+   "oppervlakte": 561,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 4B",
+   "oppervlakte": 611,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 2B",
+   "oppervlakte": 561,
+   "gebruiksdoel": "industriefunctie,kantoorfunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 8B",
+   "oppervlakte": 613,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 6",
+   "oppervlakte": 561,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 18B",
+   "oppervlakte": 494,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 18A",
+   "oppervlakte": 494,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 16A",
+   "oppervlakte": 494,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 16B",
+   "oppervlakte": 494,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 22B",
+   "oppervlakte": 507,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 22A",
+   "oppervlakte": 487,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 20A",
+   "oppervlakte": 494,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 20B",
+   "oppervlakte": 494,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 2A",
+   "oppervlakte": 580,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 12",
+   "oppervlakte": 569,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject in gebruik"
+  },
+  {
+   "adres": "Linschotenstraat 12",
+   "oppervlakte": 569,
+   "gebruiksdoel": "industriefunctie",
+   "status": "Verblijfsobject ingetrokken"
+  }
+ ],
+ "vbo_m2_totaal": 11322,
+ "footprint": [
+  [
+   88754.465,
+   438362.789
+  ],
+  [
+   88767.922,
+   438371.445
+  ],
+  [
+   88751.042,
+   438397.685
+  ],
+  [
+   88737.586,
+   438389.029
+  ],
+  [
+   88754.465,
+   438362.789
+  ]
+ ],
+ "footprint_m2": 499,
+ "centrum": [
+  88790.00480000001,
+  438371.17939999996
+ ],
+ "hoogte": 10.0,
+ "hoogte_bron": "3D BAG",
+ "h3d": {
+  "b3_opp_grond": 10922.7,
+  "b3_opp_dak_plat": 1046.63,
+  "b3_opp_dak_schuin": 10758.32,
+  "b3_opp_buitenmuur": 4466.89,
+  "b3_h_maaiveld": 0.22499999403953552,
+  "b3_h_dak_70p": 10.178000450134277,
+  "b3_h_dak_max": 11.517999649047852
+ },
+ "perceel": {
+  "ring": [
+   [
+    88756.314,
+    438323.601
+   ],
+   [
+    88770.354,
+    438332.626
+   ],
+   [
+    88784.393,
+    438341.651
+   ],
+   [
+    88798.433,
+    438350.676
+   ],
+   [
+    88812.472,
+    438359.7
+   ],
+   [
+    88793.619,
+    438389.069
+   ],
+   [
+    88779.58,
+    438380.045
+   ],
+   [
+    88765.539,
+    438371.02
+   ],
+   [
+    88751.501,
+    438361.996
+   ],
+   [
+    88737.461,
+    438352.971
+   ],
+   [
+    88756.314,
+    438323.601
+   ]
+  ],
+  "m2": 2330,
+  "id": "19700146470000",
+  "props": {
+   "kadastrale_gemeente_waarde": "Rotterdam",
+   "sectie": "AC",
+   "perceelnummer": 1464,
+   "kadastrale_grootte_waarde": 2331
+  }
+ },
+ "op_perceel": [],
+ "context": [
+  {
+   "ring": [
+    [
+     88709.555,
+     438333.899
+    ],
+    [
+     88754.465,
+     438362.789
+    ],
+    [
+     88737.586,
+     438389.029
+    ],
+    [
+     88692.676,
+     438360.139
+    ],
+    [
+     88709.555,
+     438333.899
+    ]
+   ],
+   "h": 10.0
+  },
+  {
+   "ring": [
+    [
+     88767.922,
+     438371.445
+    ],
+    [
+     88850.594,
+     438424.626
+    ],
+    [
+     88833.714,
+     438450.866
+    ],
+    [
+     88751.042,
+     438397.685
+    ],
+    [
+     88767.922,
+     438371.445
+    ]
+   ],
+   "h": 10.0
+  },
+  {
+   "ring": [
+    [
+     88727.865,
+     438305.25
+    ],
+    [
+     88868.988,
+     438396.031
+    ],
+    [
+     88850.594,
+     438424.626
+    ],
+    [
+     88709.471,
+     438333.845
+    ],
+    [
+     88727.865,
+     438305.25
+    ]
+   ],
+   "h": 10.0
+  },
+  {
+   "id": "0599100000140970",
+   "ring": [
+    [
+     88662.66,
+     438310.17
+    ],
+    [
+     88679.06,
+     438284.64
+    ],
+    [
+     88709.55,
+     438304.23
+    ],
+    [
+     88693.14,
+     438329.76
+    ],
+    [
+     88662.66,
+     438310.17
+    ]
+   ],
+   "h": 6.0,
+   "bouwjaar": 1958,
+   "m2": 1100
+  },
+  {
+   "id": "0599100000613479",
+   "ring": [
+    [
+     88847.89,
+     438233.4
+    ],
+    [
+     88872.77,
+     438249.31
+    ],
+    [
+     88850.98,
+     438283.37
+    ],
+    [
+     88826.11,
+     438267.46
+    ],
+    [
+     88847.89,
+     438233.4
+    ]
+   ],
+   "h": 13.9,
+   "bouwjaar": 1957,
+   "m2": 1194
+  },
+  {
+   "id": "0599100000647755",
+   "ring": [
+    [
+     88699.16,
+     438393.73
+    ],
+    [
+     88719.53,
+     438406.82
+    ],
+    [
+     88713.89,
+     438415.58
+    ],
+    [
+     88693.52,
+     438402.49
+    ],
+    [
+     88699.16,
+     438393.73
+    ]
+   ],
+   "h": 7.0,
+   "bouwjaar": 1966,
+   "m2": 252
+  },
+  {
+   "id": "0599100010055776",
+   "ring": [
+    [
+     88879.02,
+     438253.35
+    ],
+    [
+     88895.72,
+     438264.1
+    ],
+    [
+     88895.6,
+     438264.27
+    ],
+    [
+     88907.51,
+     438271.94
+    ],
+    [
+     88891.05,
+     438297.05
+    ],
+    [
+     88862.66,
+     438278.78
+    ],
+    [
+     88879.02,
+     438253.35
+    ]
+   ],
+   "h": 7.2,
+   "bouwjaar": 1957,
+   "m2": 1022
+  },
+  {
+   "id": "0599100000647756",
+   "ring": [
+    [
+     88740.736,
+     438477.851
+    ],
+    [
+     88750.62,
+     438462.45
+    ],
+    [
+     88766.828,
+     438437.196
+    ],
+    [
+     88796.421,
+     438456.194
+    ],
+    [
+     88797.357,
+     438456.795
+    ],
+    [
+     88799.608,
+     438458.24
+    ],
+    [
+     88801.514,
+     438459.464
+    ],
+    [
+     88803.635,
+     438460.825
+    ],
+    [
+     88814.11,
+     438467.55
+    ],
+    [
+     88797.91,
+     438492.8
+    ],
+    [
+     88784.283,
+     438484.055
+    ],
+    [
+     88774.399,
+     438499.456
+    ],
+    [
+     88740.736,
+     438477.851
+    ]
+   ],
+   "h": 7.6,
+   "bouwjaar": 1955,
+   "m2": 2418
+  }
+ ],
+ "luchtfoto": {
+  "bbox": [
+   88700.00480000001,
+   438281.17939999996,
+   88880.00480000001,
+   438461.17939999996
+  ],
+  "file": "rotterdam-linschotenstraat-20a.jpg"
+ },
+ "footprint_complex": [
+  [
+   88864.82,
+   438393.35
+  ],
+  [
+   88866.55,
+   438399.86
+  ],
+  [
+   88861.01,
+   438408.45
+  ],
+  [
+   88833.685,
+   438450.819
+  ],
+  [
+   88692.63,
+   438360.13
+  ],
+  [
+   88693.333,
+   438359.035
+  ],
+  [
+   88725.35,
+   438309.16
+  ],
+  [
+   88727.88,
+   438305.26
+  ],
+  [
+   88769.97,
+   438332.38
+  ],
+  [
+   88864.82,
+   438393.35
+  ]
+ ],
+ "opmerking": "Footprint is unit 20A (BAG vbo 494 m\u00b2, adrespunten 20A en 20B, units van circa 16 m breed en 31 m diep aan de noordrij van het complex); rest van het complex staat als context. Advertentie: bouwjaar 2010, hal 452 + kantoor 117 m\u00b2, vrije hoogte 9 m."
+}
