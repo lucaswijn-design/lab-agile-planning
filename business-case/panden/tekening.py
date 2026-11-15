@@ -146,6 +146,8 @@ def element_svg(e):
         return toren_svg(e["c"], e["r"], e["open"], e["soort"])
     if t == "plant":
         c, r = e["c"], e["r"]
+        if e.get("hang"):
+            return f'<circle cx="{f(c[0])}" cy="{f(c[1])}" r="{r}" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>'
         return f'<circle cx="{f(c[0])}" cy="{f(c[1])}" r="{r}" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>'
     if t == "boom":
         c, r = e["c"], e["r"]

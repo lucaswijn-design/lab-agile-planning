@@ -248,7 +248,7 @@
     "Toiletgroep"
    ],
    "foto": null,
-   "prompt": "Two round concrete-look bathroom towers in an industrial hall, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy over the rims.",
+   "prompt": "Two octagonal concrete-look bathroom towers (flat faces, they still read as round objects) in an industrial hall, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy and ferns along the top rim, lockers built into an outer face.",
    "n": 0,
    "cam": {
     "t": [
@@ -265,7 +265,7 @@
     15.0,
     6.4
    ],
-   "prompt_vol": "Two round concrete-look bathroom towers in an industrial hall, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy over the rims. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Two octagonal concrete-look bathroom towers (flat faces, they still read as round objects) in an industrial hall, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy and ferns along the top rim, lockers built into an outer face. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
   },
   {
    "naam": "Gym (afsluitbaar)",
@@ -815,28 +815,454 @@
    "dikte": 0.2
   },
   {
-   "t": "toren",
+   "t": "wand",
+   "pts": [
+    [
+     17.541,
+     4.0
+    ],
+    [
+     17.541,
+     4.452
+    ],
+    [
+     16.052,
+     5.941
+    ],
+    [
+     13.948,
+     5.941
+    ],
+    [
+     12.459,
+     4.452
+    ],
+    [
+     12.459,
+     2.348
+    ],
+    [
+     13.948,
+     0.859
+    ],
+    [
+     16.052,
+     0.859
+    ],
+    [
+     17.541,
+     2.348
+    ],
+    [
+     17.541,
+     2.8
+    ]
+   ],
+   "h": 3.0,
+   "glas": false,
+   "gym": false,
+   "bestaand": false,
+   "n": 0,
+   "dikte": 0.15,
+   "soort": "torenwand"
+  },
+  {
+   "t": "box",
+   "soort": "toiletcabine",
+   "c": [
+    13.769,
+    4.631
+   ],
+   "w": 0.95,
+   "d": 1.5,
+   "h": 2.3,
+   "a": 225,
+   "kleur": "#d6cdb8",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "toiletcabine",
+   "c": [
+    13.259,
+    3.4
+   ],
+   "w": 0.95,
+   "d": 1.5,
+   "h": 2.3,
+   "a": 270,
+   "kleur": "#d6cdb8",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "toiletcabine",
+   "c": [
+    13.769,
+    2.169
+   ],
+   "w": 0.95,
+   "d": 1.5,
+   "h": 2.3,
+   "a": 315,
+   "kleur": "#d6cdb8",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "wastrog",
+   "c": [
+    15.354,
+    2.979
+   ],
+   "w": 1.5,
+   "d": 0.45,
+   "h": 0.9,
+   "a": -40,
+   "kleur": "#bdb6a8",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "wastrog",
+   "c": [
+    15.354,
+    3.821
+   ],
+   "w": 1.5,
+   "d": 0.45,
+   "h": 0.9,
+   "a": 40,
+   "kleur": "#bdb6a8",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "spiegel",
    "c": [
     15.0,
     3.4
    ],
-   "r": 2.75,
-   "open": 0,
-   "soort": "was",
-   "h": 3.0,
+   "w": 0.1,
+   "d": 0.1,
+   "h": 0.1,
+   "a": 0,
+   "kleur": "#bdb6a8",
    "n": 0
   },
   {
-   "t": "toren",
+   "t": "plant",
+   "c": [
+    17.31,
+    4.357
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    15.957,
+    5.71
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    14.043,
+    5.71
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    12.69,
+    4.357
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    12.69,
+    2.443
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    14.043,
+    1.09
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    15.957,
+    1.09
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    17.31,
+    2.443
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "wand",
+   "pts": [
+    [
+     12.421,
+     8.8
+    ],
+    [
+     12.421,
+     8.539
+    ],
+    [
+     13.639,
+     7.321
+    ],
+    [
+     15.361,
+     7.321
+    ],
+    [
+     16.579,
+     8.539
+    ],
+    [
+     16.579,
+     10.261
+    ],
+    [
+     15.361,
+     11.479
+    ],
+    [
+     13.639,
+     11.479
+    ],
+    [
+     12.421,
+     10.261
+    ],
+    [
+     12.421,
+     10.0
+    ]
+   ],
+   "h": 3.0,
+   "glas": false,
+   "gym": false,
+   "bestaand": false,
+   "n": 0,
+   "dikte": 0.15,
+   "soort": "torenwand"
+  },
+  {
+   "t": "box",
+   "soort": "douche",
    "c": [
     14.5,
+    7.821
+   ],
+   "w": 0.95,
+   "d": 0.95,
+   "h": 2.2,
+   "a": 360,
+   "kleur": "#9fb3bd",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "douche",
+   "c": [
+    15.616,
+    8.284
+   ],
+   "w": 0.95,
+   "d": 0.95,
+   "h": 2.2,
+   "a": 405,
+   "kleur": "#9fb3bd",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "douche",
+   "c": [
+    15.616,
+    10.516
+   ],
+   "w": 0.95,
+   "d": 0.95,
+   "h": 2.2,
+   "a": 495,
+   "kleur": "#9fb3bd",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "douche",
+   "c": [
+    14.5,
+    10.979
+   ],
+   "w": 0.95,
+   "d": 0.95,
+   "h": 2.2,
+   "a": 540,
+   "kleur": "#9fb3bd",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "bank",
+   "c": [
+    16.279,
     9.4
    ],
-   "r": 2.25,
-   "open": 180,
-   "soort": "douche",
-   "h": 3.0,
+   "w": 1.6,
+   "d": 0.4,
+   "h": 0.44,
+   "a": 450,
+   "kleur": "#b08a5e",
    "n": 0
+  },
+  {
+   "t": "plant",
+   "c": [
+    12.652,
+    8.635
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    13.735,
+    7.552
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    15.265,
+    7.552
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    16.348,
+    8.635
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    16.348,
+    10.165
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    15.265,
+    11.248
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    13.735,
+    11.248
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
+  },
+  {
+   "t": "plant",
+   "c": [
+    12.652,
+    10.165
+   ],
+   "r": 0.32,
+   "h": 0.5,
+   "n": 0,
+   "z": 3.0,
+   "naam": "klimop"
   },
   {
    "t": "box",

@@ -250,9 +250,11 @@ function element(g, e, y0){
     case 'deur': if (e.toegang){ const a = e.a*Math.PI/180; box(g, [e.c[0] + Math.cos(a)*(e.w/2 + .15), e.c[1] + Math.sin(a)*(e.w/2 + .15)], .12, .3, .16, e.a, '#a8332e', y0 + 1.2); } break;
     case 'label': break;
     case 'plant': {
-      cyl(g, e.c, e.r*.55, .45, '#b8633f', y0 + .16, {rt: e.r*.65});
-      sphere(g, e.c, e.r, y0 + .45 + e.r*.9, GROEN[Math.round(e.c[0]*7) % 4]);
-      if (e.h > 1.3) sphere(g, [e.c[0] + .1, e.c[1] - .1], e.r*.75, y0 + e.h, GROEN[(Math.round(e.c[1]*5)+1) % 4]);
+      const z = y0 + (e.z || 0);
+      if (e.hang){ cyl(g, e.c, .01, 1.2, '#2f3032', z); sphere(g, e.c, e.r, z - .1, GROEN[Math.round(e.c[0]*7) % 4]); for (let i = 0; i < 3; i++) sphere(g, [e.c[0] + .15*(i-1), e.c[1]], .12, z - .45 - .2*i, GROEN[(i+1) % 4]); break; }
+      if (!e.z) cyl(g, e.c, e.r*.55, .45, '#b8633f', z + .16, {rt: e.r*.65});
+      sphere(g, e.c, e.r, z + (e.z ? .1 : .45 + e.r*.9), GROEN[Math.round(e.c[0]*7) % 4]);
+      if (e.h > 1.3) sphere(g, [e.c[0] + .1, e.c[1] - .1], e.r*.75, z + e.h, GROEN[(Math.round(e.c[1]*5)+1) % 4]);
       break; }
     case 'boom': {
       cyl(g, e.c, .12, e.h*.6, '#6b4428', y0);

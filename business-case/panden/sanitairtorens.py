@@ -33,7 +33,7 @@ def maten():
     return dict(rond=rond, rand=rand, v=v, scheid=scheid, afw=afw, nat=nat, droog=afw - nat, vloer_nat=vloer_nat)
 
 
-def rows(rond_prijs=114, droog_prijs=55, nat_prijs=85):
+def rows(rond_prijs=75, droog_prijs=55, nat_prijs=85):  # 16-11-2026: achthoek met rechte zijden (was gebogen, € 114/m2), zie inrichting/torens.py
     """Meerkosten en besparingen ten opzichte van rechthoekige sanitairblokken (excl. btw)."""
     m = maten()
     R = []
@@ -41,7 +41,7 @@ def rows(rond_prijs=114, droog_prijs=55, nat_prijs=85):
     def add(post, h, e, p, label):
         R.append(dict(groep="Sanitair", post=post, h=round(h, 1), e=e, prijs=p, totaal=round(h * p), label=label, gen=0.3))
 
-    add("Torens: ronde wand metal stud flexrail + 2 zijden gebogen cementplaat (mat. 45 + 1,4 u timmerman)",
+    add("Torens: achthoekige wand metal stud + 2 zijden cementplaat, 8 hoekprofielen (mat. 35 + 0,8 u timmerman)",
         m["rond"], "m2", rond_prijs, "schatting")
     add("Torens: V-wanden en cabinescheidingen recht, cementplaat 2 zijden (mat. 35 + 0,8 u)",
         m["v"] + m["scheid"], "m2", 75, "schatting")
@@ -62,7 +62,7 @@ def rows(rond_prijs=114, droog_prijs=55, nat_prijs=85):
 
 
 if __name__ == "__main__":
-    for naam, kw in [("laag", dict(rond_prijs=90, droog_prijs=15)), ("basis", {}), ("hoog", dict(rond_prijs=150, droog_prijs=75))]:
+    for naam, kw in [("laag", dict(rond_prijs=60, droog_prijs=15)), ("basis", {}), ("hoog", dict(rond_prijs=100, droog_prijs=75))]:
         R, m = rows(**kw)
         print(naam, sum(r["totaal"] for r in R))
     R, m = rows()

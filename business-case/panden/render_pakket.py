@@ -106,7 +106,7 @@ def main(alleen=None):
              "Bestand: 01-maquette-dak-eraf.png (of 02 voor de andere kant)", "",
              "```", f"This is a simple white architectural model of a members club inside {'a brand-new 10 m high steel hall with 6 m high glass facades and three levels around an open atrium' if O.get('nieuwbouw') else 'an existing building'}, with the roof removed. "
              "Turn it into a photorealistic architectural cutaway render from exactly the same camera angle. Keep every wall, round element and piece of furniture "
-             "where it is: the round seating around the fireplace, the round bookshelf room, the two round bathroom towers with plants on top, the desk islands, the gym racks. "
+             "where it is: the round seating around the fireplace, the round bookshelf room, the two octagonal bathroom towers with plants on top (eight flat faces, lockers on some outer faces), the desk islands, the gym racks. "
              + MAQ_STIJL, "```", "",
              "### B. Hele gebouw met het dak dicht",
              "Bestand: 03-maquette-dak-dicht.png", "", "```",
@@ -142,12 +142,12 @@ def main(alleen=None):
 
 PROMPT = """I attached a zip with a complete render package for one location of a members club I am planning: {titel} (the Netherlands). You are my architectural visualiser.
 
-Step 1. Unzip it and read 00-LEESMIJ.md completely (it is in Dutch; the image prompts in it are in English). Then look at 05-plattegrond (floor plan), 06-kleur.png (colour plan per zone) and 06-sanitair.png (the round bathroom tower with the V-shaped wall). Keep these three in mind for every image.
+Step 1. Unzip it and read 00-LEESMIJ.md completely (it is in Dutch; the image prompts in it are in English). Then look at 05-plattegrond (floor plan), 06-kleur.png (colour plan per zone) and 06-sanitair.png (the bathroom tower with the V-shaped wash trough; the towers are now octagonal, not round). Keep these three in mind for every image.
 
 Step 2. Make the images described in 00-LEESMIJ.md, in this order: A (whole building with the roof removed), B (roof on), the outside images, the aerial photo, then room by room. For each image use the file named in 00-LEESMIJ.md as the visual reference and the prompt in the code block below it. Where a room has both a listing photo and a model view, make the version from the listing photo.
 
 Rules for every image:
-1. Follow the floor plan and the models exactly: same positions, same round elements (round sofa around the fireplace, round bookshelf room, round bathroom towers with plants on the rim, round phone booths), same zones. Do not invent rooms.
+1. Follow the floor plan and the models exactly: same positions, same round elements (round sofa around the fireplace, round bookshelf room, octagonal bathroom towers with plants on the rim, hexagonal benches with open sides around the fireplace, round phone booths, glass focus rooms, locker walls with trailing plants on top), same zones. Do not invent rooms.
 2. Colours per zone from the colour plan: book café olive green, plum and travertine; library deep olive and butter yellow; workplaces slate blue and cognac; gym oxblood and blush; studio fig purple and terracotta; entrance sand and palm green. About 60% of each room stays raw (concrete, old brick, black steel), 30% zone colour, 10% accent.
 3. With a listing photo: keep the existing architecture, windows, columns, ceiling height and camera angle exactly; change only the interior and finishes.
 4. Style: Berlin warehouse meets Taghazout calm, second hand with a little organized chaos, lots of plants and small trees, warm daylight, photorealistic like a professional architecture photo. Low-budget industrial finish: smooth sealed concrete floor and sleek compact desks, but walls, glass partitions and furniture made from reclaimed windows, old doors, reclaimed wood and steel; nothing glossy or high-end. No text, labels or watermarks, no people in focus.
