@@ -120,6 +120,92 @@ ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
   <p class="lede">Een oude loods of een boerenerf aan de rand van een stad, omgebouwd tot club met groen, werkplekken, gym, sauna, zwemvijver en een goede espressobar. Eigenaren betalen maandelijks en kopen het terrein samen af; clubleden zonder aandeel betalen mee aan de exploitatie. Bovenaan de hal in eigen beheer, per product begroot. Daaronder de eerdere versies.</p>
 </header>
 
+<section class="verdict" id="inrichting">
+  <span class="eyebrow">Inrichting verdiept · torens, meubels, planten, spel en certificering · 16 november 2026</span>
+  <p class="big">Alle ontwerpen zijn opnieuw getoetst aan strengere normen. De grootste gaten waren lockers, focuskamers en planten. Utrecht, Galvanistraat en Linschotenstraat zijn nu stuk voor stuk dieper uitgewerkt. De sanitairtorens worden achthoekig, of D-vormig waar ze tegen een muur kunnen staan. Galvanistraat komt daarmee op <span class="num">€ 227</span> om te draaien en <span class="num">€ 323</span> voor de inleg terug, voor 90 eigenaren.</p>
+
+  <h3>Normen en toets per locatie</h3>
+  <p>De normen per lid:</p>
+  <ul>
+    <li><b>Belcellen:</b> 1 per 8 werkers op de piek. Gangbaar is 1 per 10 tot 15, maar leden bellen veel (<a href="https://soundboxstore.com/blogs/articles/acoustic-booths-flexible-workspace-providers">Soundbox</a>).</li>
+    <li><b>Focuskamers:</b> 1 voor 2 personen per 25 werkers.</li>
+    <li><b>Lounge:</b> zachte zitplekken los van het café, 25% van de werkers plus 4.</li>
+    <li><b>Lockers:</b> een vaste locker per eigenaar, plus dagkluisjes voor 2 keer het aantal sporters op het piekuur, plus 10 voor gasten.</li>
+    <li><b>Planten:</b> 1 plant per 20 m² en 1 boom per 60 m².</li>
+  </ul>
+  <div class="tbl"><table><thead><tr><th>Ontwerp</th><th class="r">Belcellen</th><th class="r">Focuskamers</th><th class="r">Lounge</th><th class="r">Lockers</th><th class="r">Planten en bomen</th></tr></thead><tbody><tr><td>Van Heutszstraat 4, Utrecht</td><td class="r cell-ok">5 / 5</td><td class="r cell-ok">2 / 2</td><td class="r cell-ok">26 / 13</td><td class="r cell-ok">148 / 94</td><td class="r cell-bad">32 / 35</td></tr><tr><td>Rietveldenweg 13, Den Bosch</td><td class="r cell-ok">5 / 5</td><td class="r cell-bad">0 / 2</td><td class="r cell-ok">41 / 13</td><td class="r cell-bad">0 / 88</td><td class="r cell-bad">10 / 60</td></tr><tr><td>De Eendenkooi 1A, Den Bosch</td><td class="r cell-bad">4 / 5</td><td class="r cell-bad">0 / 2</td><td class="r cell-ok">20 / 13</td><td class="r cell-bad">0 / 88</td><td class="r cell-bad">9 / 60</td></tr><tr><td>Herenweg 15, Maarssen</td><td class="r cell-bad">4 / 5</td><td class="r cell-bad">0 / 2</td><td class="r cell-ok">30 / 13</td><td class="r cell-bad">0 / 88</td><td class="r cell-bad">12 / 43</td></tr><tr><td>Ring 15, Pernis (Rotterdam)</td><td class="r cell-bad">4 / 5</td><td class="r cell-bad">0 / 2</td><td class="r cell-ok">19 / 13</td><td class="r cell-bad">0 / 88</td><td class="r cell-bad">7 / 32</td></tr><tr><td>Galvanistraat 122-126, Rotterdam West</td><td class="r cell-bad">6 / 7</td><td class="r cell-bad">2 / 3</td><td class="r cell-ok">25 / 18</td><td class="r cell-ok">131 / 117</td><td class="r cell-bad">28 / 42</td></tr><tr><td>Calandstraat 92, Schiedam</td><td class="r cell-bad">6 / 8</td><td class="r cell-bad">0 / 3</td><td class="r cell-ok">19 / 19</td><td class="r cell-bad">0 / 129</td><td class="r cell-bad">10 / 70</td></tr><tr><td>Metaalhof 40, Rotterdam Het Lage Land</td><td class="r cell-bad">5 / 6</td><td class="r cell-bad">0 / 2</td><td class="r cell-ok">16 / 16</td><td class="r cell-bad">0 / 106</td><td class="r cell-bad">4 / 55</td></tr><tr><td>Linschotenstraat 20A, Rotterdam Spaanse Polder</td><td class="r cell-ok">6 / 6</td><td class="r cell-ok">2 / 2</td><td class="r cell-ok">18 / 16</td><td class="r cell-ok">130 / 106</td><td class="r cell-bad">20 / 43</td></tr><tr><td>Eigen nieuwbouwhal met atrium (concept)</td><td class="r cell-bad">5 / 6</td><td class="r cell-bad">0 / 2</td><td class="r cell-ok">37 / 16</td><td class="r cell-bad">80 / 106</td><td class="r cell-bad">11 / 50</td></tr></tbody></table></div>
+  <p class="note">Telling uit het ontwerp tegen wat nodig is. Utrecht, Galvanistraat en Linschotenstraat zijn verdiept. De andere ontwerpen hebben de achthoekige torens al, maar missen nog lockers, focuskamers en groen. Die werk ik uit zodra een van die panden weer kansrijk wordt. Regels in <code>panden/inrichting/programma.py</code>.</p>
+
+  <h3>De sanitairtoren: rond, achthoek, D-vorm of vierkant?</h3>
+  <p>Zelfde programma per vorm: drie toiletcabines, een V-wastrog en een entree. Wanden van 3 m hoog.</p>
+  <div class="tbl"><table><thead><tr><th>Vorm</th><th class="r">m²</th><th class="r">Efficiëntie</th><th class="r">Wand</th><th class="r">Buitenkant bruikbaar</th><th>Wat het betekent</th></tr></thead><tbody><tr><td>Rond, vrijstaand (huidig)</td><td class="r">23.8</td><td class="r">47%</td><td class="r">€ 5.909</td><td class="r">0.0 m</td><td>Mooi object, maar pot, fontein en spiegel willen een vlakke wand: binnen komen voorzetwanden, buiten blijft de ring leeg.</td></tr><tr><td>Achthoek, vrijstaand</td><td class="r">21.4</td><td class="r">52%</td><td class="r">€ 3.789</td><td class="r">6.3 m</td><td>Leest nog steeds als rond object, maar elke zijde (2.10 m) is vlak: cabines, spiegels en lockers zijn standaard. Drie buitenzijden met lockers geven circa 3 x 2,1 m = 100 lockers.</td></tr><tr><td>D-vorm, rug tegen een bestaande wand</td><td class="r">16.1</td><td class="r">69%</td><td class="r">€ 3.083</td><td class="r">0.0 m</td><td>Leidingen in de bestaande wand, cabines op een rij langs die wand, de ronde voorkant geeft het karakter. Geen rugruimte die verloren gaat.</td></tr><tr><td>Vierkant, vrijstaand</td><td class="r">19.4</td><td class="r">57%</td><td class="r">€ 3.168</td><td class="r">8.8 m</td><td>Goedkoopst en het efficiëntst binnen, maar een blok in een open hal: precies wat je niet wilt laten zien.</td></tr><tr><td>Driehoek, vrijstaand</td><td class="r">18.9</td><td class="r">41%</td><td class="r">€ 3.564</td><td class="r">7.9 m</td><td>Scherpe hoeken binnen zijn onbruikbaar voor cabines (circa 30% verlies); als vorm alleen goed voor de V-wand zelf.</td></tr></tbody></table></div>
+  <p><b>Keuze.</b> Rond is mooi, maar binnen willen pot, fontein en spiegel een vlakke wand, en buiten kun je tegen een bolle wand niets zetten. Een radiale ronde toren vraagt 3,2 tot 3,7 m² per toilet, een rechthoekig blok 1,8 m² (onderzoek, zie inrichting/onderzoek.md).</p>
+  <ul>
+    <li><b>Vrijstaande toren als buffer tussen gym en werken:</b> een <b>achthoek</b>. Hij leest nog steeds als rond object, de wanden kosten circa € 2.100 minder per toren, en op drie buitenzijden passen circa 100 lockers. Zo lossen de torens zelf het lockerprobleem op.</li>
+    <li><b>Toren die tegen een bestaande wand kan staan:</b> een <b>D-vorm</b>, de efficiëntste vorm (69%). De leidingen gaan in de bestaande wand en de ronde voorkant houdt het karakter.</li>
+    <li><b>Toegankelijk toilet:</b> dat komt er apart naast, minimaal 1,65 x 2,2 m.</li>
+  </ul>
+  <p>De sanitairbegroting gaat van gebogen wand (€ 114 per m²) naar achthoek (€ 75 per m²).</p>
+
+  <h3>Slim meubilair</h3>
+  <ul>
+    <li><b>Veelhoekige bank rond de haard:</b> zes- of achthoekig met twee open zijden om tussendoor te lopen. Alles recht, dus zelf te bouwen voor circa € 450 per meter. Een zeshoek met zijde 1,2 m geeft 12 plekken.</li>
+    <li><b>Zitnis langs een wand:</b> 53 tot 61 cm per persoon en geen stoelruimte achter je rug. Dat is circa het dubbele aantal plekken per m² van losse stoelen (<a href="https://dimensions.com/element/banquette-seating-clearances">dimensions.com</a>).</li>
+    <li><b>Lockerwand met plantenbak erop:</b> de dode ruimte boven de kast wordt een rij hangende pothos. Kolommen van 30 cm, 5 hoog, geven 16 lockers per meter.</li>
+    <li><b>Focuskamer van oude ramen</b> in houten regelwerk, 2,2 x 1,9 m, circa € 3.500.</li>
+    <li><b>Zittrap:</b> circa € 100 per zitplek. Lockers of opslag kunnen eronder.</li>
+    <li><b>Bieb in Utrecht:</b> de ronde boekentoren liet vier dode hoeken over. Nu staan er boekenwanden langs de muren en twee focuskamers.</li>
+  </ul>
+
+  <h3>Spel: wel, maar in de luide zone</h3>
+  <ul>
+    <li><b>Tafeltennis:</b> buiten een betonnen tafel (Utrecht, in de binnentuin), binnen een inklapbaar model, of maak de grote tafel 274 x 152,5 cm zodat er een netje op kan.</li>
+    <li><b>Pool:</b> vraagt 19 tot 23 m² en alleen als er een lounge van 20 m² over is (<a href="https://www.sawyertwain.com/blog/standard-pool-table-dimensions-and-required-room-sizes/">Sawyer Twain</a>).</li>
+    <li><b>Darts:</b> circa 11,5 m², tegen een blinde wand.</li>
+    <li><b>Tafelvoetbal:</b> het meest storend per m², bij de gym of de entree, niet bij de bureaus.</li>
+  </ul>
+  <p>De geluidsvolgorde in elk ontwerp: entree, café en spel, gym, lounge, werken, en dan stilte en focus.</p>
+
+  <h3>Planten: robuust, op licht geplaatst, zelfwatergevend</h3>
+  <div class="tbl"><table><thead><tr><th>Plant</th><th>Licht</th><th>Water</th><th>Wordt</th><th class="r">Prijs 2 m</th><th>Waar in de ontwerpen</th></tr></thead><tbody>
+    <tr><td>Kentia palm</td><td>laag tot middel, 300 tot 1.000 lux</td><td>1 tot 2 weken</td><td>3 tot 4 m, langzaam</td><td class="r">€ 100 tot € 120</td><td>middenzones, entree, gym</td></tr>
+    <tr><td>Strelitzia nicolai</td><td>hoog, 1.000 lux en meer</td><td>wekelijks</td><td>3 tot 4 m, snel</td><td class="r">€ 110 tot € 150</td><td>aan glas en onder lichtstraten</td></tr>
+    <tr><td>Ficus elastica</td><td>middel tot hoog</td><td>10 tot 14 dagen</td><td>3 m</td><td class="r">€ 200</td><td>café bij het raam</td></tr>
+    <tr><td>Monstera</td><td>middel</td><td>1 tot 2 weken</td><td>2 m met mospaal</td><td class="r">€ 80 tot € 100</td><td>café, lounge</td></tr>
+    <tr><td>ZZ-plant, Sansevieria</td><td>laag, vanaf 50 lux</td><td>3 tot 4 weken</td><td>1 m</td><td class="r">€ 40</td><td>tussen de bureaus, gym, donkere hoeken</td></tr>
+    <tr><td>Pothos, Philodendron</td><td>laag tot middel</td><td>1 tot 2 weken</td><td>ranken 2 m en meer</td><td class="r">€ 30</td><td>op lockers, aan balustrades, klimwanden</td></tr>
+  </tbody></table></div>
+  <p class="note">Bronnen per plant in inrichting/onderzoek.md (onder meer <a href="https://green-bubble.com/en/products/kentia-palm-200">Green Bubble</a>). Geen olijfboom binnen: die wil veel meer licht dan een hal geeft.</p>
+  <ul>
+    <li><b>Bakken:</b> overal zelfwatergevend, bijvoorbeeld Lechuza voor circa € 90 (<a href="https://www.hornbach.nl/p/lechuza-plantenbak-cubico-color-kunststof-all-in-one-set-antraciet-40-x-40-x-75-cm/8679395/">Hornbach</a>).</li>
+    <li><b>Onderhoud:</b> een ledenrooster van een uur per week. Een onderhoudscontract kost € 4 tot € 8 per plant per maand, bij 60 planten € 240 tot € 480 per maand: te duur voor deze club.</li>
+    <li><b>Kweeklicht:</b> in donkere hoeken een witte kweekspot van circa € 18. Klimplanten aan staalkabels op de wanden die licht krijgen.</li>
+  </ul>
+  <p><b>Rotswand: groen, geen water.</b> Stromend water binnen vraagt een pomp, kalk- en algenbeheer en een legionellabeheersplan, en geeft vocht bij de boeken. Kies daarom een rotswand van hergebruikte steen met potnissen, of geconserveerd mos voor circa € 225 tot € 350 per m² zonder onderhoud (<a href="https://www.plantcentraal.nl/en/blog/moss-wall-moss-wall/moss-wall-price-per-m2/">Plantcentraal</a>). In Utrecht komt de rotswand in de entree, tegenover de lockerwand.</p>
+  <p><b>Daglicht bepaalt de plek:</b></p>
+  <ul>
+    <li>Bureaus 1,5 tot 3 m van het glas, met het scherm haaks op het raam.</li>
+    <li>Café en grote planten aan het glas of onder de lichtstraat.</li>
+    <li>Belcellen, toiletten, lockers en de gym in de donkere kern.</li>
+  </ul>
+
+  <h3>Certificering: wat loont?</h3>
+  <ul>
+    <li><b>Basis:</b> energielabel A (of zo hoog als haalbaar) plus de WELL-principes zonder certificaat. Dat zijn eigen CO2- en fijnstofsensoren en één akoestische meting, voor circa € 3.350 tot € 6.000.</li>
+    <li><b>BREEAM-NL In-Use</b> (circa € 5.600 tot € 11.200) wordt interessant door de <a href="https://www.rabobank.nl/bedrijven/zakelijk-financieren/financieringen/impactlening">Rabo Impactlening</a>. Die geeft tot 0,55% rentekorting bij een duurzaam keurmerk, voor leningen vanaf € 250.000. Op onze leningen van € 700.000 tot € 800.000 scheelt dat circa € 2.700 tot € 3.000 per jaar, of € 4 tot € 6 per vol lid per maand. Ook de MIA-aftrek van 27% loont, maar alleen met belastbare winst (<a href="https://www.rvo.nl/milieu-en-energielijst-2026/5216">RVO</a>).</li>
+    <li><b>WELL Silver</b> kost circa € 33.000 tot € 78.000 voor dit pand en levert een kleine coöperatie te weinig op.</li>
+  </ul>
+  <p><b>Advies:</b> begin met de basis. Vraag bij de bank naar de Impactlening en laat een BREEAM-assessor een quickscan doen voordat je de verbouwing aanbesteedt. Bij MIA moet je de investering melden voordat je de opdrachten tekent.</p>
+
+  <h3>Wat het kost: oud → nieuw</h3>
+  <p>De inrichting is per pand meegerekend: lockers boven de 60 die al in de begroting zaten, focuskamers, veelhoekbanken, zitnissen, rotswand en klimwand, pingpong en het plantplan. Achthoekige torens zijn goedkoper.</p>
+  <ul>
+    <li><b>Utrecht:</b> € 152 → € 162 om te draaien en € 301 → € 316 voor de inleg terug. Erbij kwamen 2 focuskamers, 1 belcel, lockers voor circa 150 leden, de rotswand, een veelhoekbank, pingpong en 25 planten. Met de Impactlening circa € 156.</li>
+    <li><b>Galvanistraat:</b> € 266 → € 227 en € 367 → € 323. De entresol krijgt een raambar van 11 m (19 krukken) en twee focuskamers, waardoor er 63 werkplekken zijn en 90 eigenaren passen in plaats van 80. Daarbij lockers, een veelhoekbank, 2 belcellen, een klimwand en planten.</li>
+    <li><b>Linschotenstraat:</b> € 245 → € 255 en € 368 → € 385. Erbij kwam een leesbalkon van 34 m² op 3,6 m in de hoge voorkant met twee focuskamers en een belcel (€ 650 per m²), plus een zitnis, een veelhoekbank, lockers en planten.</li>
+  </ul>
+</section>
+
 <section class="verdict" id="ronde8-uitgewerkt">
   <span class="eyebrow">Ronde 8 uitgewerkt · Linschotenstraat en Koepelstraat · 15 november 2026</span>
   <p class="big">Linschotenstraat 20A in de Spaanse Polder is nu ontworpen: een bedrijfsunit uit 2010 van 16 bij 31 m met 9 m vrije hoogte, een lichtstraat en 5 eigen parkeerplaatsen. Voor 80 eigenaren en 30 clubleden kost het <span class="num">€ 245</span> om te draaien en <span class="num">€ 368</span> voor de inleg terug, met een lening van 44%. Koepelstraat 30-32 valt af.</p>

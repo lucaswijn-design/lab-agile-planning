@@ -1847,10 +1847,10 @@ def inbouw_rows(slug, gym_m2):
     add("Veelhoekige bank zelfgebouwd (hout, schuim, stof, rugleuning)", hb, "m1", 450, "schatting", groep="Café & bieb")
     add("Zitnis langs de wand met tafeltjes (hout, kussens)", sum(e["w"] for e in E if e.get("soort") == "zitnis"), "m1", 400, "schatting", groep="Café & bieb")
     rw = sum(e["w"] * e["h"] for e in E if e.get("soort") == "rotswand")
-    add("Rotswand zonder water: natuursteen op stalen frame met plantvakken en druppelirrigatie", rw, "m2", 450, "schatting", groep="Café & bieb")
+    add("Rotswand zonder water: steen op stalen frame met potnissen en geconserveerd mos (geen onderhoud)", rw, "m2", 350, "schatting", groep="Café & bieb")
     add("Klimwand: staalkabels, bakken en klimplanten", sum(e["w"] * e["h"] for e in E if e.get("soort") == "klimwand"), "m2", 60, "schatting", groep="Café & bieb")
     add("Tafeltennistafel (buiten: beton, binnen: inklapbaar)", sum(1 for e in E if e.get("soort") == "pingpong"), "st", 1_800, "schatting", groep="Café & bieb")
-    PRIJS = {"kentia": 250, "ficus elastica": 200, "strelitzia nicolai": 250, "monstera": 90, "zz-plant": 45, "sansevieria": 40, "dracaena": 120,
+    PRIJS = {"kentia": 120, "ficus elastica": 200, "strelitzia nicolai": 250, "monstera": 90, "zz-plant": 45, "sansevieria": 40, "dracaena": 120,
              "schefflera": 150, "olijf": 400, "aspidistra": 40, "philodendron": 70, "pothos": 30, "klimop": 20, "varen": 25}
     planten = sum(PRIJS.get(e.get("naam"), 0) for e in E if e["t"] in ("plant", "boom")) + sum(30 for e in E if e.get("soort") in ("lockers",))
     add("Planten volgens plantplan, met zelfwatergevende bakken (boven de € 8.500 die al in budget.py zit)", max(0, planten * 1.6 - 8_500), "EUR", 1, "schatting", groep="Café & bieb")
