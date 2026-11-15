@@ -88,6 +88,8 @@ def rij(slug, W, OP):
     titel = O["titel"]
     w = zoek(W, titel)
     op = zoek(OP, titel)
+    if slug == "nieuwbouw-atriumhal":
+        op = next((v for kk, v in OP.items() if "nieuw" in kk or "kavel" in kk), {})
     m2 = sum(z["m2"] for z in O["zones"])
     # soorten: zelfde totale opbrengst als fee_vol x (V + 0,711 D)
     n = V + D

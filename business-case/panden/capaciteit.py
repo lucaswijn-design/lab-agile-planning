@@ -72,6 +72,7 @@ def aanbod(slug):
     stoelen_cafe = (sum(1 for e in O["elementen"] if e.get("soort") == "stoel" and not e.get("n")) + 8  # +8 zitkuil
                     + sum(int(e["w"] / 0.6) for e in O["elementen"] if e.get("soort") == "raambar" and not e.get("n")))
     toil, dou = TOILETTEN.get(slug, (4, 4))  # wastoren 3 + invalidentoilet; douchetoren 3 + 1
+    toil += 3 * sum(1 for e in O["elementen"] if e.get("soort") == "toiletgroep")  # extra toiletgroep: 2 toiletten + toegankelijk toilet
     return dict(werkplekken=t["werkplekken"], zit_sta=t["bureaus"], vergaderkamers=len(t["vergaderkamers"]),
                 belcellen=t["belcellen"], gym_m2=gym_m2, cafe_stoelen=stoelen_cafe, toiletten=toil, douches=dou)
 

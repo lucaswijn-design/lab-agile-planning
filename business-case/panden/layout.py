@@ -525,9 +525,9 @@ LAYOUTS.update({
     ),
     "rotterdam-metaalhof-40": dict(
         titel="Metaalhof 40, Rotterdam Het Lage Land", oordeel="kandidaat, beschikbaar volgens oozo (ronde 7, 15-11-2026)",
-        samenvatting="Hal uit 1986 (340 m², vrije hoogte 6 m) met kantoor in twee lagen (582 m²), perceel 849 m² met eigen strook voor terras en 3 parkeerplaatsen. 800 m van station Rotterdam Alexander.",
+        samenvatting="Pand uit 1986: kantoor 222 m² beneden en 360 m² boven, hoge bedrijfsruimte maar circa 110 m² (brochure), perceel 849 m² met eigen strook voor terras en 3 parkeerplaatsen. Erfpacht afgekocht tot 2035. 800 m van station Rotterdam Alexander.",
         koop=dict(totaal=1_150_000, label="vraagprijs oozo, ronde 7 (15-11-2026)"),
-        verhuur=[], leden=dict(n_vol=50, n_deel=50, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=25, verdieping_m2=233,
+        verhuur=[], leden=dict(n_vol=50, n_deel=50, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=25, verdieping_m2=357,
         zones=[dict(type="café", naam="Café", r=(9, 0.2, 18.5, 15.8)), dict(type="werken", naam="Werkzone", r=(0.2, 0.2, 9, 15.8)),
                dict(type="vergader", naam="Entree en toiletten", r=(0.2, 16, 8.9, 26.7)), dict(type="sanitair", naam="Torens", r=(18.5, 0.2, 24, 15.8)),
                dict(type="gym", naam="Gym", r=(24, 0.2, 31.4, 15.8))],

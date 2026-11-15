@@ -5,7 +5,7 @@
  "niveaus": {
   "1": 3.9
  },
- "concept": "De gym hoeft niet gebouwd te worden: de sportzaal is er al, met eigen wanden en een deur op toegangspas. Bij de entree het boekencafé met de gebogen balie als espressobar, een keuken met kookeiland, een zeshoekige bank rond de haard en de boekentoren. In de kleedkamers een lockerwand voor alle leden. Boven de hele verdieping als werkzone: 32 bureaus en een raambar met uitzicht over het groen, twee vergaderkamers voor zes, een sta-kamer, twee focuskamers en vijf belcellen. De verdieping ligt boven café en kleedkamers, niet boven de gym.",
+ "concept": "De gym hoeft niet gebouwd te worden: de sportzaal is er al, met eigen wanden en een deur op toegangspas. Bij de entree het boekencafé met de gebogen balie als espressobar, een keuken met kookeiland, een zeshoekige bank rond de haard en een boekenwand van 11 m met een zitnis. In de kleedkamers een lockerwand voor alle leden. Boven de hele verdieping als werkzone: 32 bureaus en een raambar met uitzicht over het groen, twee vergaderkamers voor zes, een sta-kamer, twee focuskamers en vijf belcellen. De verdieping ligt boven café en kleedkamers, niet boven de gym.",
  "pui": [
   [
    [
@@ -92,18 +92,18 @@
     ]
    ],
    "palet": "pistache",
-   "beschrijving": "Bij binnenkomst de gebogen espressobar, daarachter een keuken van 5,6 m met kookeiland, een zeshoekige bank voor de ramen, de boekentoren en een boekenwand naar de studio. Een strelitzia staat aan het glas, pothos hangt boven de raambar.",
+   "beschrijving": "Bij binnenkomst de gebogen espressobar, daarachter een keuken van 5,6 m met kookeiland, een zeshoekige bank voor de ramen en een boekenwand van 11 m naar de studio met een zitnis ervoor. De ronde boekentoren is weg: die liet dode hoeken over en kostte zitplekken. Een strelitzia staat aan het glas, pothos hangt boven de raambar.",
    "details": [
     "Gebogen balie als espressobar",
     "Keuken van 5,6 m met kookeiland",
     "Zeshoekige bank rond een sfeerhaard, open naar de ramen",
     "Raambar van 4,8 m met acht krukken voor lunch",
     "Tafel van 2,8 m voor acht bij de keuken",
-    "Boekenwand van 6 m",
+    "Boekenwand van 11 m met een zitnis van 4,2 m en drie tafeltjes",
     "Strelitzia, monstera en kentia, pothos aan de balken"
    ],
    "foto": 5,
-   "prompt": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, a walnut bookcase wall, a bird-of-paradise plant at the glass, pothos hanging above the window bar.",
+   "prompt": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, an 11 m walnut bookcase wall with a built-in bench and small tables in front of it, a bird-of-paradise plant at the glass, pothos hanging above the window bar.",
    "n": 0,
    "cam": {
     "t": [
@@ -120,7 +120,7 @@
     24.6,
     9.0
    ],
-   "prompt_vol": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, a walnut bookcase wall, a bird-of-paradise plant at the glass, pothos hanging above the window bar. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: olive green velvet, pistachio, plum and travertine. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, an 11 m walnut bookcase wall with a built-in bench and small tables in front of it, a bird-of-paradise plant at the glass, pothos hanging above the window bar. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: olive green velvet, pistachio, plum and travertine. Photorealistic, natural light, no people in focus, no text."
   },
   {
    "naam": "Studio (bestaande dansstudio)",
@@ -1208,82 +1208,215 @@
    "n": 0
   },
   {
-   "t": "ring",
-   "soort": "boekentoren",
+   "t": "box",
+   "soort": "zitnis",
    "c": [
-    20.4,
-    7.9
+    20.5,
+    9.15
    ],
-   "r": 1.8,
-   "open": 0,
-   "gat": 28.64788975654116,
-   "h": 2.6,
-   "kleur": "#47522a",
-   "n": 0
-  },
-  {
-   "t": "boog",
-   "soort": "kast",
-   "c": [
-    20.4,
-    7.9
-   ],
-   "r": 1.6800000000000002,
-   "a0": 20.32394487827058,
-   "a1": 339.6760551217294,
-   "d": 0.35,
-   "h": 2.3,
-   "kleur": "#6b4428",
-   "n": 0
-  },
-  {
-   "t": "kleed",
-   "c": [
-    20.4,
-    7.9
-   ],
-   "r": 1.2000000000000002,
-   "kleur": "#e5d48c",
+   "w": 4.200000000000003,
+   "d": 0.55,
+   "h": 0.44,
+   "a": 180.0,
+   "kleur": "#6f7d3a",
    "n": 0
   },
   {
    "t": "box",
-   "soort": "fauteuil",
+   "soort": "rugleuning",
    "c": [
-    19.923686027918556,
-    8.175
+    20.5,
+    9.39
    ],
-   "w": 0.8,
-   "d": 0.8,
-   "h": 0.8,
-   "a": 150,
-   "kleur": "#47522a",
+   "w": 4.200000000000003,
+   "d": 0.1,
+   "h": 1.0,
+   "a": 180.0,
+   "kleur": "#6f7d3a",
    "n": 0
   },
   {
    "t": "box",
-   "soort": "fauteuil",
+   "soort": "tafel",
    "c": [
-    19.923686027918556,
-    7.625
+    21.9,
+    8.5
    ],
-   "w": 0.8,
-   "d": 0.8,
-   "h": 0.8,
-   "a": -150,
-   "kleur": "#47522a",
+   "w": 0.7,
+   "d": 0.7,
+   "h": 0.74,
+   "a": 180.0,
+   "kleur": "#b08a5e",
    "n": 0
   },
   {
    "t": "cil",
-   "soort": "lamp",
+   "soort": "stoel",
    "c": [
-    19.7,
+    21.9,
     7.9
    ],
-   "r": 0.12,
-   "h": 1.5,
-   "kleur": "#e5d48c",
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "tafel",
+   "c": [
+    20.5,
+    8.5
+   ],
+   "w": 0.7,
+   "d": 0.7,
+   "h": 0.74,
+   "a": 180.0,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    20.5,
+    7.9
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "tafel",
+   "c": [
+    19.1,
+    8.5
+   ],
+   "w": 0.7,
+   "d": 0.7,
+   "h": 0.74,
+   "a": 180.0,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    19.1,
+    7.9
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "ronde tafel",
+   "c": [
+    20.0,
+    6.6
+   ],
+   "r": 0.4,
+   "h": 0.74,
+   "kleur": "#b08a5e",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    20.0,
+    7.25
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "cil",
+   "soort": "stoel",
+   "c": [
+    20.0,
+    5.949999999999999
+   ],
+   "r": 0.22,
+   "h": 0.45,
+   "kleur": "#5a3a22",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    18.9,
+    9.7
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 0,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    19.9,
+    9.7
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 0,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    20.9,
+    9.7
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 0,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    21.9,
+    9.7
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 0,
+   "kleur": "#6b4428",
+   "n": 0
+  },
+  {
+   "t": "box",
+   "soort": "kast",
+   "c": [
+    22.9,
+    9.7
+   ],
+   "w": 0.98,
+   "d": 0.4,
+   "h": 2.4,
+   "a": 0,
+   "kleur": "#6b4428",
    "n": 0
   },
   {
@@ -1495,8 +1628,8 @@
   {
    "t": "plant",
    "c": [
-    22.9,
-    9.0
+    23.2,
+    8.6
    ],
    "r": 0.5599999999999999,
    "h": 2.4,

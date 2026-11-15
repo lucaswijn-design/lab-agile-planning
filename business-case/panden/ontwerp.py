@@ -910,8 +910,8 @@ def toren(c, r, open_deg, soort, n=0):  # noqa: F811  (vervangt de ronde toren: 
 # ---------------------------------------------------------------- Utrecht v2
 UTRECHT.update(
     concept="Je komt binnen via de poort, de steeg en de binnentuin, door de punt van het gebouw. Links het boekencafé met de keuken, "
-            "een kookeiland met de espressomachine, een grote tafel voor twaalf en een ronde zitkuil rond de haard; daarachter de boekentoren. "
-            "Rechts de werkzone met zes eilanden van vier compacte zit-sta bureaus. Achterin twee vergaderkamers waar eerst de studio was. "
+            "een kookeiland met de espressomachine, een grote tafel voor twaalf en een zeshoekige bank met twee open zijden rond de haard; daarachter de bieb met boekenwanden en twee focuskamers. "
+            "Rechts de werkzone met zes eilanden van vier compacte zit-sta bureaus, met pothos boven de eilanden. Achterin een vergaderkamer voor zes en een sta-kamer waar eerst de studio was. De entree in de punt wordt de lockerlobby met een rotswand. "
             "De gym zit in de achtervleugel, achter de wastoren en de techniek: twee wanden en zes meter tussen sporten en werken, en een deur met toegangspas.",
     geluid="Gym in de achtervleugel, achter de wastoren en techniek: tussen de racks en de dichtstbijzijnde bureaus zit ruim 6 m en twee wanden. "
            "Dichte akoestische wand tot het dak met een deur op toegangspas. Vloer: 40 mm rubber op een akoestische ondervloer, platforms onder de racks.",
@@ -1083,7 +1083,7 @@ RIETVELDEN["dak"]["tekst_en"] += " Three new round skylights above the work zone
 # ---------------------------------------------------------------- Eendenkooi v2
 EENDENKOOI.update(
     concept="De gym hoeft niet gebouwd te worden: de sportzaal is er al, met eigen wanden en een deur op toegangspas. Bij de entree het boekencafé "
-            "met de gebogen balie als espressobar, een keuken met kookeiland, een zeshoekige bank rond de haard en de boekentoren. In de kleedkamers een lockerwand voor alle leden. "
+            "met de gebogen balie als espressobar, een keuken met kookeiland, een zeshoekige bank rond de haard en een boekenwand van 11 m met een zitnis. In de kleedkamers een lockerwand voor alle leden. "
             "Boven de hele verdieping als werkzone: 32 bureaus en een raambar met uitzicht over het groen, twee vergaderkamers voor zes, een sta-kamer, twee focuskamers en vijf belcellen. "
             "De verdieping ligt boven café en kleedkamers, niet boven de gym.",
     geluid="De sportzaal is een eigen bouwdeel van bijna 8 m hoog met een bestaande wand naar het café. De werkverdieping ligt boven café, studio en "
@@ -1095,10 +1095,10 @@ EENDENKOOI.update(
              foto=4, cam=dict(t=[9, 9], afstand=16, hoek=210),
              prompt="Transform this dark sports hall into a beautiful functional gym: six black power racks on oak platforms along the back wall, a 15 m artificial turf sled track, a mat area for classes, keep the punching bags, anthracite rubber floor, one wall in oxblood red, the rest warm white, a tall green wall of steel cables with pothos behind the rowing machines, kentia palms in big pots in the corners, warm industrial pendant lights."),
         zone("Boekencafé en keuken", "café", R(17.7, 0.3, 30.4, 10),
-             "Bij binnenkomst de gebogen espressobar, daarachter een keuken van 5,6 m met kookeiland, een zeshoekige bank voor de ramen, de boekentoren en een boekenwand naar de studio. Een strelitzia staat aan het glas, pothos hangt boven de raambar.",
-             ["Gebogen balie als espressobar", "Keuken van 5,6 m met kookeiland", "Zeshoekige bank rond een sfeerhaard, open naar de ramen", "Raambar van 4,8 m met acht krukken voor lunch", "Tafel van 2,8 m voor acht bij de keuken", "Boekenwand van 6 m", "Strelitzia, monstera en kentia, pothos aan de balken"],
+             "Bij binnenkomst de gebogen espressobar, daarachter een keuken van 5,6 m met kookeiland, een zeshoekige bank voor de ramen en een boekenwand van 11 m naar de studio met een zitnis ervoor. De ronde boekentoren is weg: die liet dode hoeken over en kostte zitplekken. Een strelitzia staat aan het glas, pothos hangt boven de raambar.",
+             ["Gebogen balie als espressobar", "Keuken van 5,6 m met kookeiland", "Zeshoekige bank rond een sfeerhaard, open naar de ramen", "Raambar van 4,8 m met acht krukken voor lunch", "Tafel van 2,8 m voor acht bij de keuken", "Boekenwand van 11 m met een zitnis van 4,2 m en drie tafeltjes", "Strelitzia, monstera en kentia, pothos aan de balken"],
              foto=5, cam=dict(t=[24, 5], afstand=12, hoek=200),
-             prompt="Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, a walnut bookcase wall, a bird-of-paradise plant at the glass, pothos hanging above the window bar."),
+             prompt="Transform this white gym reception into a warm book café: wrap the curved counter in reclaimed wood with a travertine top and a three-group espresso machine, an olive green kitchen with an island behind it, replace red walls with pistachio green lime-wash, a hexagonal olive green sofa with one open side around a black freestanding fireplace in front of the windows, an 11 m walnut bookcase wall with a built-in bench and small tables in front of it, a bird-of-paradise plant at the glass, pothos hanging above the window bar."),
         zone("Studio (bestaande dansstudio)", "studio", R(17.7, 10, 30.4, 16.9), "De dansstudio blijft, voor yoga en events, met planten in de hoeken.",
              ["Houten vloer blijft", "Vijgenpaarse gordijnen", "Kentia, monstera en philodendron"], foto=10, cam=dict(t=[24, 13.4], afstand=9, hoek=200),
              prompt="Keep this wooden-floor dance studio and make it warmer: fig-purple curtains, terracotta rug corner with cushions, plants on the window sills, warm dimmable light."),
@@ -1131,8 +1131,8 @@ EENDENKOOI.update(
         deur([17.6, 8.5], 90, toegang=True),
         dict(t="boog", soort="bar", c=[19.4, 3.4], r=1.9, a0=-90, a1=90, d=0.7, h=1.1, kleur=HOUT),
         *keuken([29.77, 3.6], 5.6, 90), *kookeiland([27.9, 3.6], 90),
-        *veelhoekbank([24.4, 5.6], 2.0, 6, open=(4,), draai=30), *boekentoren([20.4, 7.9], 1.8, 0),
-        *kasten(23.4, 29.4, 9.7), *grote_tafel([27.75, 7.3], 2.8, 90), boom3([21.9, 1.1], "strelitzia nicolai"), plant3([22.9, 9.0], "kentia"), plant3([28.9, 1.0], "monstera"),
+        *veelhoekbank([24.4, 5.6], 2.0, 6, open=(4,), draai=30), *zitnis([22.6, 9.45], [18.4, 9.45]), *tafeltje([20.0, 6.6]),
+        *kasten(18.4, 29.4, 9.7), *grote_tafel([27.75, 7.3], 2.8, 90), boom3([21.9, 1.1], "strelitzia nicolai"), plant3([23.2, 8.6], "kentia"), plant3([28.9, 1.0], "monstera"),
         hangplant([23.6, 0.9]), hangplant([26.6, 0.9]), hangplant([24.4, 5.6], 3.4), hangplant([19.0, 3.4]), hangplant([27.9, 3.6]),
         boom3([29.5, 16.0], "kentia"), plant3([29.8, 11.0], "philodendron"), plant3([20.4, 16.3], "monstera"),
         dict(t="box", soort="raambar", c=[25.2, 0.6], w=4.8, d=0.5, h=1.05, a=0, kleur=HOUT),
@@ -1643,7 +1643,7 @@ GALVANI = dict(
     elementen=[
         *keuken([28.77, 7.3], 5.6, 90), *kookeiland([26.8, 7.4], 90), *grote_tafel([25.6, 2.3], 4.2),
         dict(t="box", soort="trap", c=[22.8, 8.0], w=3.0, d=5.0, h=0.3, a=0, kleur=HOUT), label([22.8, 5.2], "zittrap"),
-        *veelhoekbank([26.5, 13.2], 1.7, 6, open=(1, 4)), boom3([22.0, 1.4], "kentia"), plant3([28.5, 1.2], "ficus elastica"), plant3([22.2, 15.2], "strelitzia nicolai"), pod2([21.7, 11.3]), pod2([21.7, 13.0]), *[hangplant([u, 10.2]) for u in (14.0, 17.0, 20.0, 25.0, 28.0)],
+        *veelhoekbank([26.5, 13.2], 1.7, 6, open=(1, 4)), boom3([22.0, 1.4], "kentia"), plant3([28.5, 1.2], "ficus elastica"), plant3([21.5, 15.2], "strelitzia nicolai"), *focuskamer([23.5, 14.85], 0), pod2([21.7, 11.3]), pod2([21.7, 13.0]), *[hangplant([u, 10.2]) for u in (14.0, 17.0, 20.0, 25.0, 28.0)],
         *eiland2([15.6, 2.0], 0), *eiland2([19.2, 2.0], 0), *eiland2([15.6, 5.3], 0), *eiland2([19.2, 5.3], 0), *eiland2([15.6, 8.6], 0), *eiland2([19.2, 8.6], 0), plant3([17.4, 3.65], "zz-plant"), plant3([17.4, 6.95], "zz-plant"), *groenwand([13.8, 0.25], [20.8, 0.25], 3.0),
         *vergaderkamer([15.3, 13.2], 4.6, 3.0, 90, 6), *stavergaderkamer([18.0, 13.2], 2.4, 4.6, 0, 5), pod2([20.2, 11.6]), pod2([20.2, 14.5]),
         *toren([10.7, 3.0], 2.75, 0, "was"), *toren([10.25, 8.2], 2.25, 180, "douche"),
@@ -1654,7 +1654,7 @@ GALVANI = dict(
         roeier([4.6, 13.6], 0), roeier([4.6, 14.8], 0), *lockerwand([3.65, 17.8], 3.0, 90), dict(t="box", soort="kettlebells", c=[5.0, 1.0], w=2.0, d=0.5, h=0.9, a=0, kleur=STAAL), plant3([7.2, 15.2], "sansevieria"), plant3([6.8, 1.0], "kentia"),
         wand([[7.8, 10.5], [21.3, 10.5]], 1.1, glas=True, n=1), wand([[24.3, 10.5], [29.1, 10.5]], 1.1, glas=True, n=1),
         pod2([8.55, 12.0], 1), pod2([8.55, 14.4], 1), *focuskamer([10.3, 12.6], 0, 1), *focuskamer([12.6, 12.6], 0, 1), *eiland2([15.2, 13.15], 0, 1), *eiland2([19.0, 13.15], 0, 1), dict(t="box", soort="raambar", c=[15.3, 15.55], w=11.4, d=0.5, h=1.05, a=0, kleur=HOUT, n=1),
-        *vergaderkamer([27.0, 13.15], 4.0, 4.6, 90, 6, 1), plant([23.4, 15.2], 0.4, 1.2, 1),
+        *vergaderkamer([27.0, 13.15], 4.0, 4.6, 90, 6, 1), pod2([23.2, 14.8], 1),
         dict(t="box", soort="plantenbak", c=[15.8, 19.3], w=14.0, d=0.5, h=0.6, a=0, kleur=WALNOOT), *tafeltje([12.0, 17.8], 0, 4), *tafeltje([16.0, 17.8], 0, 4), *tafeltje([20.0, 17.8], 0, 4),
         boom([1.0, 22.0], 0.9, 3.0), boom([30.0, 22.0], 0.9, 3.0),
     ],
@@ -1722,7 +1722,7 @@ CALAND = dict(
         *toren([15.0, 3.4], 2.75, 0, "was"), *dtoren([11.9, 9.0], [11.9, 13.8], 0.3, "douche"), dict(t="box", soort="toiletgroep", c=[15.0, 13.0], w=5.0, d=2.0, h=2.6, a=0, kleur="#bdb7aa"),
         label([15.0, 13.0], "toiletten"), *zitnis([12.1, 11.6], [12.1, 6.6]), boom3([16.9, 8.8], "kentia"), plant3([17.3, 11.4], "aspidistra"), hangplant([13.05, 7.8], 3.0), hangplant([13.05, 10.4], 3.0),
         *rack([1.6, 3.0], 90), *rack([1.6, 6.4], 90), *rack([1.6, 9.8], 90), *rack([5.0, 1.6], 0), dict(t="kleed", c=[7.4, 8.0], w=3.0, d=6.5, a=0, kleur="#c7928a"),
-        roeier([10.6, 4.0], 90), roeier([10.6, 7.0], 90), dict(t="box", soort="kettlebells", c=[5.4, 13.4], w=2.0, d=0.5, h=0.9, a=0, kleur=STAAL),
+        roeier([10.6, 4.0], 90), roeier([10.6, 7.0], 90), dict(t="box", soort="kettlebells", c=[3.6, 13.4], w=2.0, d=0.5, h=0.9, a=0, kleur=STAAL),
         boom3([1.2, 12.8], "kentia"), boom3([11.1, 1.3], "kentia"), *groenwand([6.6, 0.25], [9.8, 0.25], 3.0),
         *eiland2([21.6, 7.5], 0, k=6), *eiland2([28.2, 7.5], 0, k=6), *eiland2([21.6, 12.7], 0, k=6), *eiland2([28.2, 12.7], 0, k=6),
         *eiland2([21.6, 17.9], 0, k=6), *eiland2([28.2, 17.9], 0, k=6), *[hangplant([u, v]) for u in (21.6, 28.2) for v in (7.5, 12.7, 17.9)],
