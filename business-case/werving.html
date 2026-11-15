@@ -1,0 +1,435 @@
+<title>Founding members werven</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: één leeskolom met brede tabellen en grafieken; kleuren uit het kleurenplan van de club (rotskust, pistache, granaatappel, okergeel) */
+:root {
+  --bg: #eef0ec; --surface: #f8f9f6; --fg: #1d2421; --muted: #5a645f; --line: #cfd5cf;
+  --accent: #2f5566; --accent-soft: #d8e3e6;
+  --c1: #44606f; --c2: #6f7d3a; --c3: #a8332e; --c4: #b98a2a;
+  --band: #c5d0c9; --target: #e3ead2;
+  --ok: #3f6b3a; --mid: #9a6b14; --bad: #9a2e2a;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --c1: #7fa3b5; --c2: #a9b86a; --c3: #e07a6e; --c4: #ddb35a;
+  --band: #3a4843; --target: #2b3420;
+  --ok: #8cc583; --mid: #e0b45a; --bad: #e88a80; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --c1: #7fa3b5; --c2: #a9b86a; --c3: #e07a6e; --c4: #ddb35a;
+  --band: #3a4843; --target: #2b3420;
+  --ok: #8cc583; --mid: #e0b45a; --bad: #e88a80; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body); }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 40px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 56px; }
+.wrap > * { min-width: 0 }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0 }
+h1 { font-size: clamp(32px, 6vw, 54px); font-weight: 700; letter-spacing: -.01em }
+h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 700 }
+h3 { font-size: 19px; font-weight: 700 }
+p { margin: 0; max-width: 68ch }
+a { color: var(--accent); text-underline-offset: 2px }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.eyebrow { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.stack { display: grid; gap: 16px }
+.stack > * { min-width: 0 }
+.lede { font-size: 19px; max-width: 60ch }
+.note { font-size: 13.5px; color: var(--muted) }
+.lbl { font: 500 11px/1 var(--mono); letter-spacing: .04em; padding: 2px 6px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; vertical-align: 1px }
+.num { font-variant-numeric: tabular-nums }
+
+header.top { display: grid; gap: 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line) }
+.answer { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; margin-top: 8px }
+.answer div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 4px }
+.answer b { font: 700 26px/1.1 var(--display) }
+.answer span { font-size: 14px; color: var(--muted) }
+
+/* bereikgrafiek */
+.chart { overflow-x: auto }
+.chart svg { display: block; width: 100%; min-width: 560px; height: auto }
+.chart text { fill: var(--fg); font-family: var(--body) }
+.chart .ax { fill: var(--muted); font: 11px var(--mono) }
+
+/* locatiekeuze */
+.tabs { display: flex; flex-wrap: wrap; gap: 6px }
+.tabs button { font: 500 14px var(--body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; cursor: pointer }
+.tabs button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent) }
+.loc { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 20px; display: grid; gap: 18px }
+.loc .kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px }
+.loc .kv div { display: grid; gap: 2px }
+.loc .kv span { font-size: 12.5px; color: var(--muted) }
+.loc .kv b { font: 600 20px/1.2 var(--body); font-variant-numeric: tabular-nums }
+.agebar { display: flex; height: 14px; border-radius: 3px; overflow: hidden; background: var(--band) }
+.agebar i { display: block; height: 100% }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted) }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px }
+.verdict-pill { font: 600 12px var(--mono); letter-spacing: .04em; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; border: 1px solid currentColor; justify-self: start }
+
+/* tabellen */
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface) }
+table { border-collapse: collapse; width: 100%; font-size: 14px }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top }
+th { font: 600 12px/1.3 var(--mono); letter-spacing: .03em; color: var(--muted); background: var(--bg) }
+tr:last-child td { border-bottom: 0 }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap }
+
+/* mix */
+.mix { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 28px; align-items: start }
+@media (max-width: 760px) { .mix { grid-template-columns: 1fr } }
+.dots { display: grid; grid-template-columns: repeat(17, 1fr); gap: 5px; max-width: 420px }
+.dots i { aspect-ratio: 1; border-radius: 50%; display: block }
+.bands { display: grid; gap: 10px }
+.bands .row { display: grid; grid-template-columns: 150px minmax(0, 1fr) 70px; gap: 10px; align-items: center; font-size: 14px }
+@media (max-width: 480px) { .bands .row { grid-template-columns: 110px minmax(0, 1fr) 62px } }
+.bands .track { position: relative; height: 12px; background: var(--band); border-radius: 3px }
+.bands .track i { position: absolute; top: 0; bottom: 0; border-radius: 3px }
+.bands .val { font: 500 12.5px var(--mono); color: var(--muted); text-align: right }
+
+/* doelgroepen */
+.groups { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px; display: grid; gap: 8px; align-content: start }
+.card .age { font: 500 12px var(--mono); color: var(--muted) }
+.card dl { margin: 0; display: grid; gap: 6px; font-size: 14px }
+.card dt { font: 600 11px var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--muted) }
+.card dd { margin: 0 }
+.card q { display: block; font-size: 14.5px; font-style: italic; color: var(--fg); border-top: 1px solid var(--line); padding-top: 8px; quotes: "“" "”" }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 13px; color: var(--muted) }
+
+/* trechter */
+.funnel { display: grid; gap: 8px }
+.funnel .st { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px }
+.funnel .bar { height: 34px; border-radius: 4px; background: var(--accent); display: flex; align-items: center; padding: 0 12px; color: var(--bg); font: 600 14px var(--body); font-variant-numeric: tabular-nums; min-width: 120px; max-width: 100% }
+.funnel .cap { font-size: 13.5px; color: var(--muted) }
+.timeline { display: grid; grid-template-columns: 170px repeat(12, minmax(0, 1fr)); gap: 3px; font-size: 12.5px; align-items: center; min-width: 560px }
+.timeline .m { font: 500 11px var(--mono); color: var(--muted); text-align: center }
+.timeline .bar { height: 16px; border-radius: 3px; background: var(--c2) }
+.tl-wrap { overflow-x: auto }
+
+ul.clean { margin: 0; padding-left: 20px; display: grid; gap: 8px; max-width: 72ch }
+ol.steps { margin: 0; padding-left: 22px; display: grid; gap: 10px; max-width: 72ch }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px }
+.two > * { min-width: 0 }
+.src { font-size: 13px; color: var(--muted); columns: 2 320px; column-gap: 28px }
+.src p { break-inside: avoid; margin-bottom: 6px; max-width: none; overflow-wrap: anywhere }
+@media (prefers-reduced-motion: no-preference) { .tabs button, .loc { transition: background .15s, color .15s } }
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <span class="eyebrow">Clubcoöperatie · werving · november 2026</span>
+  <h1>85 founding members binnen een kwartier fietsen</h1>
+  <p class="lede">Je gevoel klopt: de club werkt alleen met leden die dichtbij wonen, in dezelfde stad of één halte verder. Dan kun je even binnenlopen voor koffie, een training of een uur werk. Met die eis haalt alleen Utrecht 70 tot 100 eigenaren zonder kunstgrepen. Den Bosch kan het, als je ook in Vught, Rosmalen, Boxtel en Oss werft.</p>
+  <div class="answer">
+    <div><b class="num">circa 125</b><span>haalbare eigenaren rond de Van Heutszstraat in Utrecht (60 tot 250) <span class="lbl">schatting</span></span></div>
+    <div><b class="num">316.600</b><span>mensen binnen 15 minuten e-bike van Lombok, 38,6% is 25 tot 45 jaar <span class="lbl">bron CBS</span></span></div>
+    <div><b class="num">1.200 tot 1.500</b><span>aanmeldingen op de belangstellingslijst nodig voor circa 85 leden <span class="lbl">schatting</span></span></div>
+    <div><b class="num">40 tot 60%</b><span>vrouw, geen vakgebied boven 25%, minstens 70% woont binnen 4,5 km of één halte</span></div>
+  </div>
+</header>
+
+<section class="stack" id="gebied">
+  <span class="eyebrow">1 · Verzorgingsgebied</span>
+  <h2>Hoeveel eigenaren kan elke locatie vinden?</h2>
+  <p>Per locatie zijn de CBS-buurten opgeteld die binnen 4,5 km hemelsbreed liggen. Dat is ongeveer 15 minuten op een e-bike of 20 minuten gewoon fietsen. Inwoners rond stations die één halte of hooguit 20 minuten met de trein verder liggen, tellen half mee. Het groene vlak is wat de business case nodig heeft: 70 tot 100 eigenaren.</p>
+  <div class="chart" id="chart" role="img" aria-label="Geschatte haalbare eigenaar-leden per locatie met bandbreedte, tegen het doel van 70 tot 100"></div>
+  <p class="note">Hoe de schatting werkt: werkenden van 25 tot 65 binnen 4,5 km (CBS 2024). Daarvan alle zelfstandigen plus de helft van wie soms thuiswerkt. 30% kan € 9.000 tot € 15.000 inleggen, 1,5% heeft serieus belangstelling voor dit concept, 40% daarvan wordt betalend eigenaar. Elke stap is <span class="lbl">schatting</span> en bedoeld om locaties te vergelijken, niet als voorspelling. De bandbreedte is de helft tot het dubbele.</p>
+
+  <div class="tabs" id="loctabs" role="group" aria-label="Kies een locatie"></div>
+  <article class="loc" id="loc" aria-live="polite"></article>
+</section>
+
+<section class="stack" id="mix">
+  <span class="eyebrow">2 · De mix</span>
+  <h2>Zo ziet een gemengde groep van 85 eruit</h2>
+  <p>Stuur op de mix vanaf het eerste lid: de eerste twintig bepalen de cultuur en trekken mensen aan die op hen lijken. Hieronder zie je de doelbandbreedtes, met daarnaast 85 stippen in het midden van die bandbreedtes.</p>
+  <div class="mix">
+    <div class="stack">
+      <div class="dots" id="dots" role="img" aria-label="85 stippen naar leeftijdsgroep"></div>
+      <div class="legend" id="dotlegend"></div>
+    </div>
+    <div class="bands" id="bands"></div>
+  </div>
+  <p class="note">Een coworker is gemiddeld circa 36 jaar (<a href="https://www.deskmag.com/en/coworking-space-members-demographics-market-report-study-survey-1034">Deskmag</a>). Vrouwen zijn circa 38% van alle ondernemers (<a href="https://www.kvk.nl/pers/kvk-bedrijvendynamiek-2024-voor-het-eerst-sinds-10-jaar-afname-aantal-starters/">KVK</a>). Zonder sturing krijg je dus vooral jonge mannen. In Utrecht Lombok is 46% van de buurt 25 tot 45 jaar, daar is de opgave juist genoeg 50-plussers. In Voorhout en Maarssen is het omgekeerd.</p>
+</section>
+
+<section class="stack" id="doelgroepen">
+  <span class="eyebrow">3 · Wie benader je</span>
+  <h2>Elf doelgroepen, elk met een eigen pitch</h2>
+  <p>Bouw de werving niet alleen op zzp'ers: hun aantal daalde in 2025 met circa 62.000, het sterkst onder jongeren (<a href="https://www.cbs.nl/nl-nl/nieuws/2026/07/aantal-zzp-ers-in-2025-gedaald-met-62-duizend">CBS</a>). Hybride werknemers, jonge ouders en net gepensioneerden zijn net zo belangrijk.</p>
+  <div class="filters" role="group" aria-label="Filter op leeftijd"><span>Toon:</span></div>
+  <div class="groups" id="groups"></div>
+</section>
+
+<section class="stack" id="partners">
+  <span class="eyebrow">4 · Via wie</span>
+  <h2>Partners en kanalen</h2>
+  <p>De warmste kandidaten zijn mensen die al eens samen in iets hebben geïnvesteerd: leden van een energiecoöperatie, Herenboeren, een broodfonds of een wooncoöperatie. Zij weten wat een inleg en een ledenvergadering betekenen.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Partner of kanaal</th><th>Waarom</th><th>Concreet</th><th>Aanpak</th></tr></thead>
+    <tbody>
+      <tr><td><b>Energiecoöperaties</b></td><td>Leden zijn gewend te investeren in iets lokaals</td><td>Energie-U in Utrecht, circa 500 leden (<a href="https://www.duic.nl/partnerbijdrage/de-opkomst-van-energiecooperaties-in-utrecht/">DUIC</a>); 50 coöperaties in Nederland hebben meer dan 500 leden (<a href="https://duurzaamnieuws.nl/meer-projecten-door-energiecooperaties-ondanks-tegenwind/">Duurzaam Nieuws</a>)</td><td>Stuk in de ledennieuwsbrief, samen een avond over coöperatief ondernemen</td></tr>
+      <tr><td><b>Herenboeren</b></td><td>Hebben al een inleg gedaan in een gezamenlijk project</td><td>Herenboeren Boxtel bij Den Bosch (<a href="https://www.omroepbrabant.nl/nieuws/2777714/Eigen-baas-over-voedsel-bij-Herenboeren-in-Boxtel:-'Confronterend-als-je-je-eten-ziet-rondlopen'">Omroep Brabant</a>); Herenboeren Rhoon naast Pernis</td><td>Lokale producten in de keuken, ledenpresentatie</td></tr>
+      <tr><td><b>Broodfondsen</b></td><td>Groepen van 20 tot 50 ondernemers die al onderling vertrouwen</td><td>677 broodfondsen opgericht door 31.810 ondernemers (<a href="https://www.rodi.nl/dijkenwaard/zakelijk/491669/ondernemers-opgelet-dit-is-je-kans-op-een-financieel-vangnet-bij-ziekte">Rodi</a>)</td><td>Hun bijeenkomst hosten in de pop-up</td></tr>
+      <tr><td><b>Zzp-netwerken en ondernemersverenigingen</b></td><td>Directe toegang tot zelfstandigen</td><td>ZZP Boost (Den Bosch, Oss, Maashorst, Meierijstad) (<a href="https://ondernemersplein.overheid.nl/gemeente-informatie/maashorst">Ondernemersplein</a>)</td><td>Presentatie op een netwerkavond, gratis proefdag</td></tr>
+      <tr><td><b>Wooncoöperaties en CPO-groepen</b></td><td>Mensen die al samen bouwen en beslissen</td><td>Handboek wooncoöperaties, katern Utrecht (<a href="https://wooninfo.nl/wp-content/uploads/2025/03/Landelijk-handboek-wooncooperaties-katern-Utrecht.pdf">Wooninfo</a>)</td><td>Leden als ambassadeur, kennis uitwisselen</td></tr>
+      <tr><td><b>Knarrenhof en 50+ woongroepen</b></td><td>Actieve 50- en 60-plussers die gemeenschap zoeken</td><td>Hof Korte Vaart in Katwijk, vlak bij Voorhout (<a href="https://extra.katwijk.nl/fileadmin/Projecten.katwijk.nl/Bestanden/Hof_Korte_Vaart_-_Knarrenhof/20260202_Presentatie_Knarrenhof_informatieavond.pdf">gemeente Katwijk</a>)</td><td>Proefdag met lunch en een rustige krachttraining</td></tr>
+      <tr><td><b>Buurtinitiatieven</b></td><td>Bereik buiten je eigen bubbel</td><td>De Voorkamer aan de Kanaalstraat in Lombok (<a href="https://www.duic.nl/cultuur/culturele-ontmoetingsplek-de-voorkamer-viert-5-jarig-bestaan-prachtige-vriendschappen-ontstaan/">DUIC</a>)</td><td>Samen programmeren, enkele solidariteitsplekken</td></tr>
+      <tr><td><b>Hogescholen, universiteiten, alumni</b></td><td>Jonge professionals én docenten</td><td>HU en UU (Utrecht), Avans en JADS (Den Bosch), Hogeschool en Universiteit Leiden, Hogeschool Rotterdam en Erasmus</td><td>Alumni-events, gastcollege over coöperatief ondernemen</td></tr>
+      <tr><td><b>Sportverenigingen en bibliotheek</b></td><td>Alle leeftijden; past bij gym en boekencafé</td><td>Lokale atletiek-, roei- en tennisclubs; de bibliotheekvestiging in de wijk</td><td>Gratis functionele training, lezing of boekenruil</td></tr>
+      <tr><td><b>Werkgevers</b></td><td>Werkplekvergoeding als bijdrage</td><td>Grote werkgevers in de regio, via HR</td><td>Zakelijk lidmaatschap of bijdrage per werknemer</td></tr>
+      <tr><td><b>Lokale media en online</b></td><td>Geloofwaardigheid bij 45-plussers, goedkoop bereik bij jongeren</td><td>DUIC, Omroep Brabant, Rijnmond, Leidsch Dagblad; Meetup, LinkedIn per postcode, Nextdoor en buurt-apps, Instagram</td><td>Persmoment bij de eerste 25 founding members, wekelijks foto's van het pand en de bouw</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stack" id="trechter">
+  <span class="eyebrow">5 · Van belangstelling naar inleg</span>
+  <h2>De wervingstrechter voor 85 eigenaren</h2>
+  <p>Er zijn geen gepubliceerde conversiecijfers voor een club als deze. De stappen hieronder zijn <span class="lbl">schatting</span>, met Herenboeren als anker. Daar tekent men eerst een niet-bindende intentieverklaring en daarna volgt een aanbetaling van 10%. In Soest wachtten ruim 100 belangstellenden met tekenen tot de locatie duidelijk was (<a href="https://soest.bestuurlijkeinformatie.nl/Document/View/14de8c75-6059-4de0-8430-0ff66b9547b0">gemeente Soest</a>).</p>
+  <div class="funnel" id="funnel"></div>
+  <div class="two">
+    <div class="stack">
+      <h3>Drempels</h3>
+      <ul class="clean">
+        <li>Teken pas een koopovereenkomst als circa 60 eigenaren een aanbetaling hebben gedaan en de mix binnen de bandbreedtes valt.</li>
+        <li>Houd de aanbetaling klein (5 tot 10% van de inleg) en terugbetaalbaar als de drempel niet wordt gehaald.</li>
+        <li>Werf met één concreet voorkeurspand en de renders erbij. Zonder adres blijven mensen hangen in belangstelling.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <h3>Belangstellingslijst: vraag dit meteen</h3>
+      <ul class="clean">
+        <li>Postcode, leeftijdsgroep, gender en vakgebied, zodat de mix vanaf dag één meetbaar is</li>
+        <li>Voorkeur: vol, deeltijd of clublid</li>
+        <li>Hoe vaak je verwacht te komen, en wanneer (werkdag, avond, weekend)</li>
+        <li>Wat je wilt bijdragen: vakkennis, handen bij de verbouw, programmering, bestuur</li>
+        <li>Of je de oprichter al kende (maximaal 30%)</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Planning in twaalf maanden</h3>
+  <div class="tl-wrap"><div class="timeline" id="timeline"></div></div>
+</section>
+
+<section class="stack" id="balans">
+  <span class="eyebrow">6 · Balans houden</span>
+  <h2>Tactieken voor een echte mix</h2>
+  <div class="two">
+    <ul class="clean">
+      <li><b>Ambassadeur per doelgroep.</b> Zoek voor elke groep één of twee founding members die in hun eigen netwerk werven, met een eigen informatieavond. Bijvoorbeeld een ondernemer uit een broodfonds, een gepensioneerde uit een Knarrenhofgroep en een docent van een hogeschool.</li>
+      <li><b>Lagere of gespreide inleg voor jongeren.</b> Onder de 35 jaar de inleg in drie jaar via een iets hogere maandbijdrage, of starten als deeltijdlid. Herenboeren laat eenpersoonshuishoudens ongeveer de helft inleggen.</li>
+      <li><b>Ledenleningen van ouderen.</b> 50-plussers met vermogen lenen naast hun eigen inleg geld aan de coöperatie, zodat de lagere inleg van jongeren betaalbaar blijft. De Warren haalde met obligaties van € 250 in een week € 77.000 op (<a href="https://duurzaamnieuws.nl/?p=33289">Duurzaam Nieuws</a>).</li>
+      <li><b>Clublid als opstap.</b> Clubleden van € 119 krijgen voorrang op een eigenaarsplek. Dan is het clublidmaatschap een proefperiode en geen tweede klas.</li>
+    </ul>
+    <ul class="clean">
+      <li><b>Wachtlijst met weging.</b> Houd per doelgroep een wachtlijst bij en laat bij toelating meewegen welke leeftijd of expertise ontbreekt. Knarrenhof wijst alleen toe op inschrijfdatum, en dat garandeert geen mix.</li>
+      <li><b>Programma dat een gemengd publiek trekt.</b> Krachttraining voor 50-plus, sessies voor vrouwen, ouder-en-kindochtenden in het café, lezingen in het boekencafé. De ronde torens met afsluitbare cabines helpen ook: geen open kleedkamercultuur.</li>
+      <li><b>Solidariteitsplekken.</b> Een paar plekken met een lage bijdrage voor nieuwkomers of starters, bijvoorbeeld samen met De Voorkamer.</li>
+      <li><b>Juridisch netjes sturen.</b> De Algemene wet gelijke behandeling verbiedt onderscheid op geslacht bij het aanbieden van diensten (<a href="https://wetten.overheid.nl/BWBR0006502">AWGB</a>). Sturen via wie je benadert, waar en met welke pitch is veilig. Harde quota op gender bij toelating moet een jurist eerst toetsen.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="stack" id="voorbeelden">
+  <span class="eyebrow">7 · Wie ging je voor</span>
+  <h2>Voorbeelden van gezamenlijk eigendom</h2>
+  <p>Een coöperatieve coworking of sportschool in ledenbezit hebben we in Nederland niet gevonden. De club zou een van de eersten zijn. Dat is een goed verhaal voor de pers, maar er is dus ook geen bewezen voorbeeld om op te leunen.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Initiatief</th><th>Model en inleg</th><th>Hoe zij leden vonden</th><th>Les voor de club</th></tr></thead>
+    <tbody>
+      <tr><td><b>Herenboeren</b><br><span class="note">circa 200 huishoudens per boerderij</span></td><td>€ 2.000 tot € 2.500 eenmalig, eenpersoonshuishoudens circa de helft</td><td>Informatieavonden, intentieverklaring, dan 10% vooruit (<a href="https://rorik.herenboeren.nl/wp-content/uploads/2024/01/Herenboeren_Rorik_Intentieverklaring_2024.pdf">intentieverklaring</a>)</td><td>Gestaffelde inleg werkt; zonder concrete plek blijven mensen hangen</td></tr>
+      <tr><td><b>De Warren</b>, Amsterdam<br><span class="note">36 woningen</span></td><td>Lening van een bank plus obligaties van € 250</td><td>Warm netwerk: € 77.000 van de € 100.000 in de eerste week</td><td>Kleine instaptickets verbreden de kring voorbij de leden</td></tr>
+      <tr><td><b>Schoonschip</b>, Amsterdam<br><span class="note">46 woningen</span></td><td>Bottom-up door de toekomstige bewoners</td><td>Begonnen in de eigen kring; 23 huishoudens na een presentatie (<a href="https://www.spaceandmatter.nl/schoonschip">Space&amp;Matter</a>)</td><td>Bewust gezocht naar diversiteit, toch niet voor iedereen betaalbaar geworden</td></tr>
+      <tr><td><b>Broodfondsen</b></td><td>Maandelijkse inleg in een gezamenlijke buffer</td><td>Informatieavonden; start pas bij 20 tot 25 deelnemers, maximaal circa 50</td><td>Een harde startdrempel en een maximale groepsgrootte</td></tr>
+      <tr><td><b>Community shares</b>, Verenigd Koninkrijk</td><td>Aandelen vanaf circa £ 10, gemiddeld £ 395</td><td>56% van de investeerders verdient £ 35.000 of minder; 17% noemt rendement als hoofdreden (<a href="https://www.uk.coop/blog/understanding-maturing-community-shares-market-report-2020">Co-operatives UK</a>)</td><td>Een lage instap en een maatschappelijk verhaal trekken een bredere groep</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stack" id="risico">
+  <span class="eyebrow">8 · Waar het misgaat</span>
+  <h2>Risico's en wat je ertegen doet</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Risico</th><th>Waarom</th><th>Maatregel</th></tr></thead>
+    <tbody>
+      <tr><td><b>Te veel vrienden van de oprichter</b></td><td>Snel en vertrouwd, maar eenzijdig; ook Schoonschip begon zo</td><td>Maximaal circa 30% uit je eigen netwerk; open avonden via partners</td></tr>
+      <tr><td><b>De inleg sluit jongeren uit</b></td><td>€ 9.000 tot € 15.000 hebben 25- tot 35-jarigen vaak niet liggen</td><td>Inleg in termijnen, ledenleningen van ouderen, starten als clublid</td></tr>
+      <tr><td><b>Wachten op het pand</b></td><td>Mensen tekenen pas bij een adres en een prijs</td><td>Eén voorkeurspand, terugbetaalbare aanbetaling</td></tr>
+      <tr><td><b>Lange doorlooptijd</b></td><td>Kopen, vergunningen en verbouwen duren lang; bij zelf bouwen 2 tot 3 jaar</td><td>Een pop-up van minstens drie maanden zodat de community al bestaat; vaste mijlpalen communiceren</td></tr>
+      <tr><td><b>Leden wonen te ver weg</b></td><td>Wie ver weg woont komt minder vaak; Uden heeft geen station, Pernis ligt achter de Nieuwe Maas</td><td>Minstens 70% binnen 4,5 km of één halte</td></tr>
+      <tr><td><b>Kapitaal ophalen bij niet-leden</b></td><td>Obligaties of leningen van buitenstaanders kunnen onder financiële regels vallen</td><td>Laat een jurist de structuur en de AFM-regels toetsen</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="stack" id="stappen">
+  <span class="eyebrow">9 · Volgende stappen</span>
+  <h2>Zo begin je deze maand</h2>
+  <ol class="steps">
+    <li>Kies één voorkeurslocatie voor alle communicatie. Utrecht is het sterkst, Den Bosch Rietveldenweg is tweede. Kies je voor zelf bouwen, zoek dan een kavel binnen 1,5 km van een intercitystation met minstens 150.000 inwoners binnen 4,5 km, op een terrein dat tegen een woonwijk aan ligt.</li>
+    <li>Zet de belangstellingslijst online met de vijf vragen hierboven.</li>
+    <li>Benader per regio vijf partners: een zzp-netwerk, een broodfonds, een energiecoöperatie, Herenboeren en een 50-plus woongroep. Vraag bij elk om één ambassadeur.</li>
+    <li>Plan informatieavonden om de twee weken en een pop-up van minstens drie maanden, met coworken, een training en een maaltijd.</li>
+    <li>Laat de inlegstructuur (termijnen, ledenleningen, staffeling) en het toelatingsbeleid juridisch toetsen voordat iemand een intentieverklaring tekent.</li>
+    <li>Controleer de reistijden in de <a href="https://www.ns.nl/reisplanner">NS Reisplanner</a> of op <a href="https://9292.nl">9292</a> voordat ze in een flyer komen.</li>
+  </ol>
+</section>
+
+<section class="stack" id="bronnen">
+  <span class="eyebrow">Bronnen en methode</span>
+  <div class="src">
+    <p>Inwoners, leeftijd en aandeel zelfstandigen: CBS Kerncijfers wijken en buurten 2024 en 2023, via <a href="https://api.pdok.nl/cbs/wijken-en-buurten-2024/ogc/v1">PDOK</a>. Opgeteld per buurt waarvan het middelpunt binnen de straal ligt. 3 km is circa 15 minuten fietsen, 4,5 km circa 15 minuten e-bike. Dit zijn hemelsbrede stralen, geen routes.</p>
+    <p>Buurt per adres: <a href="https://api.pdok.nl/bzk/locatieserver/search/v3_1/free">PDOK Locatieserver</a>. Stations: <a href="https://api.pdok.nl/prorail/spoorwegen/ogc/v1/collections/station/items">ProRail via PDOK</a>. Reistijden zijn indicatief.</p>
+    <p>Arbeidsparticipatie: <a href="https://www.cbs.nl/nl-nl/longread/de-nederlandse-economie/2025/de-nederlandse-economie-in-2024/5-de-arbeidsmarkt">CBS arbeidsmarkt 2024</a>. Thuiswerken 52%: <a href="https://www.mkbservicedesk.nl/nieuws/ondernemersnieuws/52-procent-nederlanders-werkt-geregeld-thuis">MKB Servicedesk</a>. Zzp-daling: <a href="https://www.cbs.nl/nl-nl/nieuws/2026/07/aantal-zzp-ers-in-2025-gedaald-met-62-duizend">CBS</a>.</p>
+    <p>Pernis: fietsbuis Beneluxtunnel sinds augustus 2026 weer open (<a href="https://www.rijkswaterstaat.nl/nieuws/archief/2026/08/buis-voor-fietsers-beneluxtunnel-weer-open">Rijkswaterstaat</a>). Uden: bus 306 naar Den Bosch circa 51 minuten (reisplanner, controleren bij 9292).</p>
+    <p>Rechtsvorm coöperatie: <a href="https://ondernemersplein.overheid.nl/bedrijfsvoering/rechtsvormen-en-organisatie/de-cooperatie/">Ondernemersplein</a>. Gelijke behandeling: <a href="https://wetten.overheid.nl/BWBR0006502">AWGB</a>, <a href="https://www.mensenrechten.nl">College voor de Rechten van de Mens</a>.</p>
+    <p>Niet gevonden: actuele zzp-aantallen per gemeente uit StatLine (de site was niet bereikbaar) en Nederlandse cijfers over gender in coworking. De aantallen zelfstandigen zijn daarom geschat uit het CBS-aandeel zelfstandigen.</p>
+  </div>
+</section>
+
+</div>
+
+<script>
+const LOC = [
+  {k:'utrecht', naam:'Utrecht', adres:'Van Heutszstraat 4, Lombok-West', station:'Utrecht Centraal op 0,7 km', r15:64805, r3:227505, r45:316600, a:[38.6,20.3,10.8], zelf:15.5, est:125, lo:60, hi:250, oordeel:'haalt het doel', s:'ok',
+   tekst:'De enige locatie waar 70 tot 100 eigenaren uit de directe omgeving realistisch is, zelfs in het slechte scenario. Lombok is jong (46% van de buurt is 25 tot 45): werf hier gericht op 50-plussers en net gepensioneerden. De stadsstations Zuilen, Vaartsche Rijn en Leidsche Rijn liggen al binnen de fietsstraal en zijn vooral goede plekken voor flyers en pop-ups.',
+   halte:[['Utrecht Vaartsche Rijn','3 min',67660],['Utrecht Zuilen','3 min',59015],['Utrecht Overvecht','4 min',56240],['Utrecht Leidsche Rijn','4 min',32000],['Maarssen','circa 7 min',32935],['Bilthoven','circa 8 min',14400],['Woerden','circa 10 min',29190],['Houten','circa 10 min',27285],['Driebergen-Zeist','circa 10 min',8645],['Amersfoort Centraal','circa 15 min',32050]]},
+  {k:'rietvelden', naam:'Den Bosch, Rietveldenweg', adres:'Rietveldenweg 13, bedrijventerrein De Rietvelden', station:"'s-Hertogenbosch op 0,9 km", r15:16995, r3:71765, r45:127590, a:[29.0,25.9,20.4], zelf:16.9, est:60, lo:30, hi:120, oordeel:'krap', s:'mid',
+   tekst:'Haalbaar als je de hele stad en de stations één halte verder meeneemt: Vught, Rosmalen, Den Bosch Oost, Boxtel en Oss. De leeftijdsopbouw is van nature gemengder dan in Utrecht. Het station ligt op loopafstand, dat is een sterk argument.',
+   halte:[["'s-Hertogenbosch Oost",'3 min',29700],['Vught','4 min',14235],['Rosmalen','5 min',19525],['Boxtel','circa 10 min',9010],['Zaltbommel','circa 12 min',10040],['Oss','circa 12 min',27940],['Tilburg','circa 15 min',59160]]},
+  {k:'eendenkooi', naam:'Den Bosch, Eendenkooi', adres:'De Eendenkooi 1A, De Schutskamp', station:"'s-Hertogenbosch op 1,6 km", r15:22155, r3:50720, r45:116355, a:[29.2,25.8,20.0], zelf:16.7, est:57, lo:28, hi:115, oordeel:'krap', s:'mid',
+   tekst:'Ligt in een woonbuurt, dus meer mensen op loopafstand, maar verder van het station dan de Rietveldenweg. Werf net zo breed: de hele stad plus Vught, Rosmalen, Boxtel en Oss.',
+   halte:[["'s-Hertogenbosch Oost",'3 min',29700],['Vught','4 min',14235],['Rosmalen','5 min',19525],['Boxtel','circa 10 min',9010],['Oss','circa 12 min',27940],['Tilburg','circa 15 min',59160]]},
+  {k:'maarssen', naam:'Maarssen', adres:'Herenweg 15, Maarsseveen', station:'Maarssen op 2,4 km', r15:5620, r3:28240, r45:82550, a:[29.5,24.7,17.6], zelf:16.2, est:52, lo:26, hi:104, oordeel:'alleen met Utrecht', s:'mid',
+   tekst:'De directe omgeving is klein en ouder (26% is 65-plus binnen 1,5 km). Het werkt alleen als je Utrecht Noordwest (Zuilen, Overvecht) en Utrecht Centraal actief meeneemt. Een fietsroute langs de Vecht is dan het verhaal.',
+   halte:[['Utrecht Zuilen','3 min',59015],['Breukelen','4 min',9640],['Utrecht Centraal','circa 7 min',78575]]},
+  {k:'pernis', naam:'Pernis', adres:'Ring 15, Pernis (Rotterdam)', station:'Metro Pernis (lijn C); trein Schiedam Centrum op 4,0 km', r15:4990, r3:40930, r45:176470, a:[30.6,25.5,16.2], zelf:16.3, est:55, lo:28, hi:110, oordeel:'krap, over de rivier', s:'mid',
+   tekst:'Pernis zelf telt circa 5.000 inwoners. Van de 176.000 binnen 4,5 km woont een groot deel aan de overkant van de Nieuwe Maas in Schiedam en Vlaardingen, via metrolijn C of de fietsbuis van de Beneluxtunnel. Het hangt af van de vraag of die mensen de oversteek willen maken.',
+   halte:[['Metro Vijfsluizen of Tussenwater','2 tot 8 min',null],['Schiedam Centrum (metro)','circa 8 min',33940]]},
+  {k:'voorhout', naam:'Voorhout', adres:'Dinsdagse Wetering 56A, De Knip', station:'Voorhout op 0,6 km', r15:15595, r3:45370, r45:105750, a:[23.3,27.6,22.4], zelf:16.3, est:38, lo:19, hi:76, oordeel:'te dun', s:'bad',
+   tekst:'Ouder en kleiner. Zonder Leiden (6 minuten met de sprinter) is het te dun voor 70 eigenaren. Met Leiden Centraal erbij wordt het een kleinere club met relatief veel clubleden.',
+   halte:[['Hillegom','circa 5 min',10085],['Leiden Centraal','circa 6 min',47065]]},
+  {k:'uden', naam:'Uden', adres:'Nijverheidsstraat 4C, Loopkant', station:'Geen station; bus 306 naar Den Bosch circa 51 min', r15:12620, r3:32925, r45:45060, a:[23.7,27.5,22.2], zelf:16.4, est:13, lo:6, hi:26, oordeel:'te dun', s:'bad',
+   tekst:'De mooiste hal, maar de zwakste plek om leden te vinden. Er is geen station en binnen 4,5 km wonen maar 45.000 mensen. 100 eigenaren uit de omgeving is hier niet realistisch.',
+   halte:[]},
+];
+const fmt = n => n == null ? 'onbekend' : n.toLocaleString('nl-NL');
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+
+function chart(){
+  const W = 760, rowH = 40, top = 34, left = 190, right = 20, H = top + LOC.length*rowH + 30, max = 300;
+  const x = v => left + (W - left - right) * v / max;
+  let s = `<svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg">`;
+  s += `<rect x="${x(70)}" y="${top - 12}" width="${x(100) - x(70)}" height="${LOC.length*rowH + 8}" fill="var(--target)"/>`;
+  s += `<text x="${(x(70) + x(100))/2}" y="${top - 18}" text-anchor="middle" class="ax" style="fill:var(--ok)">doel 70 tot 100</text>`;
+  for (const t of [0,50,100,150,200,250,300]){ s += `<line x1="${x(t)}" x2="${x(t)}" y1="${top - 8}" y2="${top + LOC.length*rowH - 4}" stroke="var(--line)" stroke-width="1"/><text x="${x(t)}" y="${H - 8}" text-anchor="middle" class="ax">${t}</text>`; }
+  LOC.forEach((l, i) => {
+    const y = top + i*rowH + rowH/2 - 6, col = `var(--${l.s})`;
+    s += `<text x="${left - 12}" y="${y + 4}" text-anchor="end" font-size="13.5" font-weight="500">${l.naam.replace("'", '&#39;')}</text>`;
+    s += `<rect x="${x(l.lo)}" y="${y - 5}" width="${x(l.hi) - x(l.lo)}" height="10" rx="3" fill="var(--band)"/>`;
+    s += `<circle cx="${x(l.est)}" cy="${y}" r="6.5" fill="${col}"/>`;
+    s += `<text x="${x(l.hi) + 8}" y="${y + 4}" font-size="12.5" class="num" style="fill:var(--muted)">circa ${l.est}</text>`;
+  });
+  s += `</svg>`;
+  document.getElementById('chart').innerHTML = s + `<div class="legend" style="margin-top:6px"><span><i style="background:var(--band)"></i>bandbreedte (helft tot dubbel)</span><span><i style="background:var(--ok);border-radius:50%"></i>haalt het doel</span><span><i style="background:var(--mid);border-radius:50%"></i>krap of alleen met buren</span><span><i style="background:var(--bad);border-radius:50%"></i>te dun</span><span>horizontaal: geschatte eigenaren</span></div>`;
+}
+
+function toonLoc(k){
+  const l = LOC.find(z => z.k === k) || LOC[0];
+  document.querySelectorAll('#loctabs button').forEach(b => b.setAttribute('aria-pressed', b.dataset.k === l.k));
+  const rest = Math.max(0, 100 - l.a[0] - l.a[1] - l.a[2]);
+  const rows = l.halte.length ? l.halte.map(h => `<tr><td>${h[0]}</td><td>${h[1]}</td><td class="r">${fmt(h[2])}</td></tr>`).join('') : `<tr><td colspan="3">Geen treinstation; met de bus is Den Bosch circa 51 minuten.</td></tr>`;
+  document.getElementById('loc').innerHTML = `
+    <div class="stack" style="gap:6px"><span class="verdict-pill" style="color:var(--${l.s})">${l.oordeel}</span><h3>${l.adres}</h3><p class="note">${l.station}</p></div>
+    <div class="kv">
+      <div><span>Lopen, 1,5 km</span><b>${fmt(l.r15)}</b></div>
+      <div><span>Fiets, 3 km</span><b>${fmt(l.r3)}</b></div>
+      <div><span>E-bike, 4,5 km</span><b>${fmt(l.r45)}</b></div>
+      <div><span>Zelfstandigen onder werkenden</span><b>${String(l.zelf).replace('.', ',')}%</b></div>
+      <div><span>Haalbare eigenaren</span><b>circa ${l.est}</b></div>
+    </div>
+    <div class="stack" style="gap:6px">
+      <div class="agebar" role="img" aria-label="Leeftijdsopbouw binnen 4,5 km"><i style="width:${rest}%;background:var(--band)"></i><i style="width:${l.a[0]}%;background:var(--c1)"></i><i style="width:${l.a[1]}%;background:var(--c2)"></i><i style="width:${l.a[2]}%;background:var(--c4)"></i></div>
+      <div class="legend"><span><i style="background:var(--band)"></i>onder 25: ${rest.toFixed(1).replace('.', ',')}%</span><span><i style="background:var(--c1)"></i>25 tot 45: ${String(l.a[0]).replace('.', ',')}%</span><span><i style="background:var(--c2)"></i>45 tot 65: ${String(l.a[1]).replace('.', ',')}%</span><span><i style="background:var(--c4)"></i>65 en ouder: ${String(l.a[2]).replace('.', ',')}%</span></div>
+    </div>
+    <p>${l.tekst}</p>
+    <div class="tbl"><table><thead><tr><th>Eén halte of circa 20 min verder</th><th>Reistijd (indicatief)</th><th class="r">Inwoners binnen 1,5 km van dat station</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  try { localStorage.setItem('werving-loc', l.k); } catch (e) {}
+}
+
+function tabs(){
+  const t = document.getElementById('loctabs');
+  t.innerHTML = LOC.map(l => `<button type="button" data-k="${l.k}" aria-pressed="false">${l.naam}</button>`).join('');
+  t.querySelectorAll('button').forEach(b => b.onclick = () => toonLoc(b.dataset.k));
+  let k = 'utrecht'; try { k = localStorage.getItem('werving-loc') || k; } catch (e) {}
+  toonLoc(k);
+}
+
+function mix(){
+  const groepen = [['25 tot 34', 19, 'var(--c1)'], ['35 tot 44', 24, 'var(--c2)'], ['45 tot 54', 24, 'var(--c4)'], ['55 tot 70', 18, 'var(--c3)']];
+  let d = ''; for (const [, n, c] of groepen) for (let i = 0; i < n; i++) d += `<i style="background:${c}"></i>`;
+  document.getElementById('dots').innerHTML = d;
+  document.getElementById('dotlegend').innerHTML = groepen.map(([n, k, c]) => `<span><i style="background:${c};border-radius:50%"></i>${n} jaar: ${k}</span>`).join('');
+  const B = [['Vrouw', 40, 60], ['25 tot 34 jaar', 15, 25], ['35 tot 44 jaar', 20, 30], ['45 tot 54 jaar', 20, 30], ['55 tot 70 jaar', 15, 25], ['Grootste vakgebied', 0, 25], ['Woont binnen 4,5 km of één halte', 70, 100], ['Kende de oprichter al', 0, 30]];
+  document.getElementById('bands').innerHTML = B.map(([n, a, b]) => `<div class="row"><span>${n}</span><div class="track"><i style="left:${a}%;width:${b - a}%;background:var(--accent)"></i></div><span class="val">${a === 0 ? 'max ' + b : b === 100 ? 'min ' + a : a + ' tot ' + b}%</span></div>`).join('') +
+    `<p class="note">Bij te sturen als na 30 leden een geslacht onder de 35% zit, of een leeftijdsgroep of vakgebied buiten de bandbreedte valt. De groep van 25 tot 34 blijft meestal achter door de inleg.</p>`;
+}
+
+const GROEPEN = [
+  {n:'Vrouwelijke ondernemers', lft:'30 tot 55', min:30, max:55, waarom:'Werken en trainen zonder sportschoolcultuur, flexibel rond schooltijden, een gelijkwaardig netwerk', brengt:'Zorg, coaching, communicatie, food; sterk in community bouwen', waar:'Vrouwelijke ondernemersnetwerken, broodfondsen, KVK-bijeenkomsten, LinkedIn', pitch:'Een club die je samen bezit, waar je werkt, traint en je kinderen na school ophaalt zonder te reizen.'},
+  {n:'50-plus professionals en interimmers', lft:'50 tot 67', min:50, max:67, waarom:'Structuur en contact buiten kantoor, gezond blijven, vaak geld om in te leggen', brengt:'Kapitaal, bestuurservaring, netwerk, mentorschap', waar:'Interimnetwerken, Rotary en Lions, tennis- en golfclubs, alumniverenigingen', pitch:'Investeer in een plek die je fit en relevant houdt, met jonge ondernemers om je heen.'},
+  {n:'Zzp\'ers in zorg en onderwijs', lft:'25 tot 60', min:25, max:60, waarom:'Rustige plek voor administratie, spreekkamer per uur, uit het isolement', brengt:'Zorgkennis, coaching, workshops voor leden en buurt', waar:'Beroepsverenigingen, zorgcoöperaties, broodfondsen, scholen en huisartsenpraktijken', pitch:'Spreekkamer, werkplek en gym onder één dak, met collega\'s in plaats van een keukentafel.'},
+  {n:'Makers en ambacht', lft:'25 tot 65', min:25, max:65, waarom:'Opdrachtgevers ontmoeten, werk laten zien, samen bouwen', brengt:'Inbouw, meubels, groen, keuken: de Berlijn- en Taghazoutsfeer', waar:'Makerspaces, broedplaatsen, mbo-opleidingen, markten, Instagram', pitch:'Bouw mee: een deel van je inleg mag in uren, en jouw werk staat in de club.'},
+  {n:'Creatieven', lft:'25 tot 50', min:25, max:50, waarom:'Inspirerende ruimte, het café als podium, betaalbaar omdat het van jullie is', brengt:'Branding, events, fotografie, programmering', waar:'Broedplaatsen, culturele instellingen, kunstacademies, Meetup', pitch:'Een creatieve thuisbasis die je zelf mee bezit, geen kantoorverhuurder.'},
+  {n:'Tech en data', lft:'25 tot 45', min:25, max:45, waarom:'Diep werk, vergaderruimtes, gym naast de deur, geen reistijd', brengt:'Digitale vaardigheden, goede inkomens, startupnetwerk', waar:'Hogescholen en universiteiten, Meetup-groepen, LinkedIn', pitch:'Werk en train op fietsafstand, met mensen die niet allemaal developer zijn.'},
+  {n:'Consultants en adviseurs', lft:'35 tot 60', min:35, max:60, waarom:'Klanten ontvangen in een plek met karakter, zonder eigen kantoor', brengt:'Strategie, financiën, juridische kennis, handig voor de coöperatie zelf', waar:'Ondernemersverenigingen, businessclubs, alumni, LinkedIn', pitch:'Ontvang klanten in een plek met karakter, zonder huurcontract voor een eigen kantoor.'},
+  {n:'Hybride werknemers', lft:'28 tot 55', min:28, max:55, waarom:'Een derde plek tussen thuis en kantoor, minder reizen', brengt:'Stabiel inkomen, kennis van grote organisaties, soms een werkgeversbijdrage', waar:'Grote werkgevers in de regio, HR (werkplekvergoeding), stationsomgevingen', pitch:'Je werkgever betaalt mee aan je werkplek dichtbij huis; jij krijgt er een gym en een café bij.'},
+  {n:'Jonge ouders', lft:'30 tot 45', min:30, max:45, waarom:'Werk, sport en contact dichtbij school en opvang', brengt:'Lokale binding, buurtnetwerk, gezinsperspectief', waar:'Basisscholen, kinderopvang, consultatiebureau, Nextdoor en buurt-apps', pitch:'In tien minuten fietsen van school naar bureau naar gym, en tussendoor koffie met andere ouders.'},
+  {n:'Net gepensioneerde experts', lft:'62 tot 72', min:62, max:72, waarom:'Een dag met structuur, contact, gezond blijven', brengt:'Tijd, kapitaal, mentorschap, gastheer of gastvrouw, bestuur', waar:'Vrijwilligerscentrales, Knarrenhofgroepen, alumni, buurthuizen', pitch:'Blijf onder de mensen en deel je kennis, in een club die je mee bezit.'},
+  {n:'Jonge professionals en starters', lft:'25 tot 32', min:25, max:32, waarom:'Gemeenschap in een nieuwe stad, betaalbare werkplek, gym', brengt:'Energie, sociale media, evenementen', waar:'Hogescholen, alumni, sportverenigingen, Meetup, Instagram', pitch:'Begin als clublid en groei door naar eigenaar met een gespreide inleg.'},
+];
+const FILT = [['alle', 'Alle leeftijden', 0, 99], ['jong', 'Onder 35', 0, 35], ['midden', '35 tot 55', 35, 55], ['ouder', '55 en ouder', 55, 99]];
+function groepen(f = 'alle'){
+  const [, , a, b] = FILT.find(x => x[0] === f);
+  const G = GROEPEN.filter(g => g.min < b && g.max >= a);
+  document.getElementById('groups').innerHTML = G.map(g => `<article class="card"><span class="age">${g.lft} jaar</span><h3>${g.n}</h3>
+    <dl><dt>Waarom lid</dt><dd>${g.waarom}</dd><dt>Brengt mee</dt><dd>${g.brengt}</dd><dt>Waar vind je ze</dt><dd>${g.waar}</dd></dl><q>${g.pitch}</q></article>`).join('');
+  document.querySelectorAll('.filters button').forEach(x => x.setAttribute('aria-pressed', x.dataset.f === f));
+}
+function filters(){
+  const el = document.querySelector('.filters');
+  el.insertAdjacentHTML('beforeend', `<div class="tabs">${FILT.map(([k, n]) => `<button type="button" data-f="${k}" aria-pressed="false">${n}</button>`).join('')}</div>`);
+  el.querySelectorAll('button').forEach(b => b.onclick = () => groepen(b.dataset.f));
+  groepen('alle');
+}
+
+function trechter(){
+  const F = [
+    ['Bereik', '30.000 tot 45.000', 45000, 'Posts, flyers, media, partners. 3 tot 5% schrijft zich in.'],
+    ['Belangstellingslijst', '1.200 tot 1.500', 1500, 'Gratis inschrijving met korte vragenlijst. 25 tot 35% komt naar een avond.'],
+    ['Informatieavond', '350 tot 450', 450, 'Plan, cijfers, risico\'s en de renders van het pand. 50 tot 60% komt ook proefdraaien.'],
+    ['Pop-up of proefdag', '200 tot 250', 250, 'Een dag werken, trainen en eten. 40 tot 50% tekent een intentieverklaring.'],
+    ['Intentieverklaring', '120 tot 140', 140, 'Niet bindend, met een kleine terugbetaalbare aanbetaling. 60 tot 70% wordt eigenaar.'],
+    ['Founding members', 'circa 85', 85, 'Bindende toetreding, inleg (eventueel in termijnen), stemrecht.'],
+  ];
+  const lg = v => Math.log10(v);
+  document.getElementById('funnel').innerHTML = F.map(([n, t, v, c]) => `<div class="st"><div class="bar" style="width:${(18 + 82*(lg(v) - lg(85))/(lg(45000) - lg(85))).toFixed(1)}%">${n}: ${t}</div><span class="cap">${c}</span></div>`).join('') +
+    `<p class="note">Balkbreedte op logaritmische schaal, anders is de laatste stap onzichtbaar.</p>`;
+  const P = [['Belangstellingslijst en partners', 1, 3], ['Informatieavonden', 2, 6], ['Pop-up en proefdagen', 3, 8], ['Intentieverklaringen', 5, 9], ['Founding members en notaris', 8, 12]];
+  let s = '<span></span>' + Array.from({length:12}, (_, i) => `<span class="m">${i + 1}</span>`).join('');
+  for (const [n, a, b] of P) s += `<span>${n}</span>` + Array.from({length:12}, (_, i) => `<span>${i + 1 >= a && i + 1 <= b ? '<i class="bar" style="display:block"></i>' : ''}</span>`).join('');
+  document.getElementById('timeline').innerHTML = s;
+}
+
+chart(); tabs(); mix(); filters(); trechter();
+</script>
