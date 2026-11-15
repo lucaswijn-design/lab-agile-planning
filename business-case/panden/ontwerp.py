@@ -892,6 +892,17 @@ def pooltafel(c, a=0, n=0):
     return [dict(t="box", soort="pooltafel", c=c, w=2.1, d=1.2, h=0.8, a=a, kleur="#2f5e46", n=n)]
 
 
+def stavergaderkamer(c, w, d, a=0, pers=5, n=0):
+    """Sta-vergaderkamer: ronde statafel van 1,1 m hoog en circa 1,0 m doorsnee, een whiteboardwand, twee leunkrukken, geen stoelen.
+    Stand-up vergaderingen duren circa een derde korter bij gelijke besluitkwaliteit (Bluedorn, Turban en Love 1999). Telt als vergaderkamer."""
+    ca, sa = math.cos(math.radians(a)), math.sin(math.radians(a))
+    return [dict(t="box", soort="vergaderkamer", c=c, w=w, d=d, h=2.6, a=a, kleur="#9fb3bd", glas=True, pers=pers, sta=True, n=n),
+            dict(t="cil", soort="statafel", c=c, r=0.5, h=1.1, kleur=HOUT, n=n),
+            dict(t="box", soort="whiteboard", c=[c[0] - (w / 2 - 0.08) * ca, c[1] - (w / 2 - 0.08) * sa], w=0.04, d=min(d - 0.4, 2.4), h=1.3, a=a, kleur="#f4f1ea", n=n),
+            dict(t="cil", soort="leunkruk", c=[c[0] + 0.8 * ca, c[1] + 0.8 * sa], r=0.18, h=0.75, kleur="#44606f", n=n),
+            dict(t="cil", soort="leunkruk", c=[c[0] + 0.8 * sa, c[1] - 0.8 * ca], r=0.18, h=0.75, kleur="#44606f", n=n)]
+
+
 def toren(c, r, open_deg, soort, n=0):  # noqa: F811  (vervangt de ronde toren: zie inrichting/torens.py)
     return achthoektoren(c, r, open_deg, soort, n=n)
 
@@ -956,7 +967,7 @@ UTRECHT.update(
         *eiland2([15.6, 1.9], -4), *eiland2([19.6, 1.9], 3), *eiland2([23.6, 1.9], -3),
         *eiland2([15.6, 6.2], 4), *eiland2([19.6, 6.2], -3), *eiland2([23.6, 6.2], 5),
         plant3([13.95, 4.05], "zz-plant"), plant3([17.6, 4.05], "zz-plant"), plant3([21.6, 4.05], "zz-plant"), *[hangplant([u, v]) for u in (15.6, 19.6, 23.6) for v in (1.9, 6.2)],
-        *vergaderkamer([28.7, 2.45], 4.8, 4.1, 0, 8), *vergaderkamer([33.6, 2.45], 4.6, 4.1, 0, 6),
+        *vergaderkamer([28.7, 2.45], 4.8, 4.1, 0, 6), *stavergaderkamer([33.6, 2.45], 4.6, 4.1, 0, 6),
         *achthoektoren([29.2, 7.3], 2.75, 180, "was", lockers=(4,)), dict(t="box", soort="techniek", c=[34.7, 7.3], w=2.0, d=3.4, h=2.6, a=0, kleur="#8f8a80"),
         wand([[27.2, 10.0], [36, 10.0]], 3.5, gym=True), deur([26.7, 10.0], 0, toegang=True),
         *toren([33.4, 12.7], 2.25, 180, "douche"),
@@ -1581,7 +1592,7 @@ GALVANI = dict(
         dict(t="box", soort="trap", c=[22.8, 8.0], w=3.0, d=5.0, h=0.3, a=0, kleur=HOUT), label([22.8, 5.2], "zittrap"),
         *veelhoekbank([26.5, 13.2], 1.7, 6, open=(1, 4)), boom3([22.0, 1.4], "kentia"), plant3([28.5, 1.2], "ficus elastica"), plant3([22.2, 15.2], "strelitzia nicolai"), pod2([21.7, 11.3]), pod2([21.7, 13.0]), *[hangplant([u, 10.2]) for u in (14.0, 17.0, 20.0, 25.0, 28.0)],
         *eiland2([15.6, 2.0], 0), *eiland2([19.2, 2.0], 0), *eiland2([15.6, 5.3], 0), *eiland2([19.2, 5.3], 0), *eiland2([15.6, 8.6], 0), *eiland2([19.2, 8.6], 0), plant3([17.4, 3.65], "zz-plant"), plant3([17.4, 6.95], "zz-plant"), *groenwand([13.8, 0.25], [20.8, 0.25], 3.0),
-        *vergaderkamer([16.5, 13.2], 5.4, 4.6, 0, 8), pod2([20.2, 11.6]), pod2([20.2, 14.5]),
+        *vergaderkamer([15.3, 13.2], 4.6, 3.0, 90, 6), *stavergaderkamer([18.0, 13.2], 2.4, 4.6, 0, 5), pod2([20.2, 11.6]), pod2([20.2, 14.5]),
         *toren([10.7, 3.0], 2.75, 0, "was"), *toren([10.25, 8.2], 2.25, 180, "douche"),
         dict(t="box", soort="toiletgroep", c=[10.7, 12.0], w=5.0, d=2.0, h=2.6, a=0, kleur="#bdb7aa"), label([10.7, 12.0], "toiletten"), *lockerwand([10.85, 15.3], 5.2, 0), label([10.85, 14.6], "lockers"),
         wand([[7.8, 0.2], [7.8, 7.6]], 6.8, gym=True), wand([[7.8, 8.8], [7.8, 12.8]], 6.8, gym=True), deur([7.8, 13.5], 90, toegang=True), wand([[7.8, 14.2], [7.8, 16.0]], 6.8, gym=True),
@@ -1785,7 +1796,7 @@ LINSCHOTEN = dict(
         *keuken([4.7, 15.47], 6.4, 0), *kookeiland([4.7, 12.9], 0), *grote_tafel([4.6, 7.6], 4.2), *veelhoekbank([4.0, 3.6], 1.5, 6, open=(0, 3)), *lockerwand([3.2, 0.45], 5.6, 0), label([3.2, 1.1], "lockers"),
         boom3([1.3, 11.8], "kentia"), boom3([1.3, 3.8], "ficus elastica"), plant3([1.2, 14.6], "strelitzia nicolai"), plant3([7.9, 4.6], "monstera"), *zitnis([0.25, 9.6], [0.25, 5.2]), dict(t="box", soort="trap", c=[8.45, 9.0], w=1.1, d=4.4, h=0.3, a=0, kleur=STAAL), plant3([12.9, 3.6], "zz-plant"), plant3([12.9, 7.2], "zz-plant"), pod2([8.3, 1.1]), pod2([8.3, 2.8]), deur([0.0, 11.4], 90, w=1.6),
         *eiland2([10.8, 1.8], 0), *eiland2([15.0, 1.8], 0), *eiland2([10.8, 5.4], 0), *eiland2([15.0, 5.4], 0), *eiland2([10.8, 9.0], 0), *eiland2([15.0, 9.0], 0),
-        *vergaderkamer([12.0, 13.2], 5.4, 4.6, 0, 8), dict(t="box", soort="trap", c=[16.2, 13.4], w=1.1, d=4.4, h=0.3, a=0, kleur=STAAL), label([16.2, 10.9], "trap"),
+        *vergaderkamer([10.8, 13.2], 4.6, 3.0, 90, 6), *stavergaderkamer([13.5, 13.2], 2.4, 4.6, 0, 5), dict(t="box", soort="trap", c=[16.2, 13.4], w=1.1, d=4.4, h=0.3, a=0, kleur=STAAL), label([16.2, 10.9], "trap"),
         *toren([19.8, 4.0], 2.75, 180, "was"), *toren([20.2, 11.6], 2.25, 0, "douche"),
         dict(t="box", soort="toiletgroep", c=[20.0, 8.05], w=4.0, d=2.4, h=2.6, a=0, kleur="#bdb7aa"), label([20.0, 8.05], "toiletten"),
         wand([[23.0, 0.2], [23.0, 11.0]], 10.0, gym=True), wand([[23.0, 12.2], [23.0, 14.0]], 10.0, gym=True), deur([23.0, 14.7], 90, toegang=True), wand([[23.0, 15.4], [23.0, 15.8]], 10.0, gym=True),

@@ -40,7 +40,7 @@ def werkplekken(O):
 def telling(O):
     E = O["elementen"]
     return dict(bureaus=sum(1 for e in E if e["t"] == "bureau"),
-                vergaderkamers=[e.get("pers", 8) for e in E if e.get("soort") == "vergaderkamer"],
+                vergaderkamers=[("sta " if e.get("sta") else "") + str(e.get("pers", 8)) for e in E if e.get("soort") == "vergaderkamer"],
                 belcellen=sum(1 for e in E if e.get("soort") == "belcel"),
                 werkplekken=werkplekken(O))
 

@@ -76,3 +76,23 @@ if __name__ == "__main__":
         print(dag, behoefte(mix, dag))
     print("oude regeling 45 vol + 45 deeltijd, dinsdag, gemiddeld tegelijk:", oude_regeling(45, 45))
     print(bijdragen(mix, 227, 45 + 45 * 320 / 450))
+
+
+def behoefte_teams(mix, teams, dag="di"):
+    """Zoals behoefte(), maar met teams: lijst van (aantal personen, soort). Teamleden komen samen of niet (samen = gecorreleerd),
+    dus de spreiding per team is n^2 p (1 - p) in plaats van n p (1 - p). Teamleden zitten in mix niet dubbel."""
+    b = behoefte(mix, dag)
+    mu = b["flex_gemiddeld"]; var = 0.0
+    for s, n in mix.items():
+        if s != "vast":
+            p = kans(s, dag) * TEGELIJK; var += n * p * (1 - p)
+    for n, s in teams:
+        p = kans(s, dag) * TEGELIJK
+        mu += n * p; var += n * n * p * (1 - p)
+    flex95 = math.ceil(mu + Z95 * math.sqrt(var))
+    return dict(b, flex_gemiddeld=round(mu, 1), flex_p95=flex95, totaal_met_vrijgave=b["vaste_bureaus"] + max(0, flex95 - math.floor(b["leeg_vast"] * 0.6)))
+
+
+def vergaderuren(leden_uren, teams, uren_per_team=4.0):
+    """Vergaderuren per week: leden plus teams (een klein team vergadert circa 4 uur per week extra [aanname])."""
+    return leden_uren + len(teams) * uren_per_team
