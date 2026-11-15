@@ -83,7 +83,7 @@ KOMMIEZEN = dict(
         pod2([16.1, 1.0]), pod2([17.6, 1.0]), plant3([16.85, 2.6], "aspidistra"),
         # achterin: wastoren en lockers, opening naar de tuinkamer
         *dtoren([0.2, 0.2], [5.4, 0.2], 0.8, "was"), *lockerwand([2.2, 8.85], 3.6, 0),
-        deur([0.0, 5.3], 90, w=3.0), label([1.2, 5.3], "opening"), plant3([3.6, 4.4], "sansevieria"),
+        label([1.2, 5.3], "opening 3 m"), plant3([3.6, 4.4], "sansevieria"),
         # tuinkamer
         dict(t="box", soort="raambar", c=[-9.5, 4.55], w=8.0, d=0.5, h=1.05, a=90, kleur=HOUT), *eiland2([-4.6, 4.55], 90, k=6),
         *zitnis([-8.2, 0.25], [-3.6, 0.25], tafels=False), *focuskamer([-1.3, 7.9], 0), pod2([-0.9, 0.9]), pod2([-0.9, 2.45]), pod2([-2.4, 0.9]),

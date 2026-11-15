@@ -272,7 +272,7 @@
     "Twee roeiers aan de ramen",
     "D-vormige douchetoren met vier douches tegen de gymwand",
     "Kentia en sansevieria",
-    "Deur op toegangspas"
+    "Deur op toegangspas vanuit de club en een eigen deur naar de tuin"
    ],
    "foto": null,
    "prompt": "A small functional gym in the end of an old high village hall: black power racks on oak platforms, rowing machines by tall windows onto a garden, anthracite rubber floor, one wall oxblood red, a D-shaped concrete-look shower tower against the wall with ivy on its rim, a kentia palm.",
@@ -2519,7 +2519,7 @@
    "t": "box",
    "soort": "roeier",
    "c": [
-    34.6,
+    34.2,
     1.1
    ],
    "w": 2.4,
@@ -2533,7 +2533,7 @@
    "t": "box",
    "soort": "roeier",
    "c": [
-    37.6,
+    37.0,
     1.1
    ],
    "w": 2.4,
@@ -2541,6 +2541,17 @@
    "h": 0.5,
    "a": 0,
    "kleur": "#2f3032",
+   "n": 0
+  },
+  {
+   "t": "deur",
+   "c": [
+    38.9,
+    0.0
+   ],
+   "a": 0,
+   "w": 1.0,
+   "toegang": true,
    "n": 0
   },
   {

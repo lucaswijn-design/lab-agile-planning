@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.00 -20.53 46.03 25.03" width="1400" height="761" font-family="Work Sans, Helvetica, Arial, sans-serif" role="img" aria-label="Plattegrond Van Riemsdijkweg 17, Rotterdam Waalhaven">
+<rect x="-3.00" y="-20.53" width="46.03" height="25.03" fill="#fbf9f4"/>
+<g transform="scale(1,-1)">
+<polygon points="40.01,0.00 40.03,15.03 0.01,14.99 0.00,0.00 40.01,0.00" fill="#ffffff"/>
+<polygon points="0.30,0.30 10.30,0.30 10.30,14.70 0.30,14.70" fill="#e3e6e2" fill-opacity="0.42"/>
+<defs><pattern id="arc" width="0.6" height="0.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.6" stroke="#b9b3a6" stroke-width="0.06"/></pattern></defs>
+<rect x="1.00" y="2.30" width="1.40" height="0.70" transform="rotate(0.0 1.70 2.65)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="1.70" cy="2.02" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="1.00" y="3.00" width="1.40" height="0.70" transform="rotate(180.0 1.70 3.35)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="1.70" cy="3.98" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="2.40" y="2.30" width="1.40" height="0.70" transform="rotate(0.0 3.10 2.65)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="3.10" cy="2.02" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="2.40" y="3.00" width="1.40" height="0.70" transform="rotate(180.0 3.10 3.35)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="3.10" cy="3.98" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="1.00" y="6.70" width="1.40" height="0.70" transform="rotate(0.0 1.70 7.05)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="1.70" cy="6.42" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="1.00" y="7.40" width="1.40" height="0.70" transform="rotate(180.0 1.70 7.75)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="1.70" cy="8.38" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="2.40" y="6.70" width="1.40" height="0.70" transform="rotate(0.0 3.10 7.05)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="3.10" cy="6.42" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="2.40" y="7.40" width="1.40" height="0.70" transform="rotate(180.0 3.10 7.75)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="3.10" cy="8.38" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="5.00" y="6.70" width="1.40" height="0.70" transform="rotate(0.0 5.70 7.05)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="5.70" cy="6.42" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="5.00" y="7.40" width="1.40" height="0.70" transform="rotate(180.0 5.70 7.75)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="5.70" cy="8.38" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="6.40" y="6.70" width="1.40" height="0.70" transform="rotate(0.0 7.10 7.05)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="7.10" cy="6.42" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="6.40" y="7.40" width="1.40" height="0.70" transform="rotate(180.0 7.10 7.75)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="7.10" cy="8.38" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="5.30" y="10.10" width="4.60" height="3.00" transform="rotate(0.0 7.60 11.60)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="6.60" y="11.10" width="2.00" height="1.00" transform="rotate(0.0 7.60 11.60)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="9.71" y="10.90" width="0.08" height="1.40" transform="rotate(0.0 9.75 11.60)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.10" y="10.25" width="2.20" height="1.90" transform="rotate(0.0 2.20 11.20)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="1.50" y="10.45" width="1.40" height="0.60" transform="rotate(0.0 2.20 10.75)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.10" y="12.45" width="2.20" height="1.90" transform="rotate(0.0 2.20 13.40)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="1.50" y="12.65" width="1.40" height="0.60" transform="rotate(0.0 2.20 12.95)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<circle cx="6.00" cy="1.40" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="7.50" cy="1.40" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="6.90" cy="10.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="6.90" cy="12.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="7.60" cy="10.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="7.60" cy="12.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="8.30" cy="10.85" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="8.30" cy="12.35" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="1.80" cy="11.20" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="2.60" cy="11.20" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="1.80" cy="13.40" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="2.60" cy="13.40" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="9.70" cy="14.30" r="0.27999999999999997" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="6.40" cy="9.20" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="2.40" cy="5.20" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="4.40" cy="7.40" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="4.40" cy="9.60" r="0.9099999999999999" fill="#9bb07a" fill-opacity="0.55" stroke="#4d6a3a" stroke-width="0.04"/><line x1="4.40" y1="9.60" x2="5.17" y2="9.60" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.40" y1="9.60" x2="4.95" y2="10.15" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.40" y1="9.60" x2="4.40" y2="10.37" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.40" y1="9.60" x2="3.85" y2="10.15" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.40" y1="9.60" x2="3.63" y2="9.60" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.40" y1="9.60" x2="3.85" y2="9.05" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.40" y1="9.60" x2="4.40" y2="8.83" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.40" y1="9.60" x2="4.95" y2="9.05" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="9.40" cy="8.40" r="0.78" fill="#9bb07a" fill-opacity="0.55" stroke="#4d6a3a" stroke-width="0.04"/><line x1="9.40" y1="8.40" x2="10.06" y2="8.40" stroke="#4d6a3a" stroke-width="0.03"/><line x1="9.40" y1="8.40" x2="9.87" y2="8.87" stroke="#4d6a3a" stroke-width="0.03"/><line x1="9.40" y1="8.40" x2="9.40" y2="9.06" stroke="#4d6a3a" stroke-width="0.03"/><line x1="9.40" y1="8.40" x2="8.93" y2="8.87" stroke="#4d6a3a" stroke-width="0.03"/><line x1="9.40" y1="8.40" x2="8.74" y2="8.40" stroke="#4d6a3a" stroke-width="0.03"/><line x1="9.40" y1="8.40" x2="8.93" y2="7.93" stroke="#4d6a3a" stroke-width="0.03"/><line x1="9.40" y1="8.40" x2="9.40" y2="7.74" stroke="#4d6a3a" stroke-width="0.03"/><line x1="9.40" y1="8.40" x2="9.87" y2="7.93" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="4.60" cy="13.70" r="0.9099999999999999" fill="#9bb07a" fill-opacity="0.55" stroke="#4d6a3a" stroke-width="0.04"/><line x1="4.60" y1="13.70" x2="5.37" y2="13.70" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.60" y1="13.70" x2="5.15" y2="14.25" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.60" y1="13.70" x2="4.60" y2="14.47" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.60" y1="13.70" x2="4.05" y2="14.25" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.60" y1="13.70" x2="3.83" y2="13.70" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.60" y1="13.70" x2="4.05" y2="13.15" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.60" y1="13.70" x2="4.60" y2="12.93" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.60" y1="13.70" x2="5.15" y2="13.15" stroke="#4d6a3a" stroke-width="0.03"/>
+
+<polygon points="40.01,0.00 40.03,15.03 0.01,14.99 0.00,0.00 40.01,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
+</g>
+<text x="9.50" y="-3.02" font-size="0.42" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">trap</text>
+<text x="5.00" y="-5.20" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Stille verdieping in het kantoor</text><text x="5.00" y="-4.45" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">144 m² · rotskust</text>
+<rect x="-1.80" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-0.80" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="0.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.20" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<text x="-1.80" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b">0</text><text x="3.20" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b" text-anchor="middle">5 m</text>
+<polygon points="41.20,-17.53 40.97,-18.83 41.25,-19.23 41.51,-18.82" fill="#1d1d1b"/><text x="41.19" y="-16.83" font-size="0.55" font-weight="600" text-anchor="middle">N</text>
+<text x="-1.80" y="-18.93" font-size="0.9" font-weight="600" fill="#1d1d1b">Van Riemsdijkweg 17, Rotterdam Waalhaven</text><text x="-1.80" y="-18.13" font-size="0.5" font-family="Space Mono, ui-monospace, monospace" fill="#55514a">VERDIEPING · ONTWERP NOVEMBER 2026 · INDICATIEF</text>
+</svg>

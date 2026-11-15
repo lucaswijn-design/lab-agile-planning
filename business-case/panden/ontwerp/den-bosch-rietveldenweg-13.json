@@ -364,9 +364,10 @@
     ]
    ],
    "palet": "beton",
-   "beschrijving": "De wastoren midden in de hal, open naar de werkzone.",
+   "beschrijving": "De wastoren midden in de hal, open naar de werkzone. Iets naar het noorden geschoven, zodat tussen toren en gymwand een looppad van 1,2 m vrij is van het café naar de kleedruimte en de gymdeur.",
    "details": [
-    "Wastrog langs de V, drie toiletten"
+    "Wastrog langs de V, drie toiletten",
+    "Looppad van 1,2 m langs de gymwand"
    ],
    "foto": null,
    "prompt": "An octagonal concrete-look bathroom tower (eight flat faces, still reads as a round object), 5.5 m diameter and 3 m high, standing free in a black-ceiling hall, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the top rim.",
@@ -459,16 +460,17 @@
     ]
    ],
    "palet": "rots",
-   "beschrijving": "Vierentwintig compacte zit-sta bureaus in zes eilanden, met een loungehoek en drie belcellen, rustig achter het café. Langs de blinde wand naar de woning een klimwand met pothos; kentia's en dracaena, die weinig licht nodig hebben, staan tussen de eilanden.",
+   "beschrijving": "Vierentwintig compacte zit-sta bureaus in zes eilanden, met een loungehoek en drie belcellen, rustig achter het café. De hal heeft hier geen ramen, dus komen er drie lichtkoepels boven de looppaden tussen de eilanden. Langs de blinde wand naar de woning een klimwand met pothos; kentia's en dracaena, die weinig licht nodig hebben, staan tussen de eilanden.",
    "details": [
     "Zes eilanden van vier zit-sta bureaus 140 x 70",
     "Looppaden van 1,2 m",
     "Drie ronde belcellen en een loungebank",
+    "Drie nieuwe lichtkoepels boven de werkzone",
     "Klimwand van 10 m langs de blinde wand, pothos boven elk eiland",
     "Totaal met grote tafel en stille kamer: 40 werkplekken"
    ],
    "foto": 8,
-   "prompt": "Turn this long hall with black walls and ceiling into a calm coworking space: six islands of four compact sit-stand desks with oak tops, each slightly rotated, dual monitors, three round slate-blue felt phone booths, a lounge sofa, slate-blue acoustic panels, a green wall of steel cables with pothos along the blind side wall, kentia palms between the islands, keep the wooden floor.",
+   "prompt": "Turn this long hall with black walls and ceiling into a calm coworking space: six islands of four compact sit-stand desks with oak tops, each slightly rotated, dual monitors, three round slate-blue felt phone booths, a lounge sofa, slate-blue acoustic panels, a green wall of steel cables with pothos along the blind side wall, kentia palms between the islands, three round skylights, keep the wooden floor.",
    "n": 0,
    "cam": {
     "t": [
@@ -485,7 +487,7 @@
     14.1,
     22.6
    ],
-   "prompt_vol": "Turn this long hall with black walls and ceiling into a calm coworking space: six islands of four compact sit-stand desks with oak tops, each slightly rotated, dual monitors, three round slate-blue felt phone booths, a lounge sofa, slate-blue acoustic panels, a green wall of steel cables with pothos along the blind side wall, kentia palms between the islands, keep the wooden floor. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
+   "prompt_vol": "Turn this long hall with black walls and ceiling into a calm coworking space: six islands of four compact sit-stand desks with oak tops, each slightly rotated, dual monitors, three round slate-blue felt phone booths, a lounge sofa, slate-blue acoustic panels, a green wall of steel cables with pothos along the blind side wall, kentia palms between the islands, three round skylights, keep the wooden floor. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: slate blue, deep sea blue, cognac leather and stone. Photorealistic, natural light, no people in focus, no text."
   },
   {
    "naam": "Bedrijfswoning (verhuur)",
@@ -2035,6 +2037,32 @@
    "kleur": "#b08a5e"
   },
   {
+   "t": "plant",
+   "c": [
+    32.0,
+    14.0
+   ],
+   "r": 0.35,
+   "h": 0.4,
+   "n": 0,
+   "z": 3.2,
+   "naam": "pothos",
+   "hang": true
+  },
+  {
+   "t": "plant",
+   "c": [
+    36.0,
+    14.0
+   ],
+   "r": 0.35,
+   "h": 0.4,
+   "n": 0,
+   "z": 3.2,
+   "naam": "pothos",
+   "hang": true
+  },
+  {
    "t": "box",
    "soort": "vergaderkamer",
    "c": [
@@ -2507,44 +2535,44 @@
    "t": "wand",
    "pts": [
     [
-     23.059,
-     15.4
+     23.098,
+     15.8
     ],
     [
-     23.059,
-     14.948
+     23.098,
+     15.405
     ],
     [
-     24.548,
-     13.459
+     24.505,
+     13.998
     ],
     [
-     26.652,
-     13.459
+     26.495,
+     13.998
     ],
     [
-     28.141,
-     14.948
+     27.902,
+     15.405
     ],
     [
-     28.141,
-     17.052
+     27.902,
+     17.395
     ],
     [
-     26.652,
-     18.541
+     26.495,
+     18.802
     ],
     [
-     24.548,
-     18.541
+     24.505,
+     18.802
     ],
     [
-     23.059,
-     17.052
+     23.098,
+     17.395
     ],
     [
-     23.059,
-     16.6
+     23.098,
+     17.0
     ]
    ],
    "h": 3.0,
@@ -2559,8 +2587,8 @@
    "t": "box",
    "soort": "toiletcabine",
    "c": [
-    26.831,
-    14.769
+    26.633,
+    15.267
    ],
    "w": 0.95,
    "d": 1.5,
@@ -2573,8 +2601,8 @@
    "t": "box",
    "soort": "toiletcabine",
    "c": [
-    27.341,
-    16.0
+    27.102,
+    16.4
    ],
    "w": 0.95,
    "d": 1.5,
@@ -2587,8 +2615,8 @@
    "t": "box",
    "soort": "toiletcabine",
    "c": [
-    26.831,
-    17.231
+    26.633,
+    17.533
    ],
    "w": 0.95,
    "d": 1.5,
@@ -2601,8 +2629,8 @@
    "t": "box",
    "soort": "wastrog",
    "c": [
-    25.246,
-    16.421
+    25.146,
+    16.821
    ],
    "w": 1.5,
    "d": 0.45,
@@ -2615,8 +2643,8 @@
    "t": "box",
    "soort": "wastrog",
    "c": [
-    25.246,
-    15.579
+    25.146,
+    15.979
    ],
    "w": 1.5,
    "d": 0.45,
@@ -2629,8 +2657,8 @@
    "t": "box",
    "soort": "spiegel",
    "c": [
-    25.6,
-    16.0
+    25.5,
+    16.4
    ],
    "w": 0.1,
    "d": 0.1,
@@ -2642,8 +2670,8 @@
   {
    "t": "plant",
    "c": [
-    23.29,
-    15.043
+    23.329,
+    15.501
    ],
    "r": 0.32,
    "h": 0.5,
@@ -2654,8 +2682,8 @@
   {
    "t": "plant",
    "c": [
-    24.643,
-    13.69
+    24.601,
+    14.229
    ],
    "r": 0.32,
    "h": 0.5,
@@ -2666,8 +2694,8 @@
   {
    "t": "plant",
    "c": [
-    26.557,
-    13.69
+    26.399,
+    14.229
    ],
    "r": 0.32,
    "h": 0.5,
@@ -2678,8 +2706,8 @@
   {
    "t": "plant",
    "c": [
-    27.91,
-    15.043
+    27.671,
+    15.501
    ],
    "r": 0.32,
    "h": 0.5,
@@ -2690,8 +2718,8 @@
   {
    "t": "plant",
    "c": [
-    27.91,
-    16.957
+    27.671,
+    17.299
    ],
    "r": 0.32,
    "h": 0.5,
@@ -2702,8 +2730,8 @@
   {
    "t": "plant",
    "c": [
-    26.557,
-    18.31
+    26.399,
+    18.571
    ],
    "r": 0.32,
    "h": 0.5,
@@ -2714,8 +2742,8 @@
   {
    "t": "plant",
    "c": [
-    24.643,
-    18.31
+    24.601,
+    18.571
    ],
    "r": 0.32,
    "h": 0.5,
@@ -2726,8 +2754,8 @@
   {
    "t": "plant",
    "c": [
-    23.29,
-    16.957
+    23.329,
+    17.299
    ],
    "r": 0.32,
    "h": 0.5,
@@ -3798,8 +3826,8 @@
   ],
   "koepels": [
    [
-    25.6,
-    16.0,
+    25.5,
+    16.4,
     0.9
    ],
    [
@@ -3811,10 +3839,25 @@
     32.0,
     23.7,
     0.7
+   ],
+   [
+    10.0,
+    17.05,
+    0.9
+   ],
+   [
+    14.1,
+    17.05,
+    0.9
+   ],
+   [
+    18.2,
+    17.05,
+    0.9
    ]
   ],
-  "tekst_en": "A roof terrace of about 125 m2 above the book café: wooden decking, a black steel pergola with climbing plants, planters with grasses and small trees, a black steel railing and an outdoor steel stair from the forecourt. Solar panels on the gym roof, sedum at the back, round skylights.",
-  "tekst": "Het platte dak boven het café (circa 125 m²) kan een dakterras worden met pergola, plantenbakken en een buitentrap vanaf het voorterrein. Eerst een constructeur: een showroomdak uit 1966 is meestal licht. Zonnepanelen op het dak boven de gym, sedum achter."
+  "tekst_en": "A roof terrace of about 125 m2 above the book café: wooden decking, a black steel pergola with climbing plants, planters with grasses and small trees, a black steel railing and an outdoor steel stair from the forecourt. Solar panels on the gym roof, sedum at the back, round skylights. Three new round skylights above the work zone.",
+  "tekst": "Het platte dak boven het café (circa 125 m²) kan een dakterras worden met pergola, plantenbakken en een buitentrap vanaf het voorterrein. Eerst een constructeur: een showroomdak uit 1966 is meestal licht. Zonnepanelen op het dak boven de gym, sedum achter. Drie nieuwe lichtkoepels boven de werkzone, die verder geen ramen heeft."
  },
  "renders": {
   "buiten": [

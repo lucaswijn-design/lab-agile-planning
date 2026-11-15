@@ -113,13 +113,13 @@
    "kleur": "#d5bd96",
    "palet_naam": "Kokos",
    "label": [
-    3.0,
-    9.4
+    3.2,
+    9.7
    ],
    "prompt_vol": "A small atrium at the back of an office building from 2000, a round roof light above a two storey void, a black steel stair, a tall kentia palm under the roof light, a dark green locker wall with trailing pothos on top, smooth sealed concrete floor, warm light. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: coconut husk brown, sand, coconut white and palm green. Photorealistic, natural light, no people in focus, no text."
   },
   {
-   "naam": "Wastoren en techniek",
+   "naam": "Wastoren",
    "type": "sanitair",
    "poly": [
     [
@@ -160,13 +160,13 @@
    "kleur": "#c9c3b6",
    "palet_naam": "Beton en mos",
    "label": [
-    3.2,
-    0.9
+    3.3,
+    0.7
    ],
    "prompt_vol": "A low octagonal concrete-look bathroom tower (eight flat faces), 2.5 m high under a 2.9 m concrete ceiling, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy along the top rim, inside a simple office building. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
   },
   {
-   "naam": "Gang naar de gym",
+   "naam": "Gang",
    "type": "sanitair",
    "poly": [
     [
@@ -208,12 +208,12 @@
    "palet_naam": "Beton en mos",
    "label": [
     8.2,
-    7.0
+    6.6
    ],
    "prompt_vol": "A short corridor in a simple office building with a coat rack made of steel pipes, a wooden bench, a solid door with a card reader, a zz plant. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
   },
   {
-   "naam": "Techniek en opslag",
+   "naam": "Opslag",
    "type": "techniek",
    "poly": [
     [
@@ -254,8 +254,8 @@
    "kleur": "#c9c3b6",
    "palet_naam": "Beton en mos",
    "label": [
-    4.0,
-    11.2
+    4.9,
+    11.6
    ],
    "prompt_vol": "A tidy storage and plant room in an office building, steel shelving, a heat pump unit, bike tools on a wall board. Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, nothing glossy or high-end. Colours from nature: board-marked concrete grey with moss green. Photorealistic, natural light, no people in focus, no text."
   },
@@ -659,6 +659,20 @@
    "n": 0
   },
   {
+   "t": "box",
+   "soort": "lockers",
+   "c": [
+    3.2,
+    5.025
+   ],
+   "w": 1.560343788879413,
+   "d": 0.5,
+   "h": 2.0,
+   "a": 180,
+   "kleur": "#5f6b5c",
+   "n": 0
+  },
+  {
    "t": "plant",
    "c": [
     5.094,
@@ -761,7 +775,7 @@
     0.45,
     7.5
    ],
-   "w": 4.4,
+   "w": 4.6,
    "d": 0.5,
    "h": 2.0,
    "a": 90,
@@ -772,7 +786,7 @@
    "t": "plant",
    "c": [
     0.45,
-    6.033
+    5.967
    ],
    "r": 0.3,
    "h": 0.4,
@@ -796,7 +810,7 @@
    "t": "plant",
    "c": [
     0.45,
-    8.967
+    9.033
    ],
    "r": 0.3,
    "h": 0.4,
@@ -942,6 +956,29 @@
    "c": [
     9.4,
     7.2
+   ],
+   "r": 0.24,
+   "h": 0.9,
+   "n": 0,
+   "z": 0.0,
+   "naam": "sansevieria"
+  },
+  {
+   "t": "boom",
+   "c": [
+    7.1,
+    6.9
+   ],
+   "r": 0.52,
+   "h": 2.4,
+   "n": 0,
+   "naam": "dracaena"
+  },
+  {
+   "t": "plant",
+   "c": [
+    5.8,
+    13.4
    ],
    "r": 0.24,
    "h": 0.9,
@@ -1325,6 +1362,19 @@
    "n": 0
   },
   {
+   "t": "plant",
+   "c": [
+    17.9,
+    4.8
+   ],
+   "r": 0.35,
+   "h": 0.4,
+   "n": 0,
+   "z": 2.4,
+   "naam": "pothos",
+   "hang": true
+  },
+  {
    "t": "box",
    "soort": "kettlebells",
    "c": [
@@ -1504,8 +1554,8 @@
    "t": "box",
    "soort": "grote tafel",
    "c": [
-    15.0,
-    11.0
+    16.0,
+    10.6
    ],
    "w": 4.2,
    "d": 1.0,
@@ -1519,8 +1569,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    13.25,
-    10.28
+    14.25,
+    9.88
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1531,8 +1581,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    13.25,
-    11.72
+    14.25,
+    11.32
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1543,8 +1593,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    13.95,
-    10.28
+    14.95,
+    9.88
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1555,8 +1605,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    13.95,
-    11.72
+    14.95,
+    11.32
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1567,8 +1617,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    14.65,
-    10.28
+    15.65,
+    9.88
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1579,8 +1629,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    14.65,
-    11.72
+    15.65,
+    11.32
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1591,8 +1641,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    15.35,
-    10.28
+    16.35,
+    9.88
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1603,8 +1653,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    15.35,
-    11.72
+    16.35,
+    11.32
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1615,8 +1665,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.05,
-    10.28
+    17.05,
+    9.88
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1627,8 +1677,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.05,
-    11.72
+    17.05,
+    11.32
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1639,8 +1689,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.75,
-    10.28
+    17.75,
+    9.88
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1651,8 +1701,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    16.75,
-    11.72
+    17.75,
+    11.32
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1700,8 +1750,8 @@
    "t": "box",
    "soort": "kookeiland",
    "c": [
-    10.4,
-    12.2
+    11.0,
+    12.0
    ],
    "w": 2.6,
    "d": 1.0,
@@ -1714,8 +1764,8 @@
    "t": "cil",
    "soort": "espressomachine",
    "c": [
-    10.4,
-    12.2
+    11.0,
+    12.0
    ],
    "r": 0.25,
    "h": 1.4,
@@ -1734,6 +1784,30 @@
    "naam": "ficus elastica"
   },
   {
+   "t": "boom",
+   "c": [
+    13.0,
+    8.45
+   ],
+   "r": 0.52,
+   "h": 2.4,
+   "n": 0,
+   "naam": "dracaena"
+  },
+  {
+   "t": "plant",
+   "c": [
+    8.6,
+    9.6
+   ],
+   "r": 0.35,
+   "h": 0.4,
+   "n": 0,
+   "z": 2.4,
+   "naam": "pothos",
+   "hang": true
+  },
+  {
    "t": "plant",
    "c": [
     13.6,
@@ -1748,8 +1822,8 @@
   {
    "t": "plant",
    "c": [
-    13.6,
-    11.0
+    14.9,
+    10.6
    ],
    "r": 0.35,
    "h": 0.4,
@@ -1761,8 +1835,8 @@
   {
    "t": "plant",
    "c": [
-    16.4,
-    11.0
+    17.1,
+    10.6
    ],
    "r": 0.35,
    "h": 0.4,
@@ -1775,8 +1849,8 @@
    "t": "cil",
    "soort": "ronde tafel",
    "c": [
-    8.0,
-    11.8
+    7.7,
+    12.4
    ],
    "r": 0.4,
    "h": 0.74,
@@ -1787,8 +1861,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    8.0,
-    12.450000000000001
+    7.7,
+    13.05
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1799,8 +1873,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    7.437083487540115,
-    11.475000000000001
+    7.1370834875401155,
+    12.075000000000001
    ],
    "r": 0.22,
    "h": 0.45,
@@ -1811,8 +1885,8 @@
    "t": "cil",
    "soort": "stoel",
    "c": [
-    8.562916512459886,
-    11.475
+    8.262916512459885,
+    12.075
    ],
    "r": 0.22,
    "h": 0.45,
@@ -2234,6 +2308,29 @@
    "naam": "zz-plant"
   },
   {
+   "t": "boom",
+   "c": [
+    9.2,
+    9.4
+   ],
+   "r": 0.78,
+   "h": 2.8000000000000003,
+   "n": 1,
+   "naam": "ficus elastica"
+  },
+  {
+   "t": "plant",
+   "c": [
+    0.6,
+    4.5
+   ],
+   "r": 0.27999999999999997,
+   "h": 0.7,
+   "n": 1,
+   "z": 0.0,
+   "naam": "aspidistra"
+  },
+  {
    "t": "plant",
    "c": [
     9.4,
@@ -2266,7 +2363,7 @@
     11.6
    ],
    "tekst": "toiletten, pantry",
-   "n": 0
+   "n": 1
   },
   {
    "t": "wand",
@@ -2740,6 +2837,40 @@
    "c": [
     17.6,
     6.6
+   ],
+   "r": 0.78,
+   "h": 2.8000000000000003,
+   "n": 1,
+   "naam": "ficus elastica"
+  },
+  {
+   "t": "boom",
+   "c": [
+    10.9,
+    3.9
+   ],
+   "r": 0.78,
+   "h": 2.6,
+   "n": 1,
+   "naam": "schefflera"
+  },
+  {
+   "t": "plant",
+   "c": [
+    20.3,
+    7.3
+   ],
+   "r": 0.4,
+   "h": 1.2,
+   "n": 1,
+   "z": 0.0,
+   "naam": "philodendron"
+  },
+  {
+   "t": "boom",
+   "c": [
+    18.6,
+    8.8
    ],
    "r": 0.78,
    "h": 2.8000000000000003,

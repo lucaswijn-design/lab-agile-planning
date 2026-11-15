@@ -52,7 +52,7 @@ LAYOUTS = {
                      "Buiten alleen het voorterrein aan de weg. De woning wordt verhuurd.",
         koop=dict(totaal=975_000, label="vraagprijs bedrijfspand.com, te koop op 13-11-2026"),
         verhuur=[dict(naam="Bedrijfswoning", m2=127, huur_jaar=15_600)],
-        leden=STD_LEDEN, bouwjaar_risico=True, isoleren=False, pv_kwp=30,
+        leden=dict(n_vol=33, n_deel=33, n_club=60), bouwjaar_risico=True, isoleren=False, pv_kwp=30,
         zones=[
             dict(type="café", naam="Boekencafé en keuken", r=(7.3, 0.3, 23.8, 12.6)),
             dict(type="werken", naam="Werkzone", r=(7.3, 12.8, 22, 25.6)),
@@ -93,7 +93,7 @@ LAYOUTS = {
         samenvatting="Woonhuis uit 1931 met bedrijfshal uit 1970 (advertentie: hal 760 m² en kantoor 80 m², BAG-grondvlak hal 434 m²), "
                      "perceel 1.405 m² aan de rand van de polder van Maarsseveen. Station Maarssen 4,8 km, snelweg 1 km.",
         koop=dict(totaal=1_085_000, label="vraagprijs Oozo, beschikbaar op 13-11-2026"),
-        verhuur=[], leden=STD_LEDEN, bouwjaar_risico=True, isoleren=True, pv_kwp=40, verdieping_m2=50,
+        verhuur=[], leden=dict(n_vol=33, n_deel=33, n_club=60), bouwjaar_risico=True, isoleren=True, pv_kwp=40, verdieping_m2=50,
         zones=[
             dict(type="café", naam="Boekencafé in het voorhuis", r=(0.3, 0.3, 11.8, 9.1)),
             dict(type="gym", naam="Gym", r=(-14.6, 16.4, -6.8, 35.7)),
@@ -137,7 +137,7 @@ LAYOUTS = {
                      "Vraag na of de huidige huurder blijft of vertrekt. Eigen grond is alleen het gebouw zelf.",
         koop=dict(totaal=1_400_000, label="vraagprijs bedrijfspand.com en oozo, te koop sinds oktober 2026"),
         verhuur=[dict(naam="Bovenwoning", m2=110, huur_jaar=14_400)],
-        leden=STD_LEDEN, bouwjaar_risico=True, isoleren=False, pv_kwp=30, verdieping_m2=278, sanitair_bestaand=True,
+        leden=dict(n_vol=32, n_deel=32, n_club=60), bouwjaar_risico=True, isoleren=False, pv_kwp=30, verdieping_m2=278, sanitair_bestaand=True,
         zones=[
             dict(type="gym", naam="Gym (bestaande sportzaal)", r=(0.3, 0.3, 17.5, 18)),
             dict(type="café", naam="Boekencafé en bieb bij de entree", r=(17.7, 0.3, 30.4, 10)),
@@ -514,7 +514,7 @@ LAYOUTS.update({
         titel="Calandstraat 92, Schiedam", oordeel="kandidaat, beschikbaar volgens oozo (ronde 7, 15-11-2026)",
         samenvatting="Vrijstaande hal uit 1973 van 42 x 24 m (BAG 1.174 m²), hal 800 + kantoor 200 m², circa 5,4 m tot het dak, op de hoek van twee straten. Erfpacht.",
         koop=dict(totaal=825_000, label="vraagprijs oozo, ronde 7 (15-11-2026), erfpacht"),
-        verhuur=[], leden=dict(n_vol=50, n_deel=50, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=40, verdieping_m2=96,
+        verhuur=[], leden=dict(n_vol=55, n_deel=55, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=40, verdieping_m2=96,
         zones=[dict(type="café", naam="Café", r=(0.2, 14.3, 18, 23.8)), dict(type="werken", naam="Werkzone", r=(18, 4, 32, 23.8)),
                dict(type="vergader", naam="Vergaderen", r=(32, 0.2, 41.8, 14)), dict(type="bieb", naam="Entree en bieb", r=(32, 14, 41.8, 23.8)),
                dict(type="sanitair", naam="Torens", r=(12, 0.2, 18, 14.3)), dict(type="gym", naam="Gym", r=(0.2, 0.2, 12, 14))],
@@ -527,7 +527,7 @@ LAYOUTS.update({
         titel="Metaalhof 40, Rotterdam Het Lage Land", oordeel="kandidaat, beschikbaar volgens oozo (ronde 7, 15-11-2026)",
         samenvatting="Hal uit 1986 (340 m², vrije hoogte 6 m) met kantoor in twee lagen (582 m²), perceel 849 m² met eigen strook voor terras en 3 parkeerplaatsen. 800 m van station Rotterdam Alexander.",
         koop=dict(totaal=1_150_000, label="vraagprijs oozo, ronde 7 (15-11-2026)"),
-        verhuur=[], leden=dict(n_vol=40, n_deel=40, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=25, verdieping_m2=233,
+        verhuur=[], leden=dict(n_vol=50, n_deel=50, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=25, verdieping_m2=233,
         zones=[dict(type="café", naam="Café", r=(9, 0.2, 18.5, 15.8)), dict(type="werken", naam="Werkzone", r=(0.2, 0.2, 9, 15.8)),
                dict(type="vergader", naam="Entree en toiletten", r=(0.2, 16, 8.9, 26.7)), dict(type="sanitair", naam="Torens", r=(18.5, 0.2, 24, 15.8)),
                dict(type="gym", naam="Gym", r=(24, 0.2, 31.4, 15.8))],

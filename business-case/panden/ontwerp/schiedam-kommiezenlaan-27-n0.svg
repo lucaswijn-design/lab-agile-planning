@@ -216,7 +216,6 @@
 <circle cx="24.70" cy="6.20" r="0.78" fill="#9bb07a" fill-opacity="0.55" stroke="#4d6a3a" stroke-width="0.04"/><line x1="24.70" y1="6.20" x2="25.36" y2="6.20" stroke="#4d6a3a" stroke-width="0.03"/><line x1="24.70" y1="6.20" x2="25.17" y2="6.67" stroke="#4d6a3a" stroke-width="0.03"/><line x1="24.70" y1="6.20" x2="24.70" y2="6.86" stroke="#4d6a3a" stroke-width="0.03"/><line x1="24.70" y1="6.20" x2="24.23" y2="6.67" stroke="#4d6a3a" stroke-width="0.03"/><line x1="24.70" y1="6.20" x2="24.04" y2="6.20" stroke="#4d6a3a" stroke-width="0.03"/><line x1="24.70" y1="6.20" x2="24.23" y2="5.73" stroke="#4d6a3a" stroke-width="0.03"/><line x1="24.70" y1="6.20" x2="24.70" y2="5.54" stroke="#4d6a3a" stroke-width="0.03"/><line x1="24.70" y1="6.20" x2="25.17" y2="5.73" stroke="#4d6a3a" stroke-width="0.03"/>
 <polyline points="0.20,0.20 0.20,1.00" fill="none" stroke="#1d1d1b" stroke-width="0.2" stroke-linecap="butt"/>
 <polyline points="5.40,0.20 5.40,1.00" fill="none" stroke="#1d1d1b" stroke-width="0.2" stroke-linecap="butt"/>
-<line x1="-0.00" y1="3.80" x2="-3.00" y2="3.80" stroke="#1d1d1b" stroke-width="0.04"/><path d="M-3.00 3.80 A 3.0 3.0 0 0 0 0.00 6.80" fill="none" stroke="#1d1d1b" stroke-width="0.025" stroke-dasharray="0.08 0.06"/>
 <line x1="-6.00" y1="9.10" x2="-6.00" y2="10.30" stroke="#1d1d1b" stroke-width="0.04"/><path d="M-6.00 10.30 A 1.2 1.2 0 0 0 -4.80 9.10" fill="none" stroke="#1d1d1b" stroke-width="0.025" stroke-dasharray="0.08 0.06"/>
 <polyline points="0.00,0.20 0.00,3.80" fill="none" stroke="#55514a" stroke-width="0.2" stroke-linecap="butt"/>
 <polyline points="0.00,6.80 0.00,8.90" fill="none" stroke="#55514a" stroke-width="0.2" stroke-linecap="butt"/>
@@ -244,7 +243,7 @@
 <line x1="-12.80" y1="19.20" x2="-9.60" y2="19.20" stroke="#fbf9f4" stroke-width="0.24"/><line x1="-12.80" y1="19.20" x2="-9.60" y2="19.20" stroke="#1d1d1b" stroke-width="0.04"/>
 </g>
 <text x="20.80" y="-0.37" font-size="0.42" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">keuken</text>
-<text x="1.20" y="-5.12" font-size="0.42" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">opening</text>
+<text x="1.20" y="-5.12" font-size="0.42" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">opening 3 m</text>
 <text x="-8.90" y="-23.22" font-size="0.42" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">groepsles</text>
 <text x="23.00" y="-16.82" font-size="0.42" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">3 parkeerplaatsen + fietsen</text>
 <text x="-8.00" y="-17.42" font-size="0.42" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.12">tuin (onttegeld)</text>

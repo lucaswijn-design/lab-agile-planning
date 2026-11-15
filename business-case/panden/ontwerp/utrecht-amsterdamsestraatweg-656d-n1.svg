@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.00 -28.50 52.00 33.00" width="1400" height="888" font-family="Work Sans, Helvetica, Arial, sans-serif" role="img" aria-label="Plattegrond Amsterdamsestraatweg 656D, Utrecht">
+<rect x="-3.00" y="-28.50" width="52.00" height="33.00" fill="#fbf9f4"/>
+<g transform="scale(1,-1)">
+<polygon points="0.00,0.00 46.00,0.00 46.00,23.00 1.20,23.00 1.20,8.70 1.00,8.70 1.00,1.20 0.00,1.20 0.00,0.00" fill="#ffffff"/>
+<polygon points="1.20,0.20 5.20,0.20 5.20,22.80 1.20,22.80" fill="#e5d48c" fill-opacity="0.42"/>
+<defs><pattern id="arc" width="0.6" height="0.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.6" stroke="#b9b3a6" stroke-width="0.06"/></pattern></defs>
+<polygon points="5.20,0.20 45.80,0.20 45.80,22.80 5.20,22.80" fill="url(#arc)"/>
+<rect x="1.25" y="8.05" width="2.20" height="1.90" transform="rotate(90.0 2.35 9.00)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="2.10" y="8.70" width="1.40" height="0.60" transform="rotate(90.0 2.80 9.00)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.25" y="10.35" width="2.20" height="1.90" transform="rotate(90.0 2.35 11.30)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="2.10" y="11.00" width="1.40" height="0.60" transform="rotate(90.0 2.80 11.30)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.25" y="12.65" width="2.20" height="1.90" transform="rotate(90.0 2.35 13.60)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="2.10" y="13.30" width="1.40" height="0.60" transform="rotate(90.0 2.80 13.60)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.51" y="22.27" width="1.15" height="0.35" transform="rotate(0.0 2.08 22.45)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.68" y="22.27" width="1.15" height="0.35" transform="rotate(0.0 3.25 22.45)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="3.84" y="22.27" width="1.15" height="0.35" transform="rotate(0.0 4.42 22.45)" fill="#6b4428" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.50" y="19.60" width="0.80" height="0.80" transform="rotate(0.0 1.90 20.00)" fill="#e5d48c" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.50" y="17.00" width="0.80" height="0.80" transform="rotate(0.0 1.90 17.40)" fill="#e5d48c" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<circle cx="2.35" cy="8.60" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="2.35" cy="9.40" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="2.35" cy="10.90" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="2.35" cy="11.70" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="2.35" cy="13.20" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="2.35" cy="14.00" r="0.22" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.35" cy="9.10" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="4.35" cy="10.60" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="4.35" cy="12.10" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="4.35" cy="13.60" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="3.80" cy="18.60" r="0.4" fill="#b08a5e" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="3.80" cy="19.25" r="0.22" fill="#5a3a22" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="3.80" cy="17.95" r="0.22" fill="#5a3a22" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="1.80" cy="1.00" r="0.27999999999999997" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="4.60" cy="21.40" r="0.5599999999999999" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="1.80" cy="15.60" r="0.27999999999999997" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="1.60" cy="6.00" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="4.60" cy="7.00" r="0.4" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="4.00" cy="15.60" r="0.9099999999999999" fill="#9bb07a" fill-opacity="0.55" stroke="#4d6a3a" stroke-width="0.04"/><line x1="4.00" y1="15.60" x2="4.77" y2="15.60" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.00" y1="15.60" x2="4.55" y2="16.15" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.00" y1="15.60" x2="4.00" y2="16.37" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.00" y1="15.60" x2="3.45" y2="16.15" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.00" y1="15.60" x2="3.23" y2="15.60" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.00" y1="15.60" x2="3.45" y2="15.05" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.00" y1="15.60" x2="4.00" y2="14.83" stroke="#4d6a3a" stroke-width="0.03"/><line x1="4.00" y1="15.60" x2="4.55" y2="15.05" stroke="#4d6a3a" stroke-width="0.03"/>
+<polygon points="0.00,0.00 46.00,0.00 46.00,23.00 1.20,23.00 1.20,8.70 1.00,8.70 1.00,1.20 0.00,1.20 0.00,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
+</g>
+<text x="25.50" y="-11.50" font-size="0.62" text-anchor="middle" fill="#55514a" font-style="italic">Vide: hal op volle hoogte</text>
+<text x="3.20" y="-6.40" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Bieb en stille kamers</text><text x="3.20" y="-5.65" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">90 m² · avocado</text>
+<rect x="-1.80" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-0.80" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="0.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.20" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<text x="-1.80" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b">0</text><text x="3.20" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b" text-anchor="middle">5 m</text>
+<polygon points="46.47,-25.81 47.23,-26.90 47.71,-26.98 47.60,-26.51" fill="#1d1d1b"/><text x="46.11" y="-25.27" font-size="0.55" font-weight="600" text-anchor="middle">N</text>
+<text x="-1.80" y="-26.90" font-size="0.9" font-weight="600" fill="#1d1d1b">Amsterdamsestraatweg 656D, Utrecht</text><text x="-1.80" y="-26.10" font-size="0.5" font-family="Space Mono, ui-monospace, monospace" fill="#55514a">VERDIEPING · ONTWERP NOVEMBER 2026 · INDICATIEF</text>
+</svg>

@@ -33,17 +33,17 @@ HOFMAN = dict(
              cam=dict(t=[3.0, 7.5], afstand=6, hoek=0),
              prompt="A small atrium at the back of an office building from 2000, a round roof light above a two storey void, a black steel stair, a tall kentia palm under the roof light, "
                     "a dark green locker wall with trailing pothos on top, smooth sealed concrete floor, warm light."),
-        zone("Wastoren en techniek", "sanitair", R(0.2, 0.2, 6.4, 4.8),
+        zone("Wastoren", "sanitair", R(0.2, 0.2, 6.4, 4.8),
              "Een achthoekige wastoren van 4,6 m met drie toiletten en een V-wastrog, open naar de gang, 2,5 m hoog onder het lage plafond.",
              ["Wastoren met drie toiletten", "Techniek achterin rechts: warmtepomp, ventilatie, meterkast"],
              cam=dict(t=[3.3, 2.6], afstand=6, hoek=0),
              prompt="A low octagonal concrete-look bathroom tower (eight flat faces), 2.5 m high under a 2.9 m concrete ceiling, board-marked plaster, a V-shaped concrete wash trough with brass taps, "
                     "ivy along the top rim, inside a simple office building."),
-        zone("Gang naar de gym", "sanitair", R(6.4, 0.2, 10.0, 7.8),
+        zone("Gang", "sanitair", R(6.4, 0.2, 10.0, 7.8),
              "Tussen wastoren en gym: de garderobe, een bank om schoenen te wisselen en de deur op toegangspas.",
              ["Garderobe en wisselbank", "Deur op toegangspas"], cam=dict(t=[8.2, 4.0], afstand=5, hoek=0),
              prompt="A short corridor in a simple office building with a coat rack made of steel pipes, a wooden bench, a solid door with a card reader, a zz plant."),
-        zone("Techniek en opslag", "techniek", R(0.2, 10.2, 6.4, 14.8),
+        zone("Opslag", "techniek", R(0.2, 10.2, 6.4, 14.8),
              "Achterin rechts: techniek, opslag voor de gym en het café, en een plek voor fietsonderhoud.",
              ["Warmtepomp, ventilatie, meterkast", "Opslag stoelen, matten, voorraad café"], cam=dict(t=[3.3, 12.5], afstand=5, hoek=0),
              prompt="A tidy storage and plant room in an office building, steel shelving, a heat pump unit, bike tools on a wall board."),
@@ -77,33 +77,33 @@ HOFMAN = dict(
             dict(naam="Parkeerplaats en groen", poly=R(21.2, 0.0, 36.0, 15.0), kleur="#c9c3b6")],
     elementen=[
         # begane grond: wastoren, atrium, techniek
-        *achthoektoren([3.2, 2.6], 2.3, 0, "was", H=2.5), *lockerwand([0.45, 7.5], 4.4, 90, h=2.0), boom3([2.6, 7.5], "kentia"),
+        *achthoektoren([3.2, 2.6], 2.3, 0, "was", lockers=(2,), H=2.5), *lockerwand([0.45, 7.5], 4.6, 90, h=2.0), boom3([2.6, 7.5], "kentia"),
         dict(t="box", soort="trap", c=[5.4, 7.2], w=1.2, d=4.4, h=0.3, a=0, kleur=STAAL), label([5.4, 4.6], "trap"),
         dict(t="box", soort="techniek", c=[1.8, 13.2], w=3.0, d=2.8, h=2.4, a=0, kleur="#8f8a80"), label([1.8, 13.2], "techniek"),
         *kasten(3.6, 6.2, 14.55, d=0.4, h=2.2, kleur=STAAL), plant3([5.6, 11.0], "aspidistra"),
         # gang naar de gym
         dict(t="box", soort="garderobe", c=[6.65, 4.0], w=3.0, d=0.4, h=1.8, a=90, kleur=WALNOOT), dict(t="box", soort="bank", c=[9.6, 3.0], w=1.6, d=0.4, h=0.45, a=90, kleur=HOUT),
-        plant3([7.4, 1.0], "zz-plant"), plant3([9.4, 7.2], "sansevieria"),
+        plant3([7.4, 1.0], "zz-plant"), plant3([9.4, 7.2], "sansevieria"), boom3([7.1, 6.9], "dracaena"), plant3([5.8, 13.4], "sansevieria"),
         wand([[10.0, 0.2], [10.0, 4.4]], 3.2, gym=True), deur([10.0, 5.0], 90, toegang=True), wand([[10.0, 5.6], [10.0, 7.8], [21.0, 7.8]], 3.2, gym=True),
         # gym
         *achthoektoren([12.4, 2.6], 2.1, 90, "douche", H=2.5), *rack([19.4, 1.6], 0), *rack([16.5, 1.6], 0),
-        roeier([12.9, 6.9], 0), roeier([16.0, 6.9], 0), dict(t="kleed", c=[17.9, 4.8], w=4.8, d=2.6, a=0, kleur="#c7928a"), label([17.9, 4.8], "matvloer"),
+        roeier([12.9, 6.9], 0), roeier([16.0, 6.9], 0), dict(t="kleed", c=[17.9, 4.8], w=4.8, d=2.6, a=0, kleur="#c7928a"), label([17.9, 4.8], "matvloer"), hangplant([17.9, 4.8], 2.4),
         dict(t="box", soort="kettlebells", c=[20.45, 4.7], w=1.8, d=0.5, h=0.9, a=90, kleur=STAAL), deur([21.0, 6.8], 90, toegang=True),
         plant3([14.8, 5.0], "sansevieria"), boom3([11.0, 6.6], "dracaena"),
         # café
-        deur([21.0, 13.9], 90, w=1.2), *zitnis([20.8, 8.1], [20.8, 12.4]), plant3([20.2, 12.9], "strelitzia nicolai"), *grote_tafel([15.0, 11.0], 4.2, 0),
-        *keuken([10.4, 14.45], 5.0, 0), *kookeiland([10.4, 12.2], 0), boom3([7.4, 9.0], "ficus elastica"), plant3([13.6, 14.2], "monstera"),
-        *[hangplant([u, 11.0], 2.4) for u in (13.6, 16.4)], *tafeltje([8.0, 11.8], 0, 3), plant3([18.4, 14.2], "philodendron"),
+        deur([21.0, 13.9], 90, w=1.2), *zitnis([20.8, 8.1], [20.8, 12.4]), plant3([20.2, 12.9], "strelitzia nicolai"), *grote_tafel([16.0, 10.6], 4.2, 0),
+        *keuken([10.4, 14.45], 5.0, 0), *kookeiland([11.0, 12.0], 0), boom3([7.4, 9.0], "ficus elastica"), boom3([13.0, 8.45], "dracaena"), hangplant([8.6, 9.6], 2.4), plant3([13.6, 14.2], "monstera"),
+        *[hangplant([u, 10.6], 2.4) for u in (14.9, 17.1)], *tafeltje([7.7, 12.4], 0, 3), plant3([18.4, 14.2], "philodendron"),
         # verdieping: vide, lounge, werken, stille kamers
         wand([[1.0, 5.0], [4.7, 5.0], [4.7, 10.0], [1.0, 10.0]], 1.1, glas=True, n=_HL), *[hangplant([u, 5.0], 1.1, _HL) for u in (2.0, 3.6)],
         *vergaderkamer([2.7, 2.5], 4.6, 3.2, 0, 6, _HL), *stavergaderkamer([8.2, 2.3], 3.4, 3.6, 0, 5, _HL), pod2([7.3, 5.9], _HL), pod2([9.0, 5.9], _HL),
         *focuskamer([1.35, 11.4], 90, _HL), *focuskamer([1.35, 13.65], 90, _HL), pod2([3.4, 14.0], _HL), pod2([4.9, 14.0], _HL),
-        plant3([5.9, 12.2], "zz-plant", _HL), plant3([9.4, 13.9], "kentia", _HL), dict(t="box", soort="toiletgroep", c=[8.2, 11.6], w=3.0, d=2.4, h=2.4, a=0, kleur="#bdb7aa", n=_HL), label([8.2, 11.6], "toiletten, pantry"),
+        plant3([5.9, 12.2], "zz-plant", _HL), boom3([9.2, 9.4], "ficus elastica", _HL), plant3([0.6, 4.5], "aspidistra", _HL), plant3([9.4, 13.9], "kentia", _HL), dict(t="box", soort="toiletgroep", c=[8.2, 11.6], w=3.0, d=2.4, h=2.4, a=0, kleur="#bdb7aa", n=_HL), label([8.2, 11.6], "toiletten, pantry", _HL),
         wand([[10.0, 7.8], [15.0, 7.8]], 2.9, glas=True, n=_HL), deur([15.6, 7.8], 0, n=_HL), wand([[16.2, 7.8], [21.0, 7.8]], 2.9, glas=True, n=_HL),
         *veelhoekbank([14.4, 3.8], 1.8, 6, open=(1, 4), n=_HL), *zitnis([20.8, 0.4], [20.8, 6.8], n=_HL), *kasten(10.3, 14.3, 0.45, d=0.35, h=2.2, n=_HL),
         *kasten(10.3, 15.0, 7.55, d=0.3, h=1.2, n=_HL),
         dict(t="box", soort="fauteuil", c=[11.4, 2.4], w=0.8, d=0.8, h=0.8, a=30, kleur="#e5d48c", n=_HL), dict(t="box", soort="fauteuil", c=[11.4, 5.4], w=0.8, d=0.8, h=0.8, a=-30, kleur="#e5d48c", n=_HL),
-        boom3([17.6, 6.6], "ficus elastica", _HL), plant3([17.3, 1.0], "monstera", _HL), *[hangplant([u, 3.8], 2.4, _HL) for u in (13.4, 15.4)],
+        boom3([17.6, 6.6], "ficus elastica", _HL), boom3([10.9, 3.9], "schefflera", _HL), plant3([20.3, 7.3], "philodendron", _HL), boom3([18.6, 8.8], "ficus elastica", _HL), plant3([17.3, 1.0], "monstera", _HL), *[hangplant([u, 3.8], 2.4, _HL) for u in (13.4, 15.4)],
         dict(t="box", soort="raambar", c=[20.45, 11.2], w=6.6, d=0.5, h=1.05, a=90, kleur=HOUT, n=_HL),
         *eiland2([12.4, 11.3], 0, _HL), *eiland2([15.8, 11.3], 0, _HL),
         plant3([10.6, 9.4], "dracaena", _HL), plant3([10.6, 14.2], "zz-plant", _HL), *[hangplant([u, 11.3], 2.4, _HL) for u in (12.4, 15.8)],
@@ -118,7 +118,7 @@ HOFMAN = dict(
     renders=dict(buiten=[]),
 )
 ONTWERPEN.update({"haarlem-hofmanweg-2f": HOFMAN})
-LABELS.update({"haarlem-hofmanweg-2f": {"Café en keuken aan het zuidglas": [14.6, 9.0], "Atrium, trap en lockers": [3.0, 9.4], "Wastoren en techniek": [3.2, 0.9],
-                                        "Gang naar de gym": [8.2, 7.0], "Techniek en opslag": [4.0, 11.2], "Gym (eigen deur)": [14.6, 3.2],
+LABELS.update({"haarlem-hofmanweg-2f": {"Café en keuken aan het zuidglas": [14.6, 9.0], "Atrium, trap en lockers": [3.2, 9.7], "Wastoren": [3.3, 0.7],
+                                        "Gang": [8.2, 6.6], "Opslag": [4.9, 11.6], "Gym (eigen deur)": [14.6, 3.2],
                                         "Lounge en bieb boven de gym": [15.2, 6.6], "Werkzone aan het zuidglas": [15.2, 9.0], "Stille kamers rond de vide": [7.0, 9.2]}})
 VIDES.update({"haarlem-hofmanweg-2f": [dict(naam="Vide: atrium met daklicht", poly=R(1.0, 5.0, 4.7, 10.0), n=1)]})

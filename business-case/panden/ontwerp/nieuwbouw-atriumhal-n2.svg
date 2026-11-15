@@ -20,7 +20,10 @@
 <circle cx="23.60" cy="17.65" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
 <circle cx="24.30" cy="16.15" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
 <circle cx="24.30" cy="17.65" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
-<circle cx="27.40" cy="19.20" r="0.35" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="26.50" cy="17.60" r="0.27999999999999997" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<circle cx="22.00" cy="14.15" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="24.00" cy="14.15" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
+<circle cx="26.00" cy="14.15" r="0.35" fill="none" stroke="#4d6a3a" stroke-width="0.04" stroke-dasharray="0.08 0.06"/>
 <polyline points="21.00,19.80 21.00,14.30 26.60,14.30" fill="none" stroke="#5c7a88" stroke-width="0.14"/><polyline points="21.00,19.80 21.00,14.30 26.60,14.30" fill="none" stroke="#fbf9f4" stroke-width="0.05"/>
 <polygon points="0.00,0.00 28.00,0.00 28.00,20.00 0.00,20.00 0.00,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
 </g>
