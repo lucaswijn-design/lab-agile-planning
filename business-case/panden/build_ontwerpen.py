@@ -16,8 +16,9 @@ import pand_case  # noqa: E402
 from tekening import basis, gebouwen, tekening  # noqa: E402
 from layout import LAYOUTS  # noqa: E402
 
-VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "voorhout-dinsdagse-wetering-56a", "maarssen-herenweg-15",
-            "pernis-ring-15", "uden-nijverheidsstraat-4c", "nieuwbouw-atriumhal"]
+# Ronde 7 (15 november 2026): Voorhout en Uden vallen af op het verzorgingsgebied; de ontwerpen blijven in ontwerp.py staan.
+VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "maarssen-herenweg-15",
+            "pernis-ring-15", "nieuwbouw-atriumhal"]
 SOBER = True  # sobere industriële afwerking met hergebruikte materialen (sober.py), sinds 15 november 2026
 TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True, "den-bosch-eendenkooi-1a": False,
           "voorhout-dinsdagse-wetering-56a": True, "maarssen-herenweg-15": True,

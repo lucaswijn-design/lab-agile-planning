@@ -128,9 +128,9 @@ ol.steps { margin: 0; padding-left: 22px; display: grid; gap: 10px; max-width: 7
 <header class="top">
   <span class="eyebrow">Clubcoöperatie · werving · november 2026</span>
   <h1>85 founding members binnen een kwartier fietsen</h1>
-  <p class="lede">Je gevoel klopt: de club werkt alleen met leden die dichtbij wonen, in dezelfde stad of één halte verder. Dan kun je even binnenlopen voor koffie, een training of een uur werk. Met die eis haalt alleen Utrecht 70 tot 100 eigenaren zonder kunstgrepen. Den Bosch kan het, als je ook in Vught, Rosmalen, Boxtel en Oss werft.</p>
+  <p class="lede">Je gevoel klopt: de club werkt alleen met leden die dichtbij wonen, in dezelfde stad of één halte verder. Dan kun je even binnenlopen voor koffie, een training of een uur werk. Met maximaal 30 tot 40 minuten van deur tot deur halen de grote steden van de Randstad 70 tot 100 eigenaren: Rotterdam, Schiedam, Den Haag, Utrecht, Haarlem en Amsterdam. Den Bosch, Maarssen en Pernis kunnen het, als je breder werft en parkeerplaatsen hebt.</p>
   <div class="answer">
-    <div><b class="num">circa 125</b><span>haalbare eigenaren rond de Van Heutszstraat in Utrecht (60 tot 250) <span class="lbl">schatting</span></span></div>
+    <div><b class="num">circa 150</b><span>haalbare eigenaren rond de Van Heutszstraat in Utrecht, 216 als je tot 8 km of twee haltes meetelt <span class="lbl">schatting</span></span></div>
     <div><b class="num">316.600</b><span>mensen binnen 15 minuten e-bike van Lombok, 38,6% is 25 tot 45 jaar <span class="lbl">bron CBS</span></span></div>
     <div><b class="num">1.200 tot 1.500</b><span>aanmeldingen op de belangstellingslijst nodig voor circa 85 leden <span class="lbl">schatting</span></span></div>
     <div><b class="num">40 tot 60%</b><span>vrouw, geen vakgebied boven 25%, minstens 70% woont binnen 4,5 km of één halte</span></div>
@@ -140,7 +140,7 @@ ol.steps { margin: 0; padding-left: 22px; display: grid; gap: 10px; max-width: 7
 <section class="stack" id="gebied">
   <span class="eyebrow">1 · Verzorgingsgebied</span>
   <h2>Hoeveel eigenaren kan elke locatie vinden?</h2>
-  <p>Per locatie zijn de CBS-buurten opgeteld die binnen 4,5 km hemelsbreed liggen. Dat is ongeveer 15 minuten op een e-bike of 20 minuten gewoon fietsen. Inwoners rond stations die één halte of hooguit 20 minuten met de trein verder liggen, tellen half mee. Het groene vlak is wat de business case nodig heeft: 70 tot 100 eigenaren.</p>
+  <p>Per locatie zijn de CBS-buurten opgeteld die binnen 4,5 km hemelsbreed liggen. Dat is ongeveer 15 minuten op een e-bike of 20 minuten gewoon fietsen. Inwoners rond stations die één halte verder liggen, tellen half mee. Het open rondje is het brede gebied: maximaal 30 tot 40 minuten van deur tot deur, dus tot 8 km fietsen of twee haltes, voor de helft meegeteld. Het groene vlak is wat de business case nodig heeft: 70 tot 100 eigenaren. Bijgewerkt in ronde 7 (15 november 2026): Voorhout en Uden vallen af. De sterkste nieuwe wijken staan in de business case, onder ronde 7.</p>
   <div class="chart" id="chart" role="img" aria-label="Geschatte haalbare eigenaar-leden per locatie met bandbreedte, tegen het doel van 70 tot 100"></div>
   <p class="note">Hoe de schatting werkt: werkenden van 25 tot 65 binnen 4,5 km (CBS 2024). Daarvan alle zelfstandigen plus de helft van wie soms thuiswerkt. 30% kan € 9.000 tot € 15.000 inleggen, 1,5% heeft serieus belangstelling voor dit concept, 40% daarvan wordt betalend eigenaar. Elke stap is <span class="lbl">schatting</span> en bedoeld om locaties te vergelijken, niet als voorspelling. De bandbreedte is de helft tot het dubbele.</p>
 
@@ -301,26 +301,26 @@ ol.steps { margin: 0; padding-left: 22px; display: grid; gap: 10px; max-width: 7
 
 <script>
 const LOC = [
-  {k:'utrecht', naam:'Utrecht', adres:'Van Heutszstraat 4, Lombok-West', station:'Utrecht Centraal op 0,7 km', r15:64805, r3:227505, r45:316600, a:[38.6,20.3,10.8], zelf:15.5, est:125, lo:60, hi:250, oordeel:'haalt het doel', s:'ok',
+  {k:'utrecht', naam:'Utrecht', adres:'Van Heutszstraat 4, Lombok-West', station:'Utrecht Centraal op 0,7 km', r15:64805, r3:227505, r45:316600, a:[38.6,20.3,10.8], zelf:15.5, est:150, lo:75, hi:300, breed:216, oordeel:'behouden', s:'ok',
    tekst:'De enige locatie waar 70 tot 100 eigenaren uit de directe omgeving realistisch is, zelfs in het slechte scenario. Lombok is jong (46% van de buurt is 25 tot 45): werf hier gericht op 50-plussers en net gepensioneerden. De stadsstations Zuilen, Vaartsche Rijn en Leidsche Rijn liggen al binnen de fietsstraal en zijn vooral goede plekken voor flyers en pop-ups.',
    halte:[['Utrecht Vaartsche Rijn','3 min',67660],['Utrecht Zuilen','3 min',59015],['Utrecht Overvecht','4 min',56240],['Utrecht Leidsche Rijn','4 min',32000],['Maarssen','circa 7 min',32935],['Bilthoven','circa 8 min',14400],['Woerden','circa 10 min',29190],['Houten','circa 10 min',27285],['Driebergen-Zeist','circa 10 min',8645],['Amersfoort Centraal','circa 15 min',32050]]},
-  {k:'rietvelden', naam:'Den Bosch, Rietveldenweg', adres:'Rietveldenweg 13, bedrijventerrein De Rietvelden', station:"'s-Hertogenbosch op 0,9 km", r15:16995, r3:71765, r45:127590, a:[29.0,25.9,20.4], zelf:16.9, est:60, lo:30, hi:120, oordeel:'krap', s:'mid',
-   tekst:'Haalbaar als je de hele stad en de stations één halte verder meeneemt: Vught, Rosmalen, Den Bosch Oost, Boxtel en Oss. De leeftijdsopbouw is van nature gemengder dan in Utrecht. Het station ligt op loopafstand, dat is een sterk argument.',
+  {k:'rietvelden', naam:'Den Bosch, Rietveldenweg', adres:'Rietveldenweg 13, bedrijventerrein De Rietvelden', station:"'s-Hertogenbosch op 0,9 km", r15:16995, r3:71765, r45:127590, a:[29.0,25.9,20.4], zelf:16.9, est:59, lo:30, hi:118, breed:84, oordeel:'met parkeren en regio', s:'mid',
+   tekst:'Breed circa 84, met de auto en de 8 eigen parkeerplaatsen circa 97. Haalbaar als je de hele stad en de stations één halte verder meeneemt: Vught, Rosmalen, Den Bosch Oost, Boxtel en Oss. De leeftijdsopbouw is van nature gemengder dan in Utrecht. Het station ligt op loopafstand, dat is een sterk argument.',
    halte:[["'s-Hertogenbosch Oost",'3 min',29700],['Vught','4 min',14235],['Rosmalen','5 min',19525],['Boxtel','circa 10 min',9010],['Zaltbommel','circa 12 min',10040],['Oss','circa 12 min',27940],['Tilburg','circa 15 min',59160]]},
-  {k:'eendenkooi', naam:'Den Bosch, Eendenkooi', adres:'De Eendenkooi 1A, De Schutskamp', station:"'s-Hertogenbosch op 1,6 km", r15:22155, r3:50720, r45:116355, a:[29.2,25.8,20.0], zelf:16.7, est:57, lo:28, hi:115, oordeel:'krap', s:'mid',
+  {k:'eendenkooi', naam:'Den Bosch, Eendenkooi', adres:'De Eendenkooi 1A, De Schutskamp', station:"'s-Hertogenbosch op 1,6 km", r15:22155, r3:50720, r45:116355, a:[29.2,25.8,20.0], zelf:16.7, est:56, lo:28, hi:112, breed:82, oordeel:'met parkeren en regio', s:'mid',
    tekst:'Ligt in een woonbuurt, dus meer mensen op loopafstand, maar verder van het station dan de Rietveldenweg. Werf net zo breed: de hele stad plus Vught, Rosmalen, Boxtel en Oss.',
    halte:[["'s-Hertogenbosch Oost",'3 min',29700],['Vught','4 min',14235],['Rosmalen','5 min',19525],['Boxtel','circa 10 min',9010],['Oss','circa 12 min',27940],['Tilburg','circa 15 min',59160]]},
-  {k:'maarssen', naam:'Maarssen', adres:'Herenweg 15, Maarsseveen', station:'Maarssen op 2,4 km', r15:5620, r3:28240, r45:82550, a:[29.5,24.7,17.6], zelf:16.2, est:52, lo:26, hi:104, oordeel:'alleen met Utrecht', s:'mid',
-   tekst:'De directe omgeving is klein en ouder (26% is 65-plus binnen 1,5 km). Het werkt alleen als je Utrecht Noordwest (Zuilen, Overvecht) en Utrecht Centraal actief meeneemt. Een fietsroute langs de Vecht is dan het verhaal.',
+  {k:'maarssen', naam:'Maarssen', adres:'Herenweg 15, Maarsseveen', station:'Maarssen op 2,4 km', r15:5620, r3:28240, r45:82550, a:[29.5,24.7,17.6], zelf:16.2, est:60, lo:30, hi:120, breed:101, oordeel:'met Utrecht erbij', s:'mid',
+   tekst:'Stijgt het sterkst met de bredere regel: circa 101 tot 8 km of twee haltes, 123 met de auto. De directe omgeving is klein en ouder (26% is 65-plus binnen 1,5 km). Het werkt alleen als je Utrecht Noordwest (Zuilen, Overvecht) en Utrecht Centraal actief meeneemt. Een fietsroute langs de Vecht is dan het verhaal.',
    halte:[['Utrecht Zuilen','3 min',59015],['Breukelen','4 min',9640],['Utrecht Centraal','circa 7 min',78575]]},
-  {k:'pernis', naam:'Pernis', adres:'Ring 15, Pernis (Rotterdam)', station:'Metro Pernis (lijn C); trein Schiedam Centrum op 4,0 km', r15:4990, r3:40930, r45:176470, a:[30.6,25.5,16.2], zelf:16.3, est:55, lo:28, hi:110, oordeel:'krap, over de rivier', s:'mid',
-   tekst:'Pernis zelf telt circa 5.000 inwoners. Van de 176.000 binnen 4,5 km woont een groot deel aan de overkant van de Nieuwe Maas in Schiedam en Vlaardingen, via metrolijn C of de fietsbuis van de Beneluxtunnel. Het hangt af van de vraag of die mensen de oversteek willen maken.',
+  {k:'pernis', naam:'Pernis', adres:'Ring 15, Pernis (Rotterdam)', station:'Metro Pernis (lijn C); trein Schiedam Centrum op 4,0 km', r15:4990, r3:40930, r45:176470, a:[30.6,25.5,16.2], zelf:16.3, est:57, lo:28, hi:114, breed:126, oordeel:'met Schiedam en auto', s:'mid',
+   tekst:'Met de bredere regel circa 126, met de auto circa 178. Pernis zelf telt circa 5.000 inwoners. Van de 176.000 binnen 4,5 km woont een groot deel aan de overkant van de Nieuwe Maas in Schiedam en Vlaardingen, via metrolijn C of de fietsbuis van de Beneluxtunnel. Het hangt af van de vraag of die mensen de oversteek willen maken.',
    halte:[['Metro Vijfsluizen of Tussenwater','2 tot 8 min',null],['Schiedam Centrum (metro)','circa 8 min',33940]]},
-  {k:'voorhout', naam:'Voorhout', adres:'Dinsdagse Wetering 56A, De Knip', station:'Voorhout op 0,6 km', r15:15595, r3:45370, r45:105750, a:[23.3,27.6,22.4], zelf:16.3, est:38, lo:19, hi:76, oordeel:'te dun', s:'bad',
-   tekst:'Ouder en kleiner. Zonder Leiden (6 minuten met de sprinter) is het te dun voor 70 eigenaren. Met Leiden Centraal erbij wordt het een kleinere club met relatief veel clubleden.',
+  {k:'voorhout', naam:'Voorhout', adres:'Dinsdagse Wetering 56A, De Knip', station:'Voorhout op 0,6 km', r15:15595, r3:45370, r45:105750, a:[23.3,27.6,22.4], zelf:16.3, est:36, lo:18, hi:72, breed:69, oordeel:'afgevallen', s:'bad',
+   tekst:'Afgevallen in ronde 7: ook met 8 km fietsen en twee haltes circa 69. Ouder en kleiner. Zonder Leiden (6 minuten met de sprinter) is het te dun voor 70 eigenaren. Met Leiden Centraal erbij wordt het een kleinere club met relatief veel clubleden.',
    halte:[['Hillegom','circa 5 min',10085],['Leiden Centraal','circa 6 min',47065]]},
-  {k:'uden', naam:'Uden', adres:'Nijverheidsstraat 4C, Loopkant', station:'Geen station; bus 306 naar Den Bosch circa 51 min', r15:12620, r3:32925, r45:45060, a:[23.7,27.5,22.2], zelf:16.4, est:13, lo:6, hi:26, oordeel:'te dun', s:'bad',
-   tekst:'De mooiste hal, maar de zwakste plek om leden te vinden. Er is geen station en binnen 4,5 km wonen maar 45.000 mensen. 100 eigenaren uit de omgeving is hier niet realistisch.',
+  {k:'uden', naam:'Uden', adres:'Nijverheidsstraat 4C, Loopkant', station:'Geen station; bus 306 naar Den Bosch circa 51 min', r15:12620, r3:32925, r45:45060, a:[23.7,27.5,22.2], zelf:16.4, est:12, lo:6, hi:24, breed:20, oordeel:'afgevallen', s:'bad',
+   tekst:'Afgevallen in ronde 7: ook met de auto circa 32. De mooiste hal, maar de zwakste plek om leden te vinden. Er is geen station en binnen 4,5 km wonen maar 45.000 mensen. 100 eigenaren uit de omgeving is hier niet realistisch.',
    halte:[]},
 ];
 const fmt = n => n == null ? 'onbekend' : n.toLocaleString('nl-NL');
@@ -338,10 +338,11 @@ function chart(){
     s += `<text x="${left - 12}" y="${y + 4}" text-anchor="end" font-size="13.5" font-weight="500">${l.naam.replace("'", '&#39;')}</text>`;
     s += `<rect x="${x(l.lo)}" y="${y - 5}" width="${x(l.hi) - x(l.lo)}" height="10" rx="3" fill="var(--band)"/>`;
     s += `<circle cx="${x(l.est)}" cy="${y}" r="6.5" fill="${col}"/>`;
+    if (l.breed) s += `<circle cx="${x(Math.min(l.breed, max))}" cy="${y}" r="5.5" fill="var(--bg)" stroke="${col}" stroke-width="2"/>`;
     s += `<text x="${x(l.hi) + 8}" y="${y + 4}" font-size="12.5" class="num" style="fill:var(--muted)">circa ${l.est}</text>`;
   });
   s += `</svg>`;
-  document.getElementById('chart').innerHTML = s + `<div class="legend" style="margin-top:6px"><span><i style="background:var(--band)"></i>bandbreedte (helft tot dubbel)</span><span><i style="background:var(--ok);border-radius:50%"></i>haalt het doel</span><span><i style="background:var(--mid);border-radius:50%"></i>krap of alleen met buren</span><span><i style="background:var(--bad);border-radius:50%"></i>te dun</span><span>horizontaal: geschatte eigenaren</span></div>`;
+  document.getElementById('chart').innerHTML = s + `<div class="legend" style="margin-top:6px"><span><i style="background:var(--band)"></i>bandbreedte (helft tot dubbel)</span><span><i style="background:var(--ok);border-radius:50%"></i>haalt het doel</span><span><i style="background:var(--mid);border-radius:50%"></i>krap of alleen met buren</span><span><i style="background:var(--bad);border-radius:50%"></i>te dun</span><span><i style="background:var(--bg);border:2px solid var(--muted);border-radius:50%"></i>breed: tot 8 km fietsen of twee haltes</span><span>horizontaal: geschatte eigenaren</span></div>`;
 }
 
 function toonLoc(k){
@@ -356,7 +357,7 @@ function toonLoc(k){
       <div><span>Fiets, 3 km</span><b>${fmt(l.r3)}</b></div>
       <div><span>E-bike, 4,5 km</span><b>${fmt(l.r45)}</b></div>
       <div><span>Zelfstandigen onder werkenden</span><b>${String(l.zelf).replace('.', ',')}%</b></div>
-      <div><span>Haalbare eigenaren</span><b>circa ${l.est}</b></div>
+      <div><span>Haalbare eigenaren, kern / breed</span><b>${l.est} / ${l.breed}</b></div>
     </div>
     <div class="stack" style="gap:6px">
       <div class="agebar" role="img" aria-label="Leeftijdsopbouw binnen 4,5 km"><i style="width:${rest}%;background:var(--band)"></i><i style="width:${l.a[0]}%;background:var(--c1)"></i><i style="width:${l.a[1]}%;background:var(--c2)"></i><i style="width:${l.a[2]}%;background:var(--c4)"></i></div>
