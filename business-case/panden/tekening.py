@@ -274,7 +274,7 @@ def tekening(slug, niveau=0, breedte=1400):
     tip = (nx + 1.0 * math.cos(a), ny + 1.0 * math.sin(a)); tail = (nx - 0.7 * math.cos(a), ny - 0.7 * math.sin(a))
     l = (nx + 0.4 * math.cos(a + 2.4), ny + 0.4 * math.sin(a + 2.4)); r_ = (nx + 0.4 * math.cos(a - 2.4), ny + 0.4 * math.sin(a - 2.4))
     s.append(f'<polygon points="{pts([tip, l, tail, r_])}" fill="{INK}"/><text x="{f(nx + 1.5*math.cos(a))}" y="{f(ny + 1.5*math.sin(a) + 0.2)}" font-size="0.55" font-weight="600" text-anchor="middle">N</text>')
-    titel = "Begane grond" if niveau == 0 else "Verdieping"
+    titel = ["Begane grond", "Verdieping", "Tweede verdieping"][min(niveau, 2)]
     s.append(f'<text x="{f(x0+1.2)}" y="{f(y0+1.6)}" font-size="0.9" font-weight="600" fill="{INK}">{esc(O["titel"])}</text>'
              f'<text x="{f(x0+1.2)}" y="{f(y0+2.4)}" font-size="0.5" font-family="{MONO}" fill="#55514a">{titel.upper()} · ONTWERP NOVEMBER 2026 · INDICATIEF</text>')
     s.append("</svg>")

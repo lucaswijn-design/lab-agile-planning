@@ -1238,6 +1238,119 @@ LABELS.update({
 })
 
 
+# ---------------------------------------------------------------- Nieuwbouw: eigen hal met atrium (15 november 2026)
+# Hal 28 x 20 m, 10 m hoog. Glasgevel tot 6 m op het zuiden (v=0) en oosten (u=28). Galerij op 3,6 m (noord en oost), kroon op 7,0 m.
+# West: gym met dakterras erboven. Buffer: entree, wastoren, douchetoren. Midden: atrium met café, zittrap en boom. Oost: werken op twee lagen.
+_GB = [[13.4, 19.8], [13.4, 14.3], [17.8, 14.3]]
+NIEUWBOUW = dict(
+    titel="Eigen nieuwbouwhal met atrium (concept)",
+    sub="Zelf bouwen op een bedrijfskavel: een hal van 28 x 20 m en 10 m hoog met glasgevels op het zuiden en oosten, en drie lagen rond een open atrium",
+    hoogte=10.0, niveaus={"1": 3.6, "2": 7.0}, pui_h=6.0, nieuwbouw=True,
+    concept="Geen bestaand pand verbouwen, maar vanaf nul een hal neerzetten die precies past. Een eenvoudige staalhal met een glasgevel van 6 m hoog op het zuiden en "
+            "oosten. Je komt binnen in de entree tussen de gym en het atrium. Het hart is een open atrium van 10 m hoog met een grote boom, het café, de keuken onder de galerij "
+            "en een brede zittrap die naar de galerij op 3,6 m leidt. De galerij loopt als een L langs de noordwand (vergaderkamers) en langs de oostgevel (werkplekken met "
+            "uitzicht door het glas). Bovenin, op 7 m, hangt de kroonkamer: een stille vergader- en leeskamer onder een lichtstraat. De gym zit aan de westkant achter een dichte "
+            "wand, met de twee ronde torens als buffer, en op het dak boven de gym ligt het dakterras. Alles is vanaf het begin zo ontworpen: geen compromissen met kolommen, "
+            "ramen of vloerhoogtes van een oud pand.",
+    geluid="Gym aan de westkant achter een dichte akoestische wand tot het dak (19,6 x 10 m), met de wastoren en de douchetoren (5,8 m buffer) ertussen. De werkplekken zitten "
+           "aan de andere kant van de hal, 15 m verder. Ingang van de gym vanuit de entree op toegangspas, zodat de gym om 6:00 open kan terwijl de club dicht is. "
+           "40 mm rubber op akoestische ondervloer en zwevende platforms onder de racks, en omdat het nieuwbouw is kan de gymvloer los van de rest van de vloer gestort worden. "
+           "Let op: in een atrium van 10 m hoog draagt elk geluid. Akoestische baffles onder het dak, houten lamellen en veel planten zijn nodig.",
+    pui=[[[0.3, 0], [27.7, 0]], [[28, 0.3], [28, 19.7]]],
+    zones=[
+        zone("Atrium met café", "café", R(13.4, 0.2, 22.6, 19.8),
+             "Het hart van de club onder 10 m hoogte: een grote boom, een ronde bank rond een sfeerhaard, een lange tafel voor twaalf, een raambar langs de glasgevel en "
+             "de zittrap van 4 m breed met boekenkasten in de zijkant. Onder de galerij de keuken van 6,4 m en het kookeiland.",
+             ["Zittrap van 4 m breed naar de galerij, met boeken in de zijkant", "Lange tafel van 4,2 m voor twaalf", "Raambar van 8 m langs het zuidglas (13 krukken)",
+              "Keuken van 6,4 m onder de galerij, kookeiland met espressomachine", "Ronde bank rond een sfeerhaard", "Boom van 6 m hoog in het atrium"],
+             cam=dict(t=[18.0, 8.0], afstand=14, hoek=300),
+             prompt="The heart of a members club inside a brand-new 10 m high steel hall: a full-height open atrium with a 6 m tall indoor tree, a 4 m wide oak seating stair with built-in bookshelves leading up to a gallery at 3.6 m, an olive green kitchen under the gallery with a reclaimed wood island and an espresso machine, a long oak table for twelve, a round olive velvet sofa around a black fireplace, a long bar with stools along a 6 m high glass facade, timber acoustic slats and skylights above."),
+        zone("Werkzone", "werken", R(22.6, 0.2, 28, 19.8),
+             "Langs de oostgevel van glas: drie eilanden van vier zit-sta bureaus onder de galerij, de stalen trap naar boven langs het glas, en achterin twee belcellen en de toiletgroep.",
+             ["Drie eilanden van vier zit-sta bureaus 140 x 70", "Stalen trap naar de galerij langs het glas", "Twee ronde belcellen", "Toiletgroep met twee toiletten en een toegankelijk toilet"],
+             cam=dict(t=[25.3, 7.0], afstand=9, hoek=200),
+             prompt="A coworking zone along a tall glass facade, under a timber and steel gallery at 3.6 m: three islands of four compact sit-stand desks with oak tops and slate blue chairs, a black steel staircase along the glass, round felt phone booths, plants, morning light from the east."),
+        zone("Entree", "entree", R(7.6, 0.2, 13.4, 5.8),
+             "Binnenkomen door de glasgevel: een mat, een bank, een garderobe en de deur naar de gym op toegangspas.",
+             ["Gymdeur op toegangspas, ook buiten openingstijden", "Garderobe en bank"], cam=dict(t=[10.5, 3.0], afstand=7, hoek=270),
+             prompt="The entrance of a members club in a new steel hall: a coir mat, a long wooden bench, a coat rack, sand coloured walls with palm green accents, a black steel door with a card reader to the gym, a view into the high atrium with a tree."),
+        zone("Torens", "sanitair", R(7.6, 5.8, 13.4, 19.8),
+             "De twee ronde torens als buffer tussen de gym en het atrium. De wastoren opent naar het atrium, de douchetoren alleen naar de gym.",
+             ["Wastoren 5,5 m met V-wastrog", "Douchetoren 4,5 m, alleen vanuit de gym", "Lockers langs de noordwand"], cam=dict(t=[10.5, 12.0], afstand=9, hoek=0),
+             prompt="Two round concrete-look bathroom towers, 3 m high, standing inside a 10 m high new steel hall next to an open atrium, board-marked plaster, a V-shaped concrete wash trough with brass taps, ivy hanging over the rims, skylights above."),
+        zone("Gym (afsluitbaar)", "gym", R(0.2, 0.2, 7.6, 19.8),
+             "De hele westkant: vier racks langs de westwand, een vloer voor groepslessen, roeiers aan het zuidglas. Dichte wand tot het dak, deur op toegangspas vanuit de entree.",
+             ["Vier racks op zwevende platforms", "Groepslesvloer van 2,6 x 7 m", "Twee roeiers met uitzicht door het glas", "Douchetoren direct vanuit de gym"],
+             cam=dict(t=[3.9, 10.0], afstand=10, hoek=0),
+             prompt="A functional gym in the west end of a new 10 m high steel hall, closed off by a solid acoustic wall: four black power racks on oak platforms along the wall, a mat area, two rowing machines facing a tall glass facade, anthracite rubber floor, one wall oxblood red, plants."),
+        dict(zone("Galerij: vergaderen", "vergader", R(13.4, 14.3, 28, 19.8),
+                  "Op 3,6 m langs de noordwand: een vergaderkamer voor acht en een voor zes, drie belcellen, en de trap naar de kroonkamer.",
+                  ["Vergaderkamers voor 8 en 6, half glas, half dicht", "Drie ronde belcellen", "Glazen balustrade naar het atrium"], n=1,
+                  cam=dict(t=[19.0, 17.0], afstand=9, hoek=270),
+                  prompt="A gallery 3.6 m above the floor of a new high hall: two meeting rooms with half glass walls, oak tables and slate blue acoustic panels, round phone booths, a glass balustrade overlooking an atrium with a tall tree."), tussenvloer=True),
+        dict(zone("Galerij: werken aan het glas", "werken", R(22.6, 0.2, 28, 14.3),
+                  "Op 3,6 m langs de oostgevel: drie eilanden van vier bureaus en een raambar van 7,6 m pal achter het glas. Hier zit je tussen het atrium en het uitzicht.",
+                  ["Drie eilanden van vier zit-sta bureaus", "Raambar van 7,6 m langs het glas (12 krukken)", "Glazen balustrade naar het atrium"], n=1,
+                  cam=dict(t=[25.3, 7.0], afstand=9, hoek=180),
+                  prompt="A work gallery 3.6 m up along a tall glass facade of a new steel hall: islands of compact sit-stand desks, a long oak bar with stools directly against the glass, a glass balustrade on the other side overlooking an atrium with a tree and a seating stair, acoustic timber slats overhead."), tussenvloer=True),
+        dict(zone("Kroonkamer", "bieb", R(21.0, 14.3, 28, 19.8),
+                  "Op 7 m, onder een lichtstraat: een stille kamer voor zes met boeken langs de wand, te boeken als vergaderkamer, met uitzicht over het hele atrium.",
+                  ["Vergaderkamer voor zes, ook stille leeskamer", "Boekenwand langs de noordwand", "Lichtstraat erboven"], n=2,
+                  cam=dict(t=[24.5, 17.0], afstand=8, hoek=270),
+                  prompt="A quiet reading and meeting room hanging 7 m high in a new steel hall, under a skylight: deep olive walls, a walnut bookshelf wall, a table for six, butter yellow armchairs, a glass balustrade with a view down into a full-height atrium with a tree."), tussenvloer=True),
+    ],
+    buiten=[dict(naam="Terras op het zuiden", poly=R(0, -6, 28, 0), kleur="#d5bd96"), dict(naam="Tuin", poly=R(28.3, -6, 36, 20.5), kleur="#8ea36a"),
+            dict(naam="Parkeerplaats en groen", poly=R(-4, -14.5, 36, -6), kleur="#c9c3b6"), dict(naam="Straat", poly=R(-40, -26, 75, -16), kleur="#9a958c")],
+    elementen=[
+        # atrium
+        *keuken([18.0, 19.47], 6.4), *kookeiland([18.0, 16.9]),
+        dict(t="box", soort="trap", c=[15.6, 11.8], w=4.0, d=5.0, h=0.3, a=0, kleur=HOUT), label([15.6, 8.9], "zittrap"), label([27.3, 5.6], "trap"),
+        *kasten(9.3, 14.3, 13.45, a=90, d=0.3, h=2.0), *grote_tafel([20.4, 10.0], 4.2, 90), *zitkuil([17.0, 5.2], 1.8, 300, "#6f7d3a", "#d9ccb0"),
+        dict(t="box", soort="raambar", c=[18.0, 0.6], w=8.0, d=0.5, h=1.05, a=0, kleur=HOUT),
+        boom([21.0, 4.2], 1.6, 6.5), plant([14.2, 1.6], 0.45, 1.4), plant([22.0, 15.0], 0.4, 1.2),
+        # werken begane grond
+        *eiland2([25.0, 2.8], 90), *eiland2([25.0, 6.8], 90), *eiland2([25.0, 10.8], 90),
+        dict(t="box", soort="trap", c=[27.3, 3.0], w=1.2, d=4.4, h=0.3, a=0, kleur=STAAL),
+        pod2([23.6, 15.4]), pod2([25.3, 15.4]), dict(t="box", soort="toiletgroep", c=[25.3, 18.8], w=5.0, d=2.0, h=2.6, a=0, kleur="#bdb7aa"), label([25.3, 18.8], "toiletten"),
+        # entree, torens, gym
+        dict(t="kleed", c=[10.5, 1.6], w=2.4, d=1.6, a=0, kleur="#d5bd96"), dict(t="box", soort="bank", c=[12.6, 3.4], w=0.5, d=2.4, h=0.45, a=0, kleur=HOUT),
+        dict(t="box", soort="garderobe", c=[8.2, 4.8], w=0.6, d=1.6, h=1.8, a=0, kleur=WALNOOT), plant([12.8, 0.9]),
+        *toren([10.5, 9.0], 2.75, 0, "was"), *toren([9.9, 15.2], 2.25, 180, "douche"),
+        dict(t="box", soort="lockers", c=[10.5, 19.4], w=5.0, d=0.6, h=2.2, a=0, kleur="#a7a296"), label([10.5, 18.6], "lockers"),
+        wand([[7.6, 0.2], [7.6, 2.4]], 10.0, gym=True), deur([7.6, 3.0], 90, toegang=True), wand([[7.6, 3.6], [7.6, 14.6]], 10.0, gym=True),
+        wand([[7.6, 15.8], [7.6, 19.8]], 10.0, gym=True),
+        *rack([1.6, 6.0], 90), *rack([1.6, 9.5], 90), *rack([1.6, 13.0], 90), *rack([1.6, 16.5], 90),
+        roeier([3.4, 2.0], 90), roeier([5.0, 2.0], 90), dict(t="kleed", c=[4.8, 11.0], w=2.6, d=7.0, a=0, kleur="#c7928a"),
+        dict(t="box", soort="kettlebells", c=[4.8, 19.0], w=2.0, d=0.5, h=0.9, a=0, kleur=STAAL), plant([6.8, 0.9]),
+        # galerij 3,6 m
+        wand([[17.8, 14.3], [22.6, 14.3], [22.6, 0.2]], 1.1, glas=True, n=1), wand(_GB[:2], 1.1, glas=True, n=1),
+        pod2([14.2, 16.0], 1), pod2([14.2, 18.4], 1), *vergaderkamer([17.8, 17.75], 5.2, 4.0, 0, 8, 1), *vergaderkamer([22.4, 17.75], 4.0, 4.0, 0, 6, 1),
+        pod2([25.5, 18.6], 1), dict(t="box", soort="trap", c=[27.3, 16.6], w=1.2, d=4.4, h=0.3, a=0, kleur=STAAL, n=1), label([27.3, 13.9], "trap", 1),
+        *eiland2([25.0, 2.8], 90, 1), *eiland2([25.0, 6.8], 90, 1), *eiland2([25.0, 10.8], 90, 1),
+        dict(t="box", soort="raambar", c=[27.65, 9.8], w=7.6, d=0.5, h=1.05, a=90, kleur=HOUT, n=1), plant([23.2, 13.6], 0.4, 1.2, 1),
+        # kroon 7,0 m
+        wand([[21.0, 19.8], [21.0, 14.3], [26.6, 14.3]], 1.1, glas=True, n=2),
+        *vergaderkamer([23.6, 16.9], 4.8, 4.4, 0, 6, 2), *kasten(21.4, 26.4, 19.55, n=2, h=2.2, d=0.3),
+        dict(t="box", soort="fauteuil", c=[27.2, 15.4], w=0.8, d=0.8, h=0.8, a=0, kleur="#e5d48c", n=2), plant([27.4, 19.2], 0.35, 1.0, 2),
+        # buiten
+        boom([30.5, 3.0], 1.2, 4.0), boom([33.5, 12.0], 1.2, 4.0), boom([31.0, 17.5], 1.0, 3.5), boom([2.0, -4.0], 1.0, 3.5),
+        *tafeltje([8.0, -3.0], 0, 4), *tafeltje([14.0, -3.2], 0, 4), *tafeltje([20.0, -3.0], 0, 4),
+    ],
+    dak=dict(soort="pv", terras=R(0.6, 0.6, 7.2, 19.4), trap_buiten=[-0.9, 6.0], groen=[], pv=[R(13.6, 0.8, 27.4, 6.0), R(23.0, 7.5, 27.4, 19.2)],
+             koepels=[[17.5, 9.0, 1.2], [17.5, 4.0, 1.2], [24.5, 17.0, 1.0], [10.5, 9.0, 0.9], [9.9, 15.2, 0.8]],
+             tekst="Plat dak met zonnepanelen boven het atrium en de werkzone, lichtstraten boven het atrium, de kroonkamer en de torens, en het dakterras van 120 m² boven de gym "
+                   "met een buitentrap aan de westgevel. Het dak boven de gym is vanaf het begin berekend op een terras, dus geen versterking achteraf.",
+             tekst_en="Flat roof with solar panels above the atrium and the work zone, round skylights above the atrium and the towers, and a 120 m² wooden roof terrace above the gym on the west side with a black steel balustrade, planters, a pergola and an external steel stair along the west facade."),
+    renders=dict(buiten=[]),
+)
+ONTWERPEN.update({"nieuwbouw-atriumhal": NIEUWBOUW})
+LABELS.update({"nieuwbouw-atriumhal": {"Atrium met café": [19.2, 15.3], "Werkzone": [25.3, 13.5], "Entree": [10.5, 5.0],
+                                       "Torens": [10.5, 12.65], "Gym (afsluitbaar)": [4.0, 18.0], "Galerij: vergaderen": [18.5, 15.15],
+                                       "Galerij: werken aan het glas": [25.0, 8.95], "Kroonkamer": [23.6, 14.9]}})
+VIDES.update({"nieuwbouw-atriumhal": [dict(naam="Vide: atrium 10 m hoog", poly=R(13.4, 0.2, 22.6, 14.3), n=1),
+                                      dict(naam="Vide: atrium", poly=R(13.4, 0.2, 22.6, 14.3), n=2)]})
+
+
 # ---------------------------------------------------------------- inbouw uit het ontwerp, bottom-up (bovenop budget.py)
 def inbouw_rows(slug, gym_m2):
     """Kosten die uit de v2-indeling volgen en niet al in budget.py zitten (excl. btw).

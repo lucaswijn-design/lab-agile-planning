@@ -80,17 +80,19 @@ def main(alleen=None):
         nivs = [0] + [int(x) for x in O.get("niveaus", {})]
         for n in nivs:
             svg = os.path.join(HERE, "ontwerp", f"{slug}-n{n}.svg")
-            subprocess.run(["node", os.path.join(HERE, "render_svg.js"), svg, os.path.join(d, f"05-plattegrond-{'begane-grond' if n == 0 else 'verdieping'}.png"), "2000"], check=True, cwd="/tmp")
+            subprocess.run(["node", os.path.join(HERE, "render_svg.js"), svg, os.path.join(d, f"05-plattegrond-{['begane-grond', 'verdieping', 'tweede-verdieping'][n]}.png"), "2000"], check=True, cwd="/tmp")
         for f in KLEURBORD:
             if os.path.exists(f):
                 shutil.copy(f, os.path.join(d, "06-" + os.path.basename(f).lower()))
         fotomap = os.path.join(HERE, "dossiers", slug + "-fotos")
         bp = os.path.join(fotomap, "bron.json")
         bron = json.load(open(bp)) if os.path.exists(bp) else {}
-        luchtfoto(slug, O, os.path.join(d, "08-luchtfoto-pdok.jpg"))
+        if not O.get("nieuwbouw"):
+            luchtfoto(slug, O, os.path.join(d, "08-luchtfoto-pdok.jpg"))
         # LEESMIJ
         L = [f"# Renderpakket {O['titel']}", "",
-             (f"Status advertentie bij het maken van dit pakket: {'te koop' if bron.get('te_koop') else 'ONBEKEND'}, vraagprijs {bron.get('prijs')}, bron {bron.get('url')}."
+             ("Nieuwbouwconcept: er is geen bestaand pand en er zijn geen advertentiefoto's. Alle beelden komen uit de maquette." if O.get("nieuwbouw") else
+              f"Status advertentie bij het maken van dit pakket: {'te koop' if bron.get('te_koop') else 'ONBEKEND'}, vraagprijs {bron.get('prijs')}, bron {bron.get('url')}."
               if bron else "Geen advertentiefoto's beschikbaar (funda in business blokkeert automatische toegang). Download de foto's zelf van de advertentie en geef ze bij de prompts mee; tot die tijd werk je vanuit de maquette en de luchtfoto."),
              "Foto's met 'foto' in de naam zijn van de makelaar: alleen voor eigen gebruik, niet publiceren.", "",
              "## Zo gebruik je dit in ChatGPT",
@@ -102,7 +104,7 @@ def main(alleen=None):
              "## Overzichtsbeelden", "",
              "### A. Hele gebouw met het dak eraf",
              "Bestand: 01-maquette-dak-eraf.png (of 02 voor de andere kant)", "",
-             "```", "This is a simple white architectural model of a members club inside an existing building, with the roof removed. "
+             "```", f"This is a simple white architectural model of a members club inside {'a brand-new 10 m high steel hall with 6 m high glass facades and three levels around an open atrium' if O.get('nieuwbouw') else 'an existing building'}, with the roof removed. "
              "Turn it into a photorealistic architectural cutaway render from exactly the same camera angle. Keep every wall, round element and piece of furniture "
              "where it is: the round seating around the fireplace, the round bookshelf room, the two round bathroom towers with plants on top, the desk islands, the gym racks. "
              + MAQ_STIJL, "```", "",
@@ -116,7 +118,7 @@ def main(alleen=None):
             if os.path.exists(src):
                 shutil.copy(src, os.path.join(d, fn))
             L += [f"### Buiten: {naam}", f"Bestand: {fn}", "", "```", prompt + " Photorealistic, natural light, no text.", "```", ""]
-        L += ["### Luchtfoto met nieuw dak", "Bestand: 08-luchtfoto-pdok.jpg (open data PDOK, de clubgebouwen zijn rood omlijnd)", "", "```",
+        if not O.get("nieuwbouw"): L += ["### Luchtfoto met nieuw dak", "Bestand: 08-luchtfoto-pdok.jpg (open data PDOK, de clubgebouwen zijn rood omlijnd)", "", "```",
               "This is a top-down aerial photo. Keep everything exactly as it is, except the buildings outlined in red: remove the red outline and show them renovated as a members club. "
               f"Roof: {O['dak']['tekst_en']} Add greenery and trees on the outdoor space of the plot. Photorealistic aerial photo, same lighting and season.", "```", ""]
         L += ["## Ruimte voor ruimte", ""]

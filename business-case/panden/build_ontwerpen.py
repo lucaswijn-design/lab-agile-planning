@@ -17,10 +17,10 @@ from tekening import basis, gebouwen, tekening  # noqa: E402
 from layout import LAYOUTS  # noqa: E402
 
 VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "voorhout-dinsdagse-wetering-56a", "maarssen-herenweg-15",
-            "pernis-ring-15", "uden-nijverheidsstraat-4c"]
+            "pernis-ring-15", "uden-nijverheidsstraat-4c", "nieuwbouw-atriumhal"]
 TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True, "den-bosch-eendenkooi-1a": False,
           "voorhout-dinsdagse-wetering-56a": True, "maarssen-herenweg-15": True,
-          "pernis-ring-15": True, "uden-nijverheidsstraat-4c": True}
+          "pernis-ring-15": True, "uden-nijverheidsstraat-4c": True, "nieuwbouw-atriumhal": True}
 
 
 def werkplekken(O):
@@ -50,6 +50,14 @@ def pand(slug):
     cx, cz = (min(xs) + max(xs)) / 2, (min(ys) + max(ys)) / 2
     size = max(max(xs) - min(xs), max(ys) - min(ys))
     ctx = [c for c in ctx if math.dist(ontwerp_c(c["ring"]), (cx, cz)) < 75]
+    plans = [dict(naam=["Begane grond", "Verdieping 3,6 m", "Kroon 7,0 m"][n] if O.get("nieuwbouw") else ["Begane grond", "Verdieping"][n], svg=tekening(slug, n))
+             for n in [0] + [int(k) for k in O.get("niveaus", {})]]
+    if O.get("nieuwbouw"):  # geen pand_case: bottom-up nieuwbouwmodel (atrium.py), 80 eigenaren + 30 clubleden
+        import atrium
+        r = atrium.run(40, 40, 30, werkplekken=werkplekken(O))
+        kpi = dict(koop=r["groepen"]["Grond"], koop_label="Grond (kavel 1.400 m²)", capex=r["capex"], fee=r["fee_run"], inleg=r["fee_inleg"], ltv=r["ltv"],
+                   werkplekken=werkplekken(O), **{k: v for k, v in telling(O).items() if k != 'werkplekken'})
+        return dict(slug=slug, footprint=fp, gebouwen=G, context=ctx, ontwerp=O, cx=cx, cz=cz, size=size, noord=noord, kpi=kpi, terras=None, plans=plans)
     t = TORENS[slug]
     r = pand_case.run(slug, torens=t)
     kpi = dict(koop=LAYOUTS[slug]["koop"]["totaal"], capex=r["capex"], fee=r["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t),
@@ -59,9 +67,6 @@ def pand(slug):
     if rows:
         rt = pand_case.run(slug, torens=t, extra=rows)
         terras = dict(rows=rows, totaal=sum(x["totaal"] for x in rows), fee=rt["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t, extra=rows))
-    plans = [dict(naam="Begane grond", svg=tekening(slug, 0))]
-    if O.get("niveaus"):
-        plans.append(dict(naam="Verdieping", svg=tekening(slug, 1)))
     return dict(slug=slug, footprint=fp, gebouwen=G, context=ctx, ontwerp=O, cx=cx, cz=cz, size=size, noord=noord, kpi=kpi, terras=terras, plans=plans)
 
 

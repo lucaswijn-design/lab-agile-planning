@@ -327,7 +327,7 @@ function gevels(g, P, fp, h){
     const seg = (a, b, y0, hh, m, opt = {}) => { const c = [A[0] + ux*(a + b)/2, A[1] + uz*(a + b)/2]; const ms = box(g, c, b - a, .3, hh, ang, '#f3efe7', y0, Object.assign({mat:m, edges:true}, opt)); return ms; };
     for (const [a, b] of dichte) seg(a, b, 0, h, wandMat);
     for (const [a, b] of open){
-      const top = Math.min(3.1, h - .5);
+      const top = Math.min(P.ontwerp.pui_h || 3.1, h - .5);
       seg(a, b, 0, .45, wandMat); seg(a, b, .45, top - .45, glas, {cast:false}); seg(a, b, top, h - top, wandMat);
       const n = Math.max(1, Math.round((b - a)/1.6)); for (let k = 0; k <= n; k++){ const tt = a + (b - a)*k/n; box(g, [A[0] + ux*tt, A[1] + uz*tt], .07, .34, top, ang, '#1f2022', 0); }
     }
@@ -342,6 +342,7 @@ function bouw(P){
   const S = 60; Object.assign(sun.shadow.camera, {left:-S, right:S, top:S, bottom:-S, near:1, far:220}); sun.shadow.mapSize.set(2048, 2048); sun.shadow.bias = -.0005;
   const cx = P.cx, cz = P.cz; sun.position.x += cx; sun.position.z -= cz; sun.target.position.set(cx, 0, -cz); scene.add(sun, sun.target);
   const O = P.ontwerp, h = O.hoogte, L1 = (O.niveaus || {})['1'];
+  const yN = n => n ? ((O.niveaus || {})[String(n)] || L1) : 0;  // vloerhoogte per niveau (1, 2, ...)
   const gr = add(scene, new THREE.PlaneGeometry(400, 400), mat('#e4ddcf'), {cast:false}); gr.rotation.x = -Math.PI/2; gr.position.set(cx, -.02, -cz);
   groups = {ctx:new THREE.Group(), buiten:new THREE.Group(), schil:new THREE.Group(), vloer:new THREE.Group(), in0:new THREE.Group(), in1:new THREE.Group(), dak:new THREE.Group(), dakplus:new THREE.Group(), l1:new THREE.Group()};
   // (u, v) is rechtshandig zoals (oost, noord); three.js (x, z) van boven gezien niet: spiegel z
@@ -358,9 +359,9 @@ function bouw(P){
   const midden = p => [p.reduce((a, q) => a + q[0], 0)/p.length, p.reduce((a, q) => a + q[1], 0)/p.length];
   // verdieping
   if (L1){
-    for (const z of O.zones) if (z.n === 1){ add(groups.l1, extrude(shapeOf(z.poly), .25, L1 - .25), mat('#f7f4ee'), {edges:true}); add(groups.l1, extrude(shapeOf(z.poly), .01, L1), mat(z.kleur), {cast:false}); }
+    for (const z of O.zones) if (z.n >= 1){ const y = yN(z.n); add(groups.l1, extrude(shapeOf(z.poly), .25, y - .25), mat('#f7f4ee'), {edges:true}); add(groups.l1, extrude(shapeOf(z.poly), .01, y), mat(z.kleur), {cast:false}); }
   }
-  for (const e of O.elementen){ const n = e.n || 0; element(n ? groups.in1 : groups.in0, e, n ? L1 : 0); }
+  for (const e of O.elementen){ const n = e.n || 0; element(n ? groups.in1 : groups.in0, e, yN(n)); }
   // dak
   for (const b of GB) add(groups.dak, extrude(shapeOf(b.ring), .35, b.h), mat('#dcd7cc'), {edges:true});
   const D = O.dak;
@@ -410,12 +411,12 @@ function view_(k){
   document.querySelectorAll('#cams button').forEach(b => b.setAttribute('aria-pressed', b.dataset.k === String(k)));
   const h = P.ontwerp.hoogte, L1 = (P.ontwerp.niveaus || {})['1'] || 0;
   groups.schil.scale.y = 1;
-  if (typeof k === 'number'){ const zn = P.ontwerp.zones[k]; groups.schil.scale.y = Math.min(1, ((zn.n ? L1 : 0) + 1.4)/h); }
+  if (typeof k === 'number'){ const zn = P.ontwerp.zones[k]; const yz = zn.n ? ((P.ontwerp.niveaus || {})[String(zn.n)] || L1) : 0; groups.schil.scale.y = Math.min(1, (yz + 1.4)/h); }
   if (k === 'axo') return camTo([P.cx, P.cz, 0], P.size*1.55, 225, 42);
   if (k === 'axo2') return camTo([P.cx, P.cz, 0], P.size*1.55, 45, 42);
   if (k === 'boven'){ camTo([P.cx, P.cz, 0], P.size*1.6, 270, 89); return; }
   const z = P.ontwerp.zones[k]; const c = z.cam || {t: z.label || [P.cx, P.cz], afstand: 10, hoek: 210};
-  const y = z.n ? (P.ontwerp.niveaus || {})['1'] : 0;
+  const y = z.n ? ((P.ontwerp.niveaus || {})[String(z.n)] || (P.ontwerp.niveaus || {})['1']) : 0;
   camTo([c.t[0], c.t[1], y], c.afstand*1.5, c.hoek, 50);
 }
 
@@ -429,7 +430,7 @@ function kies(i){
   document.getElementById('p-geluid').textContent = O.geluid || '';
   const k = P.kpi;
   document.getElementById('p-kpis').innerHTML = [
-    ['Vraagprijs', euro(k.koop)], ['Alles in', euro(k.capex)], ['Om te draaien, vol lid', euro(k.fee) + ' /mnd'], ['Inleg terug na 5 jaar', euro(k.inleg) + ' /mnd'],
+    [k.koop_label || 'Vraagprijs', euro(k.koop)], ['Alles in', euro(k.capex)], ['Om te draaien, vol lid', euro(k.fee) + ' /mnd'], ['Inleg terug na 5 jaar', euro(k.inleg) + ' /mnd'],
     ['Lening', Math.round(k.ltv*100) + '%'], ['Werkplekken', k.werkplekken + ' (' + k.bureaus + ' zit-sta)'],
     ['Vergaderkamers', (k.vergaderkamers || []).map(p => 'voor ' + p).join(', ') || 'geen'], ['Belcellen', k.belcellen]
   ].map(([a, b]) => `<div class="kpi"><span class="k">${a}</span><span class="v">${b}</span></div>`).join('');
