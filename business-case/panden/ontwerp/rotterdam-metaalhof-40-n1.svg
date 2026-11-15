@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.00 -32.37 37.61 36.87" width="1400" height="1372" font-family="Work Sans, Helvetica, Arial, sans-serif" role="img" aria-label="Plattegrond Metaalhof 40, Rotterdam Het Lage Land">
+<rect x="-3.00" y="-32.37" width="37.61" height="36.87" fill="#fbf9f4"/>
+<g transform="scale(1,-1)">
+<polygon points="31.61,15.99 9.96,15.99 8.89,15.99 8.92,19.32 8.94,22.15 8.98,26.87 8.05,26.87 0.00,26.87 0.00,10.12 0.00,5.43 0.00,0.00 31.40,0.00 31.61,0.00 31.61,15.99" fill="#ffffff"/>
+<polygon points="0.20,0.20 9.00,0.20 9.00,26.70 0.20,26.70" fill="#e3e6e2" fill-opacity="0.42"/>
+<defs><pattern id="arc" width="0.6" height="0.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.6" stroke="#b9b3a6" stroke-width="0.06"/></pattern></defs>
+<rect x="0.50" y="0.70" width="8.20" height="4.60" transform="rotate(0.0 4.60 3.00)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="3.40" y="2.50" width="2.40" height="1.00" transform="rotate(0.0 4.60 3.00)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="8.51" y="2.30" width="0.08" height="1.40" transform="rotate(0.0 8.55 3.00)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="0.50" y="5.90" width="8.20" height="4.20" transform="rotate(0.0 4.60 8.00)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="3.60" y="7.50" width="2.00" height="1.00" transform="rotate(0.0 4.60 8.00)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="8.51" y="7.30" width="0.08" height="1.40" transform="rotate(0.0 8.55 8.00)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.45" y="14.55" width="1.40" height="0.70" transform="rotate(90.0 3.15 14.90)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="3.78" cy="14.90" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="1.75" y="14.55" width="1.40" height="0.70" transform="rotate(270.0 2.45 14.90)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="1.82" cy="14.90" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="2.45" y="15.95" width="1.40" height="0.70" transform="rotate(90.0 3.15 16.30)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="3.78" cy="16.30" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="1.75" y="15.95" width="1.40" height="0.70" transform="rotate(270.0 2.45 16.30)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="1.82" cy="16.30" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="6.05" y="14.55" width="1.40" height="0.70" transform="rotate(90.0 6.75 14.90)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="7.38" cy="14.90" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="5.35" y="14.55" width="1.40" height="0.70" transform="rotate(270.0 6.05 14.90)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="5.42" cy="14.90" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="6.05" y="15.95" width="1.40" height="0.70" transform="rotate(90.0 6.75 16.30)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="7.38" cy="16.30" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="5.35" y="15.95" width="1.40" height="0.70" transform="rotate(270.0 6.05 16.30)" fill="#efe7d6" stroke="#1d1d1b" stroke-width="0.03"/><circle cx="5.42" cy="16.30" r="0.24" fill="#fff" stroke="#1d1d1b" stroke-width="0.025"/>
+<rect x="2.60" y="19.50" width="4.00" height="3.80" transform="rotate(0.0 4.60 21.40)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="3.90" y="20.90" width="1.40" height="1.00" transform="rotate(0.0 4.60 21.40)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="6.41" y="20.70" width="0.08" height="1.40" transform="rotate(0.0 6.45 21.40)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<circle cx="3.70" cy="2.25" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="3.70" cy="3.75" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.30" cy="2.25" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.30" cy="3.75" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.90" cy="2.25" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.90" cy="3.75" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="5.50" cy="2.25" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="5.50" cy="3.75" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="3.90" cy="7.25" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="3.90" cy="8.75" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.60" cy="7.25" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.60" cy="8.75" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="5.30" cy="7.25" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="5.30" cy="8.75" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="1.20" cy="11.40" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="2.90" cy="11.40" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="4.60" cy="11.40" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="4.20" cy="20.65" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="4.20" cy="22.15" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="5.00" cy="20.65" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="5.00" cy="22.15" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="1.30" cy="25.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="3.10" cy="25.30" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="7.60" cy="25.60" r="0.4" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<polygon points="31.61,15.99 9.96,15.99 8.89,15.99 8.92,19.32 8.94,22.15 8.98,26.87 8.05,26.87 0.00,26.87 0.00,10.12 0.00,5.43 0.00,0.00 31.40,0.00 31.61,0.00 31.61,15.99" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
+</g>
+<text x="4.60" y="-20.00" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">vergaderen en stil werken</text><text x="4.60" y="-19.25" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">233 m² · rotskust</text>
+<rect x="-1.80" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-0.80" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="0.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.20" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<text x="-1.80" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b">0</text><text x="3.20" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b" text-anchor="middle">5 m</text>
+<polygon points="33.78,-30.13 32.46,-30.18 32.13,-30.54 32.59,-30.70" fill="#1d1d1b"/><text x="34.26" y="-29.80" font-size="0.55" font-weight="600" text-anchor="middle">N</text>
+<text x="-1.80" y="-30.77" font-size="0.9" font-weight="600" fill="#1d1d1b">Metaalhof 40, Rotterdam Het Lage Land</text><text x="-1.80" y="-29.97" font-size="0.5" font-family="Space Mono, ui-monospace, monospace" fill="#55514a">VERDIEPING · ONTWERP NOVEMBER 2026 · INDICATIEF</text>
+</svg>

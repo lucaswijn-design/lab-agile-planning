@@ -127,6 +127,8 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False, extra=Non
     add("Buiten", "Fietsenstalling 40 plekken", 1, "post", 3_000, "schatting", 0.3)
     add("Buiten", "Parkeerplaatsen belijnen", 1, "post", 1_000, "schatting")
 
+    for r in L.get("extra_rows", []):  # pandspecifieke posten (doorbraken, extra gevelramen)
+        R.append(dict(r, totaal=round(r["h"] * r["prijs"])))
     if sober:  # sobere industriële variant: hergebruikte materialen, strakke vloer, eigen arbeid (sober.py)
         import sober as _sober
         R[:], _ = _sober.toepassen(R)
@@ -170,6 +172,7 @@ def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, f
           ("OZB, waterschap, riool", round((pand + gebouw) * 0.7 * 0.0035)),
           ("Internet, software, toegangsapp", 5_000), ("Accountant en administratie", 12_000 if L["verhuur"] else 10_000),
           ("Koffie-apparatuur, verbruik", 4_000), ("Community en events", 5_000)]
+    O += list(L.get("opex_extra", []))  # pandspecifiek: VvE, erfpacht
     if L["verhuur"]:
         O.append(("Verhuurbeheer en leegstandsrisico (8% van de huur)", 0))
     sub = sum(b for _, b in O)

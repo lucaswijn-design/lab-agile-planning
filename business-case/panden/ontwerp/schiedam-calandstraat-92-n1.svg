@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-3.00 -29.52 48.04 34.02" width="1400" height="991" font-family="Work Sans, Helvetica, Arial, sans-serif" role="img" aria-label="Plattegrond Calandstraat 92, Schiedam">
+<rect x="-3.00" y="-29.52" width="48.04" height="34.02" fill="#fbf9f4"/>
+<g transform="scale(1,-1)">
+<polygon points="0.00,0.00 42.04,0.02 42.00,24.02 0.00,24.02 0.00,0.00" fill="#ffffff"/>
+<polygon points="32.00,14.00 41.80,14.00 41.80,23.80 32.00,23.80" fill="#e5d48c" fill-opacity="0.42"/>
+<defs><pattern id="arc" width="0.6" height="0.6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="0.6" stroke="#b9b3a6" stroke-width="0.06"/></pattern></defs>
+<rect x="35.00" y="18.50" width="3.00" height="1.00" transform="rotate(0.0 36.50 19.00)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="35.00" y="22.10" width="3.00" height="0.80" transform="rotate(0.0 36.50 22.50)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="37.60" y="14.30" width="4.00" height="4.00" transform="rotate(90.0 39.60 16.30)" fill="#dfe8ec" fill-opacity="0.5" stroke="#5c7a88" stroke-width="0.08"/>
+<rect x="38.90" y="15.80" width="1.40" height="1.00" transform="rotate(90.0 39.60 16.30)" fill="#b08a5e" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="39.56" y="17.45" width="0.08" height="1.40" transform="rotate(90.0 39.60 18.15)" fill="#1f2022" fill-opacity="0.8" stroke="#1d1d1b" stroke-width="0.03"/>
+<circle cx="34.00" cy="15.40" r="0.7" fill="#44606f" fill-opacity="0.75" stroke="#1d1d1b" stroke-width="0.1"/>
+<circle cx="40.35" cy="15.90" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="38.85" cy="15.90" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="40.35" cy="16.70" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="38.85" cy="16.70" r="0.24" fill="#44606f" fill-opacity="0.85" stroke="#1d1d1b" stroke-width="0.025"/>
+<circle cx="33.20" cy="22.80" r="0.4" fill="#7d9a52" fill-opacity="0.7" stroke="#4d6a3a" stroke-width="0.03"/>
+<polygon points="0.00,0.00 42.04,0.02 42.00,24.02 0.00,24.02 0.00,0.00" fill="none" stroke="#1d1d1b" stroke-width="0.32" stroke-linejoin="miter"/>
+</g>
+<text x="36.00" y="-21.00" font-size="0.62" font-weight="600" text-anchor="middle" fill="#1d1d1b" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.16">Stille verdieping</text><text x="36.00" y="-20.25" font-size="0.48" font-family="Space Mono, ui-monospace, monospace" text-anchor="middle" fill="#55514a" paint-order="stroke" stroke="#fbf9f4" stroke-width="0.14">96 m² · avocado</text>
+<rect x="-1.80" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="-0.80" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="0.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="1.20" y="3.50" width="1" height="0.22" fill="#fbf9f4" stroke="#1d1d1b" stroke-width="0.03"/>
+<rect x="2.20" y="3.50" width="1" height="0.22" fill="#1d1d1b" stroke="#1d1d1b" stroke-width="0.03"/>
+<text x="-1.80" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b">0</text><text x="3.20" y="3.25" font-size="0.45" font-family="Space Mono, ui-monospace, monospace" fill="#1d1d1b" text-anchor="middle">5 m</text>
+<polygon points="43.54,-28.47 43.41,-27.16 43.03,-26.85 42.89,-27.32" fill="#1d1d1b"/><text x="43.69" y="-28.75" font-size="0.55" font-weight="600" text-anchor="middle">N</text>
+<text x="-1.80" y="-27.92" font-size="0.9" font-weight="600" fill="#1d1d1b">Calandstraat 92, Schiedam</text><text x="-1.80" y="-27.12" font-size="0.5" font-family="Space Mono, ui-monospace, monospace" fill="#55514a">VERDIEPING · ONTWERP NOVEMBER 2026 · INDICATIEF</text>
+</svg>

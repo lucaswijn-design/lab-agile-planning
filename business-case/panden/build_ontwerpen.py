@@ -18,11 +18,12 @@ from layout import LAYOUTS  # noqa: E402
 
 # Ronde 7 (15 november 2026): Voorhout en Uden vallen af op het verzorgingsgebied; de ontwerpen blijven in ontwerp.py staan.
 VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "maarssen-herenweg-15",
-            "pernis-ring-15", "nieuwbouw-atriumhal"]
+            "pernis-ring-15", "rotterdam-galvanistraat-122", "schiedam-calandstraat-92", "rotterdam-metaalhof-40", "nieuwbouw-atriumhal"]
 SOBER = True  # sobere industriële afwerking met hergebruikte materialen (sober.py), sinds 15 november 2026
 TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True, "den-bosch-eendenkooi-1a": False,
           "voorhout-dinsdagse-wetering-56a": True, "maarssen-herenweg-15": True,
-          "pernis-ring-15": True, "uden-nijverheidsstraat-4c": True, "nieuwbouw-atriumhal": True}
+          "pernis-ring-15": True, "uden-nijverheidsstraat-4c": True, "nieuwbouw-atriumhal": True,
+          "rotterdam-galvanistraat-122": True, "schiedam-calandstraat-92": True, "rotterdam-metaalhof-40": True}
 
 
 def werkplekken(O):
@@ -64,6 +65,8 @@ def pand(slug):
     r = pand_case.run(slug, torens=t, sober=SOBER)
     kpi = dict(koop=LAYOUTS[slug]["koop"]["totaal"], capex=r["capex"], fee=r["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t, sober=SOBER),
                ltv=r["ltv"], werkplekken=werkplekken(O), **{k: v for k, v in telling(O).items() if k != 'werkplekken'})
+    if kpi["inleg"] and kpi["inleg"] >= 2000:  # verkoopwaarde na 5 jaar lager dan alle inleg: inleg terug kan niet via de fee
+        kpi["inleg"] = None
     rows = ontwerp.dakterras_rows(slug)
     terras = None
     if rows:

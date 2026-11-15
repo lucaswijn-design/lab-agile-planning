@@ -483,3 +483,45 @@ STATUS = {
     "best-de-run-5": ("alleen huur", "Te huur sinds maart 2025 voor € 7.500 per maand (circa 1.600 m²). De Run 3 is apart verkocht."),
     "uithoorn-thamerkerk": ("status onbekend", "In 2019 verkocht aan Heem Locaties, in 2021 weer te koop gezet; actuele status niet bevestigd."),
 }
+
+
+# Ronde 7 (15 november 2026): eerst de wijk, dan het pand. Zie ronde7/ronde7.md.
+LAYOUTS.update({
+    "rotterdam-galvanistraat-122": dict(
+        titel="Galvanistraat 122-126, Rotterdam West", oordeel="kandidaat, beschikbaar volgens oozo op 15-11-2026",
+        samenvatting="Drie units (2000) in een bedrijfsverzamelgebouw aan een parkeerhof, hal 425 + kantoor 271 m², vrije hoogte 5,9 m, lichtstraten. Nieuw Mathenesse, grens Rotterdam West en Schiedam.",
+        koop=dict(totaal=1_125_000, label="vraagprijs oozo, beschikbaar op 15-11-2026"),
+        verhuur=[], leden=dict(n_vol=40, n_deel=40, n_club=30), bouwjaar_risico=False, isoleren=False, pv_kwp=25, verdieping_m2=113,
+        zones=[dict(type="café", naam="Café", r=(21, 0.2, 29.1, 16)), dict(type="werken", naam="Werkzone", r=(13.6, 0.2, 21, 10.5)),
+               dict(type="vergader", naam="Vergaderen", r=(13.6, 10.5, 21, 16)), dict(type="sanitair", naam="Torens", r=(7.8, 0.2, 13.6, 16)),
+               dict(type="gym", naam="Gym", r=(0.2, 0.2, 7.8, 16))],
+        pui=dict(kant="v1", u0=8.5, u1=23.1, v=16),
+        buiten=[dict(type="terras", naam="Terras tussen de portalen", r=(8.5, 16, 23.1, 19.8))], bomen_buiten=[(1, 22), (30, 22)],
+        extra_rows=[dict(groep="Bouwkundig", post="Doorbraken in de twee scheidingswanden tussen de units (stalen latei, constructeur)", h=2, e="st", prijs=9_000, label="schatting", gen=0.3)],
+        opex_extra=[("VvE-bijdrage bedrijfsverzamelgebouw (aanname, navragen)", 6_000)],
+    ),
+    "schiedam-calandstraat-92": dict(
+        titel="Calandstraat 92, Schiedam", oordeel="kandidaat, beschikbaar volgens oozo (ronde 7, 15-11-2026)",
+        samenvatting="Vrijstaande hal uit 1973 van 42 x 24 m (BAG 1.174 m²), hal 800 + kantoor 200 m², circa 5,4 m tot het dak, op de hoek van twee straten. Erfpacht.",
+        koop=dict(totaal=825_000, label="vraagprijs oozo, ronde 7 (15-11-2026), erfpacht"),
+        verhuur=[], leden=dict(n_vol=50, n_deel=50, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=40, verdieping_m2=96,
+        zones=[dict(type="café", naam="Café", r=(0.2, 14.3, 18, 23.8)), dict(type="werken", naam="Werkzone", r=(18, 4, 32, 23.8)),
+               dict(type="vergader", naam="Vergaderen", r=(32, 0.2, 41.8, 14)), dict(type="bieb", naam="Entree en bieb", r=(32, 14, 41.8, 23.8)),
+               dict(type="sanitair", naam="Torens", r=(12, 0.2, 18, 14.3)), dict(type="gym", naam="Gym", r=(0.2, 0.2, 12, 14))],
+        pui=dict(kant="v1", u0=0.5, u1=31.5, v=24),
+        buiten=[], bomen_buiten=[],
+        extra_rows=[dict(groep="Bouwkundig", post="Glazen pui, aluminium HR+++ triple glas (oostgevel, vergaderkamers)", h=39, e="m2", prijs=1_000, label="bron", gen=0.6)],
+        opex_extra=[("Erfpachtcanon (aanname, navragen bij gemeente Schiedam)", 8_000)],
+    ),
+    "rotterdam-metaalhof-40": dict(
+        titel="Metaalhof 40, Rotterdam Het Lage Land", oordeel="kandidaat, beschikbaar volgens oozo (ronde 7, 15-11-2026)",
+        samenvatting="Hal uit 1986 (340 m², vrije hoogte 6 m) met kantoor in twee lagen (582 m²), perceel 849 m² met eigen strook voor terras en 3 parkeerplaatsen. 800 m van station Rotterdam Alexander.",
+        koop=dict(totaal=1_150_000, label="vraagprijs oozo, ronde 7 (15-11-2026)"),
+        verhuur=[], leden=dict(n_vol=40, n_deel=40, n_club=30), bouwjaar_risico=True, isoleren=True, pv_kwp=25, verdieping_m2=233,
+        zones=[dict(type="café", naam="Café", r=(9, 0.2, 18.5, 15.8)), dict(type="werken", naam="Werkzone", r=(0.2, 0.2, 9, 15.8)),
+               dict(type="vergader", naam="Entree en toiletten", r=(0.2, 16, 8.9, 26.7)), dict(type="sanitair", naam="Torens", r=(18.5, 0.2, 24, 15.8)),
+               dict(type="gym", naam="Gym", r=(24, 0.2, 31.4, 15.8))],
+        pui=dict(kant="v1", u0=9.5, u1=18, v=16),
+        buiten=[dict(type="terras", naam="Terras", r=(9, 16, 20, 22))], bomen_buiten=[(10.5, 25.5)],
+    ),
+})
