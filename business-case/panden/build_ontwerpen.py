@@ -25,6 +25,13 @@ TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True
           "pernis-ring-15": True, "uden-nijverheidsstraat-4c": True, "nieuwbouw-atriumhal": True,
           "rotterdam-galvanistraat-122": True, "schiedam-calandstraat-92": True, "rotterdam-metaalhof-40": True, "rotterdam-linschotenstraat-20a": True}
 
+for _s in sorted(f[:-3] for f in os.listdir(os.path.join(HERE, "ontwerpen_extra")) if f.endswith(".py") and not f.startswith("_")):
+    if _s not in ontwerp.ONTWERPEN or _s not in LAYOUTS or not os.path.exists(os.path.join(HERE, "ontwerp", _s + ".json")):
+        continue   # nog niet compleet (ontwerp, layout of export ontbreekt)
+    if _s not in VOLGORDE:
+        VOLGORDE.insert(len(VOLGORDE) - 1, _s)   # voor de nieuwbouw, die blijft achteraan
+    TORENS.setdefault(_s, True)
+
 
 def werkplekken(O):
     """Zit-sta bureaus + plekken aan de grote tafel + krukken aan de raambar (60 cm per kruk)."""

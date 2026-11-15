@@ -419,6 +419,16 @@ def werkplekken(r, max_desks=20):
     return items + desks, len(desks)
 
 
+def _laad_extra():
+    import glob
+    for f in sorted(glob.glob(os.path.join(HERE, "layout_extra", "*.py"))):
+        try:
+            exec(compile(open(f, encoding="utf-8").read(), f, "exec"), globals())
+        except Exception as e:  # noqa: BLE001
+            import sys
+            print("WAARSCHUWING layout_extra", os.path.basename(f), repr(e), file=sys.stderr)
+
+
 def build(slug):
     L = LAYOUTS[slug]
     d = json.load(open(os.path.join(HERE, "dossiers", slug + ".json")))
@@ -541,3 +551,5 @@ LAYOUTS.update({
         opex_extra=[("VvE-bijdrage bedrijvencomplex (aanname, navragen)", 5_000)],
     ),
 })
+
+_laad_extra()

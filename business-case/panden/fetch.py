@@ -267,6 +267,20 @@ def dossier(p):
                 perceel=perceel, op_perceel=op_perceel, context=context, luchtfoto=dict(bbox=[cx-R, cy-R, cx+R, cy+R], file=os.path.basename(img)))
 
 
+def haal(slug, adres, regio, aanbod, vbo_id=None, force=False):
+    """Eén dossier ophalen en wegschrijven (voor parallel werk zonder PANDEN te bewerken). Geeft het dossier terug."""
+    pad = os.path.join(OUT, slug + ".json")
+    if os.path.exists(pad) and not force:
+        return json.load(open(pad))
+    p = dict(slug=slug, adres=adres, regio=regio, aanbod=aanbod)
+    if vbo_id:
+        p["vbo_id"] = vbo_id
+    d = dossier(p)
+    with open(pad, "w") as f:
+        json.dump(d, f, ensure_ascii=False)
+    return d
+
+
 if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     for p in PANDEN:

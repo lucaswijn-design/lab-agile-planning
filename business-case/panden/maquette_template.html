@@ -139,7 +139,7 @@ function initThree(){
   renderer = new THREE.WebGLRenderer({antialias:true, preserveDrawingBuffer:true});
   renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
   renderer.shadowMap.enabled = true; renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-  renderer.outputEncoding = THREE.sRGBEncoding;
+  renderer.outputEncoding = THREE.sRGBEncoding; renderer.toneMapping = THREE.ACESFilmicToneMapping; renderer.toneMappingExposure = 0.78;
   view.prepend(renderer.domElement);
   camera = new THREE.PerspectiveCamera(38, 4/3, 0.3, 900);
   controls = new THREE.OrbitControls(camera, renderer.domElement);
@@ -186,6 +186,43 @@ function cyl(g, c, r, h, color, y0 = 0, opt = {}){
 }
 function sphere(g, c, r, y, color){ const m = add(g, new THREE.SphereGeometry(r, 16, 12), mat(color)); m.position.set(c[0], y, c[1]); return m; }
 const GROEN = ['#5f7a3a','#6f8a44','#4d6a3a','#7d9a52'];
+// ---------- realisme: procedurele texturen (geen externe bestanden)
+let CEIL = 4;  // plafondhoogte voor hanglampen, gezet in bouw()
+const TEX = {};
+function canvasTex(key, w, hgt, draw, rep){
+  if (TEX[key]) return TEX[key];
+  const c = document.createElement('canvas'); c.width = w; c.height = hgt; const x = c.getContext('2d'); draw(x, w, hgt);
+  const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; if (rep) t.repeat.set(rep[0], rep[1]); t.encoding = THREE.sRGBEncoding; TEX[key] = t; return t;
+}
+function betonTex(){ return canvasTex('beton', 256, 256, (x, w, h) => {
+  x.fillStyle = '#ffffff'; x.fillRect(0, 0, w, h);
+  for (let i = 0; i < 2600; i++){ const g = 225 + Math.random()*30; x.fillStyle = `rgba(${g},${g},${g-4},.55)`; const r = Math.random()*3 + .5; x.fillRect(Math.random()*w, Math.random()*h, r, r); }
+  for (let i = 0; i < 6; i++){ x.strokeStyle = 'rgba(160,155,148,.18)'; x.lineWidth = .6; x.beginPath(); let px = Math.random()*w, py = Math.random()*h; x.moveTo(px, py); for (let k = 0; k < 6; k++){ px += (Math.random()-.5)*60; py += (Math.random()-.5)*60; x.lineTo(px, py); } x.stroke(); }
+}, [0.25, 0.25]); }
+function lockerTex(){ return canvasTex('locker', 128, 128, (x, w, h) => {
+  x.fillStyle = '#ffffff'; x.fillRect(0, 0, w, h); x.strokeStyle = 'rgba(30,30,30,.55)'; x.lineWidth = 2;
+  for (let i = 0; i <= 4; i++){ x.beginPath(); x.moveTo(i*w/4, 0); x.lineTo(i*w/4, h); x.stroke(); }
+  for (let j = 0; j <= 5; j++){ x.beginPath(); x.moveTo(0, j*h/5); x.lineTo(w, j*h/5); x.stroke(); }
+  x.fillStyle = 'rgba(20,20,20,.7)'; for (let i = 0; i < 4; i++) for (let j = 0; j < 5; j++) x.fillRect(i*w/4 + w/4 - 9, j*h/5 + h/10 - 2, 4, 6);
+}); }
+function tegelTex(){ return canvasTex('zellige', 128, 128, (x, w, h) => {
+  const kl = ['#2f6b5a','#346f5c','#2a6253','#3b7a66','#2d6a58'];
+  for (let i = 0; i < 8; i++) for (let j = 0; j < 8; j++){ x.fillStyle = kl[(i*3 + j*7) % kl.length]; x.fillRect(i*16, j*16, 15, 15); }
+}); }
+function houtTex(){ return canvasTex('hout', 256, 64, (x, w, h) => {
+  x.fillStyle = '#ffffff'; x.fillRect(0, 0, w, h);
+  for (let i = 0; i < 40; i++){ x.strokeStyle = `rgba(110,80,50,${.05 + Math.random()*.08})`; x.lineWidth = 1 + Math.random()*1.5; x.beginPath(); const y = Math.random()*h; x.moveTo(0, y); x.bezierCurveTo(w*.3, y + (Math.random()-.5)*8, w*.6, y + (Math.random()-.5)*8, w, y + (Math.random()-.5)*6); x.stroke(); }
+}); }
+function matT(c, tex, o = {}){ const k = c + tex + JSON.stringify(o); if (!M[k]) M[k] = new THREE.MeshStandardMaterial(Object.assign({color:c, roughness:.85, metalness:0, map: {beton:betonTex, locker:lockerTex, zellige:tegelTex, hout:houtTex}[tex]()}, o)); return M[k]; }
+function lamp(g, c, y0, top){ const yb = y0 + 2.35; cyl(g, c, .008, Math.max(.1, top - yb), '#2f3032', yb); const m = cyl(g, c, .2, .22, '#1f2022', yb - .18, {rt:.05, mat: mat('#1f2022', {metalness:.3, roughness:.5})}); cyl(g, c, .13, .02, '#fff2c8', yb - .2, {mat: mat('#fff2c8', {emissive:'#ffdf9a', emissiveIntensity:.9})}); return m; }
+function stoelA(g, c, a, y0, kleur){
+  // stoel met rugleuning; a = kijkrichting (graden, naar de tafel)
+  const r = a*Math.PI/180, ux = Math.cos(r), uz = Math.sin(r);
+  box(g, c, .44, .44, .05, a, kleur, y0 + .42);
+  for (const [du, dv] of [[-.18,-.18],[.18,-.18],[-.18,.18],[.18,.18]]) box(g, [c[0] + du*ux - dv*uz, c[1] + du*uz + dv*ux], .03, .03, .42, a, '#2f3032', y0);
+  box(g, [c[0] - .21*ux, c[1] - .21*uz], .04, .44, .45, a, kleur, y0 + .47);
+}
+
 
 // ---------- elementen
 function element(g, e, y0){
@@ -193,11 +230,15 @@ function element(g, e, y0){
   switch (e.t){
     case 'bureau': {
       const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
-      box(g, e.c, e.w, e.d, .04, e.a, '#c9a77c', y0 + .7);
-      box(g, e.c, .08, .6, .7, e.a, '#2f3032', y0);
-      const mc = [e.c[0] - .18*(-sa), e.c[1] - .18*ca];
-      box(g, [e.c[0] + .2*sa, e.c[1] - .2*ca], 1.1, .04, .34, e.a, '#1f2022', y0 + .9);
-      const o = e.d/2 + .3; cyl(g, [e.c[0] + o*sa, e.c[1] - o*ca], .24, .5, '#3a3b3d', y0);
+      box(g, e.c, e.w, e.d, .035, e.a, '#c9a77c', y0 + .72, {mat: matT('#d2b086', 'hout')});
+      for (const s of [-1, 1]){ const p = [e.c[0] + s*(e.w/2 - .1)*ca, e.c[1] + s*(e.w/2 - .1)*sa]; box(g, p, .06, e.d*.8, .72, e.a, '#2f3032', y0); box(g, p, .08, e.d*.9, .03, e.a, '#2f3032', y0); }
+      box(g, e.c, e.w - .2, .04, .06, e.a, '#2f3032', y0 + .62);
+      const back = [e.c[0] + .22*sa, e.c[1] - .22*ca];
+      box(g, back, .04, .04, .32, e.a, '#2f3032', y0 + .755); box(g, [back[0] - .02*sa, back[1] + .02*ca], .62, .03, .38, e.a, '#1f2022', y0 + .98);
+      box(g, [e.c[0] - .02*sa, e.c[1] + .02*ca], .42, .14, .015, e.a, '#e6e2da', y0 + .755);
+      const o = e.d/2 + .32, ch = [e.c[0] - o*sa, e.c[1] + o*ca];
+      cyl(g, ch, .25, .06, '#3a3b3d', y0 + .44); cyl(g, ch, .03, .42, '#2f3032', y0 + .02); cyl(g, ch, .26, .03, '#2f3032', y0, {rt:.05});
+      box(g, [ch[0] - .22*sa, ch[1] + .22*ca], .44, .05, .5, e.a, '#3a3b3d', y0 + .55);
       break; }
     case 'box': {
       const s = e.soort;
@@ -207,13 +248,48 @@ function element(g, e, y0){
         for (const [du,dv] of [[-.6,-.6],[.6,-.6],[-.6,.6],[.6,.6]]) box(g, [e.c[0]+du*ca-dv*sa, e.c[1]+du*sa+dv*ca], .08, .08, e.h, 0, '#1f2022', y0);
         box(g, e.c, 1.3, .08, .08, e.a, '#1f2022', y0 + e.h - .1); box(g, e.c, .08, 1.3, .08, e.a, '#1f2022', y0 + e.h - .1);
         box(g, e.c, 1.9, .05, .05, e.a, '#9a9890', y0 + 1.3);
+        for (const sx of [-1, 1]) for (let i = 0; i < 3; i++){ const t = sx*(.78 + i*.05), m = cyl(g, [e.c[0] + t*ca, e.c[1] + t*sa], .22 - i*.03, .04, '#1f2022', 0, {seg:20}); m.rotation.z = Math.PI/2; m.rotation.y = -e.a*Math.PI/180; m.position.y = y0 + 1.33; }
         break; }
-      if (s === 'trap'){ for (let i = 0; i < 12; i++) box(g, [e.c[0], e.c[1] - e.d/2 + i*e.d/12 + e.d/24], e.w, e.d/12, .3 + i*.3, 0, '#d8d2c6', y0); break; }
-      const m = box(g, e.c, e.w, e.d, e.h, e.a, k, y0, {edges: e.h > .3});
+      if (s === 'trap'){ const hout = k === '#b08a5e'; for (let i = 0; i < 12; i++) box(g, [e.c[0], e.c[1] - e.d/2 + i*e.d/12 + e.d/24], e.w, e.d/12, .3 + i*.3, 0, hout ? k : '#2f3032', y0, {mat: hout ? matT('#c09366', 'hout') : mat('#3a3b3d', {metalness:.4, roughness:.5})}); break; }
+      if (s === 'lockers'){ const m = box(g, e.c, e.w, e.d, e.h, e.a, k, y0, {mat: matT(k, 'locker', {roughness:.6, metalness:.2}), edges:true}); break; }
+      if (s === 'keuken'){
+        box(g, e.c, e.w, e.d, e.h - .04, e.a, k, y0, {edges:true}); box(g, e.c, e.w + .02, e.d + .02, .04, e.a, '#d8d2c6', y0 + e.h - .04, {mat: matT('#e3ddd2', 'beton')});
+        const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a), back = [e.c[0] + (e.d/2 - .02)*sa, e.c[1] - (e.d/2 - .02)*ca];
+        box(g, back, e.w, .02, .7, e.a, '#2f6b5a', y0 + e.h, {mat: matT('#ffffff', 'zellige', {roughness:.35})});
+        const sh = [e.c[0] + (e.d/2 - .14)*sa, e.c[1] - (e.d/2 - .14)*ca]; box(g, sh, e.w*.8, .26, .03, e.a, '#b08a5e', y0 + 1.75, {mat: matT('#c79e70', 'hout')});
+        for (let i = 0; i < 6; i++){ const t = -e.w*.35 + i*e.w*.14; cyl(g, [sh[0] + t*ca, sh[1] + t*sa], .05 + (i%3)*.015, .14 + (i%2)*.08, ['#e8e2d6','#5a2741','#6f7d3a','#c9c3b6'][i%4], y0 + 1.78); }
+        break; }
+      if (s === 'kookeiland' || s === 'grote tafel' || s === 'tafel' || s === 'vergadertafel' || s === 'werktafel'){
+        box(g, e.c, e.w, e.d, .05, e.a, k, y0 + e.h - .05, {mat: matT(k, 'hout'), edges:true});
+        const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
+        if (s === 'kookeiland') box(g, e.c, e.w - .1, e.d - .1, e.h - .05, e.a, '#6b4428', y0, {mat: matT('#7a5232', 'hout')});
+        else for (const sx of [-1, 1]) for (const sz of [-1, 1]) box(g, [e.c[0] + sx*(e.w/2 - .1)*ca - sz*(e.d/2 - .1)*sa, e.c[1] + sx*(e.w/2 - .1)*sa + sz*(e.d/2 - .1)*ca], .05, .05, e.h - .05, e.a, '#2f3032', y0);
+        if (s === 'grote tafel' || s === 'kookeiland'){ const n = s === 'grote tafel' ? 3 : 2; for (let i = 0; i < n; i++){ const t = (i - (n - 1)/2) * e.w/n; lamp(g, [e.c[0] + t*ca, e.c[1] + t*sa], y0, CEIL); } }
+        break; }
+      if (s === 'raambar'){
+        box(g, e.c, e.w, e.d, .05, e.a, k, y0 + 1.0, {mat: matT(k, 'hout'), edges:true});
+        const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a), n = Math.floor(e.w/.6);
+        for (let i = 0; i < 3; i++){ const t = (i - 1) * e.w*.45; box(g, [e.c[0] + t*ca, e.c[1] + t*sa], .05, .05, 1.0, e.a, '#2f3032', y0); }
+        for (let i = 0; i < n; i++){ const t = -e.w/2 + .3 + i*.6, p = [e.c[0] + t*ca - .5*sa, e.c[1] + t*sa + .5*ca]; cyl(g, p, .17, .04, '#5a3a22', y0 + .74); cyl(g, p, .025, .74, '#2f3032', y0); }
+        break; }
+      if (s === 'rotswand'){
+        const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
+        for (let i = 0; i < Math.round(e.w*e.h*2.2); i++){ const t = (Math.random() - .5)*e.w, z = Math.random()*e.h, sz = .25 + Math.random()*.35;
+          const m = box(g, [e.c[0] + t*ca, e.c[1] + t*sa], sz*1.3, e.d*(.6 + Math.random()*.5), sz, e.a + (Math.random()-.5)*20, ['#7a746a','#8a8378','#6b665d','#958e82'][i%4], y0 + z, {mat: matT(['#7a746a','#8a8378','#6b665d','#958e82'][i%4], 'beton')}); }
+        break; }
+      if (s === 'klimwand'){
+        const a = e.a*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a);
+        for (let i = 0; i <= Math.round(e.w/.4); i++){ const t = -e.w/2 + i*.4; box(g, [e.c[0] + t*ca, e.c[1] + t*sa], .01, .01, e.h, e.a, '#9a9890', y0); for (let j = 0; j < 4; j++) sphere(g, [e.c[0] + t*ca, e.c[1] + t*sa], .12 + Math.random()*.1, y0 + .5 + j*e.h/4.5 + Math.random()*.3, GROEN[(i + j) % 4]); }
+        break; }
+      if (s === 'rack'){ /* handled above */ }
+      if (s === 'douche'){ const m = box(g, e.c, e.w, e.d, e.h, e.a, k, y0, {mat: mat('#bcd3dc', {transparent:true, opacity:.35, roughness:.1}), cast:false}); edges(m); cyl(g, e.c, .12, .02, '#c9b27a', y0 + e.h - .1); break; }
+      const m = box(g, e.c, e.w, e.d, e.h, e.a, k, y0, {edges: e.h > .3, mat: (s === 'hexbank' || s === 'zitnis' || s === 'rugleuning' || s === 'bank') ? mat(k, {roughness:.95}) : (s === 'kast' || s === 'plantenbak' || s === 'trap' && k === '#b08a5e') ? matT(k, 'hout') : undefined});
       if (s === 'bank' && e.h > .4) box(g, [e.c[0], e.c[1]], e.w, .2, .45, e.a, k, y0 + e.h);
       break; }
     case 'cil': {
       const s = e.soort, zz = e.z || 0;
+      if (s === 'stoel' && e.a !== undefined){ stoelA(g, e.c, e.a, y0, k); break; }
+      if (s === 'statafel'){ cyl(g, e.c, e.r, .04, k, y0 + e.h - .04, {mat: matT(k, 'hout')}); cyl(g, e.c, .05, e.h - .04, '#2f3032', y0); cyl(g, e.c, .3, .03, '#2f3032', y0); break; }
       if (s === 'ronde tafel'){ cyl(g, e.c, e.r, .04, k, y0 + .72); cyl(g, e.c, .05, .72, '#2f3032', y0); break; }
       if (s === 'lamp'){ cyl(g, e.c, .02, e.h, '#2f3032', y0); cyl(g, e.c, .22, .2, k, y0 + e.h - .1, {rt:.08}); break; }
       if (s === 'haard'){ cyl(g, e.c, e.r, e.h, '#2f3032', y0); cyl(g, e.c, e.r*.6, .12, '#e98a3c', y0 + e.h, {mat: mat('#f09a4a', {emissive:'#c4561c', emissiveIntensity:.8})}); cyl(g, e.c, .08, 2.6, '#2f3032', y0 + e.h); break; }
@@ -250,15 +326,30 @@ function element(g, e, y0){
     case 'deur': if (e.toegang){ const a = e.a*Math.PI/180; box(g, [e.c[0] + Math.cos(a)*(e.w/2 + .15), e.c[1] + Math.sin(a)*(e.w/2 + .15)], .12, .3, .16, e.a, '#a8332e', y0 + 1.2); } break;
     case 'label': break;
     case 'plant': {
-      const z = y0 + (e.z || 0);
-      if (e.hang){ cyl(g, e.c, .01, 1.2, '#2f3032', z); sphere(g, e.c, e.r, z - .1, GROEN[Math.round(e.c[0]*7) % 4]); for (let i = 0; i < 3; i++) sphere(g, [e.c[0] + .15*(i-1), e.c[1]], .12, z - .45 - .2*i, GROEN[(i+1) % 4]); break; }
-      if (!e.z) cyl(g, e.c, e.r*.55, .45, '#b8633f', z + .16, {rt: e.r*.65});
-      sphere(g, e.c, e.r, z + (e.z ? .1 : .45 + e.r*.9), GROEN[Math.round(e.c[0]*7) % 4]);
+      const z = y0 + (e.z || 0), nm = e.naam || '';
+      if (e.hang){ cyl(g, e.c, .01, 1.2, '#2f3032', z); sphere(g, e.c, e.r, z - .1, GROEN[Math.round(e.c[0]*7) % 4]); for (let i = 0; i < 4; i++) sphere(g, [e.c[0] + .14*(i-1.5), e.c[1] + .05*(i%2)], .1, z - .4 - .22*i, GROEN[(i+1) % 4]); break; }
+      if (!e.z) cyl(g, e.c, Math.max(.18, e.r*.5), .45, '#b8633f', z + .16, {rt: Math.max(.22, e.r*.6), mat: matT('#b8633f', 'beton')});
+      const top = z + (e.z ? .05 : .6);
+      if (nm === 'sansevieria' || nm === 'zz-plant'){ for (let i = 0; i < 9; i++){ const an = i*2.4, rr = .06 + (i%3)*.05; const m = cyl(g, [e.c[0] + rr*Math.cos(an), e.c[1] + rr*Math.sin(an)], .035, e.h*(.55 + (i%4)*.1), nm === 'zz-plant' ? '#2f5a2a' : '#5f7a3a', top, {rt:.005, seg:6}); m.rotation.x = (Math.random()-.5)*.25; } break; }
+      if (nm === 'monstera' || nm === 'philodendron'){ for (let i = 0; i < 7; i++){ const an = i*0.9, rr = e.r*.55; const m = sphere(g, [e.c[0] + rr*Math.cos(an), e.c[1] + rr*Math.sin(an)], e.r*.42, top + .2 + (i%3)*.22, GROEN[i%4]); m.scale.y = .35; } break; }
+      if (e.z){ sphere(g, e.c, e.r, top + .1, GROEN[Math.round(e.c[0]*7) % 4]); for (let i = 0; i < 3; i++) sphere(g, [e.c[0] + .2*Math.cos(i*2.1), e.c[1] + .2*Math.sin(i*2.1)], e.r*.5, top - .15 - i*.12, GROEN[(i+2) % 4]); break; }
+      sphere(g, e.c, e.r, top + e.r*.9, GROEN[Math.round(e.c[0]*7) % 4]);
+      for (let i = 0; i < 4; i++) sphere(g, [e.c[0] + e.r*.55*Math.cos(i*1.6), e.c[1] + e.r*.55*Math.sin(i*1.6)], e.r*.55, top + e.r*(.6 + .25*(i%2)), GROEN[(i+1) % 4]);
       if (e.h > 1.3) sphere(g, [e.c[0] + .1, e.c[1] - .1], e.r*.75, z + e.h, GROEN[(Math.round(e.c[1]*5)+1) % 4]);
       break; }
     case 'boom': {
-      cyl(g, e.c, .12, e.h*.6, '#6b4428', y0);
-      const n = 3; for (let i = 0; i < n; i++){ const a = i*2.1 + e.c[0]; sphere(g, [e.c[0] + .35*e.r*Math.cos(a), e.c[1] + .35*e.r*Math.sin(a)], e.r*(.75 + .1*i), y0 + e.h*.62 + e.r*.45 + i*.15, GROEN[i % 4]); }
+      const nm = e.naam || '';
+      cyl(g, e.c, Math.max(.3, e.r*.45), .55, '#8a5a3a', y0 + .16, {rt: Math.max(.36, e.r*.55), mat: matT('#9a6a45', 'beton')});
+      if (nm === 'kentia' || nm === 'strelitzia nicolai'){
+        for (let i = 0; i < 3; i++) cyl(g, [e.c[0] + .08*Math.cos(i*2.1), e.c[1] + .08*Math.sin(i*2.1)], .035, e.h*.55, '#6b5a3a', y0 + .7);
+        const fronds = nm === 'kentia' ? 11 : 8;
+        for (let i = 0; i < fronds; i++){ const an = i*2*Math.PI/fronds, L = e.r*(nm === 'kentia' ? 1.0 : .8);
+          const blad = new THREE.SphereGeometry(1, 10, 6); const m = add(g, blad, mat(GROEN[i%4], {roughness:.9, side: THREE.DoubleSide}));
+          const yb = y0 + e.h*.62 + .25 + (i%3)*.15; m.scale.set(L*.55, .03, nm === 'kentia' ? .16 : .26);
+          m.position.set(e.c[0] + Math.cos(an)*L*.45, yb, e.c[1] + Math.sin(an)*L*.45); m.rotation.y = -an; m.rotation.z = (nm === 'kentia' ? -.35 : -.15) * (i%2 ? 1 : 1.3); }
+        break; }
+      cyl(g, e.c, .08, e.h*.62, '#6b4428', y0 + .5);
+      for (let i = 0; i < 7; i++){ const a = i*2.4 + e.c[0], rr = e.r*(.15 + .3*(i%3)); sphere(g, [e.c[0] + rr*Math.cos(a), e.c[1] + rr*Math.sin(a)], e.r*(.45 + .1*(i%3)), y0 + e.h*.62 + e.r*.35 + (i%4)*.18, GROEN[i % 4]); }
       break; }
     case 'v': {
       for (const s of [-1, 1]){
@@ -354,14 +445,28 @@ function bouw(P){
   for (const b of O.buiten) add(groups.buiten, extrude(shapeOf(b.poly), .06, 0), mat(b.kleur), {cast:false});
   const GB = P.gebouwen || [{ring: P.footprint, h}];
   for (const b of GB) add(groups.vloer, extrude(shapeOf(b.ring), .15, 0), mat('#f7f4ee'), {cast:false});
-  for (const z of O.zones) if (!z.n){ const f = add(groups.vloer, extrude(shapeOf(z.poly), .01, .15), mat(z.kleur, {roughness:.95}), {cast:false}); f.userData.zone = true; }
+  CEIL = h;
+  for (const z of O.zones) if (!z.n){ const f = add(groups.vloer, extrude(shapeOf(z.poly), .01, .15), matT(z.kleur, 'beton', {roughness:.7}), {cast:false}); f.userData.zone = true; }
   for (const b of GB) gevels(groups.schil, P, b.ring, b.h);
   const binnen = (q, r) => { let c = false; for (let i = 0, j = r.length - 1; i < r.length; j = i++){ const [xi, yi] = r[i], [xj, yj] = r[j]; if ((yi > q[1]) !== (yj > q[1]) && q[0] < (xj - xi)*(q[1] - yi)/(yj - yi) + xi) c = !c; } return c; };
   const hAt = (u, v) => { for (const b of GB) if (binnen([u, v], b.ring)) return b.h; return h; };
   const midden = p => [p.reduce((a, q) => a + q[0], 0)/p.length, p.reduce((a, q) => a + q[1], 0)/p.length];
   // verdieping
   if (L1){
-    for (const z of O.zones) if (z.n >= 1){ const y = yN(z.n); add(groups.l1, extrude(shapeOf(z.poly), .25, y - .25), mat('#f7f4ee'), {edges:true}); add(groups.l1, extrude(shapeOf(z.poly), .01, y), mat(z.kleur), {cast:false}); }
+    for (const z of O.zones) if (z.n >= 1){ const y = yN(z.n); add(groups.l1, extrude(shapeOf(z.poly), .25, y - .25), mat('#f7f4ee'), {edges:true}); add(groups.l1, extrude(shapeOf(z.poly), .01, y), matT(z.kleur, 'hout', {roughness:.8}), {cast:false}); }
+  }
+  // stoelen kijken naar de dichtstbijzijnde tafel (rugleuning aan de andere kant)
+  const tafels = O.elementen.filter(t => ['grote tafel','vergadertafel','tafel','ronde tafel','statafel','werktafel'].includes(t.soort));
+  for (const e of O.elementen){
+    if (e.soort !== 'stoel' || e.a !== undefined) continue;
+    let best = null, bd = 2.2;
+    for (const t of tafels){ if ((t.n || 0) !== (e.n || 0)) continue;
+      // afstand tot de tafelrand (benadering): projecteer op de tafelas
+      const a = (t.a || 0)*Math.PI/180, ca = Math.cos(a), sa = Math.sin(a), dx = e.c[0] - t.c[0], dz = e.c[1] - t.c[1];
+      const lu = dx*ca + dz*sa, lv = -dx*sa + dz*ca, hw = (t.w || 2*(t.r || .4))/2, hd = (t.d || 2*(t.r || .4))/2;
+      const px = Math.max(-hw, Math.min(hw, lu)), pz = Math.max(-hd, Math.min(hd, lv)), d = Math.hypot(lu - px, lv - pz);
+      if (d < bd){ bd = d; best = [t.c[0] + px*ca - pz*sa, t.c[1] + px*sa + pz*ca]; } }
+    if (best) e.a = Math.atan2(best[1] - e.c[1], best[0] - e.c[0])*180/Math.PI;
   }
   for (const e of O.elementen){ const n = e.n || 0; element(n ? groups.in1 : groups.in0, e, yN(n)); }
   // dak
