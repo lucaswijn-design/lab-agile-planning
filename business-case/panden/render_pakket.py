@@ -150,7 +150,7 @@ Rules for every image:
 1. Follow the floor plan and the models exactly: same positions, same round elements (round sofa around the fireplace, round bookshelf room, round bathroom towers with plants on the rim, round phone booths), same zones. Do not invent rooms.
 2. Colours per zone from the colour plan: book café olive green, plum and travertine; library deep olive and butter yellow; workplaces slate blue and cognac; gym oxblood and blush; studio fig purple and terracotta; entrance sand and palm green. About 60% of each room stays raw (concrete, old brick, black steel), 30% zone colour, 10% accent.
 3. With a listing photo: keep the existing architecture, windows, columns, ceiling height and camera angle exactly; change only the interior and finishes.
-4. Style: Berlin warehouse meets Taghazout calm, second hand with a little organized chaos, lots of plants and small trees, warm daylight, photorealistic like a professional architecture photo. No text, labels or watermarks, no people in focus.
+4. Style: Berlin warehouse meets Taghazout calm, second hand with a little organized chaos, lots of plants and small trees, warm daylight, photorealistic like a professional architecture photo. Low-budget industrial finish: smooth sealed concrete floor and sleek compact desks, but walls, glass partitions and furniture made from reclaimed windows, old doors, reclaimed wood and steel; nothing glossy or high-end. No text, labels or watermarks, no people in focus.
 5. One image per reply, landscape 3:2. Under each image write one line: which step and which file you used. Then wait until I write "volgende".
 6. If you cannot use a file from the zip directly as the reference image, tell me the file name and I will upload it separately.
 

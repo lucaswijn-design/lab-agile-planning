@@ -119,7 +119,9 @@ def zone(naam, type_, poly, beschrijving, details, foto=None, prompt="", n=0, ca
 
 BASIS_PROMPT = ("Keep the existing architecture exactly: walls, windows, columns, ceiling height and camera angle. "
                 "Interior style: Berlin warehouse meets Taghazout calm, second hand and organized chaos, raw concrete, old brick and black steel stay visible, "
-                "lots of plants and small trees, warm daylight. Colours from nature: {kleuren}. Photorealistic, natural light, no people in focus, no text.")
+                "lots of plants and small trees, warm daylight. Low-budget industrial finish: a smooth sealed concrete floor, sleek compact sit-stand desks with oak tops, "
+                "glass partitions made from reclaimed old steel and timber windows, reclaimed wood, scaffolding boards and old doors reused with care, wood wool acoustic panels, "
+                "nothing glossy or high-end. Colours from nature: {kleuren}. Photorealistic, natural light, no people in focus, no text.")
 
 
 # ---------------------------------------------------------------- Utrecht

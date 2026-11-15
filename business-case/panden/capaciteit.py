@@ -114,7 +114,7 @@ def programma(V, D, C=0):
 
 
 def schaal(V, D, C=0, prijs_m2=1_400, staat="opknappen", m2=None, rente=0.055, looptijd=20, fee_deel_ratio=320 / 450,
-           tussenvloer=0.0, opex_vast=100_000):
+           tussenvloer=0.0, opex_vast=100_000, sober=False):
     """Doorrekening voor een generiek pand. staat: 'opknappen' (zoals Utrecht, Voorhout, Maarssen) of 'afgewerkt'.
     tussenvloer: deel van het programma (0 tot 0,35) op een nieuwe tussenvloer in een hal van minstens 6,5 m hoog;
     dan is er minder grondvlak nodig. opex_vast: 100.000 standaard, circa 75.000 sober (schoonmaak 3 dagen, minder events)."""
@@ -126,6 +126,9 @@ def schaal(V, D, C=0, prijs_m2=1_400, staat="opknappen", m2=None, rente=0.055, l
     pand = koop * 1.104 + 10_000                                   # [bron] 10,4% overdrachtsbelasting, notaris [schatting]
     verb = (760 if staat == "opknappen" else 350) * grond + 650 * vloer  # [berekend] per m2 uit de panden; tussenvloer [schatting] staal + hout, trap, balustrade
     inv = 60_000 + 2_300 * v["werkplekken"]                       # [berekend] vaste inventaris + per werkplek
+    if sober:  # [berekend] sober.py op Utrecht: circa € 58 per m2 minder verbouw, keuken € 5.000 en circa € 300 per werkplek minder inventaris
+        verb -= 58 * grond
+        inv -= 5_000 + 300 * v["werkplekken"]
     bijk = 25_000 + 0.30 * (verb + inv) + 0.015 * pand            # [berekend] advies, onvoorzien, bouwrente
     capex = pand + verb + inv + bijk
     opex = opex_vast + 47 * m2                                     # [berekend] vaste kosten + per m2

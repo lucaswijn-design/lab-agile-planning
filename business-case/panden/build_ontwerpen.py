@@ -18,6 +18,7 @@ from layout import LAYOUTS  # noqa: E402
 
 VOLGORDE = ["utrecht-van-heutszstraat-4", "den-bosch-rietveldenweg-13", "den-bosch-eendenkooi-1a", "voorhout-dinsdagse-wetering-56a", "maarssen-herenweg-15",
             "pernis-ring-15", "uden-nijverheidsstraat-4c", "nieuwbouw-atriumhal"]
+SOBER = True  # sobere industriële afwerking met hergebruikte materialen (sober.py), sinds 15 november 2026
 TORENS = {"utrecht-van-heutszstraat-4": True, "den-bosch-rietveldenweg-13": True, "den-bosch-eendenkooi-1a": False,
           "voorhout-dinsdagse-wetering-56a": True, "maarssen-herenweg-15": True,
           "pernis-ring-15": True, "uden-nijverheidsstraat-4c": True, "nieuwbouw-atriumhal": True}
@@ -59,14 +60,14 @@ def pand(slug):
                    werkplekken=werkplekken(O), **{k: v for k, v in telling(O).items() if k != 'werkplekken'})
         return dict(slug=slug, footprint=fp, gebouwen=G, context=ctx, ontwerp=O, cx=cx, cz=cz, size=size, noord=noord, kpi=kpi, terras=None, plans=plans)
     t = TORENS[slug]
-    r = pand_case.run(slug, torens=t)
-    kpi = dict(koop=LAYOUTS[slug]["koop"]["totaal"], capex=r["capex"], fee=r["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t),
+    r = pand_case.run(slug, torens=t, sober=SOBER)
+    kpi = dict(koop=LAYOUTS[slug]["koop"]["totaal"], capex=r["capex"], fee=r["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t, sober=SOBER),
                ltv=r["ltv"], werkplekken=werkplekken(O), **{k: v for k, v in telling(O).items() if k != 'werkplekken'})
     rows = ontwerp.dakterras_rows(slug)
     terras = None
     if rows:
-        rt = pand_case.run(slug, torens=t, extra=rows)
-        terras = dict(rows=rows, totaal=sum(x["totaal"] for x in rows), fee=rt["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t, extra=rows))
+        rt = pand_case.run(slug, torens=t, extra=rows, sober=SOBER)
+        terras = dict(rows=rows, totaal=sum(x["totaal"] for x in rows), fee=rt["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t, extra=rows, sober=SOBER))
     return dict(slug=slug, footprint=fp, gebouwen=G, context=ctx, ontwerp=O, cx=cx, cz=cz, size=size, noord=noord, kpi=kpi, terras=terras, plans=plans)
 
 
