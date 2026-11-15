@@ -1426,7 +1426,7 @@ GALVANI = dict(
 #   Hal 800 + kantoor 200 m² (aanname: kantoor in twee lagen op de noordoosthoek). Erfpacht. Kavel is het gebouw: buiten alleen de stoep en parkeren langs de straat.
 CALAND = dict(
     titel="Calandstraat 92, Schiedam",
-    sub="Vrijstaande hal uit 1973 van 1.000 m² op de hoek van twee straten, op fietsafstand van Schiedam Centrum en Rotterdam West",
+    sub="Vrijstaande hal uit 1973 van 1.000 m² op de hoek van twee straten. LET OP: de makelaar biedt het nu ook te huur aan (€ 6.900 per maand); bel of het nog te koop is.",
     hoogte=5.4, niveaus={"1": 2.8},
     concept="Een grote, eenvoudige hal waarin de club voor circa 100 eigenaren ruim op één laag past. Aan de straatkant met bomen komen nieuwe ramen van hergebruikte kozijnen: "
             "daarachter het café met keuken, lange tafel en een raambar van 10 m. De werkzone ligt in het midden van de hal, met zes eilanden van zes bureaus. Langs de oostgevel "
@@ -1496,7 +1496,7 @@ CALAND = dict(
 #   v 16 tot 26,9). Voor de hal een open strook van 245 m² op eigen grond (3 parkeerplaatsen, terras). Buren zijn bedrijfspanden.
 METAAL = dict(
     titel="Metaalhof 40, Rotterdam Het Lage Land",
-    sub="Hal uit 1986 met een kantoordeel in twee lagen en eigen buitenruimte, op 800 m van station Rotterdam Alexander",
+    sub="Hal uit 1986 met kantoor in twee lagen en eigen buitenruimte. LET OP: volgens de brochure is de hoge ruimte maar circa 110 m² (dit ontwerp gaat uit van 340 m²); erfpacht afgekocht tot 2035.",
     hoogte=6.5, niveaus={"1": 3.0},
     concept="Het kantoordeel wordt de werkplaats: beneden zes eilanden, boven vergaderkamers en een stille werkvloer. De hal van 6 m hoog wordt het hart: café met keuken, "
             "lange tafel en ronde bank achter een nieuwe glazen pui naar het eigen terras, daarachter de torens als buffer en aan het eind de gym. De open strook voor de hal wordt "
