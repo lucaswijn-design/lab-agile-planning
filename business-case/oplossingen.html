@@ -1,0 +1,259 @@
+<title>Plan na de raden</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: één leeskolom; eerst de nieuwe cijfers, dan per probleem een kaart met opties en advies, dan het startbudget en de volgorde; huisstijl van de ledenclub */
+:root {
+  --bg: #eef0ec; --surface: #f8f9f6; --fg: #1d2421; --muted: #5a645f; --line: #cfd5cf;
+  --accent: #2f5566; --accent-soft: #d8e3e6;
+  --ok: #3f6b3a; --ok-soft: #e1ebdc; --bad: #9a2e2a; --bad-soft: #f2dedb; --mid: #9a6b14; --mid-soft: #f3e8cf;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --ok: #8cc583; --ok-soft: #22301f; --bad: #e88a80; --bad-soft: #3a2220; --mid: #e0b45a; --mid-soft: #362c18; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --ok: #8cc583; --ok-soft: #22301f; --bad: #e88a80; --bad-soft: #3a2220; --mid: #e0b45a; --mid-soft: #362c18; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body) }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 40px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 48px }
+.wrap > * { min-width: 0 }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0 }
+h1 { font-size: clamp(30px, 5.5vw, 48px); font-weight: 700; letter-spacing: -.01em }
+h2 { font-size: clamp(22px, 3.2vw, 28px); font-weight: 700 }
+h3 { font-size: 17px; font-weight: 700 }
+p, ul, ol { margin: 0; max-width: 72ch }
+ul, ol { padding-left: 20px; display: grid; gap: 6px }
+a { color: var(--accent); text-underline-offset: 2px }
+.eyebrow { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.stack { display: grid; gap: 14px }
+.stack > * { min-width: 0 }
+.lede { font-size: 18px; max-width: 66ch }
+.note { font-size: 13.5px; color: var(--muted) }
+.lbl { font: 500 11px/1 var(--mono); letter-spacing: .04em; padding: 2px 6px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; vertical-align: 1px }
+header { display: grid; gap: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line) }
+
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface) }
+table { border-collapse: collapse; width: 100%; font-size: 14px }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top }
+th { font: 500 11.5px var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--bg) }
+tr:last-child td { border-bottom: 0 }
+td.r, th.r { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums }
+td.oud { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--line) }
+tr.best td { background: var(--ok-soft) }
+.pill { display: inline-block; font: 600 12px/1.2 var(--mono); padding: 3px 7px; border-radius: 4px; white-space: nowrap }
+.pill.ok { background: var(--ok-soft); color: var(--ok) } .pill.mid { background: var(--mid-soft); color: var(--mid) } .pill.bad { background: var(--bad-soft); color: var(--bad) }
+
+.probleem { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 20px; display: grid; gap: 12px }
+.probleem .kop { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between }
+.probleem .wie { font: 500 11.5px var(--mono); color: var(--muted) }
+.advies { border-left: 3px solid var(--ok); background: var(--ok-soft); padding: 10px 14px; border-radius: 0 8px 8px 0; display: grid; gap: 4px }
+.advies b { color: var(--ok) }
+.advies p, .advies li { color: var(--fg) }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 18px }
+.two > * { min-width: 0 }
+.zin { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; font-size: 15px }
+.gates { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px }
+.gate { border-radius: 8px; padding: 10px 12px; display: grid; gap: 2px; font-size: 14px }
+.gate b { font: 700 15px var(--display) }
+.gate.go { background: var(--ok-soft); color: var(--ok) } .gate.mid { background: var(--mid-soft); color: var(--mid) } .gate.stop { background: var(--bad-soft); color: var(--bad) }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 4px }
+code { font: 12.5px var(--mono) }
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Ledenclub · herzien na twee raden · 16 november 2026</span>
+  <h1>Plan na de raden</h1>
+  <p class="lede">Het rekenmodel bevat nu personeel, de marge die een bank wil, een leengrens op de waarde van het pand en een sober startbudget. Daardoor worden alle panden duurder, en de volgorde verandert: Utrecht en Metaalhof staan bovenaan, Pernis zakt. Per probleem uit de raden staan hieronder de opties met hun cijfers en een advies.</p>
+</header>
+
+<section class="stack">
+  <span class="eyebrow">Nieuwe cijfers</span>
+  <h2>De top vijf, opnieuw doorgerekend</h2>
+  <div class="tbl"><table>
+    <thead><tr><th>Pand</th><th class="r">Was</th><th class="r">Om te draaien</th><th class="r">Met reserves</th><th class="r">Inleg terug</th><th class="r">Inleg vol lid</th><th class="r">Lening / koopsom</th><th>Omgevingsplan</th></tr></thead>
+    <tbody id="top"></tbody>
+  </table></div>
+  <p class="note">Per vol lid per maand, incl. btw. "Was" is de vergelijking van vóór de raden (om te draaien / inleg terug). Met reserves: plus liquiditeitsreserve en uitkoopfonds. Inleg terug: de fee waarbij na 5 jaar bij verkoop alle inleg terugkomt. "Niet in 5 jaar" betekent dat pand en verbouw dan minder waard zijn dan alle inleg samen. Inleg vol lid: de bank leent hooguit 70% van de koopsom plus de helft van de gebouwgebonden verbouw, en de rest komt uit de inleg <span class="lbl">schatting</span>. De andere vijftien panden staan herrekend in de vergelijking.</p>
+  <ul class="note" id="aannames"></ul>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Problemen en oplossingen</span>
+  <h2>Wat de raden vonden, en wat je ermee doet</h2>
+
+  <div class="probleem">
+    <div class="kop"><h3>1. Er stond geen personeel in de begroting</h3><span class="wie">Operator, Skeptic, Contrarian</span></div>
+    <p>Een café, een gym en 60 tot 150 mensen draaien niet op schoonmaak en één dag management vanuit Marokko. Vier manieren om het te bemensen, met de fee per vol lid:</p>
+    <div class="tbl"><table><thead><tr><th>Pand</th><th class="r">Zonder personeel</th><th class="r">Host 0,5 + beheer 0,2</th><th class="r">Café verpacht</th><th class="r">Volle bezetting</th></tr></thead><tbody id="pers"></tbody></table></div>
+    <div class="advies"><b>Advies: verpacht het café aan een ondernemer en houd een host voor een halve week (0,2 fte) plus beheer voor één dag per week (0,2 fte).</b>
+      <ul>
+        <li>Een koffiebar-ondernemer draait het café met eigen personeel en omzet, en betaalt pacht. Gerekend is met € 800 per maand <span class="lbl">schatting</span>.</li>
+        <li>Leden houden de sfeer via huisregels en een eigen ledenkorting.</li>
+        <li>Dit lost ook de drankvergunning op, want de ondernemer heeft die zelf. Ruim bovendien de grootste vaste kostenpost op.</li>
+        <li>Nadeel: je moet een pachter vinden, en de omgevingsvergunning moet horeca toestaan.</li>
+        <li>Vind je geen pachter, dan is de basis (host 0,5) het uitgangspunt.</li>
+      </ul></div>
+  </div>
+
+  <div class="probleem">
+    <div class="kop"><h3>2. De bank leent minder dan het model vroeg</h3><span class="wie">Financier (sterkste argument)</span></div>
+    <p>Bij Utrecht en Pernis was de lening meer dan de koopsom. Met een leengrens van 70% van het onderpand moet daar meer inleg in:</p>
+    <div class="tbl"><table><thead><tr><th>Pand</th><th class="r">Tekort per eigenaar</th><th class="r">Inleg vol lid</th><th class="r">Fee met extra inleg</th><th class="r">Fee met ledenlening</th></tr></thead><tbody id="lening"></tbody></table></div>
+    <div class="advies"><b>Advies: vul het tekort met inleg, niet met een duurdere lening.</b>
+      <ul>
+        <li>Dat kost de fee niets.</li>
+        <li>Wie het niet in één keer kan betalen, gebruikt de ingroeiregeling.</li>
+        <li>Een achtergestelde ledenlening van welgestelde leden (4%, 10 jaar) kan ook. Die kost € 20 tot € 70 per maand meer op de fee.</li>
+        <li>Metaalhof en Galvanistraat hebben geen tekort: daar is de koopsom groot ten opzichte van de verbouw.</li>
+      </ul></div>
+  </div>
+
+  <div class="probleem">
+    <div class="kop"><h3>3. Waarom zou iemand inleggen in plaats van huren?</h3><span class="wie">First Principles, Outsider, Customer Advocate, Strategist</span></div>
+    <p>Wat een plek per maand echt kost, inclusief de reserves, 3% gemiste opbrengst op de inleg en het deel van de inleg dat na 5 jaar niet terugkomt. Daarnaast wat een huurlid zonder inleg betaalt als je hem eerlijk prijst:</p>
+    <div class="tbl"><table><thead><tr><th>Pand</th><th class="r">Eigenaar vol, alles meegeteld</th><th class="r">Huurlid zonder inleg</th><th class="r">Verschil</th></tr></thead><tbody id="eigen"></tbody></table></div>
+    <p class="note">Ter vergelijking, de markt in Rotterdam: een vast bureau bij The Social Hub kost circa € 270 excl. btw (circa € 327 incl.), en Basic-Fit circa € 32. Samen circa € 360, maar dan in het centrum, zonder zeggenschap en met een huur die meestijgt.</p>
+    <div class="advies"><b>Advies: bied beide routes aan. Laat de markt kiezen en verkoop eigendom op drie beloften, niet op prijs.</b>
+      <ul>
+        <li>Eigenaar is binnen de club altijd goedkoper dan huurlid.</li>
+        <li>Tegenover de markt is een vol eigenaar duurder; de flex-pakketten zijn wel concurrerend.</li>
+        <li>Toon één maandprijs per pakket inclusief reserves. Laat "om te draaien" en "inleg terug" weg uit de verkoop.</li>
+        <li>Test deze drie zinnen bij twintig mensen:</li>
+      </ul>
+      <div class="zin">"Je werkt, sport en leest om de hoek, met dezelfde gezichten. Het gebouw is van jullie, dus de prijs stijgt alleen met de echte kosten en niemand kan je eruit zetten."</div>
+      <div class="zin">"Je inleg is je aandeel in het pand. Je krijgt hem terug volgens een vaste formule als je stopt. Zolang je lid bent, betaal je geen huurmarge aan een verhuurder."</div>
+      <div class="zin">"Voor ongeveer wat een flexplek plus sportschool kost, heb je een vaste plek in je eigen buurt, en je beslist mee."</div>
+    </div>
+  </div>
+
+  <div class="probleem">
+    <div class="kop"><h3>4. Te afhankelijk van clubleden</h3><span class="wie">Financier, Strategist, Customer Advocate</span></div>
+    <p>€ 119 per maand is bijna vier keer Basic-Fit. Komt maar de helft van de geplande clubleden, dan wordt de fee:</p>
+    <div class="tbl"><table><thead><tr><th>Pand</th><th class="r">Clubleden gepland</th><th class="r">Fee</th><th class="r">Met de helft</th><th class="r">Verschil</th></tr></thead><tbody id="club"></tbody></table></div>
+    <div class="advies"><b>Advies: reken in de begroting met de helft van de clubleden. Wat erbij komt, gaat naar de reserves.</b>
+      <ul>
+        <li>Utrecht leunt zwaar op 90 clubleden. Metaalhof en Galvanistraat veel minder.</li>
+        <li>Maak het clublidmaatschap scherper: een daltarief of € 79 zonder café-tegoed, en laat het eerst testen tijdens de open avonden.</li>
+      </ul></div>
+  </div>
+
+  <div class="two">
+    <div class="probleem">
+      <div class="kop"><h3>5. De trekker woont in Marokko</h3><span class="wie">alle raden</span></div>
+      <p>Open avonden, gemeente, bezichtigingen en ballotage doe je niet op afstand.</p>
+      <div class="advies"><b>Advies: een kwartiermaker in de wijk, 0,4 fte gedurende 9 maanden (circa € 20.000), betaald uit jouw projectleidingsvergoeding.</b>
+        <ul>
+          <li>Hij of zij wordt na de opening de host.</li>
+          <li>Geen kwartiermaker gevonden in week 8? Dan stop je.</li>
+        </ul></div>
+    </div>
+    <div class="probleem">
+      <div class="kop"><h3>6. Toezichtregels en de accountant</h3><span class="wie">peer review</span></div>
+      <p>Een inleg met een vaste nominale terugbetaling kan onder het verbod vallen om opvorderbare gelden aan te trekken (art. 3:5 Wft). Een accountant kan zo'n inleg ook als schuld boeken.</p>
+      <div class="advies"><b>Advies: maak de inleg risicodragend ledenkapitaal.</b>
+        <ul>
+          <li>Terugbetaling volgens een formule op de boekwaarde, hooguit nominaal plus index, en met de noodrem.</li>
+          <li>Aanbetalingen gaan via de derdenrekening van de notaris.</li>
+          <li>Laat een jurist dit toetsen voordat er een euro binnenkomt. Lukt het niet, dan kun je ontheffing aanvragen bij DNB.</li>
+        </ul></div>
+    </div>
+  </div>
+
+  <div class="probleem">
+    <div class="kop"><h3>7. Geen budget en geen stopmoment voor de voorfase</h3><span class="wie">peer review</span></div>
+    <div class="tbl"><table><thead><tr><th>Voorfase, eerste 6 maanden</th><th class="r">Kosten</th><th>Label</th></tr></thead><tbody>
+      <tr><td>Kwartiermaker 0,4 fte, 6 maanden</td><td class="r">€ 13.000</td><td><span class="lbl">schatting</span></td></tr>
+      <tr><td>Principeverzoeken (2 panden) en schetsplan</td><td class="r">€ 4.000</td><td><span class="lbl">schatting</span></td></tr>
+      <tr><td>Jurist (inleg, statuten, Wft) en fiscalist (btw)</td><td class="r">€ 4.800</td><td><span class="lbl">schatting</span></td></tr>
+      <tr><td>Open avonden, wervingspagina, flyers</td><td class="r">€ 3.000</td><td><span class="lbl">schatting</span></td></tr>
+      <tr><td>Bouwkundige keuring en asbest, 1 pand</td><td class="r">€ 2.500</td><td><span class="lbl">schatting</span></td></tr>
+      <tr><td><b>Totaal</b></td><td class="r"><b>€ 27.300</b></td><td><span class="lbl">berekend</span></td></tr>
+    </tbody></table></div>
+    <div class="advies"><b>Advies: een vast budget van € 27.300 en twee stopmomenten.</b>
+      <ul>
+        <li>Jij legt € 10.000 in.</li>
+        <li>De rest komt van 20 tot 25 oprichters die € 750 tot € 1.000 risicodragend inleggen. Dat wordt later onderdeel van hun inleg, maar is weg bij een no-go. Dit tekenen ze vooraf, met uitleg.</li>
+        <li>Stopmoment 1 in week 8 en stopmoment 2 in maand 6. De drempels staan onderaan.</li>
+      </ul></div>
+  </div>
+
+  <div class="probleem">
+    <div class="kop"><h3>8. Goedkoop beginnen, waarde toevoegen waar het weinig kost</h3><span class="wie">jouw vraag</span></div>
+    <p id="startintro"></p>
+    <div class="tbl"><table><thead><tr><th>Post</th><th class="r">Was</th><th class="r">Bij de start</th><th>Waarom</th></tr></thead><tbody id="start"></tbody></table></div>
+    <div class="two">
+      <div class="stack"><h3>Wel doen</h3><ul>
+        <li><b>Zonnepanelen</b> (circa € 750 per kWp). Terugverdiend in 7 tot 8 jaar, en het dak ligt er toch.</li>
+        <li><b>Goede basisinstallaties:</b> WTW-ventilatie (frisse lucht met 60 tot 150 mensen), lucht-lucht warmtepompen, een warmtepompboiler en LED.</li>
+        <li><b>Waarde per euro:</b> planten op licht, strakke vloer, akoestiek van houtwol en vilt, hergebruikte ramen en hout, en leden die sauzen. Dat zit er al in.</li>
+      </ul></div>
+      <div class="stack"><h3>Groen dak: alleen waar het past</h3><ul>
+        <li>Sedum kost circa € 55 per m² plus € 1.500 voor een constructieve check. Per 200 m² is dat + <span id="groen"></span> per maand op de fee.</li>
+        <li>Oude hallen hebben vaak een licht stalen dak dat het gewicht niet draagt. Daar zijn zonnepanelen een betere besteding van het dak.</li>
+        <li>Begin met groen op de terrasoverkapping en met klimplanten langs de gevel.</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Volgorde</span>
+  <h2>De komende zes maanden</h2>
+  <ol>
+    <li><b>Week 1 tot 2:</b> een kwartiermaker zoeken in Utrecht of Rotterdam, de jurist laten kijken naar de inleg en de Wft, en de fiscalist naar de btw.</li>
+    <li><b>Week 2 tot 4:</b> principeverzoeken voor Van Heutszstraat Utrecht en Metaalhof Rotterdam, of Pernis als maatschappelijke optie. Gesprekken met een bank en een mogelijke café-pachter.</li>
+    <li><b>Week 3 tot 8:</b> een wervingspagina met één maandprijs per pakket, twee open avonden, en de drie zinnen testen. Terugbetaalbare aanbetalingen van € 500 via de notaris.</li>
+    <li><b>Week 8, stopmoment 1:</b> zie de drempels hieronder.</li>
+    <li><b>Maand 3 tot 6:</b> concept-statuten, keuring van het gekozen pand, een bod onder voorbehoud, en doorwerven tot 80% van de plekken gevuld is.</li>
+  </ol>
+  <div class="gates">
+    <div class="gate go"><b>Door</b>Minstens 40 aanbetalingen van onbekenden, een bankindicatie van minstens 50% van de koopsom zonder borg, een kwartiermaker gevonden en een principeverzoek niet afgewezen.</div>
+    <div class="gate mid"><b>Bijsturen</b>20 tot 40 aanbetalingen: één keer pand, pakket of prijs aanpassen, dan 4 weken met dezelfde drempels.</div>
+    <div class="gate stop"><b>Stop</b>Minder dan 20 aanbetalingen, minder dan 40% van de bank, geen kwartiermaker, of het voorfasebudget is op.</div>
+  </div>
+</section>
+
+<footer>
+  <span>Berekend met <code>panden/oplossingen.py</code> op het aangepaste <code>pand_case.py</code>: personeel, DSCR 1,2, leengrens, startbudget.</span>
+  <span>Ook bijgewerkt: <a href="https://claude.ai/artifact/URxf9q73tTDkPPVyEpgtyN">Panden naast elkaar</a> · <a href="https://claude.ai/artifact/1mEAwtEXqmirDuTodzJes7">Business case</a> · <a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Spelregels</a> · <a href="https://claude.ai/artifact/BwvDhTQz9L97GTT3KqjMHB">Twee raden</a></span>
+</footer>
+</div>
+
+<script>
+const J = {"panden": [{"slug": "pernis-ring-15", "titel": "Ring 15, Pernis (Rotterdam)", "eigenaren": 60, "club": 60, "oud_fee": 228, "oud_terug": 399, "fee": 311, "prijs": 329, "terug": null, "dekking": 0.49, "inleg_vol": 17000.0, "inleg_deel": 10200.0, "ltv_koop": 0.93, "lening": 546561, "koop": 590000, "tekort": 95231, "tekort_pp": 1587, "ledenlening_fee": 335, "personeel": {"Host 0,5 + beheer 0,2 (basis)": 311, "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 252, "Volle bezetting: host 1,0 + beheer 0,5": 415, "Zonder personeel (oude model)": 220}, "club_half": 382, "eigenaar": 516, "huurlid": 587, "erosie": 144, "groen_dak_pm": 2.1, "capex": 1361792}, {"slug": "utrecht-van-heutszstraat-4", "titel": "Van Heutszstraat 4, Utrecht", "eigenaren": 60, "club": 90, "oud_fee": 162, "oud_terug": 316, "fee": 246, "prijs": 264, "terug": 379, "dekking": 0.54, "inleg_vol": 16900.0, "inleg_deel": 10100.0, "ltv_koop": 0.86, "lening": 578156, "koop": 670000, "tekort": 91668, "tekort_pp": 1528, "ledenlening_fee": 269, "personeel": {"Host 0,5 + beheer 0,2 (basis)": 246, "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 187, "Volle bezetting: host 1,0 + beheer 0,5": 350, "Zonder personeel (oude model)": 155}, "club_half": 353, "eigenaar": 436, "huurlid": 502, "erosie": 130, "groen_dak_pm": 2.1, "capex": 1389824}, {"slug": "rotterdam-metaalhof-40", "titel": "Metaalhof 40, Rotterdam Het Lage Land", "eigenaren": 100, "club": 30, "oud_fee": 215, "oud_terug": 320, "fee": 280, "prijs": 298, "terug": 364, "dekking": 0.67, "inleg_vol": 15000.0, "inleg_deel": 9000.0, "ltv_koop": 0.7, "lening": 809893, "koop": 1150000, "tekort": 0, "tekort_pp": 0, "ledenlening_fee": null, "personeel": {"Host 0,5 + beheer 0,2 (basis)": 280, "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 245, "Volle bezetting: host 1,0 + beheer 0,5": 342, "Zonder personeel (oude model)": 225}, "club_half": 301, "eigenaar": 418, "huurlid": 476, "erosie": 82, "groen_dak_pm": 1.3, "capex": 2009893}, {"slug": "rotterdam-galvanistraat-122", "titel": "Galvanistraat 122-126, Rotterdam West", "eigenaren": 90, "club": 30, "oud_fee": 230, "oud_terug": 329, "fee": 301, "prijs": 319, "terug": 377, "dekking": 0.7, "inleg_vol": 15000.0, "inleg_deel": 9000.0, "ltv_koop": 0.7, "lening": 784559, "koop": 1125000, "tekort": 0, "tekort_pp": 0, "ledenlening_fee": null, "personeel": {"Host 0,5 + beheer 0,2 (basis)": 301, "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 262, "Volle bezetting: host 1,0 + beheer 0,5": 371, "Zonder personeel (oude model)": 241}, "club_half": 325, "eigenaar": 432, "huurlid": 490, "erosie": 75, "groen_dak_pm": 1.4, "capex": 1864559}, {"slug": "den-bosch-eendenkooi-1a", "titel": "De Eendenkooi 1A, Den Bosch", "eigenaren": 64, "club": 60, "oud_fee": 327, "oud_terug": 427, "fee": 391, "prijs": 409, "terug": 465, "dekking": 0.79, "inleg_vol": 20600.0, "inleg_deel": 12400.0, "ltv_koop": 0.75, "lening": 1046592, "koop": 1400000, "tekort": 287149, "tekort_pp": 4487, "ledenlening_fee": 457, "personeel": {"Host 0,5 + beheer 0,2 (basis)": 391, "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 335, "Volle bezetting: host 1,0 + beheer 0,5": 488, "Zonder personeel (oude model)": 305}, "club_half": 457, "eigenaar": 533, "huurlid": 615, "erosie": 72, "groen_dak_pm": 2.0, "capex": 2101741}], "start": {"capex_oud": 1900465, "capex_nieuw": 1864559, "fee_oud": 309, "fee_nieuw": 301, "rijen": [{"post": "Concept2 SkiErg + BikeErg + airbike [start: alleen een airbike; rest fase 2]", "totaal": 1138, "was": 3250}, {"post": "Buitenrig en sprintstrook [start: fase 2]", "totaal": 0, "was": 2500}, {"post": "Boeken tweedehands: self-help, psychologie, geld, biografie, filosofie, romans [start: leden doneren de rest]", "totaal": 4050, "was": 9000}, {"post": "Nieuwe titels die tweedehands lastig zijn [start: fase 2]", "totaal": 0, "was": 2000}, {"post": "Lounge: 4 banken, 10 fauteuils, bijzettafels, kleden (tweedehands) [start: deels van leden en Marktplaats]", "totaal": 2940, "was": 4200}, {"post": "Studio voor yoga en workshops: matten, blokken, spiegelwand, speaker [start: fase 2; eerst de lounge gebruiken]", "totaal": 0, "was": 2500}, {"post": "Vintage decoratie en kunst [start: leden brengen mee]", "totaal": 600, "was": 3000}, {"post": "Batterij [start: geschrapt; pas bij netcongestie of dynamische tarieven]", "totaal": 0, "was": 13500}]}, "uitgangspunten": {"host_fte": 0.5, "host_kost": 62000, "beheer_fte": 0.2, "beheer_kost": 60000, "dscr": 1.2, "ltv_max": 0.7, "onderpand_verbouw": 0.5, "reserve": 18, "opp": 0.03}};
+const eur = n => n == null ? "" : "€ " + Math.round(n).toLocaleString("nl-NL");
+const kort = t => t.split(",")[0];
+const OP = {"pernis-ring-15": ["hoog", "ok"], "utrecht-van-heutszstraat-4": ["middel", "mid"], "rotterdam-metaalhof-40": ["middel", "mid"], "rotterdam-galvanistraat-122": ["laag, transformatie", "bad"], "den-bosch-eendenkooi-1a": ["hoog", "ok"]};
+const P = [...J.panden].sort((a, b) => a.fee - b.fee);
+document.getElementById("top").innerHTML = P.map((p, i) => `<tr${i === 0 ? ' class="best"' : ""}><td><b>${kort(p.titel)}</b><br><span class="note">${p.eigenaren} eigenaren + ${p.club} clubleden</span></td>
+  <td class="r oud">${eur(p.oud_fee)} / ${eur(p.oud_terug)}</td><td class="r"><b>${eur(p.fee)}</b></td><td class="r">${eur(p.prijs)}</td>
+  <td class="r">${p.terug ? eur(p.terug) : '<span class="pill bad">niet in 5 jaar</span>'}</td><td class="r">${eur(p.inleg_vol)}</td>
+  <td class="r"><span class="pill ${p.ltv_koop > 0.8 ? "bad" : p.ltv_koop > 0.7 ? "mid" : "ok"}">${Math.round(p.ltv_koop * 100)}%</span></td>
+  <td><span class="pill ${OP[p.slug][1]}">${OP[p.slug][0]}</span></td></tr>`).join("");
+const U = J.uitgangspunten;
+document.getElementById("aannames").innerHTML = [
+  `Host ${String(U.host_fte).replace(".", ",")} fte (${eur(U.host_kost)} per fte) en beheer ${String(U.beheer_fte).replace(".", ",")} fte (${eur(U.beheer_kost)} per fte) <span class="lbl">schatting</span>`,
+  `De bank wil ${Math.round((U.dscr - 1) * 100)}% speling op rente en aflossing (DSCR ${String(U.dscr).replace(".", ",")})`,
+  `Leengrens: ${Math.round(U.ltv_max * 100)}% van de koopsom plus ${Math.round(U.onderpand_verbouw * 100)}% van de gebouwgebonden verbouw <span class="lbl">schatting</span>`,
+  `Startbudget: batterij geschrapt en extra's naar fase 2. Zie probleem 8`
+].map(x => `<li>${x}</li>`).join("");
+document.getElementById("pers").innerHTML = P.map(p => { const v = Object.values(p.personeel); return `<tr><td>${kort(p.titel)}</td><td class="r">${eur(v[3])}</td><td class="r">${eur(v[0])}</td><td class="r"><b>${eur(v[1])}</b></td><td class="r">${eur(v[2])}</td></tr>`; }).join("");
+document.getElementById("lening").innerHTML = P.map(p => `<tr><td>${kort(p.titel)}</td><td class="r">${p.tekort_pp ? eur(p.tekort_pp) : '<span class="pill ok">geen</span>'}</td><td class="r">${eur(p.inleg_vol)}</td><td class="r">${eur(p.fee)}</td><td class="r">${p.ledenlening_fee ? eur(p.ledenlening_fee) : ""}</td></tr>`).join("");
+document.getElementById("eigen").innerHTML = P.map(p => `<tr><td>${kort(p.titel)}</td><td class="r">${eur(p.eigenaar)}</td><td class="r">${eur(p.huurlid)}</td><td class="r"><span class="pill ok">${eur(p.huurlid - p.eigenaar)} goedkoper</span></td></tr>`).join("");
+document.getElementById("club").innerHTML = P.map(p => `<tr><td>${kort(p.titel)}</td><td class="r">${p.club}</td><td class="r">${eur(p.fee)}</td><td class="r">${eur(p.club_half)}</td><td class="r"><span class="pill ${p.club_half - p.fee > 50 ? "bad" : "mid"}">+ ${eur(p.club_half - p.fee)}</span></td></tr>`).join("");
+const S = J.start;
+document.getElementById("startintro").textContent = `Wat geen waarde toevoegt bij de opening, gaat naar fase 2. Bij Galvanistraat gaat de investering van ${eur(S.capex_oud)} naar ${eur(S.capex_nieuw)}, en de fee van ${eur(S.fee_oud)} naar ${eur(S.fee_nieuw)} per maand. De goede basisinstallaties blijven.`;
+document.getElementById("start").innerHTML = S.rijen.map(r => { const [post, reden] = r.post.split(" [start: "); return `<tr><td>${post}</td><td class="r oud">${eur(r.was)}</td><td class="r">${eur(r.totaal)}</td><td>${reden.replace("]", "")}</td></tr>`; }).join("");
+document.getElementById("groen").textContent = eur(Math.min(...J.panden.map(p => p.groen_dak_pm))) + " tot " + eur(Math.max(...J.panden.map(p => p.groen_dak_pm)));
+</script>

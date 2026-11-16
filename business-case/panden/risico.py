@@ -34,7 +34,7 @@ def basis(slug):
     V, D = L["n_vol"], L["n_deel"]
     last = annu(r["lening"])
     noemer = 12 * 0.95 / 1.18 * (V + D * 320 / 450)   # zelfde noemer als pand_case: euro fee_vol per euro jaarlast
-    return dict(slug=slug, titel=b.pand(slug)["ontwerp"]["titel"], V=V, D=D, n=V + D, fee=f, fee_deel=round(f * 320 / 450),
+    return dict(slug=slug, titel=b.pand(slug)["ontwerp"]["titel"], V=V, D=D, n=V + D, fee=f, terug=k["inleg"], fee_deel=round(f * 320 / 450),
                 inleg_vol=15_000, inleg_deel=9_000, ledenkapitaal=r["inleg"], lening=r["lening"], capex=round(r["capex"]),
                 opex=r["opex"], annuiteit=round(last), maand_vast=round((r["opex"] + last) / 12), noemer=noemer)
 
@@ -109,11 +109,12 @@ def reserves(B):
 def bedrijf(B, kapitaal_rente=0.055, leegstand=0.10):
     """Bedrijfsabonnement zonder inleg: prijs per plek = fee + vergoeding voor het kapitaal dat het bedrijf niet inbrengt + leegstandsopslag."""
     kap = round(15_000 * kapitaal_rente / 12)
-    prijs = round((B["fee"] + kap) * (1 + leegstand))
+    basis_fee = B.get("terug") or round(B["fee"] * 1.25)   # de fee waarbij de inleg van de leden heel blijft, niet de fee om te draaien
+    prijs = round((basis_fee + kap) * (1 + leegstand))
     plekken = 5
     # wat de club mist als een team van 5 vertrekt en de plekken 6 maanden leeg staan; en het fee-effect als die opbrengst wel in de begroting zat
     gemist = plekken * prijs * 6
-    return dict(kapitaal_pm=kap, prijs_plek=prijs, plekken=plekken, gemist_6m=gemist, per_eigenaar=round(gemist / B["n"]),
+    return dict(kapitaal_pm=kap, basis_fee=basis_fee, prijs_plek=prijs, plekken=plekken, gemist_6m=gemist, per_eigenaar=round(gemist / B["n"]),
                 fee_effect_als_ingebouwd=round(plekken * prijs * 12 / 1.18 * 0.95 / B["noemer"], 1))
 
 

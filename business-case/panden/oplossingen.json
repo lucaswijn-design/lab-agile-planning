@@ -1,0 +1,223 @@
+{
+ "panden": [
+  {
+   "slug": "pernis-ring-15",
+   "titel": "Ring 15, Pernis (Rotterdam)",
+   "eigenaren": 60,
+   "club": 60,
+   "oud_fee": 228,
+   "oud_terug": 399,
+   "fee": 311,
+   "prijs": 329,
+   "terug": null,
+   "dekking": 0.49,
+   "inleg_vol": 17000.0,
+   "inleg_deel": 10200.0,
+   "ltv_koop": 0.93,
+   "lening": 546561,
+   "koop": 590000,
+   "tekort": 95231,
+   "tekort_pp": 1587,
+   "ledenlening_fee": 335,
+   "personeel": {
+    "Host 0,5 + beheer 0,2 (basis)": 311,
+    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 252,
+    "Volle bezetting: host 1,0 + beheer 0,5": 415,
+    "Zonder personeel (oude model)": 220
+   },
+   "club_half": 382,
+   "eigenaar": 516,
+   "huurlid": 587,
+   "erosie": 144,
+   "groen_dak_pm": 2.1,
+   "capex": 1361792
+  },
+  {
+   "slug": "utrecht-van-heutszstraat-4",
+   "titel": "Van Heutszstraat 4, Utrecht",
+   "eigenaren": 60,
+   "club": 90,
+   "oud_fee": 162,
+   "oud_terug": 316,
+   "fee": 246,
+   "prijs": 264,
+   "terug": 379,
+   "dekking": 0.54,
+   "inleg_vol": 16900.0,
+   "inleg_deel": 10100.0,
+   "ltv_koop": 0.86,
+   "lening": 578156,
+   "koop": 670000,
+   "tekort": 91668,
+   "tekort_pp": 1528,
+   "ledenlening_fee": 269,
+   "personeel": {
+    "Host 0,5 + beheer 0,2 (basis)": 246,
+    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 187,
+    "Volle bezetting: host 1,0 + beheer 0,5": 350,
+    "Zonder personeel (oude model)": 155
+   },
+   "club_half": 353,
+   "eigenaar": 436,
+   "huurlid": 502,
+   "erosie": 130,
+   "groen_dak_pm": 2.1,
+   "capex": 1389824
+  },
+  {
+   "slug": "rotterdam-metaalhof-40",
+   "titel": "Metaalhof 40, Rotterdam Het Lage Land",
+   "eigenaren": 100,
+   "club": 30,
+   "oud_fee": 215,
+   "oud_terug": 320,
+   "fee": 280,
+   "prijs": 298,
+   "terug": 364,
+   "dekking": 0.67,
+   "inleg_vol": 15000.0,
+   "inleg_deel": 9000.0,
+   "ltv_koop": 0.7,
+   "lening": 809893,
+   "koop": 1150000,
+   "tekort": 0,
+   "tekort_pp": 0,
+   "ledenlening_fee": null,
+   "personeel": {
+    "Host 0,5 + beheer 0,2 (basis)": 280,
+    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 245,
+    "Volle bezetting: host 1,0 + beheer 0,5": 342,
+    "Zonder personeel (oude model)": 225
+   },
+   "club_half": 301,
+   "eigenaar": 418,
+   "huurlid": 476,
+   "erosie": 82,
+   "groen_dak_pm": 1.3,
+   "capex": 2009893
+  },
+  {
+   "slug": "rotterdam-galvanistraat-122",
+   "titel": "Galvanistraat 122-126, Rotterdam West",
+   "eigenaren": 90,
+   "club": 30,
+   "oud_fee": 230,
+   "oud_terug": 329,
+   "fee": 301,
+   "prijs": 319,
+   "terug": 377,
+   "dekking": 0.7,
+   "inleg_vol": 15000.0,
+   "inleg_deel": 9000.0,
+   "ltv_koop": 0.7,
+   "lening": 784559,
+   "koop": 1125000,
+   "tekort": 0,
+   "tekort_pp": 0,
+   "ledenlening_fee": null,
+   "personeel": {
+    "Host 0,5 + beheer 0,2 (basis)": 301,
+    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 262,
+    "Volle bezetting: host 1,0 + beheer 0,5": 371,
+    "Zonder personeel (oude model)": 241
+   },
+   "club_half": 325,
+   "eigenaar": 432,
+   "huurlid": 490,
+   "erosie": 75,
+   "groen_dak_pm": 1.4,
+   "capex": 1864559
+  },
+  {
+   "slug": "den-bosch-eendenkooi-1a",
+   "titel": "De Eendenkooi 1A, Den Bosch",
+   "eigenaren": 64,
+   "club": 60,
+   "oud_fee": 327,
+   "oud_terug": 427,
+   "fee": 391,
+   "prijs": 409,
+   "terug": 465,
+   "dekking": 0.79,
+   "inleg_vol": 20600.0,
+   "inleg_deel": 12400.0,
+   "ltv_koop": 0.75,
+   "lening": 1046592,
+   "koop": 1400000,
+   "tekort": 287149,
+   "tekort_pp": 4487,
+   "ledenlening_fee": 457,
+   "personeel": {
+    "Host 0,5 + beheer 0,2 (basis)": 391,
+    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 335,
+    "Volle bezetting: host 1,0 + beheer 0,5": 488,
+    "Zonder personeel (oude model)": 305
+   },
+   "club_half": 457,
+   "eigenaar": 533,
+   "huurlid": 615,
+   "erosie": 72,
+   "groen_dak_pm": 2.0,
+   "capex": 2101741
+  }
+ ],
+ "start": {
+  "capex_oud": 1900465,
+  "capex_nieuw": 1864559,
+  "fee_oud": 309,
+  "fee_nieuw": 301,
+  "rijen": [
+   {
+    "post": "Concept2 SkiErg + BikeErg + airbike [start: alleen een airbike; rest fase 2]",
+    "totaal": 1138,
+    "was": 3250
+   },
+   {
+    "post": "Buitenrig en sprintstrook [start: fase 2]",
+    "totaal": 0,
+    "was": 2500
+   },
+   {
+    "post": "Boeken tweedehands: self-help, psychologie, geld, biografie, filosofie, romans [start: leden doneren de rest]",
+    "totaal": 4050,
+    "was": 9000
+   },
+   {
+    "post": "Nieuwe titels die tweedehands lastig zijn [start: fase 2]",
+    "totaal": 0,
+    "was": 2000
+   },
+   {
+    "post": "Lounge: 4 banken, 10 fauteuils, bijzettafels, kleden (tweedehands) [start: deels van leden en Marktplaats]",
+    "totaal": 2940,
+    "was": 4200
+   },
+   {
+    "post": "Studio voor yoga en workshops: matten, blokken, spiegelwand, speaker [start: fase 2; eerst de lounge gebruiken]",
+    "totaal": 0,
+    "was": 2500
+   },
+   {
+    "post": "Vintage decoratie en kunst [start: leden brengen mee]",
+    "totaal": 600,
+    "was": 3000
+   },
+   {
+    "post": "Batterij [start: geschrapt; pas bij netcongestie of dynamische tarieven]",
+    "totaal": 0,
+    "was": 13500
+   }
+  ]
+ },
+ "uitgangspunten": {
+  "host_fte": 0.5,
+  "host_kost": 62000,
+  "beheer_fte": 0.2,
+  "beheer_kost": 60000,
+  "dscr": 1.2,
+  "ltv_max": 0.7,
+  "onderpand_verbouw": 0.5,
+  "reserve": 18,
+  "opp": 0.03
+ }
+}

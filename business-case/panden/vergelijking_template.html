@@ -65,9 +65,9 @@ ul { margin: 0; padding-left: 18px; display: grid; gap: 4px }
 
 <div class="wrap">
   <header style="display:grid;gap:14px">
-    <span class="eyebrow">Clubcoöperatie · panden · 17 november 2026</span>
+    <span class="eyebrow">Clubcoöperatie · panden · herrekend 16 november 2026</span>
     <h1>Panden naast elkaar</h1>
-    <p>Alle uitgewerkte panden in één overzicht, sober doorgerekend. Bedragen zijn per vol lid per maand: wat de club nodig heeft om te draaien, en wat nodig is om na 5 jaar bij verkoop ieders inleg terug te betalen. Klik op een pand voor de details. Sorteer door op een kolomkop te klikken.</p>
+    <p>Alle uitgewerkte panden in één overzicht, sober doorgerekend. Bedragen zijn per vol lid per maand: wat de club nodig heeft om te draaien, en wat nodig is om na 5 jaar bij verkoop ieders inleg terug te betalen. Klik op een pand voor de details. Sorteer door op een kolomkop te klikken.</p><p class="note">Herrekend na de councils:</p><ul class="note"><li>Een host voor een halve week en beheer voor één dag per week zitten nu in de kosten.</li><li>De bank wil 20% speling op rente en aflossing.</li><li>De bank leent hooguit 70% van het onderpand: de koopsom plus de helft van de gebouwgebonden verbouw. Leent de bank minder dan nodig, dan stijgt de inleg per lid.</li><li>Startbudget: geen batterij, en extra's die bij de opening niets toevoegen gaan naar fase 2.</li><li>Liquiditeitsreserve en uitkoopfonds komen hier nog bovenop: ongeveer € 18 per maand.</li></ul>
     <div class="stats" id="stats"></div>
   </header>
 
@@ -84,7 +84,7 @@ ul { margin: 0; padding-left: 18px; display: grid; gap: 4px }
     <thead><tr>
       <th data-k="titel">Pand</th><th data-k="klasse">Klasse</th><th class="r" data-k="prijs">Prijs</th><th class="r" data-k="m2">m²</th>
       <th class="r" data-k="eigenaren">Eigenaren (max)</th><th class="r" data-k="werkplekken">Werkplekken</th>
-      <th class="r" data-k="fee">Om te draaien</th><th class="r" data-k="inleg">Inleg terug</th><th class="r" data-k="ltv">Lening</th>
+      <th class="r" data-k="fee">Om te draaien</th><th class="r" data-k="inleg">Inleg terug</th><th class="r" data-k="inleg_vol_nodig">Inleg vol · lening/koop</th>
       <th class="r" data-k="breed">Wijk kern / breed</th><th data-k="op">Omgevingsplan</th><th data-k="normen_ok">Normen</th>
     </tr></thead>
     <tbody id="rows"></tbody>
@@ -125,7 +125,7 @@ function tabel(){
     <td>${r.klasse}</td><td class="r">${euro(r.prijs)}</td><td class="r">${r.m2}</td>
     <td class="r">${r.eigenaren} <span class="note">(${r.max_eigenaren ?? '?'})</span></td><td class="r">${r.werkplekken}</td>
     <td class="r"><div class="feebar"><i style="width:${Math.round(60*r.fee/maxFee)}px"></i>${euro(r.fee)}</div></td>
-    <td class="r">${r.inleg ? euro(r.inleg) : '<span class="note">inleg kan lager</span>'}</td><td class="r">${Math.round(r.ltv*100)}%</td>
+    <td class="r">${r.inleg ? euro(r.inleg) : '<span class="note">niet in 5 jaar (' + Math.round((r.dekking_max||0)*100) + '%)</span>'}</td><td class="r">${euro(r.inleg_vol_nodig || 15000)}<span class="note"> · ${Math.round((r.ltv_koop||r.ltv)*100)}%</span></td>
     <td class="r">${r.kern ?? '?'} / ${r.breed ?? '?'}</td><td>${pill(r.op_kans)}</td>
     <td><span class="pill ${r.normen_ok === 4 ? 'p-ok' : r.normen_ok >= 2 ? 'p-mid' : 'p-bad'}">${r.normen_ok}/4</span></td></tr>`).join('');
   document.querySelectorAll('#rows tr').forEach(tr => { tr.onclick = () => kies(tr.dataset.s); tr.onkeydown = e => { if (e.key === 'Enter') kies(tr.dataset.s); }; });
@@ -140,8 +140,9 @@ function kies(s){
     <div style="display:grid;gap:6px"><span class="eyebrow">${r.klasse} · ${r.eigenaren} eigenaren (${r.vol} vol, ${r.deel} deeltijd) + ${r.club} clubleden</span><h2>${r.titel}</h2><p class="note">${r.sub}</p></div>
     <div class="kv">
       <div><span>${r.prijs_label}</span><b>${euro(r.prijs)}</b></div><div><span>Alles in</span><b>${euro(r.capex)}</b></div>
-      <div><span>Om te draaien</span><b>${euro(r.fee)}</b></div><div><span>Inleg terug</span><b>${r.inleg ? euro(r.inleg) : 'inleg kan lager'}</b></div>
-      <div><span>Lening</span><b>${Math.round(r.ltv*100)}%</b></div><div><span>Werkplekken</span><b>${r.werkplekken}</b></div>
+      <div><span>Om te draaien</span><b>${euro(r.fee)}</b></div><div><span>Inleg terug</span><b>${r.inleg ? euro(r.inleg) : 'niet in 5 jaar'}</b></div>
+      <div><span>Inleg vol / deel</span><b>${euro(r.inleg_vol_nodig || 15000)} / ${euro(r.inleg_deel_nodig || 9000)}</b></div>
+      <div><span>Lening / koopsom</span><b>${Math.round((r.ltv_koop||r.ltv)*100)}%</b></div><div><span>Inleg terug na 5 jaar bij deze fee</span><b>${Math.round((r.dekking||0)*100)}%</b></div><div><span>Werkplekken</span><b>${r.werkplekken}</b></div>
       <div><span>Vergaderkamers</span><b>${(r.vergaderkamers || []).join(', ')}</b></div><div><span>Past maximaal</span><b>${r.max_eigenaren ?? '?'} eigenaren</b></div>
     </div>
     <div class="cols">

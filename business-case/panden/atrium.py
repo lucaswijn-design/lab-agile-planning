@@ -97,12 +97,14 @@ def run(V=40, D=40, C=30, regio="brabant", kavel_prijs=None, werkplekken=61, dak
     R, g = rows(regio, kavel_prijs, werkplekken, dakterras, bebouwing, glas_prijs, opslag, **geo)
     capex = sum(r["totaal"] for r in R)
     opex = 100_000 + 40 * g["bvo"]                     # [berekend] vaste lasten + per m2; nieuwbouw iets lager per m2 (energie, onderhoud)
+    import pand_case as _pc                            # zelfde personeel en bankmarge als de bestaande panden
+    opex += (_pc.BEMENSING["host_fte"] * _pc.BEMENSING["host_kost"] + _pc.BEMENSING["beheer_fte"] * _pc.BEMENSING["beheer_kost"]) * 1.05
     inleg = V * inleg_vol + D * inleg_deel
     lening = max(0.0, capex - inleg)
     last = lening * rente / (1 - (1 + rente) ** -looptijd)
     o_club = C * 119 * 0.95 / 1.15 * 12
     noemer = 12 * 0.95 / 1.18 * (V + D * fee_deel_ratio)
-    fee_run = (opex + last - o_club) / noemer
+    fee_run = (opex + _pc.DSCR * last - o_club) / noemer
     grond = R[0]["totaal"]
     exitw = grond * (1 + groei) ** 5 + sum(r["totaal"] * r["gen"] for r in R[1:])
 

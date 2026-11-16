@@ -100,7 +100,8 @@ def rij(slug, W, OP):
     nieuw = slug == "nieuwbouw-atriumhal"
     return dict(slug=slug, titel=titel, sub=O.get("sub", ""), klasse=klasse, prijs=k["koop"], prijs_label=k.get("koop_label") or "Vraagprijs",
                 m2=m2, hoogte=O.get("hoogte"), eigenaren=n, vol=V, deel=D, club=C, max_eigenaren=ml.get("eigenaren"), werkplekken=k["werkplekken"],
-                vergaderkamers=k.get("vergaderkamers"), belcellen=k.get("belcellen"), capex=k["capex"], fee=k["fee"], inleg=k["inleg"], ltv=k["ltv"],
+                vergaderkamers=k.get("vergaderkamers"), belcellen=k.get("belcellen"), capex=k["capex"], fee=k["fee"], inleg=k["inleg"], ltv=k["ltv"], ltv_koop=k.get("ltv_koop"), inleg_vol_nodig=k.get("inleg_vol_nodig"),
+                inleg_deel_nodig=k.get("inleg_deel_nodig"), dekking=k.get("dekking"), dekking_max=k.get("dekking_max"), personeel=k.get("personeel"),
                 soorten=soorten, kern=w.get("kern"), breed=w.get("breed"), auto=w.get("auto"), status=(w.get("status") or L.get("oordeel") or "")[:160],
                 zekerheid=w.get("zekerheid"), parkeren=(w.get("parkeren") or "")[:80], station_km=w.get("station_km"),
                 op_kans=op.get("kans"), op_route=op.get("route"), op_onderbouwing=(op.get("onderbouwing") or "")[:260], op_tip=(op.get("tip") or "")[:200],

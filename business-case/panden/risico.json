@@ -7,26 +7,27 @@
     "V": 45,
     "D": 45,
     "n": 90,
-    "fee": 230,
-    "fee_deel": 164,
+    "fee": 301,
+    "terug": 377,
+    "fee_deel": 214,
     "inleg_vol": 15000,
     "inleg_deel": 9000,
-    "ledenkapitaal": 1080000,
-    "lening": 820465,
-    "capex": 1900465,
-    "opex": 137823,
-    "annuiteit": 68656,
-    "maand_vast": 17207
+    "ledenkapitaal": 1080000.0,
+    "lening": 784559,
+    "capex": 1864559,
+    "opex": 180782,
+    "annuiteit": 65651,
+    "maand_vast": 20536
    },
    "scenarios": [
     {
      "id": "wanbetaler",
      "titel": "Eén eigenaar betaalt zes maanden niet",
-     "zonder": "1.380 euro gemist, gedeeld door 89 anderen: 16 euro per persoon",
-     "zonder_eur": 16,
+     "zonder": "1.806 euro gemist, gedeeld door 89 anderen: 20 euro per persoon",
+     "zonder_eur": 20,
      "met": "Verrekend met zijn inleg van 15.000 euro: 0 euro voor de anderen. Na 14 dagen gaat zijn pas dicht, na 60 dagen volgt opzegging.",
      "met_eur": 0,
-     "reken": "6 x 230 = 1380"
+     "reken": "6 x 301 = 1806"
     },
     {
      "id": "failliet",
@@ -40,27 +41,27 @@
     {
      "id": "team",
      "titel": "Een BV met vijf plekken gaat failliet tijdens de opzegtermijn van zes maanden",
-     "zonder": "5 x 230 x 6 = 6.900 euro gemist: 81 euro per persoon",
-     "zonder_eur": 81,
+     "zonder": "5 x 301 x 6 = 9.030 euro gemist: 106 euro per persoon",
+     "zonder_eur": 106,
      "met": "Teamleden zijn zelf lid en blijven de bijdrage verschuldigd; de BV betaalt alleen. Een bedrijfsabonnement heeft een looptijd, een borg van drie maanden, en de opbrengst zit niet in de fee. 0 euro voor de anderen.",
      "met_eur": 0,
-     "reken": "5 x 230 x 6"
+     "reken": "5 x 301 x 6"
     },
     {
      "id": "vertrek",
      "titel": "9 eigenaren (10%) zeggen tegelijk op en er is geen wachtlijst",
-     "zonder": "108.000 euro inleg direct terug: 1.333 euro per persoon, plus 23,0 euro per maand hogere fee voor de rest",
+     "zonder": "108.000 euro inleg direct terug: 1.333 euro per persoon, plus 30,1 euro per maand hogere fee voor de rest",
      "zonder_eur": 1333,
-     "met": "Zes maanden opzegtermijn. Met een wachtlijst betaalt het uitkoopfonds direct uit en vullen nieuwe leden het weer aan. Zonder wachtlijst trekt de noodrem: uitbetalen op volgorde, hooguit 5% van het ledenkapitaal per jaar (54.000 euro). Blijven de plekken leeg, dan stijgt de fee met 23,0 euro per maand voor iedereen tot ze weer gevuld zijn. Geen eenmalige rekening.",
+     "met": "Zes maanden opzegtermijn. Met een wachtlijst betaalt het uitkoopfonds direct uit en vullen nieuwe leden het weer aan. Zonder wachtlijst trekt de noodrem: uitbetalen op volgorde, hooguit 5% van het ledenkapitaal per jaar (54.000 euro). Blijven de plekken leeg, dan stijgt de fee met 30,1 euro per maand voor iedereen tot ze weer gevuld zijn. Geen eenmalige rekening.",
      "met_eur": 0,
      "reken": "9 x 12000 gemiddelde inleg"
     },
     {
      "id": "borg",
      "titel": "De bank vraagt een persoonlijke borg van het bestuur",
-     "zonder": "Wie tekent, staat hoofdelijk borg voor de hele lening van 820.465 euro: één persoon kan alles moeten betalen",
-     "zonder_eur": 820465,
-     "met": "Niemand tekent een persoonlijke borg. Zekerheid voor de bank: hypotheek op het pand en 57% eigen inleg (lening 43% van de investering). Lukt dat niet: kleinere lening of een andere bank, niet tekenen.",
+     "zonder": "Wie tekent, staat hoofdelijk borg voor de hele lening van 784.559 euro: één persoon kan alles moeten betalen",
+     "zonder_eur": 784559,
+     "met": "Niemand tekent een persoonlijke borg. Zekerheid voor de bank: hypotheek op het pand en 58% eigen inleg (lening 42% van de investering). Lukt dat niet: kleinere lening of een andere bank, niet tekenen.",
      "met_eur": 0,
      "reken": "lening uit pand_case"
     },
@@ -84,26 +85,26 @@
     }
    ],
    "reserves": {
-    "liquiditeit": 51621,
+    "liquiditeit": 61608,
     "fonds": 108000,
-    "totaal": 159621,
-    "fee_liq_vooraf": 5.8,
+    "totaal": 169608,
+    "fee_liq_vooraf": 6.9,
     "fee_fonds_vooraf": 12.1,
-    "advies_fee": 17.9,
+    "advies_fee": 19.0,
     "rijen": [
      [
       "Liquiditeitsreserve",
       "3 maanden",
       "maand vaste lasten incl. bank",
-      17207,
-      51621,
+      20536,
+      61608,
       "berekend"
      ],
      [
       "Uitkoopfonds",
       "10%",
       "van het ledenkapitaal",
-      1080000,
+      1080000.0,
       108000,
       "berekend: ontwerp D uit fonds.py"
      ]
@@ -111,29 +112,30 @@
    },
    "nood": {
     "koop": 1125000,
-    "opbrengst": 1206366,
-    "netto": 355742,
-    "terug_pct": 33,
-    "terug_vol": 4941,
-    "jaar5_dekking_pct": 62,
+    "opbrengst": 1197390,
+    "netto": 382896,
+    "terug_pct": 35,
+    "terug_vol": 5318,
+    "jaar5_dekking_pct": 70,
     "pand_pct": 0.9,
     "verbouw_pct": 0.25
    },
    "bedrijf": {
     "kapitaal_pm": 69,
-    "prijs_plek": 329,
+    "basis_fee": 377,
+    "prijs_plek": 491,
     "plekken": 5,
-    "gemist_6m": 9870,
-    "per_eigenaar": 110,
-    "fee_effect_als_ingebouwd": 21.4
+    "gemist_6m": 14730,
+    "per_eigenaar": 164,
+    "fee_effect_als_ingebouwd": 31.9
    },
    "btw": {
-    "excl_pand": 648465,
-    "btw_capex": 136178,
-    "btw_opex": 17366,
-    "deels_vrijgesteld_pm": 11.6,
-    "geen_ondernemer_pm": 3.6,
-    "fee_zonder_btw_pm": -35.1,
+    "excl_pand": 612559,
+    "btw_capex": 128637,
+    "btw_opex": 22779,
+    "deels_vrijgesteld_pm": 13.5,
+    "geen_ondernemer_pm": -0.8,
+    "fee_zonder_btw_pm": -45.9,
     "gebruik_vrijgesteld": 0.3
    }
   },
@@ -144,26 +146,27 @@
     "V": 30,
     "D": 30,
     "n": 60,
-    "fee": 162,
-    "fee_deel": 115,
+    "fee": 246,
+    "terug": 379,
+    "fee_deel": 175,
     "inleg_vol": 15000,
     "inleg_deel": 9000,
-    "ledenkapitaal": 720000,
-    "lening": 705730,
-    "capex": 1425730,
-    "opex": 127230,
-    "annuiteit": 59055,
-    "maand_vast": 15524
+    "ledenkapitaal": 811668.1000000001,
+    "lening": 578156,
+    "capex": 1389824,
+    "opex": 170189,
+    "annuiteit": 48380,
+    "maand_vast": 18214
    },
    "scenarios": [
     {
      "id": "wanbetaler",
      "titel": "Eén eigenaar betaalt zes maanden niet",
-     "zonder": "972 euro gemist, gedeeld door 59 anderen: 16 euro per persoon",
-     "zonder_eur": 16,
+     "zonder": "1.476 euro gemist, gedeeld door 59 anderen: 25 euro per persoon",
+     "zonder_eur": 25,
      "met": "Verrekend met zijn inleg van 15.000 euro: 0 euro voor de anderen. Na 14 dagen gaat zijn pas dicht, na 60 dagen volgt opzegging.",
      "met_eur": 0,
-     "reken": "6 x 162 = 972"
+     "reken": "6 x 246 = 1476"
     },
     {
      "id": "failliet",
@@ -177,27 +180,27 @@
     {
      "id": "team",
      "titel": "Een BV met vijf plekken gaat failliet tijdens de opzegtermijn van zes maanden",
-     "zonder": "5 x 162 x 6 = 4.860 euro gemist: 88 euro per persoon",
-     "zonder_eur": 88,
+     "zonder": "5 x 246 x 6 = 7.380 euro gemist: 134 euro per persoon",
+     "zonder_eur": 134,
      "met": "Teamleden zijn zelf lid en blijven de bijdrage verschuldigd; de BV betaalt alleen. Een bedrijfsabonnement heeft een looptijd, een borg van drie maanden, en de opbrengst zit niet in de fee. 0 euro voor de anderen.",
      "met_eur": 0,
-     "reken": "5 x 162 x 6"
+     "reken": "5 x 246 x 6"
     },
     {
      "id": "vertrek",
      "titel": "6 eigenaren (10%) zeggen tegelijk op en er is geen wachtlijst",
-     "zonder": "72.000 euro inleg direct terug: 1.333 euro per persoon, plus 16,2 euro per maand hogere fee voor de rest",
-     "zonder_eur": 1333,
-     "met": "Zes maanden opzegtermijn. Met een wachtlijst betaalt het uitkoopfonds direct uit en vullen nieuwe leden het weer aan. Zonder wachtlijst trekt de noodrem: uitbetalen op volgorde, hooguit 5% van het ledenkapitaal per jaar (36.000 euro). Blijven de plekken leeg, dan stijgt de fee met 16,2 euro per maand voor iedereen tot ze weer gevuld zijn. Geen eenmalige rekening.",
+     "zonder": "81.167 euro inleg direct terug: 1.503 euro per persoon, plus 24,6 euro per maand hogere fee voor de rest",
+     "zonder_eur": 1503,
+     "met": "Zes maanden opzegtermijn. Met een wachtlijst betaalt het uitkoopfonds direct uit en vullen nieuwe leden het weer aan. Zonder wachtlijst trekt de noodrem: uitbetalen op volgorde, hooguit 5% van het ledenkapitaal per jaar (40.583 euro). Blijven de plekken leeg, dan stijgt de fee met 24,6 euro per maand voor iedereen tot ze weer gevuld zijn. Geen eenmalige rekening.",
      "met_eur": 0,
-     "reken": "6 x 12000 gemiddelde inleg"
+     "reken": "6 x 13528 gemiddelde inleg"
     },
     {
      "id": "borg",
      "titel": "De bank vraagt een persoonlijke borg van het bestuur",
-     "zonder": "Wie tekent, staat hoofdelijk borg voor de hele lening van 705.730 euro: één persoon kan alles moeten betalen",
-     "zonder_eur": 705730,
-     "met": "Niemand tekent een persoonlijke borg. Zekerheid voor de bank: hypotheek op het pand en 51% eigen inleg (lening 49% van de investering). Lukt dat niet: kleinere lening of een andere bank, niet tekenen.",
+     "zonder": "Wie tekent, staat hoofdelijk borg voor de hele lening van 578.156 euro: één persoon kan alles moeten betalen",
+     "zonder_eur": 578156,
+     "met": "Niemand tekent een persoonlijke borg. Zekerheid voor de bank: hypotheek op het pand en 58% eigen inleg (lening 42% van de investering). Lukt dat niet: kleinere lening of een andere bank, niet tekenen.",
      "met_eur": 0,
      "reken": "lening uit pand_case"
     },
@@ -221,56 +224,57 @@
     }
    ],
    "reserves": {
-    "liquiditeit": 46572,
-    "fonds": 72000,
-    "totaal": 118572,
-    "fee_liq_vooraf": 7.9,
-    "fee_fonds_vooraf": 12.1,
-    "advies_fee": 20.0,
+    "liquiditeit": 54642,
+    "fonds": 81167,
+    "totaal": 135809,
+    "fee_liq_vooraf": 9.2,
+    "fee_fonds_vooraf": 13.7,
+    "advies_fee": 22.9,
     "rijen": [
      [
       "Liquiditeitsreserve",
       "3 maanden",
       "maand vaste lasten incl. bank",
-      15524,
-      46572,
+      18214,
+      54642,
       "berekend"
      ],
      [
       "Uitkoopfonds",
       "10%",
       "van het ledenkapitaal",
-      720000,
-      72000,
+      811668.1000000001,
+      81167,
       "berekend: ontwerp D uit fonds.py"
      ]
     ]
    },
    "nood": {
     "koop": 670000,
-    "opbrengst": 791932,
-    "netto": 66404,
-    "terug_pct": 9,
-    "terug_vol": 1383,
-    "jaar5_dekking_pct": 40,
+    "opbrengst": 782956,
+    "netto": 185226,
+    "terug_pct": 23,
+    "terug_vol": 3423,
+    "jaar5_dekking_pct": 54,
     "pand_pct": 0.9,
     "verbouw_pct": 0.25
    },
    "bedrijf": {
     "kapitaal_pm": 69,
-    "prijs_plek": 254,
+    "basis_fee": 379,
+    "prijs_plek": 493,
     "plekken": 5,
-    "gemist_6m": 7620,
-    "per_eigenaar": 127,
-    "fee_effect_als_ingebouwd": 24.7
+    "gemist_6m": 14790,
+    "per_eigenaar": 246,
+    "fee_effect_als_ingebouwd": 48.0
    },
    "btw": {
-    "excl_pand": 676050,
-    "btw_capex": 141970,
-    "btw_opex": 16031,
-    "deels_vrijgesteld_pm": 16.9,
-    "geen_ondernemer_pm": 31.6,
-    "fee_zonder_btw_pm": -24.7,
+    "excl_pand": 640144,
+    "btw_capex": 134430,
+    "btw_opex": 21444,
+    "deels_vrijgesteld_pm": 19.8,
+    "geen_ondernemer_pm": 28.4,
+    "fee_zonder_btw_pm": -37.5,
     "gebruik_vrijgesteld": 0.3
    }
   }

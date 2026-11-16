@@ -537,7 +537,7 @@ function kies(i){
   document.getElementById('p-geluid').textContent = O.geluid || '';
   const k = P.kpi;
   document.getElementById('p-kpis').innerHTML = [
-    [k.koop_label || 'Vraagprijs', euro(k.koop)], ['Alles in', euro(k.capex)], ['Om te draaien, vol lid', euro(k.fee) + ' /mnd'], ['Inleg terug na 5 jaar', k.inleg ? euro(k.inleg) + ' /mnd' : 'inleg kan lager'],
+    [k.koop_label || 'Vraagprijs', euro(k.koop)], ['Alles in', euro(k.capex)], ['Om te draaien, vol lid', euro(k.fee) + ' /mnd'], ['Inleg terug na 5 jaar', k.inleg ? euro(k.inleg) + ' /mnd' : 'niet in 5 jaar'], ['Inleg vol lid', euro(k.inleg_vol_nodig || 15000)], ['Lening / koopsom', Math.round((k.ltv_koop || k.ltv) * 100) + '%'],
     ['Lening', Math.round(k.ltv*100) + '%'], ['Werkplekken', k.werkplekken + ' (' + k.bureaus + ' zit-sta)'],
     ['Vergaderkamers', (k.vergaderkamers || []).map(p => String(p).startsWith('sta') ? 'sta-kamer voor ' + String(p).slice(4) : 'voor ' + p).join(', ') || 'geen'], ['Belcellen', k.belcellen]
   ].map(([a, b]) => `<div class="kpi"><span class="k">${a}</span><span class="v">${b}</span></div>`).join('');

@@ -132,6 +132,13 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False, extra=Non
     if sober:  # sobere industriële variant: hergebruikte materialen, strakke vloer, eigen arbeid (sober.py)
         import sober as _sober
         R[:], _ = _sober.toepassen(R)
+    if START:  # startbudget: wat bij opening geen waarde toevoegt, gaat naar fase 2 (uit de reserve of als de club draait)
+        for r in R:
+            for patroon, (factor, reden) in FASE2.items():
+                if r["post"].startswith(patroon) and r["totaal"] > 0:
+                    r["totaal"] = round(r["totaal"] * factor)
+                    r["post"] = r["post"] + f" [start: {reden}]"
+                    break
     # --- Bijkomend
     bouw = sum(r["totaal"] for r in R if r["groep"] != "Pand")
     add("Bijkomend", "Bouwtekeningen en interieurontwerp (familie)", 1, "post", 8_000, "aanname")
@@ -147,8 +154,29 @@ def rows_for(slug, n_vol=None, n_deel=None, n_club=None, torens=False, extra=Non
     return R, q
 
 
+# Startbudget (16-11-2026, Lucas): goedkoop beginnen met goede basisinstallaties en zonnepanelen; dure extra's naar fase 2.
+START = True
+FASE2 = {  # postnaam begint met -> (factor op het bedrag, reden)
+    "Batterij": (0.0, "geschrapt; pas bij netcongestie of dynamische tarieven"),
+    "Studio voor yoga": (0.0, "fase 2; eerst de lounge gebruiken"),
+    "Concept2 SkiErg + BikeErg + airbike": (0.35, "alleen een airbike; rest fase 2"),
+    "Buitenrig en sprintstrook": (0.0, "fase 2"),
+    "Vintage decoratie en kunst": (0.2, "leden brengen mee"),
+    "Boeken tweedehands": (0.45, "leden doneren de rest"),
+    "Nieuwe titels": (0.0, "fase 2"),
+    "Lounge: 4 banken": (0.7, "deels van leden en Marktplaats"),
+}
+
+# Na de councils (16-11-2026): personeel, bankmarge en leengrens op het pand [schatting, zie ledenclub#plan]
+BEMENSING = dict(host_fte=0.5, host_kost=62_000, beheer_fte=0.2, beheer_kost=60_000)  # loonkosten per fte incl. werkgeverslasten
+DSCR = 1.2          # bank wil 20% speling op rente en aflossing
+LTV_MAX = 0.70      # bank leent hooguit 70% van de onderpandwaarde
+ONDERPAND_VERBOUW = 0.5   # onderpandwaarde = koopsom + 50% van de gebouwgebonden verbouw
+
+
 def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, fee_club=119,
-        inleg_vol=15_000, inleg_deel=9_000, rente=0.055, looptijd=20, groei=0.02, torens=False, extra=None, sober=False):
+        inleg_vol=15_000, inleg_deel=9_000, rente=0.055, looptijd=20, groei=0.02, torens=False, extra=None, sober=False,
+        host_fte=None, beheer_fte=None, dscr=None, ltv_max=None, extra_opbrengst=0):
     L = LAYOUTS[slug]
     n_vol = L["leden"]["n_vol"] if n_vol is None else n_vol
     n_deel = L["leden"]["n_deel"] if n_deel is None else n_deel
@@ -159,7 +187,13 @@ def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, f
     pand = tot("Pand")
     gebouw = tot("Bouwkundig") + tot("Sanitair") + tot("Installaties") + tot("Energie") + tot("Buiten")
     inv = tot("Werken") + tot("Gym") + tot("Wellness") + tot("Café & bieb") + tot("Verlichting")
+    host_fte = BEMENSING["host_fte"] if host_fte is None else host_fte
+    beheer_fte = BEMENSING["beheer_fte"] if beheer_fte is None else beheer_fte
+    dscr = DSCR if dscr is None else dscr
+    ltv_max = LTV_MAX if ltv_max is None else ltv_max
     O = [("Schoonmaak (5 dagen x 4 uur x € 30)", 31_200), ("Management initiatiefnemer", 18_000),
+         (f"Host / gastheer ({str(host_fte).replace('.', ',')} fte)", round(host_fte * BEMENSING["host_kost"])),
+         (f"Beheer en techniek ter plekke ({str(beheer_fte).replace('.', ',')} fte)", round(beheer_fte * BEMENSING["beheer_kost"])),
          ("Klusjes en storingen", 6_000 if L["verhuur"] else 5_000), ("Groenbeheer en planten", 4_000 if q["tuin_m2"] else 2_500)]
     pv = L["pv_kwp"] * 900 if L["pv_kwp"] else 60_000  # Birkt: bestaande panelen (energieneutraal) [aanname]
     vraag = q["club_m2"] * 70 + 4_000
@@ -182,14 +216,20 @@ def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, f
         O = [(n, round(huur * 0.08) if n.startswith("Verhuurbeheer") else b) for n, b in O]
     Ot = sum(b for _, b in O)
     inleg = n_vol * inleg_vol + n_deel * inleg_deel
+    koop = L["koop"]["totaal"]
+    onderpand = koop + ONDERPAND_VERBOUW * gebouw
+    lening_max = ltv_max * onderpand
+    tekort = max(0.0, C - inleg - lening_max)      # wat de bank niet leent, moet uit extra inleg (of een achtergestelde ledenlening)
+    inleg_factor = (inleg + tekort) / inleg if inleg else 1.0
+    inleg = inleg + tekort
     lening = max(0, C - inleg)
     last = lening * rente / (1 - (1 + rente) ** -looptijd)
     b = 0.95
     o_eig = (n_vol * fee_vol + n_deel * fee_deel) * b / 1.18 * 12
     o_club = n_club * fee_club * b / 1.15 * 12
-    over = o_eig + o_club + huur - Ot
+    over = o_eig + o_club + huur + extra_opbrengst - Ot
     noemer = 12 * b / 1.18 * (n_vol + n_deel * fee_deel / fee_vol)
-    fee_nodig = (Ot + last - o_club - huur) / noemer
+    fee_nodig = (Ot + dscr * last - o_club - huur - extra_opbrengst) / noemer
     s_a = s_v = lening
     for _ in range(5):
         s_a = s_a * (1 + rente) - last
@@ -208,13 +248,20 @@ def run(slug, n_vol=None, n_deel=None, n_club=None, fee_vol=450, fee_deel=320, f
     for r in R:
         G[r["groep"]] = G.get(r["groep"], 0) + r["totaal"]
     return dict(slug=slug, capex=C, groepen=G, verbouw_inrichting=C - G["Pand"], opex=Ot, opex_rows=O, huur=huur,
-                inleg=inleg, lening=round(lening), ltv=round(lening / C, 2), dscr=round(over / last, 2),
+                inleg=inleg, lening=round(lening), ltv=round(lening / C, 2), dscr=round(over / last, 2) if last else None,
+                koop=koop, onderpand=round(onderpand), lening_max=round(lening_max), ltv_koop=round(lening / koop, 2),
+                inleg_tekort=round(tekort), inleg_factor=round(inleg_factor, 3), inleg_vol_nodig=round(inleg_vol * inleg_factor, -2),
+                inleg_deel_nodig=round(inleg_deel * inleg_factor, -2), noemer=noemer, annuiteit=round(last),
                 resultaat=round(over - last), fee_vol_nodig=round(fee_nodig), fee_deel_nodig=round(fee_nodig * fee_deel / fee_vol),
                 jaren_schuldvrij=jaren, exitwaarde=round(exitw), exit_per_vol_versneld=round((netto - s_v) / aandelen),
                 exit_dekking=round((netto - s_v) / inleg, 2), q=q, rows=R)
 
 
 def fee_inleg_terug(slug, **kw):
+    """Fee vol lid waarbij de verkoopwaarde na 5 jaar (min restschuld) alle inleg dekt. None als dat bij geen enkele fee lukt
+    (pand + verbouw na 5 jaar minder waard dan alle inleg samen)."""
+    if run(slug, fee_vol=2000, fee_deel=2000 * 320 / 450, **kw)["exit_dekking"] < 1:
+        return None
     lo, hi = 0.0, 2000.0
     for _ in range(40):
         f = (lo + hi) / 2
@@ -224,6 +271,11 @@ def fee_inleg_terug(slug, **kw):
         else:
             lo = f
     return round(hi)
+
+
+def dekking_bij(slug, fee, **kw):
+    """Welk deel van de inleg komt na 5 jaar terug bij verkoop, bij deze fee (vol lid)."""
+    return run(slug, fee_vol=fee, fee_deel=fee * 320 / 450, **kw)["exit_dekking"]
 
 
 if __name__ == "__main__":

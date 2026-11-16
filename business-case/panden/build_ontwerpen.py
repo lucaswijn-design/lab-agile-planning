@@ -71,9 +71,10 @@ def pand(slug):
     t = TORENS[slug]
     r = pand_case.run(slug, torens=t, sober=SOBER)
     kpi = dict(koop=LAYOUTS[slug]["koop"]["totaal"], capex=r["capex"], fee=r["fee_vol_nodig"], inleg=pand_case.fee_inleg_terug(slug, torens=t, sober=SOBER),
-               ltv=r["ltv"], werkplekken=werkplekken(O), **{k: v for k, v in telling(O).items() if k != 'werkplekken'})
-    if kpi["inleg"] and kpi["inleg"] >= 2000:  # verkoopwaarde na 5 jaar lager dan alle inleg: inleg terug kan niet via de fee
-        kpi["inleg"] = None
+               ltv=r["ltv"], ltv_koop=r["ltv_koop"], inleg_vol_nodig=r["inleg_vol_nodig"], inleg_deel_nodig=r["inleg_deel_nodig"],
+               dekking=round(min(r["exit_dekking"], 9), 2), dekking_max=round(min(pand_case.dekking_bij(slug, 2000, torens=t, sober=SOBER), 9), 2),
+               personeel=sum(b for n, b in r["opex_rows"] if n.startswith(("Host", "Beheer en techniek"))),
+               werkplekken=werkplekken(O), **{k: v for k, v in telling(O).items() if k != 'werkplekken'})
     rows = ontwerp.dakterras_rows(slug)
     terras = None
     if rows:
