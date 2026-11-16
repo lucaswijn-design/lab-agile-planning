@@ -62,7 +62,7 @@ def scenarios(B):
     team = 5 * f * 6
     S.append(dict(id="team", titel="Een BV met vijf plekken gaat failliet tijdens de opzegtermijn van zes maanden",
                   zonder=f"5 x {f} x 6 = {nl(team)} euro gemist: {nl(per(team, n-5))} euro per persoon", zonder_eur=per(team, n - 5),
-                  met="De vijf mensen zijn zelf lid en blijven de bijdrage verschuldigd. De BV betaalt alleen. Plus een borg van drie maanden van de BV. 0 euro voor de anderen.",
+                  met="Teamleden zijn zelf lid en blijven de bijdrage verschuldigd; de BV betaalt alleen. Een bedrijfsabonnement heeft een looptijd, een borg van drie maanden, en de opbrengst zit niet in de fee. 0 euro voor de anderen.",
                   met_eur=0, reken=f"5 x {f} x 6"))
     # 4. vertrekgolf 10%
     k = round(n * 0.10)
@@ -71,7 +71,7 @@ def scenarios(B):
     S.append(dict(id="vertrek", titel=f"{k} eigenaren (10%) zeggen tegelijk op en er is geen wachtlijst",
                   zonder=f"{nl(terug)} euro inleg direct terug: {nl(per(terug, n-k))} euro per persoon, plus {nl(pm(fee_weg),1)} euro per maand hogere fee voor de rest",
                   zonder_eur=per(terug, n - k),
-                  met=f"Twaalf maanden opzegtermijn, dus de bijdrage loopt nog een jaar door. Terugbetaling alleen uit de inleg van nieuwe leden of uit de uittredingsreserve, maximaal 5% van het ledenkapitaal per jaar ({nl(B['ledenkapitaal']*0.05)} euro). Blijven de plekken leeg, dan stijgt de fee na een jaar met {nl(pm(fee_weg),1)} euro per maand voor iedereen, tot de club de plekken weer vult. Geen eenmalige rekening.",
+                  met=f"Zes maanden opzegtermijn. Met een wachtlijst betaalt het uitkoopfonds direct uit en vullen nieuwe leden het weer aan. Zonder wachtlijst trekt de noodrem: uitbetalen op volgorde, hooguit 5% van het ledenkapitaal per jaar ({nl(B['ledenkapitaal']*0.05)} euro). Blijven de plekken leeg, dan stijgt de fee met {nl(pm(fee_weg),1)} euro per maand voor iedereen tot ze weer gevuld zijn. Geen eenmalige rekening.",
                   met_eur=0, reken=f"{k} x {round(gem_inleg)} gemiddelde inleg"))
     # 5. persoonlijke borg
     S.append(dict(id="borg", titel="De bank vraagt een persoonlijke borg van het bestuur",
@@ -93,26 +93,48 @@ def scenarios(B):
 
 
 def reserves(B):
+    """Liquiditeitsreserve (3 maanden vaste lasten) en uitkoopfonds (10% ledenkapitaal), allebei meegefinancierd in de start.
+    Het uitkoopfonds vervangt de eerdere uittredingsreserve van 5% (zie fonds.py, ontwerp D)."""
     liq = 3 * B["maand_vast"]
-    uit = round(B["ledenkapitaal"] * 0.05)
-    tot = liq + uit
-    opbouw3 = round(tot / 3)
-    vooraf = round(annu(tot) / B["noemer"], 1)
-    jaarlijks = round(opbouw3 / B["noemer"], 1)
-    liq_vooraf = round(annu(liq) / B["noemer"], 1)          # liquiditeitsreserve meefinancieren in de start
-    uit_5j = round(uit / 5 / B["noemer"], 1)                 # uittredingsreserve in vijf jaar opbouwen uit de fee
-    return dict(liquiditeit=liq, uittreding=uit, totaal=tot, opbouw_per_jaar_3j=opbouw3,
-                fee_extra_vooraf=vooraf, fee_extra_opbouw=jaarlijks, fee_liq_vooraf=liq_vooraf, fee_uit_5j=uit_5j,
-                advies_fee=round(liq_vooraf + uit_5j, 1),
+    fonds = round(B["ledenkapitaal"] * 0.10)
+    tot = liq + fonds
+    liq_vooraf = round(annu(liq) / B["noemer"], 1)
+    fonds_vooraf = round(annu(fonds) / B["noemer"], 1)
+    return dict(liquiditeit=liq, fonds=fonds, totaal=tot, fee_liq_vooraf=liq_vooraf, fee_fonds_vooraf=fonds_vooraf,
+                advies_fee=round(liq_vooraf + fonds_vooraf, 1),
                 rijen=[("Liquiditeitsreserve", "3 maanden", "maand vaste lasten incl. bank", B["maand_vast"], liq, "berekend"),
-                       ("Uittredingsreserve", "5%", "van het ledenkapitaal", B["ledenkapitaal"], uit, "berekend")])
+                       ("Uitkoopfonds", "10%", "van het ledenkapitaal", B["ledenkapitaal"], fonds, "berekend: ontwerp D uit fonds.py")])
+
+
+def bedrijf(B, kapitaal_rente=0.055, leegstand=0.10):
+    """Bedrijfsabonnement zonder inleg: prijs per plek = fee + vergoeding voor het kapitaal dat het bedrijf niet inbrengt + leegstandsopslag."""
+    kap = round(15_000 * kapitaal_rente / 12)
+    prijs = round((B["fee"] + kap) * (1 + leegstand))
+    plekken = 5
+    # wat de club mist als een team van 5 vertrekt en de plekken 6 maanden leeg staan; en het fee-effect als die opbrengst wel in de begroting zat
+    gemist = plekken * prijs * 6
+    return dict(kapitaal_pm=kap, prijs_plek=prijs, plekken=plekken, gemist_6m=gemist, per_eigenaar=round(gemist / B["n"]),
+                fee_effect_als_ingebouwd=round(plekken * prijs * 12 / 1.18 * 0.95 / B["noemer"], 1))
+
+
+def btw(B, opex_btw_deel=0.6, gebruik_vrijgesteld=0.3):
+    """Gevoeligheid btw-positie. Model: capex excl. btw (volledige aftrek), fee incl. gemengde btw (deler 1,18). [schatting] aandelen."""
+    r = pc.run(B["slug"], fee_vol=B["fee"], fee_deel=B["fee"] * 320 / 450, sober=True, torens=True)
+    excl_pand = r["capex"] - r["groepen"]["Pand"]
+    btw_capex = excl_pand * 0.21
+    btw_opex = r["opex"] * opex_btw_deel * 0.21
+    deel = round((annu(btw_capex * gebruik_vrijgesteld) + btw_opex * gebruik_vrijgesteld) / B["noemer"], 1)
+    fee_zonder_btw = round(-B["fee"] * (1 - 1 / 1.18), 1)
+    geen = round((annu(btw_capex) + btw_opex) / B["noemer"] + fee_zonder_btw, 1)
+    return dict(excl_pand=round(excl_pand), btw_capex=round(btw_capex), btw_opex=round(btw_opex), deels_vrijgesteld_pm=deel,
+                geen_ondernemer_pm=geen, fee_zonder_btw_pm=fee_zonder_btw, gebruik_vrijgesteld=gebruik_vrijgesteld)
 
 
 def kosten_juridisch():
-    # [schatting] notaris en jurist voor een coöperatie met maatwerk uittredingsregels; verzekeringen per jaar
-    return [("Statuten coöperatie U.A. bij notaris, maatwerk", 1, "akte", 2_500, 2_500, "schatting: standaard 750 tot 1.500, maatwerk uittreding en verrekening erbij"),
-            ("Jurist coöperatierecht: ledenovereenkomst, reglement, toets bankvoorwaarden", 16, "uur", 200, 3_200, "schatting"),
-            ("Huishoudelijk reglement en huisregels", 1, "stuk", 0, 0, "zelf schrijven op basis van de jurist"),
+    # [schatting] jurist en fiscalist; verzekeringen per jaar. De notaris zit al in de begroting per pand.
+    return [("Notaris en statuten coöperatie (zit al in de begroting per pand)", 1, "post", 0, 0, "berekend: post 'Notaris en statuten coöperatie' van 15.000 in pand_case"),
+            ("Jurist coöperatierecht: ledenovereenkomst, teamcontract, reglement, toets bankvoorwaarden", 16, "uur", 200, 3_200, "schatting"),
+            ("Fiscalist: btw-positie, vpb, ingroei en uitkoopfonds", 8, "uur", 200, 1_600, "schatting"),
             ("Bestuurdersaansprakelijkheidsverzekering", 1, "jaar", 750, 750, "schatting: kleine coöperatie, dekking 500.000"),
             ("Aansprakelijkheidsverzekering bedrijven (gym, café)", 1, "jaar", 1_500, 1_500, "schatting; zit deels al in 'Verzekeringen' van de exploitatie")]
 
@@ -133,8 +155,10 @@ def main():
     out = []
     for s in ("rotterdam-galvanistraat-122", "utrecht-van-heutszstraat-4"):
         B = basis(s)
-        out.append(dict(basis={k: v for k, v in B.items() if k != "noemer"}, scenarios=scenarios(B), reserves=reserves(B), nood=noodverkoop(B)))
-    J = dict(panden=out, juridisch=kosten_juridisch())
+        out.append(dict(basis={k: v for k, v in B.items() if k != "noemer"}, scenarios=scenarios(B), reserves=reserves(B), nood=noodverkoop(B),
+                        bedrijf=bedrijf(B), btw=btw(B)))
+    F = json.load(open(os.path.join(HERE, "fonds.json"))) if os.path.exists(os.path.join(HERE, "fonds.json")) else {}
+    J = dict(panden=out, juridisch=kosten_juridisch(), fonds=F)
     json.dump(J, open(os.path.join(HERE, "risico.json"), "w"), ensure_ascii=False, indent=1)
     tpl = os.path.join(HERE, "risico_template.html")
     if os.path.exists(tpl):
@@ -143,11 +167,12 @@ def main():
     for p in out:
         B = p["basis"]
         print("   nood", p["nood"])
+        print("   bedrijf", p["bedrijf"])
+        print("   btw", p["btw"])
         print(B["titel"], B["n"], "eigenaren, fee", B["fee"], "maand vast", B["maand_vast"], "ledenkapitaal", B["ledenkapitaal"], "lening", B["lening"])
         for sc in p["scenarios"]:
             print("  ", sc["titel"], "| zonder:", sc["zonder_eur"], "| met:", sc["met_eur"])
-        print("   reserves", p["reserves"]["totaal"], "=", p["reserves"]["liquiditeit"], "+", p["reserves"]["uittreding"],
-              "| advies liq vooraf +", p["reserves"]["fee_liq_vooraf"], "uit 5j +", p["reserves"]["fee_uit_5j"], "| fee +", p["reserves"]["fee_extra_vooraf"], "vooraf of +", p["reserves"]["fee_extra_opbouw"], "3 jaar opbouw")
+        print("   reserves", p["reserves"])
 
 
 if __name__ == "__main__":

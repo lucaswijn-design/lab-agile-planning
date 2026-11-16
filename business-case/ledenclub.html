@@ -110,25 +110,79 @@ select{font:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);b
 ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
 .sources{font-size:13px;color:var(--muted);display:grid;gap:4px;padding-left:18px;margin:0}
 @media (prefers-reduced-motion:no-preference){.fill{transition:width .25s ease}}
+details.archief{border-top:1px solid var(--line);padding-top:24px}
+details.archief>summary{cursor:pointer;font:600 18px/1.4 var(--f-display);display:grid;gap:6px;list-style:none}
+details.archief>summary::-webkit-details-marker{display:none}
+details.archief>summary::after{content:"Toon het archief";font:500 13px var(--f-body);color:var(--moss);text-decoration:underline}
+details.archief[open]>summary::after{content:"Verberg het archief"}
+.archief-in{display:grid;gap:56px;margin-top:32px}
 </style>
 
 <div class="wrap">
 
 <header style="display:grid;gap:14px">
-  <span class="eyebrow">Business case · versie 8 · november 2026</span>
+  <span class="eyebrow">Business case · versie 9 · 16 november 2026</span>
   <h1>Ledenclub op het Erf</h1>
-  <p class="lede">Een oude loods of een boerenerf aan de rand van een stad, omgebouwd tot club met groen, werkplekken, gym, sauna, zwemvijver en een goede espressobar. Eigenaren betalen maandelijks en kopen het terrein samen af; clubleden zonder aandeel betalen mee aan de exploitatie. Bovenaan de hal in eigen beheer, per product begroot. Daaronder de eerdere versies.</p>
+  <p class="lede">Een coöperatie van leden die samen een industrieel pand in de Randstad, Utrecht of Brabant kopen en ombouwen tot club: een boekencafé met keuken, coworking, vergaderkamers, een afsluitbare gym en veel groen, sober afgewerkt met hergebruikt materiaal. 60 tot 110 eigenaren met een inleg, plus clubleden zonder inleg. Bovenaan staat het plan zoals het nu is, met wat nog moet worden uitgezocht. Daaronder de uitwerkingen, en onderaan in het archief de eerdere versies.</p>
 </header>
+
+<section class="verdict" id="plan">
+  <span class="eyebrow">Het plan · stand 16 november 2026</span>
+  <p class="big">De club staat op papier: rechtsvorm, ledenmodel, spelregels, panden en ontwerp. Wat het nog kan laten kantelen zijn vier dingen buiten het model: mag het op die plek (omgevingsplan), tekenen er genoeg mensen, wil de bank zonder persoonlijke borg, en wat is de btw-positie. Die vier gaan nu eerst, tegelijk.</p>
+
+  <h3>Wat vaststaat</h3>
+  <div class="tbl"><table><thead><tr><th>Onderwerp</th><th>Besluit</th><th>Waar uitgewerkt</th></tr></thead><tbody>
+    <tr><td>Rechtsvorm</td><td>Coöperatie U.A. Leden zijn alleen natuurlijke personen. Een lid verliest hooguit zijn eigen inleg.</td><td><a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Spelregels</a></td></tr>
+    <tr><td>Leden</td><td>Vast, flex, flex 3 en flex 2 met inleg (18.000, 15.000, 11.000 en 8.000 euro), plus clubleden zonder inleg en zonder stem.</td><td><a href="#soorten-eigenaren">Soorten eigenaren</a></td></tr>
+    <tr><td>Instappen</td><td>De inleg in één keer, of een derde vooraf en de rest in 36 maanden met 4% ingroeirente.</td><td><a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ#fonds">Uitkoopfonds</a></td></tr>
+    <tr><td>Vertrekken</td><td>Zes maanden opzeg. Daarna betaalt een uitkoopfonds van 10% van het ledenkapitaal direct uit, met een noodrem als het fonds of de wachtlijst te klein wordt.</td><td><a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ#fonds">Uitkoopfonds</a></td></tr>
+    <tr><td>Bedrijven</td><td>Bij voorkeur als team van leden. Anders een bedrijfsabonnement met 12 maanden looptijd, 6 maanden opzeg, 3 maanden borg en een vervangingsrecht, voor hooguit 15% van de plekken. Die opbrengst zit nooit in de fee.</td><td><a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ#bedrijven">Bedrijven</a></td></tr>
+    <tr><td>Wanbetaling</td><td>Incasso vooraf, na 14 dagen gaat de pas dicht, na 60 dagen volgt opzegging. De schuld wordt verrekend met de inleg.</td><td><a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Spelregels</a></td></tr>
+    <tr><td>Bank en bestuur</td><td>Geen persoonlijke borg en een lening van circa 45% van de investering. Twee handtekeningen, en boven 50.000 euro beslist de ledenvergadering.</td><td><a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Spelregels</a></td></tr>
+    <tr><td>Start</td><td>De inleg staat op de derdenrekening van de notaris en er wordt pas gekocht als 80% van de plekken is gevuld.</td><td><a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Spelregels</a></td></tr>
+    <tr><td>Panden</td><td>Top vijf: Pernis, Van Heutszstraat Utrecht, Metaalhof, Galvanistraat en Eendenkooi. Eerst een principeverzoek, dan pas een bod.</td><td><a href="#twintig-panden">Twintig panden</a></td></tr>
+    <tr><td>Bouw en inrichting</td><td>Sober industrieel. Achthoekige of D-vormige torens, belcellen 1 per 8 werkers, sta-kamers, lockers en planten op licht.</td><td><a href="#inrichting">Inrichting</a></td></tr>
+    <tr><td>Software</td><td>Zelf bouwen: leden, check-in, drukte, kamers, ledenrekening en uitkoopfonds. Deurslot en betalen koppelen.</td><td><a href="#soorten-eigenaren">Soorten eigenaren</a></td></tr>
+  </tbody></table></div>
+  <p class="note">Bovenop de fee uit de vergelijking komen de liquiditeitsreserve en het uitkoopfonds: + € 18 per maand bij Galvanistraat en + € 20 bij Utrecht <span class="lbl">berekend</span>. Dat was + € 20, met een uittredingsreserve die in vijf jaar werd opgebouwd. Het uitkoopfonds vervangt die reserve en wordt meegefinancierd in de start. Galvanistraat komt zo op circa € 248 om te draaien.</p>
+
+  <h3>Nog uitzoeken, op volgorde van wat het plan kan laten kantelen</h3>
+  <div class="tbl"><table><thead><tr><th>Vraag</th><th>Waarom het ertoe doet</th><th>Hoe je het snelst weet</th><th class="r">Kosten</th><th>Status</th></tr></thead><tbody>
+    <tr><td><b>Mag het op die plek?</b></td><td>Op bedrijventerreinen is de kans klein. Zonder toestemming geen club.</td><td>Een principeverzoek of vooroverleg bij de gemeente voor Pernis, Utrecht en Metaalhof. Beschrijf het als besloten club met ondergeschikte horeca.</td><td class="r">€ 0 tot € 1.500</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Tekenen er genoeg mensen?</b></td><td>Zonder 80% van de plekken wordt er niet gekocht.</td><td>Werving per wijk, met een intentieverklaring en een kleine, terugbetaalbare reservering. Zie de wervingspagina.</td><td class="r">€ 500 tot € 2.000</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Wil de bank, en hoe?</b></td><td>Lening zonder persoonlijke borg, inleg als eigen vermogen, een kredietlijn achter het uitkoopfonds, en de Impactlening.</td><td>Twee oriënterende gesprekken met coöperatieve financiers, met deze business case en de spelregels.</td><td class="r">€ 0</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Btw-positie</b></td><td>Het model rekent met volledige aftrek. Valt de gym onder de sportvrijstelling (deels vrijgesteld), dan kost dat + € 12 tot + € 17 per maand. Is de coöperatie helemaal geen btw-ondernemer, dan valt de btw op de fee weg maar ook de aftrek: + € 4 tot + € 32 <span class="lbl">schatting</span>.</td><td>Een fiscalist, en de verdeling vooraf laten bevestigen door de Belastingdienst. Controleer ook de btw op sport in 2026.</td><td class="r">€ 1.600</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Telt de inleg als eigen vermogen?</b></td><td>Met het uitkoopfonds kan een accountant het ledenkapitaal als schuld boeken. Dan lijkt de club zwakker voor de bank.</td><td>Leg de statutentekst met de noodrem voor aan een accountant voordat die vastligt.</td><td class="r">€ 500 tot € 1.000</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Statuten en contracten</b></td><td>Regels over geld werken alleen als ze in de statuten staan (DOC Kaas).</td><td>Een notaris met ervaring in coöperaties, plus een jurist voor de ledenovereenkomst, het teamcontract en het bedrijfsabonnement. Gebruik de checklist op de spelregelpagina.</td><td class="r">notaris in begroting, jurist € 3.200</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Staat van het pand</b></td><td>Asbest, de constructie voor een tussenvloer, brandveiligheid, en een gebruiksmelding voor meer dan 50 personen.</td><td>Een bouwkundige keuring met asbestinventarisatie bij de bezichtiging, en een vraag aan de constructeur over de vloer.</td><td class="r">€ 1.500 tot € 3.000 per pand <span class="lbl">schatting</span></td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Alcohol in het café</b></td><td>Een coöperatie die alcohol schenkt, valt mogelijk onder de regels voor paracommercie: een vergunning, schenktijden en getrainde barvrijwilligers.</td><td>Vraag de gemeente naar de Alcoholwet-vergunning en de paracommercieverordening. Of begin zonder alcohol.</td><td class="r">€ 300 tot € 600 <span class="lbl">schatting</span></td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Netaansluiting</b></td><td>Door netcongestie kan een zwaardere aansluiting lang op zich laten wachten.</td><td>Vraag de netbeheerder vóór het bod wat er op het adres beschikbaar is.</td><td class="r">€ 0</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Hoeveel leden vertrekken per jaar?</b></td><td>Dit bepaalt hoe groot het uitkoopfonds moet zijn. Gerekend is met 5 tot 12%.</td><td>Vraag drie coöperaties met een inleg (woon, sport of energie) naar hun cijfers.</td><td class="r">€ 0</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Verzekeringen</b></td><td>Aansprakelijkheid voor gym en café, opstal en inventaris, bestuurdersaansprakelijkheid.</td><td>Twee offertes via een adviseur, met het ontwerp en het ledenaantal.</td><td class="r">€ 0</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Status van de panden</b></td><td>oozo toont verkochte panden als beschikbaar. Linschotenstraat en Calandstraat zijn onzeker.</td><td>Bel de makelaars van de top vijf.</td><td class="r">€ 0</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Jouw rol</b></td><td>Jij bent ontwikkelaar, beheerder en bestuurder tegelijk. Dat geeft een tegenstrijdig belang, en het hangt van één persoon af.</td><td>Een contract voor je ontwikkel- en managementvergoeding dat de leden goedkeuren, een bestuur van drie en een overdrachtsdocument.</td><td class="r">in de jurist</td><td class="cell-mid">open</td></tr>
+    <tr><td><b>Privacy</b></td><td>Check-in registreert wie wanneer binnen is.</td><td>Een kort privacybeleid, een bewaartermijn en een verwerkersovereenkomst met het toegangssysteem.</td><td class="r">€ 0</td><td class="cell-mid">open</td></tr>
+  </tbody></table></div>
+
+  <h3>Volgorde</h3>
+  <ol class="steps">
+    <li><b>Week 1 tot 4, tegelijk:</b> principeverzoeken voor de top drie, de makelaars bellen, twee bankgesprekken, de fiscalist en de netbeheerder.</li>
+    <li><b>Week 2 tot 8:</b> werving in de wijk van het pand dat overblijft, met intentieverklaringen. Doel: 1,2 keer het aantal plekken in de breedste kring.</li>
+    <li><b>Week 6 tot 10:</b> statuten en contracten bij notaris en jurist. De accountant toetst de indeling van het ledenkapitaal.</li>
+    <li><b>Week 8 tot 12:</b> bezichtiging met keuring, dan een bod onder voorbehoud van financiering, het omgevingsplan en 80% gevulde plekken.</li>
+    <li><b>Daarna:</b> oprichting, de inleg naar de derdenrekening, de koop, en vijf maanden sober verbouwen.</li>
+  </ol>
+</section>
 
 <section class="verdict" id="spelregels-risico">
   <span class="eyebrow">Spelregels en risico · 16 november 2026</span>
-  <p class="big">Met de juiste statuten betaalt niemand voor een ander. Wie niet betaalt, betaalt met zijn eigen inleg. De curator van een failliet lid krijgt niet meer rechten dan dat lid. De inleg komt alleen terug als er een vervanger is of volgens een vast schema. En niemand tekent een persoonlijke borg.</p>
-  <p>De hele uitwerking staat op een aparte pagina: <a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Niemand betaalt voor een ander</a>. Daar vind je de stresstest per pand, acht regels voor de statuten, de betaalladder, de toelatingsroute en een checklist voor de notaris.</p>
+  <p class="big">Met de juiste statuten betaalt niemand voor een ander. Wie niet betaalt, betaalt met zijn eigen inleg. De curator van een failliet lid krijgt niet meer rechten dan het lid. Een uitkoopfonds betaalt vertrekkers direct uit, met een noodrem. Niemand tekent een persoonlijke borg.</p>
+  <p>De volledige uitwerking staat op <a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Niemand betaalt voor een ander</a>. Daar vind je de stresstest per pand, acht regels, het uitkoopfonds met simulatie, de regels voor bedrijven, de betaalladder, de toelating en de checklist voor de notaris.</p>
   <ul>
-    <li><b>Galvanistraat (90 eigenaren).</b> Zonder regels kost een failliet lid waarvan de curator de inleg opeist elke andere eigenaar € 169. Een vertrekgolf van 10% kost dan € 1.333 per persoon. Met de regels is dat allebei € 0.</li>
-    <li><b>Reserves.</b> Een liquiditeitsreserve van drie maanden vaste lasten en een uittredingsreserve van 5% van het ledenkapitaal kosten samen € 105.621 (Galvanistraat) en € 82.572 (Utrecht). Dat is ongeveer € 20 per maand extra op de fee vol.</li>
-    <li><b>Het echte risico</b> is dat de club zelf niet rond komt. Stopt hij in het eerste jaar, dan krijgen de leden bij een gedwongen verkoop maar een deel van hun inleg terug: 33% bij Galvanistraat en 9% bij Utrecht <span class="lbl">schatting</span>. Daarom koop je pas als 80% van de plekken is gevuld en staat de inleg tot dan op de derdenrekening van de notaris.</li>
-    <li><b>Eenmalige juridische kosten:</b> circa € 5.700 voor maatwerkstatuten en een jurist voor coöperatierecht <span class="lbl">schatting</span>.</li>
+    <li><b>Zonder regels</b> kost een failliet lid waarvan de curator de inleg opeist elke andere eigenaar bij Galvanistraat € 169. Een vertrekgolf van 10% kost dan € 1.333 per persoon. Met de regels is dat allebei € 0.</li>
+    <li><b>Uitkoopfonds:</b> 10% van het ledenkapitaal, meegefinancierd in de start. Met een wachtlijst krijgen vertrekkers vrijwel direct hun geld, ook als 12% per jaar vertrekt. Zonder wachtlijst helpt geen fonds. Daarom stopt het directe uitbetalen als de wachtlijst onder 5% zakt.</li>
+    <li><b>Bedrijven</b> betalen zonder inleg € 329 per plek (Galvanistraat). Die opbrengst gaat naar het fonds en de reserves, niet naar een lagere fee. Zo kost een vertrekkend bedrijf de eigenaren niets.</li>
+    <li><b>Het echte risico</b> is dat de club zelf niet rond komt. Stopt hij in het eerste jaar, dan krijgen de leden bij een gedwongen verkoop maar een deel van hun inleg terug: 33% bij Galvanistraat en 9% bij Utrecht <span class="lbl">schatting</span>. Daarom wordt er pas gekocht als 80% van de plekken is gevuld.</li>
   </ul>
 </section>
 
@@ -212,7 +266,7 @@ ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
         <li>Een zittende kamer boek je hooguit 2 uur aaneen, de sta-kamer hooguit 45 minuten.</li>
         <li>Geen terugkerende dagblokken, en wie niet binnen 15 minuten komt, verliest de boeking.</li>
       </ul></li>
-    <li><b>Vertrek.</b> Opzegtermijn van 6 maanden voor teams. De inleg gaat bij voorkeur over op leden van de wachtlijst, zodat de coöperatie niet in één keer vijf inleggen hoeft terug te betalen. Leg dit vast in het huishoudelijk reglement.</li>
+    <li><b>Vertrek.</b> Opzegtermijn van 6 maanden. Daarna gelden de gewone regels: het uitkoopfonds met noodrem, of een vervanger van de wachtlijst. Een bedrijf dat niet wil meebezitten, krijgt een bedrijfsabonnement. Leg dit vast in de statuten, niet alleen in het reglement (zie de spelregels).</li>
   </ul>
   <p class="note">Effect op de vergadervraag: de leden zelf vragen circa 72 uur per week (vol 1 uur, deeltijd 0,6 uur). 3 teams voegen circa 12 uur toe. Samen is dat circa 84 uur, oftewel ruim 3 kamers bij 27 boekbare uren per kamer per week. Galvanistraat en Linschotenstraat hebben er nu 3, plus 2 focuskamers.</p>
 
@@ -398,6 +452,9 @@ ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
   </ul>
 </section>
 
+<details class="archief" id="archief">
+<summary><span class="eyebrow">Archief</span> Eerdere rondes, versies en onderzoek (13 tot 15 november 2026). De bedragen hierin kunnen verouderd zijn: de actuele staan hierboven en in de vergelijking.</summary>
+<div class="archief-in">
 <section class="verdict" id="ronde8-uitgewerkt">
   <span class="eyebrow">Ronde 8 uitgewerkt · Linschotenstraat en Koepelstraat · 15 november 2026</span>
   <p class="big">Linschotenstraat 20A in de Spaanse Polder is nu ontworpen: een bedrijfsunit uit 2010 van 16 bij 31 m met 9 m vrije hoogte, een lichtstraat en 5 eigen parkeerplaatsen. Voor 80 eigenaren en 30 clubleden kost het <span class="num">€ 245</span> om te draaien en <span class="num">€ 368</span> voor de inleg terug, met een lening van 44%. Koepelstraat 30-32 valt af.</p>
@@ -1300,6 +1357,8 @@ ol.steps{margin:0;padding-left:20px;display:grid;gap:10px;max-width:78ch}
   </ol>
 </section>
 
+</div>
+</details>
 </div>
 
 <script>

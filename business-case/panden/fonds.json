@@ -1,0 +1,321 @@
+{
+ "simulatie": [
+  {
+   "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+   "vertrek": 0.05,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 14.5,
+   "gem_wacht": -0.3,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 0
+  },
+  {
+   "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+   "vertrek": 0.05,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 14.5,
+   "gem_wacht": 3.7,
+   "p95_wacht": 19,
+   "p_lang": 22.2,
+   "vorder_max": 0
+  },
+  {
+   "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+   "vertrek": 0.08,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 14.5,
+   "gem_wacht": -0.3,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 0
+  },
+  {
+   "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+   "vertrek": 0.08,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 14.5,
+   "gem_wacht": 9.8,
+   "p95_wacht": 32,
+   "p_lang": 51.0,
+   "vorder_max": 0
+  },
+  {
+   "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+   "vertrek": 0.12,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 14.5,
+   "gem_wacht": -0.3,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 0
+  },
+  {
+   "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+   "vertrek": 0.12,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 14.5,
+   "gem_wacht": 13.9,
+   "p95_wacht": 37,
+   "p_lang": 64.4,
+   "vorder_max": 0
+  },
+  {
+   "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": -0.0,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 84000
+  },
+  {
+   "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 20.1,
+   "p95_wacht": 77,
+   "p_lang": 52.9,
+   "vorder_max": 69167
+  },
+  {
+   "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 0.2,
+   "p95_wacht": 2,
+   "p_lang": 0.2,
+   "vorder_max": 119167
+  },
+  {
+   "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 23.8,
+   "p95_wacht": 82,
+   "p_lang": 62.8,
+   "vorder_max": 96958
+  },
+  {
+   "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 0.8,
+   "p95_wacht": 4,
+   "p_lang": 0.6,
+   "vorder_max": 164667
+  },
+  {
+   "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 26.4,
+   "p95_wacht": 76,
+   "p_lang": 76.1,
+   "vorder_max": 132625
+  },
+  {
+   "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 5.5,
+   "p95_wacht": 19,
+   "p_lang": 33.7,
+   "vorder_max": 180788
+  },
+  {
+   "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 26.7,
+   "p95_wacht": 95,
+   "p_lang": 50.4,
+   "vorder_max": 142575
+  },
+  {
+   "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 8.4,
+   "p95_wacht": 23,
+   "p_lang": 46.3,
+   "vorder_max": 258900
+  },
+  {
+   "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 30.1,
+   "p95_wacht": 102,
+   "p_lang": 52.7,
+   "vorder_max": 206212
+  },
+  {
+   "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 10.4,
+   "p95_wacht": 24,
+   "p_lang": 59.3,
+   "vorder_max": 365962
+  },
+  {
+   "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 6.1,
+   "gem_wacht": 32.0,
+   "p95_wacht": 101,
+   "p_lang": 62.7,
+   "vorder_max": 289238
+  },
+  {
+   "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 12.1,
+   "gem_wacht": -0.1,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 112000
+  },
+  {
+   "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 12.1,
+   "gem_wacht": 13.6,
+   "p95_wacht": 62,
+   "p_lang": 37.3,
+   "vorder_max": 92222
+  },
+  {
+   "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 12.1,
+   "gem_wacht": -0.0,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 158889
+  },
+  {
+   "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 12.1,
+   "gem_wacht": 19.3,
+   "p95_wacht": 77,
+   "p_lang": 46.7,
+   "vorder_max": 129278
+  },
+  {
+   "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 12.1,
+   "gem_wacht": 0.2,
+   "p95_wacht": 2,
+   "p_lang": 0.0,
+   "vorder_max": 219556
+  },
+  {
+   "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 12.1,
+   "gem_wacht": 23.0,
+   "p95_wacht": 79,
+   "p_lang": 60.6,
+   "vorder_max": 176833
+  },
+  {
+   "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 26.7,
+   "gem_wacht": -0.1,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 112000
+  },
+  {
+   "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+   "vertrek": 0.05,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 26.7,
+   "gem_wacht": 1.1,
+   "p95_wacht": 8,
+   "p_lang": 6.1,
+   "vorder_max": 92222
+  },
+  {
+   "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 26.7,
+   "gem_wacht": -0.1,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 158889
+  },
+  {
+   "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+   "vertrek": 0.08,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 26.7,
+   "gem_wacht": 8.4,
+   "p95_wacht": 38,
+   "p_lang": 32.9,
+   "vorder_max": 129278
+  },
+  {
+   "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "wachtlijst",
+   "fee_pm": 26.7,
+   "gem_wacht": -0.1,
+   "p95_wacht": 0,
+   "p_lang": 0.0,
+   "vorder_max": 219556
+  },
+  {
+   "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+   "vertrek": 0.12,
+   "wachtlijst": "geen wachtlijst",
+   "fee_pm": 26.7,
+   "gem_wacht": 15.4,
+   "p95_wacht": 53,
+   "p_lang": 54.7,
+   "vorder_max": 176833
+  }
+ ],
+ "ingroei": {
+  "15.000 vol, 25% vooraf, 60 mnd": {
+   "vooraf": 3750,
+   "pm": 207,
+   "pm_deel": 124
+  },
+  "15.000 vol, 33% vooraf, 36 mnd": {
+   "vooraf": 5000,
+   "pm": 295,
+   "pm_deel": 177
+  },
+  "15.000 vol, 50% vooraf, 36 mnd": {
+   "vooraf": 7500,
+   "pm": 221,
+   "pm_deel": 133
+  }
+ }
+}

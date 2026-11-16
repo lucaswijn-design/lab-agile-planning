@@ -42,7 +42,7 @@
      "titel": "Een BV met vijf plekken gaat failliet tijdens de opzegtermijn van zes maanden",
      "zonder": "5 x 230 x 6 = 6.900 euro gemist: 81 euro per persoon",
      "zonder_eur": 81,
-     "met": "De vijf mensen zijn zelf lid en blijven de bijdrage verschuldigd. De BV betaalt alleen. Plus een borg van drie maanden van de BV. 0 euro voor de anderen.",
+     "met": "Teamleden zijn zelf lid en blijven de bijdrage verschuldigd; de BV betaalt alleen. Een bedrijfsabonnement heeft een looptijd, een borg van drie maanden, en de opbrengst zit niet in de fee. 0 euro voor de anderen.",
      "met_eur": 0,
      "reken": "5 x 230 x 6"
     },
@@ -51,7 +51,7 @@
      "titel": "9 eigenaren (10%) zeggen tegelijk op en er is geen wachtlijst",
      "zonder": "108.000 euro inleg direct terug: 1.333 euro per persoon, plus 23,0 euro per maand hogere fee voor de rest",
      "zonder_eur": 1333,
-     "met": "Twaalf maanden opzegtermijn, dus de bijdrage loopt nog een jaar door. Terugbetaling alleen uit de inleg van nieuwe leden of uit de uittredingsreserve, maximaal 5% van het ledenkapitaal per jaar (54.000 euro). Blijven de plekken leeg, dan stijgt de fee na een jaar met 23,0 euro per maand voor iedereen, tot de club de plekken weer vult. Geen eenmalige rekening.",
+     "met": "Zes maanden opzegtermijn. Met een wachtlijst betaalt het uitkoopfonds direct uit en vullen nieuwe leden het weer aan. Zonder wachtlijst trekt de noodrem: uitbetalen op volgorde, hooguit 5% van het ledenkapitaal per jaar (54.000 euro). Blijven de plekken leeg, dan stijgt de fee met 23,0 euro per maand voor iedereen tot ze weer gevuld zijn. Geen eenmalige rekening.",
      "met_eur": 0,
      "reken": "9 x 12000 gemiddelde inleg"
     },
@@ -85,14 +85,11 @@
    ],
    "reserves": {
     "liquiditeit": 51621,
-    "uittreding": 54000,
-    "totaal": 105621,
-    "opbouw_per_jaar_3j": 35207,
-    "fee_extra_vooraf": 11.9,
-    "fee_extra_opbouw": 47.3,
+    "fonds": 108000,
+    "totaal": 159621,
     "fee_liq_vooraf": 5.8,
-    "fee_uit_5j": 14.5,
-    "advies_fee": 20.3,
+    "fee_fonds_vooraf": 12.1,
+    "advies_fee": 17.9,
     "rijen": [
      [
       "Liquiditeitsreserve",
@@ -103,12 +100,12 @@
       "berekend"
      ],
      [
-      "Uittredingsreserve",
-      "5%",
+      "Uitkoopfonds",
+      "10%",
       "van het ledenkapitaal",
       1080000,
-      54000,
-      "berekend"
+      108000,
+      "berekend: ontwerp D uit fonds.py"
      ]
     ]
    },
@@ -121,6 +118,23 @@
     "jaar5_dekking_pct": 62,
     "pand_pct": 0.9,
     "verbouw_pct": 0.25
+   },
+   "bedrijf": {
+    "kapitaal_pm": 69,
+    "prijs_plek": 329,
+    "plekken": 5,
+    "gemist_6m": 9870,
+    "per_eigenaar": 110,
+    "fee_effect_als_ingebouwd": 21.4
+   },
+   "btw": {
+    "excl_pand": 648465,
+    "btw_capex": 136178,
+    "btw_opex": 17366,
+    "deels_vrijgesteld_pm": 11.6,
+    "geen_ondernemer_pm": 3.6,
+    "fee_zonder_btw_pm": -35.1,
+    "gebruik_vrijgesteld": 0.3
    }
   },
   {
@@ -165,7 +179,7 @@
      "titel": "Een BV met vijf plekken gaat failliet tijdens de opzegtermijn van zes maanden",
      "zonder": "5 x 162 x 6 = 4.860 euro gemist: 88 euro per persoon",
      "zonder_eur": 88,
-     "met": "De vijf mensen zijn zelf lid en blijven de bijdrage verschuldigd. De BV betaalt alleen. Plus een borg van drie maanden van de BV. 0 euro voor de anderen.",
+     "met": "Teamleden zijn zelf lid en blijven de bijdrage verschuldigd; de BV betaalt alleen. Een bedrijfsabonnement heeft een looptijd, een borg van drie maanden, en de opbrengst zit niet in de fee. 0 euro voor de anderen.",
      "met_eur": 0,
      "reken": "5 x 162 x 6"
     },
@@ -174,7 +188,7 @@
      "titel": "6 eigenaren (10%) zeggen tegelijk op en er is geen wachtlijst",
      "zonder": "72.000 euro inleg direct terug: 1.333 euro per persoon, plus 16,2 euro per maand hogere fee voor de rest",
      "zonder_eur": 1333,
-     "met": "Twaalf maanden opzegtermijn, dus de bijdrage loopt nog een jaar door. Terugbetaling alleen uit de inleg van nieuwe leden of uit de uittredingsreserve, maximaal 5% van het ledenkapitaal per jaar (36.000 euro). Blijven de plekken leeg, dan stijgt de fee na een jaar met 16,2 euro per maand voor iedereen, tot de club de plekken weer vult. Geen eenmalige rekening.",
+     "met": "Zes maanden opzegtermijn. Met een wachtlijst betaalt het uitkoopfonds direct uit en vullen nieuwe leden het weer aan. Zonder wachtlijst trekt de noodrem: uitbetalen op volgorde, hooguit 5% van het ledenkapitaal per jaar (36.000 euro). Blijven de plekken leeg, dan stijgt de fee met 16,2 euro per maand voor iedereen tot ze weer gevuld zijn. Geen eenmalige rekening.",
      "met_eur": 0,
      "reken": "6 x 12000 gemiddelde inleg"
     },
@@ -208,14 +222,11 @@
    ],
    "reserves": {
     "liquiditeit": 46572,
-    "uittreding": 36000,
-    "totaal": 82572,
-    "opbouw_per_jaar_3j": 27524,
-    "fee_extra_vooraf": 13.9,
-    "fee_extra_opbouw": 55.5,
+    "fonds": 72000,
+    "totaal": 118572,
     "fee_liq_vooraf": 7.9,
-    "fee_uit_5j": 14.5,
-    "advies_fee": 22.4,
+    "fee_fonds_vooraf": 12.1,
+    "advies_fee": 20.0,
     "rijen": [
      [
       "Liquiditeitsreserve",
@@ -226,12 +237,12 @@
       "berekend"
      ],
      [
-      "Uittredingsreserve",
-      "5%",
+      "Uitkoopfonds",
+      "10%",
       "van het ledenkapitaal",
       720000,
-      36000,
-      "berekend"
+      72000,
+      "berekend: ontwerp D uit fonds.py"
      ]
     ]
    },
@@ -244,20 +255,37 @@
     "jaar5_dekking_pct": 40,
     "pand_pct": 0.9,
     "verbouw_pct": 0.25
+   },
+   "bedrijf": {
+    "kapitaal_pm": 69,
+    "prijs_plek": 254,
+    "plekken": 5,
+    "gemist_6m": 7620,
+    "per_eigenaar": 127,
+    "fee_effect_als_ingebouwd": 24.7
+   },
+   "btw": {
+    "excl_pand": 676050,
+    "btw_capex": 141970,
+    "btw_opex": 16031,
+    "deels_vrijgesteld_pm": 16.9,
+    "geen_ondernemer_pm": 31.6,
+    "fee_zonder_btw_pm": -24.7,
+    "gebruik_vrijgesteld": 0.3
    }
   }
  ],
  "juridisch": [
   [
-   "Statuten coöperatie U.A. bij notaris, maatwerk",
+   "Notaris en statuten coöperatie (zit al in de begroting per pand)",
    1,
-   "akte",
-   2500,
-   2500,
-   "schatting: standaard 750 tot 1.500, maatwerk uittreding en verrekening erbij"
+   "post",
+   0,
+   0,
+   "berekend: post 'Notaris en statuten coöperatie' van 15.000 in pand_case"
   ],
   [
-   "Jurist coöperatierecht: ledenovereenkomst, reglement, toets bankvoorwaarden",
+   "Jurist coöperatierecht: ledenovereenkomst, teamcontract, reglement, toets bankvoorwaarden",
    16,
    "uur",
    200,
@@ -265,12 +293,12 @@
    "schatting"
   ],
   [
-   "Huishoudelijk reglement en huisregels",
-   1,
-   "stuk",
-   0,
-   0,
-   "zelf schrijven op basis van de jurist"
+   "Fiscalist: btw-positie, vpb, ingroei en uitkoopfonds",
+   8,
+   "uur",
+   200,
+   1600,
+   "schatting"
   ],
   [
    "Bestuurdersaansprakelijkheidsverzekering",
@@ -288,5 +316,326 @@
    1500,
    "schatting; zit deels al in 'Verzekeringen' van de exploitatie"
   ]
- ]
+ ],
+ "fonds": {
+  "simulatie": [
+   {
+    "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+    "vertrek": 0.05,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 14.5,
+    "gem_wacht": -0.3,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 0
+   },
+   {
+    "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+    "vertrek": 0.05,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 14.5,
+    "gem_wacht": 3.7,
+    "p95_wacht": 19,
+    "p_lang": 22.2,
+    "vorder_max": 0
+   },
+   {
+    "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+    "vertrek": 0.08,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 14.5,
+    "gem_wacht": -0.3,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 0
+   },
+   {
+    "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+    "vertrek": 0.08,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 14.5,
+    "gem_wacht": 9.8,
+    "p95_wacht": 32,
+    "p_lang": 51.0,
+    "vorder_max": 0
+   },
+   {
+    "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+    "vertrek": 0.12,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 14.5,
+    "gem_wacht": -0.3,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 0
+   },
+   {
+    "ontwerp": "A. alleen bij vervanger, 12 mnd opzeg",
+    "vertrek": 0.12,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 14.5,
+    "gem_wacht": 13.9,
+    "p95_wacht": 37,
+    "p_lang": 64.4,
+    "vorder_max": 0
+   },
+   {
+    "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": -0.0,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 84000
+   },
+   {
+    "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 20.1,
+    "p95_wacht": 77,
+    "p_lang": 52.9,
+    "vorder_max": 69167
+   },
+   {
+    "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 0.2,
+    "p95_wacht": 2,
+    "p_lang": 0.2,
+    "vorder_max": 119167
+   },
+   {
+    "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 23.8,
+    "p95_wacht": 82,
+    "p_lang": 62.8,
+    "vorder_max": 96958
+   },
+   {
+    "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 0.8,
+    "p95_wacht": 4,
+    "p_lang": 0.6,
+    "vorder_max": 164667
+   },
+   {
+    "ontwerp": "B. fonds 54k, 50% vooraf, 36 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 26.4,
+    "p95_wacht": 76,
+    "p_lang": 76.1,
+    "vorder_max": 132625
+   },
+   {
+    "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 5.5,
+    "p95_wacht": 19,
+    "p_lang": 33.7,
+    "vorder_max": 180788
+   },
+   {
+    "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 26.7,
+    "p95_wacht": 95,
+    "p_lang": 50.4,
+    "vorder_max": 142575
+   },
+   {
+    "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 8.4,
+    "p95_wacht": 23,
+    "p_lang": 46.3,
+    "vorder_max": 258900
+   },
+   {
+    "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 30.1,
+    "p95_wacht": 102,
+    "p_lang": 52.7,
+    "vorder_max": 206212
+   },
+   {
+    "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 10.4,
+    "p95_wacht": 24,
+    "p_lang": 59.3,
+    "vorder_max": 365962
+   },
+   {
+    "ontwerp": "C. fonds 54k, 25% vooraf, 60 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 6.1,
+    "gem_wacht": 32.0,
+    "p95_wacht": 101,
+    "p_lang": 62.7,
+    "vorder_max": 289238
+   },
+   {
+    "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 12.1,
+    "gem_wacht": -0.1,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 112000
+   },
+   {
+    "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 12.1,
+    "gem_wacht": 13.6,
+    "p95_wacht": 62,
+    "p_lang": 37.3,
+    "vorder_max": 92222
+   },
+   {
+    "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 12.1,
+    "gem_wacht": -0.0,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 158889
+   },
+   {
+    "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 12.1,
+    "gem_wacht": 19.3,
+    "p95_wacht": 77,
+    "p_lang": 46.7,
+    "vorder_max": 129278
+   },
+   {
+    "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 12.1,
+    "gem_wacht": 0.2,
+    "p95_wacht": 2,
+    "p_lang": 0.0,
+    "vorder_max": 219556
+   },
+   {
+    "ontwerp": "D. fonds 108k, 33% vooraf, 36 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 12.1,
+    "gem_wacht": 23.0,
+    "p95_wacht": 79,
+    "p_lang": 60.6,
+    "vorder_max": 176833
+   },
+   {
+    "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 26.7,
+    "gem_wacht": -0.1,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 112000
+   },
+   {
+    "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+    "vertrek": 0.05,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 26.7,
+    "gem_wacht": 1.1,
+    "p95_wacht": 8,
+    "p_lang": 6.1,
+    "vorder_max": 92222
+   },
+   {
+    "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 26.7,
+    "gem_wacht": -0.1,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 158889
+   },
+   {
+    "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+    "vertrek": 0.08,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 26.7,
+    "gem_wacht": 8.4,
+    "p95_wacht": 38,
+    "p_lang": 32.9,
+    "vorder_max": 129278
+   },
+   {
+    "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "wachtlijst",
+    "fee_pm": 26.7,
+    "gem_wacht": -0.1,
+    "p95_wacht": 0,
+    "p_lang": 0.0,
+    "vorder_max": 219556
+   },
+   {
+    "ontwerp": "E. fonds 108k + 900 pm, 33% vooraf, 36 mnd",
+    "vertrek": 0.12,
+    "wachtlijst": "geen wachtlijst",
+    "fee_pm": 26.7,
+    "gem_wacht": 15.4,
+    "p95_wacht": 53,
+    "p_lang": 54.7,
+    "vorder_max": 176833
+   }
+  ],
+  "ingroei": {
+   "15.000 vol, 25% vooraf, 60 mnd": {
+    "vooraf": 3750,
+    "pm": 207,
+    "pm_deel": 124
+   },
+   "15.000 vol, 33% vooraf, 36 mnd": {
+    "vooraf": 5000,
+    "pm": 295,
+    "pm_deel": 177
+   },
+   "15.000 vol, 50% vooraf, 36 mnd": {
+    "vooraf": 7500,
+    "pm": 221,
+    "pm_deel": 133
+   }
+  }
+ }
 }
