@@ -24,9 +24,9 @@
   "gemeente": "'s-Hertogenbosch",
   "bestemming": "Gemengd-3 met functieaanduiding 'sport'; gebiedsaanduiding geluidzone industrie; bouwhoogte max 7 m",
   "kans": "hoog",
-  "route": "sport past binnen de regels; coworking, vergaderen en bibliotheek waarschijnlijk binnen Gemengd-3 of via binnenplanse afwijking; café met keuken als ondergeschikte horeca (paraplu ondersteunende horeca 2023) of anders BOPA",
-  "onderbouwing": "De bestemming staat de gym al toe en het pand is als sportgebouw in gebruik (BAG sportfunctie). Het plan Kruiskamp-Schutskamp is een beheersplan in een woonwijk aan de rand van De Rietvelden, dus geen bedrijventerreinbeleid. Aandachtspunt: de bovenwoning (1B) en de geluidzone industrie.",
-  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan 'Kruiskamp-Schutskamp' (onherroepelijk 04-04-2012), paraplu ondersteunende horeca (10-10-2023)",
+  "route": "past: maatschappelijke voorzieningen, dienstverlening, kantoren en (aanduiding) sport zijn toegestaan; café via de paraplu ondersteunende horeca; parkeren op eigen terrein",
+  "onderbouwing": "Planregels gelezen 16-11-2026: Gemengd-3 (art. 8 Kruiskamp-Schutskamp) is bestemd voor maatschappelijke voorzieningen, dienstverlening, kantoren en ter plaatse van de aanduiding 'sport' ook sport. Parkeren moet op eigen terrein (8.2.1), afwijken kan (8.4).",
+  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan 'Kruiskamp-Schutskamp' (onherroepelijk 04-04-2012), paraplu ondersteunende horeca (10-10-2023); planregels ruimtelijkeplannen.nl gelezen 16-11-2026",
   "tip": "Vraag een korte schriftelijke bevestiging (principeverzoek) bij gemeente 's-Hertogenbosch dat de clubfunctie onder sport en Gemengd-3 valt; houd het café besloten en ondergeschikt aan de sport."
  },
  {
@@ -43,10 +43,10 @@
   "adres": "Ring 15, Pernis",
   "gemeente": "Rotterdam",
   "bestemming": "Maatschappelijk-2; Waarde Archeologie 3; bouwhoogte max 7 m, bebouwingspercentage max 80 %",
-  "kans": "hoog",
-  "route": "vergaderen, bibliotheek en ontmoeten passen waarschijnlijk binnen de regels; gym en coworking toetsen aan de begripsomschrijving; café ondergeschikt of via binnenplanse afwijking, anders BOPA",
-  "onderbouwing": "Een besloten ledenclub met bibliotheek, ontmoeting en sport ligt dicht bij een maatschappelijke functie, zeker in een dorpskern. Pand is als maatschappelijk vastgoed aangeboden en BAG noemt bijeenkomstfunctie. Coworking als zelfstandig kantoor en openbare horeca vallen er waarschijnlijk buiten.",
-  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan 'Pernis' (onherroepelijk 28-03-2015), Parapluherziening evenementen (03-02-2022)",
+  "kans": "middel",
+  "route": "ontmoeten en bibliotheek passen (cultuur, maatschappelijke dienstverlening); coworking en gym niet: BOPA nodig, of de werkplekken ondergeschikt aan een buurthuisfunctie laten bevestigen",
+  "onderbouwing": "Planregels gelezen 16-11-2026: Maatschappelijk-2 (art. 17 Pernis) is bestemd voor onderwijs, religie, cultuur, gezondheidszorg, maatschappelijke en publieke dienstverlening. Sport en kantoren staan er niet in. Geluidsgevoelige functies zijn uitgesloten.",
+  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan 'Pernis' (onherroepelijk 28-03-2015), Parapluherziening evenementen (03-02-2022); planregels ruimtelijkeplannen.nl gelezen 16-11-2026",
   "tip": "Principeverzoek bij gemeente Rotterdam (gebiedscommissie Pernis betrekken). Noem coworking 'werkplekken voor leden' en het café ondergeschikte horeca bij de clubfunctie."
  },
  {
@@ -54,9 +54,9 @@
   "gemeente": "Rotterdam",
   "bestemming": "Bedrijf (bestemmingsplan Merwe-Vierhavens); Waarde Archeologie 1; geluidzone industrie; vrijwaringszone dijk; parkeerzones; bouwhoogte max 7 m",
   "kans": "laag",
-  "route": "BOPA of wijziging omgevingsplan",
-  "onderbouwing": "Het plan Merwe-Vierhavens (vastgesteld 28-11-2024, wijzigingsbesluit 11-06-2026, deels in werking) maakt transformatie naar een gemengd gebied mogelijk, maar dit perceel in Nieuw Mathenesse kreeg bewust 'Bedrijf'. Afwijken van een vers vastgesteld plan is lastig. Wel praat Rotterdam in M4H graag over maakbedrijven met ontmoetingsfunctie.",
-  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan NL.IMRO.0599.BP1122VierhMerwh-va02; websearch (officielebekendmakingen gmb-2026-288552)",
+  "route": "BOPA: coworking is een zelfstandig kantoor en mag niet in 'Bedrijf'",
+  "onderbouwing": "Planregels gelezen 16-11-2026: Bedrijf (Merwe-Vierhavens) staat bedrijven t/m milieucategorie 2 en alleen bedrijfsgebonden kantoren toe. Coworking voor leden valt daar niet onder; een ondergeschikte gym lost dat niet op.",
+  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan NL.IMRO.0599.BP1122VierhMerwh-va02; websearch (officielebekendmakingen gmb-2026-288552); planregels ruimtelijkeplannen.nl gelezen 16-11-2026",
   "tip": "Vraag vooroverleg bij gemeente Rotterdam (team M4H). Kans stijgt als het concept als 'makers en werkplaats' met ondergeschikte ontmoeting wordt neergezet."
  },
  {
@@ -73,10 +73,10 @@
   "adres": "Metaalhof 40",
   "gemeente": "Rotterdam",
   "bestemming": "Gemengd-3 (bestemmingsplan Alexanderknoop); Waarde Archeologie",
-  "kans": "middel",
-  "route": "kantoor en maatschappelijk mogelijk binnen de regels [schatting]; sport en horeca waarschijnlijk via binnenplanse afwijking of BOPA",
-  "onderbouwing": "Geen pure bedrijfsbestemming maar een gemengde bestemming in het plan rond knooppunt Alexander. Dat maakt coworking en maatschappelijk gebruik kansrijk. Een gym en café zijn onzeker zolang de regels niet gelezen zijn.",
-  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan 'Alexanderknoop' (vastgesteld 22-11-2017)",
+  "kans": "hoog",
+  "route": "kantoor en maatschappelijke voorziening passen (art. 12.1 c en g Alexanderknoop); gym als ondergeschikte voorziening voor leden laten bevestigen in vooroverleg, anders BOPA voor de sport",
+  "onderbouwing": "Planregels gelezen 16-11-2026: Gemengd-3 staat bedrijven t/m cat. 3.2, kantoren (gezamenlijk max 20.000 m² bvo) en maatschappelijke voorzieningen die niet geluidsgevoelig zijn (max 10.000 m²) toe. Sport staat er niet in (alleen een sporthal op Koperpad 20). Coworking past dus als kantoor; de gym moet ondergeschikt zijn of via een afwijking.",
+  "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan 'Alexanderknoop' (vastgesteld 22-11-2017); planregels ruimtelijkeplannen.nl gelezen 16-11-2026",
   "tip": "Laat bij gemeente Rotterdam artikel Gemengd-3 bevestigen; positioneer de club als maatschappelijke voorziening met werkplekken."
  },
  {

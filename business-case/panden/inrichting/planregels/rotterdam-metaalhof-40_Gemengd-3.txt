@@ -1,0 +1,1576 @@
+https://ruimtelijkeplannen.nl/documents/NL.IMRO.0599.BP1042Alexandrknp-va03/r_NL.IMRO.0599.BP1042Alexandrknp-va03.html#_12_Gemengd-3
+
+
+Alexanderknoop: Regels
+direct naar inhoud van Regels
+Alexanderknoop
+Regels
+Plan:
+Alexanderknoop
+Status:
+vastgesteld
+Plantype:
+bestemmingsplan
+IMRO-idn:
+NL.IMRO.0599.BP1042Alexandrknp-va03
+Toelichting
+Regels
+Begin
+Vorige
+Volgende
+Omhoog
+Regels
+Hoofdstuk 1 	INLEIDENDE REGELS
+Artikel 1 	Begrippen
+Artikel 2 	wijze van meten
+Hoofdstuk 2 	BESTEMMINGSREGELS
+Artikel 3 	Bedrijf
+Artikel 4 	Bedrijf - Nutsbedrijf
+Artikel 5 	Bedrijf - Nutsvoorziening
+Artikel 6 	Bedrijf - Verkooppunt motorbrandstoffen
+Artikel 7 	Centrum - 1
+Artikel 8 	Centrum - 2
+Artikel 9 	Centrum - 3
+Artikel 10 	Gemengd - 1
+Artikel 11 	Gemengd - 2
+Artikel 12 	Gemengd - 3
+Artikel 13 	Gemengd - 4
+Artikel 14 	Groen
+Artikel 15 	Horeca
+Artikel 16 	Horeca - Hotel
+Artikel 17 	Kantoor
+Artikel 18 	Recreatie - Volkstuin
+Artikel 19 	Sport - Sport- en speelterrein
+Artikel 20 	Tuin
+Artikel 21 	Verkeer - Autosnelweg
+Artikel 22 	Verkeer - Erf
+Artikel 23 	Verkeer - Garagebox
+Artikel 24 	Verkeer - Metro/sneltram
+Artikel 25 	Verkeer - Parkeergarage
+Artikel 26 	Verkeer - Spoorverkeer
+Artikel 27 	Verkeer - Verblijfsgebied
+Artikel 28 	Verkeer - Wegverkeer
+Artikel 29 	Water
+Artikel 30 	Wonen
+Artikel 31 	Wonen - Berging
+Artikel 32 	Leiding - Gas
+Artikel 33 	Leiding - Hoogspanning
+Artikel 34 	Waarde - Archeologie
+Artikel 35 	Waterstaat - Waterstaatkundige functie
+Hoofdstuk 3 	ALGEMENE REGELS
+Artikel 36 	Anti-dubbeltelregel
+Artikel 37 	Algemene gebruiksregels
+Artikel 38 	Algemene aanduidingsregels
+Artikel 39 	Algemene bouwregels
+Artikel 40 	Algemene afwijkingsregels
+Artikel 41 	Algemene procedureregels
+Hoofdstuk 4 	OVERGANGS- EN SLOTREGELS
+Artikel 42 	Overgangsrecht
+Artikel 43 	Slotregel
+Bijlage
+Bijlage 1 	Bedrijvenlijst
+Bijlage 2 	Parkeernormen
+Hoofdstuk 1 	INLEIDENDE REGELS
+Artikel 1 	Begrippen
+1.1 	plan:
+Het bestemmingsplan "Alexanderknoop" met identificatienummer NL.IMRO.0599.BP1042Alexandrknp-va03 van de gemeente Rotterdam.
+1.2 	bestemmingsplan:
+de geometrisch bepaalde planobjecten met de bijbehorende regels (en de daarbij behorende bijlagen).
+1.3 	aanduiding:
+een geometrisch bepaald vlak of figuur, waarmee gronden zijn aangeduid, waar ingevolge de regels regels worden gesteld ten aanzien van het gebruik en/of het bebouwen van deze gronden.
+1.4 	aanduidingsgrens:
+de grens van een aanduiding indien het een vlak betreft.
+1.5 	Bebouwing
+Een of meer gebouwen en/of bouwwerken geen gebouwen zijnde. 
+1.6 	Bebouwingspercentage
+Een percentage dat aangeeft hoeveel van het oppervlak van een bestemmingsvlak door gebouwen mag worden ingenomen. 
+1.7 	Bedrijfswoningen
+Een woning in of bij een gebouw of op een terrein, kennelijk slechts bedoeld voor (het huishouden van) een persoon, wiens huisvesting daar, gelet op de bestemming van het gebouw of het terrein, noodzakelijk is.
+1.8 	Bedrijven
+De bedrijven genoemd in de lijst van bedrijfsactiviteiten behorende bij deze regels. 
+1.9 	Begane grond
+Bij situering van gebouwen aan een verhoogde winkelstraat (Poolsterstraat en Korte Poolsterstraat) wordt de op het niveau van die winkelstraat gelegen bouwlaag aangemerkt als begane grond. 
+1.10 	Beperkt kwetsbare objecten
+a. 
+woningen, kantoorgebouwen, hotels, restaurants, winkels en bedrijfsgebouwen, voor zover deze objecten niet tot de categorie 
+Kwetsbare objecten
+ behoren;
+b. 
+sporthallen, zwembaden, speeltuinen;
+c. 
+sport- en kampeerterreinen en terreinen bestemd voor recreatieve doeleinden, voor zover zij niet tot de categorie 
+Kwetsbare objecten
+ behoren;
+d. 
+andere objecten die met de onder a en b genoemde gelijkgesteld kunnen worden uit hoofde van de gemiddelde tijd per dag gedurende welke personen daar verblijven, het aantal personen dat daarin doorgaans aanwezig is en de mogelijkheden voor zelfredzaamheid bij een ongeval, voor zover die objecten niet tot de categorie 
+Kwetsbare objecten
+ behoren;
+e. 
+objecten met een hoge infrastructurele waarde, zoals een telefoon- of elektriciteitscentrale of een gebouw met vluchtleidingsapparatuur, voor zover die objecten wegens de aard van de gevaarlijke stoffen die bij een ongeval kunnen vrijkomen, bescherming verdienen tegen de gevolgen van dat ongeval. 
+1.11 	bestemmingsgrens:
+de grens van een bestemmingsvlak.
+1.12 	Besluit externe veiligheid inrichtingen (Bevi)
+Het Besluit externe veiligheid inrichtingen (Bevi) zoals dat luidt ten tijde van de ter inzage legging van het ontwerp van dit bestemmingsplan. 
+1.13 	bestemmingsvlak:
+Een geometrisch bepaald vlak met eenzelfde bestemming.
+1.14 	Bouwaanduidingen
+Alle aanduidingen met betrekking tot de wijze van bouwen en de verschijningsvorm van bouwwerken.
+1.15 	Bouwgrens
+De grens van een 
+Bouwvlak
+.
+1.16 	Bouwlaag
+Het tussen twee opeenvolgende vloeren (of tussen een vloer en plat dak) gelegen, voor verblijf geschikt deel van een gebouw. Een kap, vliering, zolder, souterrain, alsmede een dakopbouw binnen het theoretisch profiel van een kap, worden niet als een afzonderlijke bouwlaag beschouwd. Alleen ingeval een dakopbouw breder is dan tweederde van de pandbreedte, wordt dit als een aparte bouwlaag geteld.
+NB: onder het "theoretisch profiel van een kap" wordt verstaan de ruimte binnen een kap met schuine zijden waarvan de hellingshoek ten minste 20 en maximaal 60 graden bedraagt.
+1.17 	Bouwvlak
+Een geometrisch bepaald vlak, waarmee gronden zijn aangeduid, waar ingevolge de regels bepaalde gebouwen en bouwwerken, geen gebouwen zijnde, zijn toegelaten.
+1.18 	Bouwwerk
+Elke constructie van enige omvang van hout, steen, metaal of ander materiaal, die hetzij direct hetzij indirect met de grond is verbonden, hetzij direct of indirect steun vindt in of op de grond.
+1.19 	Bruto vloeroppervlak (b.v.o.)
+Het vloeroppervlak van een bouwwerk, inclusief de niet direct voor het hoofddoel bruikbare ruimten (bijvoorbeeld bij een productiebedrijf of winkel, de magazijn-, expeditie-, kantoorruimten). Gebouwde parkeervoorzieningen worden niet tot het b.v.o. gerekend.
+1.20 	Detailhandel
+Het bedrijfsmatig te koop aanbieden, waaronder de uitstalling ter verkoop, verkopen, verhuren en leveren van goederen aan personen die die goederen kopen of huren voor gebruik, verbruik of aanwending anders dan in de uitoefening van een beroeps- of bedrijfsactiviteit. 
+1.21 	Dienstverlening
+Het bedrijfsmatig verlenen van diensten, waarbij het publiek rechtstreeks (al dan niet via een balie) te woord wordt gestaan en geholpen. Een belwinkel en een seksinrichting worden hier niet onder begrepen.
+1.22 	Erf
+Terrein ten behoeve van de ontsluiting van de aanliggende bebouwing, voor parkeren, groenvoorzieningen, waterlopen.
+1.23 	Gevaarlijke stoffen
+Stoffen of preparaten die krachtens het Besluit verpakking en aanduiding milieugevaarlijke stoffen en preparaten zijn ingedeeld in een categorie als bedoeld in artikel 34, tweede lid van de Wet milieugevaarlijke stoffen, zoals deze luidt op het tijdstip van ter inzage legging van het ontwerp van dit bestemmingsplan.
+1.24 	Gebouw
+Elk bouwwerk, dat een voor mensen toegankelijke, overdekte, geheel of gedeeltelijk met wanden omsloten ruimte vormt.
+1.25 	Geluidsgevoelige functies (in de zin van de Wet geluidhinder)
+Hieronder worden verstaan: woningen, andere geluidsgevoelige gebouwen en geluidsgevoelige terreinen. Onder een andere geluidsgevoelig gebouw wordt verstaan: een onderwijsgebouw, een ziekenhuis, een verpleeghuis, een verzorgingstehuis, een psychiatrische inrichting,een kinderdagverblijf.
+De aanwijzing als ander geluidsgevoelig gebouw geldt niet voor de delen van een gebouw die een andere bestemming hebben dan geluidsgevoelige verblijfsruimte. Onder geluidsgevoelige terreinen wordt verstaan: een standplaats voor woonwagens en een ligplaats in het water, bestemd om door een woonschip te worden ingenomen.
+1.26 	Horeca
+Het bedrijfsmatig verstrekken van ter plaatse te nuttigen voedsel en dranken.
+1.27 	Kap
+Een afdekking van een gebouw met schuine zijden waarbij de hellingshoek ten minste 20 graden en ten hoogste 60 graden bedraagt.
+1.28 	Kantoren
+Het bedrijfsmatig verlenen van diensten waarbij het publiek niet of slechts in ondergeschikte mate rechtstreeks te woord wordt gestaan en geholpen.
+1.29 	Kleinschalige speeltoestellen
+Speeltoestellen niet hoger dan 4 meter.
+1.30 	Kwetsbare objecten
+a. 
+woningen, met uitzondering van:
+1. 
+verspreid liggende woningen van derden met een dichtheid van maximaal twee woningen per hectare;
+2. 
+dienst- en bedrijfswoningen van derden;
+b. 
+gebouwen bestemd voor het verblijf, al dan niet gedurende een gedeelte van de dag, van minderjarigen, ouderen, zieken of gehandicapten, zoals:
+1. 
+ziekenhuizen, bejaardenhuizen en verpleeghuizen;
+2. 
+scholen;
+3. 
+gebouwen of gedeelten daarvan, bestemd voor dagopvang van minderjarigen;
+c. 
+gebouwen waarin doorgaans grote aantallen personen gedurende een groot gedeelte van de dag aanwezig zijn, zoals:
+1. 
+kantoorgebouwen en hotels met een b.v.o. van meer dan 1.500 m² per object;
+2. 
+complexen waarin meer dan 5 winkels zijn gevestigd en waarvan het gezamenlijk b.v.o. meer dan 1.000 m² bedraagt en winkels met een totaal b.v.o. van meer dan 2.000 m² per winkel, voor zover in die complexen of in die winkels een supermarkt, hypermarkt of warenhuis is gevestigd;
+d. 
+kampeer- en andere recreatieterreinen bestemd voor het verblijf van meer dan 50 personen gedurende meerdere aaneengesloten dagen.
+1.31 	Maaiveld
+De bovenkant van het aansluitende, afgewerkte terrein dat een bouwwerk omgeeft, met dien verstande dat in geaccidenteerd terrein het gemiddelde van die bovenkanten wordt aangehouden.
+1.32 	Maatschappelijk
+Voorzieningen op het gebied van onderwijs, religie, cultuur, gezondheidszorg, maatschappelijke en publieke dienstverlening.
+1.33 	Milieudeskundige
+De DCMR Milieudienst Rijnmond of de daarvoor in de plaats tredende instantie. 
+1.34 	Milieustraat
+Een milieustraat is een terrein waar afval gescheiden kan worden gedeponeerd. 
+1.35 	NAP
+Het Normaal Amsterdams Peil is de referentiehoogte waaraan hoogtemetingen in Nederland worden gerelateerd.
+1.36 	Ongebouwd (gevel)terras
+een buiten de besloten ruimte liggend deel van een horecabedrijf, waar tegen vergoeding dranken worden geschonken en/of spijzen voor directe consumptie worden verstrekt.
+1.37 	Openbaar toegankelijk gebied
+Weg als bedoeld in artikel 1, eerste lid onder b. van de Wegenverkeerswet 1994, openbaar water, alsmede ander openbaar gebied dat voor publiek algemeen toegankelijk is, met uitzondering van de zogenoemde brandpaden voor de achterontsluiting van tuinen voor langzaam verkeer.
+1.38 	Peil (straat-)
+a. 
+voor een bouwwerk, waarvan de hoofdtoegang aan de weg grenst: de hoogte van de weg ter plaatse van de kruin van de weg;
+b. 
+voor een bouwwerk waarvan de hoofdtoegang niet aan de weg grenst: de hoogte van het terrein ter plaatse van die hoofdtoegang, na voltooiing van de aanleg van dat terrein.
+Indien een bouwwerk aan meer dan één weg wordt gebouwd, is het peil van de hoogstgelegen weg maatgevend.
+1.39 	Publieke dienstverlening
+Bestuursorganen van de overheid en de daaraan gekoppelde ambtelijke diensten ten behoeve van de beleidsvoorbereiding en -uitvoering, alsmede politie, brandweer, reinigingsdiensten, gezondheidsdiensten.
+1.40 	Souterrain
+Een gebruiksruimte in een gebouw dat zich gedeeltelijk ondergronds bevindt.
+1.41 	Volumineuze goederen
+Goederen van enige omvang te weten auto's, boten, caravans;
+Artikel 2 	wijze van meten
+Bij toepassing van deze regels wordt als volgt gemeten:
+2.1 	de dakhelling
+langs het dakvlak ten opzichte van het horizontale vlak.
+2.2 	de goothoogte van een bouwwerk
+vanaf het 
+Peil (straat-)
+ tot aan de bovenkant van de goot c.q. de druiplijn, het boeibord, of een daarmee gelijk te stellen constructiedeel.
+2.3 	de inhoud van een bouwwerk
+tussen de onderzijde van de begane grondvloer, de buitenzijde van de gevels (en/of het hart van de scheidsmuren) en de buitenzijde van daken en dakkapellen.
+2.4 	de bouwhoogte van een bouwwerk
+vanaf het peil tot aan het hoogste punt van een gebouw of van een bouwwerk, geen gebouw zijnde, met uitzondering van ondergeschikte bouwonderdelen, zoals schoorstenen, antennes, en naar de aard daarmee gelijk te stellen bouwonderdelen.
+2.5 	de oppervlakte van een bouwwerk
+tussen de buitenwerkse gevelvlakken en/of het hart van de scheidingsmuren, neerwaarts geprojecteerd op het gemiddelde niveau van het afgewerkte bouwterrein ter plaatse van een bouwwerk. 
+2.6 	de breedte van een gebouw
+van en tot de buitenkant van een zijgevel dan wel het hart van een gemeenschappelijke scheidingsmuur, met dien verstande, dat wanneer de zijgevels verspringen of niet evenwijdig lopen, het gemiddelde wordt genomen van de kleinste en de grootste breedte.
+2.7 	de afstand van een gebouw tot de zijdelingse perceelsgrens
+vanaf het punt van de gevel van een gebouw welke het dichtst bij de perceelsgrens is gelegen, haaks op de perceelsgrens.
+Hoofdstuk 2 	BESTEMMINGSREGELS
+Artikel 3 	Bedrijf
+3.1 	Bestemmingsomschrijving
+De voor '
+Bedrijf
+' aangewezen gronden zijn bestemd voor:
+a. 
+bedrijven, met het daarbij behorende erf en werkterrein;
+b. 
+uitsluitend ter plaatse van de verbeelding aangegeven functieaanduiding 'bedrijfswoning' zijn tevens bedrijfswoningen toegelaten, op de adressen Hoofdweg 95, 97, 109, 141, 145 en 147;
+c. 
+een milieustraat;
+d. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd. 
+3.2 	Bouwregels
+3.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+3.2.2 	Bebouwingsnormen
+a. 
+De maximum bouwhoogte bedraagt 12 meter;
+b. 
+De bouwhoogte voor de bedrijfswoningen gelegen aan Hoofdweg 95, 97, 109, 141 bedraagt maximaal 2 bouwlagen met kap en voor Hoofdweg 145 en 147 maximaal één bouwlaag met kap;
+c. 
+Bebouwing op de kavels die aan de zuidzijde grenzen aan de Hoofdweg moet zich primair richten op de doorgetrokken Koperstraat-Nikkelstraat. Indien de kavel gesplitst is in een noordelijk en een zuiderlijk deel, dient de bebouwing van het zuidelijk deel zich te richten op de parallelweg van de Hoofdweg.
+3.3 	Specifieke gebruiksregels
+3.3.1 	Toegestane bedrijven
+Uitsluitend bedrijven t/m categorie 3.2 van de 
+Bedrijvenlijst
+ behorende bij deze regels zijn toegestaan, met uitzondering van het bedrijf aan de Hoofdweg 101, waar tevens een bedrijf voor straal- en coating is toegestaan en het bedrijf aan de Chroomstraat 5, waar tevens een bedrijf voor opslag van professioneel vuurwerk is toegestaan.
+3.3.2 	Bedrijfsgebonden kantoren
+Bedrijfsgebonden kantoren mogen per bedrijf niet meer dan 50% van het bruto vloeroppervlak innemen, met een maximum van 3.000 m
+2
+. 
+3.3.3 	Beëindiging gebruik
+Indien het gebruik als bedrijfswoning wordt beëindigd ten behoeve van een ander gebruik, is heringebruikname als bedrijfswoning niet meer toegelaten.
+3.3.4 	vuurwerkopslag
+Binnen een zone van 30 meter gemeten vanaf opslagpunt professioneel vuurwerk zijn geen (beperkt) kwetsbare objecten toegestaan.
+3.4 	Afwijken van de gebruiksregels
+3.4.1 	Bedrijven
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken 
+a. 
+van het bepaalde in lid 
+3.3.1
+ terzake van de toegestane bedrijfsactiviteiten ten behoeve van andere bedrijfsactiviteiten dan die primair zijn toegelaten, welke - gehoord de 
+Milieudeskundige
+ - daarmede naar aard en invloed op de omgeving gelijk te stellen zijn;
+b. 
+ten behoeve van het mogelijk maken van detailhandel in volumineuze goederen;
+3.4.2 	vuurwerkopslag
+Burgemeester en wethouders kunnen bij een omgevingsvergunning afwijken van 
+3.3.4
+ mbt de zone, indien uit nader onderzoek is gebleken dat door het nemen van maatregelen of anderszins de veiligheid is geborgd.
+Artikel 4 	Bedrijf - Nutsbedrijf
+4.1 	Bestemmingsomschrijving
+De voor '
+Bedrijf - Nutsbedrijf
+' aangewezen gronden zijn bestemd voor:
+a. 
+een warmtekrachtcentrale ten behoeve van de stadsverwarming;
+b. 
+een gasdrukregelstation met de daarbij behorende ondergrondse en bovengrondse leidingen;
+c. 
+voorzieningen behorende bij bovengenoemde funcies, zoals parkeervoorzieningen, ontsluitingswegen, lichtvoorzieningen, erf- en terreinafscheidingen en groen;
+d. 
+'
+Waarde - Archeologie
+' en 
+Leiding - Gas
+, voor zover de gronden mede als zodanig zijn bestemd.
+4.2 	Bouwregels
+4.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ is voor het bouwen het bepaalde terzake in genoemde bestemmingen mede van toepassing.
+4.2.2 	Bebouwingsnormen
+a. 
+De bouwhoogte van de warmtekrachtcentrale is maximaal 35 meter, met uitzondering van de schoorstenen, waarvoor een bouwhoogte is toegestaan van maximaal 60 meter.
+b. 
+de bouwhoogte ten behoeve van bouwwerken voor het gasdrukregelstation is maximaal 4 meter
+c. 
+de bouwhoogte van erf en terreinafscheidingen bedraagt maximaal 4 meter.
+4.3 	Specifieke gebruiksregels
+4.3.1 	Bedrijfsgebonden kantooractiviteiten
+Bedrijfsgebonden kantooractiviteiten mogen per bedrijf niet meer dan 50% van het bruto vloeroppervlak innemen, met een maximum van 3.000 m
+2
+.
+Artikel 5 	Bedrijf - Nutsvoorziening
+5.1 	Bestemmingsomschrijving
+De voor '
+Bedrijf - Nutsvoorziening
+' aangewezen gronden zijn bestemd voor:
+a. 
+voorzieningen voor openbaar nut, zoals electriciteitshuizen ten behoeve voor de metro;
+b. 
+'
+Waarde - Archeologie
+, voor zover de gronden mede als zodanig zijn bestemd.
+5.2 	Bouwregels
+5.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor 
+Waarde - Archeologie
+ is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+5.2.2 	Bebouwingsnormen
+a. 
+de maximum bouwhoogte voor gebouwen bedraagt 3 meter;
+Artikel 6 	Bedrijf - Verkooppunt motorbrandstoffen
+6.1 	Bestemmingsomschrijving
+De voor '
+Bedrijf - Verkooppunt motorbrandstoffen
+' aangewezen gronden zijn bestemd voor:
+a. 
+een inrichting voor de verkoop van motorbrandstoffen zonder LPG, met de daarbij behorende boven- en ondergrondse voorzieningen, erf, alsmede, uitsluitend in combinatie hiermee, voor detailhandel;
+b. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+6.2 	Bouwregels
+6.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+6.2.2 	Bebouwingsnormen
+a. 
+het maximum grondoppervlak van gebouwen mag niet meer bedragen dan 180 m² b.v.o., terwijl de maximum hoogte van gebouwen niet meer mag bedragen dan 4 meter;
+b. 
+bouwwerken, geen gebouw zijnde, mogen niet hoger zijn dan 7 meter, met uitzondering van de ontluchtingsschachten;
+c. 
+detailhandel mag niet meer dan 125 m
+2 
+verkoop vloeroppervlak innemen. 
+Artikel 7 	Centrum - 1
+Artikel 8 	Centrum - 2
+8.1 	Bestemmingsomschrijving
+De voor ''
+Centrum - 2
+ aangewezen gronden zijn bestemd voor:
+a. 
+detailhandel;
+b. 
+horeca, met nadruk op eten en drinken, met bijbehorende terrassen;
+c. 
+dienstverlening; 
+d. 
+voorzieningen behorend bij bovengenoemde functies, zoals parkeervoorzieninge, tuinen en erven, groen, ontsluitingswegen en -paden; 
+e. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd. 
+8.2 	Bouwregels
+8.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+8.2.2 	Bebouwingsnormen
+a. 
+De maximum bouwhoogte bedraagt 10 meter;
+b. 
+Voor de in het eerste lid, onder a bedoelde gronden geldt dat deze voor tenminste 80% dienen te bestaan uit vestigingen met een b.v.o. groter dan 800 m
+2
+.
+8.3 	Afwijken van de bouwregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van het bepaalde in lid 
+8.2.2
+ ten behoeve van het vergroten van de toegestane bebouwingspercentage. 
+8.4 	specifieke gebruiksregels
+a. 
+Voor detailhandel mag het totale b.v.o. maximaal 27.500 m
+2
+ bedragen; 
+b. 
+voor dienstverlening mag het totale b.v.o. maximaal 500 m
+2
+ bedragen;
+8.5 	afwijken van de gebruiksregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning afwijken van het bepaalde onder 
+8.1
+ door het toestaan van 'sport en recreatie' danwel 'cultuur en ontspanning' mits deze bijdragen aan de levendigheid van het winkelgebied, en met een gezamenlijk b.v.o. van maximaal 1.900 m
+2
+.
+Artikel 9 	Centrum - 3
+9.1 	Bestemmingsomschrijving
+De voor '
+Centrum - 3
+' aangewezen gronden zijn bestemd voor:
+a. 
+detailhandel in meubels, woningtextiel en aanverwante artikelen;
+b. 
+horeca, met nadruk op eten en drinken, met bijbehorende terrassen;
+c. 
+voorzieningen behorend bij bovengenoemde functies, zoals parkeervoorzieningen, tuinen en erven, groen, ontsluitingswegen en -paden; 
+d. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+9.2 	Bouwregels
+9.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+9.2.2 	Bebouwingsnormen
+De maximum bouwhoogte bedraagt 20 meter;
+9.3 	Afwijken van de bouwregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van het bepaalde in lid 
+9.2.2
+ ten behoeve van het vergroten van de toegestane bebouwingspercentage
+9.4 	specifieke gebruiksregels
+a. 
+Voor detailhandel mag het totale b.v.o. maximaal 60.000 m
+2
+ bedragen, waarvan detailhandel in aanverwante artikelen is toegestaan met een maximaal b.v.o. van 10.000 m
+2 
+ is toegestaan.
+9.5 	Afwijken van de gebruiksregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van het bepaalde in lid 
+9.4
+ ten behoeve van het vergroten van het toegestane b.v.o. voor detailhandel in aanverwante artikelen met 5.000 m
+2
+.
+Artikel 10 	Gemengd - 1
+10.1 	Bestemmingsomschrijving
+De voor '
+Gemengd - 1
+' aangewezen gronden zijn bestemd voor:
+a. 
+kantoren, met een gezamenlijk b.v.o. van maximaal 30.000 m
+2
+;
+b. 
+maatschappelijke voorzieningen, die niet vallen onder de geluidsgevoelige functies genoemd in artikel 
+1.25
+ van deze regels, met een gezamenlijk b.v.o. van maximaal 16.000 m
+2
+;
+c. 
+wonen, uitsluitend op locatie Koningslaan 3;
+d. 
+voorzieningen behorend bij bovengenoemde functies, zoals parkeervoorzieningen, tuinen en erven, groen, ontsluitingswegen en -paden;
+e. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+10.2 	Bouwregels
+10.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+10.2.2 	Bebouwingsnormen
+a. 
+Voor het bouwen van gestapelde woningbouw gelden de volgende bepalingen: maximaal mag 1/3 van het oppervlak van de kavel bebouwd worden; Minimaal moet 1/3 van het oppervlak van de kavel worden ingericht als water of groen. Dit gedeelte van de kavel dient te liggen aan de zijde van Het Lage Land. De maximum bouwhoogte bij gestapelde woningbouw is 5 bouwlagen.
+b. 
+De maximum bouwhoogte voor kantoren in het gebied ten oosten van de Koningslaan bedraagt 15 meter binnen 35 meter vanaf noordelijke bestemmingsgrens, daarachter bedraagt de bouwhoogte 9 meter.
+c. 
+De maximum bouwhoogte voor kantoren in het gebied ten westen van de Koningslaan bedraagt 15 meter;
+d. 
+De maximum bouwhoogte voor maatschappelijke voorzieningen bedraagt 15 meter.
+e. 
+De maximum bouwhoogte bij laagbouwwoningen is 3 bouwlagen. 
+Artikel 11 	Gemengd - 2
+11.1 	Bestemmingsomschrijving
+De voor '
+Gemengd - 2
+' aangewezen gronden zijn bestemd voor:
+a. 
+kantoren, met een maximum b.v.o. van 40.000 m
+2
+;
+b. 
+maatschappelijke voorzieningen met een maximum b.v.o. van 40.000 m
+2
+, die niet vallen onder de geluidsgevoelige functies genoemd in artikel 
+1.25
+ van deze regels;
+c. 
+voorzieningen behorend bij bovengenoemde functies, zoals parkeervoorzieningen, tuinen en erven, groen, ontsluitingswegen en -paden;
+d. 
+'
+Waarde - Archeologie
+', 
+Leiding - Gas
+ en ' 
+Leiding - Hoogspanning
+'voor zover de gronden mede als zodanig zijn bestemd.
+11.2 	Bouwregels
+11.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', 
+Leiding - Gas
+ en '
+Leiding - 
+Hoogspanning
+' is voor het bouwen het bepaalde terzake in genoemde bestemmingen mede van toepassing.
+11.2.2 	Bebouwingsnormen
+a. 
+De maximum bouwhoogte bedraagt 30 meter
+b. 
+gebouwen tussen de spoorlijn en de A20 dienen minimaal één (nood)uitgang te hebben welke zowel van de spoorlijn/A20 als de gasleiding is afgekeerd.
+11.3 	Afwijken van de bouwregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van het bepaalde in lid 
+11.2.2
+:
+a. 
+ten behoeve van het vergroten van de toegestane aantal bouwlagen met twee bouwlagen;
+11.4 	Specifieke gebruiksregels
+11.4.1 	Onderwijs
+In uitzondering van het bepaalde in
+11.1
+ zijn tevens voorzieningen op het gebied van onderwijs toegestaan.
+Artikel 12 	Gemengd - 3
+12.1 	Bestemmingsomschrijving
+De voor '
+Gemengd - 3
+' aangewezen gronden zijn bestemd voor:
+a. 
+bedrijven;
+b. 
+bedrijfswoning ter plaatse van op de verbeelding aangegeven aanduiding "bedrijfswoning (bw)", op het adres Koperstraat 25;
+c. 
+kantoren, met een gezamenlijk b.v.o. van maximaal 20.000 m
+2
+;
+d. 
+detailhandel in 
+Volumineuze goederen
+.
+e. 
+kringloopwinkel op adres Aluminiumstraat 6;
+f. 
+bouwmarkten, met een gezamenlijk b.v.o. van maximaal 4.900 m
+2
+;
+g. 
+maatschappelijke voorzieningen, die niet vallen onder de geluidsgevoelige functies genoemd in artikel 
+1.25
+ van deze regels, met een gezamenlijk b.v.o. van maximaal 10.000 m
+2
+h. 
+ter plaatse van op verbeelding aangegeven aanduiding "specifieke vorm van bedrijf - gasdrukregelstation (sb-gas)" een gasdrukregelstation, met bijbehorende boven- en ondergrondse leidingen;
+i. 
+ter plaatse van de Koperstraat 35/Metaalhof 1 is een zend-/ontvanginstallatie toegestaan met een maximale hoogte van 40 meter;
+j. 
+ter plaatse van de Koperstraat 17 is een indoorspeeltuin toegestaan;
+k. 
+ter plaatse van Koperpad 20 is een sporthal toegestaan;
+l. 
+voorzieningen behorend bij bovengenoemde functies, zoals parkeervoorzieningen, tuinen en erven,  groen, ontsluitingswegen en -paden;
+m. 
+'
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ voor zover de gronden mede als zodanig zijn bestemd.
+12.2 	Bouwregels
+12.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+12.2.2 	Bebouwingsnormen
+a. 
+Tenzij anders op de verbeelding is aangegeven bedraagt de maximum bouwhoogte 15 meter, met uitzondering van het gasdrukregelstation;
+b. 
+Voor bouwwerken ten behoeve van het gasdrukregelstation is een bouwhoogte toegestaan van maximaal 5 meter, met uitzondering van de terrein en erfafscheidingen, waar een hoogte is toegestaan van maximaal 3 meter; 
+c. 
+De inhoud van de bedrijfswoning bedraagt maximaal 450 m
+3
+.
+12.3 	Specifieke gebruiksregels
+12.3.1 	Toegestane bedrijven
+Uitsluitend bedrijven t/m categorie 3.2 van de 
+Bijlage 1 Bedrijvenlijst
+ (bijlage 1) behorende bij deze regels zijn toegestaan, met uitzondering van autosloperijen.
+12.3.2 	Bedrijfsgebonden kantoren
+Bedrijfsgebonden kantoren mogen per bedrijf niet meer dan 50% van het bruto vloeroppervlak innemen, met een maximum van 3.000 m
+2 
+.
+12.3.3 	Beeindiging gebruik bedrijfswoning
+Indien het gebruik als bedrijfswoning wordt beëindigd ten behoeve van een ander gebruik, is heringebruikname als bedrijfswoning niet meer toegelaten.
+12.4 	Afwijken van de gebruiksregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning afwijken van het bepaalde in 
+12.3.1
+ terzake van de toegestane bedrijfsactiviteiten ten behoeve van andere bedrijfsactiviteiten dan die primair zijn toegelaten, welke - gehoord de milieudeskundige - daarmede naar aard en invloed op de omgeving gelijk te stellen zijn. 
+Artikel 13 	Gemengd - 4
+13.1 	Bestemmingsomschrijving
+De voor '
+Gemengd - 4
+' aangewezen gronden zijn bestemd voor:
+a. 
+wonen;
+b. 
+bedrijven, uitsluitend op de begane grond;
+c. 
+detailhandel, uitsluitend op de begane grond;
+d. 
+horeca, met nadruk op eten en drinken, op de begane grond;
+e. 
+maatschappelijke voorzieningen;
+f. 
+voorzieningen behorend bij bovengenoemde functies, zoals parkeervoorzieningen, tuinen en erven, groen, ontsluitingswegen en -paden;
+g. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+13.2 	Bouwregels
+13.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+13.2.2 	Bebouwingsnormen
+De maximum bouwhoogte bedraagt 25 meter.
+13.3 	Specifieke gebruiksregels
+13.3.1 	Toegestane bedrijven
+Uitsluitend bedrijven t/m categorie 2 van de 
+Bedrijvenlijst
+ (bijlage 1) behorende bij deze regels zijn toegestaan.
+13.3.2 	Bedrijfsgebonden kantoren
+Bedrijfsgebonden kantoren mogen per bedrijf niet meer dan 50% van het bruto vloeroppervlak innemen, met een maximum van 3.000 m
+2
+.
+13.3.3 	Werken aan huis
+Woningen mogen mede worden gebruikt voor de uitoefening van een aan huis gebonden beroep of bedrijf, mits:
+a. 
+de woonfunctie in overwegende mate gehandhaafd blijft, waarbij het bruto vloeroppervlak van de woning voor ten hoogste 30% mag worden gebruikt voor een aan huis gebonden beroep of bedrijf;
+b. 
+ten aanzien van een aan huis gebonden bedrijf sprake is van een bedrijf tot en met categorie 1 als bedoeld in de bij deze regels horende lijst van bedrijfsactiviteiten;
+c. 
+de gevel en dakrand van de woning niet worden gebruikt ten behoeve van reclame-uitingen;
+d. 
+er geen bedrijfsmatige activiteiten plaatsvinden die betrekking hebben op het onderhouden en repareren van motorvoertuigen;
+e. 
+er geen detailhandel plaatsvindt, tenzij als ondergeschikt onderdeel van het aan huis gebonden beroep of bedrijf.
+13.4 	Afwijken van de gebruiksregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning afwijken van het bepaalde in 
+13.3.1
+ en 
+13.3.3
+ terzake van de toegestane bedrijfsactiviteiten ten behoeve van andere bedrijfsactiviteiten dan die primair zijn toegelaten, welke - gehoord de milieudeskundige - daarmede naar aard en invloed op de omgeving gelijk te stellen zijn. 
+Artikel 14 	Groen
+14.1 	Bestemmingsomschrijving
+De voor '
+Groen
+' aangewezen gronden zijn bestemd voor:
+a. 
+groenvoorzieningen, met bijbehorende voet- en fietspaden en watergangen;
+b. 
+uitstekende delen aan gebouwen die toegelaten zijn krachtens een aangrenzende bouwbestemming;
+c. 
+kleinschalige voorzieningen voor openbaar nut en verkeer en vervoer;
+d. 
+'
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ voor zover de gronden mede als zodanig zijn bestemd.
+14.2 	Bouwregels
+14.2.1 	Algemeen
+Op de voor '
+Groen
+' bestemde gronden mag niet worden gebouwd, behoudens:
+a. 
+bouwwerken, geen gebouwen zijnde, welke in de bestemming passen, zoals straatmeubilair, kleinschalige speeltoestellen, huisvuilcontainers, niet groter dan 10 m
+3
+ (al dan niet ondergronds), bovenleidingsmasten c.q. -portalen ten behoeve van trambanen, bruggen, duikers;
+b. 
+uitstekende delen aan gebouwen, niet dieper dan 2 meter uit de gevel en ten minste 2,2 meter boven maaiveld;
+c. 
+kleine gebouwen voor openbaar nut, verkeer en vervoer, zoals gemaalgebouwtjes, telefooncellen, gasdrukregel- en meetstations, wachthuisjes e.d., niet groter dan 80 m
+3
+.
+14.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing. 
+Artikel 15 	Horeca
+15.1 	Bestemmingsomschrijving
+De voor '
+Horeca
+' aangewezen gronden zijn bestemd voor:
+a. 
+een horeca-inrichting, met nadruk op eten en drinken;
+b. 
+ter plaatse van op verbeelding aangegeven aanduiding 'discotheek' (op adres Prins Alexanderlaan 37) is een discotheek toegestaan;
+c. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+15.2 	Bouwregels
+15.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+15.2.2 	Bebouwingsnormen
+a. 
+Gebouwen mogen niet hoger worden dan 4 meter, met uitzondering van de discotheek, waar een bouwhoogte is toegestaan van 15 meter. 
+b. 
+de hoogte van terrasafscheiding mag maximaal 1,50 meter bedragen.
+Artikel 16 	Horeca - Hotel
+16.1 	Bestemmingsomschrijving
+De voor '
+Horeca - Hotel
+' aangewezen gronden zijn bestemd voor:
+a. 
+een hotel;
+b. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+16.2 	Bouwregels
+16.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+16.2.2 	Bebouwingsnormen
+De maximum bouwhoogte voor gebouwen bedraagt 25 meter. 
+Artikel 17 	Kantoor
+17.1 	Bestemmingsomschrijving
+De voor '
+Kantoor
+' aangewezen gronden zijn bestemd voor:
+a. 
+kantoren;
+b. 
+dienstverlening, uitsluitend op de gronden grenzend aan de Marten Meesweg (ten westen van de G.H. Betzweg); 
+c. 
+maatschappelijke voorzieningen, die niet vallen onder de geluidsgevoelige functies genoemd in artikel 
+1.25
+ van deze regels, uitsluitend op de gronden grenzend aan de Marten Meesweg (ten westen van de G.H. Betzweg), met uitzondering van Marten Meesweg 50 waar wel een geluidsgevoelige functie is toegestaan;
+d. 
+voorzieningen behorend bij bovengenoemde functies, zoals parkeervoorzieningen, tuinen en erven, groen, ontsluitingswegen en -paden;
+e. 
+'
+Waarde - Archeologie
+ voor zover de gronden mede als zodanig zijn bestemd.
+17.2 	Bouwregels
+17.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor 
+Waarde - Archeologie
+, is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+17.2.2 	Bebouwingsnormen
+De maximaal toegelaten bouwhoogte bedraagt voor de in het eerste lid bedoelde;
+a. 
+kantoren mag niet hoger dan op de verbeelding is aangegeven;
+b. 
+dienstverlening - uitsluitend op de begane grond en de eerste verdieping;
+c. 
+maatschappelijke voorzieningen - uitsluitend op de begane grond, met uitzondering van Marten Meesweg 50, waar op alle verdiepingen een maatschappelijke voorziening is toegestaan.
+d. 
+ter plaatse van de op de verbeelding aangegeven aanduiding "maximum oppervlakte (m
+2
+)" is maximaal 15.000 m
+2 
+kantoor toegestaan.
+e. 
+gebouwen tussen de spoorlijn en de A20 dienen minimaal één (nood)uitgang te hebben welke zowel van de spoorlijn als van de A20/gasleiding is afgekeerd. 
+Artikel 18 	Recreatie - Volkstuin
+18.1 	Bestemmingsomschrijving
+De voor '
+Recreatie - Volkstuin
+' aangewezen gronden zijn bestemd voor:
+a. 
+volkstuinen met bijbehorende voorzieningen, zoals erf, parkeerterrein en waterlopen
+b. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+18.2 	Bouwregels
+18.2.1 	Algemeen
+Op de voor '
+Recreatie - Volkstuin
+' bestemde gronden mag niet worden gebouwd, behoudens in de bestemming passende bouwwerken, zoals tuinhuisjes met bijbehorende voorzieningen/bergingen, kweekkassen, een verenigingsgebouw, sanitaire gebouwtjes, niet voor bewoning bestemde gebouwtjes ten behoeve van onderhoud en beheer, speelvoorzieningen, zomede bouwwerken - geen gebouwen zijnde - van waterbouwkundige aard, zoals een brug, duiker, steiger, vlonder, keerwanden, beschoeiingen, gemalen.
+18.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+18.2.3 	Bebouwingsnormen
+a. 
+het maximum bebouwingspercentage bedraagt 15;
+b. 
+een volkstuinperceel mag voor ten hoogste 20% worden bebouwd, met dien verstande dat per perceel:
+1. 
+één tuinhuisje met een bruto oppervlak van maximaal 25 m
+2
+ mag worden gebouwd;
+2. 
+een tuinhuisje mag worden voorzien van een (vaste) luifel met een maximum diepte van 2,4 meter;
+3. 
+een berging met een bruto oppervlak van maximaal 5 m
+2
+ mag worden gebouwd;
+4. 
+een kweekkas met een bruto oppervlak van maximaal 20 m
+2
+ mag worden gebouwd, met dien verstande dat indien er op een volkstuinperceel zowel een tuinhuisje als een kweekkas aanwezig is, de oppervlak van een kweekkas niet meer dan 12 m
+2
+ mag bedragen;
+5. 
+de hoogte van de overige gebouwen niet meer dan 3,5 meter mag bedragen;
+6. 
+de afstand van een gebouw - met uitzondering van een berging of kweekkas - tot de erfscheiding c.q. de weg tenminste 2,5 meter dient te bedragen;
+7. 
+de afstand tussen de gebouwen onderling - voor zover niet aaneengebouwd en met uitzondering van bergingen en kweekkassen - tenminste 5 meter dient te bedragen. 
+c. 
+de goothoogte van een verenigingsgebouw mag niet meer dan 4,5 meter bedragen, het oppervlak niet meer dan 650 m
+2 
+.
+Artikel 19 	Sport - Sport- en speelterrein
+19.1 	Bestemmingsomschrijving
+De voor '
+Sport - Sport- en speelterrein
+' aangewezen gronden zijn bestemd voor:
+a. 
+basketbalkooi, met bijbehorende speelterrein en erf;
+b. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+19.2 	Bouwregels
+19.2.1 	Algemeen
+Op de voor '
+Sport - Sport- en speelterrein
+' bestemde gronden mag niet worden gebouwd, behoudens in de bestemming passende bouwwerken, zoals de basketbalkooi.
+19.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+19.2.3 	bebouwingsnormen
+De bouwhoogte voor het hekwerk bedraagt maximaal 6 meter.
+Artikel 20 	Tuin
+20.1 	Bestemmingsomschrijving
+De voor '
+Tuin
+' aangewezen gronden zijn bestemd voor:
+a. 
+tuin;
+b. 
+uitstekende delen aan gebouwen die toegelaten zijn krachtens een aangrenzende bouwbestemming;
+c. 
+aanbouwen ten behoeve van een woning die krachtens een aangrenzende woonbestemming is toegelaten;
+d. 
+'
+Waarde - Archeologie
+, voor zover de gronden mede als zodanig zijn bestemd.
+20.2 	Bouwregels
+20.2.1 	Algemeen
+Op de voor '
+Tuin
+' bestemde gronden mag niet worden gebouwd, behoudens:
+a. 
+in de bestemming passende bouwwerken, geen gebouwen zijnde, zoals pergola's, erfafscheidingen, keermuren, gebouwde terrassen, hellingbanen, (brand)trappen, tuinmeubilair, speeltoestellen, vlaggenmasten en vijvers;
+b. 
+uitstekende delen aan gebouwen;
+c. 
+aanbouwen als bedoeld in het eerste lid, onder c.
+20.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+, is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+20.2.3 	Bebouwingsnormen
+a. 
+een aanbouw aan de zijgevel van het hoofdgebouw mag niet breder zijn dan 3 meter, gemeten vanaf de oorspronkelijke zijgevel van het hoofdgebouw;
+b. 
+een aanbouw aan de achtergevel van het hoofdgebouw mag niet dieper zijn dan 3 meter, gemeten vanaf de oorspronkelijke achtergevel van het hoofdgebouw;
+c. 
+de goothoogte van een aanbouw mag niet hoger zijn dan het vloerniveau (+ 30 cm) van de eerste verdieping van het hoofdgebouw, met dien verstande dat een aanbouw mag worden afgedekt met een schuin dakvlak met dezelfde hellingshoek als de kap/schuin dakvlak op het hoofdgebouw;
+d. 
+aanbouwen dienen een afstand van tenminste 1 meter tot de denkbeeldige lijn getrokken in het verlengde van de voorgevel van het hoofdgebouw aan te houden;
+e. 
+aanbouwen dienen een afstand van tenminste 1 meter tot de erfgrens aan te houden aan de zijde waar de kavel grenst aan openbaar gebied;
+f. 
+gebouwde terrassen (dakterrassen worden niet hieronder begrepen) mogen niet hoger worden dan 0,2 meter boven maaiveld;
+g. 
+uitstekende delen aan gebouwen mogen niet dieper dan 2,5 meter uit de gevel steken en moeten tenminste 2,2 meter boven maaiveld blijven;
+h. 
+erfafscheidingen mogen maximaal 2 meter bedragen, met uitzondering van de erfafscheiding voor de voorgevelrooilijn, die niet hoger mogen zijn dan 1 meter.
+Artikel 21 	Verkeer - Autosnelweg
+21.1 	Bestemmingsomschrijving
+De voor
+ '
+Verkeer - Autosnelweg
+' aangewezen gronden zijn bestemd voor:
+a. 
+een autosnelweg, met de daarbij behorende kunstwerken, zoals bruggen, tunnels, viaducten, duikers en bijbehorende voorzieningen, zoals lichtmasten, portalen ten behoeve bewegwijzering e.d.;
+b. 
+groenvoorzieningen, waterlopen en overige in het kader van de waterhuishouding nodige voorzieningen, zoals taluds, keerwanden en beschoeiingen;
+c. 
+geluidswerende voorzieningen;
+d. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+21.2 	Bouwregels
+21.2.1 	Algemeen
+Op de voor 
+'
+Verkeer - Autosnelweg
+' bestemde gronden mag niet worden gebouwd, behoudens de in lid 
+21.1
+ bedoelde kunstwerken en overige gebouwde voorzieningen.
+21.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing. 
+Artikel 22 	Verkeer - Erf
+22.1 	Bestemmingsomschrijving
+De voor '
+Verkeer - Erf
+ aangewezen gronden zijn bestemd voor:
+a. 
+terrein ten behoeve van de ontsluiting van de aanliggende bebouwing, voor parkeren, groenvoorzieningen en waterlopen;
+b. 
+uitstekende delen aan gebouwen die toegelaten zijn krachtens een aangrenzende bouwbestemming;
+c. 
+'
+Waarde - Archeologie
+ en 
+Leiding - Gas
+ voor zover de gronden mede als zodanig zijn bestemd.
+22.2 	Bouwregels
+22.2.1 	Algemeen
+Op de voor '
+Verkeer - Erf
+ bestemde gronden mag niet worden gebouwd, behoudens:
+a. 
+in de bestemming passende bouwwerken, geen gebouwen zijnde, zoals een carport, slagboom, fietsenrekken, erfafscheidingen e.d.
+b. 
+uitstekende delen aan gebouwen, niet dieper dan 2 meter uit de gevel en tenminste 2,2 meter boven maaiveld;
+c. 
+erfafscheidingen mogen niet hoger zijn dan 2 meter. 
+22.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+, is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing. 
+Artikel 23 	Verkeer - Garagebox
+23.1 	Bestemmingsomschrijving
+De voor '
+Verkeer - Garagebox
+' aangewezen gronden zijn bestemd voor:
+a. 
+garageboxen voor de stalling van (motor)voertuigen;
+b. 
+'
+Waarde - Archeologie
+, voor zover de gronden mede als zodanig zijn bestemd.
+23.2 	Bouwregels
+23.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+, is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+23.2.2 	Bebouwingsnormen
+De maximum goothoogte voor gebouwen bedraagt 3 meter.
+23.3 	Specifieke gebruiksregels
+Garageboxen mogen uitsluitend worden gebruikt voor de stalling van (motor)voertuigen, alsmede voor huishoudelijke berging. 
+Artikel 24 	Verkeer - Metro/sneltram
+24.1 	Bestemmingsomschrijving
+De voor '
+Verkeer - Metro/sneltram
+' aangewezen gronden zijn bestemd voor:
+a. 
+ondergrondse en bovengrondse spoorbanen ten dienste van de metro/sneltram, met de bijbehorende voorzieningen, alsmede groen, water, ontsluitingswegen en -paden e.d.;
+b. 
+een openbaar vervoer station;
+c. 
+'
+Waarde - Archeologie
+ en 
+Leiding - Gas
+ voor zover de gronden mede als zodanig zijn bestemd.
+24.2 	Bouwregels
+24.2.1 	Algemeen
+Op de voor '
+Verkeer - Metro/sneltram
+' bestemde gronden mag niet worden gebouwd, behoudens:
+a. 
+de in lid 
+24.1
+ sub a bedoelde spoorbanen, kunstwerken als viaducten, bruggen, duikers en overige voor het functioneren van het railverkeer nodige bouwwerken;
+b. 
+een openbaar vervoer station;
+c. 
+bouwwerken, geen gebouwen zijnde, zoals seinpalen, overwegbomen, geluidswerende voorzieningen, straatmeubilair, reclame-inrichtingen e.d..
+24.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+, is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+24.2.3 	Bebouwingsnormen
+Gebouwen mogen niet hoger zijn dan 10 meter; bouwwerken, geen gebouwen zijnde, niet hoger dan 15 meter.
+Artikel 25 	Verkeer - Parkeergarage
+25.1 	Bestemmingsomschrijving
+De voor '
+Verkeer - Parkeergarage
+' aangewezen gronden zijn bestemd voor:
+a. 
+een parkeergarage (al dan niet ondergronds);
+b. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+25.2 	Bouwregels
+25.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+Artikel 26 	Verkeer - Spoorverkeer
+26.1 	Bestemmingsomschrijving
+De voor '
+Verkeer - Spoorverkeer
+' aangewezen gronden zijn bestemd voor:
+a. 
+spoorbanen ten dienste van het spoorwegverkeer, met de bijbehorende voorzieningen, alsmede groen, water, ontsluitingswegen en -paden e.d.;
+b. 
+openbaar vervoersstation, met mogelijkheid voor detailhandel, alsmede horeca
+c. 
+fietsenstalling;
+d. 
+'
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ voor zover de gronden mede als zodanig zijn bestemd.
+26.2 	Bouwregels
+26.2.1 	Algemeen
+Op de voor '
+Verkeer - Spoorverkeer
+' bestemde gronden mag niet worden gebouwd, behoudens:
+a. 
+de in lid 
+26.1
+ bedoelde spoorbanen, kunstwerken, zoals viaducten, bruggen en duikers en overige voor het functioneren van het spoorwegverkeer nodige bouwwerken;
+b. 
+het openbaar vervoersstation met bijbehorende voorzieningen;
+c. 
+de fietsenstalling mag in meerdere lagen gerealiseerd worden;
+d. 
+bouwwerken, geen gebouwen zijnde, zoals bovenleidingen, seinpalen, overwegbomen, straatmeubilair, reclame-inrichtingen, fietsenstalling, geluidswerende voorzieningen e.d.
+26.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing.
+26.2.3 	Bebouwingsnormen
+Gebouwen mogen niet hoger zijn dan 15 meter; bouwwerken, geen gebouwen zijnde, niet hoger dan 15 meter. 
+Artikel 27 	Verkeer - Verblijfsgebied
+27.1 	Bestemmingsomschrijving
+De voor '
+Verkeer - Verblijfsgebied
+' aangewezen gronden zijn bestemd voor:
+a. 
+voorzieningen ten behoeve van wandelen, verblijven en spelen, zoals trottoirs, voetpaden en trappen;
+b. 
+voorzieningen voor rijdende en stilstaande voertuigen, zoals rijstroken, trambanen, fietspaden, parkeerplaatsen;
+c. 
+voorzieningen ten behoeve van een busstation, ter plaatse van op verbeelding aangegeven aanduiding 'openbaar vervoersstation';
+d. 
+fietsenstalling;
+e. 
+groenvoorzieningen, waterpartijen, waterlopen en overige in het kader van de waterhuishouding nodige voorzieningen, zoals taluds, keerwanden en beschoeiingen;
+f. 
+bouwwerken voor kleinschalige openbaar nutsvoorzieningen, verkeer en vervoersvoorzieningen;
+g. 
+geluidswerende voorzieningen;
+h. 
+terrassen ten behoeve van een horecavestiging die is toegelaten op grond van een aangrenzende bestemming”;
+i. 
+uitstekende delen aan gebouwen die toegelaten zijn krachtens een aangrenzende bouwbestemming;
+j. 
+'
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ voor zover de gronden mede als zodanig zijn bestemd.
+27.2 	Bouwregels
+27.2.1 	Algemeen
+Op de voor '
+Verkeer - Verblijfsgebied
+' bestemde gronden mag niet worden gebouwd, behoudens:
+a. 
+in de bestemming passende bouwwerken (geen gebouwen zijnde), zoals straatmeubilair, huisvuilcontainers (al dan niet ondergronds) niet groter dan 10 m
+3
+, abri's, bovenleidingmasten c.q. portalen ten behoeve van trambanen, afscheidingen ten behoeve van de parkeergarage, alsmede niet voor bewoning bestemde kleine gebouwen voor openbaar nut, verkeer en vervoer, welke gebouwen niet groter mogen zijn 80 m
+3
+; met dien verstande dat bouwwerken geen gebouwen zijnde ten behoeve van terrassen uitsluitend zijn toegelaten indien deze vergund zijn op het moment van de terinzagelegging van het ontwerpbestemmingsplan.
+b. 
+voorzieningen ten behoeve van het bussation;
+c. 
+de fietsenstalling mag in meerdere lagen gerealiseerd worden;
+d. 
+uitstekende delen aan gebouwen als bedoeld in lid 
+27.1
+ onder f., niet dieper dan 2 meter uit de gevel en tenminste 2,2 meter boven maaiveld.
+27.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing. 
+27.3 	Afwijken van de bouwregels
+Burgemeesters en wethouders kunnen bij omgevingsvergunning afwijken van het bepaalde in artikel 
+27.2
+ sub a, voor de  bouw van bouwwerken geen gebouwen zijnde ten behoeve van terrassen, tot een maximum hoogte van 1,50 meter. Bij de afweging betrekken burgemeester en wethouders de op dat moment van toepassing zijnde en door hen vastgestelde kwaliteitseisen voor terrassen.
+Artikel 28 	Verkeer - Wegverkeer
+28.1 	Bestemmingsomschrijving
+De voor '
+Verkeer - Wegverkeer
+' aangewezen gronden zijn bestemd voor:
+a. 
+voorzieningen voor rijdende en stilstaande voertuigen, zoals rijstroken, trambanen, fietspaden, parkeerplaatsen, met de daarbij behorende kunstwerken zoals viaducten, bruggen, duikers;
+b. 
+voorzieningen ten behoeve van wandelen en verblijven, zoals trottoirs, paden en trappen;
+c. 
+groenvoorzieningen, waterlopen en overige in het kader van de waterhuishouding nodige voorzieningen, zoals taluds, keerwanden en beschoeiingen;
+d. 
+bouwwerken ten behoeve van kleinschalige openbaar nutsvoorzieningen, verkeer en vervoersvoorzieningen;
+e. 
+geluidswerende voorzieningen;
+f. 
+uitstekende delen aan gebouwen die toegelaten zijn krachtens een aangrenzende bouwbestemming;
+g. 
+'
+Waarde - Archeologie
+', 
+Leiding - Gas
+ en '
+Leiding - Hoogspanning
+' voor zover de gronden mede als zodanig zijn bestemd.
+28.2 	Bouwregels
+28.2.1 	Algemeen
+Op de voor '
+Verkeer - Wegverkeer
+' bestemde gronden mag niet worden gebouwd, behoudens:
+a. 
+in de bestemming passende bouwwerken (geen gebouwen zijnde), zoals straatmeubilair, huisvuilcontainers (al dan niet ondergronds) niet groter dan 10 m
+3
+, abri's, bovenleidingmasten c.q. portalen ten behoeve van trambanen, alsmede niet voor bewoning bestemde kleine gebouwen voor openbaar nut, verkeer en vervoer, welke gebouwen niet groter mogen zijn 80 m
+3
+;
+b. 
+uitstekende delen aan gebouwen als bedoeld in het eerste lid onder f., niet dieper dan 2 meter uit de gevel en tenminste 2,2 meter boven maaiveld.
+28.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+' en '
+Leiding - Hoogspanning
+', is voor het bouwen het bepaalde terzake in genoemde bestemmingen mede van toepassing. 
+Artikel 29 	Water
+29.1 	Bestemmingsomschrijving
+De voor '
+Water
+' aangewezen gronden zijn bestemd voor:
+a. 
+waterlopen en waterberging, de aan- en afvoer van oppervlaktewater, met bijbehorende voorzieningen;
+b. 
+'
+Waarde - Archeologie
+' en 
+Leiding - Gas
+ voor zover de gronden mede als zodanig zijn bestemd.
+29.2 	Bouwregels
+29.2.1 	Algemeen
+Op de voor '
+Water
+' bestemde gronden mag niet worden gebouwd, behoudens bouwwerken, geen gebouwen zijnde, van waterbouwkundige aard, zoals keerwanden, beschoeiingen, duikers, bruggen, gemalen e.d., alsmede kunstwerken.
+29.2.2 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing. 
+Artikel 30 	Wonen
+30.1 	Bestemmingsomschrijving
+De voor '
+Wonen
+' aangewezen gronden zijn bestemd voor:
+a. 
+woningen, met de daarbij behorende voorzieningen zoals (inpandige) bergingen en garageboxen, aanbouwen, bijgebouwen, alsmede tuinen, groen, water en ontsluitingswegen en -paden;
+b. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+30.2 	Bouwregels
+30.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing. 
+30.2.2 	Bebouwingsnormen
+a. 
+erfafscheidingen mogen niet hoger worden dan 2 meter, met uitzondering van de erfafscheidingen voor de voorgevelrooilijn, die niet hoger mogen zijn dan 1 meter.
+b. 
+ter plaatse van de op de verbeelding aangegeven bouwaanduiding 'ond' is een onderdoorgang verplicht.
+30.3 	Specifieke gebruiksregels
+Woningen mogen mede worden gebruikt voor de uitoefening van een aan huis gebonden beroep of bedrijf, mits:
+a. 
+de woonfunctie in overwegende mate gehandhaafd blijft, waarbij het bruto vloeroppervlak van de woning voor ten hoogste 30% mag worden gebruikt voor een aan huis gebonden beroep of bedrijf;
+b. 
+ten aanzien van een aan huis gebonden bedrijf sprake is van een bedrijf tot en met categorie 1 als bedoeld in de bij deze regels horende lijst van bedrijfsactiviteiten;
+c. 
+de gevel en dakrand van de woning niet worden gebruikt ten behoeve van reclame-uitingen;
+d. 
+er geen bedrijfsmatige activiteiten plaatsvinden die betrekking hebben op het onderhouden en repareren van motorvoertuigen;
+e. 
+er geen detailhandel plaatsvindt, tenzij als ondergeschikt onderdeel van het aan huis gebonden beroep of bedrijf.
+30.4 	Afwijken van de gebruiksregels
+Burgemeester en wethouders kunnen bij een omgevingsvergunning afwijken van het bepaalde in 
+30.3
+ terzake van de toegestane bedrijfsactiviteiten ten behoeve van andere bedrijfsactiviteiten dan die primair zijn toegelaten, welke - gehoord de milieudeskundige - daarmede naar aard en invloed op de omgeving gelijk te stellen zijn. 
+Artikel 31 	Wonen - Berging
+31.1 	Bestemmingsomschrijving
+De voor '
+Wonen - Berging
+' aangewezen gronden zijn bestemd voor
+a. 
+bergingen voor huishoudelijke doeleinden;
+b. 
+'
+Waarde - Archeologie
+', voor zover de gronden mede als zodanig zijn bestemd.
+31.2 	Bouwregels
+31.2.1 	Medebestemming
+Voor zover de gronden mede zijn bestemd voor '
+Waarde - Archeologie
+', is voor het bouwen het bepaalde terzake in genoemde bestemming mede van toepassing. 
+31.2.2 	Bebouwingsnormen
+De maximum bouwhoogte van gebouwen bedraagt 3 meter. 
+Artikel 32 	Leiding - Gas
+32.1 	Bestemmingsomschrijving
+De voor '
+Leiding - Gas
+' aangewezen gronden zijn, behalve voor de daar voorkomende bestemming(en), mede bestemd voor een ondergrondse hogedruk aardgastransportleiding met een diameter van 323,9 mm en 406,4 mm en een maximum druk van 40 bar, alsmede voor de hierbij behorende bovengrondse voorzieningen.
+32.2 	Bouwregels
+32.2.1 	Verbod
+Op de voor '
+Leiding - Gas
+' bestemde gronden mag, in afwijking van de bouwregels voor de andere voorkomende bestemming(en) dan '
+Leiding - Gas
+' , binnen bedoelde zone niet worden gebouwd.
+32.2.2 	Uitzondering op verbod
+Het bouwverbod bedoeld in 
+32.2.1
+ geldt niet voor bebouwing welke is toegestaan ingevolge de bestemming '
+Leiding - Gas
+' en (vervangende nieuwbouw van) bebouwing welke aanwezig is op het tijdstip van ter inzage legging van het ontwerp van dit bestemmingsplan.
+32.2.3 	Toegestane bouwwerken
+Ten behoeve van de functie '
+Leiding - Gas
+' mogen worden gebouwd in de bestemming passende bouwwerken zoals pomp-, regel-, meetstations e.d., elk niet groter dan 80 m
+3
+.
+32.3 	Afwijken van de bouwregels
+32.3.1 	Afwijking
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van het bepaalde in lid 
+32.2.1
+ ten behoeve van bouwwerken welke toegelaten zijn krachtens de andere toegelaten bestemming(en) dan '
+Leiding - Gas
+', indien de veiligheid van de betrokken leiding niet wordt geschaad en vooraf schriftelijk advies is ingewonnen bij de leidingbeheerder. Een omgevingsvergunning kan slechts worden verleend indien geen 
+Kwetsbare objecten
+ worden toegelaten..
+32.4 	Omgevingsvergunning voor het uitvoeren van een werk, geen bouwwerk zijnde, of van werkzaamheden
+32.4.1 	Verbod
+Op de voor '
+Leiding - Gas
+' bestemde gronden is het verboden zonder schriftelijke vergunning van burgemeester en wethouders de onderstaande werken (geen bouwwerken zijnde) en/of werkzaamheden uit te voeren:
+a. 
+het aanbrengen/rooien van diepwortelende beplantingen en/of bomen;
+b. 
+het aanbrengen van gesloten verhardingen; 
+c. 
+het aanleggen van waterlopen of het vergraven, verruimen of dempen van bestaande waterlopen; 
+d. 
+het indrijven van voorwerpen in de bodem (incl. heiwerkzaamheden);
+e. 
+het plaatsen van objecten zoals lichtmasten, wegwijzers en ander straatmeubilair. 
+f. 
+het verrichten van grondroer werkzaamheden, anders dan ten behoeve van leidingen; 
+g. 
+het wijzigen van het maaiveldniveau door ontginnen, bodemverlagen, afgraven alsmede door ophogen;
+32.4.2 	Uitgezonderde werkzaamheden
+Zulks geldt niet voor werken en werkzaamheden gericht op het normale onderhoud en beheer van de betreffende gronden en evenmin voor werken en werkzaamheden welke ten tijde van het van kracht worden van het plan in uitvoering waren.
+32.4.3 	Vergunning
+Vergunning wordt verleend, indien de uitvoering van de werken c.q. werkzaamheden zoals vermeld in lid 
+32.4.1
+ geen gevaar oplevert voor de ondergrondse leidingen of het goed functioneren ervan.
+32.4.4 	Advies
+Alvorens vergunning te verlenen winnen burgemeester en wethouders het schriftelijk advies in van de beheerder van de leiding, aan de hand waarvan zij desgewenst voorwaarden kunnen verbinden aan de vergunning, ter bescherming van het belang van de leiding. 
+Artikel 33 	Leiding - Hoogspanning
+33.1 	Bestemmingsomschrijving
+De voor '
+Leiding - Hoogspanning
+' aangewezen gronden zijn, behalve voor de daar voorkomende bestemming(en), mede bestemd voor ondergrondse 150 Kv hoogspanningsleidingen.
+33.2 	Bouwregels
+33.2.1 	Verbod
+Op de voor '
+Leiding - Hoogspanning
+' bestemde gronden, mag in afwijking van de bouwregels voor de andere voorkomende bestemming(en) dan '
+Leiding - Hoogspanning
+', op bedoelde gronden niet worden gebouwd.
+33.2.2 	Uitzondering op verbod
+Het bouwverbod bedoeld in 
+33.2.1
+ geldt niet voor bebouwing welke is toegestaan ingevolge de bestemming '
+Leiding - Hoogspanning
+' en (vervangende nieuwbouw van) bebouwing welke aanwezig is op het tijdstip van ter inzage legging van het ontwerp van dit bestemmingsplan.
+33.2.3 	Toegestane bouwwerken
+Ten behoeve van de functie '
+Leiding - Hoogspanning
+' mogen worden gebouwd in de bestemming passende bouwwerken zoals pomp-, regel-, meetstations e.d., elk niet groter dan 80 m
+3
+.
+33.3 	Afwijken van de bouwregels
+33.3.1 	Afwijking
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van het bepaalde in lid 
+33.2.1
+ ten behoeve van bouwwerken welke toegelaten zijn krachtens de andere bestemming(en) dan '
+Leiding - Hoogspanning
+', mits het belang van de hoogspanningsleiding hierdoor niet wordt geschaad. Afwijking is niet toegestaan voor bebouwing binnen 4 meter gemeten aan weerszijden uit de hartlijn "leiding hoogspanning".
+33.3.2 	Advies
+Alvorens vergunning te verlenen, winnen burgemeester en wethouders het schriftelijk advies in van de beheerder van de hoogspanningsleiding aan de hand waarvan zij desgewenst voorwaarden kunnen verbinden aan de vergunning, ter bescherming van bedoelde leiding.
+33.4 	Omgevingsvergunning voor het uitvoeren van een werk, geen bouwwerk zijnde, of van werkzaamheden
+33.4.1 	Verbod
+Op de voor '
+Leiding - Hoogspanning
+' bestemde gronden is het verboden zonder schriftelijke vergunning van burgemeester en wethouders de onderstaande werken (geen bouwwerken zijnde) en/of werkzaamheden uit te voeren:
+a. 
+het aanbrengen van diepwortelende beplantingen en/of bomen;
+b. 
+Het indrijven van voorwerpen in de bodem (incl. heiwerkzaamheden);
+c. 
+het wijzigen van het maaiveldniveau door ontginnen, bodemverlagen, afgraven alsmede door ophogen;
+d. 
+het aanbrengen van gesloten verhardingen;
+e. 
+het verrichten van grondroer werkzaamheden, anders dan ten behoeve van leidingen;
+f. 
+het aanleggen van waterlopen of het vergraven, verruimen of dempen van bestaande waterlopen;
+g. 
+het plaatsen van objecten zoals lichtmasten, wegwijzers en ander straatmeubilair.
+33.4.2 	Uitgezonderde werkzaamheden
+Zulks geldt niet voor werken en werkzaamheden gericht op het normale onderhoud en beheer van de betreffende gronden en evenmin voor werken en werkzaamheden welke ten tijde van het van kracht worden van het plan in uitvoering waren.
+33.4.3 	Vergunning
+Vergunning wordt verleend, indien de uitvoering van de werken c.q. werkzaamheden zoals vermeld in lid 
+33.4.1
+ geen gevaar oplevert voor de ondergrondse leidingen of het goed functioneren ervan.
+33.4.4 	Advies
+Alvorens vergunning te verlenen winnen burgemeester en wethouders het schriftelijk advies in van de beheerder van de hoogspanningsleiding, aan de hand waarvan zij desgewenst voorwaarden kunnen verbinden aan de vergunning, ter bescherming van het belang van de hoogspanningsleiding. 
+Artikel 34 	Waarde - Archeologie
+34.1 	Bestemmingsomschrijving
+De voor '
+Waarde - Archeologie
+' aangewezen gronden zijn, behalve voor de daar voorkomende bestemmingen, mede bestemd voor behoud van de aan de gronden eigen zijnde archeologische waarden.
+34.2 	Bouwregels
+34.2.1 	Rapport archeologisch deskundige
+In het belang van de archeologische monumentenzorg dient de aanvrager van een omgevingsvergunning voor het bouwen een rapport aan burgemeester en wethouders te overleggen van een archeologisch deskundige waarin de archeologische waarde van het terrein dat blijkens de aanvraag zal worden verstoord, naar het oordeel van burgemeester en wethouders in voldoende mate is vastgesteld.
+Deze bepaling heeft uitsluitend betrekking op aanvragen om omgevingsvergunning voor het bouwen van bouwwerken (waaronder begrepen het heien van heipalen en het slaan van damwanden) welke voldoen aan de oppervlakte- en dieptematen welke genoemd zijn in 
+34.3.1
+.
+34.2.2 	Mogelijke voorwaarden te verbinden aan omgevingsvergunning voor het bouwen
+Burgemeester en wethouders kunnen in het belang van de archeologische monumentenzorg aan een omgevingsvergunning voor het bouwen de volgende regels verbinden:
+a. 
+de verplichting tot het treffen van technische maatregelen waardoor archeologische monumenten in de bodem kunnen worden behouden;
+b. 
+de verplichting tot het doen van archeologisch onderzoek;
+c. 
+de verplichting de activiteit die tot bodemverstoring leidt, te laten begeleiden door een archeologisch deskundige.
+34.3 	Omgevingsvergunning voor het uitvoeren van een werk, geen bouwwerk zijnde, of van werkzaamheden
+34.3.1 	Verbod
+In het belang van de archeologische monumentenzorg is het verboden zonder of in afwijking van een schriftelijke vergunning van burgemeester en wethouders de hierna onder 
+34.3.2
+ genoemde werken, geen bouwwerken zijnde, of werkzaamheden uit te voeren of te doen c.q. te laten uitvoeren die dieper reiken dan 1 meter beneden maaiveld en die tevens een terreinoppervlak groter dan 200 m
+2
+ beslaan.
+34.3.2 	Het vergunningvereiste betreft de volgende werken c.q. werkzaamheden
+a. 
+het aanbrengen van diepwortelende beplantingen en/of bomen; 
+b. 
+het aanleggen van waterlopen of het vergraven van bestaande waterlopen. 
+c. 
+het bewerken van grond (van welke aard dan ook);
+d. 
+het indrijven van voorwerpen in de bodem;
+e. 
+het ingraven van ondergrondse kabels en leidingen en daarmee verband houdende constructies e.d.;
+f. 
+het wijzigen van het maaiveldniveau door ontginnen, bodemverlagen, afgraven;
+34.3.3 	Uitgezonderde werkzaamheden
+Het vergunningvereiste geldt niet voor werken (geen bouwwerken zijnde) of werkzaamheden gericht op het normale onderhoud en beheer van de betreffende gronden, niet voor bedoelde activiteiten welke in uitvoering waren ten tijde van inwerkingtreding van dit bestemmingsplan en evenmin voor bestaande weg- en leidingcunetten.
+34.3.4 	Vergunning
+Vergunning wordt verleend, nadat de aanvrager van een omgevingsvergunning een rapport aan burgemeester en wethouders heeft overgelegd van een archeologisch deskundige waarin de archeologische waarde van het terrein dat blijkens de aanvraag zal worden verstoord, naar het oordeel van burgemeester en wethouders in voldoende mate is vastgesteld.
+34.3.5 	Mogelijke voorwaarden te verbinden aan vergunning
+Aan een vergunning kunnen de volgende regels worden verbonden:
+a. 
+de verplichting tot het treffen van technische maatregelen waardoor archeologische monumenten in de bodem kunnen worden behouden;
+b. 
+de verplichting tot het doen van archeologisch onderzoek;
+c. 
+de verplichting de activiteit die tot bodemverstoring leidt te laten begeleiden door een archeologisch deskundige. 
+Artikel 35 	Waterstaat - Waterstaatkundige functie
+35.1 	Bestemmingsomschrijving
+De voor '
+Waterstaat - Waterstaatkundige functie
+' aangewezen gronden zijn, behalve voor de daar voorkomende bestemmingen, mede bestemd voor de instandhouding van een hoofdwatergang.
+35.2 	Bouwregels
+Op de voor ''
+Waterstaat - Waterstaatkundige functie
+' bestemde gronden, mag in afwijking van de bouwregeling voor de andere voorkomende bestemming(en) dan '
+Waterstaat - Waterstaatkundige 
+functie
+' niet worden gebouwd.
+35.3 	Afwijken van de bouwregels
+35.3.1 	Afwijking
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van het bepaalde in lid 
+35.2
+ ten behoeve van bouwwerken welke toegelaten zijn krachtens de andere toegelaten bestemming(en) dan '
+Waterstaat - Waterstaatkundige functie
+' , mits het belang van de hoofdwatergang hierdoor niet wordt geschaad.
+35.3.2 	Advies
+Alvorens vergunning te verlenen winnen burgemeester en wethouders het schriftelijk advies in van het waterschap, aan de hand waarvan zij desgewenst voorwaarden kunnen verbinden aan de vergunning, ter bescherming van genoemd belang. 
+Hoofdstuk 3 	ALGEMENE REGELS
+Artikel 36 	Anti-dubbeltelregel
+Grond die eenmaal in aanmerking is genomen bij het toestaan van een bouwplan waaraan uitvoering is gegeven of alsnog kan worden gegeven, blijft bij de beoordeling van latere bouwplannen buiten beschouwing.   
+Artikel 37 	Algemene gebruiksregels
+37.1 	Voorwaardelijke verplichting over parkeren
+a. 
+Het gebruik op grond van de regels in hoofdstuk 2 (oprichting van een gebouw of verandering van functie of uitbreiding van bestaand gebruik) is slechts toegestaan als voorzien wordt in voldoende parkeergelegenheid en/of ruimte voor laden en lossen op eigen terrein.
+b. 
+De parkeerbehoefte wordt berekend op basis van de parkeernormen en berekeningsmethode, zoals opgenomen in de bijlage Parkeernormen behorende bij deze regels.
+37.2 	Nadere regels
+Burgemeester en wethouders kunnen bij omgevingsvergunning nadere regels stellen ten aanzien van: 
+a. 
+de aard, de plaats en de inrichting van de parkeer- of de stallinggelegenheid;
+b. 
+	de aard, de capaciteit, de plaats en de inrichting van de gelegenheid voor het laden of lossen;
+c. 
+de aanwezigheid en aanduiding van parkeer- of stallinggelegenheid uitsluitend ten behoeve van invaliden.
+37.3 	Afwijken van de regels
+37.3.1 	Voorwaarden omgevingsvergunning
+Burgemeester en wethouders kunnen omgevingsvergunning verlenen in afwijking van
+het bepaalde in het eerste lid indien:
+a. 
+uit een door de aanvrager van een omgevingsvergunning over te leggen parkeerbalans blijkt dat op eigen terrein door middel van dubbelgebruik voldoende parkeerplaatsen beschikbaar zijn;
+b. 
+de aanvrager van een omgevingsvergunning de parkeereis door middel van een parkeereisovereenkomst financieel compenseert aan de gemeente Rotterdam en met de verwezenlijking van het bouwplan, naar het oordeel van burgemeester en wethouders, een gemeentelijk belang is gemoeid;
+c. 
+er sprake is van een totale gebiedsontwikkeling en naar het oordeel van burgemeester en wethouders een gemeentelijk belang rechtvaardigt dat op straat parkeerplaatsen worden aangelegd uit de grondopbrengst;
+d. 
+de onderdelen a tot en met c zich niet voordoen en naar het oordeel van burgemeester en wethouders met de verwezenlijking van het bouwplan een bijzonder gemeentelijk belang is gemoeid.
+37.3.2 	Nadere regels
+Burgemeester en wethouders kunnen bij de omgevingsvergunning regels stellen aan de afwijkingsmogelijkheden als bedoeld in het vorige lid.
+37.4 	Vaststellen beleidsregels
+Burgemeester en wethouders zijn bevoegd beleidsregels vast te stellen, welke in de plaats treden van de in dit artikel opgenomen parkeernormen (inclusief de bijbehorende 
+Parkeernormen
+). 
+Artikel 38 	Algemene aanduidingsregels
+38.1 	wetgevingzone - wijzigingsgebied
+38.2 	veiligheidszone - gasdrukregelstation
+Ter plaatse van de aanduiding "veiligheidszone - gasdrukregelstation" zijn geen nieuwe kwetsbare en beperkt kwetsbare objecten als bedoeld in het Besluit externe veiligheid inrichtingen toegestaan.  
+Artikel 39 	Algemene bouwregels
+39.1 	Maximum bebouwingspercentage
+In geval voor gronden welke voor bebouwing in aanmerking komen noch in de regels, noch op de verbeelding een maximum bebouwingspercentage is vermeld, mogen deze gronden volledig worden bebouwd.
+39.2 	Maximum bouwhoogte
+a. 
+voor zover in de regels geen bepalingen zijn opgenomen terzake van de maximum toegestane bouwhoogte, gelden de maatvoeringsaanduidingen terzake op de verbeelding;
+b. 
+voor woningen mag de maximum bouwhoogte (nokhoogte) niet meer bedragen dan 7 meter boven de maximum goothoogte.
+39.3 	Maximum goothoogte
+Ingeval de toegestane bouwhoogte in bouwlagen is vermeld, dient voor het berekenen van de maximum toegestane goothoogte een hoogte van 3,5 meter voor een bouwlaag van een woonfunctie resp. een hoogte van 4,5 meter voor een niet-woonfunctie te worden aangehouden.
+39.4 	Souterrain
+Een souterrain mag niet hoger reiken dan 2 meter boven peil. 
+39.5 	Afdekking van gebouwen
+Ingeval noch de regels, noch de verbeelding duidelijkheid verschaffen over de wijze van afdekking van gebouwen, mogen gebouwen zowel met een kap als plat worden afgedekt.
+39.6 	Dakkapellen
+Op een kap / schuine dakvlakken is een dakkapel toegestaan, onder de volgende voorwaarden:
+a. 
+ingeval zij geplaatst wordt op het voordakvlak of een naar het openbaar toegankelijke gebied gekeerd dakvlak, mag zij niet breder zijn dan 2/3 deel van bedoeld dakvlak; niet meer dan één dakkapel mag op elk van bedoelde dakvlakken worden gerealiseerd;
+b. 
+op een ander dakvlak dan de onder sub a. genoemde, zijn meerdere dakkapellen toegestaan;
+c. 
+op een aanbouw aan een hoofdgebouw is een dakkapel alleen toegestaan op het achterdakvlak;
+d. 
+in alle gevallen geldt dat een dakkapel dient te voldoen aan de volgende eisen:
+1. 
+voorzien van een plat dak;
+2. 
+gemeten vanaf de voet van de dakkapel niet hoger dan 1,75 meter;
+3. 
+onderzijde meer dan 0,5 meter en minder dan 1 meter boven de dakvoet;
+4. 
+bovenzijde meer dan 0,5 meter onder de daknok;
+5. 
+zijkanten meer dan 0,5 meter van de zijkanten van het dakvlak.
+39.7 	Onderdoorgang
+Ter plaatse van de aanduiding "
+Onderdoorgang
+" mag een onderdoorgang worden gebouwd, waarvan de breedte en hoogte niet minder dan 2,5 meter mag bedragen, met dien verstande dat ingeval de onderdoorgang tevens voor autoverkeer bestemd is deze niet minder dan 3,5 meter breed resp. 4,2 meter hoog mag zijn.   
+Artikel 40 	Algemene afwijkingsregels
+40.1 	Afwijking toegestane afmetingen, maten en percentages
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van de regels van dit bestemmingsplan voor afwijkingen van toegestane afmetingen, maten (waaronder minimale en maximale afstanden), en percentages tot niet meer dan 10% van die afmetingen, maten en percentages, indien geen onevenredige aantasting plaatsvindt van het straat- en bebouwingsbeeld, de verkeersveiligheid, de gebruiksmogelijkheden van aangrenzende gronden en bouwwerken en de milieusituatie.
+40.2 	Afwijking toegestane bouwhoogte techniek
+Burgemeester en wethouders kunnen bij een omgevingsvergunning voor het bouwen afwijken van de regels van dit bestemmingsplan ten aanzien van de maximum toegestane bouwhoogte van een gebouw, ten behoeve van technische voorzieningen op het dak, welke noodzakelijk zijn voor het doelmatig functioneren van het bouwwerk, zoals liftopbouwen, lichtkoepels, schoorstenen, antennemasten, luchtverversingsapparatuur, glazenwas installatie e.d., mits de overschrijding van de maximum bouwhoogte niet meer dan 5 meter bedraagt, indien geen onevenredige aantasting plaatsvindt van het straat- en bebouwingsbeeld en de gebruiksmogelijkheden van aangrenzende gronden en bouwwerken.”
+40.3 	Luchtkwaliteit bij scholen en kinderopvang
+a. 
+scholen voor basisonderwijs, scholen voor voortgezet onderwijs en kinderopvang, zoals bedoeld in de "Beleidsregel buitenklimaat: luchtkwaliteit bij scholen en kinderdagverblijven", zijn niet toegestaan:
+1. 
+binnen 50 meter vanaf de rand van de buitenste rijbaan van de Jacques Dutilhweg;
+2. 
+binnen 100 meter vanaf de rand van de buitenste rijbaan van de Rijksweg A16.
+b. 
+het bepaalde onder a geldt niet voor scholen voor basisonderwijs, scholen voor voortgezet onderwijs en kinderopvang die binnen de genoemde 50 cq. 100 meter liggen en vanaf het moment van vaststelling van dit bestemmingsplan al legaal aanwezig waren;
+c. 
+van het bepaalde onder a kan worden afgeweken in geval van zwaarwegende belangen en nadat een advies van de GGD is ingewonnen.
+40.4 	Geluidsgevoelige objecten
+Bij nieuwe situaties in de zin van de Wet geluidhinder is de realisatie van 
+Geluidsgevoelige functies (in 
+de zin van de Wet geluidhinder)
+ voorzover gelegen binnen een geluidzone, alleen mogelijk indien voldaan wordt aan de voorkeursgrenswaarden van de Wet geluidhinder, dan wel aan het besluit hogere grenswaarden dat aan dit bestemmingsplan is toegevoegd.
+Artikel 41 	Algemene procedureregels
+41.1 	Bevoegdheid tot vaststellen exploitatieplan
+Burgemeester en wethouders zijn bevoegd ten behoeve van een wijzigingsplan dat voorziet in een bouwplan als bedoeld in artikel 6.2.1 Besluit ruimtelijke ordening, een exploitatieplan als bedoeld in artikel 6.12, eerste lid Wet ruimtelijke ordening vast te stellen.  
+Hoofdstuk 4 	OVERGANGS- EN SLOTREGELS
+Artikel 42 	Overgangsrecht
+42.1 	Overgangsrecht bouwwerken
+42.1.1 	Aanwezige bouwwerken
+Een bouwwerk dat op het tijdstip van inwerkingtreding van het bestemmingsplan aanwezig of in uitvoering is, dan wel gebouwd kan worden krachtens een omgevingsvergunning voor het bouwen, en afwijkt van het plan, mag, mits deze afwijking naar aard en omvang niet wordt vergroot,
+a. 
+gedeeltelijk worden vernieuwd of veranderd;
+b. 
+na het teniet gaan ten gevolge van een calamiteit geheel worden vernieuwd of veranderd, mits de aanvraag van de omgevingsvergunning voor het bouwen wordt gedaan binnen twee jaar na de dag waarop het bouwwerk is teniet gegaan.
+42.1.2 	Afwijking
+Burgemeester en wethouders kunnen eenmalig in afwijking van het eerste lid een omgevingsvergunning verlenen voor het vergroten van de inhoud van een bouwwerk als bedoeld in het eerste lid met maximaal 10%.
+42.1.3 	Uitzondering op het overgangsrecht bouwwerken
+Het eerste lid is niet van toepassing op bouwwerken die weliswaar bestaan op het tijdstip van inwerkingtreding van het plan, maar zijn gebouwd zonder vergunning en in strijd met het daarvoor geldende plan, daaronder begrepen de overgangsbepaling van dat plan.
+42.2 	Overgangsrecht gebruik
+42.2.1 	Bestaand gebruik
+Het gebruik van grond en bouwwerken dat bestond op het tijdstip van inwerkingtreding van het bestemmingsplan en hiermee in strijd is, mag worden voortgezet.
+42.2.2 	Strijdig gebruik
+Het is verboden het met het bestemmingsplan strijdige gebruik, bedoeld in het eerste lid, te veranderen of te laten veranderen in een ander met dat plan strijdig gebruik, tenzij door deze verandering de afwijking naar aard en omvang wordt verkleind.
+42.2.3 	Verboden gebruik
+Indien het gebruik, bedoeld in het eerste lid, na het tijdstip van inwerkingtreding van het plan voor een periode langer dan een jaar wordt onderbroken, is het verboden dit gebruik daarna te hervatten of te laten hervatten.
+42.2.4 	Uitzonderingen op het overgangsrecht gebruik
+Het eerste lid is niet van toepassing op het gebruik dat reeds in strijd was met het voorheen geldende bestemmingsplan, daaronder begrepen de overgangsbepalingen van dat plan.
+Artikel 43 	Slotregel
+Deze regels worden aangehaald als:
+Regels van het bestemmingsplan "Alexanderknoop", gemeente Rotterdam.
+Bijlage
+Toelichting
+De Lijst van Bedrijfsactiviteiten geeft aan welke bedrijven binnen het plangebied in beginsel zijn toegestaan. Alle bedrijfsactiviteiten zijn ingedeeld in milieucategorieën, waarbij een bedrijfsactiviteit, die behoort tot milieucategorie 1 betekent dat een bedrijfstype weinig potentiële milieuhinder veroorzaakt en een bedrijfsactiviteit die behoort tot milieucategorie 5 of 6 veel milieuhinder veroorzaakt. 
+De Vereniging Nederlandse Gemeenten (VNG) heeft de lijst van bedrijfstypen ingedeeld aan de hand van de Standaard Bedrijfsindeling uit 1993 (SBI'93) van het CBS. Voor de zonering en de bij de zones behorende bedrijfscategorieën is uitgegaan van de VNG-publicatie "Bedrijven en milieuzonering - 2009". Per type bedrijf zijn afstanden gegeven met betrekking tot de milieuhinderaspecten geur, stof, geluid en gevaar. Voor geluid is aangegeven of sprake is van continu geluid en van activiteiten die op een gezoneerd terrein thuishoren. Voor wat betreft verkeersaantrekkende werking en visuele hinder zijn indices gegeven.
+De lijst van bedrijfsactiviteiten volgt de publicatie van de VNG, maar met een algemeen verschil. De lijst gaat alleen over activiteiten die in een bedrijfsbestemming zijn toegestaan. Zo zijn bijvoorbeeld sport- en recreatieve voorzieningen niet opgenomen, omdat die in Rotterdam een aparte bestemming zijn. Voor een uitsplitsing naar afstanden per categorie wordt verwezen naar de VNG-publicatie. In de tabel behorend bij het bestemmingsplan bepaalt de grootste indicatieve afstand de milieucategorie.
+De aanbevolen indicatieve afstand tussen een bedrijf en woningen:
+categorie 1: 	afstand tot woningen 0 of 10 meter
+categorie 2: 	afstand tot woningen 30 meter
+categorie 3.1: 	afstand tot woningen 50 meter
+categorie 3.2:	afstand tot woningen 100 meter
+Plangebied 
+Voor dit plangebied zijn in de Lijst van bedrijfsactiviteiten geen bedrijfsactiviteiten toegelaten uit een milieucategorie hoger dan milieucategorie 3.2.
+Bijlage 1 	Bedrijvenlijst
+Bijlage 2 	Parkeernormen

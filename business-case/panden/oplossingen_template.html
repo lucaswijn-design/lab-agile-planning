@@ -234,7 +234,7 @@ code { font: 12.5px var(--mono) }
 const J = /*__DATA__*/null;
 const eur = n => n == null ? "" : "€ " + Math.round(n).toLocaleString("nl-NL");
 const kort = t => t.split(",")[0];
-const OP = {"pernis-ring-15": ["hoog", "ok"], "utrecht-van-heutszstraat-4": ["middel", "mid"], "rotterdam-metaalhof-40": ["middel", "mid"], "rotterdam-galvanistraat-122": ["laag, transformatie", "bad"], "den-bosch-eendenkooi-1a": ["hoog", "ok"]};
+const OP = {"pernis-ring-15": ["middel: coworking en gym niet", "mid"], "utrecht-van-heutszstraat-4": ["onbekend: oud plan opvragen", "mid"], "rotterdam-metaalhof-40": ["hoog: kantoor past, gym ondergeschikt", "ok"], "rotterdam-galvanistraat-122": ["laag: coworking niet", "bad"], "den-bosch-eendenkooi-1a": ["hoog: alles past", "ok"]};
 const P = [...J.panden].sort((a, b) => a.fee - b.fee);
 document.getElementById("top").innerHTML = P.map((p, i) => `<tr${i === 0 ? ' class="best"' : ""}><td><b>${kort(p.titel)}</b><br><span class="note">${p.eigenaren} eigenaren + ${p.club} clubleden</span></td>
   <td class="r oud">${eur(p.oud_fee)} / ${eur(p.oud_terug)}</td><td class="r"><b>${eur(p.fee)}</b></td><td class="r">${eur(p.prijs)}</td>
