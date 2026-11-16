@@ -1,0 +1,221 @@
+<title>Twee raden over de ledenclub</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: één leeskolom; bovenaan het oordeel, dan de raden naast elkaar, dan wat er fout zat, dan de test; huisstijl van de ledenclub */
+:root {
+  --bg: #eef0ec; --surface: #f8f9f6; --fg: #1d2421; --muted: #5a645f; --line: #cfd5cf;
+  --accent: #2f5566; --accent-soft: #d8e3e6;
+  --ok: #3f6b3a; --ok-soft: #e1ebdc; --bad: #9a2e2a; --bad-soft: #f2dedb; --mid: #9a6b14; --mid-soft: #f3e8cf;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --ok: #8cc583; --ok-soft: #22301f; --bad: #e88a80; --bad-soft: #3a2220; --mid: #e0b45a; --mid-soft: #362c18; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --ok: #8cc583; --ok-soft: #22301f; --bad: #e88a80; --bad-soft: #3a2220; --mid: #e0b45a; --mid-soft: #362c18; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body) }
+.wrap { max-width: 960px; margin: 0 auto; padding-block: 40px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 48px }
+.wrap > * { min-width: 0 }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0 }
+h1 { font-size: clamp(30px, 5.5vw, 48px); font-weight: 700; letter-spacing: -.01em }
+h2 { font-size: clamp(22px, 3.2vw, 28px); font-weight: 700 }
+h3 { font-size: 17px; font-weight: 700 }
+p, ul, ol { margin: 0; max-width: 70ch }
+ul, ol { padding-left: 20px; display: grid; gap: 6px }
+a { color: var(--accent); text-underline-offset: 2px }
+.eyebrow { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.stack { display: grid; gap: 14px }
+.stack > * { min-width: 0 }
+.lede { font-size: 18px; max-width: 64ch }
+.note { font-size: 13.5px; color: var(--muted) }
+.num { font-variant-numeric: tabular-nums }
+
+header { display: grid; gap: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line) }
+.verdicts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px }
+.v { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 6px; align-content: start }
+.v .who { font: 500 11.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.v b { font: 700 20px/1.2 var(--display) }
+.v span { font-size: 14px; color: var(--muted) }
+.v.samen { border-color: var(--accent); background: var(--accent-soft) }
+
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface) }
+table { border-collapse: collapse; width: 100%; font-size: 14px }
+th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--line); vertical-align: top }
+th { font: 500 11.5px var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--bg) }
+tr:last-child td { border-bottom: 0 }
+td.r, th.r { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums }
+td:first-child { font-weight: 600 }
+.pill { display: inline-block; font: 600 12px/1.2 var(--mono); padding: 3px 7px; border-radius: 4px; white-space: nowrap }
+.pill.bad { background: var(--bad-soft); color: var(--bad) }
+.pill.mid { background: var(--mid-soft); color: var(--mid) }
+.pill.ok { background: var(--ok-soft); color: var(--ok) }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px }
+.two > * { min-width: 0 }
+.clash { display: grid; gap: 10px }
+.clash > div { border-left: 3px solid var(--mid); padding: 2px 0 2px 14px; display: grid; gap: 4px }
+.clash .uit { font-size: 14px; color: var(--muted) }
+.clash .uit b { color: var(--fg) }
+
+.test { background: var(--surface); border: 1px solid var(--accent); border-radius: 10px; padding: 18px 20px; display: grid; gap: 12px }
+.gates { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px }
+.gate { border-radius: 8px; padding: 10px 12px; display: grid; gap: 2px; font-size: 14px }
+.gate b { font: 700 15px var(--display) }
+.gate.go { background: var(--ok-soft); color: var(--ok) }
+.gate.mid { background: var(--mid-soft); color: var(--mid) }
+.gate.stop { background: var(--bad-soft); color: var(--bad) }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; gap: 4px; align-content: start; font-size: 14px }
+.card .t { display: flex; justify-content: space-between; gap: 8px; align-items: baseline }
+.card .t b { font: 700 15px var(--display) }
+.card .t span { font: 500 12px var(--mono); color: var(--muted); white-space: nowrap }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; display: grid; gap: 4px }
+code { font: 12.5px var(--mono) }
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="eyebrow">Ledenclub · twee onafhankelijke raden · 16 november 2026</span>
+  <h1>Twee raden over de ledenclub</h1>
+  <p class="lede">Elf adviseurs in twee aparte raden hebben het plan los van elkaar beoordeeld. Daarna beoordeelden ze elkaar anoniem en schreef elke raad een eindoordeel. Ze komen op hetzelfde uit: koop nu geen pand, maar bewijs eerst dat onbekenden geld neerleggen voor mede-eigendom.</p>
+  <div class="verdicts">
+    <div class="v"><span class="who">council-review · 6 persona's</span><b>Hold for More Validation</b><span>Niemand heeft getekend, de bank leent waarschijnlijk minder dan het model vraagt, en met personeel stijgt de fee.</span></div>
+    <div class="v"><span class="who">llm-council · 5 adviseurs</span><b>Valideren, niet kopen</b><span>Zet door als project van acht weken met een vast budget, niet als vastgoedproject.</span></div>
+    <div class="v samen"><span class="who">samen</span><b>Eerst bewijs, dan een pand</b><span>Aanbetalingen van onbekenden, een bank zonder borg, en iemand ter plekke.</span></div>
+  </div>
+</header>
+
+<section class="stack">
+  <span class="eyebrow">Naast elkaar</span>
+  <h2>Wat elke raad zegt</h2>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>council-review</th><th>llm-council</th></tr></thead>
+    <tbody>
+      <tr><td>Oordeel</td><td>Hold for More Validation</td><td>Validatieproject van 8 weken</td></tr>
+      <tr><td>Sterkste bijdrage (anoniem gekozen)</td><td>Financier: de lening is groter dan de bank wil geven</td><td>Executor en First Principles: concreet plan voor acht weken, en de kernvraag uitgerekend</td></tr>
+      <tr><td>Zwakste bijdrage</td><td>Visionary: een netwerk van clubs zonder bewijs</td><td>Expansionist: een moedercoöperatie bij nul leden</td></tr>
+      <tr><td>Eerste stap</td><td>Test bij Pernis met aanbetalingen en een bankgesprek</td><td>Schrijf de ene zin waarom iemand € 15.000 inlegt in plaats van te huren, en leg die voor aan 20 mensen</td></tr>
+      <tr><td>Wat ze willen dat stopt</td><td>De netwerkentiteit en de verouderde prijstabel</td><td>Nieuwe panden doorrekenen en software bouwen. Tot lid 50 volstaat een spreadsheet.</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section class="two">
+  <div class="stack">
+    <span class="eyebrow">Eens</span>
+    <h2>Waar ze het over eens zijn</h2>
+    <ul>
+      <li><b>Geen bewijs van vraag.</b> Twintig panden zijn doorgerekend, maar er staat nog geen handtekening en geen euro aanbetaald.</li>
+      <li><b>Er moet iemand ter plekke zijn.</b> Op afstand werkt een club niet. Nodig zijn een lokale mede-trekker en een betaalde host.</li>
+      <li><b>Eigendom is financieel duurder dan huren.</b> Met de gemiste rente en het risico op de inleg betaalt een eigenaar € 50 tot € 135 per maand meer dan iemand die huurt. Verkoop het daarom op zeggenschap, een vaste plek en blijvendheid, niet op prijs.</li>
+      <li><b>Opschalen komt later.</b> Een netwerk van clubs heeft pas zin na de eerste club met een wachtlijst.</li>
+    </ul>
+  </div>
+  <div class="stack">
+    <span class="eyebrow">Botsen</span>
+    <h2>Waar ze het oneens zijn</h2>
+    <div class="clash">
+      <div><b>Eerst een ruimte huren als proef?</b><span class="uit">Drie adviseurs: ja. De beoordelaars en beide eindoordelen: nee, want zo meet je huurders en geen eigenaren. <b>Uitkomst:</b> test de inleg zelf met een terugbetaalbare aanbetaling, of kies een huurpand met koopoptie.</span></div>
+      <div><b>Clubleden van € 119</b><span class="uit">Visionary: een groeimotor. De rest: bijna vier keer Basic-Fit. <b>Uitkomst:</b> het is een kwetsbaarheid. Zonder clubleden stijgt de fee in Utrecht van € 162 naar € 376.</span></div>
+      <div><b>Is de prijs scherp?</b><span class="uit">Customer Advocate vindt flex 2 en flex 3 concurrerend. Skeptic en Strategist zien met personeel geen voordeel meer. <b>Uitkomst:</b> dat hangt af van het pakket. De kleine pakketten kunnen het halen, vast is duur.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Nagerekend</span>
+  <h2>Fouten in mijn eerdere cijfers</h2>
+  <p>Deze punten kwamen uit de raden. Ik heb ze in het model nagerekend, en ze kloppen.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Wat</th><th>Was</th><th>Klopt niet omdat</th><th>Effect</th></tr></thead>
+    <tbody>
+      <tr><td>Geen personeel</td><td>Schoonmaak, € 18.000 management, klusjes</td><td>Het oude model had 1 fte host en 0,5 fte beheer. Het pandmodel nam die niet over.</td><td><span class="pill bad">+ € 55 tot + € 195 p/m</span></td></tr>
+      <tr><td>Lening in de verkeerde maat</td><td>43 tot 49% van de investering</td><td>Een bank kijkt naar de waarde van het pand. In Utrecht is de lening 105% van de koopsom, in Galvanistraat 92% bij een start op 80%. Banken lenen 50 tot 70%.</td><td><span class="pill bad">+ € 3.900 tot € 5.100 inleg (Utrecht)</span></td></tr>
+      <tr><td>Geen marge voor de bank</td><td>DSCR 1,0</td><td>Een bank wil 20% speling op rente en aflossing (DSCR 1,2).</td><td><span class="pill mid">€ 230 → € 248 (Galvanistraat)</span></td></tr>
+      <tr><td>Bedrijfsabonnement te goedkoop</td><td>€ 329 per plek</td><td>De prijs is gebaseerd op de fee om te draaien. Het moet de fee zijn waarbij de inleg terugkomt.</td><td><span class="pill mid">boven € 400 per plek</span></td></tr>
+      <tr><td>Verouderde tabel</td><td>"Is € 450 te verkopen?"</td><td>Telt sauna en zwemvijver mee, die niet meer in het plan zitten.</td><td><span class="pill mid">eruit halen</span></td></tr>
+    </tbody>
+  </table></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Fee per vol lid per maand</th><th class="r">Nu</th><th class="r">Lichte bezetting</th><th class="r">Volle bezetting</th></tr></thead>
+    <tbody>
+      <tr><td>Van Heutszstraat, Utrecht</td><td class="r">€ 162</td><td class="r">€ 253</td><td class="r">€ 357</td></tr>
+      <tr><td>Metaalhof, Rotterdam</td><td class="r">€ 215</td><td class="r">€ 270</td><td class="r">€ 332</td></tr>
+      <tr><td>Ring 15, Pernis</td><td class="r">€ 228</td><td class="r">€ 319</td><td class="r">€ 423</td></tr>
+      <tr><td>Galvanistraat, Rotterdam</td><td class="r">€ 230</td><td class="r">€ 291</td><td class="r">€ 360</td></tr>
+      <tr><td>Eendenkooi, Den Bosch</td><td class="r">€ 327</td><td class="r">€ 412</td><td class="r">€ 510</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Lichte bezetting: host 0,5 fte en beheer 0,2 fte, samen € 43.000 per jaar. Volle bezetting: host 1,0 fte en beheer 0,5 fte, samen € 92.000 per jaar. Beide inclusief 5% onvoorzien, en de eigenaren dragen het alleen. Betalen clubleden mee, dan valt het lager uit.</p>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Nieuw</span>
+  <h2>Wat nog niemand had uitgezocht</h2>
+  <div class="grid">
+    <div class="card"><div class="t"><b>Toezicht op de inleg</b></div>Wie ruim € 1 miljoen ophaalt met een belofte van terugbetaling, moet eerst laten toetsen of de regels van de AFM en de Wft gelden.</div>
+    <div class="card"><div class="t"><b>Eigen of vreemd vermogen</b></div>Ziet de accountant het ledenkapitaal met uitkoopfonds als schuld, dan valt de lening zonder borg weg.</div>
+    <div class="card"><div class="t"><b>Stopcriteria</b></div>Er staat nergens hoeveel tijd en geld je erin steekt voordat je stopt, en wie de voorfase betaalt: leges, architect, notaris, kwartiermaker.</div>
+    <div class="card"><div class="t"><b>Jouw positie</b></div>Wat leg je zelf in? Zoek je een thuisbasis of een project met vergoedingen? De leden merken het verschil.</div>
+    <div class="card"><div class="t"><b>Waardestijging</b></div>Wie vertrekt, krijgt de inleg volgens de formule terug. Een stijgende pandwaarde gaat naar de coöperatie, niet naar het lid. Een herbestemming naar wonen kan de club zelfs uit het pand drukken.</div>
+    <div class="card"><div class="t"><b>Begin bij een groep</b></div>Coöperaties starten meestal bij een bestaande groep met een gedeelde behoefte. Wie zijn de eerste tien oprichters?</div>
+  </div>
+</section>
+
+<section class="test">
+  <span class="eyebrow">De kleinste test · 8 weken · € 2.000 tot € 4.000</span>
+  <h2>Pernis: aanbetalingen en één bankgesprek</h2>
+  <ul>
+    <li>Eén pagina met de echte prijs, inclusief host. Twee open avonden en werving in de wijk.</li>
+    <li>Een terugbetaalbare aanbetaling van € 500 op de derdenrekening van een notaris.</li>
+    <li>Eén bankgesprek over hoeveel ze op het pand alleen lenen, zonder borg.</li>
+    <li>Ernaast: een principeverzoek voor Pernis en Van Heutszstraat, en een accountant of jurist over eigen vermogen en de Wft.</li>
+  </ul>
+  <div class="gates">
+    <div class="gate go"><b>Door</b>40 of meer aanbetalingen van mensen die je niet kende, en een bank die zonder borg minstens 50% van de koopsom leent.</div>
+    <div class="gate mid"><b>Bijsturen</b>Ertussenin: één keer pand of prijs aanpassen, daarna gelden dezelfde drempels.</div>
+    <div class="gate stop"><b>Stop</b>Minder dan 20 aanbetalingen, minder dan 40% van de bank, of geen kwartiermaker ter plekke.</div>
+  </div>
+  <p><b>Deze week:</b> schrijf de ene zin waarom iemand € 15.000 inlegt in plaats van een plek te huren, en leg hem voor aan twintig mensen uit de doelgroep, met de echte prijs erbij.</p>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Per adviseur</span>
+  <h2>Elf standpunten in één regel</h2>
+  <h3>council-review</h3>
+  <div class="grid">
+    <div class="card"><div class="t"><b>Financier</b><span>5/10 · rang 1</span></div>De verkochte prijs is break-even bij een volle club. Reken met de fee waarbij de inleg terugkomt en met de marge die de bank wil, en laat de bank het pand bepalen.</div>
+    <div class="card"><div class="t"><b>Customer Advocate</b><span>4/10 · rang 2</span></div>Sanne, 41, zzp'er in Lombok: wie de werkplek nodig heeft, heeft het geld niet. Een pop-up en een geld-terug-garantie trekken haar over de streep.</div>
+    <div class="card"><div class="t"><b>Operator</b><span>4/10 · rang 3</span></div>Financieel en juridisch goed ontworpen, maar operationeel onbemand. Zonder host en zonder fallback voor de software loopt het in maand 3 vast.</div>
+    <div class="card"><div class="t"><b>Skeptic</b><span>3/10 · rang 4</span></div>De lage fee bestaat alleen zonder personeel. De vraag naar eigendom van een werkplek is nooit getoetst, en de werving loopt vast op kip en ei.</div>
+    <div class="card"><div class="t"><b>Strategist</b><span>4/10 · rang 5</span></div>Eigendom is uniek en niet te kopiëren, maar The Social Hub biedt flex met gym vanaf € 127. Kies één wijk zonder alternatief.</div>
+    <div class="card"><div class="t"><b>Visionary</b><span>7/10 · rang 6</span></div>Dit is een formule, geen los project. Richt het in als eerste van een netwerk. Volgens de ranking is dit speculatief.</div>
+  </div>
+  <h3>llm-council</h3>
+  <div class="grid">
+    <div class="card"><div class="t"><b>Executor</b><span>gekozen als sterkst</span></div>In acht weken: een principeverzoek, 30 aanbetalingen van € 500 en één bankvraag. Een kwartiermaker als voorwaarde. Stop met de software.</div>
+    <div class="card"><div class="t"><b>First Principles</b><span>gekozen als sterkst</span></div>Dit zijn drie weddenschappen in één: gemeenschap, vastgoed en financiering. Zijn rekenvoorbeeld klopte niet: eigendom is circa € 70 per maand duurder.</div>
+    <div class="card"><div class="t"><b>Contrarian</b><span>sterk</span></div>Waarom zou iemand dit kopen? Er staat geen personeel in de kosten, de volgorde loopt vast, en Basic-Fit kost een kwart van het clublidmaatschap.</div>
+    <div class="card"><div class="t"><b>Outsider</b><span>sterk</span></div>Een normaal mens snapt niet wat hij koopt. "Om te draaien" klinkt als "je geld is weg". Het clublid van € 119 is het enige heldere product.</div>
+    <div class="card"><div class="t"><b>Expansionist</b><span>blinde vlek</span></div>Een moedercoöperatie met merk, software en licenties per locatie. Volgens de reviewers vergroot dat je belangenconflict.</div>
+  </div>
+</section>
+
+<footer>
+  <span>Volledige teksten, de anonieme rankings en beide eindoordelen staan in de repo onder <code>business-case/council/</code>. De gedeelde briefing staat in <code>business-case/council/brief.md</code>.</span>
+  <span>Business case: <a href="https://claude.ai/artifact/1mEAwtEXqmirDuTodzJes7">Ledenclub op het Erf</a> · Spelregels: <a href="https://claude.ai/artifact/BFW1dhqPeyj1TyTFKxrihZ">Niemand betaalt voor een ander</a></span>
+</footer>
+
+</div>
