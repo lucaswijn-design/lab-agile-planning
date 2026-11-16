@@ -1,0 +1,292 @@
+{
+ "panden": [
+  {
+   "basis": {
+    "slug": "rotterdam-galvanistraat-122",
+    "titel": "Galvanistraat 122-126, Rotterdam West",
+    "V": 45,
+    "D": 45,
+    "n": 90,
+    "fee": 230,
+    "fee_deel": 164,
+    "inleg_vol": 15000,
+    "inleg_deel": 9000,
+    "ledenkapitaal": 1080000,
+    "lening": 820465,
+    "capex": 1900465,
+    "opex": 137823,
+    "annuiteit": 68656,
+    "maand_vast": 17207
+   },
+   "scenarios": [
+    {
+     "id": "wanbetaler",
+     "titel": "Eén eigenaar betaalt zes maanden niet",
+     "zonder": "1.380 euro gemist, gedeeld door 89 anderen: 16 euro per persoon",
+     "zonder_eur": 16,
+     "met": "Verrekend met zijn inleg van 15.000 euro: 0 euro voor de anderen. Na 14 dagen gaat zijn pas dicht, na 60 dagen volgt opzegging.",
+     "met_eur": 0,
+     "reken": "6 x 230 = 1380"
+    },
+    {
+     "id": "failliet",
+     "titel": "Eigenaar gaat failliet en de curator wil de inleg nu terug",
+     "zonder": "15.000 euro direct uit de kas, of bijlenen: 169 euro per persoon of 1,7 euro per maand extra",
+     "zonder_eur": 169,
+     "met": "De curator krijgt niet meer rechten dan het lid zelf had: terugbetaling pas als er een vervanger is of na de statutaire termijn, in termijnen, minus wat hij nog schuldig is. 0 euro extra.",
+     "met_eur": 0,
+     "reken": "15.000 / (n-1)"
+    },
+    {
+     "id": "team",
+     "titel": "Een BV met vijf plekken gaat failliet tijdens de opzegtermijn van zes maanden",
+     "zonder": "5 x 230 x 6 = 6.900 euro gemist: 81 euro per persoon",
+     "zonder_eur": 81,
+     "met": "De vijf mensen zijn zelf lid en blijven de bijdrage verschuldigd. De BV betaalt alleen. Plus een borg van drie maanden van de BV. 0 euro voor de anderen.",
+     "met_eur": 0,
+     "reken": "5 x 230 x 6"
+    },
+    {
+     "id": "vertrek",
+     "titel": "9 eigenaren (10%) zeggen tegelijk op en er is geen wachtlijst",
+     "zonder": "108.000 euro inleg direct terug: 1.333 euro per persoon, plus 23,0 euro per maand hogere fee voor de rest",
+     "zonder_eur": 1333,
+     "met": "Twaalf maanden opzegtermijn, dus de bijdrage loopt nog een jaar door. Terugbetaling alleen uit de inleg van nieuwe leden of uit de uittredingsreserve, maximaal 5% van het ledenkapitaal per jaar (54.000 euro). Blijven de plekken leeg, dan stijgt de fee na een jaar met 23,0 euro per maand voor iedereen, tot de club de plekken weer vult. Geen eenmalige rekening.",
+     "met_eur": 0,
+     "reken": "9 x 12000 gemiddelde inleg"
+    },
+    {
+     "id": "borg",
+     "titel": "De bank vraagt een persoonlijke borg van het bestuur",
+     "zonder": "Wie tekent, staat hoofdelijk borg voor de hele lening van 820.465 euro: één persoon kan alles moeten betalen",
+     "zonder_eur": 820465,
+     "met": "Niemand tekent een persoonlijke borg. Zekerheid voor de bank: hypotheek op het pand en 57% eigen inleg (lening 43% van de investering). Lukt dat niet: kleinere lening of een andere bank, niet tekenen.",
+     "met_eur": 0,
+     "reken": "lening uit pand_case"
+    },
+    {
+     "id": "contract",
+     "titel": "Eén bestuurder tekent een contract van 50.000 euro zonder overleg",
+     "zonder": "556 euro per persoon",
+     "zonder_eur": 556,
+     "met": "De coöperatie wordt alleen vertegenwoordigd door twee bestuurders samen. Boven 10.000 euro beslist het voltallige bestuur, boven 50.000 euro de ledenvergadering. Bankrekening met twee handtekeningen. Een contract dat buiten die grenzen is getekend, kan de coöperatie tegenhouden.",
+     "met_eur": 0,
+     "reken": "50.000 / n"
+    },
+    {
+     "id": "claim",
+     "titel": "Iemand raakt gewond in de gym en eist 100.000 euro",
+     "zonder": "1.111 euro per persoon",
+     "zonder_eur": 1111,
+     "met": "Aansprakelijkheidsverzekering van de coöperatie, huisregels en een gym-introductie per lid. Eigen risico 500 tot 1.000 euro.",
+     "met_eur": 0,
+     "reken": "100.000 / n"
+    }
+   ],
+   "reserves": {
+    "liquiditeit": 51621,
+    "uittreding": 54000,
+    "totaal": 105621,
+    "opbouw_per_jaar_3j": 35207,
+    "fee_extra_vooraf": 11.9,
+    "fee_extra_opbouw": 47.3,
+    "fee_liq_vooraf": 5.8,
+    "fee_uit_5j": 14.5,
+    "advies_fee": 20.3,
+    "rijen": [
+     [
+      "Liquiditeitsreserve",
+      "3 maanden",
+      "maand vaste lasten incl. bank",
+      17207,
+      51621,
+      "berekend"
+     ],
+     [
+      "Uittredingsreserve",
+      "5%",
+      "van het ledenkapitaal",
+      1080000,
+      54000,
+      "berekend"
+     ]
+    ]
+   },
+   "nood": {
+    "koop": 1125000,
+    "opbrengst": 1206366,
+    "netto": 355742,
+    "terug_pct": 33,
+    "terug_vol": 4941,
+    "jaar5_dekking_pct": 62,
+    "pand_pct": 0.9,
+    "verbouw_pct": 0.25
+   }
+  },
+  {
+   "basis": {
+    "slug": "utrecht-van-heutszstraat-4",
+    "titel": "Van Heutszstraat 4, Utrecht",
+    "V": 30,
+    "D": 30,
+    "n": 60,
+    "fee": 162,
+    "fee_deel": 115,
+    "inleg_vol": 15000,
+    "inleg_deel": 9000,
+    "ledenkapitaal": 720000,
+    "lening": 705730,
+    "capex": 1425730,
+    "opex": 127230,
+    "annuiteit": 59055,
+    "maand_vast": 15524
+   },
+   "scenarios": [
+    {
+     "id": "wanbetaler",
+     "titel": "Eén eigenaar betaalt zes maanden niet",
+     "zonder": "972 euro gemist, gedeeld door 59 anderen: 16 euro per persoon",
+     "zonder_eur": 16,
+     "met": "Verrekend met zijn inleg van 15.000 euro: 0 euro voor de anderen. Na 14 dagen gaat zijn pas dicht, na 60 dagen volgt opzegging.",
+     "met_eur": 0,
+     "reken": "6 x 162 = 972"
+    },
+    {
+     "id": "failliet",
+     "titel": "Eigenaar gaat failliet en de curator wil de inleg nu terug",
+     "zonder": "15.000 euro direct uit de kas, of bijlenen: 254 euro per persoon of 2,5 euro per maand extra",
+     "zonder_eur": 254,
+     "met": "De curator krijgt niet meer rechten dan het lid zelf had: terugbetaling pas als er een vervanger is of na de statutaire termijn, in termijnen, minus wat hij nog schuldig is. 0 euro extra.",
+     "met_eur": 0,
+     "reken": "15.000 / (n-1)"
+    },
+    {
+     "id": "team",
+     "titel": "Een BV met vijf plekken gaat failliet tijdens de opzegtermijn van zes maanden",
+     "zonder": "5 x 162 x 6 = 4.860 euro gemist: 88 euro per persoon",
+     "zonder_eur": 88,
+     "met": "De vijf mensen zijn zelf lid en blijven de bijdrage verschuldigd. De BV betaalt alleen. Plus een borg van drie maanden van de BV. 0 euro voor de anderen.",
+     "met_eur": 0,
+     "reken": "5 x 162 x 6"
+    },
+    {
+     "id": "vertrek",
+     "titel": "6 eigenaren (10%) zeggen tegelijk op en er is geen wachtlijst",
+     "zonder": "72.000 euro inleg direct terug: 1.333 euro per persoon, plus 16,2 euro per maand hogere fee voor de rest",
+     "zonder_eur": 1333,
+     "met": "Twaalf maanden opzegtermijn, dus de bijdrage loopt nog een jaar door. Terugbetaling alleen uit de inleg van nieuwe leden of uit de uittredingsreserve, maximaal 5% van het ledenkapitaal per jaar (36.000 euro). Blijven de plekken leeg, dan stijgt de fee na een jaar met 16,2 euro per maand voor iedereen, tot de club de plekken weer vult. Geen eenmalige rekening.",
+     "met_eur": 0,
+     "reken": "6 x 12000 gemiddelde inleg"
+    },
+    {
+     "id": "borg",
+     "titel": "De bank vraagt een persoonlijke borg van het bestuur",
+     "zonder": "Wie tekent, staat hoofdelijk borg voor de hele lening van 705.730 euro: één persoon kan alles moeten betalen",
+     "zonder_eur": 705730,
+     "met": "Niemand tekent een persoonlijke borg. Zekerheid voor de bank: hypotheek op het pand en 51% eigen inleg (lening 49% van de investering). Lukt dat niet: kleinere lening of een andere bank, niet tekenen.",
+     "met_eur": 0,
+     "reken": "lening uit pand_case"
+    },
+    {
+     "id": "contract",
+     "titel": "Eén bestuurder tekent een contract van 50.000 euro zonder overleg",
+     "zonder": "833 euro per persoon",
+     "zonder_eur": 833,
+     "met": "De coöperatie wordt alleen vertegenwoordigd door twee bestuurders samen. Boven 10.000 euro beslist het voltallige bestuur, boven 50.000 euro de ledenvergadering. Bankrekening met twee handtekeningen. Een contract dat buiten die grenzen is getekend, kan de coöperatie tegenhouden.",
+     "met_eur": 0,
+     "reken": "50.000 / n"
+    },
+    {
+     "id": "claim",
+     "titel": "Iemand raakt gewond in de gym en eist 100.000 euro",
+     "zonder": "1.667 euro per persoon",
+     "zonder_eur": 1667,
+     "met": "Aansprakelijkheidsverzekering van de coöperatie, huisregels en een gym-introductie per lid. Eigen risico 500 tot 1.000 euro.",
+     "met_eur": 0,
+     "reken": "100.000 / n"
+    }
+   ],
+   "reserves": {
+    "liquiditeit": 46572,
+    "uittreding": 36000,
+    "totaal": 82572,
+    "opbouw_per_jaar_3j": 27524,
+    "fee_extra_vooraf": 13.9,
+    "fee_extra_opbouw": 55.5,
+    "fee_liq_vooraf": 7.9,
+    "fee_uit_5j": 14.5,
+    "advies_fee": 22.4,
+    "rijen": [
+     [
+      "Liquiditeitsreserve",
+      "3 maanden",
+      "maand vaste lasten incl. bank",
+      15524,
+      46572,
+      "berekend"
+     ],
+     [
+      "Uittredingsreserve",
+      "5%",
+      "van het ledenkapitaal",
+      720000,
+      36000,
+      "berekend"
+     ]
+    ]
+   },
+   "nood": {
+    "koop": 670000,
+    "opbrengst": 791932,
+    "netto": 66404,
+    "terug_pct": 9,
+    "terug_vol": 1383,
+    "jaar5_dekking_pct": 40,
+    "pand_pct": 0.9,
+    "verbouw_pct": 0.25
+   }
+  }
+ ],
+ "juridisch": [
+  [
+   "Statuten coöperatie U.A. bij notaris, maatwerk",
+   1,
+   "akte",
+   2500,
+   2500,
+   "schatting: standaard 750 tot 1.500, maatwerk uittreding en verrekening erbij"
+  ],
+  [
+   "Jurist coöperatierecht: ledenovereenkomst, reglement, toets bankvoorwaarden",
+   16,
+   "uur",
+   200,
+   3200,
+   "schatting"
+  ],
+  [
+   "Huishoudelijk reglement en huisregels",
+   1,
+   "stuk",
+   0,
+   0,
+   "zelf schrijven op basis van de jurist"
+  ],
+  [
+   "Bestuurdersaansprakelijkheidsverzekering",
+   1,
+   "jaar",
+   750,
+   750,
+   "schatting: kleine coöperatie, dekking 500.000"
+  ],
+  [
+   "Aansprakelijkheidsverzekering bedrijven (gym, café)",
+   1,
+   "jaar",
+   1500,
+   1500,
+   "schatting; zit deels al in 'Verzekeringen' van de exploitatie"
+  ]
+ ]
+}

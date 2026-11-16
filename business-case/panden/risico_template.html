@@ -1,0 +1,283 @@
+<title>Niemand betaalt voor een ander</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: één leeskolom, eerst het antwoord, dan de stresstest per pand, dan de regels als muren, de betaalladder als tijdlijn en de toelating als route; huisstijl van de ledenclub */
+:root {
+  --bg: #eef0ec; --surface: #f8f9f6; --fg: #1d2421; --muted: #5a645f; --line: #cfd5cf;
+  --accent: #2f5566; --accent-soft: #d8e3e6;
+  --ok: #3f6b3a; --ok-soft: #e1ebdc; --bad: #9a2e2a; --bad-soft: #f2dedb; --mid: #9a6b14; --mid-soft: #f3e8cf;
+  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", sans-serif;
+  --body: "Inter", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --ok: #8cc583; --ok-soft: #22301f; --bad: #e88a80; --bad-soft: #3a2220; --mid: #e0b45a; --mid-soft: #362c18; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #151a18; --surface: #1d2422; --fg: #e6ebe7; --muted: #9ba7a1; --line: #34403b;
+  --accent: #8fb9c9; --accent-soft: #24343a;
+  --ok: #8cc583; --ok-soft: #22301f; --bad: #e88a80; --bad-soft: #3a2220; --mid: #e0b45a; --mid-soft: #362c18; color-scheme: dark }
+
+* { box-sizing: border-box }
+body { background: var(--bg); color: var(--fg); font: 16px/1.6 var(--body) }
+.wrap { max-width: 980px; margin: 0 auto; padding-block: 40px 80px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); display: grid; gap: 56px }
+.wrap > * { min-width: 0 }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; line-height: 1.15; margin: 0 }
+h1 { font-size: clamp(32px, 6vw, 52px); font-weight: 700; letter-spacing: -.01em }
+h2 { font-size: clamp(24px, 3.4vw, 32px); font-weight: 700 }
+h3 { font-size: 18px; font-weight: 700 }
+p, ul, ol { margin: 0; max-width: 68ch }
+ul, ol { padding-left: 20px; display: grid; gap: 6px }
+a { color: var(--accent); text-underline-offset: 2px }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px }
+.eyebrow { font: 500 12px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
+.stack { display: grid; gap: 16px }
+.stack > * { min-width: 0 }
+.lede { font-size: 19px; max-width: 62ch }
+.note { font-size: 13.5px; color: var(--muted) }
+.num { font-variant-numeric: tabular-nums }
+.lbl { font: 500 11px/1 var(--mono); letter-spacing: .04em; padding: 2px 6px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); white-space: nowrap; vertical-align: 1px }
+
+header.top { display: grid; gap: 18px; padding-bottom: 8px; border-bottom: 1px solid var(--line) }
+.answer { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px }
+.answer div { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 4px; align-content: start }
+.answer b { font: 700 24px/1.1 var(--display); font-variant-numeric: tabular-nums }
+.answer span { font-size: 14px; color: var(--muted) }
+
+.tabs { display: flex; flex-wrap: wrap; gap: 6px }
+.tabs button { font: 500 14px var(--body); color: var(--fg); background: var(--surface); border: 1px solid var(--line); border-radius: 999px; padding: 6px 13px; cursor: pointer }
+.tabs button[aria-pressed="true"] { background: var(--accent); color: var(--bg); border-color: var(--accent) }
+
+.tbl { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface) }
+table { border-collapse: collapse; width: 100%; font-size: 14px }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top }
+th { font: 500 12px var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--muted); background: var(--bg) }
+tr:last-child td { border-bottom: 0 }
+td.r, th.r { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums }
+.stress td:first-child { font-weight: 600; min-width: 200px }
+.stress td.met { min-width: 280px }
+.pill { display: inline-block; font: 600 12.5px/1.2 var(--mono); padding: 3px 8px; border-radius: 4px; white-space: nowrap; font-variant-numeric: tabular-nums }
+.pill.bad { background: var(--bad-soft); color: var(--bad) }
+.pill.ok { background: var(--ok-soft); color: var(--ok) }
+.sub { display: block; font-size: 12.5px; color: var(--muted); font-weight: 400; margin-top: 2px }
+
+.muren { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px }
+.muur { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 16px 18px; display: grid; gap: 8px; align-content: start }
+.muur .tegen { font: 500 11.5px/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; color: var(--bad) }
+.muur ul { font-size: 14.5px }
+.muur .wet { font: 400 12.5px var(--mono); color: var(--muted) }
+
+.ladder { list-style: none; padding: 0; display: grid; gap: 0; border-left: 2px solid var(--line); margin-left: 8px }
+.ladder li { position: relative; padding: 0 0 18px 22px; display: grid; gap: 2px }
+.ladder li::before { content: ""; position: absolute; left: -7px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--accent) }
+.ladder li.hard::before { border-color: var(--bad); background: var(--bad) }
+.ladder .dag { font: 600 13px var(--mono); color: var(--accent) }
+.ladder li.hard .dag { color: var(--bad) }
+
+.route { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px; counter-reset: stap; padding: 0; list-style: none }
+.route li { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; display: grid; gap: 4px; align-content: start; counter-increment: stap; font-size: 14px }
+.route li::before { content: "Stap " counter(stap); font: 500 11px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted) }
+.route b { font-family: var(--display); font-size: 16px }
+
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px }
+.two > * { min-width: 0 }
+.warn { border-left: 3px solid var(--mid); background: var(--mid-soft); padding: 14px 16px; border-radius: 0 8px 8px 0; display: grid; gap: 6px }
+.check { list-style: none; padding: 0; display: grid; gap: 8px; columns: 1 }
+.check li { padding-left: 26px; position: relative; font-size: 14.5px }
+.check li::before { content: ""; position: absolute; left: 2px; top: 5px; width: 13px; height: 13px; border: 1.5px solid var(--accent); border-radius: 3px }
+.check b { font-weight: 600 }
+footer { font-size: 13px; color: var(--muted); display: grid; gap: 6px; border-top: 1px solid var(--line); padding-top: 16px }
+footer ul { font-size: 13px }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important } }
+</style>
+
+<div class="wrap">
+
+<header class="top">
+  <span class="eyebrow">Ledenclub · spelregels en risico · november 2026</span>
+  <h1>Niemand betaalt voor een ander</h1>
+  <p class="lede">Wat gebeurt er als een eigenaar niet betaalt, failliet gaat of vertrekt? Met de juiste statuten verliest een lid hooguit zijn eigen inleg, en kost één wanbetaler de anderen niets. Het echte risico zit ergens anders: dat de club als geheel niet rond komt. Daar staan hieronder ook regels voor.</p>
+  <div class="answer" id="tiles"></div>
+</header>
+
+<section class="stack">
+  <span class="eyebrow">Stresstest</span>
+  <h2>Wat kost het de andere eigenaren?</h2>
+  <p>Zeven dingen die mis kunnen gaan, doorgerekend met de echte cijfers van een pand. Links wat elke andere eigenaar betaalt zonder spelregels, rechts met. De fee is het bedrag om te draaien uit de vergelijking.</p>
+  <div class="tabs" id="tabs" role="group" aria-label="Kies pand"></div>
+  <div class="tbl"><table class="stress"><thead><tr><th>Wat gebeurt er</th><th class="r">Zonder regels</th><th class="r">Met regels</th><th>De regel die het opvangt</th></tr></thead><tbody id="stress"></tbody></table></div>
+  <p class="note" id="basisnoot"></p>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Acht muren</span>
+  <h2>De regels, en waar ze moeten staan</h2>
+  <p>Een regel over geld werkt alleen als hij in de statuten zelf staat, vooraf duidelijk is en voor iedereen gelijk geldt. Een huishoudelijk reglement is niet genoeg: de Hoge Raad oordeelde in 2024 (DOC Kaas) dat een verplichting voor leden zonder basis in de statuten nietig is.</p>
+  <div class="muren">
+    <div class="muur"><span class="tegen">Tegen: leden die moeten bijpassen</span><h3>1. Coöperatie U.A.</h3>
+      <ul><li>U.A. betekent uitgesloten aansprakelijkheid. Gaat de coöperatie failliet, dan hoeft geen lid een tekort aan te vullen.</li><li>Het meeste wat een lid kan verliezen is zijn eigen inleg.</li><li>Zonder U.A. zijn alle leden voor gelijke delen aansprakelijk, en ook wie in het laatste jaar is vertrokken.</li></ul>
+      <span class="wet">art. 2:55 en 2:56 BW</span></div>
+    <div class="muur"><span class="tegen">Tegen: de wanbetaler</span><h3>2. De inleg is het onderpand</h3>
+      <ul><li>Eerst de volledige inleg storten, dan pas een pas. Geen termijnen, geen uitstel.</li><li>Statuten: de coöperatie mag alles wat een lid schuldig is verrekenen met zijn inleg.</li><li>Een inleg van 15.000 euro dekt ruim vijf jaar fee. Een wanbetaler betaalt dus altijd zichzelf.</li></ul>
+      <span class="wet">art. 6:127 BW en art. 53 Fw (verrekening, ook na faillissement)</span></div>
+    <div class="muur"><span class="tegen">Tegen: een run op de kas</span><h3>3. Vertrekken mag, maar volgens een schema</h3>
+      <ul><li>Opzegtermijn twaalf maanden. De bijdrage loopt zolang door.</li><li>De inleg komt terug zodra een nieuw lid van de wachtlijst zijn plek overneemt.</li><li>Zonder vervanger: uit de uittredingsreserve, samen nooit meer dan 5% van het ledenkapitaal per jaar, in de volgorde van opzeggen, uiterlijk binnen vijf jaar.</li><li>Prijs volgens een vaste formule: inleg plus het eigen deel van de aflossing, minus wat het lid schuldig is.</li></ul>
+      <span class="wet">art. 2:60 BW: voorwaarden mogen, uittreden zelf moet mogelijk blijven</span></div>
+    <div class="muur"><span class="tegen">Tegen: de curator</span><h3>4. Faillissement van een lid</h3>
+      <ul><li>De curator krijgt niet meer rechten dan het lid zelf had. Dezelfde termijnen en dezelfde volgorde gelden dus ook voor hem.</li><li>Statuten: bij faillissement, schuldsanering of beslag op het lidmaatschap mag de coöperatie opzeggen. De pas gaat direct dicht.</li><li>Eerst verrekenen, de rest gaat volgens het normale schema naar de curator.</li><li>Hetzelfde schema geldt bij overlijden (erfgenamen) en bij een scheiding.</li></ul>
+      <span class="wet">art. 53 Fw; laat de notaris de opzeggronden uitschrijven</span></div>
+    <div class="muur"><span class="tegen">Tegen: de failliete BV</span><h3>5. Leden zijn mensen, geen bedrijven</h3>
+      <ul><li>Alleen een persoon kan eigenaar zijn. Een BV mag de rekening betalen, maar de persoon blijft de schuldenaar.</li><li>De inleg staat op naam van de persoon. Betaalt de eigen BV die, dan is dat een lening van de BV aan de persoon, met een eigen risico.</li><li>Een team met plekken: teamcontract met een borg van drie maanden van de BV, en elk teamlid is zelf lid.</li></ul>
+      <span class="wet">ledenovereenkomst en teamcontract</span></div>
+    <div class="muur"><span class="tegen">Tegen: de bank die naar mensen kijkt</span><h3>6. Geen persoonlijke borg</h3>
+      <ul><li>Niemand tekent een borg of een hoofdelijke aansprakelijkheid. Een borg kan voor de hele lening worden aangesproken, niet voor een deel.</li><li>De bank krijgt een hypotheek op het pand en ziet dat de leden de helft zelf inbrengen.</li><li>De vertrekregels van muur 3 maken de inleg tot echt eigen vermogen, en dat wil de bank zien.</li><li>Vraagt de bank toch een borg: een kleinere lening, een hogere inleg of een andere bank.</li></ul>
+      <span class="wet">kredietvoorwaarden; laat de jurist ze lezen vóór het tekenen</span></div>
+    <div class="muur"><span class="tegen">Tegen: één persoon die iets doet</span><h3>7. Vier ogen</h3>
+      <ul><li>De coöperatie wordt alleen vertegenwoordigd door twee bestuurders samen. De bankrekening werkt met twee handtekeningen.</li><li>Boven 10.000 euro beslist het hele bestuur, boven 50.000 euro de ledenvergadering, en ook bij een lening, de koop of verkoop van het pand en nieuwe huurcontracten.</li><li>Kascommissie van twee leden en een jaarrekening door een accountant.</li><li>Tegenstrijdig belang: jouw ontwikkel- en managementvergoeding staan vooraf in een contract dat de leden goedkeuren. Je stemt er zelf niet over mee.</li></ul>
+      <span class="wet">statuten: vertegenwoordiging en goedkeuringsbesluiten</span></div>
+    <div class="muur"><span class="tegen">Tegen: pech</span><h3>8. Verzekering en reserve</h3>
+      <ul><li>Aansprakelijkheid voor gym en café, opstal en inventaris, en bestuurdersaansprakelijkheid.</li><li>Huisregels, een gym-introductie per lid en een afgesloten gym.</li><li>Liquiditeitsreserve van drie maanden vaste lasten, en een uittredingsreserve. Zie hieronder wat dat kost.</li></ul>
+      <span class="wet">polis, huisregels</span></div>
+  </div>
+</section>
+
+<section class="two">
+  <div class="stack">
+    <span class="eyebrow">Betaalladder</span>
+    <h2>Als iemand niet betaalt</h2>
+    <p>De toegang draait op jouw eigen app. Dat maakt de ladder automatisch en gelijk voor iedereen, zonder dat een bestuurder iemand hoeft aan te spreken.</p>
+    <ol class="ladder">
+      <li><span class="dag">Dag 1</span>Incasso vooraf, aan het begin van de maand.</li>
+      <li><span class="dag">Dag 5</span>Storno: automatische herinnering met een betaallink.</li>
+      <li><span class="dag">Dag 14</span>De pas werkt niet meer. Het lid kan nog wel binnen voor een gesprek.</li>
+      <li><span class="dag">Dag 30</span>Gesprek met een vertrouwenslid. Is er een goede reden, dan kan het lid tot drie maanden uitstel krijgen. Dat uitstel is gedekt door zijn inleg.</li>
+      <li class="hard"><span class="dag">Dag 60</span>De coöperatie zegt het lidmaatschap op. De schuld wordt met de inleg verrekend en de plek gaat naar de wachtlijst.</li>
+      <li class="hard"><span class="dag">Bij kwade trouw</span>Ontzetting door het bestuur, met beroep bij de ledenvergadering.</li>
+    </ol>
+  </div>
+  <div class="stack">
+    <span class="eyebrow">Het echte risico</span>
+    <h2>Als de club zelf niet rond komt</h2>
+    <p id="nood"></p>
+    <div class="warn"><b>Regels die dit kleiner maken</b>
+      <ul>
+        <li><b>Eerst de leden, dan het pand.</b> De inleg gaat op de derdenrekening van de notaris. Pas als 80% van de plekken is gevuld, wordt er gekocht. Haal je dat niet binnen de afgesproken tijd, dan krijgt iedereen zijn geld terug, minus de kosten die vooraf zijn genoemd.</li>
+        <li><b>Sober bouwen.</b> Elke euro aan afwerking is bij een gedwongen verkoop het eerst weg.</li>
+        <li><b>Een wachtlijst van minstens 10%.</b> Die vangt vertrek op voordat het leegstand wordt.</li>
+        <li><b>Een plafond op het aantal leden in de statuten,</b> zodat het niet te vol wordt en mensen niet weglopen.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Toelating</span>
+  <h2>Wie haal je erin?</h2>
+  <p>De inleg vooraf filtert het betaalrisico er al uit. De toelating draait daarom vooral om de vraag of iemand de club mee draagt: komt hij, doet hij iets, en past hij bij de huisregels.</p>
+  <ol class="route">
+    <li><b>Open avond</b>Kijken, de huisregels lezen en de spelregels van deze pagina horen.</li>
+    <li><b>Proefmaand</b>Een betaalde flexmaand zonder inleg. Zo zie je of iemand echt komt.</li>
+    <li><b>Kennismaking</b>Met twee leden. Wat brengt hij mee, welke taak wil hij oppakken?</li>
+    <li><b>Controle</b>Legitimatie. Het insolventieregister, met toestemming (openbaar en gratis). Bij ondernemers ook de KvK.</li>
+    <li><b>Ballotage</b>Een commissie van leden beslist op vooraf gepubliceerde criteria.</li>
+    <li><b>Inleg</b>De volledige inleg is gestort voordat het lid een pas krijgt.</li>
+    <li><b>Eerste jaar</b>Een maatje uit de leden. Na een jaar een gesprek.</li>
+  </ol>
+  <div class="two">
+    <div class="stack">
+      <h3>Waar je op let</h3>
+      <ul>
+        <li>Wil hij er echt zijn, en hoeveel dagen? Laat hem het pakket kiezen dat daarbij past, niet het goedkoopste.</li>
+        <li>Wil hij iets bijdragen: een event, de bieb, de planten, de gym, de kas?</li>
+        <li>Rode vlaggen: de inleg in termijnen willen, de inleg alleen via een BV willen betalen, zijn plek willen onderverhuren, of vooral naar het rendement vragen.</li>
+        <li>Betaalbaarheid: laat iemand zelf uitrekenen wat de fee en de gemiste rente op de inleg hem per maand kosten. Leen niet voor de inleg.</li>
+      </ul>
+    </div>
+    <div class="stack">
+      <h3>De mix, zonder te discrimineren</h3>
+      <ul>
+        <li>Iemand weigeren vanwege geslacht, afkomst, geloof, seksuele gerichtheid of burgerlijke staat mag niet (Algemene wet gelijke behandeling).</li>
+        <li>Een mix bereik je via werving: waar je adverteert, wie je uitnodigt en welke netwerken je benadert. Zie de wervingspagina.</li>
+        <li>Selecteren op expertise of op wijk is objectief en mag. Laat de notaris de criteria toetsen, ook die over leeftijd.</li>
+        <li>Publiceer de criteria vooraf en leg elke beslissing kort vast. Dat beschermt de commissie en het lid.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Kosten</span>
+  <h2>Wat de bescherming kost</h2>
+  <div class="tbl"><table><thead><tr><th>Post</th><th class="r">Hoeveelheid</th><th>Eenheid</th><th class="r">Prijs</th><th class="r">Totaal</th><th>Label</th></tr></thead><tbody id="kosten"></tbody></table></div>
+  <p class="note" id="kostennoot"></p>
+</section>
+
+<section class="stack">
+  <span class="eyebrow">Voor de notaris</span>
+  <h2>Checklist voor de statuten</h2>
+  <ul class="check">
+    <li><b>Naam eindigt op U.A.</b> en geen enkele bijdrageplicht bij een tekort.</li>
+    <li><b>Alleen natuurlijke personen</b> kunnen lid zijn. Een team of BV werkt via een teamcontract.</li>
+    <li><b>Toelating</b> door een ballotagecommissie op gepubliceerde criteria, en pas na volledige storting van de inleg.</li>
+    <li><b>Verrekening:</b> de coöperatie mag alle vorderingen op een lid of oud-lid verrekenen met zijn tegoed.</li>
+    <li><b>Opzegging door de coöperatie</b> bij twee maanden achterstand, faillissement, schuldsanering of beslag op het lidmaatschap.</li>
+    <li><b>Opzegtermijn van twaalf maanden</b> voor het lid, met een vertrekvergoeding volgens een vaste formule.</li>
+    <li><b>Terugbetaling van de inleg</b> bij overname door een nieuw lid, of anders hooguit 5% van het ledenkapitaal per jaar, op volgorde van opzegging en uiterlijk binnen vijf jaar.</li>
+    <li><b>De prijsformule</b> van een lidmaatschap: inleg plus het eigen deel van de aflossing, geïndexeerd, minus wat het lid schuldig is.</li>
+    <li><b>Twee bestuurders samen</b> vertegenwoordigen. De ledenvergadering keurt goed boven 50.000 euro, bij leningen, bij de koop of verkoop van het pand en bij nieuwe huurcontracten.</li>
+    <li><b>Tegenstrijdig belang:</b> een bestuurder stemt niet mee over zijn eigen vergoeding.</li>
+    <li><b>Reserves:</b> een liquiditeitsreserve en een uittredingsreserve, met een minimum dat in de statuten staat.</li>
+    <li><b>Ledenplafond</b> per pand en de pakketverdeling.</li>
+    <li><b>Startvoorwaarde:</b> de inleg blijft op de derdenrekening tot 80% van de plekken is gevuld. Lukt dat niet, dan gaat het geld terug.</li>
+    <li><b>Geschillen:</b> eerst mediation, dan de rechter. Bij ontzetting beroep bij de ledenvergadering.</li>
+  </ul>
+</section>
+
+<footer>
+  <span>Berekend met risico.py op basis van pand_case, build_ontwerpen en layout (sober, achthoektorens). Dit is geen juridisch advies: laat de statuten opstellen door een notaris met ervaring in coöperaties en laat een jurist de kredietvoorwaarden lezen.</span>
+  <ul>
+    <li><a href="https://wetboekplus.nl/burgerlijk-wetboek-boek-2-artikel-56-uitsluiting-en-beperking-aansprakelijkheid/">Art. 2:56 BW: uitsluiting van aansprakelijkheid (U.A., B.A.)</a></li>
+    <li><a href="https://lawyrup.nl/?p=17000">Art. 2:53 tot 2:63 BW: algemene bepalingen coöperatie, inclusief 2:55 tekort</a></li>
+    <li><a href="https://lawyrup.nl/rechtspraak/hr-16-februari-2024-doc-kaas-melkveehouders/">HR 16 februari 2024, DOC Kaas: leden­verplichtingen moeten in de statuten staan</a></li>
+    <li><a href="https://www.stibbe.com/nl/publications-and-insights/noot-bij-de-uitspraak-van-de-hoge-raad-van-16-februari-2024">Stibbe: noot bij DOC Kaas</a></li>
+    <li><a href="https://www.vbk.nl/sites/default/files/documents/Marketing/Kennisbank%20Herstructurering%202023/Verrekening_Kennisbank%20Herstructurering%20%26%20Insolventie%20Van%20Benthem%20%26%20Keulen-2023.pdf">Van Benthem &amp; Keulen: verrekening in faillissement (art. 53 Fw)</a></li>
+    <li><a href="https://www.vbk.nl/sites/default/files/documents/Marketing/Kennisbank%20Herstructurering%202023/Borgstelling_Kennisbank%20Herstructurering%20%26%20Insolventie%20Van%20Benthem%20%26%20Keulen_2023.pdf">Van Benthem &amp; Keulen: borgstelling</a></li>
+    <li><a href="https://cnb.nl/media/download/221221%20CNB%20Statuten.pdf">Statuten CNB: faillissement als opzeggrond door de coöperatie</a></li>
+    <li><a href="https://www.vbk.nl/sites/default/files/images/20190211%20Een%20klacht%20bij%20het%20College%20voor%20de%20Rechten%20van%20de%20Mens-wat%20nu.pdf">Van Benthem &amp; Keulen: klacht bij het College voor de Rechten van de Mens</a></li>
+  </ul>
+</footer>
+</div>
+
+<script>
+const DATA = /*__DATA__*/null;
+const eur = n => "€ " + Math.round(n).toLocaleString("nl-NL");
+let cur = 0;
+function render() {
+  const P = DATA.panden[cur], B = P.basis, R = P.reserves, N = P.nood;
+  document.getElementById("tiles").innerHTML = [
+    ["Je eigen inleg", "het meeste wat een lid kan verliezen (U.A.)"],
+    [eur(0), "wat één wanbetaler de anderen kost, tegen " + eur(P.scenarios[0].zonder_eur) + " per persoon zonder regels"],
+    ["Niemand", "tekent een persoonlijke borg voor de lening van " + eur(B.lening)],
+    ["+ " + eur(R.advies_fee) + " p/m", "op de fee voor twee reserves, samen " + eur(R.totaal)]
+  ].map(([b, s]) => `<div><b>${b}</b><span>${s}</span></div>`).join("");
+  document.getElementById("stress").innerHTML = P.scenarios.map(s => `<tr><td>${s.titel}<span class="sub">${s.zonder}</span></td>
+    <td class="r"><span class="pill bad">${eur(s.zonder_eur)}</span></td><td class="r"><span class="pill ok">${eur(s.met_eur)}</span></td><td class="met">${s.met}</td></tr>`).join("");
+  document.getElementById("basisnoot").textContent = `${B.titel}: ${B.n} eigenaren (${B.V} vast of vol, ${B.D} deel), fee ${eur(B.fee)} vol en ${eur(B.fee_deel)} deel per maand, ledenkapitaal ${eur(B.ledenkapitaal)}, lening ${eur(B.lening)}, vaste lasten inclusief bank ${eur(B.maand_vast)} per maand. Bedragen zijn eenmalig per andere eigenaar.`;
+  document.getElementById("nood").innerHTML = `Stel dat de club in het eerste jaar stopt en het pand verkocht moet worden. Het pand brengt dan ${Math.round(N.pand_pct*100)}% van de koopprijs op en de verbouwing nog ${Math.round(N.verbouw_pct*100)}% <span class="lbl">schatting</span>. De bank krijgt eerst zijn geld. Bij ${B.titel.split(",")[0]} blijft er dan ${eur(Math.max(0,N.netto))} over: <b>${N.terug_pct}% van de inleg</b>, ongeveer ${eur(N.terug_vol)} van 15.000 euro. Na vijf jaar draaien op de fee om te draaien is dat ${N.jaar5_dekking_pct}%. Met de fee voor inleg terug wordt dat 100%. Dit risico loopt iedereen samen. Het hangt niet af van één lid.`;
+  const rows = [...R.rijen.map(r => [r[0], r[1], r[2], eur(r[3]), eur(r[4]), r[5]]),
+    ["Liquiditeitsreserve meefinancieren in de start", "", "per maand op de fee vol", "", "+ " + eur(R.fee_liq_vooraf), "berekend: annuïteit 5,5%, 20 jaar"],
+    ["Uittredingsreserve opbouwen in 5 jaar", "", "per maand op de fee vol", "", "+ " + eur(R.fee_uit_5j), "berekend"],
+    ...DATA.juridisch.map(r => [r[0], r[1], r[2], eur(r[3]), eur(r[4]), r[5]])];
+  document.getElementById("kosten").innerHTML = rows.map(r => `<tr><td>${r[0]}</td><td class="r">${r[1]}</td><td>${r[2]}</td><td class="r">${r[3]}</td><td class="r">${r[4]}</td><td><span class="lbl">${r[5].split(":")[0]}</span>${r[5].includes(":") ? '<span class="sub">' + r[5].split(":").slice(1).join(":") + '</span>' : ""}</td></tr>`).join("");
+  const jur = DATA.juridisch.slice(0, 3).reduce((a, r) => a + r[4], 0);
+  document.getElementById("kostennoot").textContent = `Eenmalig juridisch: ${eur(jur)}. Per jaar aan extra verzekeringen: ${eur(DATA.juridisch.slice(3).reduce((a, r) => a + r[4], 0))}. Reserves bij ${B.titel.split(",")[0]}: ${eur(R.totaal)}, wat neerkomt op + ${eur(R.advies_fee)} per maand op de fee vol. Het meest onzeker is de vertrekgolf: vraag andere coöperaties met een wachtlijst (wooncoöperaties, sportclubs) hoeveel leden er per jaar vertrekken.`;
+  document.querySelectorAll("#tabs button").forEach((b, i) => b.setAttribute("aria-pressed", i === cur));
+}
+document.getElementById("tabs").innerHTML = DATA.panden.map((p, i) => `<button type="button" id="tab${i}" data-i="${i}">${p.basis.titel.split(",")[0]} · ${p.basis.n} eigenaren</button>`).join("");
+document.getElementById("tabs").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { cur = +b.dataset.i; render(); } });
+render();
+</script>
