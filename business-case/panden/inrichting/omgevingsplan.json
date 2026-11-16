@@ -173,8 +173,8 @@
   "adres": "Laan van Europa 360",
   "gemeente": "Dordrecht",
   "bestemming": "Kantoor-2 (bestemmingsplan Amstelwijck); bouwhoogte max 20 m. Advertentie: kantoor en bedrijf categorie 1 t/m 3, minimaal 30 % kantoor per vestiging",
-  "kans": "middel",
-  "route": "coworking en vergaderen passen binnen de regels; gym en café via binnenplanse afwijking als het plan die bevat, anders BOPA",
+  "kans": "hoog",
+  "route": "kantoren passen (art. 7 Kantoor-2); gym en kantine ondergeschikt; VvE-instemming",
   "onderbouwing": "Kantoor is de hoofdfunctie, dus de helft van het concept past direct. Een kleine gym en besloten café als ondergeschikte voorziening zijn verdedigbaar op een kantorenpark. Bedrijfsverzamelgebouw met VvE: ook instemming van de VvE nodig.",
   "bron": "PDOK ruimtelijke-plannen WMS GetFeatureInfo (service.pdok.nl/kadaster/ruimtelijke-plannen/wms/v1_0), opgevraagd 15-11-2026; plan 'Amstelwijck' (vastgesteld 19-04-2011); bedrijfspand.com 114492",
   "tip": "Vooroverleg bij gemeente Dordrecht; vraag naar het later plan Amstelwijck 2020 en check de splitsingsakte van de VvE."

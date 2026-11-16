@@ -1,38 +1,6 @@
 {
  "panden": [
   {
-   "slug": "pernis-ring-15",
-   "titel": "Ring 15, Pernis (Rotterdam)",
-   "eigenaren": 60,
-   "club": 60,
-   "oud_fee": 228,
-   "oud_terug": 399,
-   "fee": 311,
-   "prijs": 329,
-   "terug": null,
-   "dekking": 0.49,
-   "inleg_vol": 17000.0,
-   "inleg_deel": 10200.0,
-   "ltv_koop": 0.93,
-   "lening": 546561,
-   "koop": 590000,
-   "tekort": 95231,
-   "tekort_pp": 1587,
-   "ledenlening_fee": 335,
-   "personeel": {
-    "Host 0,5 + beheer 0,2 (basis)": 311,
-    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 252,
-    "Volle bezetting: host 1,0 + beheer 0,5": 415,
-    "Zonder personeel (oude model)": 220
-   },
-   "club_half": 382,
-   "eigenaar": 516,
-   "huurlid": 587,
-   "erosie": 144,
-   "groen_dak_pm": 2.1,
-   "capex": 1361792
-  },
-  {
    "slug": "utrecht-van-heutszstraat-4",
    "titel": "Van Heutszstraat 4, Utrecht",
    "eigenaren": 60,
@@ -97,38 +65,6 @@
    "capex": 2009893
   },
   {
-   "slug": "rotterdam-galvanistraat-122",
-   "titel": "Galvanistraat 122-126, Rotterdam West",
-   "eigenaren": 90,
-   "club": 30,
-   "oud_fee": 230,
-   "oud_terug": 329,
-   "fee": 301,
-   "prijs": 319,
-   "terug": 377,
-   "dekking": 0.7,
-   "inleg_vol": 15000.0,
-   "inleg_deel": 9000.0,
-   "ltv_koop": 0.7,
-   "lening": 784559,
-   "koop": 1125000,
-   "tekort": 0,
-   "tekort_pp": 0,
-   "ledenlening_fee": null,
-   "personeel": {
-    "Host 0,5 + beheer 0,2 (basis)": 301,
-    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 262,
-    "Volle bezetting: host 1,0 + beheer 0,5": 371,
-    "Zonder personeel (oude model)": 241
-   },
-   "club_half": 325,
-   "eigenaar": 432,
-   "huurlid": 490,
-   "erosie": 75,
-   "groen_dak_pm": 1.4,
-   "capex": 1864559
-  },
-  {
    "slug": "den-bosch-eendenkooi-1a",
    "titel": "De Eendenkooi 1A, Den Bosch",
    "eigenaren": 64,
@@ -159,13 +95,77 @@
    "erosie": 72,
    "groen_dak_pm": 2.0,
    "capex": 2101741
+  },
+  {
+   "slug": "pernis-ring-15",
+   "titel": "Ring 15, Pernis (Rotterdam)",
+   "eigenaren": 60,
+   "club": 60,
+   "oud_fee": 228,
+   "oud_terug": 399,
+   "fee": 311,
+   "prijs": 329,
+   "terug": null,
+   "dekking": 0.49,
+   "inleg_vol": 17000.0,
+   "inleg_deel": 10200.0,
+   "ltv_koop": 0.93,
+   "lening": 546561,
+   "koop": 590000,
+   "tekort": 95231,
+   "tekort_pp": 1587,
+   "ledenlening_fee": 335,
+   "personeel": {
+    "Host 0,5 + beheer 0,2 (basis)": 311,
+    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 252,
+    "Volle bezetting: host 1,0 + beheer 0,5": 415,
+    "Zonder personeel (oude model)": 220
+   },
+   "club_half": 382,
+   "eigenaar": 516,
+   "huurlid": 587,
+   "erosie": 144,
+   "groen_dak_pm": 2.1,
+   "capex": 1361792
+  },
+  {
+   "slug": "dordrecht-laan-van-europa-360",
+   "titel": "Laan van Europa 360, Dordrecht",
+   "eigenaren": 48,
+   "club": 30,
+   "oud_fee": 396,
+   "oud_terug": 532,
+   "fee": 491,
+   "prijs": 509,
+   "terug": 601,
+   "dekking": 0.66,
+   "inleg_vol": 19000.0,
+   "inleg_deel": 11400.0,
+   "ltv_koop": 0.79,
+   "lening": 624730,
+   "koop": 795000,
+   "tekort": 155043,
+   "tekort_pp": 3230,
+   "ledenlening_fee": 539,
+   "personeel": {
+    "Host 0,5 + beheer 0,2 (basis)": 491,
+    "Café verpachten aan een ondernemer, host 0,2 + beheer 0,2": 417,
+    "Volle bezetting: host 1,0 + beheer 0,5": 620,
+    "Zonder personeel (oude model)": 377
+   },
+   "club_half": 535,
+   "eigenaar": 664,
+   "huurlid": 757,
+   "erosie": 108,
+   "groen_dak_pm": 2.6,
+   "capex": 1355773
   }
  ],
  "start": {
-  "capex_oud": 1900465,
-  "capex_nieuw": 1864559,
-  "fee_oud": 309,
-  "fee_nieuw": 301,
+  "capex_oud": 2045797,
+  "capex_nieuw": 2009893,
+  "fee_oud": 287,
+  "fee_nieuw": 280,
   "rijen": [
    {
     "post": "Concept2 SkiErg + BikeErg + airbike [start: alleen een airbike; rest fase 2]",
@@ -209,6 +209,168 @@
    }
   ]
  },
+ "omgevingsplan": [
+  {
+   "slug": "den-bosch-eendenkooi-1a",
+   "titel": "De Eendenkooi 1A, Den Bosch",
+   "status": "past",
+   "bestemming": "Gemengd-3 met aanduiding sport",
+   "regels": "Maatschappelijke voorzieningen, dienstverlening, kantoren en sport zijn toegestaan (art. 8). Een ondersteunend café via de paraplu ondersteunende horeca. Parkeren op eigen terrein.",
+   "gevolg": "Alles past. Wel een bovenwoning en de geluidzone van de industrie."
+  },
+  {
+   "slug": "rotterdam-metaalhof-40",
+   "titel": "Metaalhof 40, Rotterdam Het Lage Land",
+   "status": "past met ondergeschikte gym",
+   "bestemming": "Gemengd-3 (Alexanderknoop)",
+   "regels": "Kantoren (gezamenlijk max 20.000 m²) en maatschappelijke voorzieningen zijn toegestaan (art. 12.1). Sport staat er niet in.",
+   "gevolg": "Coworking past als kantoor. De gym alleen voor leden met een werkplek, en dat laten bevestigen in vooroverleg."
+  },
+  {
+   "slug": "dordrecht-laan-van-europa-360",
+   "titel": "Laan van Europa 360, Dordrecht",
+   "status": "past met ondergeschikte gym",
+   "bestemming": "Kantoor-2 (Amstelwijck)",
+   "regels": "Kantoren en bedrijven zijn toegestaan (art. 7).",
+   "gevolg": "Coworking past. Gym en kantine ondergeschikt. De VvE moet instemmen."
+  },
+  {
+   "slug": "utrecht-van-heutszstraat-4",
+   "titel": "Van Heutszstraat 4, Utrecht",
+   "status": "onbekend, kansrijk",
+   "bestemming": "Analoog plan Lombok e.o., gebruik nu bijeenkomstfunctie",
+   "regels": "Het plan is niet digitaal. Het pand staat in de BAG als bijeenkomstfunctie.",
+   "gevolg": "Vraag het plan op bij de gemeente. Ontmoeten en de bieb sluiten aan bij het huidige gebruik. Geluid van de gym op een binnenterrein is het punt."
+  },
+  {
+   "slug": "haarlem-hofmanweg-2f",
+   "titel": "A. Hofmanweg 2F, Haarlem",
+   "status": "onbekend, kansrijk",
+   "bestemming": "Analoog plan Bedrijventerrein Waarderpolder, pand is kantoor",
+   "regels": "Het plan is niet digitaal. Het pand is nu kantoor, en een planwijziging voor de Waarderpolder is in voorbereiding.",
+   "gevolg": "Bestaand kantoorgebruik voortzetten als coworking ligt voor de hand. Laat dat bevestigen."
+  },
+  {
+   "slug": "pernis-ring-15",
+   "titel": "Ring 15, Pernis (Rotterdam)",
+   "status": "afwijking nodig, kansrijk",
+   "bestemming": "Maatschappelijk-2",
+   "regels": "Onderwijs, religie, cultuur, zorg en maatschappelijke en publieke dienstverlening (art. 17). Geen kantoren en geen sport.",
+   "gevolg": "De bieb en het ontmoeten passen. Coworking en gym niet, dus afwijken. Een maatschappelijke gemeente kan daarin meegaan."
+  },
+  {
+   "slug": "rotterdam-galvanistraat-122",
+   "titel": "Galvanistraat 122-126, Rotterdam West",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf (Merwe-Vierhavens, 2024)",
+   "regels": "Bedrijven t/m categorie 2 en alleen bedrijfsgebonden kantoren.",
+   "gevolg": "Coworking mag niet. Afwijken van een plan dat net is vastgesteld is kansloos."
+  },
+  {
+   "slug": "den-bosch-rietveldenweg-13",
+   "titel": "Rietveldenweg 13, Den Bosch",
+   "status": "geschrapt",
+   "bestemming": "Bedrijventerrein (De Rietvelden)",
+   "regels": "Bedrijven t/m categorie 3.2. Kantoren alleen op een aanduiding 'kantoor', en die ligt niet op dit adres.",
+   "gevolg": "Coworking mag niet."
+  },
+  {
+   "slug": "maarssen-herenweg-15",
+   "titel": "Herenweg 15, Maarssen",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf (Herenweg-Gageldijk)",
+   "regels": "'Zelfstandige kantoren zijn niet toegestaan', staat er letterlijk.",
+   "gevolg": "Coworking mag niet."
+  },
+  {
+   "slug": "schiedam-calandstraat-92",
+   "titel": "Calandstraat 92, Schiedam",
+   "status": "geschrapt",
+   "bestemming": "Bedrijventerrein ('s-Graveland & Spaanse Polder)",
+   "regels": "Bedrijven t/m categorie 4.1 en bedrijfsgebonden kantoren. Zelfstandige kantoren en een sportschool alleen op een aanduiding, en die ligt niet op dit adres.",
+   "gevolg": "Coworking en gym mogen niet."
+  },
+  {
+   "slug": "schiedam-kommiezenlaan-27",
+   "titel": "Kommiezenlaan 27, Schiedam",
+   "status": "geschrapt",
+   "bestemming": "Bedrijventerrein ('s-Graveland & Spaanse Polder)",
+   "regels": "Hetzelfde plan als Calandstraat. Categorie 3.2, geen aanduiding kantoor of sportcentrum.",
+   "gevolg": "Coworking en gym mogen niet."
+  },
+  {
+   "slug": "rotterdam-linschotenstraat-20a",
+   "titel": "Linschotenstraat 20A, Rotterdam Spaanse Polder",
+   "status": "geschrapt",
+   "bestemming": "Bedrijventerrein (Spaanse Polder)",
+   "regels": "Bedrijven t/m categorie 5. Kantoor alleen op één aangeduid adres (Industrieweg 161).",
+   "gevolg": "Coworking mag niet."
+  },
+  {
+   "slug": "capelle-edelhertstraat-12",
+   "titel": "Edelhertstraat 12, Capelle aan den IJssel",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf (Capelle-West)",
+   "regels": "Zelfstandige kantoren hooguit 250 m² met een lokaal verzorgend karakter, en een kantine van hooguit 250 m².",
+   "gevolg": "Een club van 80 leden past niet binnen 250 m² kantoor."
+  },
+  {
+   "slug": "cruquius-spaarneweg-16e",
+   "titel": "Spaarneweg 16E, Cruquius",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf-3 (Cruquius)",
+   "regels": "Bedrijven t/m categorie 3.2 en perifere detailhandel.",
+   "gevolg": "Coworking en gym mogen niet."
+  },
+  {
+   "slug": "den-haag-zilverstraat-56",
+   "titel": "Zilverstraat 56, Den Haag",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf (Bedrijventerrein ZKD)",
+   "regels": "Bedrijven t/m categorie 3.2. Kantoor en sport alleen op aanduidingen, en die liggen niet op dit adres.",
+   "gevolg": "Coworking mag niet."
+  },
+  {
+   "slug": "gouda-kampenringweg-7",
+   "titel": "Kampenringweg 7, Gouda",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf (Goudse Poort)",
+   "regels": "Bedrijven en daaraan gebonden kantoren. Horeca is uitdrukkelijk uitgesloten.",
+   "gevolg": "Coworking en café mogen niet."
+  },
+  {
+   "slug": "utrecht-amsterdamsestraatweg-656d",
+   "titel": "Amsterdamsestraatweg 656D, Utrecht",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf t/m categorie 2 (Chw Zuilen)",
+   "regels": "'Het gebruiken van bedrijfsruimte als zelfstandige kantoren' is verboden (art. 4.3). Sport alleen op een aanduiding.",
+   "gevolg": "Coworking mag niet."
+  },
+  {
+   "slug": "rotterdam-van-riemsdijkweg-17",
+   "titel": "Van Riemsdijkweg 17, Rotterdam Waalhaven",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf-6 (Waalhaven en Eemhaven)",
+   "regels": "Havengerelateerde bedrijven en bedrijfsgebonden kantoren.",
+   "gevolg": "Havengebied: kansloos."
+  },
+  {
+   "slug": "amsterdam-dukdalfweg-55",
+   "titel": "Dukdalfweg 55, Amsterdam Westpoort",
+   "status": "geschrapt",
+   "bestemming": "Bedrijf-2 (Westhaven)",
+   "regels": "Havenbedrijven, op grond in erfpacht van het Havenbedrijf.",
+   "gevolg": "Havengebied: kansloos."
+  },
+  {
+   "slug": "nieuwbouw-atriumhal",
+   "titel": "Eigen nieuwbouwhal met atrium (concept)",
+   "status": "afwijking nodig, kansrijk",
+   "bestemming": "Concept: bouwen op een kavel",
+   "regels": "Hangt af van de kavel.",
+   "gevolg": "Alleen een kavel met een gemengde of maatschappelijke bestemming, of met kantoor, kiezen. Een gewone bedrijfskavel heeft hetzelfde probleem."
+  }
+ ],
  "uitgangspunten": {
   "host_fte": 0.5,
   "host_kost": 62000,

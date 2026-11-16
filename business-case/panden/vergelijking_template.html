@@ -60,6 +60,7 @@ td.naam b { display: block } td.naam span { color: var(--muted); font-size: 12px
 .kv div { display: grid; gap: 2px } .kv span { font-size: 12px; color: var(--muted) } .kv b { font: 600 17px var(--body); font-variant-numeric: tabular-nums }
 .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px }
 .cols > * { min-width: 0 }
+details.weg { display: grid; gap: 10px } details.weg summary { cursor: pointer; padding: 6px 0 }
 ul { margin: 0; padding-left: 18px; display: grid; gap: 4px }
 </style>
 
@@ -67,7 +68,7 @@ ul { margin: 0; padding-left: 18px; display: grid; gap: 4px }
   <header style="display:grid;gap:14px">
     <span class="eyebrow">Clubcoöperatie · panden · herrekend 16 november 2026</span>
     <h1>Panden naast elkaar</h1>
-    <p>Alle uitgewerkte panden in één overzicht, sober doorgerekend. Bedragen zijn per vol lid per maand: wat de club nodig heeft om te draaien, en wat nodig is om na 5 jaar bij verkoop ieders inleg terug te betalen. Klik op een pand voor de details. Sorteer door op een kolomkop te klikken.</p><p class="note">Herrekend na de councils:</p><ul class="note"><li>Een host voor een halve week en beheer voor één dag per week zitten nu in de kosten.</li><li>De bank wil 20% speling op rente en aflossing.</li><li>De bank leent hooguit 70% van het onderpand: de koopsom plus de helft van de gebouwgebonden verbouw. Leent de bank minder dan nodig, dan stijgt de inleg per lid.</li><li>Startbudget: geen batterij, en extra's die bij de opening niets toevoegen gaan naar fase 2.</li><li>Liquiditeitsreserve en uitkoopfonds komen hier nog bovenop: ongeveer € 18 per maand.</li></ul>
+    <p>Alle uitgewerkte panden in één overzicht, sober doorgerekend. Bedragen zijn per vol lid per maand: wat de club nodig heeft om te draaien, en wat nodig is om na 5 jaar bij verkoop ieders inleg terug te betalen. Klik op een pand voor de details. Sorteer door op een kolomkop te klikken.</p><p class="note">Planregels gelezen op 16 november: panden waar coworking niet mag, zijn geschrapt. De lijst staat onder de tabel. Herrekend na de councils:</p><ul class="note"><li>Een host voor een halve week en beheer voor één dag per week zitten nu in de kosten.</li><li>De bank wil 20% speling op rente en aflossing.</li><li>De bank leent hooguit 70% van het onderpand: de koopsom plus de helft van de gebouwgebonden verbouw. Leent de bank minder dan nodig, dan stijgt de inleg per lid.</li><li>Startbudget: geen batterij, en extra's die bij de opening niets toevoegen gaan naar fase 2.</li><li>Liquiditeitsreserve en uitkoopfonds komen hier nog bovenop: ongeveer € 18 per maand.</li></ul>
     <div class="stats" id="stats"></div>
   </header>
 
@@ -89,6 +90,7 @@ ul { margin: 0; padding-left: 18px; display: grid; gap: 4px }
     </tr></thead>
     <tbody id="rows"></tbody>
   </table></div>
+  <details class="weg"><summary><b>Geschrapt op het omgevingsplan</b> <span class="note" id="wegn"></span></summary><div class="tbl"><table><thead><tr><th>Pand</th><th>Bestemming</th><th>Waarom het niet kan</th></tr></thead><tbody id="weg"></tbody></table></div></details>
 
   <article class="detail" id="detail" aria-live="polite"></article>
 
@@ -97,6 +99,9 @@ ul { margin: 0; padding-left: 18px; display: grid; gap: 4px }
 
 <script>
 const D = /*__DATA__*/[];
+const WEG = /*__WEG__*/[];
+document.getElementById('weg').innerHTML = WEG.map(w => `<tr><td><b>${w.titel}</b></td><td>${w.bestemming}</td><td>${w.waarom}</td></tr>`).join('');
+document.getElementById('wegn').textContent = WEG.length + ' panden: coworking mag er volgens de planregels niet, en op het adres ligt geen aanduiding voor kantoor of sport.';
 const euro = n => n == null ? '' : '€ ' + Math.round(n).toLocaleString('nl-NL');
 const OPR = {hoog: 3, middel: 2, laag: 1};
 let klasse = 'alle', sortK = 'fee', asc = true, sel = null;
@@ -126,7 +131,7 @@ function tabel(){
     <td class="r">${r.eigenaren} <span class="note">(${r.max_eigenaren ?? '?'})</span></td><td class="r">${r.werkplekken}</td>
     <td class="r"><div class="feebar"><i style="width:${Math.round(60*r.fee/maxFee)}px"></i>${euro(r.fee)}</div></td>
     <td class="r">${r.inleg ? euro(r.inleg) : '<span class="note">niet in 5 jaar (' + Math.round((r.dekking_max||0)*100) + '%)</span>'}</td><td class="r">${euro(r.inleg_vol_nodig || 15000)}<span class="note"> · ${Math.round((r.ltv_koop||r.ltv)*100)}%</span></td>
-    <td class="r">${r.kern ?? '?'} / ${r.breed ?? '?'}</td><td>${pill(r.op_kans)}</td>
+    <td class="r">${r.kern ?? '?'} / ${r.breed ?? '?'}</td><td>${pill(r.op_kans)}${r.plan_status ? '<br><span class="note">' + r.plan_status + '</span>' : ''}</td>
     <td><span class="pill ${r.normen_ok === 4 ? 'p-ok' : r.normen_ok >= 2 ? 'p-mid' : 'p-bad'}">${r.normen_ok}/4</span></td></tr>`).join('');
   document.querySelectorAll('#rows tr').forEach(tr => { tr.onclick = () => kies(tr.dataset.s); tr.onkeydown = e => { if (e.key === 'Enter') kies(tr.dataset.s); }; });
 }

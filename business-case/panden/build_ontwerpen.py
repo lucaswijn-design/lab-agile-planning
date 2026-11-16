@@ -32,6 +32,12 @@ for _s in sorted(f[:-3] for f in os.listdir(os.path.join(HERE, "ontwerpen_extra"
         VOLGORDE.insert(len(VOLGORDE) - 1, _s)   # voor de nieuwbouw, die blijft achteraan
     TORENS.setdefault(_s, True)
 
+# Omgevingsplan (16-11-2026): panden waar coworking volgens de planregels niet mag, vallen af (omgevingsplan_check.py).
+from omgevingsplan_check import GESCHRAPT  # noqa: E402
+VOLGORDE[:] = [s for s in VOLGORDE if s not in GESCHRAPT]
+if "rotterdam-metaalhof-40" in VOLGORDE:  # sterkste combinatie naar voren
+    VOLGORDE.remove("rotterdam-metaalhof-40"); VOLGORDE.insert(1, "rotterdam-metaalhof-40")
+
 
 def werkplekken(O):
     """Zit-sta bureaus + plekken aan de grote tafel + krukken aan de raambar (60 cm per kruk)."""

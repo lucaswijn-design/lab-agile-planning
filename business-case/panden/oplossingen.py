@@ -13,10 +13,11 @@ import layout
 import pand_case as pc
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-TOP = ["pernis-ring-15", "utrecht-van-heutszstraat-4", "rotterdam-metaalhof-40", "rotterdam-galvanistraat-122", "den-bosch-eendenkooi-1a"]
+TOP = ["utrecht-van-heutszstraat-4", "rotterdam-metaalhof-40", "den-bosch-eendenkooi-1a", "pernis-ring-15", "dordrecht-laan-van-europa-360"]
 OUD = {  # vergelijking van 16-11 vóór de councils: om te draaien / inleg terug
     "pernis-ring-15": (228, 399), "utrecht-van-heutszstraat-4": (162, 316), "rotterdam-metaalhof-40": (215, 320),
-    "rotterdam-galvanistraat-122": (230, 329), "den-bosch-eendenkooi-1a": (327, 427)}
+    "rotterdam-galvanistraat-122": (230, 329), "den-bosch-eendenkooi-1a": (327, 427),
+    "dordrecht-laan-van-europa-360": (396, 532)}
 KW = dict(sober=True, torens=True)
 RESERVE = 18          # liquiditeitsreserve + uitkoopfonds, euro per maand op de fee vol [berekend in risico.py]
 OPP = 0.03            # gemiste opbrengst op de inleg (spaarrente/beleggen) [schatting]
@@ -77,11 +78,11 @@ def pand(slug):
 
 
 def startbudget():
-    """Wat het startbudget scheelt bij Galvanistraat."""
+    """Wat het startbudget scheelt bij Metaalhof."""
     pc.START = False
-    a = pc.run("rotterdam-galvanistraat-122", **KW)
+    a = pc.run("rotterdam-metaalhof-40", **KW)
     pc.START = True
-    b = pc.run("rotterdam-galvanistraat-122", **KW)
+    b = pc.run("rotterdam-metaalhof-40", **KW)
     rows = [dict(post=r["post"], totaal=r["totaal"]) for r in b["rows"] if "[start:" in r["post"]]
     oud = {r["post"]: r["totaal"] for r in a["rows"]}
     for x in rows:
@@ -91,7 +92,10 @@ def startbudget():
 
 def main():
     P = [pand(s) for s in TOP]
-    J = dict(panden=P, start=startbudget(), uitgangspunten=dict(pc.BEMENSING, dscr=pc.DSCR, ltv_max=pc.LTV_MAX, onderpand_verbouw=pc.ONDERPAND_VERBOUW,
+    from omgevingsplan_check import OORDEEL
+    import ontwerp as _o
+    plan = [dict(slug=s, titel=_o.ONTWERPEN[s]["titel"] if s in _o.ONTWERPEN else s, status=v[0], bestemming=v[1], regels=v[2], gevolg=v[3]) for s, v in OORDEEL.items()]
+    J = dict(panden=P, start=startbudget(), omgevingsplan=plan, uitgangspunten=dict(pc.BEMENSING, dscr=pc.DSCR, ltv_max=pc.LTV_MAX, onderpand_verbouw=pc.ONDERPAND_VERBOUW,
                                                                 reserve=RESERVE, opp=OPP))
     json.dump(J, open(os.path.join(HERE, "oplossingen.json"), "w"), ensure_ascii=False, indent=1)
     tpl = open(os.path.join(HERE, "oplossingen_template.html"), encoding="utf-8").read()

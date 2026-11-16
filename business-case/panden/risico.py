@@ -154,7 +154,7 @@ def noodverkoop(B, pand_pct=0.90, verbouw_pct=0.25):
 
 def main():
     out = []
-    for s in ("rotterdam-galvanistraat-122", "utrecht-van-heutszstraat-4"):
+    for s in ("rotterdam-metaalhof-40", "utrecht-van-heutszstraat-4"):
         B = basis(s)
         out.append(dict(basis={k: v for k, v in B.items() if k != "noemer"}, scenarios=scenarios(B), reserves=reserves(B), nood=noodverkoop(B),
                         bedrijf=bedrijf(B), btw=btw(B)))

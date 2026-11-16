@@ -110,6 +110,7 @@ def rij(slug, W, OP):
 
 
 def main():
+    from omgevingsplan_check import OORDEEL, GESCHRAPT
     W, OP = wijkdata(), omgevingsplan()
     rows = []
     for s in b.VOLGORDE:
@@ -117,7 +118,15 @@ def main():
             rows.append(rij(s, W, OP))
         except Exception as e:  # noqa: BLE001
             print("FOUT", s, repr(e))
+    for r in rows:
+        o = OORDEEL.get(r["slug"])
+        if o:
+            r.update(plan_status=o[0], plan_bestemming=o[1], plan_regels=o[2], plan_gevolg=o[3])
+    import ontwerp as _o
+    weg = [dict(titel=_o.ONTWERPEN[s]["titel"] if s in _o.ONTWERPEN else s, bestemming=OORDEEL[s][1], waarom=OORDEEL[s][2] + " " + OORDEEL[s][3])
+           for s in OORDEEL if s in GESCHRAPT]
     tpl = open(os.path.join(HERE, "vergelijking_template.html"), encoding="utf-8").read()
+    tpl = tpl.replace("/*__WEG__*/[]", json.dumps(weg, ensure_ascii=False))
     html = tpl.replace("/*__DATA__*/[]", json.dumps(rows, ensure_ascii=False))
     open(os.path.join(HERE, "vergelijking.html"), "w", encoding="utf-8").write(html)
     for r in rows:
